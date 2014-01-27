@@ -3,6 +3,7 @@ namespace Application\Routing;
 
 use Application\Application;
 use Application\FileManager\FileManager;
+use Application\Exception\AssetNotFound;
 use Application\Exception\ExceptionRuntime;
 use Application\View\Forbidden;
 
@@ -47,6 +48,7 @@ class Routing
     * Construct
     *
     * @throws Application\Exception\ExceptionRuntime
+    * @throws Application\Exception\AssetNotFound
     * @return void
     */
     public function __construct(Application $application)
@@ -59,7 +61,7 @@ class Routing
 
         // JSON file not found
         if($this->routes_source === false) {
-            throw new ExceptionRuntime('Error encountered while trying load routes file. Check whether this file exists on ++library/Application/Routing/Resources/Routes.json+-+');
+            throw new AssetNotFound('Error encountered while trying load routes file. Check whether this file exists on ++library/Application/Routing/Resources/Routes.json+-+');
         }
 
         // Parse JSON

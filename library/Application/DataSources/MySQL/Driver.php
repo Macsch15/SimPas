@@ -42,22 +42,13 @@ class Driver
      */
     public function __construct()
     {
-        // Database data
-        // REMOVEEEEEEEEEEEEEEEEEEEEE
-        $this->data['server']   = $this->config('Database')->server;
-        $this->data['port']     = $this->config('Database')->port;
-        $this->data['database'] = $this->config('Database')->database;
-        $this->data['username'] = $this->config('Database')->username;
-        $this->data['password'] = $this->config('Database')->password;
-        $this->data['dsn']      = ($this->config('Database')->dsn !== null ? ';' . $this->config('Database')->dsn : null);
-
         // try-catch
         try {
             if($this->isConnected() === false) {
                 // Try PDO connect
                 $this->pdo = new PDO(
-                    sprintf('mysql:host=%s;port=%d;dbname=%s' . $this->data['dsn'], $this->data['server'], $this->data['port'], $this->data['database']),
-                    $this->data['username'], $this->data['password']
+                    sprintf('mysql:host=%s;port=%d;dbname=%s' . ($this->config('Database')->dsn !== null ? ';' . $this->config('Database')->dsn : null), $this->config('Database')->server, $this->config('Database')->port, $this->config('Database')->database),
+                    $this->config('Database')->username, $this->config('Database')->password
                 );
 
                 // Set attributes

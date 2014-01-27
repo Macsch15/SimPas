@@ -34,7 +34,7 @@ class View extends Exception
      * 
      * @var array
      */
-    private $_render = array();
+    private $_render = [];
 
     /**
      * Twig integration

@@ -9,9 +9,9 @@ use DirectoryIterator;
 class FileManager
 {
     /**
-     * Http Code
+     * CURL info
      * 
-     * @var int
+     * @var array
      */
     private $curl_info = [];
 
