@@ -1,0 +1,255 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SimPas\n"
+"POT-Creation-Date: 2013-11-01 15:11+0100\n"
+"PO-Revision-Date: 2013-11-01 15:13+0100\n"
+"Last-Translator: Macsch15 <web@macsch15.pl>\n"
+"Language-Team: Macsch15 <web@macsch15>\n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.6\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: H:\\program files\\xampp\\htdocs\\____SIMPAS\n"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/library/Application/Application.php:141
+#, php-format
+msgid "%s on line %d in file %s"
+msgstr "%s linia %d w pliku %s"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/21/71/defc65bda41a6ccc797ebda0f39a2b796a1cef6b1815f5a57d599652dd9a.php:44
+#: files\xampp\htdocs\____SIMPAS/storage/templates/44/4a/81b6dacbee6cbf131ff02da2a5c12972fda0ad843839ae7453da44b25628.php:43
+#: files\xampp\htdocs\____SIMPAS/storage/templates/44/4a/81b6dacbee6cbf131ff02da2a5c12972fda0ad843839ae7453da44b25628.php:73
+#: files\xampp\htdocs\____SIMPAS/storage/templates/44/4a/81b6dacbee6cbf131ff02da2a5c12972fda0ad843839ae7453da44b25628.php:86
+msgid "Paste"
+msgstr "Wklejka"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/21/71/defc65bda41a6ccc797ebda0f39a2b796a1cef6b1815f5a57d599652dd9a.php:52
+msgid "by"
+msgstr "przez"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/21/71/defc65bda41a6ccc797ebda0f39a2b796a1cef6b1815f5a57d599652dd9a.php:56
+msgid "Copy to clipboard"
+msgstr "Kopiuj do schowka"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/21/71/defc65bda41a6ccc797ebda0f39a2b796a1cef6b1815f5a57d599652dd9a.php:64
+msgid "Raw mode"
+msgstr "Tryb surowy"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/21/71/defc65bda41a6ccc797ebda0f39a2b796a1cef6b1815f5a57d599652dd9a.php:72
+msgid "Download"
+msgstr "Pobierz"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/21/71/defc65bda41a6ccc797ebda0f39a2b796a1cef6b1815f5a57d599652dd9a.php:76
+msgid "Share"
+msgstr "Udostępnij"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/21/71/defc65bda41a6ccc797ebda0f39a2b796a1cef6b1815f5a57d599652dd9a.php:93
+msgid "Submitted"
+msgstr "Wysłany"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/21/71/defc65bda41a6ccc797ebda0f39a2b796a1cef6b1815f5a57d599652dd9a.php:98
+msgid "Characters"
+msgstr "Znaków"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/21/71/defc65bda41a6ccc797ebda0f39a2b796a1cef6b1815f5a57d599652dd9a.php:102
+#: files\xampp\htdocs\____SIMPAS/storage/templates/dd/10/f0953e5274cb8908e31f4cf968399fb86a3fea955dc75c979423b7716d39.php:80
+msgid "Syntax highlighting"
+msgstr "Kolorowanie składni"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/24/09/fe9c5a98f961b84f5780e44deb0bea6d1f9adfef6868eb5e3224c3b2339d.php:163
+msgid "404 Page not found"
+msgstr "Błąd 404 - strona nieznaleziona"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/24/09/fe9c5a98f961b84f5780e44deb0bea6d1f9adfef6868eb5e3224c3b2339d.php:167
+msgid "SimPas couldn't locate the page you're requesting to view"
+msgstr "SimPas nie mógł zlokalizować strony którą podano"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/24/09/fe9c5a98f961b84f5780e44deb0bea6d1f9adfef6868eb5e3224c3b2339d.php:173
+msgid "Return to index page"
+msgstr "Powrót do strony głównej"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/25/1f/92d7e399de8572e5945caa8483d8fba6925d51ac43f6113e932b20f6d714.php:53
+msgid "Go to home"
+msgstr "Strona główna"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/25/1f/92d7e399de8572e5945caa8483d8fba6925d51ac43f6113e932b20f6d714.php:59
+#: files\xampp\htdocs\____SIMPAS/storage/templates/ca/e1/a2c4911cc875cdbcea090ccd649434dbfa968ae68e72e9ee815bdfd43312.php:31
+msgid "Rules"
+msgstr "Regulamin"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/25/1f/92d7e399de8572e5945caa8483d8fba6925d51ac43f6113e932b20f6d714.php:65
+msgid "API"
+msgstr "API"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/25/1f/92d7e399de8572e5945caa8483d8fba6925d51ac43f6113e932b20f6d714.php:71
+msgid "SimPas repository on GitHub"
+msgstr "Repozytorium SimPas na GitHub"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/25/1f/92d7e399de8572e5945caa8483d8fba6925d51ac43f6113e932b20f6d714.php:85
+msgid ""
+"It is recommended to enable JavaScript. Without it, this page may don't work "
+"correctly."
+msgstr ""
+"Zalecana jest włączona obsługa JavaScript. Bez niej, strona może nie działać "
+"prawidłowo."
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/25/1f/92d7e399de8572e5945caa8483d8fba6925d51ac43f6113e932b20f6d714.php:100
+msgid "An errors encountered! (%error_count%)"
+msgstr "Wystąpiły błędy! (%error_count%)"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/25/1f/92d7e399de8572e5945caa8483d8fba6925d51ac43f6113e932b20f6d714.php:256
+msgid "chars left"
+msgstr "znaków pozostało"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/25/1f/92d7e399de8572e5945caa8483d8fba6925d51ac43f6113e932b20f6d714.php:276
+msgid "Copied to clipboard!"
+msgstr "Skopiowany!"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/25/1f/92d7e399de8572e5945caa8483d8fba6925d51ac43f6113e932b20f6d714.php:285
+msgid "Oops, nothing found!"
+msgstr "Oops, nic nie znaleziono!"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/3e/5a/385672bf6eab70aae8ea8b61b06d106f27b1cf0f106fa77ebbe875fb8a5d.php:31
+msgid "Site is currently offline"
+msgstr "Strona wyłączona"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/3e/5a/385672bf6eab70aae8ea8b61b06d106f27b1cf0f106fa77ebbe875fb8a5d.php:67
+msgid "This site is currently offline"
+msgstr "Strona jest aktualnie wyłączona"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/3e/5a/385672bf6eab70aae8ea8b61b06d106f27b1cf0f106fa77ebbe875fb8a5d.php:85
+msgid "%site_title% is currently under maintenance. We be back later."
+msgstr "%site_title% jest aktualnie w trakcie konserwacji. Wrócimy później."
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/44/4a/81b6dacbee6cbf131ff02da2a5c12972fda0ad843839ae7453da44b25628.php:26
+msgid "Share this paste"
+msgstr "Udostępnij tą wklejkę"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/44/4a/81b6dacbee6cbf131ff02da2a5c12972fda0ad843839ae7453da44b25628.php:34
+msgid "BBCode"
+msgstr "BBCode"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/44/4a/81b6dacbee6cbf131ff02da2a5c12972fda0ad843839ae7453da44b25628.php:51
+msgid "Direct link"
+msgstr "Link bezpośredni"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/44/4a/81b6dacbee6cbf131ff02da2a5c12972fda0ad843839ae7453da44b25628.php:64
+msgid "HTML"
+msgstr "HTML"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/44/4a/81b6dacbee6cbf131ff02da2a5c12972fda0ad843839ae7453da44b25628.php:81
+msgid "Markdown"
+msgstr "Markdown"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/44/4a/81b6dacbee6cbf131ff02da2a5c12972fda0ad843839ae7453da44b25628.php:101
+msgid "Share on Twitter"
+msgstr "Udostępnij na Twitter"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/44/4a/81b6dacbee6cbf131ff02da2a5c12972fda0ad843839ae7453da44b25628.php:110
+msgid "Share on Google+"
+msgstr "Udostępnij na Google+"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/44/4a/81b6dacbee6cbf131ff02da2a5c12972fda0ad843839ae7453da44b25628.php:119
+msgid "Share on Facebook"
+msgstr "Udostępnij na Facebook"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/44/4a/81b6dacbee6cbf131ff02da2a5c12972fda0ad843839ae7453da44b25628.php:128
+msgid "Share on LinkedIn"
+msgstr "Udostępnij na LinkedIn"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/44/4a/81b6dacbee6cbf131ff02da2a5c12972fda0ad843839ae7453da44b25628.php:138
+msgid "Close window"
+msgstr "Zamknij okno"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/dd/10/f0953e5274cb8908e31f4cf968399fb86a3fea955dc75c979423b7716d39.php:42
+msgid "Title (Optional)"
+msgstr "Tytuł (Opcjonalny)"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/dd/10/f0953e5274cb8908e31f4cf968399fb86a3fea955dc75c979423b7716d39.php:50
+msgid "Author (Optional)"
+msgstr "Autor (Opcjonalny)"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/dd/10/f0953e5274cb8908e31f4cf968399fb86a3fea955dc75c979423b7716d39.php:63
+msgid "Maximum: %max_chars% chars / %max_size%KB"
+msgstr "Maksymalnie %max_chars% znaków / %max_size%KB"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/dd/10/f0953e5274cb8908e31f4cf968399fb86a3fea955dc75c979423b7716d39.php:68
+msgid "Paste text or code in the field below"
+msgstr "Wklej tekst lub kod w poniższe pole"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/dd/10/f0953e5274cb8908e31f4cf968399fb86a3fea955dc75c979423b7716d39.php:73
+msgid "Paste content"
+msgstr "Zawartość wklejki"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/dd/10/f0953e5274cb8908e31f4cf968399fb86a3fea955dc75c979423b7716d39.php:110
+msgid "Send this paste"
+msgstr "Wyślij tą wkleję"
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/dd/10/f0953e5274cb8908e31f4cf968399fb86a3fea955dc75c979423b7716d39.php:114
+msgid "Sending..."
+msgstr "Wysyłanie..."
+
+#: H:\program
+#: files\xampp\htdocs\____SIMPAS/storage/templates/dd/10/f0953e5274cb8908e31f4cf968399fb86a3fea955dc75c979423b7716d39.php:116
+msgid "Paste it!"
+msgstr "Wyślij"
+
+#~ msgid "Title"
+#~ msgstr "Tytuł"
+
+#~ msgid "Author"
+#~ msgstr "Autor"
+
+#~ msgid "Generated links"
+#~ msgstr "Wygenerowane linki"
+
+#~ msgid "Generated links for this paste"
+#~ msgstr "Wygenerowane linki"

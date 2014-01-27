@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="{{ config.locale.0 }}">
+<head>
+    {% block document_header %}
+        <meta charset="{{ config.charset }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block document_title %}{% endblock %}{{ block('document_title') is not empty ? " - " : null }}{{ config.site_title }}</title>
+        <link href="{{ assets('css', 'simpas.css') }}" rel="stylesheet" />
+    {% endblock %}
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">
+    <div itemprop="breadcrumb" class="navbar navbar-static-top">
+        <div class="container wrap">
+            <span class="navbar-brand">{{ config.site_title }}</span>
+            <span class="navbar-brand muted_font">
+                {{ config.site_description|length > config.decription_limit ? config.site_description|slice(0, config.decription_limit) ~ '...' : config.site_description }}
+            </span>
+
+            <ul class="nav navbar-nav">
+                <li><a class="tooltip-bottom" title="{% trans %}Go to home{% endtrans %}" href="{{ config.full_url }}"><i class="fa fa-home"></i></a></li>
+                <li><a class="tooltip-bottom" title="{% trans %}Rules{% endtrans %}" href="{{ config.full_url }}rules"><i class="fa fa-asterisk"></i></a></li>
+                <li><a class="tooltip-bottom" title="{% trans %}SimPas repository on GitHub{% endtrans %}" href="https://github.com/Macsch15/SimPas" rel="nofollow"><i class="fa fa-github"></i></a></li>
+                {% block document_navbar %}{% endblock %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="container wrap wrap_content">
+        <noscript>
+            <div class="alert alert-info"><i class="fa fa-exclamation-triangle fa-lg"></i> {% trans %}It is recommended to enable JavaScript. Without it, this page may don't work correctly.{% endtrans %}</div>
+        </noscript>
+
+        {% if app.engineErrors()|length > 0 %}
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    {% set error_count = app.engineErrors()|length %}
+                    <h3 class="panel-title"><i class="fa fa-exclamation-triangle fa-lg"></i> {% trans %}An errors encountered! ({{ error_count }}){% endtrans %}</h3>
+                </div>
+                {% for error_message in app.engineErrors() %}
+                        {{ loop.index }}. {{ error_message }}<br />
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% block document_content %}{% endblock %}
+    </div>
+    
+    <footer class="containter wrap copyright">
+        {% if constant('Application\\Application::ENVIORMENT') == 'dev' %}
+            <div class="pull-left">
+                <i class="fa fa-cogs"></i> SimPas utilised {{ app.getUtilisedMemory() }}KB memory for this request<br />
+                <div style="text-align: left"><i class="fa fa-fire"></i> GZIP Compression: {{ config.gzip_compression ? "On" : "Off" }}</div>
+            </div>
+        {% endif %}
+
+        <a href="http://www.macsch15.pl">Powered by SimPas Application by Macsch15</a>
+    </footer>
+
+    {% block document_javascript %}
+        <script src="{{ assets('js', 'jquery-2.0.3.min.js') }}"></script>
+        <script src="{{ assets('js', 'bootstrap.min.js') }}"></script>
+        <script src="{{ assets('js', 'chosen.jquery.min.js') }}"></script>
+        <script src="{{ assets('js', 'simpas.js') }}"></script>
+        <script src="{{ assets('js', 'jquery.maxlength-min.js') }}"></script>
+        <script src="{{ assets('js', 'jquery.zclip.min.js') }}"></script>
+        {% if config.social_icons %}
+        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+        {% endif %}
+        <script>
+            $(function() {
+                $('a#zclip').zclip({
+                    path: "{{ assets('js', 'ZeroClipboard.swf') }}",
+                    copy: $('pre#zclip_copy').text()
+                });
+
+                $('#zclip').click(function () {
+                    $(this).addClass('disabled');
+                    $(this).html('<i class="fa fa-check"></i> {% trans %}Copied to clipboard!{% endtrans %}');
+                });
+
+                $(".chzn-select").chosen({no_results_text: "{% trans %}Oops, nothing found!{% endtrans %}"});
+
+                $('#_chars_left').maxlength({    
+                    maxCharacters: "{{ config.max_chars }}", 
+                    status: true,  
+                    statusClass: "muted_font pull-right",
+                    statusText: "{% trans %}chars left{% endtrans %}",
+                    notificationClass: "chars_left"  
+                });
+            });
+        </script>
+        {% if config.social_icons %}
+        <script type="text/javascript">stLight.options({publisher: "ur-860239a-833d-b5c-fca1-5bcd8c993cbb"});</script>
+        {% endif %}
+    {% endblock %}
+</body>
+</html>

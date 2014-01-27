@@ -1,0 +1,45 @@
+{% extends "BaseBlock.html.twig" %}
+
+    {% block document_content %}
+        <form method="post" action="{{ config.full_url }}paste/{{ paste_id }}">
+
+            <div class="pull-left" style="width: 49%; margin-right: 2%;">
+                <input type="text" autocomplete="off" name="post_paste_title" pattern="[A-Za-z0-9{{ config.accented_characters is not empty ? config.accented_characters : null }}\-_?!\s]+" maxlength="{{ config.max_title_chars }}" class="form-control" placeholder="{% trans %}Title (Optional){% endtrans %}" />
+            </div>
+            <div class="pull-left" style="width: 49%">
+                <input type="text" autocomplete="off" name="post_paste_author" pattern="[A-Za-z0-9{{ config.accented_characters is not empty ? config.accented_characters : null }}\-_\s]+" maxlength="{{ config.max_author_chars }}" class="form-control" placeholder="{% trans %}Author (Optional){% endtrans %}" />
+            </div>
+            <br /><br />
+
+            <h4 class="muted_font pull-left"><i class="fa fa-code"></i> {% trans %}Paste text or code in the field below{% endtrans %}</h4>
+            <button type="button" id="options" data-toggle="popover" data-placement="left" style="margin-left: 6px" title="{% trans %}Pastebin options{% endtrans %}" class="tooltip-top muted_font btn pull-right"><i class="fa fa-plus"></i></button>
+
+            <div id="form_data" class="hide"></div>
+            <div id="popover_content" class="hide">
+                {% include "Options.html.twig" %}
+            </div>
+
+            {% set max_chars = config.max_chars %}
+            {% set max_size = config.max_size %}
+            <span class="pull-right label label-default"><i class="fa fa-info-circle"></i> {% trans %}Maximum: {{ max_chars }} chars / {{ max_size }}KB{% endtrans %}</span>
+        
+            <textarea id="_chars_left" style="height: 350px;" required="required" name="post_paste_content" class="form-control" placeholder="{% trans %}Paste content (required){% endtrans %}..."></textarea>
+            <br />
+
+            <div class="col-lg-4 syntax_highlight_option pull-left">
+                <h4 class="muted_font"><i class="fa fa-puzzle-piece"></i> {% trans %}Syntax highlighting{% endtrans %}</h4>
+                <select class="form-control chzn-select" name="post_syntax_highlight_language">
+                    {% for languages in geshi_languages %}
+                        <option value="{{ languages }}"{{ languages|lower == config.default_geshi_language|lower ? " selected=\"selected\"" : "" }}>{{ languages }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <input type="hidden" name="post_poked" value="1" />
+
+            <div class="pull-right">
+                <h4 class="muted_font"><i class="fa fa-save"></i> {% trans %}Send this paste{% endtrans %}</h4>
+                <button data-loading-text="{% trans %}Sending...{% endtrans %}" id="loading_button" type="submit" class="btn main_button">{% trans %}Paste it!{% endtrans %}</button>
+            </div>
+        </form>
+    {% endblock %}

@@ -1,0 +1,14 @@
+<div class="checkbox">
+    <label>
+        <input class="checkbox" value="1" checked="checked" name="post_checkbox_line_numbering" type="checkbox"> {% trans %}Line numbering{% endtrans %}
+    </label>
+</div>
+<hr />
+<label>
+    <div class="col-xs-2">
+        {% trans %}Start from line{% endtrans %} 
+        <div class="col-xs-2">
+            <input type="text" pattern="\d+" autocomplete="off" class="form-control col-md-5" name="post_start_from_line" placeholder="{% trans %}Enter number...{% endtrans %}">
+        </div>
+    </div>
+</label>

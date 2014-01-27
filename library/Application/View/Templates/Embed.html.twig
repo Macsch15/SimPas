@@ -1,0 +1,51 @@
+{% extends "BaseBlockBlank.html.twig" %}
+
+{% block document_content %}
+    {% set paste_h4 = paste.unique_id|length > 10 ? "<span class=\"tooltip-top\" title=\"" ~ paste.unique_id ~ "\">" ~ paste.unique_id|slice(0, 10) ~ "...</span>" : paste.unique_id %}
+
+    <h4 itemprop="name">{% trans %}Paste{% endtrans %} "<a target="_blank" href="{{ config.full_url}}paste/{{ paste.unique_id }}">{{ paste_h4|raw }}</a>" {% trans %}by{% endtrans %} PasteAuthor&nbsp;&nbsp;
+        <a href="#" id="zclip" class="btn btn-primary btn-sm"><i class="fa fa-copy"></i> {% trans %}Copy to clipboard{% endtrans %}</a>
+        <a target="_blank" href="{{ config.full_url }}raw/{{ paste.unique_id }}" class="btn btn-primary btn-sm"><i class="fa fa-terminal"></i> {% trans %}Raw mode{% endtrans %}</a>
+        <a target="_blank" href="{{ config.full_url }}download/{{ paste.unique_id }}" class="btn btn-primary btn-sm"><i class="fa fa-download"></i> {% trans %}Download{% endtrans %}</a>
+    </h4>
+
+    {{ paste.content|raw }}
+
+    <script src="{{ assets('js', 'jquery-2.0.3.min.js') }}"></script>
+    <script src="{{ assets('js', 'bootstrap.min.js') }}"></script>
+    <script src="{{ assets('js', 'simpas.js') }}"></script>
+    <script src="{{ assets('js', 'jquery.zclip.min.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $('a#zclip').zclip({
+                path: "{{ assets('js', 'ZeroClipboard.swf') }}",
+                copy: $('pre#zclip_copy').text()
+            });
+
+            $('#zclip').click(function () {
+                $(this).addClass('disabled');
+                $(this).html('<i class="fa fa-check"></i> {% trans %}Copied to clipboard!{% endtrans %}');
+            });
+        });
+    </script>
+
+    <script>
+        $(function() {
+            if(document.location.hash) {
+                showLine();
+            }
+
+            $('li').click(function() {
+                $('.line_active').removeClass('line_active');
+                $(this).addClass('line_active');
+            });
+        });
+
+        function showLine() {
+            var hashName = window.location.hash;
+            var lineNumber = hashName.slice(6);
+
+            $('#line-' + lineNumber).addClass('line_active');
+        }
+    </script>
+{% endblock %}

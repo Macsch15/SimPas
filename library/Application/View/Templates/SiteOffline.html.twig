@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="{{ config.locale.0 }}">
+<head>
+    <meta charset="{{ config.charset }}">
+    <title>{% trans %}Site is currently offline{% endtrans %} - {{ config.site_title }}</title>
+    <link href="{{ assets('css', 'bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ assets('css', 'simpas.css') }}" rel="stylesheet" />
+    <link href="{{ assets('css', 'foundation.min.css') }}" rel="stylesheet" />
+    <style>
+        body {
+            background: #EDEDED;
+        }
+
+        .panel {
+            background: #fff;
+            margin-top: 15px;
+        }
+
+        .label {
+            font-size: 12px;
+        }
+
+        .application a {
+            float: right !important;
+            color: #A8A8A8;
+            font-size: 11px;
+            margin-bottom: 15px;
+            text-decoration: none;
+        }
+
+        .application a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="panel" style="border-radius: 0; box-shadow: none">
+            <h3 style="color: #808080">{% trans %}This site is currently offline{% endtrans %}</h3>
+            {% set site_title = config.site_title %}
+            <h6>
+            {% if config.offline_message is not empty %}
+                {% if config.offline_message[-11:] == '~html_force' %}
+                    {% set offline_message = config.offline_message[:-11] %}
+                    
+                    {{ offline_message|raw }}
+                {% else %}
+                    {{ config.offline_message }}
+                {% endif %}
+            {% else %}
+                {% trans %}{{ site_title }} is currently under maintenance. We be back later.{% endtrans %}
+            {% endif %}
+            </h6>
+        </div>
+
+        <footer class="application">
+            <a href="http://www.macsch15.pl">Powered by SimPas Application by Macsch15</a>
+        </footer>
+    </div>
+</body>
+</html>

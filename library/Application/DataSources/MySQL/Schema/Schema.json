@@ -1,0 +1,21 @@
+{"tables": {
+    "pastes": {
+        "paste_id": "INT NOT NULL AUTO_INCREMENT",
+        "unique_id": "VARCHAR(100)",
+        "time": "TIMESTAMP",
+        "size": "INT(10)",
+        "length": "INT(10)",
+        "syntax": "TINYTEXT",
+        "content": "LONGTEXT",
+        "ip_address": "VARCHAR(40)",
+        "raw_content": "LONGTEXT",
+        "title": "VARCHAR(255) DEFAULT NULL",
+        "author": "VARCHAR(255) DEFAULT NULL",
+        "start_from_line": "INT(10)",
+
+        "__options__": {
+            "primary_key": "paste_id",
+            "engine": "InnoDB"
+        }
+    }
+}}

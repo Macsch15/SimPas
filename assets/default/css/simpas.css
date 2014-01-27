@@ -1,0 +1,158 @@
+@import url('./bootstrap.min.css');
+@import url('./font-awesome.min.css');
+@import url('./chosen.css');
+
+body {
+    background: #FCFCFC;
+}
+
+textarea:focus, 
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+input[type="datetime"]:focus, 
+input[type="datetime-local"]:focus, 
+input[type="date"]:focus, 
+input[type="month"]:focus, 
+input[type="time"]:focus, 
+input[type="week"]:focus, 
+input[type="number"]:focus, 
+input[type="email"]:focus,
+input[type="url"]:focus, 
+input[type="search"]:focus,
+input[type="tel"]:focus, 
+input[type="color"]:focus, 
+.uneditable-input:focus,
+.form-control:focus {
+    box-shadow: none !important;
+    border: 1px solid #C9C9C9 !important;
+}
+
+ol, ol a {
+    color: #9C9C9C;
+    text-decoration: none;
+}
+
+ol a:hover {
+    color: #6B6B6B;
+    text-decoration: none;
+}
+
+ol div {
+    color: #000000;
+    padding: 5px;
+}
+
+.line_active {
+    color: #000;
+    background: #E8E8E8;
+}
+
+.header_items {
+    border-radius: 0;
+    box-shadow: none;
+    padding: 5px;
+}
+
+.wrap {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.wrap_content {
+    background: #fff;
+    padding: 10px;
+}
+
+.navbar {
+    background: #fff;
+    border-bottom: 1px #DEDEDE solid;
+}
+
+.navbar-inner {
+    box-shadow: none !important;
+    border-bottom: 1px #D6D6D6 solid;
+}
+
+.navbar .nav > li > a {
+    padding: 5px 10px 5px 10px;
+    margin: 10px 4px 10px 4px;
+    background: #36659F;
+    border-radius: 3px;
+    color: #fff;
+    width: 35px;
+    text-align: center;
+}
+
+.active {
+    background: #2C5382 !important;
+}
+
+.navbar .nav > li > a:hover {
+    text-shadow: none;
+    border-radius: 3px;
+    background: #545454;
+}
+
+.navbar_second_color > li > a {
+    background: #545454 !important;
+}
+
+.navbar_second_color > li > a:hover {
+    background: #636363 !important;
+}
+
+.muted_font {
+    color: #CCCCCC;
+}
+
+.syntax_highlight_option {
+    padding: 0;
+    margin: 0 auto;
+}
+
+.main_button {
+    background: #545454;
+    color: #fff;
+    width: 366px;
+}
+
+.main_button:hover {
+    background: #4A4A4A;
+    color: #fff;
+}
+
+.main_button:focus, .main_button:visited {
+    color: #fff;
+}
+
+.copyright {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 11px;
+    text-align: right;
+    color: #595959;
+}
+
+.copyright a {
+    color: #595959;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: #36659F;
+    border: 1px #36659F solid;
+}
+
+.pre_code {
+    background: #FAFAFA;
+    border: 1px #DEDEDE solid;
+    line-height: 5px;
+}
+
+.chars_left:focus {
+    border: 1px red solid !important;
+}
+
+.tooltip {
+    z-index: 50000 !important;
+}

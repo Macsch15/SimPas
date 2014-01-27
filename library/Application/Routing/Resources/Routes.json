@@ -1,0 +1,45 @@
+{"routes": {
+    "/": {
+        "controller": "Application\\Pastebin\\Controller",
+        "action": "index",
+        "static": true
+    },
+
+    "/paste/{id}": {
+        "controller": "Application\\Pastebin\\Controller",
+        "action": "read",
+        "requirements": {
+            "id": "\\d+"
+        }
+    },
+
+    "/raw/{id}": {
+        "controller": "Application\\Pastebin\\Controller",
+        "action": "rawMode",
+        "requirements": {
+            "id": "\\d+"
+        }
+    },
+
+    "/rules": {
+        "controller": "Application\\Pastebin\\Controller",
+        "action": "rules",
+        "static": true
+    },
+
+    "/download/{id}": {
+        "controller": "Application\\Pastebin\\Controller",
+        "action": "download",
+        "requirements": {
+            "id": "\\d+"
+        }
+    },
+
+    "/embed/{id}": {
+        "controller": "Application\\Pastebin\\Controller",
+        "action": "embed",
+        "requirements": {
+            "id": "\\d+"
+        }
+    }  
+}}

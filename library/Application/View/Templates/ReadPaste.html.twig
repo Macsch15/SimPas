@@ -1,0 +1,49 @@
+{% extends "BaseBlock.html.twig" %}
+
+    {% block document_title %}
+        {% spaceless %}
+            ({{ paste.syntax }}) {{ paste.title is not empty ? paste.title : paste.unique_id }}
+            {% if paste.author is not empty %}
+                {% trans %}by{% endtrans %} {{ paste.author }}
+            {% endif %}
+        {% endspaceless %}
+    {% endblock %}
+    
+    {% block document_content %}
+        {% if paste.title is not empty %}
+            {% set paste_title = paste.title %}
+        {% else %}
+            {% set paste_title = paste.unique_id %}
+        {% endif %}
+
+        {% set paste_h4 = paste_title|length > 30 ? "<span class=\"tooltip-top\" title=\"" ~ paste_title ~ "\">" ~ paste_title|slice(0, 25) ~ "...</span>" : paste_title %}
+
+        <h4 itemprop="name">{% trans %}Paste{% endtrans %} &quot;<a href="{{ config.full_url}}paste/{{ paste.unique_id }}">{{ paste_h4|raw }}</a>&quot; 
+            {% if paste.author is not empty %}
+                {% trans %}by{% endtrans %} {{ paste.author }}
+            {% endif %}&nbsp;
+            <a href="#" id="zclip" class="btn btn-primary btn-sm"><i class="fa fa-copy"></i> {% trans %}Copy to clipboard{% endtrans %}</a>
+            <a href="{{ config.full_url }}raw/{{ paste.unique_id }}" class="btn btn-primary btn-sm"><i class="fa fa-terminal"></i> {% trans %}Raw mode{% endtrans %}</a>
+            <a href="{{ config.full_url }}download/{{ paste.unique_id }}" class="btn btn-primary btn-sm"><i class="fa fa-download"></i> {% trans %}Download{% endtrans %}</a>
+            <a data-toggle="modal" href="#share" class="btn btn-primary btn-sm"><i class="fa fa-share"></i> {% trans %}Share{% endtrans %}</a>
+        </h4>
+
+        {% include "ShareModal.html.twig" %}
+            
+        {{ paste.content|raw }}
+            
+        {% if config.social_icons %}
+            <span class="st_email" displayText="E-mail"></span>
+            <span class="st_twitter" displayText="Tweet"></span>
+            <span class="st_facebook" displayText="Facebook"></span>
+            <span class="st_googleplus" displayText="Google+"></span>
+        {% endif %}
+
+        <div class="pull-right">
+            <small class="muted_font">{% trans %}Submitted{% endtrans %} {{ paste.time|date("d.m.Y") }}&nbsp;&nbsp;</small>
+            {% set paste_size = paste.size / 1024 %}
+            <span class="label label-default"><i class="fa fa-hdd-o"></i> {{ paste_size|round(0, 'ceil') }}KB</span>
+            <span class="label label-default"><i class="fa fa-list-ol"></i> {% trans %}Characters{% endtrans %}: {{ paste.length }}</span>
+            <span title="{% trans %}Syntax highlighting{% endtrans %}" class="tooltip-top label label-default"><i class="fa fa-puzzle-piece"></i> {{ paste.syntax }}</span>
+        </div>
+    {% endblock %}

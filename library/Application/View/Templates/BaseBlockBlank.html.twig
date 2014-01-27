@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ config.locale.0 }}">
+<head>
+    {% block document_header %}
+        <meta charset="{{ config.charset }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block document_title %}{% endblock %}{{ block('document_title') is not empty ? " - " : null }}{{ config.site_title }}</title>
+        <link href="{{ assets('css', 'simpas.css') }}" rel="stylesheet" />
+    {% endblock %}
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">
+    {% block document_content %}{% endblock %}
+</body>
+</html>
