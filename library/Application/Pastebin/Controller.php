@@ -276,14 +276,4 @@ class Controller extends View
 
         return false;
     }
-
-    /**
-    * Error conianer
-    *  
-    * @return array|bool
-    */
-    private function clientErrors()
-    {
-        return $this->error;
-    }
 }

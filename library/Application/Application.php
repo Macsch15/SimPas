@@ -3,6 +3,7 @@ namespace Application;
 
 use Application\Exception\ExceptionRuntime;
 use Application\Exception\ExceptionInvalidArgument;
+use Application\Exception\AssetNotFound;
 use Application\View\View;
 use Application\Translations\Translations;
 use Application\Routing\Routing;
@@ -41,14 +42,14 @@ class Application
      * 
      * @return string
      */
-    const VERSION = '0.4';
+    const VERSION = '0.1';
 
     /**
      * Application version long
      * 
      * @return string
      */
-    const VERSION_LONG = '0400';
+    const VERSION_LONG = '1000';
 
     /**
      * Application name
@@ -100,6 +101,8 @@ class Application
             (new View($this))->drawExceptionMessage($exception, 'Runtime');
         } catch(ExceptionInvalidArgument $exception) {
             (new View($this))->drawExceptionMessage($exception, 'InvalidArgument');
+        } catch(AssetNotFound $exception) {
+            (new View($this))->drawExceptionMessage($exception, 'AssetNotFound');
         } catch(\Exception $exception) {
             (new View($this))->drawExceptionMessage($exception);
         }

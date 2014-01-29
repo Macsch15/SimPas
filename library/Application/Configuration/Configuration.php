@@ -2,6 +2,7 @@
 namespace Application\Configuration;
 
 use Application\FileManager\FileManager;
+use Application\Exception\AssetNotFound;
 use Application\Exception\ExceptionRuntime;
 
 trait Configuration
@@ -21,7 +22,7 @@ trait Configuration
 
             // Wrong configuration file
             if(file_exists($_path) === false) {
-                throw new ExceptionRuntime(sprintf('Undefined configuration file "%s"', $entity));
+                throw new AssetNotFound(sprintf('Undefined configuration file "%s"', $entity));
             }
 
             // Decode JSON as object
@@ -34,6 +35,8 @@ trait Configuration
             
             return $json_decode;
         } catch(ExceptionRuntime $exception) {
+            die($exception->getMessage());
+        } catch(AssetNotFound $exception) {
             die($exception->getMessage());
         }
     }

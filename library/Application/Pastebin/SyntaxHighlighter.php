@@ -68,8 +68,8 @@ class SyntaxHighlighter
     /**
     * Validation
     * 
-    * @param type 
-    * @return void
+    * @param string $language 
+    * @return string
     */
     public function validateLanguage($language)
     {

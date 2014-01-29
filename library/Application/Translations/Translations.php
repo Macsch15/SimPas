@@ -3,6 +3,7 @@ namespace Application\Translations;
 
 use Application\Application;
 use Application\Configuration\Configuration;
+use Application\Exception\AssetNotFound;
 use Application\Exception\ExceptionRuntime;
 
 class Translations
@@ -14,6 +15,7 @@ class Translations
      * 
      * @param Application $application
      * @throws Application\Exception\ExceptionRuntime
+     * @throws Application\Exception\AssetNotFound
      * @return void
      */
     public function __construct()
@@ -39,7 +41,7 @@ class Translations
 
         // Translation not found
         if(file_exists($file . '.po') === false) {
-            throw new ExceptionRuntime(sprintf('Translation file: ++%s+-+ not found', $file . '.po'));
+            throw new AssetNotFound(sprintf('Translation file: ++%s+-+ not found', $file . '.po'));
         }
 
         // Modification time
