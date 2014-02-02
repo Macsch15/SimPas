@@ -97,6 +97,12 @@ class Controller extends View
             return $this->sendFriendlyClientError(_('Some field there are empty or contains prohibited characters (e.g only spaces).'));
         }
 
+        // Antyflood
+        if($this->config()->antyflood_enabled === true && $this->isFloodedClient()) {
+            return $this->sendFriendlyClientError(
+                sprintf(_('Anty-flood is enabled. Please wait at least %d seconds before attempting to send paste again.'), $this->config()->antyflood_delay_in_seconds));
+        }
+
         // Storage to database paste if doesn't exists
         if($this->pasteExists($request['id']) === false) {
             (new SendPaste($this->application))->send($this->toSendDataConainer($request));
@@ -136,6 +142,49 @@ class Controller extends View
             'paste_author' => HttpRequest::post('post_paste_author', true),
             'paste_start_from_line' => $this->startListCountingFromLine()
         ];
+    }
+
+    /**
+    * Anty-flood
+    *  
+    * @return bool
+    */
+    private function isFloodedClient()
+    {
+        // Search client IP from Database
+        $query = $this->data_source
+        ->get()
+        ->prepare('SELECT ip_address FROM ' . $this->config('Database')->prefix . 'pastes WHERE ip_address = :ip_address');
+
+        // Filter and execute
+        $query->bindValue(':ip_address', HttpRequest::getClientIpAddress());
+        $query->execute();
+
+        $rows = $query->fetchAll();
+
+        // Test
+        if(!is_array($rows) || !count($rows)) {
+            return false;
+        }
+
+        // Is flood?
+        $query = $this->data_source
+        ->get()
+        ->prepare('SELECT ip_address, time FROM ' . $this->config('Database')->prefix . 'pastes WHERE ip_address = :ip_address 
+            AND time >= :time');
+
+        $query->bindValue(':ip_address', HttpRequest::getClientIpAddress());
+        $query->bindValue(':time', time() - $this->config()->antyflood_delay_in_seconds);
+        $query->execute();
+
+        $rows = $query->fetchAll();
+
+        // Test
+        if(!is_array($rows) || !count($rows)) {
+            return false;
+        }
+
+        return true;
     }
 
     /**
@@ -218,7 +267,7 @@ class Controller extends View
     * @param string $string
     * @return int
     */
-    protected function stringToBytes($string)
+    private function stringToBytes($string)
     {
         $length = strlen($string);
         $pow = pow(10, 0);

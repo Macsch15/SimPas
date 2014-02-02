@@ -16,5 +16,7 @@
     "accented_characters": "ĘÓĄŚŁŻŹĆŃęóąśłżźćń",
     "default_timezone": "Europe/Warsaw",
     "charset": "UTF-8",
-    "gzip_compression": false
+    "gzip_compression": false,
+    "antyflood_enabled": true,
+    "antyflood_delay_in_seconds": 30
 }
