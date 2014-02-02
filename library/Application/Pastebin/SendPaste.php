@@ -85,11 +85,9 @@ class SendPaste
     * @param string $string 
     * @return string
     */
-    public function normalizeTitleAndAuthorField($string)
+    private function normalizeTitleAndAuthorField($string)
     {
-        $string_length = strlen($string);
-
-        if($string_length > 50) {
+        if(strlen($string) > 50) {
             $string = substr($string, 0, 50);
         }
 
