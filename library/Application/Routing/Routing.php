@@ -79,7 +79,6 @@ class Routing
             return false;
         }
 
-        // Loop
         foreach($this->routes_json['routes'] as $route_name => $route_data) {
             $this->_route[$route_name] = $route_data;
         }
@@ -97,7 +96,6 @@ class Routing
     */
     private function patternStart(Application $application)
     {
-        // Loop
         foreach($this->_route as $node => $data) {
             // Pattern static
             if(isset($data['static']) && $data['static'] === true) {
@@ -124,7 +122,6 @@ class Routing
             // Pattern match
             } else {
                 if(isset($data['requirements']) && $data['requirements'] > 0) {
-                    // Loop
                     foreach($data['requirements'] as $args => $regex) {
                         $node = str_replace('{' . $args . '}', '(?P<' . $args . '>' . $regex . ')', $node);
                     }

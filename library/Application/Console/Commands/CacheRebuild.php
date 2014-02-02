@@ -49,7 +49,6 @@ class CacheRebuild extends View
 
         // try-catch
         try {
-            // Loop
             foreach(new RecursiveIteratorIterator(
                 new RecursiveDirectoryIterator(Application::makePath('storage'), RecursiveDirectoryIterator::SKIP_DOTS), 
                 RecursiveIteratorIterator::SELF_FIRST, RecursiveIteratorIterator::CATCH_GET_CHILD) as $file

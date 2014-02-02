@@ -10,15 +10,10 @@
     "theme": "default",
     "max_chars": 50000,
     "max_size": 512,
-    "max_title_chars": 35,
-    "max_author_chars": 35,
     "translations": false,
     "locale": ["en", "en_EN"],
     "accented_characters": "ĘÓĄŚŁŻŹĆŃęóąśłżźćń",
     "default_timezone": "Europe/Warsaw",
     "charset": "UTF-8",
-    "gzip_compression": false,
-    "banned_ip(not implemented)": [],
-    "antyflood_delay(not implemented)": 900,
-    "social_icons": true
+    "gzip_compression": false
 }

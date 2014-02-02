@@ -71,12 +71,29 @@ class SendPaste
         $query->bindValue(':content', $container['paste_content']);
         $query->bindValue(':ip_address', $container['paste_client_ip']);
         $query->bindValue(':raw_content', $container['paste_raw_content']);
-        $query->bindValue(':title', $container['paste_title']);
-        $query->bindValue(':author', $container['paste_author']);
+        $query->bindValue(':title', $this->normalizeTitleAndAuthorField($container['paste_title']));
+        $query->bindValue(':author', $this->normalizeTitleAndAuthorField($container['paste_author']));
         $query->bindValue(':start_from_line', $container['paste_start_from_line'], constant('PDO::PARAM_INT'));
 
         // Execute
         $query->execute();
+    }
+
+    /**
+    * Normalize paste title and author
+    * 
+    * @param string $string 
+    * @return string
+    */
+    public function normalizeTitleAndAuthorField($string)
+    {
+        $string_length = strlen($string);
+
+        if($string_length > 50) {
+            $string = substr($string, 0, 50);
+        }
+
+        return $string;
     }
 
     /**

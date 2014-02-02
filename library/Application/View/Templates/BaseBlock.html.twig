@@ -19,7 +19,7 @@
             <ul class="nav navbar-nav">
                 <li><a class="tooltip-bottom" title="{% trans %}Go to home{% endtrans %}" href="{{ config.full_url }}"><i class="fa fa-home"></i></a></li>
                 <li><a class="tooltip-bottom" title="{% trans %}Rules{% endtrans %}" href="{{ config.full_url }}rules"><i class="fa fa-asterisk"></i></a></li>
-                <li><a class="tooltip-bottom" title="{% trans %}SimPas repository on GitHub{% endtrans %}" href="https://github.com/Macsch15/SimPas" rel="nofollow"><i class="fa fa-github"></i></a></li>
+                <li><a class="tooltip-bottom" title="{% trans %}SimPas issues{% endtrans %}" href="https://github.com/Macsch15/SimPas/issues" rel="nofollow"><i class="fa fa-github"></i></a></li>
                 {% block document_navbar %}{% endblock %}
             </ul>
         </div>
@@ -48,8 +48,9 @@
     <footer class="containter wrap copyright">
         {% if constant('Application\\Application::ENVIORMENT') == 'dev' %}
             <div class="pull-left">
-                <i class="fa fa-cogs"></i> SimPas utilised {{ app.getUtilisedMemory() }}KB memory for this request<br />
-                <div style="text-align: left"><i class="fa fa-fire"></i> GZIP Compression: {{ config.gzip_compression ? "On" : "Off" }}</div>
+                {% set utilisedMemory = app.getUtilisedMemory() %}
+                <i class="fa fa-cogs"></i> {% trans %}SimPas utilised {{ utilisedMemory }}KB memory for this request{% endtrans %}<br />
+                <div style="text-align: left"><i class="fa fa-fire"></i> {% trans %}GZIP Compression{% endtrans %}: {{ config.gzip_compression ? "On" : "Off" }}</div>
             </div>
         {% endif %}
 
@@ -63,9 +64,6 @@
         <script src="{{ assets('js', 'simpas.js') }}"></script>
         <script src="{{ assets('js', 'jquery.maxlength-min.js') }}"></script>
         <script src="{{ assets('js', 'jquery.zclip.min.js') }}"></script>
-        {% if config.social_icons %}
-        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-        {% endif %}
         <script>
             $(function() {
                 $('a#zclip').zclip({
@@ -89,9 +87,6 @@
                 });
             });
         </script>
-        {% if config.social_icons %}
-        <script type="text/javascript">stLight.options({publisher: "ur-860239a-833d-b5c-fca1-5bcd8c993cbb"});</script>
-        {% endif %}
     {% endblock %}
 </body>
 </html>

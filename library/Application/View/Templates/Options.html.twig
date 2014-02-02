@@ -4,11 +4,7 @@
     </label>
 </div>
 <hr />
-<label>
-    <div class="col-xs-2">
-        {% trans %}Start from line{% endtrans %} 
-        <div class="col-xs-2">
-            <input type="text" pattern="\d+" autocomplete="off" class="form-control col-md-5" name="post_start_from_line" placeholder="{% trans %}Enter number...{% endtrans %}">
-        </div>
-    </div>
-</label>
+<div class="form-group">
+    <label for="__startfromline">{% trans %}Start from line{% endtrans %}</label>
+    <input type="text" pattern="\d+" autocomplete="off" name="post_start_from_line" class="form-control" id="__startfromline" placeholder="{% trans %}Enter number...{% endtrans %}">
+</div>

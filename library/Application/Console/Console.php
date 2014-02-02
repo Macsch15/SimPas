@@ -34,7 +34,6 @@ class Console
         // Shift first value of array
         array_shift($cmd_argv);
 
-        // Loop
         foreach($cmd_argv as $arguments) {
             // Arguments validation
             if(in_array($arguments, $this->avaiableCommands(true)) === false) {

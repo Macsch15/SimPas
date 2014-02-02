@@ -99,9 +99,7 @@ class View extends Exception
     */
     public function getTemplatesList()
     {
-        // Loop
         foreach($this->loader->getPaths() as $_path) {
-            // Loop
             foreach(new DirectoryIterator($_path) as $template_name) {
                 // Ignore dots and non-template files
                 if($template_name->isDot() || substr($template_name->getFileName(), -5) !== '.twig') {
@@ -180,7 +178,6 @@ class View extends Exception
     */
     public function regenerateTemplateCache($debug = false)
     {
-        // Loop
         foreach($this->getTemplatesList() as $_template) {
             // Create cache
             $this->twig($_template);

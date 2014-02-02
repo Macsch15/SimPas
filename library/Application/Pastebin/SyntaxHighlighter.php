@@ -106,7 +106,6 @@ class SyntaxHighlighter
     */
     public function storageDataToCache($debug = false)
     {
-        // Loop
         foreach(new DirectoryIterator(Application::makePath('library:GeSHi:geshi')) as $file) {
             if($file->isDot() || substr($file->getFileName(), -4) !== '.php') {
                 continue;

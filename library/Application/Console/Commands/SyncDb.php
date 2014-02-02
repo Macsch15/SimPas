@@ -71,12 +71,10 @@ class SyncDb
     {
         $tables = $this->prepareSchema();
 
-        // Loop
         foreach($tables['tables'] as $table => $table_fields) {
             // Table
             $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS ' . $this->config('Database')->prefix . $table . '( ';
 
-            // Loop
             foreach($table_fields as $field_name => $field_value) {
                 // Ignore
                 if($field_name === '__options__') {
