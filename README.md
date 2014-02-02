@@ -5,6 +5,8 @@ SimPas
 
 Simple Pastebin Application based on PHP.
 
+Demo is here: http://www.pastebin.macsch15.pl
+
 Requirements
 ======
 * PHP 5.4
