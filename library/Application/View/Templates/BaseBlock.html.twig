@@ -34,11 +34,15 @@
             <div class="panel panel-danger">
                 <div class="panel-heading">
                     {% set error_count = app.engineErrors()|length %}
-                    <h3 class="panel-title"><i class="fa fa-exclamation-triangle fa-lg"></i> {% trans %}An errors encountered! ({{ error_count }}){% endtrans %}</h3>
+                    <h3 class="panel-title"><i class="fa fa-exclamation-triangle fa-lg"></i> <b>{% trans %}An errors encountered! ({{ error_count }}){% endtrans %}</b></h3>
                 </div>
-                {% for error_message in app.engineErrors() %}
+
+                <div class="panel-body">
+                    {% for error_message in app.engineErrors() %}
                         {{ loop.index }}. {{ error_message }}<br />
-                {% endfor %}
+                    {% endfor %}
+                </div>
+
             </div>
         {% endif %}
 
