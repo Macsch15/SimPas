@@ -68,6 +68,10 @@ ol div {
     border-bottom: 1px #DEDEDE solid;
 }
 
+.navbar-brand {
+    color: #616161;
+}
+
 .navbar-inner {
     box-shadow: none !important;
     border-bottom: 1px #D6D6D6 solid;
@@ -136,6 +140,10 @@ ol div {
 .copyright a {
     color: #595959;
     text-decoration: none;
+}
+
+.btn {
+    font-weight: bold;
 }
 
 .btn-primary {
