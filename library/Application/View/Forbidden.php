@@ -21,6 +21,6 @@ class Forbidden extends View
             'routes' => $routes
         ]);
 
-        die($this->{'ForbiddenResponse404'});
+        return $this->{'ForbiddenResponse404'};
     }
 }
