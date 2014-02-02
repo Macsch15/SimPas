@@ -6,6 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block document_title %}{% endblock %}{{ block('document_title') is not empty ? " - " : null }}{{ config.site_title }}</title>
         <link href="{{ assets('css', 'simpas.css') }}" rel="stylesheet" />
+        {% if config.shortcut_icon_url is not empty %}
+        <link rel="shortcut icon" href="{{ config.shortcut_icon_url }}" />
+        {% endif %}
     {% endblock %}
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -62,7 +65,7 @@
     </footer>
 
     {% block document_javascript %}
-        <script src="{{ assets('js', 'jquery-2.0.3.min.js') }}"></script>
+        <script src="{{ assets('js', 'jquery-2.1.0.min.js') }}"></script>
         <script src="{{ assets('js', 'bootstrap.min.js') }}"></script>
         <script src="{{ assets('js', 'chosen.jquery.min.js') }}"></script>
         <script src="{{ assets('js', 'simpas.js') }}"></script>
