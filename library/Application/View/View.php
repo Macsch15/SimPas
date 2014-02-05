@@ -163,8 +163,13 @@ class View extends Exception
     * @param string $message
     * @return void
     */
-    public function sendFriendlyClientError($message)
+    public function sendFriendlyClientError($message, $not_found_header = false)
     {
+        if($not_found_header === true) {
+            // Set headers
+            header('HTTP/1.1 404 Not Found', true, 404);
+        }
+
         return $this->twig('ClientError.html.twig')->display([
             'error_message' => $message
         ]);

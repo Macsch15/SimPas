@@ -30,6 +30,7 @@ class Exception
      */
     public function drawExceptionMessage($exception, $type = null, $_template = 'Exception')
     {
+        // Set headers
         header('HTTP/1.1 502 Bad Gateway', true, 502);
 
         $this->line = $exception->getLine();

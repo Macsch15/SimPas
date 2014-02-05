@@ -14,6 +14,7 @@ class Forbidden extends View
     */
     public function response404($requested_url, array $routes = [])
     {
+        // Set headers
         header('HTTP/1.1 404 Not Found', true, 404);
 
         $this->render([
