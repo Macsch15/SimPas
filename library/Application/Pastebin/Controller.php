@@ -84,7 +84,11 @@ class Controller extends View
     {
         // Validators
         if(HttpRequest::post('post_poked') === false && $this->pasteExists($request['id']) === false) {
-            return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'));
+            return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
+        }
+
+        if($this->clientIpIsBanned() && HttpRequest::post('post_poked') !== false) {
+            return $this->sendFriendlyClientError(_('You have no permissions to send paste.'));
         }
 
         if(HttpRequest::isEmptyField([
@@ -98,14 +102,15 @@ class Controller extends View
         }
 
         // Antyflood
-        if($this->config()->antyflood_enabled === true && $this->isFloodedClient()) {
+        if($this->isFloodedClient() === true) {
             return $this->sendFriendlyClientError(
-                sprintf(_('Anty-flood is enabled. Please wait at least %d seconds before attempting to send paste again.'), $this->config()->antyflood_delay_in_seconds));
+                sprintf(_('Anty-flood is enabled. Please wait at least %d seconds before attempting to send paste again.'), 
+                    $this->config()->antyflood_delay_in_seconds));
         }
 
         // Storage to database paste if doesn't exists
         if($this->pasteExists($request['id']) === false) {
-            (new SendPaste($this->application))->send($this->toSendDataConainer($request));
+            (new SendPaste($this->application))->send($this->toSendDataContainer($request));
         }
 
         // If we not have any client error, begin read paste from the database
@@ -120,12 +125,12 @@ class Controller extends View
     }
 
     /**
-    * Paste data to send conainer
+    * Paste data to send container
     *
     * @param array $request
     * @return array
     */
-    private function toSendDataConainer(array $request)
+    private function toSendDataContainer(array $request)
     {
         return [
             'paste_id' => $request['id'],
@@ -151,6 +156,10 @@ class Controller extends View
     */
     private function isFloodedClient()
     {
+        if($this->config()->antyflood_enabled === false || HttpRequest::post('post_poked') === false) {
+            return false;
+        }
+
         // Search client IP from Database
         $query = $this->data_source
         ->get()
@@ -173,6 +182,7 @@ class Controller extends View
         ->prepare('SELECT ip_address, time FROM ' . $this->config('Database')->prefix . 'pastes WHERE ip_address = :ip_address 
             AND time >= :time');
 
+        // Filter and execute
         $query->bindValue(':ip_address', HttpRequest::getClientIpAddress());
         $query->bindValue(':time', time() - $this->config()->antyflood_delay_in_seconds);
         $query->execute();
@@ -185,6 +195,31 @@ class Controller extends View
         }
 
         return true;
+    }
+
+    /**
+    * Banned IP's
+    *  
+    * @return bool
+    */
+    private function clientIpIsBanned()
+    {
+        // Enabled?
+        if(is_array($this->config()->banned_ip) === false || !count($this->config()->banned_ip)) {
+            return false;
+        }
+
+        foreach($this->config()->banned_ip as $banned_ip) {
+            // Wildcard
+            $banned_ip = str_replace(['*', '.'], ['(\d+)', '\.'], $banned_ip);
+
+            // Test
+            if(preg_match('/' . $banned_ip . '/', HttpRequest::getClientIpAddress())) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
