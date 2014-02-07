@@ -7,6 +7,7 @@
     "admin_email": "admin@email.com",
     "default_geshi_language": "Text",
     "site_offline": false,
+    "offline_allowed_ip": "127.0.0.1",
     "offline_message": "",
     "theme": "default",
     "max_chars": 50000,

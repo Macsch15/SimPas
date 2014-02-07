@@ -4,6 +4,7 @@ namespace Application\View;
 use Application\Application;
 use Application\Configuration\Configuration;
 use Application\View\Exception;
+use Application\HttpRequest\HttpRequest;
 use Twig_Autoloader;
 use Twig_Loader_Filesystem;
 use Twig_Environment;
@@ -133,7 +134,7 @@ class View extends Exception
     public function __get($template_name)
     {
         // Site is offline
-        if($this->config()->site_offline === true) {
+        if($this->clientHasNoPermissionsToDisplayPage() === true) {
             return $this->twig('SiteOffline.html.twig')->display([]);
         }
 
@@ -155,6 +156,22 @@ class View extends Exception
         }
 
         return $this->twig($template_name . '.html.twig')->display($this->_render);
+    }
+
+    /**
+    * Check whether client has perrmisions to display page
+    *  
+    * @return bool
+    */
+    private function clientHasNoPermissionsToDisplayPage()
+    {
+        if($this->config()->site_offline === true 
+            && $this->config()->offline_allow_ip !== HttpRequest::getClientIpAddress()
+        ) {
+            return true;
+        } 
+
+        return false;
     }
 
     /**
