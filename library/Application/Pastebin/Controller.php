@@ -82,15 +82,17 @@ class Controller extends View
     */
     public function readAction(array $request)
     {
-        // Validators
+        // Paste exists?
         if(HttpRequest::post('post_poked') === false && $this->pasteExists($request['id']) === false) {
             return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
         }
 
-        if($this->clientIpIsBanned() && HttpRequest::post('post_poked') !== false) {
+        // Banned IP
+        if($this->clientIpIsBanned() === true && HttpRequest::post('post_poked') !== false) {
             return $this->sendFriendlyClientError(_('You have no permissions to send paste.'));
         }
 
+        // Empty fields
         if(HttpRequest::isEmptyField([
             HttpRequest::post('post_paste_content'),
             HttpRequest::post('post_paste_title', true),
@@ -156,6 +158,7 @@ class Controller extends View
     */
     private function isFloodedClient()
     {
+        // Enabled?
         if($this->config()->antyflood_enabled === false || HttpRequest::post('post_poked') === false) {
             return false;
         }
@@ -230,7 +233,7 @@ class Controller extends View
     */
     public function rawModeAction(array $request)
     {
-        // Validators
+        // Paste exists?
         if(HttpRequest::post('post_poked') === false && $this->pasteExists($request['id']) === false) {
             return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'));
         }
@@ -257,7 +260,7 @@ class Controller extends View
     */
     public function embedAction(array $request)
     {
-        // Validators
+        /// Paste exists?
         if(HttpRequest::post('post_poked') === false && $this->pasteExists($request['id']) === false) {
             die(_('Requested paste doesn\'t exists.'));
         }
@@ -318,7 +321,7 @@ class Controller extends View
     */
     public function downloadAction(array $request)
     {
-        // Validators
+        // Paste exists?
         if(HttpRequest::post('post_poked') === false && $this->pasteExists($request['id']) === false) {
             return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'));
         }
