@@ -1,8 +1,6 @@
 SimPas
 ======
 
-> ####SimPas is not yet ready to work in production website.
-
 Simple Pastebin Application based on PHP.
 
 Demo is here: http://www.pastebin.macsch15.pl
