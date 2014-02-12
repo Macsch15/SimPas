@@ -30,28 +30,6 @@ class HttpRequest
     }
 
     /**
-    * Checkbox
-    * 
-    * @param string $field_name
-    * @param string $value
-    * @return bool
-    */
-    public static function checkboxChecked($field_name, $value = null)
-    {
-        if(isset($_POST[$field_name]) === false) {
-            return false;
-        }
-
-        if($_POST[$field_name] === 'on' || $_POST[$field_name] === '1' 
-            || ($value !== null && $_POST[$field_name] === $value)
-        ) {
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
     * Check whether given fields are not empty 
     * 
     * @param array $fields

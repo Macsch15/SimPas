@@ -52,9 +52,7 @@ class Driver
                 );
 
                 // Set attributes
-                $this->attributes([
-                    'ERRMODE' => (Application::ENVIORMENT === 'dev') ? 'ERRMODE_EXCEPTION' : 'ERRMODE_SILENT'
-                ]);
+                $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                 $this->is_connected = true;
             }
@@ -67,17 +65,6 @@ class Driver
     }
 
     /**
-     * Disconnect
-     *
-     * @return void
-     */
-    public function disconnect()
-    {
-        $this->pdo = null;
-        $this->is_connected = false;
-    }
-
-    /**
      * Is connected
      * 
      * @return boolean
@@ -85,67 +72,6 @@ class Driver
     public function isConnected()
     {
         return $this->is_connected;
-    }
-
-    /**
-     * Attributes
-     *
-     * @param array $data
-     * @param string $type
-     * @throws Application\Exception\ExceptionInvalidArgument
-     * @return array
-     */
-    public function attributes(array $data = [], $type = 'SET')
-    {
-        $list = [
-            'ATTR_AUTOCOMMIT', 'ATTR_CASE', 'ATTR_CLIENT_VERSION', 'ATTR_CONNECTION_STATUS', 'ATTR_DRIVER_NAME', 'ATTR_ERRMODE', 'ATTR_ORACLE_NULLS',
-            'ATTR_PERSISTENT', 'ATTR_PREFETCH', 'ATTR_SERVER_INFO', 'ATTR_SERVER_VERSION', 'ATTR_TIMEOUT', 'ATTR_EMULATE_PREPARES'
-        ];
-
-        // Attribute is not defined
-        if(!count($data)) {
-            throw new ExceptionInvalidArgument('No attributes detected');
-        }
-
-        switch(strtoupper($type)) {
-            case 'GET':
-                foreach($data as $value) {
-                    $value = strtoupper($value);
-
-                    // Add prefix
-                    if(substr($value, 0, 5) !== 'ATTR_') {
-                        $value = 'ATTR_' . $value;
-                    }
-
-                    // Attribute is not defined
-                    if(!in_array($value, $list)) {
-                        throw new ExceptionInvalidArgument('Undefined attribute. List of avaiable attribites: ' . implode(', ', $list));
-                    }       
-
-                    $result[$value] = $this->pdo->getAttribute(constant('PDO::' . $value));
-                }
-
-                return $result;
-            break;  
-            case 'SET':
-            default:
-                foreach($data as $name => $value) {
-                    $name = strtoupper($name);
-
-                    // Add prefix
-                    if(substr($name, 0, 5) !== 'ATTR_') {
-                        $name = 'ATTR_' . $name;
-                    }                    
-
-                    // Attribute is not defined
-                    if(in_array($name, $list) === false) {
-                        throw new ExceptionInvalidArgument('Undefined attribute. List of avaiable attribites: ' . implode(', ', $list));
-                    }
-                    
-                    $this->pdo->setAttribute(constant('PDO::' . $name), constant('PDO::' . $value));
-                }
-            break;
-        }
     }
 
     /**

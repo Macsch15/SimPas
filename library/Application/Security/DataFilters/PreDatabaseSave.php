@@ -19,9 +19,6 @@ class PreDatabaseSave
             $string = $this->normalizeString($string);
         }
 
-        // Remove evil characters
-        $string = str_replace(chr(0), '', $string);
-        
         return $string;
     }
 

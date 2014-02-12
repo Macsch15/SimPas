@@ -18,7 +18,7 @@ trait Configuration
         // try-catch
         try {
             // Build file path
-            $_path = __DIR__ . '/Resources/' . (string)$entity . '.json';
+            $_path = __DIR__ . '/Resources/' . $entity . '.json';
 
             // Wrong configuration file
             if(file_exists($_path) === false) {
