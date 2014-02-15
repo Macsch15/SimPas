@@ -23,8 +23,14 @@
                 {% set paste_author = paste.author|length > 15 ? "<span class=\"tooltip-top\" title=\"" ~ paste.author ~ "\">" ~ paste.author|slice(0, 15) ~ "...</span>" : paste.author %}
                 {% trans %}by{% endtrans %} {{ paste_author|raw }}
             {% endif %}&nbsp;
+            <div class="visible-xs">
+                <br />
+            </div>
             <a href="#" id="zclip" class="btn btn-primary btn-sm"><i class="fa fa-copy"></i> {% trans %}Copy to clipboard{% endtrans %}</a>
             <a href="{{ config.full_url }}raw/{{ paste.unique_id }}" class="btn btn-primary btn-sm"><i class="fa fa-terminal"></i> {% trans %}Raw mode{% endtrans %}</a>
+            <div class="visible-xs">
+                <br />
+            </div>
             <a href="{{ config.full_url }}download/{{ paste.unique_id }}" class="btn btn-primary btn-sm"><i class="fa fa-download"></i> {% trans %}Download{% endtrans %}</a>
             <a data-toggle="modal" href="#share" class="btn btn-primary btn-sm"><i class="fa fa-share"></i> {% trans %}Share{% endtrans %}</a>
         </h4>

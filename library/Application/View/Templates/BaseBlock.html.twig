@@ -18,22 +18,33 @@
     <div itemprop="breadcrumb" class="navbar navbar-static-top">
         <div class="container wrap">
             <span class="navbar-brand">{{ config.site_title }}</span>
-            <span class="navbar-brand muted_font">
+            <span class="navbar-brand hidden-xs muted_font">
                 {{ config.site_description|length > config.decription_limit ? config.site_description|slice(0, config.decription_limit) ~ '...' : config.site_description }}
             </span>
 
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav visible-xs" style="margin: 0">
+                <li class="dropdown">
+                    <a id="mobile_dropdown" data-toggle="dropdown" href="#"><i class="fa fa-bars"></i></a>
+
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="mobile_dropdown">
+                            <li><a href="{{ config.full_url }}"><i class="fa fa-home"></i> {% trans %}Go to home{% endtrans %}</a></li>
+                            <li><a href="{{ config.full_url }}rules"><i class="fa fa-asterisk"></i> {% trans %}Rules{% endtrans %}</a></li>
+                            <li><a href="https://github.com/Macsch15/SimPas/issues" rel="nofollow"><i class="fa fa-github"></i> {% trans %}SimPas issues{% endtrans %}</a></li>
+                        </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav hidden-xs">
                 <li><a class="tooltip-bottom" title="{% trans %}Go to home{% endtrans %}" href="{{ config.full_url }}"><i class="fa fa-home"></i></a></li>
                 <li><a class="tooltip-bottom" title="{% trans %}Rules{% endtrans %}" href="{{ config.full_url }}rules"><i class="fa fa-asterisk"></i></a></li>
                 <li><a class="tooltip-bottom" title="{% trans %}SimPas issues{% endtrans %}" href="https://github.com/Macsch15/SimPas/issues" rel="nofollow"><i class="fa fa-github"></i></a></li>
-                {% block document_navbar %}{% endblock %}
             </ul>
         </div>
     </div>
 
     <div class="container wrap wrap_content">
         <noscript>
-            <div class="alert alert-info"><i class="fa fa-exclamation-triangle fa-lg"></i> {% trans %}It is recommended to enable JavaScript. Without it, this page may don't work correctly.{% endtrans %}</div>
+            <div class="alert alert-info hidden-xs"><i class="fa fa-exclamation-triangle fa-lg"></i> {% trans %}It is recommended to enable JavaScript. Without it, this page may don't work correctly.{% endtrans %}</div>
         </noscript>
 
         {% if app.engineErrors()|length > 0 %}
@@ -55,7 +66,7 @@
         {% block document_content %}{% endblock %}
     </div>
     
-    <footer class="containter wrap copyright">
+    <footer class="containter wrap copyright hidden-xs hidden-sm">
         {% if constant('Application\\Application::ENVIORMENT') == 'dev' %}
             <div class="pull-left">
                 {% set utilisedMemory = app.getUtilisedMemory() %}

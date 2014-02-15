@@ -85,6 +85,7 @@ ol div {
     color: #fff;
     width: 35px;
     text-align: center;
+    float: left;
 }
 
 .active {
@@ -117,7 +118,7 @@ ol div {
 .main_button {
     background: #545454;
     color: #fff;
-    width: 366px;
+    width: 300px;
 }
 
 .main_button:hover {
