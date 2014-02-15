@@ -13,69 +13,39 @@
             500 Internal Server Error - {{ config.site_title }}
         {% endif %}
     </title>
-    {% if constant('Application\\Application::ENVIORMENT') == 'prod' %}  
-        <link href="{{ assets('css', 'bootstrap.min.css') }}" rel="stylesheet" />
-        <link href="{{ assets('css', 'simpas.css') }}" rel="stylesheet" />
-    {% endif %}
-    <link href="{{ assets('css', 'foundation.min.css') }}" rel="stylesheet" />
-    <style>
-        body {
-            background: #F2F2F2;
-        }
-
-        .panel {
-            background: #fff;
-            margin-top: 15px;
-        }
-
-        .label {
-            font-size: 12px;
-        }
-
-        .application a {
-            float: right !important;
-            color: #A8A8A8;
-            font-size: 11px;
-            margin-bottom: 15px;
-            text-decoration: none;
-        }
-
-        .application a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link href="{{ assets('css', 'bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ assets('css', 'simpas.css') }}" rel="stylesheet" />
 </head>
 <body>
-    <div class="row">
-        <div class="panel" style="border-radius: 0; box-shadow: none">
+    <div class="container wrap">
         {% if constant('Application\\Application::ENVIORMENT') == 'dev' %}
             <h3 style="color: #808080">Exception detected! :C</h3>
-            <div style="margin-left: 20px">
-                <h5>
+            <div style="margin-left: 20px;">
+                <h4>
                     {{ message|raw }}
-                    <div style="text-align: right">
-                        <small>500 Internal Server Error &mdash; Exception {{ type }}</small>
+                    <div style="text-align: right; font-size: 10px;">
+                        500 Internal Server Error &mdash; Exception {{ type }}
                     </div>
-                </h5>
+                </h4>
             </div>
             <hr />
 
-            <h5>File</h5>
+            <h4 class="muted_font">In file</h4>
                 <div style="margin-left: 20px">
                     <h3>
                         <small>
-                             {{ data.2 }} at line {{ data.0 }}
+                             <em>{{ data.2 }}</em> at line <em>{{ data.0 }}</em>
                         </small>
                     </h3>
                 </div>
                 <div class="alert-box secondary" style="border-radius:3px; background: #FAFAFA; padding: 0; font-size: 12px">
-                    <pre style="font-family:Consolas; overflow: auto">{% for line, content in lines %}{% if line == data.1 %}<span class="alert label">{{ line+1 }}</span>{% else %}<span class="secondary label">{{ line+1 }}</span>{% endif %}{% if line == data.1 %}<span class="alert label" style="white-space: pre; background: #D63E41;">{{ content }}</span><br />{% else %}{{ content }}{% endif %}{% endfor %}</pre>
+                    <pre class="pre_code" style="font-family: Consolas; overflow: auto; line-height: 21px">{% for line, content in lines %}{% if line == data.1 %}<span style="font-size: 11px;" class="label label-danger">{{ line+1 }}</span>{% else %}<span style="font-size: 11px;" class="label label-default">{{ line+1 }}</span>{% endif %}{% if line == data.1 %}<span style="margin-left: -3px; white-space: pre !important; font-size: 11px;" class="label label-danger">{{ content }}</span>{% else %}{{ content }}{% endif %}{% endfor %}</pre>
                 </div>
 
             <br />
 
-            <h5>Stack Trace</h5>
-            <code>
+            <h4 class="muted_font">Stack Trace</h4>
+            <code style="background: none;">
                 {% for key, value in stacktrace %}
                         <div style="margin-left: 20px">
                             <span style="font-size: 41px; float:left; color: #808080; margin-right: 15px">{{ loop.index }}</span>
@@ -90,25 +60,25 @@
         {% else %}
             <h3 style="color: #808080">500 Internal Server Error</h3>
             {% if stacktrace.0.class is defined and stacktrace.0.function is defined %}
-                <h6>Exception in <code>{{ stacktrace.0.class }}::{{ stacktrace.0.function }}()</code></h6>
+                <div style="margin-left: 20px">
+                    <h4>Exception in <code>{{ stacktrace.0.class }}::{{ stacktrace.0.function }}()</code></h4>
+                </div>
             {% endif %}
 
+            <hr />
+
             {% if config.admin_email is not empty %}
-                <br />
 
                 {% set admin_email = config.admin_email %}
                 <em>{% trans %}Please contact the administrator {{ admin_email }} and report it about this error.{% endtrans %}</em>
 
-                <br />
+                <br /><br />
             {% endif %}
-
-            <br />
 
             <em>{% trans %}More information about this exception are available in the error log.{% endtrans %}</em>
         {% endif %}
-        </div>
 
-        <footer class="application">
+        <footer class="containter wrap copyright">
             <a href="http://www.macsch15.pl">Powered by SimPas Application by Macsch15</a>
         </footer>
     </div>

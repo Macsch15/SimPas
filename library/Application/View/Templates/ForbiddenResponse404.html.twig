@@ -9,55 +9,24 @@
             404 Page not found - {{ config.site_title }}
         {% endif %}
     </title>
-    {% if constant('Application\\Application::ENVIORMENT') == 'prod' or not routes|length  %}  
-        <link href="{{ assets('css', 'bootstrap.min.css') }}" rel="stylesheet" />
-        <link href="{{ assets('css', 'simpas.css') }}" rel="stylesheet" />
-    {% endif %}
-    
-    <link href="{{ assets('css', 'foundation.min.css') }}" rel="stylesheet" />
-    <style>
-        body {
-            background: #F2F2F2;
-        }
-
-        .panel {
-            background: #fff;
-            margin-top: 15px;
-        }
-
-        .label {
-            font-size: 12px;
-        }
-
-        .application a {
-            float: right !important;
-            color: #A8A8A8;
-            font-size: 11px;
-            margin-bottom: 15px;
-            text-decoration: none;
-        }
-
-        .application a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link href="{{ assets('css', 'bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ assets('css', 'simpas.css') }}" rel="stylesheet" />
 </head>
 <body>
-    <div class="row">
-        <div class="panel" style="border-radius: 0; box-shadow: none">
+    <div class="container wrap">
         {% if constant('Application\\Application::ENVIORMENT') == 'dev' and routes|length %}
             <h3 style="color: #808080">Route not found</h3>
             <div style="margin-left: 20px">
                 <h5>
                     Route for <code>{{ requested_url }}</code> not found
-                    <div style="text-align: right">
-                        <small>404 Page not found</small>
+                    <div style="text-align: right; font-size: 10px;">
+                        404 Page not found
                     </div>
                 </h5>
             </div>
             <hr />
-            <h5>List of routes</h5>
-            <code>
+            <h4>List of routes</h4>
+            <code style="background: none;">
                 {% for route in routes %}
                     <div style="margin-left: 20px">
                         <span style="font-size: 41px; float:left; color: #808080; margin-right: 15px">{{ loop.index }}</span> 
@@ -70,12 +39,16 @@
             </code>
         {% else %}
             <h3 style="color: #808080">{% trans %}404 Page not found{% endtrans %}</h3>
-            <h6>{% trans %}SimPas couldn't locate the page you're requesting to view{% endtrans %}</h6><br />
+            <div style="margin-left: 20px;">
+                <h4>{% trans %}SimPas couldn't locate the page you're requesting to view{% endtrans %}</h4>
+            </div>
+
+            <hr />
+
             <a href="{{ config.full_url }}" class="btn btn-primary"><i class="fa fa-home"></i> {% trans %}Return to index page{% endtrans %}</a>
         {% endif %}
-        </div>
 
-        <footer class="application">
+        <footer class="containter wrap copyright">
             <a href="http://www.macsch15.pl">Powered by SimPas Application by Macsch15</a>
         </footer>
     </div>
