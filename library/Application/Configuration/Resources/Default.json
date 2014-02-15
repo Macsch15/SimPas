@@ -2,6 +2,7 @@
     "full_url": "http://localhost/____SIMPAS/",
     "site_title": "SimPas Application",
     "site_description": "Pastebin",
+    "site_description_crawlers": "SimPas Application",
     "shortcut_icon_url": "",
     "decription_limit": 35,
     "admin_email": "admin@email.com",

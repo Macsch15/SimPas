@@ -4,6 +4,9 @@
     {% block document_header %}
         <meta charset="{{ config.charset }}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% if config.site_description_crawlers is not empty %}
+        <meta name="description" content="{{ config.site_description_crawlers }}" />
+        {% endif %}
         <title>{% block document_title %}{% endblock %}{{ block('document_title') is not empty ? " - " : null }}{{ config.site_title }}</title>
         <link href="{{ assets('css', 'simpas.css') }}" rel="stylesheet" />
         {% if config.shortcut_icon_url is not empty %}
