@@ -8,6 +8,7 @@ use Application\Pastebin\SyntaxHighlighter;
 use Application\Pastebin\SendPaste;
 use Application\Pastebin\ReadPaste;
 use Application\HttpRequest\HttpRequest;
+use Application\Pastebin\ShortenUrlApi\ShortenUrlApi;
 
 class Controller extends View
 {
@@ -120,7 +121,8 @@ class Controller extends View
         
         // Template render
         $this->render([
-            'paste' => $this->paste_data
+            'paste' => $this->paste_data,
+            'shorten_url' => new ShortenUrlApi()
         ]);
 
         return $this->{'ReadPaste'};

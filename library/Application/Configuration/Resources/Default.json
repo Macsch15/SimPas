@@ -21,7 +21,8 @@
     "gzip_compression": false,
     "antyflood_enabled": true,
     "antyflood_delay_in_seconds": 30,
-    "banned_ip": ["8.8.8.8", "127.0.*.*"],
-    "google_analytics_ua_code": "UA-15168424-21",
-    "google_analytics_domain": "adminzone.pl"
+    "banned_ip": ["8.8.8.8"],
+    "google_analytics_ua_code": "",
+    "google_analytics_domain": "",
+    "short_url": true
 }
