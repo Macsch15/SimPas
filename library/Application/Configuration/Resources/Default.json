@@ -5,7 +5,7 @@
     "site_description_crawlers": "SimPas Application",
     "shortcut_icon_url": "",
     "decription_limit": 35,
-    "admin_email": "admin@email.com",
+    "admin_email": "admin@example.com",
     "default_geshi_language": "Text",
     "site_offline": false,
     "offline_allowed_ip": "127.0.0.1",
@@ -21,7 +21,7 @@
     "gzip_compression": false,
     "antyflood_enabled": true,
     "antyflood_delay_in_seconds": 30,
-    "banned_ip": ["8.8.8.8"],
+    "banned_ip": ["8.8.8.8", "8.8.8.*"],
     "google_analytics_ua_code": "",
     "google_analytics_domain": "",
     "short_url": true
