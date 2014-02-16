@@ -31,6 +31,11 @@
                         <span class="input-group-addon tooltip-top" title="{% trans %}Iframe embed{% endtrans %}" style="min-width: 48px; max-width: 90px"><i class="fa fa-code-fork"></i></span>
                         <input onclick="this.select();" class="form-control input-lg" type="text" 
                             value='<iframe src="{{ config.full_url }}embed/{{ paste.unique_id }}" style="overflow: auto" width="745" height="445" frameborder="0"></iframe>' />
+                    </div><br />
+                    <div class="input-group" style="width: 100%">
+                        <span class="input-group-addon tooltip-top" title="{% trans %}JSON API{% endtrans %}" style="min-width: 48px; max-width: 90px"><i class="fa fa-random"></i></span>
+                        <input onclick="this.select();" class="form-control input-lg" type="text" 
+                            value='{{ config.full_url }}api/{{ paste.unique_id }}' />
                     </div>
                 </div>
 

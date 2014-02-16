@@ -277,6 +277,54 @@ class Controller extends View
     }
 
     /**
+    * JSON API
+    * 
+    * @param array $request
+    * @return void
+    */
+    public function jsonApiAction(array $request)
+    {
+        /// Paste exists?
+        if(HttpRequest::post('post_poked') === false && $this->pasteExists($request['id']) === false) {
+            $json_response['error'] = 'Requested paste doesn\'t exists.';
+        }
+
+        // Set headers
+        header('Content-type: text/plain');
+
+        // If we not have any client error, begin read paste from the database
+        $this->paste_data = (new ReadPaste($this->application))->read($request['id']);
+
+        // Storage data to array
+        if(isset($json_response['error']) === false) {
+            $json_response = [
+                'paste_id' => $this->paste_data['unique_id'],
+                'submitted' => $this->paste_data['time'],
+                'size' => $this->paste_data['size'],
+                'length' => $this->paste_data['length'],
+                'syntax' => $this->paste_data['syntax'],
+                'parsed_code' => $this->paste_data['content'],
+                'not_parsed_code' => $this->paste_data['raw_content']
+            ];
+
+            if($this->paste_data['title'] != null) {
+                $json_response['title'] = $this->paste_data['title'];
+            }
+
+            if($this->paste_data['author'] != null) {
+                $json_response['author'] = $this->paste_data['author'];
+            }
+        }
+
+        // Template render
+        $this->render([
+            'json' => json_encode($json_response), // JSON encode
+        ]);
+
+        return $this->{'JsonApi'};
+    }
+
+    /**
     * Start from line
     * 
     * @return int

@@ -41,5 +41,13 @@
         "requirements": {
             "id": "\\d+"
         }
-    }  
+    },
+
+    "/api/{id}": {
+        "controller": "Application\\Pastebin\\Controller",
+        "action": "jsonApi",
+        "requirements": {
+            "id": "\\d+"
+        }
+    }
 }}
