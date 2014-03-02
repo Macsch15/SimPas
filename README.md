@@ -27,5 +27,5 @@ After you set configuration, type in command line
 
 
 ```
-php cmd/console SyncDb
+$ php cmd/console SyncDb
 ```
