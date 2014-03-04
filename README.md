@@ -7,7 +7,8 @@ Demo is here: http://www.pastebin.macsch15.pl
 
 Requirements
 ======
-* PHP 5.4
+* PHP 5.4 and above
+* MySQL 5.1 and above
 * Shell access on server
 
 
