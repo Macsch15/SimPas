@@ -1,7 +1,6 @@
 {
-    "full_url": "http://localhost/____SIMPAS/",
+    "full_url": "http://localhost/SimPas/develop/",
     "site_title": "SimPas Application",
-    "site_description": "Pastebin",
     "site_description_crawlers": "SimPas Application",
     "shortcut_icon_url": "",
     "decription_limit": 35,
