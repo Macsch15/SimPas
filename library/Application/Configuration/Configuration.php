@@ -10,15 +10,15 @@ trait Configuration
     /**
      * Load Configuration File
      * 
-     * @param string $entity 
-     * @return stdClass object
+     * @param string $entity
+     * @return object|array
      */
-    public function config($entity = 'Default')
+    public function config($entity = 'Default', $as_array = false)
     {
         // try-catch
         try {
             // Build file path
-            $_path = __DIR__ . '/Resources/' . $entity . '.json';
+            $_path = __DIR__ . DIRECTORY_SEPARATOR . 'Resources' . DIRECTORY_SEPARATOR . $entity . '.json';
 
             // Wrong configuration file
             if(file_exists($_path) === false) {
@@ -26,7 +26,7 @@ trait Configuration
             }
 
             // Decode JSON as object
-            $json_decode = json_decode((new FileManager)->getContentsFromFile($_path));
+            $json_decode = json_decode((new FileManager)->getContentsFromFile($_path), ($as_array === true ?: false));
 
             // Decode error
             if($json_decode == null) {
