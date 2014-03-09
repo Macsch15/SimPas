@@ -12,7 +12,7 @@
             <br /><br />
 
             <h4 class="muted_font hidden-xs pull-left"><i class="fa fa-code"></i> {% trans %}Paste text or code in the field below{% endtrans %}</h4>
-            <button type="button" id="options" data-toggle="popover" data-placement="left" style="margin-left: 6px; margin-bottom: 3px" title="{% trans %}Pastebin options{% endtrans %}" class="tooltip-top muted_font btn pull-right"><i class="fa fa-plus"></i></button>
+            <button type="button" id="options" data-toggle="popover" data-placement="left" style="margin-left: 6px; margin-bottom: 3px" title="{% trans %}Pastebin options{% endtrans %}" class="muted_font btn pull-right"><i class="fa fa-plus"></i></button>
 
             <div id="form_data" class="hide"></div>
             <div id="popover_content" class="hide">
@@ -21,7 +21,9 @@
 
             {% set max_chars = config.max_chars %}
             {% set max_size = config.max_size %}
-            <span class="pull-right label label-default"><i class="fa fa-info-circle"></i> {% trans %}Maximum: {{ max_chars }} chars / {{ max_size }}KB{% endtrans %}</span>
+            <div style="margin: 2px 0 2px 0">
+                <span class="pull-right label label-default"><i class="fa fa-info-circle"></i> {% trans %}Maximum: {{ max_chars }} chars / {{ max_size }}KB{% endtrans %}</span>
+            </div>
         
             <textarea id="_chars_left" style="height: 350px;" required="required" name="post_paste_content" class="form-control" placeholder="{% trans %}Paste content (required){% endtrans %}..."></textarea>
             <br />

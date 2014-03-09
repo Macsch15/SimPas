@@ -78,13 +78,11 @@ ol div {
 }
 
 .navbar .nav > li > a {
-    padding: 5px 10px 5px 10px;
+    padding: 6px 10px 6px 10px;
     margin: 10px 4px 10px 4px;
     background: #36659F;
     border-radius: 3px;
     color: #fff;
-    width: 35px;
-    text-align: center;
     float: left;
 }
 
