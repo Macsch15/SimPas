@@ -58,27 +58,6 @@ $ php cmd/console CheckUpdates
 $ php cmd/console CacheRebuild
 ```
 
-Settings
-======
-
-| Setting key  | Decription | Default value |
-| ------------- | ------------- | ------ |
-| full_url  | URL of the site with a trailing slash  | - |
-| site_title  | Main title  | SimPas Application |
-| site_description_crawlers  | Description for search engines (e.g Google) | SimPas Application |
-| shortcut_icon_url  | Favicon. URL or path  | - |
-| admin_email  | Administrator email (used on error pages)  | admin@example.com |
-| full_url  | URL of the site with a trailing slash  | - |
-| full_url  | URL of the site with a trailing slash  | - |
-| full_url  | URL of the site with a trailing slash  | - |
-| full_url  | URL of the site with a trailing slash  | - |
-| full_url  | URL of the site with a trailing slash  | - |
-| full_url  | URL of the site with a trailing slash  | - |
-| full_url  | URL of the site with a trailing slash  | - |
-| full_url  | URL of the site with a trailing slash  | - |
-| full_url  | URL of the site with a trailing slash  | - |
-| full_url  | URL of the site with a trailing slash  | - |
-
 
 Author
 ======
