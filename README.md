@@ -30,3 +30,33 @@ After you set configuration, type in command line
 ```
 $ php cmd/console SyncDb
 ```
+
+Command line interface
+======
+
+**Create Database schema**
+
+```
+$ php cmd/console SyncDb
+```
+
+**Clear Database**
+
+```
+$ php cmd/console ClearDb
+```
+
+**Check updates**
+
+```
+$ php cmd/console CheckUpdates
+```
+
+**Rebuild cache**
+
+```
+$ php cmd/console CacheRebuild
+```
+
+
+
