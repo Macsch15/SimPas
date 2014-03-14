@@ -3,7 +3,6 @@
     "site_title": "SimPas Application",
     "site_description_crawlers": "SimPas Application",
     "shortcut_icon_url": "",
-    "decription_limit": 35,
     "admin_email": "admin@example.com",
     "default_geshi_language": "Text",
     "site_offline": false,
