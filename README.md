@@ -46,12 +46,6 @@ $ php cmd/console SyncDb
 $ php cmd/console ClearDb
 ```
 
-**Check updates**
-
-```
-$ php cmd/console CheckUpdates
-```
-
 **Rebuild cache**
 
 ```
