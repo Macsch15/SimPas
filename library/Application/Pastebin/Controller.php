@@ -93,6 +93,11 @@ class Controller extends View
             return $this->sendFriendlyClientError(_('You have no permissions to send paste.'));
         }
 
+        // Size and length
+        if($this->sizeAndLengthValidator(HttpRequest::post('post_paste_content')) === false) {
+            return $this->sendFriendlyClientError(_('Size or length in this paste is more than allowed.'));
+        }
+
         // Empty fields
         if(HttpRequest::isEmptyField([
             HttpRequest::post('post_paste_content'),
@@ -350,7 +355,7 @@ class Controller extends View
     }
 
     /**
-    * Convert string to bytes (or KB)
+    * Convert string to bytes
     *
     * @param string $string
     * @return int
@@ -361,6 +366,25 @@ class Controller extends View
         $pow = pow(10, 0);
 
         return round($length / (pow(1024, 0) / $pow)) / $pow;
+    }
+
+    /**
+    * Size and length of paste validator
+    * 
+    * @param string $content
+    * @return bool
+    */
+    private function sizeAndLengthValidator($content)
+    {
+        if(strlen($content) > $this->config()->max_chars) {
+            return false;
+        }
+
+        if(ceil($this->stringToBytes($content) / 1024) > $this->config()->max_size_in_kb) {
+            return false;
+        }
+
+        return true;
     }
 
     /**

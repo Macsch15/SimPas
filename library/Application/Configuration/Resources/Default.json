@@ -11,7 +11,7 @@
     "offline_message_allow_html": false,
     "theme": "default",
     "max_chars": 50000,
-    "max_size": 512,
+    "max_size_in_kb": 512,
     "translations": false,
     "locale": ["en", "en_EN"],
     "accented_characters": "ĘÓĄŚŁŻŹĆŃęóąśłżźćń",
