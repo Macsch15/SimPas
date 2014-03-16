@@ -47,6 +47,10 @@ ol div {
     background: #E8E8E8;
 }
 
+.list-inline > li {
+    padding: 0;
+}
+
 .header_items {
     border-radius: 0;
     box-shadow: none;
@@ -63,13 +67,19 @@ ol div {
     padding: 10px;
 }
 
+.paste_title {
+    font-size: 18px;
+    float: left;
+    margin-right: 9px;
+}
+
 .navbar {
     background: #fff;
     border-bottom: 1px #DEDEDE solid;
 }
 
 .navbar-brand {
-    color: #616161;
+    color: #325675;
 }
 
 .navbar-inner {
@@ -80,14 +90,15 @@ ol div {
 .navbar .nav > li > a {
     padding: 6px 10px 6px 10px;
     margin: 10px 4px 10px 4px;
-    background: #36659F;
+    background: #6B8296;
     border-radius: 3px;
-    color: #fff;
+    color: #fff !important;
     float: left;
+    font-weight: bold;
 }
 
-.active {
-    background: #2C5382 !important;
+.navbar .nav > li > a:focus {
+    background: #545454;
 }
 
 .navbar .nav > li > a:hover {
@@ -124,6 +135,14 @@ ol div {
     color: #fff;
 }
 
+.button_private {
+    background: #AB824F;
+}
+
+.button_private:hover {
+    background: #C29359;
+}
+
 .main_button:focus, .main_button:visited {
     color: #fff;
 }
@@ -146,8 +165,12 @@ ol div {
 }
 
 .btn-primary {
-    background-color: #36659F;
-    border: 1px #36659F solid;
+    background-color: #6B8296;
+    border: none;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background: #545454;
 }
 
 .pre_code {
