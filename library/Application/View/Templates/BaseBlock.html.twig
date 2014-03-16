@@ -15,24 +15,24 @@
     {% endblock %}
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
-    <div itemprop="breadcrumb" class="navbar navbar-static-top">
-        <div class="container wrap">
-            <span class="navbar-brand">{{ config.site_title }}</span>
+    <div class="navbar-wrapper">
+        <div class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container wrap">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="fa fa-bars fa-lg"></i>
+                    </button>
 
-            <ul class="nav navbar-nav visible-xs" style="margin: 0">
-                <li class="dropdown">
-                    <a id="mobile_dropdown" data-toggle="dropdown" href="#"><i class="fa fa-bars"></i></a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="mobile_dropdown">
-                        <li><a href="{{ config.full_url }}"><i class="fa fa-home"></i> {% trans %}Go to home{% endtrans %}</a></li>
-                        <li><a href="{{ config.full_url }}rules"><i class="fa fa-gavel"></i> {% trans %}Rules{% endtrans %}</a></li>
+                    <div class="navbar-brand">{{ config.site_title }}</div>
+                </div>
+
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="{{ config.full_url }}"><i class="fa fa-home fa-lg"></i> {% trans %}Page Index{% endtrans %}</a></li>
+                        <li><a href="{{ config.full_url }}rules"><i class="fa fa-gavel fa-lg"></i> {% trans %}Rules{% endtrans %}</a></li>
                     </ul>
-                </li>
-            </ul>
-
-            <ul class="nav navbar-nav hidden-xs">
-                <li><a class="tooltip-bottom" title="{% trans %}Go to home{% endtrans %}" href="{{ config.full_url }}"><i class="fa fa-home fa-lg"></i></a></li>
-                <li><a class="tooltip-bottom" title="{% trans %}Rules{% endtrans %}" href="{{ config.full_url }}rules"><i class="fa fa-gavel fa-lg"></i></a></li>
-            </ul>
+                </div>
+            </div>
         </div>
     </div>
 
