@@ -27,6 +27,10 @@ input[type="color"]:focus,
     border: 1px solid #C9C9C9 !important;
 }
 
+.hover {
+    background: #545454 !important;
+}
+
 ol, ol a {
     color: #9C9C9C;
     text-decoration: none;
