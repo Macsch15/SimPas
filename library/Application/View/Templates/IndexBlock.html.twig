@@ -41,7 +41,8 @@
 
             <div class="hidden-xs pull-right">
                 <h4 class="muted_font"><i class="fa fa-save"></i> {% trans %}Send this paste{% endtrans %}</h4>
-                <button data-loading-text="{% trans %}Sending...{% endtrans %}" id="loading_button" type="submit" class="btn main_button">{% trans %}Paste it!{% endtrans %}</button>
+                <button name="post_send_is_private" value="1" data-loading-text="{% trans %}Sending...{% endtrans %}" id="loading_button" type="submit" class="btn main_button button_private">{% trans %}Send private paste{% endtrans %}</button>
+                <button name="post_send_is_private" value="0" data-loading-text="{% trans %}Sending...{% endtrans %}" id="loading_button" type="submit" class="btn main_button">{% trans %}Send public paste{% endtrans %}</button>
             </div>
 
             <div class="visible-xs pull-left">
