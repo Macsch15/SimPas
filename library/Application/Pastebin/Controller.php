@@ -66,26 +66,6 @@ class Controller extends View
     }
 
     /**
-    * Rules page
-    * 
-    * @return void
-    */
-    public function rulesAction()
-    {
-        return $this->{'Rules'};
-    }
-
-    /**
-    * Cookies Policy
-    * 
-    * @return void
-    */
-    public function cookiesAction()
-    {
-        return $this->{'CookiesPolicy'};
-    }
-
-    /**
     * Read
     * 
     * @param array $request

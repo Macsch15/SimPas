@@ -22,14 +22,12 @@
     },
 
     "/rules": {
-        "controller": "Application\\Pastebin\\Controller",
-        "action": "rules",
+        "template": "Rules",
         "static": true
     },
 
     "/cookies": {
-        "controller": "Application\\Pastebin\\Controller",
-        "action": "cookies",
+        "template": "CookiesPolicy",
         "static": true
     },
 

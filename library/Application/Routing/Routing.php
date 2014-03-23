@@ -6,8 +6,9 @@ use Application\FileManager\FileManager;
 use Application\Exception\AssetNotFound;
 use Application\Exception\ExceptionRuntime;
 use Application\View\Forbidden;
+use Application\View\View;
 
-class Routing
+class Routing extends View
 {
     /**
     * Routes
@@ -53,6 +54,8 @@ class Routing
     */
     public function __construct(Application $application)
     {
+        parent::__construct($application);
+
         // Load JSON file
         $this->routes_source = (new FileManager)->getContentsFromFile(Application::makePath('library:Application:Routing:Resources:Routes.json'));
 
@@ -100,6 +103,11 @@ class Routing
             // Pattern static
             if(isset($data['static']) && $data['static'] === true) {
                 if($node === $this->_request || $node . '/' === $this->_request) {
+                    // Controller is not needed. Start parse template
+                    if(isset($data['template'])) {
+                        return $this->{$data['template']};
+                    }
+
                     // Controller is not defined
                     if(isset($data['controller']) === false || empty($data['controller']) ||
                         isset($data['action']) === false || empty($data['action'])
