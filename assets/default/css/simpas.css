@@ -32,6 +32,10 @@ input[type="color"]:focus,
     transition: all 0.15s ease-in;
 }
 
+.link_underline a {
+    text-decoration: underline !important;
+}
+
 ol, ol a {
     color: #9C9C9C;
     text-decoration: none;

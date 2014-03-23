@@ -27,6 +27,12 @@
         "static": true
     },
 
+    "/cookies": {
+        "controller": "Application\\Pastebin\\Controller",
+        "action": "cookies",
+        "static": true
+    },
+
     "/download/{id}": {
         "controller": "Application\\Pastebin\\Controller",
         "action": "download",

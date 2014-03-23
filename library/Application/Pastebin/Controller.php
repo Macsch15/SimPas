@@ -76,6 +76,16 @@ class Controller extends View
     }
 
     /**
+    * Cookies Policy
+    * 
+    * @return void
+    */
+    public function cookiesAction()
+    {
+        return $this->{'CookiesPolicy'};
+    }
+
+    /**
     * Read
     * 
     * @param array $request
