@@ -25,10 +25,10 @@ class Exception
      * 
      * @param object $exception
      * @param string $type
-     * @param string $_template
+     * @param string $template
      * @return void
      */
-    public function drawExceptionMessage($exception, $type = null, $_template = 'Exception')
+    public function drawExceptionMessage($exception, $type = null, $template = 'Exception')
     {
         // Set headers
         header('HTTP/1.1 502 Bad Gateway', true, 502);
@@ -52,7 +52,7 @@ class Exception
         ]);
 
         // Display page
-        $this->{$_template};
+        $this->{$template};
 
         // Save last error
         $this->saveLastException($exception);

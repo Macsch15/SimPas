@@ -13,7 +13,6 @@ class Translations
     /**
      * Translation Setup
      * 
-     * @param Application $application
      * @throws Application\Exception\ExceptionRuntime
      * @throws Application\Exception\AssetNotFound
      * @return void

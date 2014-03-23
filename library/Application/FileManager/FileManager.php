@@ -9,13 +9,6 @@ use DirectoryIterator;
 class FileManager
 {
     /**
-     * CURL info
-     * 
-     * @var array
-     */
-    private $curl_info = [];
-
-    /**
      * Get url contents
      * 
      * @param string $url
@@ -55,23 +48,10 @@ class FileManager
         // Execute!
         $exec = curl_exec($handle);
 
-        // Fetch cURL info
-        $this->curl_info = curl_getinfo($handle);
-
         // Close session
         curl_close($handle);
 
         return $exec;
-    }
-
-    /**
-    * cURL result info
-    * 
-    * @return stdClass object
-    */
-    public function curlResultContainer()
-    {
-        return (object)$this->curl_info;
     }
 
     /**

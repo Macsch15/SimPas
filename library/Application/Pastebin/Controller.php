@@ -352,10 +352,7 @@ class Controller extends View
     */
     private function stringToBytes($string)
     {
-        $length = strlen($string);
-        $pow = pow(10, 0);
-
-        return round($length / (pow(1024, 0) / $pow)) / $pow;
+        return round(strlen($string) / (pow(1024, 0) / pow(10, 0))) / pow(10, 0);
     }
 
     /**

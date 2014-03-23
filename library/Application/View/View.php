@@ -41,7 +41,6 @@ class View extends Exception
      * Twig integration
      * 
      * @param Application $application
-     * @param Configuration $config
      * @return void
      */
     public function __construct(Application $application)

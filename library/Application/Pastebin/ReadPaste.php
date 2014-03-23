@@ -45,9 +45,6 @@ class ReadPaste
         // Execute
         $query->execute();
 
-        // Array
-        $result = $query->fetchAll();
-
-        return $result[0];
+        return $query->fetchAll()[0];
     }
 }
