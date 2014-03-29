@@ -46,9 +46,12 @@
         <div style="margin-top: 10px; clear: left">
             {{ paste.content|raw }}
         </div>
+
+        <div class="pull-left">
+            <small class="muted_font">{% trans %}Submitted{% endtrans %} {{ paste.time|date("d.m.Y") }}&nbsp;&nbsp;</small>
+        </div>
         
         <div class="pull-right">
-            <small class="muted_font">{% trans %}Submitted{% endtrans %} {{ paste.time|date("d.m.Y") }}&nbsp;&nbsp;</small>
             {% set paste_size = paste.size / 1024 %}
             <span class="label label-default"><i class="fa fa-hdd-o"></i> {{ paste_size|round(0, 'ceil') }}KB</span>
             <span class="label label-default"><i class="fa fa-list-ol"></i> {% trans %}Characters{% endtrans %}: {{ paste.length }}</span>

@@ -27,11 +27,6 @@ input[type="color"]:focus,
     border: 1px solid #C9C9C9 !important;
 }
 
-.hover {
-    background: #545454 !important;
-    transition: all 0.15s ease-in;
-}
-
 .link_underline a {
     text-decoration: underline !important;
 }
@@ -99,21 +94,25 @@ ol div {
 .navbar .nav > li > a {
     padding: 6px 10px 6px 10px;
     margin: 10px 4px 10px 4px;
-    background: #6B8296;
+    background: #fff;
     border-radius: 3px;
-    color: #fff !important;
+    border: 1px #D6D6D6 solid;
+    color: #2F6488 !important;
     float: left;
     font-weight: bold;
 }
 
 .navbar .nav > li > a:focus {
-    background: #545454;
+    background: #2F6488;
+    color: #fff !important;
 }
 
 .navbar .nav > li > a:hover {
     text-shadow: none;
     border-radius: 3px;
-    background: #545454;
+    border: 1px #2F6488 solid;
+    color: #fff !important;
+    background: #2F6488;
     transition: all 0.15s ease-in;
 }
 
@@ -178,12 +177,16 @@ ol div {
 }
 
 .btn-primary {
-    background-color: #6B8296;
+    background: #fff;
+    border: 1px #D6D6D6 solid !important;
+    color: #2F6488;
     border: none;
 }
 
-.btn-primary:hover, .btn-primary:focus {
-    background: #545454;
+.btn-primary:hover, .btn-primary:focus, .hover {
+    background: #2F6488;
+    color: #fff;
+    border: 1px #2F6488 solid !important;
     transition: all 0.15s ease-in-out;
 }
 
