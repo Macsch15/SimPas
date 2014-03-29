@@ -205,10 +205,6 @@ class Controller extends View
     */
     private function pasteVisibility()
     {
-        if(HttpRequest::post('post_paste_visibility') === false) {
-            return 'private';
-        }
-
         switch(HttpRequest::post('post_paste_visibility')) {
             case 'public':
                 return 'public';
