@@ -55,7 +55,13 @@
             {% set paste_size = paste.size / 1024 %}
             <span class="label label-default"><i class="fa fa-hdd-o"></i> {{ paste_size|round(0, 'ceil') }}KB</span>
             <span class="label label-default"><i class="fa fa-list-ol"></i> {% trans %}Characters{% endtrans %}: {{ paste.length }}</span>
-            <span class="label label-default"> {{ paste.visibility == 'private' ? '<i class="fa fa-lock"></i>' : '<i class="fa fa-unlock"></i>' }} {% trans %}Visibility{% endtrans %}: {{ paste.visibility }}</span>
-            <span title="{% trans %}Syntax highlighting{% endtrans %}" class="tooltip-top label label-default"><i class="fa fa-puzzle-piece"></i> {{ paste.syntax }}</span>
+            <span class="label label-default"><i class="fa fa-puzzle-piece"></i> {% trans %}Syntax highlighting{% endtrans %}: {{ paste.syntax }}</span>
+            <span class="label label-default"><i class="fa {{ paste.visibility == 'private' ? 'fa-lock' : 'fa-unlock' }}"></i> {% trans %}Visibility{% endtrans %}: 
+                {% if paste.visibility == 'private' %}
+                    {% trans %}Private{% endtrans %}
+                {% else %}
+                    {% trans %}Public{% endtrans %}
+                {% endif %}
+            </span>
         </div>
     {% endblock %}
