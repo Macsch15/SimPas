@@ -47,7 +47,8 @@ class SendPaste
             raw_content,
             title,
             author,
-            start_from_line
+            start_from_line,
+            visibility
         ) VALUES (
             :unique_id,
             :time,
@@ -59,7 +60,8 @@ class SendPaste
             :raw_content,
             :title,
             :author,
-            :start_from_line
+            :start_from_line,
+            :visibility
         );');
 
         // Filter
@@ -74,6 +76,7 @@ class SendPaste
         $query->bindValue(':title', $this->normalizeTitleAndAuthorField($container['paste_title']));
         $query->bindValue(':author', $this->normalizeTitleAndAuthorField($container['paste_author']));
         $query->bindValue(':start_from_line', $container['paste_start_from_line'], constant('PDO::PARAM_INT'));
+        $query->bindValue(':visibility', $container['paste_visibility']);
 
         // Execute
         $query->execute();

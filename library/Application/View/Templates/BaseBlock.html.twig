@@ -28,8 +28,9 @@
 
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a href="{{ config.full_url }}"><i class="fa fa-home fa-lg"></i> {% trans %}Page Index{% endtrans %}</a></li>
-                        <li><a href="{{ config.full_url }}rules"><i class="fa fa-gavel fa-lg"></i> {% trans %}Rules{% endtrans %}</a></li>
+                        <li><a class="tooltip-bottom" title="{% trans %}Page Index{% endtrans %}" href="{{ config.full_url }}"><i class="fa fa-home fa-lg"></i></a></li>
+                        <li><a class="tooltip-bottom" title="{% trans %}Rules{% endtrans %}" href="{{ config.full_url }}rules"><i class="fa fa-gavel fa-lg"></i></a></li>
+                        <li><a class="tooltip-bottom" title="{% trans %}Latest pastes{% endtrans %}" href="{{ config.full_url }}latest"><i class="fa fa-list-ul fa-lg"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -65,7 +66,7 @@
             {% trans %}This site uses cookies.{% endtrans %} <a href="{{ config.full_url }}cookies">{% trans %}Read more about cookies policy{% endtrans %}</a>
         </div>
 
-        {% if constant('Application\\Application::ENVIORMENT') == 'dev' %}
+        {% if constant('Application\\Application::ENVIRONMENT') == 'dev' %}
             <br />
             <div class="pull-left">
                 {% set utilisedMemory = app.getUtilisedMemory() %}

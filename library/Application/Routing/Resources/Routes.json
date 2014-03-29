@@ -31,6 +31,12 @@
         "static": true
     },
 
+    "/latest": {
+        "controller": "Application\\Pastebin\\LatestPastes",
+        "action": "index",
+        "static": true
+    },
+
     "/download/{id}": {
         "controller": "Application\\Pastebin\\Controller",
         "action": "download",

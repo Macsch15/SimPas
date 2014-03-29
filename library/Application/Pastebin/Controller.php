@@ -144,7 +144,8 @@ class Controller extends View
             'paste_raw_content' => HttpRequest::post('post_paste_content'),
             'paste_title' => HttpRequest::post('post_paste_title', true),
             'paste_author' => HttpRequest::post('post_paste_author', true),
-            'paste_start_from_line' => $this->startListCountingFromLine()
+            'paste_start_from_line' => $this->startListCountingFromLine(),
+            'paste_visibility' => $this->pasteVisibility()
         ];
     }
 
@@ -196,6 +197,26 @@ class Controller extends View
 
         return true;
     }
+
+    /**
+    * Paste visibility
+    *  
+    * @return string
+    */
+    private function pasteVisibility()
+    {
+        if(HttpRequest::post('post_paste_visibility') === false) {
+            return 'private';
+        }
+
+        switch(HttpRequest::post('post_paste_visibility')) {
+            case 'public':
+                return 'public';
+            case 'private':
+            default:
+                return 'private';
+        }
+    }   
 
     /**
     * Banned IP's

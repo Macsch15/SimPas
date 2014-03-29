@@ -2,7 +2,7 @@
     "pastes": {
         "paste_id": "INT NOT NULL AUTO_INCREMENT",
         "unique_id": "VARCHAR(100)",
-        "time": "TIMESTAMP",
+        "time": "VARCHAR(15)",
         "size": "INT(10)",
         "length": "INT(10)",
         "syntax": "TINYTEXT",
@@ -12,6 +12,7 @@
         "title": "VARCHAR(255) DEFAULT NULL",
         "author": "VARCHAR(255) DEFAULT NULL",
         "start_from_line": "INT(10)",
+        "visibility": "TINYTEXT",
 
         "__options__": {
             "primary_key": "paste_id",
