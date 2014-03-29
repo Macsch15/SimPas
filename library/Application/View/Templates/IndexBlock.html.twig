@@ -4,10 +4,10 @@
         <form method="post" action="{{ config.full_url }}paste/{{ paste_id }}">
 
             <div class="pull-left" style="width: 49%; margin-right: 2%;">
-                <input type="text" autocomplete="off" name="post_paste_title" pattern="[A-Za-z0-9{{ config.accented_characters is not empty ? config.accented_characters : null }}\-_?!\s]+" class="form-control" placeholder="{% trans %}Title (Optional){% endtrans %}" />
+                <input type="text" autocomplete="off" name="post_paste_title" pattern="[A-Za-z0-9{{ config.accented_characters is not empty ? config.accented_characters : null }}\-_?\.!\s]+" class="form-control" placeholder="{% trans %}Title (Optional){% endtrans %}" />
             </div>
             <div class="pull-left" style="width: 49%">
-                <input type="text" autocomplete="off" name="post_paste_author" pattern="[A-Za-z0-9{{ config.accented_characters is not empty ? config.accented_characters : null }}\-_\s]+" class="form-control" placeholder="{% trans %}Author (Optional){% endtrans %}" />
+                <input type="text" autocomplete="off" name="post_paste_author" pattern="[A-Za-z0-9{{ config.accented_characters is not empty ? config.accented_characters : null }}\-_?\.!\s]+" class="form-control" placeholder="{% trans %}Author (Optional){% endtrans %}" />
             </div>
             <br /><br />
 
@@ -41,8 +41,8 @@
 
             <div class="hidden-xs pull-right">
                 <h4 class="muted_font"><i class="fa fa-save"></i> {% trans %}Send this paste{% endtrans %}</h4>
-                <button name="post_send_is_private" value="1" data-loading-text="{% trans %}Sending...{% endtrans %}" id="loading_button" type="submit" class="btn main_button button_private">{% trans %}Send private paste{% endtrans %}</button>
-                <button name="post_send_is_private" value="0" data-loading-text="{% trans %}Sending...{% endtrans %}" id="loading_button" type="submit" class="btn main_button">{% trans %}Send public paste{% endtrans %}</button>
+                <button name="post_paste_visibility" value="private" data-loading-text="{% trans %}Sending...{% endtrans %}" id="loading_button" type="submit" class="btn main_button button_private">{% trans %}Send private paste{% endtrans %}</button>
+                <button name="post_paste_visibility" value="public" data-loading-text="{% trans %}Sending...{% endtrans %}" id="loading_button" type="submit" class="btn main_button">{% trans %}Send public paste{% endtrans %}</button>
             </div>
 
             <div class="visible-xs pull-left">
