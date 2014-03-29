@@ -3,7 +3,7 @@
 <head>
     <meta charset="{{ config.charset }}">
     <title>
-        {% if constant('Application\\Application::ENVIORMENT') == 'dev' and routes|length %}
+        {% if constant('Application\\Application::ENVIRONMENT') == 'dev' and routes|length %}
             Route not found - {{ config.site_title }}
         {% else %}
             404 Page not found - {{ config.site_title }}
@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="container wrap">
-        {% if constant('Application\\Application::ENVIORMENT') == 'dev' and routes|length %}
+        {% if constant('Application\\Application::ENVIRONMENT') == 'dev' and routes|length %}
             <h3 style="color: #808080">Route not found</h3>
             <div style="margin-left: 20px">
                 <h5>
@@ -30,7 +30,11 @@
                     <div style="margin-left: 20px">
                         <span style="font-size: 41px; float:left; color: #808080; margin-right: 15px">{{ loop.index }}</span> 
                             {{ route.route_name == "/" ? route.route_name ~ " (Index)" : route.route_name }}<br />
-                            {{ route.route_data.controller }}::{{ route.route_data.action }}Action()<br />
+                            {% if route.route_data.template is defined %}
+                                Template: {{ route.route_data.template }}<br />
+                            {% else %}
+                                {{ route.route_data.controller }}::{{ route.route_data.action }}Action()<br />
+                            {% endif %}
                             Static: {{ route.route_data.static is defined and route.route_data.static == true ?: 0 }}
                     </div>
                     <hr />

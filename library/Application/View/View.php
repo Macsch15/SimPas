@@ -17,7 +17,7 @@ class View extends Exception
     use Configuration;
 
     /**
-     * Twig Enviorment
+     * Twig Environment
      *  
      * @var object
      */
@@ -50,11 +50,11 @@ class View extends Exception
 
         $this->loader = new Twig_Loader_Filesystem(__DIR__ . DIRECTORY_SEPARATOR . 'Templates');
 
-        // Setup Twig Enviorment
+        // Setup Twig Environment
         $this->_twig = new Twig_Environment($this->loader, [
                 'cache'            => (Application::TEMPLATE_CACHE === true ? Application::makePath('storage:templates') : false),
-                'auto_reload'      => (Application::ENVIORMENT === 'dev' ?: false),
-                'strict_variables' => (Application::ENVIORMENT === 'dev' ?: false)
+                'auto_reload'      => (Application::ENVIRONMENT === 'dev' ?: false),
+                'strict_variables' => (Application::ENVIRONMENT === 'dev' ?: false)
         ]);
 
         // Add globals and functions
@@ -114,7 +114,7 @@ class View extends Exception
     }
 
     /**
-     * Twig enviorment accessor
+     * Twig environment accessor
      *
      * @param string $template_name
      * @return Twig_Environment object

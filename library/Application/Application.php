@@ -23,12 +23,12 @@ class Application
     private $php_errors_container;
 
     /**
-     * Application enviorment
+     * Application environment
      * dev|prod
      * 
      * @return string
      */
-    const ENVIORMENT = 'prod';
+    const ENVIRONMENT = 'dev';
 
     /**
     * Template cache
@@ -73,7 +73,7 @@ class Application
         }
 
         // Error level
-        if(Application::ENVIORMENT === 'dev') {
+        if(Application::ENVIRONMENT === 'dev') {
             // All errors
             error_reporting(E_ALL);
             // Error handler

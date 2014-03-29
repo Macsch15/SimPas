@@ -51,7 +51,7 @@ class Translations
             copy($file . '.mo', Application::makePath('library:Application:Translations:Resources:' . $locale . ':LC_MESSAGES:' . $domain . '_' . $m_time . '.mo'));
         }
 
-        // Set enviorment value
+        // Set environment value
         putenv('LC_ALL=' . $locale);
 
         // Set default locale

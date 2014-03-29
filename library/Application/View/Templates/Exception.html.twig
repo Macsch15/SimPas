@@ -3,7 +3,7 @@
 <head>
     <meta charset="{{ config.charset }}">
     <title>
-        {% if constant('Application\\Application::ENVIORMENT') == 'dev' %}
+        {% if constant('Application\\Application::ENVIRONMENT') == 'dev' %}
             {% if type is not empty %}
                 {{ type }} exception detected!
             {% else %}
@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="container wrap">
-        {% if constant('Application\\Application::ENVIORMENT') == 'dev' %}
+        {% if constant('Application\\Application::ENVIRONMENT') == 'dev' %}
             <h3 style="color: #808080">Exception detected! :C</h3>
             <div style="margin-left: 20px;">
                 <h4>
