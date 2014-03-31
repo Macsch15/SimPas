@@ -9,6 +9,7 @@ use Application\Pastebin\SendPaste;
 use Application\Pastebin\ReadPaste;
 use Application\HttpRequest\HttpRequest;
 use Application\Pastebin\ShortenUrlApi\ShortenUrlApi;
+use Application\Security\QuestionsAndAnswers\QuestionsAndAnswers;
 
 class Controller extends View
 {
@@ -60,6 +61,7 @@ class Controller extends View
         $this->render([
             'geshi_languages' => (new SyntaxHighlighter)->languagesToArray(),
             'paste_id' => (new SendPaste($this->application))->generateId(),
+            'antispam' => new QuestionsAndAnswers()
         ]);
 
         return $this->{'IndexBlock'};
@@ -77,6 +79,14 @@ class Controller extends View
         if(HttpRequest::post('post_poked') === false && $this->pasteExists($request['id']) === false) {
             return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
         }
+
+        // Anti-spam
+        if($this->config()->antispam_enabled === true && 
+            (new QuestionsAndAnswers())->validate(HttpRequest::post('post_antispam_question'), 
+                HttpRequest::post('post_antispam_answer')) === false
+        ) {
+            return $this->sendFriendlyClientError(_('Wrong anti-spam answer. Refresh page and try again.'));
+        } 
 
         // Banned IP
         if($this->clientIpIsBanned() === true && HttpRequest::post('post_poked') !== false) {

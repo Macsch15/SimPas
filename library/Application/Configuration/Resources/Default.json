@@ -24,5 +24,6 @@
     "google_analytics_ua_code": "",
     "google_analytics_domain": "",
     "short_url": false,
-    "latest_pastes": 20
+    "latest_pastes": 20,
+    "antispam_enabled": true
 }
