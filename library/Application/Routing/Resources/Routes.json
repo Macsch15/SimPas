@@ -37,6 +37,14 @@
         "static": true
     },
 
+    "/abuse/{id}": {
+        "controller": "Application\\Pastebin\\ReportAbuse",
+        "action": "index",
+        "requirements": {
+            "id": "\\d+"
+        }
+    },
+
     "/download/{id}": {
         "controller": "Application\\Pastebin\\Controller",
         "action": "download",

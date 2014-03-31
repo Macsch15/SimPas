@@ -47,6 +47,7 @@
 
     <div class="pull-left">
       <small class="muted_font">{% trans %}Submitted{% endtrans %} {{ paste.time|date("d.m.Y") }}&nbsp;&nbsp;</small>
+      <small><a href="{{ config.full_url }}abuse/{{ paste.unique_id }}"><i class="fa fa-flag"></i> {% trans %}Report abuse{% endtrans %}</a></small>
     </div>
     
     <div class="pull-right">
