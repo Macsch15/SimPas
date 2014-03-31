@@ -30,6 +30,6 @@ class PreDatabaseSave
     */
     private function normalizeString($string)
     {
-        return preg_replace('/[^A-Za-z0-9' . $this->config()->accented_characters . '_\-!?\.]+/', '', $string);
+        return preg_replace('/[^A-Za-z0-9' . $this->config()->accented_characters . '_\-!?\s\.]+/', '', $string);
     }
 }
