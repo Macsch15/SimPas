@@ -81,7 +81,7 @@ class Controller extends View
         }
 
         // Anti-spam
-        if($this->config()->antispam_enabled === true && 
+        if(HttpRequest::post('post_poked') !== false && $this->config()->antispam_enabled === true && 
             (new QuestionsAndAnswers())->validate(HttpRequest::post('post_antispam_question'), 
                 HttpRequest::post('post_antispam_answer')) === false
         ) {
