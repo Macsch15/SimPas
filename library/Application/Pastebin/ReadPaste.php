@@ -37,7 +37,8 @@ class ReadPaste
         // Prepare query
         $query = $this->data_source
         ->get()
-        ->prepare('SELECT * FROM ' . $this->config('Database')->prefix  . 'pastes WHERE unique_id = :paste_id LIMIT 1');
+        ->prepare('SELECT unique_id, time, size, length, syntax, content, ip_address, raw_content, title, author, start_from_line, visibility
+            FROM ' . $this->config('Database')->prefix  . 'pastes WHERE unique_id = :paste_id LIMIT 1');
 
         // Filter
         $query->bindValue(':paste_id', $paste_id, constant('PDO::PARAM_INT'));
