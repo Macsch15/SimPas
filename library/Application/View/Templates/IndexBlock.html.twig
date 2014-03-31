@@ -33,7 +33,7 @@
         {% set antispam_question = antispam.question() %}
         <label for="antispamquestion">{{ antispam_question }}</label>
         <input type="hidden" name="post_antispam_question" value="{{ antispam_question }}">
-        <input type="text" autocomplete="off" name="post_antispam_answer" id="antispamquestion" class="form-control" placeholder="{% trans %}Type answer here...{% endtrans %}">
+        <input type="text" autocomplete="off" required="required" name="post_antispam_answer" id="antispamquestion" class="form-control" placeholder="{% trans %}Type answer here...{% endtrans %}">
 
         <br />
       {% endif %}
