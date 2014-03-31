@@ -28,6 +28,16 @@
       <textarea id="_chars_left" style="height: 350px;" required="required" name="post_paste_content" class="form-control" placeholder="{% trans %}Paste content (required){% endtrans %}..."></textarea>
       <br />
 
+      {% if config.antispam_enabled == true %}
+        <h4 class="muted_font hidden-xs pull-left"><i class="fa fa-question-circle"></i> {% trans %}Anti-spam question{% endtrans %}</h4><br /><br />
+        {% set antispam_question = antispam.question() %}
+        <label for="antispamquestion">{{ antispam_question }}</label>
+        <input type="hidden" name="post_antispam_question" value="{{ antispam_question }}">
+        <input type="text" autocomplete="off" name="post_antispam_answer" id="antispamquestion" class="form-control" placeholder="{% trans %}Type answer here...{% endtrans %}">
+
+        <br />
+      {% endif %}
+
       <div class="col-lg-4 col-md-3 col-sm-4 col-xs-9 syntax_highlight_option pull-left">
         <h4 class="muted_font"><i class="fa fa-puzzle-piece"></i> {% trans %}Syntax highlighting{% endtrans %}</h4>
         <select class="form-control chzn-select" name="post_syntax_highlight_language">
