@@ -1,7 +1,47 @@
 {% extends "BaseBlock.html.twig" %}
 
-    {% block document_title %}{% trans %}Latest pastes{% endtrans %}{% endblock %}
+  {% block document_title %}{% trans %}Latest pastes{% endtrans %}{% endblock %}
 
-    {% block document_content %}
-        ...
-    {% endblock %}
+  {% block document_content %}
+    {% if container|length > 0 %}
+      <h3 style="margin-top: 0">{% trans %}Latest pastes{% endtrans %}</h3>
+
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>{% trans %}Paste ID{% endtrans %}</th>
+              <th>{% trans %}Title{% endtrans %}</th>
+              <th>{% trans %}Author{% endtrans %}</th>
+              <th>{% trans %}Submitted{% endtrans %}</th>
+              <th>{% trans %}Syntax highlighting{% endtrans %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for key in container %}
+              <tr>
+              <td> <a href="{{ config.full_url }}paste/{{ key.unique_id }}"><i class="fa fa-external-link"></i> {{ key.unique_id }}</a></td>
+              <td>{{ key.title is not empty ? key.title : '-' }}</td>
+              <td>{{ key.author is not empty ? key.author : '-' }}</td>
+              <td>{{ key.time|date("d.m.Y") }}</td>
+              <td>{{ key.syntax }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        </div>
+      {% else %}
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <i class="fa fa-exclamation-circle fa-lg"></i> <b>No results</b>
+            </h3>
+          </div>
+          <div class="panel-body">
+            {% trans %}No results found. Send a public paste and try again.{% endtrans %}
+          </div>
+        </div>
+
+        <a href="{{ config.full_url }}" class="btn btn-primary"><i class="fa fa-home"></i> {% trans %}Return to index page{% endtrans %}</a>
+      {% endif %}
+  {% endblock %}
