@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html lang="{{ config.locale.0 }}">
 <head>
-    <meta charset="{{ config.charset }}">
-    <title>
-        {% if constant('Application\\Application::ENVIRONMENT') == 'dev' and routes|length %}
-            Route not found - {{ config.site_title }}
-        {% else %}
-            404 Page not found - {{ config.site_title }}
-        {% endif %}
-    </title>
-    <link href="{{ assets('css', 'simpas.css') }}" rel="stylesheet" />
+  <meta charset="{{ config.charset }}">
+  <title>
+    {% if constant('Application\\Application::ENVIRONMENT') == 'dev' and routes|length %}
+      Route not found - {{ config.site_title }}
+    {% else %}
+      404 Page not found - {{ config.site_title }}
+    {% endif %}
+  </title>
+  <link href="{{ assets('css', 'simpas.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="container wrap">
-        {% if constant('Application\\Application::ENVIRONMENT') == 'dev' and routes|length %}
-            <h3 style="color: #808080">Route not found</h3>
-            <div style="margin-left: 20px">
-                <h5>
-                    Route for <code>{{ requested_url }}</code> not found
-                    <div style="text-align: right; font-size: 10px;">
-                        404 Page not found
-                    </div>
-                </h5>
-            </div>
-            <hr />
-            <h4>List of routes</h4>
-            <code style="background: none;">
-                {% for route in routes %}
-                    <div style="margin-left: 20px">
-                        <span style="font-size: 41px; float:left; color: #808080; margin-right: 15px">{{ loop.index }}</span> 
-                            {{ route.route_name == "/" ? route.route_name ~ " (Index)" : route.route_name }}<br />
-                            {% if route.route_data.template is defined %}
-                                Template: {{ route.route_data.template }}<br />
-                            {% else %}
-                                {{ route.route_data.controller }}::{{ route.route_data.action }}Action()<br />
-                            {% endif %}
-                            Static: {{ route.route_data.static is defined and route.route_data.static == true ?: 0 }}
-                    </div>
-                    <hr />
-                {% endfor %}
-            </code>
-        {% else %}
-            <h3 style="color: #808080">{% trans %}404 Page not found{% endtrans %}</h3>
-            <div style="margin-left: 20px;">
-                <h4>{% trans %}SimPas couldn't locate the page you're requesting to view{% endtrans %}</h4>
-            </div>
+  <div class="container wrap">
+    {% if constant('Application\\Application::ENVIRONMENT') == 'dev' and routes|length %}
+      <h3 style="color: #808080">Route not found</h3>
+      <div style="margin-left: 20px">
+        <h5>
+          Route for <code>{{ requested_url }}</code> not found
+          <div style="text-align: right; font-size: 10px;">
+            404 Page not found
+          </div>
+        </h5>
+      </div>
+      <hr />
+      <h4>List of routes</h4>
+      <code style="background: none;">
+        {% for route in routes %}
+          <div style="margin-left: 20px">
+            <span style="font-size: 41px; float:left; color: #808080; margin-right: 15px">{{ loop.index }}</span> 
+              {{ route.route_name == "/" ? route.route_name ~ " (Index)" : route.route_name }}<br />
+              {% if route.route_data.template is defined %}
+                Template: {{ route.route_data.template }}<br />
+              {% else %}
+                {{ route.route_data.controller }}::{{ route.route_data.action }}Action()<br />
+              {% endif %}
+              Static: {{ route.route_data.static is defined and route.route_data.static == true ?: 0 }}
+          </div>
+          <hr />
+        {% endfor %}
+      </code>
+    {% else %}
+      <h3 style="color: #808080">{% trans %}404 Page not found{% endtrans %}</h3>
+      <div style="margin-left: 20px;">
+        <h4>{% trans %}SimPas couldn't locate the page you're requesting to view{% endtrans %}</h4>
+      </div>
 
-            <hr />
+      <hr />
 
-            <a href="{{ config.full_url }}" class="btn btn-primary"><i class="fa fa-home"></i> {% trans %}Return to index page{% endtrans %}</a>
-        {% endif %}
+      <a href="{{ config.full_url }}" class="btn btn-primary"><i class="fa fa-home"></i> {% trans %}Return to index page{% endtrans %}</a>
+    {% endif %}
 
-        <footer class="containter wrap copyright">
-            <a href="http://www.macsch15.pl">Powered by SimPas Application by Macsch15</a>
-        </footer>
-    </div>
+    <footer class="containter wrap copyright">
+      <a href="http://www.macsch15.pl">Powered by SimPas Application by Macsch15</a>
+    </footer>
+  </div>
 </body>
 </html>
