@@ -28,7 +28,7 @@ class Application
      * 
      * @return string
      */
-    const ENVIRONMENT = 'dev';
+    const ENVIRONMENT = 'prod';
 
     /**
     * Template cache
