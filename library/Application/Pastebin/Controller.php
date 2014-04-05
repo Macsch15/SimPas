@@ -30,13 +30,6 @@ class Controller extends View
     private $data_source;
 
     /**
-    * Paste data from data source
-    * 
-    * @var array
-    */
-    private $paste_data;
-
-    /**
     * Construct
     * 
     * @param Application $application
@@ -120,13 +113,10 @@ class Controller extends View
         if($this->pasteExists($request['id']) === false) {
             (new SendPaste($this->application))->send($this->toSendDataContainer($request));
         }
-
-        // If we not have any client error, begin read paste from the database
-        $this->paste_data = (new ReadPaste($this->application))->read($request['id']);
         
         // Template render
         $this->render([
-            'paste' => $this->paste_data,
+            'paste' => (new ReadPaste($this->application))->read($request['id']),
             'shorten_url' => new ShortenUrlApi()
         ]);
 
@@ -265,12 +255,9 @@ class Controller extends View
         // Set headers
         header('Content-type: text/plain; charset=UTF-8');
 
-        // If we not have any client error, begin read paste from the database
-        $this->paste_data = (new ReadPaste($this->application))->read($request['id']);
-
         // Template render
         $this->render([
-            'raw_content' => $this->paste_data['raw_content']
+            'raw_content' => (new ReadPaste($this->application))->read($request['id'])['raw_content']
         ]);
 
         return $this->{'RawMode'};
@@ -289,12 +276,9 @@ class Controller extends View
             die(_('Requested paste doesn\'t exists.'));
         }
         
-        // If we not have any client error, begin read paste from the database
-        $this->paste_data = (new ReadPaste($this->application))->read($request['id']);
-
         // Template render
         $this->render([
-            'paste' => $this->paste_data,
+            'paste' => (new ReadPaste($this->application))->read($request['id']),
         ]);
 
         return $this->{'Embed'};        
@@ -316,27 +300,24 @@ class Controller extends View
         // Set headers
         header('Content-type: text/plain; charset=UTF-8');
 
-        // If we not have any client error, begin read paste from the database
-        $this->paste_data = (new ReadPaste($this->application))->read($request['id']);
-
         // Storage data to array
         if(isset($json_response['error']) === false) {
             $json_response = [
-                'paste_id' => $this->paste_data['unique_id'],
-                'submitted' => $this->paste_data['time'],
-                'size' => $this->paste_data['size'],
-                'length' => $this->paste_data['length'],
-                'syntax' => $this->paste_data['syntax'],
-                'parsed_code' => $this->paste_data['content'],
-                'not_parsed_code' => $this->paste_data['raw_content']
+                'paste_id' => (new ReadPaste($this->application))->read($request['id'])['unique_id'],
+                'submitted' => (new ReadPaste($this->application))->read($request['id'])['time'],
+                'size' => (new ReadPaste($this->application))->read($request['id'])['size'],
+                'length' => (new ReadPaste($this->application))->read($request['id'])['length'],
+                'syntax' => (new ReadPaste($this->application))->read($request['id'])['syntax'],
+                'parsed_code' => (new ReadPaste($this->application))->read($request['id'])['content'],
+                'not_parsed_code' => (new ReadPaste($this->application))->read($request['id'])['raw_content']
             ];
 
-            if($this->paste_data['title'] != null) {
-                $json_response['title'] = $this->paste_data['title'];
+            if((new ReadPaste($this->application))->read($request['id'])['title'] != null) {
+                $json_response['title'] = (new ReadPaste($this->application))->read($request['id'])['title'];
             }
 
-            if($this->paste_data['author'] != null) {
-                $json_response['author'] = $this->paste_data['author'];
+            if((new ReadPaste($this->application))->read($request['id'])['author'] != null) {
+                $json_response['author'] = (new ReadPaste($this->application))->read($request['id'])['author'];
             }
         }
 
@@ -418,11 +399,8 @@ class Controller extends View
         header('Content-type: text/plain');
         header('Content-Disposition: attachment; filename="' . $request['id'] . '.txt"');
 
-        // If we not have any client error, begin read paste from the database
-        $this->paste_data = (new ReadPaste($this->application))->read($request['id']);
-
         // Print
-        echo $this->paste_data['raw_content'];
+        echo (new ReadPaste($this->application))->read($request['id'])['raw_content'];
     }
 
     /**
