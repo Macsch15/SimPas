@@ -263,7 +263,7 @@ class Controller extends View
         }
 
         // Set headers
-        header('Content-type: text/plain');
+        header('Content-type: text/plain; charset=UTF-8');
 
         // If we not have any client error, begin read paste from the database
         $this->paste_data = (new ReadPaste($this->application))->read($request['id']);
@@ -314,7 +314,7 @@ class Controller extends View
         }
 
         // Set headers
-        header('Content-type: text/plain');
+        header('Content-type: text/plain; charset=UTF-8');
 
         // If we not have any client error, begin read paste from the database
         $this->paste_data = (new ReadPaste($this->application))->read($request['id']);
