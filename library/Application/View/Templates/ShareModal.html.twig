@@ -10,62 +10,62 @@
           <div class="input-group" style="width: 100%">
             <span class="input-group-addon tooltip-top" title="{% trans %}BBCode{% endtrans %}" style="min-width: 48px; max-width: 90px"><i class="fa fa-info-circle fa-lg"></i></span>
             <input onclick="this.select();" class="form-control input-lg" type="text" 
-              value="[url={{ config.full_url }}paste/{{ paste.unique_id }}]{% trans %}Paste{% endtrans %} {{ paste.unique_id }}[/url]" />
+              value="[url={{ build_url('paste/' ~ paste.unique_id) }}]{% trans %}Paste{% endtrans %} {{ paste.unique_id }}[/url]" />
           </div><br />
           <div class="input-group" style="width: 100%">
             <span class="input-group-addon tooltip-top" title="{% trans %}Direct link{% endtrans %}" style="min-width: 48px; max-width: 90px"><i class="fa fa-info-circle fa-lg"></i></span>
             <input onclick="this.select();" class="form-control input-lg" type="text" 
-              value="{{ config.full_url }}paste/{{ paste.unique_id }}" />
+              value="{{ build_url('paste/' ~ paste.unique_id) }}" />
           </div><br />
 
           {% if config.short_url and shorten_url.shorten(config.full_url ~ "paste/" ~ paste.unique_id) != false %}
           <div class="input-group" style="width: 100%">
             <span class="input-group-addon tooltip-top" title="{% trans %}Short URL{% endtrans %}" style="min-width: 48px; max-width: 90px"><i class="fa fa-info-circle fa-lg"></i></span>
             <input onclick="this.select();" class="form-control input-lg" type="text" 
-              value='{{ shorten_url.shorten(config.full_url ~ "paste/" ~ paste.unique_id) }}' />
+              value='{{ shorten_url.shorten(build_url('paste/' ~ paste.unique_id)) }}' />
           </div><br />
           {% endif %}
 
           <div class="input-group" style="width: 100%">
             <span class="tooltip-top input-group-addon" title="{% trans %}HTML{% endtrans %}" style="min-width: 48px; max-width: 90px"><i class="fa fa-info-circle fa-lg"></i></span>
             <input onclick="this.select();" class="form-control input-lg" type="text" 
-              value='<a href="{{ config.full_url }}paste/{{ paste.unique_id }}">{% trans %}Paste{% endtrans %} {{ paste.unique_id }}</a>' />
+              value='<a href="{{ build_url('paste/' ~ paste.unique_id) }}">{% trans %}Paste{% endtrans %} {{ paste.unique_id }}</a>' />
           </div><br />
           <div class="input-group" style="width: 100%">
             <span class="input-group-addon tooltip-top" title="{% trans %}Markdown{% endtrans %}" style="min-width: 48px; max-width: 90px"><i class="fa fa-info-circle fa-lg"></i></span>
             <input onclick="this.select();" class="form-control input-lg" type="text" 
-              value="[{% trans %}Paste{% endtrans %} {{ paste.unique_id }}]({{ config.full_url }}paste/{{ paste.unique_id }})" />
+              value="[{% trans %}Paste{% endtrans %} {{ paste.unique_id }}]({{ build_url('paste/' ~ paste.unique_id) }})" />
           </div><br />
           <div class="input-group" style="width: 100%">
             <span class="input-group-addon tooltip-top" title="{% trans %}Iframe embed{% endtrans %}" style="min-width: 48px; max-width: 90px"><i class="fa fa-info-circle fa-lg"></i></span>
             <input onclick="this.select();" class="form-control input-lg" type="text" 
-              value='<iframe src="{{ config.full_url }}embed/{{ paste.unique_id }}" style="overflow: auto" width="745" height="445" frameborder="0"></iframe>' />
+              value='<iframe src="{{ build_url('embed/' ~ paste.unique_id) }}" style="overflow: auto" width="745" height="445" frameborder="0"></iframe>' />
           </div><br />
           <div class="input-group" style="width: 100%">
             <span class="input-group-addon tooltip-top" title="{% trans %}JSON API{% endtrans %}" style="min-width: 48px; max-width: 90px"><i class="fa fa-info-circle fa-lg"></i></span>
             <input onclick="this.select();" class="form-control input-lg" type="text" 
-              value='{{ config.full_url }}api/{{ paste.unique_id }}' />
+              value='{{ build_url('api/' ~ paste.unique_id) }}' />
           </div>
         </div>
 
         <div class="modal-footer">
           <div class="btn-group pull-left">
-            {% if config.short_url and shorten_url.shorten(config.full_url ~ "paste/" ~ paste.unique_id) != false %}
-              <a title="{% trans %}Share on Twitter{% endtrans %}" href="http://twitter.com/share?url={{ shorten_url.shorten(config.full_url ~ "paste/" ~ paste.unique_id) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-twitter fa-lg"></i></a>
+            {% if config.short_url and shorten_url.shorten(build_url('paste/' ~ paste.unique_id)) != false %}
+              <a title="{% trans %}Share on Twitter{% endtrans %}" href="http://twitter.com/share?url={{ shorten_url.shorten(build_url('paste/' ~ paste.unique_id)) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-twitter fa-lg"></i></a>
 
-              <a title="{% trans %}Share on Google+{% endtrans %}" href="https://plus.google.com/share?url={{ shorten_url.shorten(config.full_url ~ "paste/" ~ paste.unique_id) }}" rel="nofollow" class="btn btn-primary tooltip-top "><i class="fa fa-google-plus-square fa-lg"></i></a>
+              <a title="{% trans %}Share on Google+{% endtrans %}" href="https://plus.google.com/share?url={{ shorten_url.shorten(build_url('paste/' ~ paste.unique_id)) }}" rel="nofollow" class="btn btn-primary tooltip-top "><i class="fa fa-google-plus-square fa-lg"></i></a>
 
-              <a title="{% trans %}Share on Facebook{% endtrans %}" href="http://www.facebook.com/sharer.php?u={{ shorten_url.shorten(config.full_url ~ "paste/" ~ paste.unique_id) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-facebook fa-lg"></i></a>
+              <a title="{% trans %}Share on Facebook{% endtrans %}" href="http://www.facebook.com/sharer.php?u={{ shorten_url.shorten(build_url('paste/' ~ paste.unique_id)) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-facebook fa-lg"></i></a>
               
-              <a title="{% trans %}Share on LinkedIn{% endtrans %}" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ shorten_url.shorten(config.full_url ~ "paste/" ~ paste.unique_id) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-linkedin fa-lg"></i></a>
+              <a title="{% trans %}Share on LinkedIn{% endtrans %}" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ shorten_url.shorten(build_url('paste/' ~ paste.unique_id)) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-linkedin fa-lg"></i></a>
             {% else %}
-              <a title="{% trans %}Share on Twitter{% endtrans %}" href="http://twitter.com/share?url={{ config.full_url }}paste/{{ paste.unique_id }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-twitter fa-lg"></i></a>
+              <a title="{% trans %}Share on Twitter{% endtrans %}" href="http://twitter.com/share?url={{ build_url('paste/' ~ paste.unique_id) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-twitter fa-lg"></i></a>
 
-              <a title="{% trans %}Share on Google+{% endtrans %}" href="https://plus.google.com/share?url={{ config.full_url }}paste/{{ paste.unique_id }}" rel="nofollow" class="btn btn-primary tooltip-top "><i class="fa fa-google-plus-square fa-lg"></i></a>
+              <a title="{% trans %}Share on Google+{% endtrans %}" href="https://plus.google.com/share?url={{ build_url('paste/' ~ paste.unique_id) }}" rel="nofollow" class="btn btn-primary tooltip-top "><i class="fa fa-google-plus-square fa-lg"></i></a>
 
-              <a title="{% trans %}Share on Facebook{% endtrans %}" href="http://www.facebook.com/sharer.php?u={{ config.full_url }}paste/{{ paste.unique_id }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-facebook fa-lg"></i></a>
+              <a title="{% trans %}Share on Facebook{% endtrans %}" href="http://www.facebook.com/sharer.php?u={{ build_url('paste/' ~ paste.unique_id) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-facebook fa-lg"></i></a>
               
-              <a title="{% trans %}Share on LinkedIn{% endtrans %}" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ config.full_url }}paste/{{ paste.unique_id }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-linkedin fa-lg"></i></a>
+              <a title="{% trans %}Share on LinkedIn{% endtrans %}" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ build_url('paste/' ~ paste.unique_id) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-linkedin fa-lg"></i></a>
             {% endif %}
           </div>
 
