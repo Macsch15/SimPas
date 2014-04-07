@@ -2,7 +2,7 @@
     "full_url": "http://localhost/SimPas/develop/",
     "site_title": "SimPas Application",
     "site_description_crawlers": "SimPas Application",
-    "show_index_in_urls": true,
+    "show_index_in_urls": false,
     "shortcut_icon_url": "",
     "admin_email": "",
     "default_geshi_language": "Text",
