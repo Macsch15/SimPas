@@ -14,6 +14,7 @@ class QuestionsAndAnswers
     *
     * @param string $field_client_question
     * @param string $field_client_answer
+    * @throws ExceptionRuntime
     * @return bool
     */
     public function validate($field_client_question, $field_client_answer)
@@ -44,6 +45,7 @@ class QuestionsAndAnswers
     /**
     * Fetch random question
     * 
+    * @throws ExceptionRuntime
     * @return string
     */
     public function question()
