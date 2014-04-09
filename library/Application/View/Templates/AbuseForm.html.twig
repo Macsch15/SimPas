@@ -1,0 +1,48 @@
+{% extends "BaseBlock.html.twig" %}
+
+  {% block document_title %}{% trans %}Send abuse{% endtrans %}{% endblock %}
+
+  {% block document_content %}
+    {% if config.admin_email is not empty %}
+      <form method="post" action="{{ build_url('abuse/' ~ paste_id ~ '/results') }}">
+        <div style="max-width: 588px; margin: 0 auto">
+          <h4 style="margin-top: 0" class="muted_font pull-left"><i class="fa fa-flag"></i> {% trans %}Abuse Form{% endtrans %}</h4>
+          <br /><br />
+          
+          <textarea style="height: 100px" required="required" name="post_paste_abuse_reason" class="form-control" placeholder="{% trans %}Reason (required){% endtrans %}..."></textarea>
+          <br />
+
+          {% if config.antispam_enabled == true %}
+            <h4 class="muted_font pull-left"><i class="fa fa-question-circle"></i> {% trans %}Anti-spam question{% endtrans %}</h4><br /><br />
+            {% set antispam_question = antispam.question() %}
+            <label for="antispamquestion">{{ antispam_question }}</label>
+            <input type="hidden" name="post_antispam_question" value="{{ antispam_question }}">
+            <input type="text" autocomplete="off" required="required" name="post_antispam_answer" id="antispamquestion" class="form-control" placeholder="{% trans %}Type answer here...{% endtrans %}">
+
+            <br />
+          {% endif %}
+
+          <div class="pull-right">
+            <h4 class="muted_font"><i class="fa fa-level-up"></i> {% trans %}Send abuse{% endtrans %}</h4>
+          
+            <button name="post_paste_visibility" value="public" data-loading-text="{% trans %}Sending...{% endtrans %}" id="loading_button" type="submit" class="btn main_button">
+              {% trans %}Send abuse{% endtrans %}
+            </button>
+          </div>
+        </div>
+      </form>
+    {% else %}
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <i class="fa fa-exclamation-circle fa-lg"></i> <b>{% trans %}Abuse Form Error{% endtrans %}</b>
+          </h3>
+        </div>
+        <div class="panel-body">
+          {% trans %}"Report abuse" is not configured.{% endtrans %}
+        </div>
+      </div>
+
+        <a href="{{ build_url() }}" class="btn btn-primary"><i class="fa fa-home"></i> {% trans %}Return to index page{% endtrans %}</a>
+    {% endif %}
+  {% endblock %}
