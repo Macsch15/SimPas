@@ -69,7 +69,7 @@ class Controller extends View
     public function readAction(array $request)
     {
         // Paste exists?
-        if(HttpRequest::post('post_poked') === false && $this->pasteExists($request['id']) === false) {
+        if(HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
             return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
         }
 
@@ -97,7 +97,7 @@ class Controller extends View
             HttpRequest::post('post_paste_title', true),
             HttpRequest::post('post_paste_author', true)
 		  ], HttpRequest::post('post_paste_content')) && 
-            $this->pasteExists($request['id']) === false
+            (new ReadPaste($this->application))->pasteExists($request['id']) === false
         ) {
             return $this->sendFriendlyClientError(_('Some field there are empty or contains prohibited characters (e.g only spaces).'));
         }
@@ -110,7 +110,7 @@ class Controller extends View
         }
 
         // Storage to database paste if doesn't exists
-        if($this->pasteExists($request['id']) === false) {
+        if((new ReadPaste($this->application))->pasteExists($request['id']) === false) {
             (new SendPaste($this->application))->send($this->toSendDataContainer($request));
         }
         
@@ -248,7 +248,7 @@ class Controller extends View
     public function rawModeAction(array $request)
     {
         // Paste exists?
-        if(HttpRequest::post('post_poked') === false && $this->pasteExists($request['id']) === false) {
+        if(HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
             return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'));
         }
 
@@ -272,7 +272,7 @@ class Controller extends View
     public function embedAction(array $request)
     {
         /// Paste exists?
-        if(HttpRequest::post('post_poked') === false && $this->pasteExists($request['id']) === false) {
+        if(HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
             die(_('Requested paste doesn\'t exists.'));
         }
         
@@ -293,7 +293,7 @@ class Controller extends View
     public function jsonApiAction(array $request)
     {
         /// Paste exists?
-        if(HttpRequest::post('post_poked') === false && $this->pasteExists($request['id']) === false) {
+        if(HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
             $json_response['error'] = 'Requested paste doesn\'t exists.';
         }
 
@@ -391,7 +391,7 @@ class Controller extends View
     public function downloadAction(array $request)
     {
         // Paste exists?
-        if(HttpRequest::post('post_poked') === false && $this->pasteExists($request['id']) === false) {
+        if(HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
             return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'));
         }
 
@@ -401,32 +401,5 @@ class Controller extends View
 
         // Print
         echo (new ReadPaste($this->application))->read($request['id'])['raw_content'];
-    }
-
-    /**
-    * Paste exists
-    * 
-    * @param int $paste_id 
-    * @return bool
-    */
-    private function pasteExists($paste_id)
-    {
-        // Prepare query
-        $query = $this->data_source
-        ->get()
-        ->prepare('SELECT unique_id FROM ' . $this->config('Database')->prefix . 'pastes WHERE unique_id = :paste_id');
-
-        // Filter and execute
-        $query->bindValue(':paste_id', $paste_id, constant('PDO::PARAM_INT'));
-        $query->execute();
-
-        $rows = $query->fetchAll();
-
-        // Test
-        if(is_array($rows) && count($rows)) {
-            return true;
-        }
-
-        return false;
     }
 }
