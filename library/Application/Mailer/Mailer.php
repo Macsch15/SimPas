@@ -3,6 +3,9 @@ namespace Application\Mailer;
 
 use Application\Application;
 use Application\Configuration\Configuration;
+use Swift_SmtpTransport;
+use Swift_Mailer;
+use Swift_Message;
 
 class Mailer
 {
@@ -26,7 +29,7 @@ class Mailer
     */
     public function mailer()
     {
-        $transport = \Swift_SmtpTransport::newInstance($this->config('SmtpMailer')->host, $this->config('SmtpMailer')->port, 
+        $transport = Swift_SmtpTransport::newInstance($this->config('SmtpMailer')->host, $this->config('SmtpMailer')->port, 
             $this->config('SmtpMailer')->protocol);
 
         if($this->config('SmtpMailer')->username != null) {
@@ -37,7 +40,7 @@ class Mailer
             $transport->setPassword($this->config('SmtpMailer')->password);
         }
 
-        return \Swift_Mailer::newInstance($transport);
+        return Swift_Mailer::newInstance($transport);
     }
 
     /**
@@ -48,6 +51,6 @@ class Mailer
     */
     public function message($subject = null)
     {
-        return \Swift_Message::newInstance($subject);
+        return Swift_Message::newInstance($subject);
     }
 }
