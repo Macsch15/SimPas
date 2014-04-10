@@ -22,10 +22,12 @@
             <br />
           {% endif %}
 
+          <input type="hidden" name="post_poked" value="1">
+
           <div class="pull-right">
             <h4 class="muted_font"><i class="fa fa-level-up"></i> {% trans %}Send abuse{% endtrans %}</h4>
           
-            <button name="post_paste_visibility" value="public" data-loading-text="{% trans %}Sending...{% endtrans %}" id="loading_button" type="submit" class="btn main_button">
+            <button name="post_paste_visibility" value="public" data-loading-text="{% trans %}Sending...{% endtrans %}" type="submit" class="btn main_button loading_button">
               {% trans %}Send abuse{% endtrans %}
             </button>
           </div>

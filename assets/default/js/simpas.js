@@ -26,7 +26,7 @@ $(function() {
         }  
     });
 
-    $('button#loading_button').click(function() {
+    $('button.loading_button').click(function() {
         var btn = $(this)
         btn.button('loading')
 
@@ -37,15 +37,15 @@ $(function() {
 
     $('textarea.form-control').each(function() {
         if ($(this).val().length == 0) {
-            $('button#loading_button').addClass('disabled');
+            $('button.loading_button').addClass('disabled');
         }
     });
 
     $('textarea.form-control').bind('input propertychange', function() {
-      $('button#loading_button').addClass('disabled');
+      $('button.loading_button').addClass('disabled');
 
       if(this.value.length) {
-        $('button#loading_button').removeClass('disabled');
+        $('button.loading_button').removeClass('disabled');
       }
     });
 
