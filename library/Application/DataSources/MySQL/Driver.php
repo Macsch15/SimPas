@@ -14,13 +14,6 @@ class Driver
     use Configuration;
 
     /**
-     * Data
-     *
-     * @var array
-     */
-    public $data = [];
-
-    /**
      * Is connected
      *
      * @var boolean
@@ -59,9 +52,6 @@ class Driver
         } catch(PDOException $exception) {
             throw new ExceptionRuntime($exception->getMessage());
         }
-
-        // Clean
-        unset($this->data);
     }
 
     /**

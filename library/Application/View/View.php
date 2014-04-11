@@ -21,7 +21,7 @@ class View extends Exception
      *  
      * @var object
      */
-    private $_twig;
+    private $twig;
 
     /**
      * Twig Loader
@@ -35,7 +35,7 @@ class View extends Exception
      * 
      * @var array
      */
-    private $_render = [];
+    private $render = [];
 
     /**
      * Twig integration
@@ -51,27 +51,27 @@ class View extends Exception
         $this->loader = new Twig_Loader_Filesystem(__DIR__ . DIRECTORY_SEPARATOR . 'Templates');
 
         // Setup Twig Environment
-        $this->_twig = new Twig_Environment($this->loader, [
+        $this->twig = new Twig_Environment($this->loader, [
                 'cache'            => (Application::TEMPLATE_CACHE === true ? Application::makePath('storage:templates') : false),
                 'auto_reload'      => (Application::ENVIRONMENT === 'dev' ?: false),
                 'strict_variables' => (Application::ENVIRONMENT === 'dev' ?: false)
         ]);
 
         // Add globals and functions
-        $this->_twig->addGlobal('app', $application);
-        $this->_twig->addGlobal('config', $this->config());
+        $this->twig->addGlobal('app', $application);
+        $this->twig->addGlobal('config', $this->config());
 
         // Add translations extension
-        $this->_twig->addExtension(new Twig_Extensions_Extension_I18n());
+        $this->twig->addExtension(new Twig_Extensions_Extension_I18n());
 
         // Assets function
         $_this = $this; // Hello stupid closures.
-        $this->_twig->addFunction(new Twig_SimpleFunction('assets', function ($folder, $entity) use ($_this) {
+        $this->twig->addFunction(new Twig_SimpleFunction('assets', function ($folder, $entity) use ($_this) {
             return $_this->assets($folder, $entity);
         }));
 
         // Build URL
-        $this->_twig->addFunction(new Twig_SimpleFunction('build_url', function ($route = null) use ($application) {
+        $this->twig->addFunction(new Twig_SimpleFunction('build_url', function ($route = null) use ($application) {
             return $application->buildUrl($route);
         }));
     }
@@ -84,7 +84,7 @@ class View extends Exception
      */
     public function render(array $display)
     {
-        return $this->_render = $display;
+        return $this->render = $display;
     }
 
     /**
@@ -94,7 +94,7 @@ class View extends Exception
     */
     public function view()
     {
-        return $this->_twig;
+        return $this->twig;
     }
 
     /**
@@ -148,7 +148,7 @@ class View extends Exception
             ob_start('ob_gzhandler');
 
             // Content
-            $this->twig($template_name . '.html.twig')->display($this->_render);
+            $this->twig($template_name . '.html.twig')->display($this->render);
 
             // Close connection
             header('Connection: close');
@@ -159,7 +159,7 @@ class View extends Exception
             return true;
         }
 
-        return $this->twig($template_name . '.html.twig')->display($this->_render);
+        return $this->twig($template_name . '.html.twig')->display($this->render);
     }
 
     /**
