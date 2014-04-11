@@ -24,44 +24,47 @@ class Translations
             return false;
         }
 
-        // Load locale
-        $locale = $this->config()->locale[1];
-
         // Locale doesn't exists?
-        if($this->config()->translations === true && $locale == null) {
+        if($this->config()->translations === true && $this->config()->locale[1] == null) {
             throw new ExceptionRuntime('Locale is required when translation is enabled');
         }
 
-        // Locale domain
-        $domain = 'messages';
-
         // Locale file
-        $file = Application::makePath('library:Application:Translations:Resources:' . $locale . ':LC_MESSAGES:' . $domain);
+        $file = Application::makePath('library:Application:Translations:Resources:' . 
+            $this->config()->locale[1] . ':LC_MESSAGES:' . $this->config()->translation_domain);
 
         // Translation not found
         if(file_exists($file . '.po') === false) {
             throw new AssetNotFound(sprintf('Translation file: ++%s+-+ not found', $file . '.po'));
         }
 
+        // Compiled translation not found
+        if(file_exists($file . '.mo') === false) {
+            throw new AssetNotFound(sprintf('Compiled translation file: ++%s+-+ not found. You must compile the *.po translation file.', $file . '.mo'));
+        }
+
         // Modification time
         $m_time = filemtime($file . '.mo');
 
         // If doesn't exists, create it, by copying the original MO file
-        if(file_exists(Application::makePath('library:Application:Translations:Resources:' . $locale . ':LC_MESSAGES:' . $domain . '_' . $m_time . '.mo')) === false) {
-            copy($file . '.mo', Application::makePath('library:Application:Translations:Resources:' . $locale . ':LC_MESSAGES:' . $domain . '_' . $m_time . '.mo'));
+        if(file_exists(Application::makePath('library:Application:Translations:Resources:' . 
+            $this->config()->locale[1] . ':LC_MESSAGES:' . $this->config()->translation_domain . '_' . $m_time . '.mo')) === false
+        ) {
+            copy($file . '.mo', Application::makePath('library:Application:Translations:Resources:' . 
+                $this->config()->locale[1] . ':LC_MESSAGES:' . $this->config()->translation_domain . '_' . $m_time . '.mo'));
         }
 
         // Set environment value
-        putenv('LC_ALL=' . $locale);
+        putenv('LC_ALL=' . $this->config()->locale[1]);
 
         // Set default locale
-        setlocale(LC_ALL, $locale);
-        setlocale(LC_TIME, $locale);
+        setlocale(LC_ALL, $this->config()->locale[1]);
+        setlocale(LC_TIME, $this->config()->locale[1]);
 
         // Set path for domain
-        bindtextdomain($domain . '_' . $m_time, Application::makePath('library:Application:Translations:Resources'));
+        bindtextdomain($this->config()->translation_domain . '_' . $m_time, Application::makePath('library:Application:Translations:Resources'));
 
         // Set text for domain
-        textdomain($domain . '_' . $m_time);
+        textdomain($this->config()->translation_domain . '_' . $m_time);
     }
 }
