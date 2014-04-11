@@ -42,7 +42,7 @@ class Exception
                 '++',
                 '+-+'
             ], [
-                '<code>', 
+                '<code style="white-space: normal">', 
                 '</code>'
             ], $exception->getMessage()),
             'stacktrace' => $exception->getTrace(),
