@@ -46,8 +46,16 @@
     </div>
 
     <div class="pull-left">
+      <div class="to_top pull-left">
+        <a class="tooltip-top" title="{% trans %}Go to top{% endtrans %}" href="#top">
+          <i class="fa fa-arrow-up"></i>
+        </a>
+      </div>
+
       <small class="muted_font">{% trans %}Submitted{% endtrans %} {{ paste.time|date("d.m.Y") }}&nbsp;&nbsp;</small>
-      <small><a href="{{ build_url('abuse/' ~ paste.unique_id) }}"><i class="fa fa-flag"></i> {% trans %}Report abuse{% endtrans %}</a></small>
+      {% if config.admin_email is not empty %}
+        <small><a href="{{ build_url('abuse/' ~ paste.unique_id) }}"><i class="fa fa-flag"></i> {% trans %}Report abuse{% endtrans %}</a></small>
+      {% endif %}
     </div>
     
     <div class="pull-right">
