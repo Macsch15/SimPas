@@ -3,9 +3,12 @@ namespace Application\Mailer;
 
 use Application\Application;
 use Application\Configuration\Configuration;
+use Application\Exception\ExceptionRuntime;
 use Swift_SmtpTransport;
 use Swift_Mailer;
 use Swift_Message;
+use Swift_MailTransport;
+use Swift_SendmailTransport;
 
 class Mailer
 {
@@ -25,19 +28,33 @@ class Mailer
     /**
     * Mailer width transport
     * 
+    * @throws ExceptionRuntime
     * @return Swift_Mailer object
     */
     public function mailer()
     {
-        $transport = Swift_SmtpTransport::newInstance($this->config('SmtpMailer')->host, $this->config('SmtpMailer')->port, 
-            $this->config('SmtpMailer')->protocol);
+        switch($this->config('Mailer')->transport) {
+            case 'smtp':
+                if(function_exists('proc_open') === false) {
+                    throw new ExceptionRuntime('proc_* functions are not available on your PHP installation. This is required for SMTP transport.');
+                }
 
-        if($this->config('SmtpMailer')->username != null) {
-            $transport->setUsername($this->config('SmtpMailer')->username);
-        }
+                $transport = Swift_SmtpTransport::newInstance($this->config('Mailer')->host, $this->config('Mailer')->port, 
+                    $this->config('Mailer')->protocol)
+                ->setUsername($this->config('Mailer')->username)
+                ->setPassword($this->config('Mailer')->password);
+                break;
+            case 'mail':
+            default:
+                $transport = Swift_MailTransport::newInstance();
+                break;
+            case 'sendmail':
+                if(function_exists('proc_open') === false) {
+                    throw new ExceptionRuntime('proc_* functions are not available on your PHP installation. This is required for Sendmail transport.');
+                }
 
-        if($this->config('SmtpMailer')->password != null) {
-            $transport->setPassword($this->config('SmtpMailer')->password);
+                $transport = Swift_SendmailTransport::newInstance($this->config()->sendmail_command);
+                break;
         }
 
         return Swift_Mailer::newInstance($transport);

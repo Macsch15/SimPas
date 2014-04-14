@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="{{ config.locale.0 }}">
+<head>
+  <meta charset="{{ config.charset }}">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    a {
+      color: #428BCA;
+      text-decoration: none;
+    }
+
+    .title_head {
+      background: #2F6488;
+      padding: 9px 0 0 0;
+      margin: 0 0 8px 0;
+    }
+
+    .title {
+      color: #DBF1FF;
+      padding: 0 21px 0 21px;
+      font-weight: normal;
+      font-size: 18px;
+    }
+
+    .title small {
+      color: #62A9D9;
+      border-left: 1px #62A9D9 solid;
+      margin: 0 0 0 4px;
+      padding: 0 0 0 11px;
+    }
+
+    .body {
+      background: #F7F7F7;
+      padding: 15px;
+    }
+
+    .body_margin {
+      margin: 0 25px 0 25px;
+    }
+
+    .reason {
+      background: #fff;
+      padding: 15px;
+      margin: 5px 0 5px 0;
+      font-style: italic;
+    }
+
+    .footer {
+      margin: 25px 0 0 0;
+      color: #8F8F8F;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <table class="title_head">
+            <tbody>
+              <tr>
+                <td>
+                  <h1 class="title">{{ config.site_title }} <small>{{ config.full_url }}</small></h1>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="body body_margin">
+                    {% block document_content %}{% endblock %}
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
