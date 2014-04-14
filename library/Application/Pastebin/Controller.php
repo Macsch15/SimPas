@@ -18,7 +18,7 @@ class Controller extends View
     /**
     * Application
     * 
-    * @var
+    * @var object
     */
     private $application;
 
@@ -208,11 +208,13 @@ class Controller extends View
         switch(HttpRequest::post('post_paste_visibility')) {
             case 'public':
                 return 'public';
+                break;
             case 'private':
             default:
                 return 'private';
+                break;
         }
-    }   
+    }
 
     /**
     * Banned IP's
