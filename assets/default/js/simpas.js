@@ -26,26 +26,17 @@ $(function() {
         }  
     });
 
-    $('button#loading_button').click(function() {
-        var btn = $(this)
-        btn.button('loading')
-
-        setTimeout(function() {
-            btn.button('reset')
-        }, 5000)
-    })
-
     $('textarea.form-control').each(function() {
         if ($(this).val().length == 0) {
-            $('button#loading_button').addClass('disabled');
+            $('button.submit_button').addClass('disabled');
         }
     });
 
     $('textarea.form-control').bind('input propertychange', function() {
-      $('button#loading_button').addClass('disabled');
+      $('button.submit_button').addClass('disabled');
 
       if(this.value.length) {
-        $('button#loading_button').removeClass('disabled');
+        $('button.submit_button').removeClass('disabled');
       }
     });
 

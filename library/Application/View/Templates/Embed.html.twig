@@ -1,13 +1,28 @@
 {% extends "BaseBlockBlank.html.twig" %}
 
 {% block document_content %}
-  {% set paste_h4 = paste.unique_id|length > 10 ? "<span class=\"tooltip-top\" title=\"" ~ paste.unique_id ~ "\">" ~ paste.unique_id|slice(0, 10) ~ "...</span>" : paste.unique_id %}
+    {% if paste.title is not empty %}
+      {% set paste_title = paste.title %}
+    {% else %}
+      {% set paste_title = paste.unique_id %}
+    {% endif %}
 
-  <h4 itemprop="name">{% trans %}Paste{% endtrans %} "<a target="_blank" href="{{ config.full_url}}paste/{{ paste.unique_id }}">{{ paste_h4|raw }}</a>" {% trans %}by{% endtrans %} PasteAuthor&nbsp;&nbsp;
-    <a href="#" id="zclip" class="btn btn-primary btn-sm"><i class="fa fa-copy"></i> {% trans %}Copy to clipboard{% endtrans %}</a>
-    <a target="_blank" href="{{ config.full_url }}raw/{{ paste.unique_id }}" class="btn btn-primary btn-sm"><i class="fa fa-terminal"></i> {% trans %}Raw mode{% endtrans %}</a>
-    <a target="_blank" href="{{ config.full_url }}download/{{ paste.unique_id }}" class="btn btn-primary btn-sm"><i class="fa fa-download"></i> {% trans %}Download{% endtrans %}</a>
-  </h4>
+    {% set paste_h4 = paste_title|length > 30 ? "<span class=\"tooltip-top\" title=\"" ~ paste_title ~ "\">" ~ paste_title|slice(0, 25) ~ "...</span>" : paste_title %}
+
+    <div class="paste_title" itemprop="name">
+      {% trans %}Paste{% endtrans %} &quot;<a href="{{ build_url('paste/' ~ paste.unique_id) }}">{{ paste_h4|raw }}</a>&quot;
+
+      {% if paste.author is not empty %}
+        {% set paste_author = paste.author|length > 15 ? "<span class=\"tooltip-top\" title=\"" ~ paste.author ~ "\">" ~ paste.author|slice(0, 15) ~ "...</span>" : paste.author %}
+        {% trans %}by{% endtrans %} {{ paste_author|raw }}
+      {% endif %}
+    </div>
+
+    <ul class="list-inline">
+      <li><a href="#" id="zclip" class="btn btn-primary btn-sm"><i class="fa fa-copy fa-lg"></i> {% trans %}Copy to clipboard{% endtrans %}</a></li>
+      <li><a href="{{ build_url('raw/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-terminal fa-lg"></i> {% trans %}Raw mode{% endtrans %}</a></li>
+      <li><a href="{{ build_url('download/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-download fa-lg"></i> {% trans %}Download{% endtrans %}</a></li>
+    </ul>
 
   {{ paste.content|raw }}
 

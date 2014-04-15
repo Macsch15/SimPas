@@ -48,4 +48,31 @@ class ReadPaste
 
         return $query->fetchAll()[0];
     }
+
+    /**
+    * Paste exists
+    * 
+    * @param int $paste_id 
+    * @return bool
+    */
+    public function pasteExists($paste_id)
+    {
+        // Prepare query
+        $query = $this->data_source
+        ->get()
+        ->prepare('SELECT unique_id FROM ' . $this->config('Database')->prefix . 'pastes WHERE unique_id = :paste_id');
+
+        // Filter and execute
+        $query->bindValue(':paste_id', $paste_id, constant('PDO::PARAM_INT'));
+        $query->execute();
+
+        $rows = $query->fetchAll();
+
+        // Test
+        if(is_array($rows) && count($rows)) {
+            return true;
+        }
+
+        return false;
+    }
 }

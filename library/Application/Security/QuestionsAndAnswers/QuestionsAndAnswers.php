@@ -2,7 +2,6 @@
 namespace Application\Security\QuestionsAndAnswers;
 
 use Application\Configuration\Configuration;
-use Application\HttpRequest\HttpRequest;
 use Application\Exception\ExceptionRuntime;
 
 class QuestionsAndAnswers
@@ -14,6 +13,7 @@ class QuestionsAndAnswers
     *
     * @param string $field_client_question
     * @param string $field_client_answer
+    * @throws ExceptionRuntime
     * @return bool
     */
     public function validate($field_client_question, $field_client_answer)
@@ -23,6 +23,10 @@ class QuestionsAndAnswers
         }
 
         $valid = false;
+
+        if($field_client_question == null || $field_client_answer == null) {
+            return $valid;
+        }
 
         if(is_array($this->config('QuestionsAndAnswers', true)[$field_client_question]) === true) {
             foreach($this->config('QuestionsAndAnswers', true)[$field_client_question] as $answer) {
@@ -44,6 +48,7 @@ class QuestionsAndAnswers
     /**
     * Fetch random question
     * 
+    * @throws ExceptionRuntime
     * @return string
     */
     public function question()

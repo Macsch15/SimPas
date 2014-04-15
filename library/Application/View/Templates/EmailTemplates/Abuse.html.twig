@@ -1,0 +1,20 @@
+{% extends "EmailTemplates/BaseBlock.html.twig" %}
+
+  {% block document_content %}
+    {% set site_title = config.site_title %}
+    {% set paste_url = build_url('paste/' ~ paste_id) %}
+    {% set home_url = build_url() %}
+
+    {% trans %}Hello,<br />
+    You have received abuse report at {{ site_title }} with reason:
+    <div class="reason">
+      {{ reason }}
+    </div>
+
+    Go to paste: <a href="{{ paste_url }}">{{ paste_url }}</a><br />
+    IP address of author this report: {{ ip_address }}<br />
+
+    <div class="footer">
+      This email was sent from <a href="{{ home_url }}">{{ site_title }}</a>, if you don't wish to receive this email, you can remove "admin_email" from configuration file.
+    </div>{% endtrans %}
+  {% endblock %}

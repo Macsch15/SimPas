@@ -20,7 +20,7 @@
           <tbody>
             {% for key in container %}
               <tr>
-              <td> <a href="{{ config.full_url }}paste/{{ key.unique_id }}"><i class="fa fa-external-link"></i> {{ key.unique_id }}</a></td>
+              <td> <a href="{{ build_url('paste/' ~ key.unique_id) }}"><i class="fa fa-external-link"></i> {{ key.unique_id }}</a></td>
               <td>{{ key.title is not empty ? key.title : '-' }}</td>
               <td>{{ key.author is not empty ? key.author : '-' }}</td>
               <td>{{ key.time|date("d.m.Y") }}</td>
@@ -34,7 +34,7 @@
         <div class="panel panel-info">
           <div class="panel-heading">
             <h3 class="panel-title">
-              <i class="fa fa-exclamation-circle fa-lg"></i> <b>No results</b>
+              <i class="fa fa-exclamation-circle fa-lg"></i> <b>{% trans %}No results{% endtrans %}</b>
             </h3>
           </div>
           <div class="panel-body">
@@ -42,6 +42,6 @@
           </div>
         </div>
 
-        <a href="{{ config.full_url }}" class="btn btn-primary"><i class="fa fa-home"></i> {% trans %}Return to index page{% endtrans %}</a>
+        <a href="{{ build_url() }}" class="btn btn-primary"><i class="fa fa-home"></i> {% trans %}Return to index page{% endtrans %}</a>
       {% endif %}
   {% endblock %}

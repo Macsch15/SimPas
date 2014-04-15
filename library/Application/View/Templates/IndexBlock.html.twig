@@ -1,13 +1,13 @@
 {% extends "BaseBlock.html.twig" %}
 
   {% block document_content %}
-    <form method="post" action="{{ config.full_url }}paste/{{ paste_id }}">
+    <form method="post" action="{{ build_url('paste/' ~ paste_id) }}">
 
       <div class="pull-left" style="width: 49%; margin-right: 2%;">
-        <input type="text" autocomplete="off" name="post_paste_title" pattern="[A-Za-z0-9{{ config.accented_characters is not empty ? config.accented_characters : null }}\-_?\.!\s]+" class="form-control" placeholder="{% trans %}Title (Optional){% endtrans %}">
+        <input type="text" autocomplete="off" name="post_paste_title" pattern="[A-Za-z0-9{{ config.accented_characters is not empty ? config.accented_characters : null }}\-_?\.!\s]+" class="form-control" placeholder="{% trans %}Title (optional){% endtrans %}">
       </div>
       <div class="pull-left" style="width: 49%">
-        <input type="text" autocomplete="off" name="post_paste_author" pattern="[A-Za-z0-9{{ config.accented_characters is not empty ? config.accented_characters : null }}\-_?\.!\s]+" class="form-control" placeholder="{% trans %}Author (Optional){% endtrans %}">
+        <input type="text" autocomplete="off" name="post_paste_author" pattern="[A-Za-z0-9{{ config.accented_characters is not empty ? config.accented_characters : null }}\-_?\.!\s]+" class="form-control" placeholder="{% trans %}Author (optional){% endtrans %}">
       </div>
       <br /><br />
 
@@ -33,7 +33,7 @@
         {% set antispam_question = antispam.question() %}
         <label for="antispamquestion">{{ antispam_question }}</label>
         <input type="hidden" name="post_antispam_question" value="{{ antispam_question }}">
-        <input type="text" autocomplete="off" required="required" name="post_antispam_answer" id="antispamquestion" class="form-control" placeholder="{% trans %}Type answer here...{% endtrans %}">
+        <input type="text" autocomplete="off" required="required" name="post_antispam_answer" id="antispamquestion" class="form-control" placeholder="{% trans %}Type answer here (required){% endtrans %}">
 
         <br />
       {% endif %}
@@ -51,20 +51,20 @@
 
       <div class="hidden-xs pull-right">
         <h4 class="muted_font"><i class="fa fa-save"></i> {% trans %}Send this paste{% endtrans %}</h4>
-        <button name="post_paste_visibility" value="private" data-loading-text="{% trans %}Sending...{% endtrans %}" id="loading_button" type="submit" class="btn main_button button_private">
+        <button name="post_paste_visibility" value="private" data-loading-text="{% trans %}Sending...{% endtrans %}" type="submit" class="btn main_button button_private submit_button">
           {% trans %}Send private paste{% endtrans %}
         </button>
-        <button name="post_paste_visibility" value="public" data-loading-text="{% trans %}Sending...{% endtrans %}" id="loading_button" type="submit" class="btn main_button">
+        <button name="post_paste_visibility" value="public" data-loading-text="{% trans %}Sending...{% endtrans %}" type="submit" class="btn main_button submit_button">
           {% trans %}Send public paste{% endtrans %}
         </button>
       </div>
 
       <div class="visible-xs pull-left">
         <h4 class="muted_font"><i class="fa fa-save"></i> {% trans %}Send this paste{% endtrans %}</h4>
-        <button name="post_paste_visibility" value="private" data-loading-text="{% trans %}Sending...{% endtrans %}" id="loading_button" type="submit" class="btn main_button button_private">
+        <button name="post_paste_visibility" value="private" data-loading-text="{% trans %}Sending...{% endtrans %}" type="submit" class="btn main_button button_private submit_button">
           {% trans %}Send private paste{% endtrans %}
         </button>
-        <button name="post_paste_visibility" value="public" data-loading-text="{% trans %}Sending...{% endtrans %}" id="loading_button" type="submit" class="btn main_button">
+        <button name="post_paste_visibility" value="public" data-loading-text="{% trans %}Sending...{% endtrans %}" type="submit" class="btn main_button submit_button">
           {% trans %}Send public paste{% endtrans %}
         </button>
       </div>

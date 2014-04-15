@@ -17,7 +17,7 @@
     {% set paste_h4 = paste_title|length > 30 ? "<span class=\"tooltip-top\" title=\"" ~ paste_title ~ "\">" ~ paste_title|slice(0, 25) ~ "...</span>" : paste_title %}
 
     <div class="paste_title" itemprop="name">
-      {% trans %}Paste{% endtrans %} &quot;<a href="{{ config.full_url}}paste/{{ paste.unique_id }}">{{ paste_h4|raw }}</a>&quot;
+      {% trans %}Paste{% endtrans %} &quot;<a href="{{ build_url('paste/' ~ paste.unique_id) }}">{{ paste_h4|raw }}</a>&quot;
 
       {% if paste.author is not empty %}
         {% set paste_author = paste.author|length > 15 ? "<span class=\"tooltip-top\" title=\"" ~ paste.author ~ "\">" ~ paste.author|slice(0, 15) ~ "...</span>" : paste.author %}
@@ -27,15 +27,15 @@
 
     <ul class="list-inline hidden-xs">
       <li><a href="#" id="zclip" class="btn btn-primary btn-sm"><i class="fa fa-copy fa-lg"></i> {% trans %}Copy to clipboard{% endtrans %}</a></li>
-      <li><a href="{{ config.full_url }}raw/{{ paste.unique_id }}" class="btn btn-primary btn-sm"><i class="fa fa-terminal fa-lg"></i> {% trans %}Raw mode{% endtrans %}</a></li>
-      <li><a href="{{ config.full_url }}download/{{ paste.unique_id }}" class="btn btn-primary btn-sm"><i class="fa fa-download fa-lg"></i> {% trans %}Download{% endtrans %}</a></li>
+      <li><a href="{{ build_url('raw/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-terminal fa-lg"></i> {% trans %}Raw mode{% endtrans %}</a></li>
+      <li><a href="{{ build_url('download/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-download fa-lg"></i> {% trans %}Download{% endtrans %}</a></li>
       <li><a data-toggle="modal" href="#share" class="btn btn-primary btn-sm"><i class="fa fa-share fa-lg"></i> {% trans %}Share{% endtrans %}</a></li>
     </ul>
 
     <ul class="list-inline visible-xs">
       <li><a href="#" id="zclip" class="btn btn-primary btn-sm"><i class="fa fa-copy fa-lg"></i></a></li>
-      <li><a href="{{ config.full_url }}raw/{{ paste.unique_id }}" class="btn btn-primary btn-sm"><i class="fa fa-terminal fa-lg"></i></a></li>
-      <li><a href="{{ config.full_url }}download/{{ paste.unique_id }}" class="btn btn-primary btn-sm"><i class="fa fa-download fa-lg"></i></a></li>
+      <li><a href="{{ build_url('raw/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-terminal fa-lg"></i></a></li>
+      <li><a href="{{ build_url('download/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-download fa-lg"></i></a></li>
       <li><a data-toggle="modal" href="#share" class="btn btn-primary btn-sm"><i class="fa fa-share fa-lg"></i></a></li>
     </ul>
 
@@ -46,8 +46,16 @@
     </div>
 
     <div class="pull-left">
+      <div class="to_top pull-left">
+        <a class="tooltip-top" title="{% trans %}Go to top{% endtrans %}" href="#top">
+          <i class="fa fa-arrow-up"></i>
+        </a>
+      </div>
+
       <small class="muted_font">{% trans %}Submitted{% endtrans %} {{ paste.time|date("d.m.Y") }}&nbsp;&nbsp;</small>
-      {# <small><a href="{{ config.full_url }}abuse/{{ paste.unique_id }}"><i class="fa fa-flag"></i> {% trans %}Report abuse{% endtrans %}</a></small> #}
+      {% if config.admin_email is not empty %}
+        <small><a href="{{ build_url('abuse/' ~ paste.unique_id) }}"><i class="fa fa-flag"></i> {% trans %}Report abuse{% endtrans %}</a></small>
+      {% endif %}
     </div>
     
     <div class="pull-right">

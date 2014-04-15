@@ -45,6 +45,14 @@
         }
     },
 
+    "/abuse/{id}/results": {
+        "controller": "Application\\Pastebin\\ReportAbuse",
+        "action": "results",
+        "requirements": {
+            "id": "\\d+"
+        }
+    },
+
     "/download/{id}": {
         "controller": "Application\\Pastebin\\Controller",
         "action": "download",

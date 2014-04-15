@@ -3,7 +3,7 @@
 @import url('./chosen.css');
 
 body {
-    background: #FCFCFC;
+    background: #fff;
 }
 
 textarea:focus, 
@@ -202,4 +202,8 @@ ol div {
 
 .tooltip {
     z-index: 50000 !important;
+}
+
+.to_top a {
+    margin: 0 8px 0 0;
 }

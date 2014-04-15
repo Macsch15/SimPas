@@ -1,0 +1,41 @@
+{% extends "BaseBlock.html.twig" %}
+
+  {% block document_title %}
+    {% if success == true %}
+      {% trans %}Success! Abuse sent{% endtrans %}
+    {% else %}
+      {% trans %}Failed! Abuse not sent{% endtrans %}
+    {% endif %}
+  {% endblock %}
+
+  {% block document_content %}
+    {% if success == true %}
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <i class="fa fa-check fa-lg"></i> <b>{% trans %}Success!{% endtrans %}</b>
+          </h3>
+        </div>
+        <div class="panel-body">
+          {% trans %}Your report has been sent to administrator. Thanks.{% endtrans %}
+        </div>
+      </div>
+
+      <a href="{{ build_url('paste/' ~ paste_id) }}" class="btn btn-primary"><i class="fa fa-reply"></i> {% trans %}Return to paste{% endtrans %}</a>
+      <a href="{{ build_url() }}" class="btn btn-primary"><i class="fa fa-home"></i> {% trans %}Return to index page{% endtrans %}</a>
+    {% else %}
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <i class="fa fa-times fa-lg"></i> <b>{% trans %}Failed!{% endtrans %}</b>
+          </h3>
+        </div>
+        <div class="panel-body">
+          {% trans %}Your report has been NOT sent to administrator. Please try later.{% endtrans %}
+        </div>
+      </div>
+
+      <a href="{{ build_url('paste/' ~ paste_id) }}" class="btn btn-primary"><i class="fa fa-reply"></i> {% trans %}Return to paste{% endtrans %}</a>
+      <a href="{{ build_url() }}" class="btn btn-primary"><i class="fa fa-home"></i> {% trans %}Return to index page{% endtrans %}</a>
+    {% endif %}
+  {% endblock %}

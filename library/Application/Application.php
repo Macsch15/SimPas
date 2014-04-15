@@ -122,6 +122,26 @@ class Application
     }
 
     /**
+    * Build URL address
+    * 
+    * @param string $route 
+    * @return string
+    */
+    public function buildUrl($route = null)
+    {
+        if($route == null) {
+            return $this->config()->full_url;
+        }
+
+        if($this->config()->show_index_in_urls === true) {
+            // If you can't use mod rewrite add index to URL
+            return $this->config()->full_url . 'index.php?' . $route;
+        } else {
+            return $this->config()->full_url . $route;
+        }
+    }
+
+    /**
     * Database connection accessor
     * 
     * @return DatabaseDriver object
