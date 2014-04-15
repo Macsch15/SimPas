@@ -42,14 +42,14 @@ class Application
      * 
      * @return string
      */
-    const VERSION = '0.1';
+    const VERSION = '0.2';
 
     /**
      * Application version long
      * 
      * @return string
      */
-    const VERSION_LONG = '1000';
+    const VERSION_LONG = '2000';
 
     /**
      * Application name
