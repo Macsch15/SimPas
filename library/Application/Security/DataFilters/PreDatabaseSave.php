@@ -15,6 +15,18 @@ class PreDatabaseSave
     */
     public function filter($string, $restricted_characters)
     {
+        if($restricted_characters === 'html') {
+            return htmlspecialchars($string);
+        }
+
+        if($restricted_characters === 'slashes') {
+            return addslashes($string);
+        }
+
+        if($restricted_characters === 'htmlslashes') {
+            return htmlspecialchars(addslashes($string));
+        }
+
         if($restricted_characters === true) {
             $string = $this->normalizeString($string);
         }

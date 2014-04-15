@@ -91,7 +91,7 @@ class ReportAbuse extends View
 
         $render_mail = $this->twig('EmailTemplates/Abuse.html.twig')->render([
             'paste_id' => $request['id'],
-            'reason' => HttpRequest::post('post_paste_abuse_reason'),
+            'reason' => HttpRequest::post('post_paste_abuse_reason', 'html'),
             'ip_address' => HttpRequest::getClientIpAddress()
         ]);
 
