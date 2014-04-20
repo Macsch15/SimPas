@@ -34,7 +34,7 @@ $ php cmd/console SyncDb
 Settings
 ======
 
-:exclamation: **IMPORTANT: Always use backslash for single quote, e.g ```you\'re```**
+:exclamation: **IMPORTANT: Always use backslash for single and double quote, e.g ```you\'re``` ```you\"re```**
 
 ####Default.json
 
