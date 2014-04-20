@@ -1,5 +1,6 @@
 {
     "full_url": "http://localhost/SimPas/develop/",
+    "assets_url": "http://localhost/SimPas/develop/assets/", 
     "site_title": "SimPas Application",
     "site_description_crawlers": "SimPas Application",
     "show_index_in_urls": false,

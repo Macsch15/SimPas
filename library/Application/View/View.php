@@ -230,6 +230,6 @@ class View extends Exception
      */
     public function assets($folder, $entity)
     {
-        return $this->config()->full_url . 'assets/' . $this->config()->theme . '/' . $folder . '/' . $entity;
+        return $this->config()->assets_url . $this->config()->theme . '/' . $folder . '/' . $entity;
     }
 }
