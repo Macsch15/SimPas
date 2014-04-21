@@ -31,6 +31,25 @@ After you set configuration, type in command line
 $ php cmd/console SyncDb
 ```
 
+I have old release! How I can update SimPas?
+======
+
+Bad news.
+SimPas doesn't have an upgrader. Only way to install fresh release is to re-upload all files, configure low-level settings and enter the command:
+
+```
+$ php cmd/console CacheRebuild
+```
+
+**Some** releases may need re-sync database schema, in this case command above is not enough, you must fire this as well in command-line:
+
+```
+$ php cmd/console SyncDb
+```
+
+*Upgrader be maybe coming soon. Who knows?*
+
+
 Settings
 ======
 :exclamation: **IMPORTANT: Always use backslash for single and double quote, e.g ```you\'re``` ```you\"re```**
