@@ -5,7 +5,6 @@
     "database": "newsimpas",
     "username": "root",
     "password": "",
-    "dsn": "",
     "charset": "utf8",
     "collate": "utf8_general_ci"
 }

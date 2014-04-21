@@ -28,6 +28,5 @@
     "google_analytics_domain": "",
     "short_url": false,
     "latest_pastes": 20,
-    "antispam_enabled": true,
-    "abuse_report_enabled": true
+    "antispam_enabled": true
 }

@@ -40,7 +40,7 @@ class Driver
             if($this->isConnected() === false) {
                 // Try PDO connect
                 $this->pdo = new PDO(
-                    sprintf('mysql:host=%s;port=%d;dbname=%s' . ($this->config('Database')->dsn !== null ? ';' . $this->config('Database')->dsn : null), $this->config('Database')->server, $this->config('Database')->port, $this->config('Database')->database),
+                    sprintf('mysql:host=%s;port=%d;dbname=%s', $this->config('Database')->server, $this->config('Database')->port, $this->config('Database')->database),
                     $this->config('Database')->username, $this->config('Database')->password
                 );
 
