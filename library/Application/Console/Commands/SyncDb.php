@@ -72,6 +72,28 @@ class SyncDb
         $tables = $this->prepareSchema();
 
         foreach($tables['tables'] as $table => $table_fields) {
+            if(count($this->data_source->get()->query('SHOW TABLES')->fetchAll())) {
+                // Table already exists? Check whether new fields has been added
+                foreach($table_fields as $field_name => $field_value) {
+                    // Ignore
+                    if($field_name === '__options__') {
+                        continue;
+                    }
+
+                    $field_exists = $this->data_source->get()->query('SHOW COLUMNS FROM ' . $this->config('Database')->prefix . $table . ' WHERE Field = "' . $field_name . '"')->fetchAll();
+
+                    if(!count($field_exists)) {
+                        // Add new field
+                        $this->data_source->get()->query('ALTER TABLE ' . $this->config('Database')->prefix . $table . ' ADD ' . '`' . $field_name . '` ' . $field_value);
+
+                        // Send the message
+                        $this->console->writeStdout('Added field: ' . $field_name);
+                    }
+                }
+
+                return $this->console->writeStdout('Succeeded');
+            }
+
             // Table
             $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS ' . $this->config('Database')->prefix . $table . '( ';
 
