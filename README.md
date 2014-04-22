@@ -95,6 +95,7 @@ antispam_enabled  | Questions&Answers enabled?  | true/false  | true
 
     Key       |  Description  |   Value type  | Default value
 ------------- | ------------- | ------------- | -------------
+driver  | Datasource driver. Available: **mysql** or **postgresql** | String | mysql
 server  | MySQL Server  | String  | localhost
 port  | MySQL custom port  | Integer  | 3306
 database  | Database name  | String  | newsimpas
