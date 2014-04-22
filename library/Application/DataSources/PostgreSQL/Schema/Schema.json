@@ -1,0 +1,17 @@
+{"tables": {
+    "pastes": {
+        "paste_id": "serial PRIMARY KEY",
+        "unique_id": "VARCHAR(100)",
+        "time": "VARCHAR(15)",
+        "size": "INT",
+        "length": "INT",
+        "syntax": "TEXT",
+        "content": "TEXT",
+        "ip_address": "VARCHAR(40)",
+        "raw_content": "TEXT",
+        "title": "VARCHAR(255) DEFAULT NULL",
+        "author": "VARCHAR(255) DEFAULT NULL",
+        "start_from_line": "INT",
+        "visibility": "TEXT"
+    }
+}}

@@ -9,7 +9,8 @@ use Application\Translations\Translations;
 use Application\Routing\Routing;
 use Application\Configuration\Configuration;
 use Application\Console\Console;
-use Application\DataSources\MySQL\Driver as DatabaseDriver;
+use Application\DataSources\MySQL\Driver as MysqlDriver;
+use Application\DataSources\PostgreSQL\Driver as PostgresqlDriver;
 
 class Application
 {
@@ -144,11 +145,19 @@ class Application
     /**
     * Database connection accessor
     * 
-    * @return DatabaseDriver object
+    * @return object
     */
     public function dbConnectionAccessor()
     {
-        return new DatabaseDriver();
+        switch($this->config('Database')->driver) {
+            case 'mysql':
+            default:
+                return new MysqlDriver();
+                break;
+            case 'postgresql':
+                return new PostgresqlDriver();
+                break;
+        }
     }
 
     /**

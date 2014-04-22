@@ -1,4 +1,5 @@
 {
+    "driver": "mysql",
     "server": "localhost",
     "port": 3306,
     "prefix": "simpas_",

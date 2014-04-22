@@ -69,52 +69,126 @@ class SyncDb
     */
     private function sync()
     {
+        $this->console->writeStdout('Selected datasource driver: ' . $this->config('Database')->driver);
+
         $tables = $this->prepareSchema();
 
         foreach($tables['tables'] as $table => $table_fields) {
-            if(count($this->data_source->get()->query('SHOW TABLES')->fetchAll())) {
-                // Table already exists? Check whether new fields has been added
-                foreach($table_fields as $field_name => $field_value) {
-                    // Ignore
-                    if($field_name === '__options__') {
-                        continue;
+            switch($this->config('Database')->driver) {
+                case 'mysql':
+                default:
+                    if(count($this->data_source->get()->query('SHOW TABLES')->fetchAll())) {
+                        // Table already exists? Check whether new fields has been added
+                        foreach($table_fields as $field_name => $field_value) {
+                            // Ignore
+                            if($field_name === '__options__') {
+                                continue;
+                            }
+
+                            // Prepare query
+                            $field_exists = $this->data_source->get()->prepare('SHOW COLUMNS FROM ' . $this->config('Database')->prefix . $table . ' WHERE Field= :field');
+
+                            // Filter
+                            $field_exists->bindValue(':field', $field_name);
+
+                            // Execute
+                            $field_exists->execute();
+
+                            // Test
+                            if(!count($field_exists->fetchAll())) {
+                                // Add new field
+                                $this->data_source->get()->query('ALTER TABLE ' . $this->config('Database')->prefix . $table . ' ADD ' . '`' . $field_name . '` ' . $field_value);
+
+                                // Send the message
+                                $this->console->writeStdout('Added field: ' . $field_name);
+                            }
+                        }
+
+                        return $this->console->writeStdout('Succeeded');
                     }
 
-                    $field_exists = $this->data_source->get()->query('SHOW COLUMNS FROM ' . $this->config('Database')->prefix . $table . ' WHERE Field = "' . $field_name . '"')->fetchAll();
+                    // Table
+                    $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS ' . $this->config('Database')->prefix . $table . '( ';
 
-                    if(!count($field_exists)) {
-                        // Add new field
-                        $this->data_source->get()->query('ALTER TABLE ' . $this->config('Database')->prefix . $table . ' ADD ' . '`' . $field_name . '` ' . $field_value);
+                    foreach($table_fields as $field_name => $field_value) {
+                        // Ignore
+                        if($field_name === '__options__') {
+                            continue;
+                        }
 
-                        // Send the message
-                        $this->console->writeStdout('Added field: ' . $field_name);
+                        // Fields
+                        $_createTablesQuery .= '`' . $field_name . '` ' . $field_value . ',';
                     }
-                }
 
-                return $this->console->writeStdout('Succeeded');
+                    // Table options
+                    $_createTablesQuery .= 'PRIMARY KEY(' . $table_fields['__options__']['primary_key'] . ')) ENGINE=' . $table_fields['__options__']['engine'];
+                    $_createTablesQuery .= ' DEFAULT CHARSET=\'' . $this->config('Database')->charset . '\' DEFAULT COLLATE=\'' . $this->config('Database')->collate . '\';';
+                    break;
+                case 'postgresql':
+                    // Prepare query
+                    $table_exists = $this->data_source->get()->prepare('SELECT * FROM information_schema.tables WHERE table_schema = :public');
+
+                    // Filter
+                    $table_exists->bindValue(':public', 'public');
+
+                    // Execute
+                    $table_exists->execute();
+
+                    if(count($table_exists->fetchAll())) {
+                        // Table already exists? Check whether new fields has been added
+                        foreach($table_fields as $field_name => $field_value) {
+                            // Ignore
+                            if($field_name === '__options__') {
+                                continue;
+                            }
+
+                            // Prepare query
+                            $field_exists = $this->data_source->get()->prepare('
+                                SELECT column_name 
+                                FROM information_schema.columns 
+                                WHERE table_name=:table and column_name=:field_name');
+
+                            // Filter
+                            $field_exists->bindValue(':table', $this->config('Database')->prefix . $table);
+                            $field_exists->bindValue(':field_name', $field_name);
+
+                            // Execute
+                            $field_exists->execute();
+
+                            if(!count($field_exists->fetchAll())) {
+                                // Add new field
+                                $this->data_source->get()->query('ALTER TABLE ' . $this->config('Database')->prefix . $table . ' ADD ' . $field_name . ' ' . $field_value);
+
+                                // Send the message
+                                $this->console->writeStdout('Added field: ' . $field_name);
+                            }
+                        }
+
+                        return $this->console->writeStdout('Succeeded');
+                    }
+
+                    // Table
+                    $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS ' . $this->config('Database')->prefix . $table . '( ';
+
+                    foreach($table_fields as $field_name => $field_value) {
+                        // Ignore
+                        if($field_name === '__options__') {
+                            continue;
+                        }
+
+                        // Fields
+                        $_createTablesQuery .= $field_name . ' ' . $field_value . ',';
+                    }
+
+                    $_createTablesQuery = substr($_createTablesQuery, 0, -1) . ');';
+                    break;
             }
-
-            // Table
-            $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS ' . $this->config('Database')->prefix . $table . '( ';
-
-            foreach($table_fields as $field_name => $field_value) {
-                // Ignore
-                if($field_name === '__options__') {
-                    continue;
-                }
-
-                // Fields
-                $_createTablesQuery .= '`' . $field_name . '` ' . $field_value . ', ';
-            }
-
-            // Table options
-            $_createTablesQuery .= 'PRIMARY KEY(' . $table_fields['__options__']['primary_key'] . ')) ENGINE=' . $table_fields['__options__']['engine'];
-            $_createTablesQuery .= ' DEFAULT CHARSET=\'' . $this->config('Database')->charset . '\' DEFAULT COLLATE=\'' . $this->config('Database')->collate . '\';';
 
             $this->console->writeStdout('Creating table "' . $this->config('Database')->prefix . $table . '"...', false, ' ');
             
             // try-catch
             try {
+                // Execute
                 $this->data_source->get()->query($_createTablesQuery);
 
                 $this->console->writeStdout('Succeeded');
