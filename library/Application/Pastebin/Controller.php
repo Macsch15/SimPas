@@ -8,7 +8,7 @@ use Application\Pastebin\SyntaxHighlighter;
 use Application\Pastebin\SendPaste;
 use Application\Pastebin\ReadPaste;
 use Application\HttpRequest\HttpRequest;
-use Application\Pastebin\ShortenUrlApi\ShortenUrlApi;
+use Application\Pastebin\ShortenUrlApi;
 use Application\Security\QuestionsAndAnswers\QuestionsAndAnswers;
 
 class Controller extends View

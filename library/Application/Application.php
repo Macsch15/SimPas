@@ -85,7 +85,7 @@ class Application
             // Error handler
             set_error_handler([$this, 'engineErrorsHandler'], 0);
         }
-        
+
         // Timezone settings
         if(!ini_get('date.timezone')) {
             @date_default_timezone_set($this->config()->default_timezone);
@@ -145,7 +145,7 @@ class Application
     /**
     * Database connection accessor
     * 
-    * @return object
+    * @return Driver object
     */
     public function dbConnectionAccessor()
     {
