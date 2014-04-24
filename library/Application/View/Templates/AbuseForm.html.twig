@@ -24,18 +24,36 @@
 
           <input type="hidden" name="post_poked" value="1">
 
-          <div class="pull-right">
-            <h4 class="muted_font"><i class="fa fa-level-up"></i> {% trans %}Send abuse{% endtrans %}</h4>
-          
-            <button name="post_paste_visibility" value="public" data-loading-text="{% trans %}Sending...{% endtrans %}" type="submit" class="btn main_button submit_button">
-              {% trans %}Send abuse{% endtrans %}
-            </button>
+          <div class="visible-xs">
+            <div class="pull-left">
+              <h4 class="muted_font"><i class="fa fa-level-up"></i> {% trans %}Send abuse{% endtrans %}</h4>
+            
+              <button name="post_paste_visibility" value="public" data-loading-text="{% trans %}Sending...{% endtrans %}" type="submit" class="btn main_button submit_button">
+                {% trans %}Send abuse{% endtrans %}
+              </button>
+            </div>
+
+            <div class="pull-left" style="margin-top: 10px">
+              <h4 class="muted_font"><i class="fa fa-heart"></i> {% trans %}I changed my mind{% endtrans %}</h4>
+
+              <a href="{{ build_url('paste/' ~ paste_id) }}" class="btn btn-primary"><i class="fa fa-reply"></i> {% trans %}Return to paste{% endtrans %}</a>
+            </div>
           </div>
 
-          <div class="pull-left">
-            <h4 class="muted_font"><i class="fa fa-heart"></i> {% trans %}I changed my mind{% endtrans %}</h4>
+          <div class="hidden-xs">
+            <div class="pull-right">
+              <h4 class="muted_font"><i class="fa fa-level-up"></i> {% trans %}Send abuse{% endtrans %}</h4>
+            
+              <button name="post_paste_visibility" value="public" data-loading-text="{% trans %}Sending...{% endtrans %}" type="submit" class="btn main_button submit_button">
+                {% trans %}Send abuse{% endtrans %}
+              </button>
+            </div>
 
-            <a href="{{ build_url('paste/' ~ paste_id) }}" class="btn btn-primary"><i class="fa fa-reply"></i> {% trans %}Return to paste{% endtrans %}</a>
+            <div class="pull-left">
+              <h4 class="muted_font"><i class="fa fa-heart"></i> {% trans %}I changed my mind{% endtrans %}</h4>
+
+              <a href="{{ build_url('paste/' ~ paste_id) }}" class="btn btn-primary"><i class="fa fa-reply"></i> {% trans %}Return to paste{% endtrans %}</a>
+            </div>
           </div>
         </div>
       </form>
