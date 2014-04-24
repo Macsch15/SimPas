@@ -45,24 +45,26 @@
     </noscript>
 
     {% if app.engineErrors()|length > 0 %}
-      <div class="panel panel-danger">
-        <div class="panel-heading">
-          {% set error_count = app.engineErrors()|length %}
-          <h3 class="panel-title"><i class="fa fa-exclamation-triangle fa-lg"></i> <b>{% trans %}An errors encountered! ({{ error_count }}){% endtrans %}</b></h3>
-        </div>
+    <div class="pull-left error_exclamation">
+      <i class="fa fa-exclamation-triangle"></i>
+    </div>
 
-        <div class="panel-body">
-          {% for error_message in app.engineErrors() %}
-            {{ loop.index }}. {{ error_message }}<br />
-          {% endfor %}
-        </div>
+    <h3 style="color: #808080">{% trans %}Core error encountered!{% endtrans %}</h3>
+    <h4>{% trans %}Error message{% endtrans %}:</h4>
 
-      </div>
+    {% for error_message in app.engineErrors() %}
+      <h4 style="padding-left: 125px">
+        <code style="white-space: normal">
+          {{ error_message }}
+        </code>
+      </h4>
+    {% endfor %}
+
+    {% else %}
+      {% block document_content %}{% endblock %}
     {% endif %}
-
-    {% block document_content %}{% endblock %}
   </div>
-  
+
   <footer class="containter wrap copyright hidden-xs hidden-sm">
     <div class="pull-left link_underline">
       {% trans %}This site uses cookies.{% endtrans %} <a href="{{ build_url('cookies') }}">{% trans %}Read more about cookies policy{% endtrans %}</a>

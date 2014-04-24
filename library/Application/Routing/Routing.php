@@ -5,7 +5,7 @@ use Application\Application;
 use Application\FileManager\FileManager;
 use Application\Exception\AssetNotFound;
 use Application\Exception\ExceptionRuntime;
-use Application\View\Forbidden;
+use Application\View\ClientError;
 use Application\View\View;
 
 class Routing extends View
@@ -163,7 +163,7 @@ class Routing extends View
         }
 
         // Forbidden
-        (new Forbidden($application))->response404($this->_request, $this->fetchAllRoutes());
+        (new ClientError($application))->response404();
     }
 
     /**

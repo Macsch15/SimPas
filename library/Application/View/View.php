@@ -191,7 +191,7 @@ class View extends Exception
             header('HTTP/1.1 404 Not Found', true, 404);
         }
 
-        return $this->twig('ClientError.html.twig')->display([
+        return $this->twig('ClientErrors/ClientError.html.twig')->display([
             'error_message' => $message
         ]);
     }
