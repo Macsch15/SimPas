@@ -167,7 +167,7 @@ ol div {
   border: none;
 }
 
-.btn-primary:hover, .btn-primary:focus, .hover, .disabled {
+.btn-primary:hover, .btn-primary:focus, .hover {
   background: #2F6488;
   color: #fff;
   border: 1px #2F6488 solid !important;
