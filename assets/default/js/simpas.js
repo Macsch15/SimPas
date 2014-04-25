@@ -48,6 +48,8 @@ $(function() {
     $('li.line_active').removeClass('line_active');
     $(this).addClass('line_active');
   });
+
+  $("textarea#_chars_left").eq(0).focus();
 });
 
 function showLine() {
