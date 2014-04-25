@@ -4,7 +4,7 @@ use Application\Application;
 use Application\HttpRequest\HttpRequest;
 use Application\Pastebin\SyntaxHighlighter;
 use Application\FileManager\FileManager;
-use Application\Pastebin\ShortenUrlApi\ShortenUrlApi;
+use Application\Pastebin\ShortenUrlApi;
 use Application\Security\DataFilters\PreDatabaseSave;
 
 class Tests extends PHPUnit_Framework_TestCase
