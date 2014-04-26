@@ -50,6 +50,18 @@ $(function() {
   });
 
   $("textarea#_chars_left").eq(0).focus();
+
+  $('body').on('keydown', 'textarea#_chars_left', function(e) {
+    var keyCode = e.keyCode || e.which;
+
+    if(keyCode == 9) {
+      e.preventDefault();
+      var start = $(this)[0].selectionStart;
+      var end = $(this)[0].selectionEnd;
+
+      $(this).val($(this).val().substring(0, start) + "    " + $(this).val().substring(end));
+    }
+  });
 });
 
 function showLine() {
