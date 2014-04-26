@@ -114,7 +114,7 @@ host  | Server (for SMTP transport)  | String  | localhost
 port  | Port (for SMTP transport)  | Integer  | 25
 username  | Username (for SMTP transport)  | String  | *void*
 password  | Password (for SMTP transport)  | String  | *void*
-protocol  | Protocol (for SMTP transport). Available: tls, ssl  | String  | tls
+protocol  | Protocol (for SMTP transport). Available: **tls**, **ssl**  | String  | tls
 sendmail_command  | Sendmail command (for sendmail transport)  | String  | ```/usr/sbin/sendmail -bs```
 
 ####QuestionsAndAnswers.json
