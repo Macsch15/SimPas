@@ -35,7 +35,7 @@ class Console
 
         foreach($cmd_argv as $arguments) {
             // Arguments validation
-            if(in_array($arguments, $this->avaiableCommands(true)) === false) {
+            if(in_array($arguments, $this->avaiableCommands(true), true) === false) {
                 return $this->avaiableCommands();
             }
 

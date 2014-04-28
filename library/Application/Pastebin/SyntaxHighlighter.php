@@ -73,7 +73,7 @@ class SyntaxHighlighter
     */
     public function validateLanguage($language)
     {
-        if(in_array($language, $this->languagesToArray()) === false) {
+        if(in_array($language, $this->languagesToArray(), true) === false) {
             $language = 'Text';
         }
 
