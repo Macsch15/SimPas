@@ -1,4 +1,4 @@
-SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.svg?branch=master)](https://travis-ci.org/Macsch15/SimPas)
+SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.png?branch=master)](https://travis-ci.org/Macsch15/SimPas)
 ======
 
 Simple Pastebin Application based on PHP.
@@ -109,12 +109,12 @@ collate  | Database collate  | String  | utf8_general_ci
 
     Key       |  Description  |   Value type  | Default value
 ------------- | ------------- | ------------- | -------------
-transport  | Available: mail (sending email by php mail()), smtp, sendmail  | String  | mail
+transport  | Available: **mail** (sending email by php mail()), **smtp** and **sendmail**  | String  | mail
 host  | Server (for SMTP transport)  | String  | localhost
 port  | Port (for SMTP transport)  | Integer  | 25
 username  | Username (for SMTP transport)  | String  | *void*
 password  | Password (for SMTP transport)  | String  | *void*
-protocol  | Protocol (for SMTP transport). Available: tls, ssl  | String  | tls
+protocol  | Protocol (for SMTP transport). Available: **tls**, **ssl**  | String  | tls
 sendmail_command  | Sendmail command (for sendmail transport)  | String  | ```/usr/sbin/sendmail -bs```
 
 ####QuestionsAndAnswers.json
