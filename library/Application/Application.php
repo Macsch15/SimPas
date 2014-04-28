@@ -4,6 +4,7 @@ namespace Application;
 use Application\Exception\ExceptionRuntime;
 use Application\Exception\ExceptionInvalidArgument;
 use Application\Exception\AssetNotFound;
+use Application\Exception\MailerException;
 use Application\View\View;
 use Application\Translations\Translations;
 use Application\Routing\Routing;
@@ -104,6 +105,8 @@ class Application
             (new View($this))->drawExceptionMessage($exception, 'InvalidArgument');
         } catch(AssetNotFound $exception) {
             (new View($this))->drawExceptionMessage($exception, 'AssetNotFound');
+        } catch(MailerException $exception) {
+            (new View($this))->drawExceptionMessage($exception, 'MailerException');
         } catch(\Exception $exception) {
             (new View($this))->drawExceptionMessage($exception);
         }
