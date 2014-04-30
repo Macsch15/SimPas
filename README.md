@@ -1,4 +1,4 @@
-SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.png?branch=master)](https://travis-ci.org/Macsch15/SimPas)
+SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.svg?branch=master)](https://travis-ci.org/Macsch15/SimPas) [![Unicorn](http://img.shields.io/badge/unicorn-approved-ff69b4.svg)](https://github.com/Macsch15/SimPas)
 ======
 
 Simple Pastebin Application based on PHP.
