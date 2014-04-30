@@ -13,6 +13,7 @@
         "author": "VARCHAR(255) DEFAULT NULL",
         "start_from_line": "INT(10)",
         "visibility": "TINYTEXT",
+        "author_website": "VARCHAR(255) DEFAULT NULL",
 
         "__options__": {
             "primary_key": "paste_id",

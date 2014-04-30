@@ -145,7 +145,8 @@ class Controller extends View
             'paste_title' => HttpRequest::post('post_paste_title', true),
             'paste_author' => HttpRequest::post('post_paste_author', true),
             'paste_start_from_line' => $this->startListCountingFromLine(),
-            'paste_visibility' => $this->pasteVisibility()
+            'paste_visibility' => $this->pasteVisibility(),
+            'paste_author_website' => $this->authorWebsite()
         ];
     }
 
@@ -214,6 +215,23 @@ class Controller extends View
                 return 'private';
                 break;
         }
+    }
+
+    /**
+    * Author website
+    * 
+    * @return string|null
+    */
+    private function authorWebsite()
+    {
+        if(HttpRequest::post('post_paste_author_website', 'html') !== false
+            && filter_var(HttpRequest::post('post_paste_author_website', 'html'), FILTER_VALIDATE_URL) !== false
+            && $this->config()->author_website_enabled === true
+        ) {
+            return HttpRequest::post('post_paste_author_website', 'html');
+        }
+
+        return null;
     }
 
     /**

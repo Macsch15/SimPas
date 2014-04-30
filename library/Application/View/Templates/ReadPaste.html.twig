@@ -52,7 +52,14 @@
         </a>
       </div>
 
-      <small class="muted_font">{% trans %}Submitted{% endtrans %} {{ paste.time|date("d.m.Y") }}&nbsp;&nbsp;</small>
+      <small class="muted_font">
+        {% trans %}Submitted{% endtrans %} {{ paste.time|date("d.m.Y") }}&nbsp;&nbsp;
+
+        {% if paste.author_website is not empty and config.author_website_enabled == true %}
+          <a rel="nofollow" class="tooltip-top" title="{{ paste.author_website }}" href="{{ paste.author_website }}"><i class="fa fa-external-link"></i> {% trans %}Author website link{% endtrans %}</a>&nbsp;&nbsp;
+        {% endif %}
+      </small>
+
       {% if config.admin_email is not empty %}
         <small><a href="{{ build_url('abuse/' ~ paste.unique_id) }}"><i class="fa fa-flag"></i> {% trans %}Report abuse{% endtrans %}</a></small>
       {% endif %}

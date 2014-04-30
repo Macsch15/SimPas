@@ -12,6 +12,7 @@
         "title": "VARCHAR(255) DEFAULT NULL",
         "author": "VARCHAR(255) DEFAULT NULL",
         "start_from_line": "INT",
-        "visibility": "TEXT"
+        "visibility": "TEXT",
+        "author_website": "VARCHAR(255) DEFAULT NULL"
     }
 }}
