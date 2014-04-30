@@ -25,6 +25,7 @@ input[type="color"]:focus,
 .form-control:focus {
   box-shadow: none !important;
   border: 1px solid #C9C9C9 !important;
+  outline: none !important;
 }
 
 .link_underline a {
