@@ -293,7 +293,7 @@ class Controller extends View
     {
         /// Paste exists?
         if(HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
-            die(_('Requested paste doesn\'t exists.'));
+            return false;
         }
         
         // Template render
