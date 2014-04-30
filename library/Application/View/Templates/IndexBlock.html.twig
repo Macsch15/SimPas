@@ -11,7 +11,7 @@
           <div class="input-group">
             <input type="text" autocomplete="off" name="post_paste_author" pattern="[A-Za-z0-9{{ config.accented_characters is not empty ? config.accented_characters : null }}\-_?\.!\s]+" class="form-control" placeholder="{% trans %}Author (optional){% endtrans %}">
 
-            <span class="input-group-addon">
+            <span class="input-group-addon author_website">
               <input type="url" autocomplete="off" name="post_paste_author_website" placeholder="{% trans %}Author website (optional){% endtrans %}">
             </span>
           </div>

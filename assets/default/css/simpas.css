@@ -206,13 +206,13 @@ ol div {
     margin: 15px 0 0 0;
 }
 
-.input-group-addon {
+.author_website {
   padding: 0;
   background-color: #fff;
   border: none;
 }
 
-.input-group-addon input[type="url"] {
+.author_website input[type="url"] {
   height: 34px;
   padding: 6px 12px;
   border: 1px solid #CCC;
