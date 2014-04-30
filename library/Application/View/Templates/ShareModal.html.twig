@@ -8,41 +8,41 @@
 
         <div class="modal-body">
           <div class="input-group" style="width: 100%">
-            <span class="input-group-addon tooltip-top" title="{% trans %}BBCode{% endtrans %}" style="min-width: 48px; max-width: 90px"><i class="fa fa-info-circle fa-lg"></i></span>
+            <span class="input-group-addon"><b>{% trans %}BBCode{% endtrans %}</b></span>
             <input onclick="this.select();" class="form-control input-lg" type="text" 
               value="[url={{ build_url('paste/' ~ paste.unique_id) }}]{% trans %}Paste{% endtrans %} {{ paste.unique_id }}[/url]" />
           </div><br />
           <div class="input-group" style="width: 100%">
-            <span class="input-group-addon tooltip-top" title="{% trans %}Direct link{% endtrans %}" style="min-width: 48px; max-width: 90px"><i class="fa fa-info-circle fa-lg"></i></span>
+            <span class="input-group-addon"><b>{% trans %}Direct link{% endtrans %}</b></span>
             <input onclick="this.select();" class="form-control input-lg" type="text" 
               value="{{ build_url('paste/' ~ paste.unique_id) }}" />
           </div><br />
 
           {% if config.short_url and shorten_url.shorten(config.full_url ~ "paste/" ~ paste.unique_id) != false %}
           <div class="input-group" style="width: 100%">
-            <span class="input-group-addon tooltip-top" title="{% trans %}Short URL{% endtrans %}" style="min-width: 48px; max-width: 90px"><i class="fa fa-info-circle fa-lg"></i></span>
+            <span class="input-group-addon"><b>{% trans %}Short URL{% endtrans %}</b></span>
             <input onclick="this.select();" class="form-control input-lg" type="text" 
               value='{{ shorten_url.shorten(build_url('paste/' ~ paste.unique_id)) }}' />
           </div><br />
           {% endif %}
 
           <div class="input-group" style="width: 100%">
-            <span class="tooltip-top input-group-addon" title="{% trans %}HTML{% endtrans %}" style="min-width: 48px; max-width: 90px"><i class="fa fa-info-circle fa-lg"></i></span>
+            <span class="input-group-addon"><b>{% trans %}HTML{% endtrans %}</b></span>
             <input onclick="this.select();" class="form-control input-lg" type="text" 
               value='<a href="{{ build_url('paste/' ~ paste.unique_id) }}">{% trans %}Paste{% endtrans %} {{ paste.unique_id }}</a>' />
           </div><br />
           <div class="input-group" style="width: 100%">
-            <span class="input-group-addon tooltip-top" title="{% trans %}Markdown{% endtrans %}" style="min-width: 48px; max-width: 90px"><i class="fa fa-info-circle fa-lg"></i></span>
+            <span class="input-group-addon"><b>{% trans %}Markdown{% endtrans %}</b></span>
             <input onclick="this.select();" class="form-control input-lg" type="text" 
               value="[{% trans %}Paste{% endtrans %} {{ paste.unique_id }}]({{ build_url('paste/' ~ paste.unique_id) }})" />
           </div><br />
           <div class="input-group" style="width: 100%">
-            <span class="input-group-addon tooltip-top" title="{% trans %}Iframe embed{% endtrans %}" style="min-width: 48px; max-width: 90px"><i class="fa fa-info-circle fa-lg"></i></span>
+            <span class="input-group-addon"><b>{% trans %}Iframe embed{% endtrans %}</b></span>
             <input onclick="this.select();" class="form-control input-lg" type="text" 
               value='<iframe src="{{ build_url('embed/' ~ paste.unique_id) }}" style="overflow: auto" width="745" height="445" frameborder="0"></iframe>' />
           </div><br />
           <div class="input-group" style="width: 100%">
-            <span class="input-group-addon tooltip-top" title="{% trans %}JSON API{% endtrans %}" style="min-width: 48px; max-width: 90px"><i class="fa fa-info-circle fa-lg"></i></span>
+            <span class="input-group-addon"><b>{% trans %}JSON API{% endtrans %}</b></span>
             <input onclick="this.select();" class="form-control input-lg" type="text" 
               value='{{ build_url('api/' ~ paste.unique_id) }}' />
           </div>
