@@ -25,7 +25,7 @@ trait Configuration
                 throw new AssetNotFound(sprintf('Undefined configuration file "%s"', $entity));
             }
 
-            // Decode JSON as object
+            // Decode JSON as object or array
             $json_decode = json_decode((new FileManager)->getContentsFromFile($_path), ($as_array === true ?: false));
 
             // Decode error
