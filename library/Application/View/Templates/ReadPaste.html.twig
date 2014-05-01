@@ -6,6 +6,14 @@
         {% trans %}by{% endtrans %} {{ paste.author }}
       {% endif %}
   {% endblock %}
+
+  {% block document_header %}
+    {{ parent() }}
+
+    {% if paste.visibility == 'private' %}
+      <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+  {% endblock %}
   
   {% block document_content %}
     {% if paste.title is not empty %}
