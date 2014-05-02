@@ -28,6 +28,31 @@ input[type="color"]:focus,
   outline: none !important;
 }
 
+.font {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.checkbox {
+  padding-left: 5px;
+  margin-bottom: 0;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label:before {
+  content: "\f096\00a0";
+  font-size: 17px;
+  color: #A8A8A8;
+}
+
+input[type=checkbox]:checked + label:before {
+  content: "\f046\00a0";
+  font-size: 17px;
+  color: #499BD1;
+}
+
 .link_underline a {
   text-decoration: underline !important;
 }
