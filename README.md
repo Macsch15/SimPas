@@ -54,7 +54,7 @@ Settings
 ======
 :exclamation: **IMPORTANT: Always use backslash for single and double quote, e.g ```you\'re``` ```you\"re```**
 
-####Default.json
+####library/Application/Configuration/Resources/Default.json
 
 
     Key       |  Description  |   Value type  | Default value
@@ -91,7 +91,7 @@ latest_pastes  | Number of pastes displayed on ```/latest``` page  | Integer  | 
 antispam_enabled  | Questions&Answers enabled?  | true/false  | true
 author_website_enabled | Author website enabled?  | true/false  | true
 
-####Database.json
+####library/Application/Configuration/Resources/Database.json
 
 
     Key       |  Description  |   Value type  | Default value
@@ -105,7 +105,7 @@ password  | Database password  | String | *void*
 charset  | Database charset  | String  | utf8
 collate  | Database collate  | String  | utf8_general_ci
 
-####Mailer.json
+####library/Application/Configuration/Resources/Mailer.json
 
 
     Key       |  Description  |   Value type  | Default value
@@ -118,7 +118,7 @@ password  | Password (for SMTP transport)  | String  | *void*
 protocol  | Protocol (for SMTP transport). Available: **tls**, **ssl**  | String  | tls
 sendmail_command  | Sendmail command (for sendmail transport)  | String  | ```/usr/sbin/sendmail -bs```
 
-####QuestionsAndAnswers.json
+####library/Application/Configuration/Resources/QuestionsAndAnswers.json
 
 
     Key       |     Value
