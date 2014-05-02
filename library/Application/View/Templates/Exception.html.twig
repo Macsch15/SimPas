@@ -5,12 +5,12 @@
   <title>
     {% if constant('Application\\Application::ENVIRONMENT') == 'dev' %}
       {% if type is not empty %}
-        {{ type }} exception detected!
+        {% trans %}{{ type }} exception detected!{% endtrans %}
       {% else %}
-        Exception detected!
+        {% trans %}Exception detected!{% endtrans %}
       {% endif %} - {{ config.site_title }}
     {% else %}
-      500 Internal Server Error - {{ config.site_title }}
+      {% trans %}500 Internal Server Error{% endtrans %} - {{ config.site_title }}
     {% endif %}
   </title>
   <link href="{{ assets('css', 'simpas.css') }}" rel="stylesheet">
@@ -18,22 +18,22 @@
 <body>
   <div class="container wrap">
     {% if constant('Application\\Application::ENVIRONMENT') == 'dev' %}
-      <h3 style="color: #808080">Exception detected! :C</h3>
+      <h3 style="color: #808080">{% trans %}Catastrophic error! :C{% endtrans %}</h3>
       <div style="margin-left: 20px;">
         <h4>
           {{ message|raw }}
           <div style="text-align: right; font-size: 10px;">
-            500 Internal Server Error &mdash; Exception {{ type }}
+            {% trans %}500 Internal Server Error &mdash; Exception {{ type }}{% endtrans %}
           </div>
         </h4>
       </div>
       <hr />
 
-      <h4 class="muted_font">In file</h4>
+      <h4 class="muted_font">{% trans %}In file{% endtrans %}</h4>
         <div style="margin-left: 20px">
           <h3>
             <small>
-               <em>{{ data.2 }}</em> at line <em>{{ data.0 }}</em>
+               <em>{{ data.2 }}</em> {% trans %}at line{% endtrans %} <em>{{ data.0 }}</em>
             </small>
           </h3>
         </div>
@@ -43,24 +43,24 @@
 
       <br />
 
-      <h4 class="muted_font">Stack Trace</h4>
+      <h4 class="muted_font">{% trans %}Stack Trace{% endtrans %}</h4>
       <code style="background: none;">
         {% for key, value in stacktrace %}
             <div style="margin-left: 20px">
               <span style="font-size: 41px; float:left; color: #808080; margin-right: 15px">{{ loop.index }}</span>
-              File: {% if value.file is defined %}{{ value.file }}{% else %}-{% endif %}<br />
-              Line: {% if value.line is defined %}{{ value.line }}{% else %}-{% endif %}<br />
-              Class: {% if value.class is defined and value.function is defined %}{{ value.class }}::{{ value.function }}(){% else %}-{% endif %}
+              {% trans %}File{% endtrans %}: {% if value.file is defined %}{{ value.file }}{% else %}-{% endif %}<br />
+              {% trans %}Line{% endtrans %}: {% if value.line is defined %}{{ value.line }}{% else %}-{% endif %}<br />
+              {% trans %}Class{% endtrans %}: {% if value.class is defined and value.function is defined %}{{ value.class }}::{{ value.function }}(){% else %}-{% endif %}
             </div>
             <hr />
         {% endfor %}
       </code>
       
     {% else %}
-      <h3 style="color: #808080">500 Internal Server Error</h3>
+      <h3 style="color: #808080">{% trans %}500 Internal Server Error{% endtrans %}</h3>
       {% if stacktrace.0.class is defined and stacktrace.0.function is defined %}
         <div style="margin-left: 20px">
-          <h4>Exception in <code>{{ stacktrace.0.class }}::{{ stacktrace.0.function }}()</code></h4>
+          <h4>{% trans %}Exception in{% endtrans %} <code>{{ stacktrace.0.class }}::{{ stacktrace.0.function }}()</code></h4>
         </div>
       {% endif %}
 
