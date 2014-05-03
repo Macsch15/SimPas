@@ -30,7 +30,7 @@
           <ul class="nav navbar-nav navbar-left">
             <li><a class="tooltip-bottom" title="{% trans %}Page Index{% endtrans %}" href="{{ build_url() }}"><i class="fa fa-home fa-lg"></i></a></li>
             <li><a class="tooltip-bottom" title="{% trans %}Rules{% endtrans %}" href="{{ build_url('rules') }}"><i class="fa fa-gavel fa-lg"></i></a></li>
-            <li><a class="tooltip-bottom" title="{% trans %}Latest pastes{% endtrans %}" href="{{ build_url('latest') }}"><span class="glyphicon glyphicon-fire fa-lg"></span></a></li>
+            <li><a class="tooltip-bottom" title="{% trans %}Latest pastes{% endtrans %}" href="{{ build_url('latest') }}"><i class="fa fa-list-ul fa-lg"></i></a></li>
           </ul>
         </div>
       </div>
@@ -74,8 +74,8 @@
       <br />
       <div class="pull-left">
         {% set utilisedMemory = app.getUtilisedMemory() %}
-        <span class="glyphicon glyphicon-tasks"></span> {% trans %}SimPas utilised {{ utilisedMemory }}KB memory for this request{% endtrans %}<br />
-        <div style="text-align: left"><span class="glyphicon glyphicon-compressed"></span> {% trans %}GZIP Compression{% endtrans %}: {{ config.gzip_compression ? "On" : "Off" }}</div>
+        <i class="fa fa-cogs"></i> {% trans %}SimPas utilised {{ utilisedMemory }}KB memory for this request{% endtrans %}<br />
+        <div style="text-align: left"><i class="fa fa-fire"></i> {% trans %}GZIP Compression{% endtrans %}: {{ config.gzip_compression ? "On" : "Off" }}</div>
       </div>
     {% endif %}
 

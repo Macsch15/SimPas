@@ -5,7 +5,7 @@
     "site_description_crawlers": "SimPas Application",
     "show_index_in_urls": false,
     "shortcut_icon_url": "",
-    "admin_email": "c",
+    "admin_email": "",
     "default_geshi_language": "Text",
     "site_offline": false,
     "offline_allowed_ip": "127.0.0.1",
