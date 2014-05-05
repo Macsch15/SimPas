@@ -184,8 +184,22 @@ ol div {
   text-decoration: none;
 }
 
+.options_button {
+  color: #2F6488;
+}
+
+.popover, .modal-content {
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+}
+
+.modal-backdrop {
+  background: none;
+}
+
 .btn {
   font-weight: bold;
+  transition: all 0.15s ease-in;
 }
 
 .btn-primary {
