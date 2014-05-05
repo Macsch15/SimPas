@@ -71,10 +71,10 @@
     </div>
 
     {% if constant('Application\\Application::ENVIRONMENT') == 'dev' %}
-      <br />
+      <br /><br />
       <div class="pull-left">
         {% set utilisedMemory = app.getUtilisedMemory() %}
-        <span class="glyphicon glyphicon-tasks"></span> {% trans %}SimPas utilised {{ utilisedMemory }}KB memory for this request{% endtrans %}<br />
+        <span class="glyphicon glyphicon-tasks"></span> {% trans %}Allocated memory: {{ utilisedMemory }}KB{% endtrans %}<br />
         <div style="text-align: left"><span class="glyphicon glyphicon-compressed"></span> {% trans %}GZIP Compression{% endtrans %}: {{ config.gzip_compression ? "On" : "Off" }}</div>
       </div>
     {% endif %}
