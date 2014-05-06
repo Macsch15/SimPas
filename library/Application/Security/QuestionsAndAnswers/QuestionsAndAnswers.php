@@ -13,7 +13,7 @@ class QuestionsAndAnswers
     *
     * @param string $field_client_question
     * @param string $field_client_answer
-    * @throws ExceptionRuntime
+    * @throws Application\Exception\ExceptionRuntime
     * @return bool
     */
     public function validate($field_client_question, $field_client_answer)

@@ -182,6 +182,7 @@ class View extends Exception
     * Client error
     * 
     * @param string $message
+    * @param bool $not_found_header
     * @return void
     */
     public function sendFriendlyClientError($message, $not_found_header = false)

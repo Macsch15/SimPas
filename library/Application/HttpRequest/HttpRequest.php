@@ -8,7 +8,8 @@ class HttpRequest
     /**
     * POST Request
     * 
-    * @param string $field_name 
+    * @param string $field_name
+    * @param bool $restricted_characters
     * @return string|bool
     */
     public static function post($field_name, $restricted_characters = false)

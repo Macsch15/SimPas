@@ -29,7 +29,7 @@ class ReadPaste
     /**
     * Read paste data from data source
     * 
-    * @param type 
+    * @param int $paste_id
     * @return array
     */
     public function read($paste_id)

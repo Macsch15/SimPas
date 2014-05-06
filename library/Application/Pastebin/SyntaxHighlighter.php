@@ -44,6 +44,8 @@ class SyntaxHighlighter
     * 
     * @param string $code
     * @param string $language
+    * @param int $start_from_line
+    * @param string $line_numbering
     * @return string
     */
     public function parseCode($code, $language, $start_from_line = 1, $line_numbering = '1'){

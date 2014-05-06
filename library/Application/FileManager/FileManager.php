@@ -58,7 +58,6 @@ class FileManager
      * Get contents from file
      * 
      * @param string $file
-     * @param array $http_attributes
      * @return string|bool
      */
     public function getContentsFromFile($file)
