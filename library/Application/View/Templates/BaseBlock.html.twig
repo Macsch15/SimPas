@@ -37,6 +37,17 @@
     </div>
   </div>
 
+  {% import "Macros/Breadcrumb.html.twig" as breadcrumb %}
+
+  <div class="breadcrumb">
+    <div class="container wrap">
+      <ul class="list-inline fa">
+        {{ breadcrumb.add("Page Index"|trans, build_url()) }}
+        {% block breadcrumb %}{% endblock %}
+      </ul>
+    </div>
+  </div>
+
   <div class="container wrap wrap_content">
     <noscript>
       <div class="alert alert-info hidden-xs"><i class="fa fa-exclamation-triangle fa-lg"></i> 

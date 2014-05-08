@@ -1,6 +1,10 @@
 {% extends "BaseBlock.html.twig" %}
 
-  {% block document_title %}{% trans %}404 Page not found{% endtrans %} - {{ config.site_title }}{% endblock %}
+  {% block document_title %}{% trans %}404 Page not found{% endtrans %}{% endblock %}
+
+  {% block breadcrumb %}
+    {{ breadcrumb.add(block('document_title')) }}
+  {% endblock %}
 
   {% block document_content %}
     <div class="pull-left error_exclamation">

@@ -83,6 +83,10 @@ ol div {
   padding: 0;
 }
 
+.list-inline {
+  margin-left: 0;
+}
+
 .header_items {
   border-radius: 0;
   box-shadow: none;
@@ -106,12 +110,24 @@ ol div {
 }
 
 .navbar {
-  background: #fff;
-  border-bottom: 1px #DEDEDE solid;
+  background: #53728C;
+  border-bottom: none;
+  margin-bottom: 0;
 }
 
 .navbar-brand {
-  color: #325675;
+  color: #fff !important;
+}
+
+.navbar-toggle {
+  color: #fff;
+  border: 1px #719CBF solid !important;
+}
+
+.navbar-toggle:hover, 
+.navbar-toggle:active,
+.navbar-toggle:focus {
+  background: #5F83A1 !important;
 }
 
 .navbar-inner {
@@ -122,23 +138,22 @@ ol div {
 .navbar .nav > li > a {
   padding: 6px 10px 6px 10px;
   margin: 10px 4px 10px 4px;
-  background: #fff;
-  color: #797878 !important;
+  color: #fff !important;
   float: left;
   font-weight: bold;
 }
 
 .navbar .nav > li > a:focus {
-  color: #696868 !important;
+  color: #ABC2D4 !important;
 }
 
 .navbar .nav > li > a:hover {
-  color: #4F4E4E !important;
+  color: #DEF1FF !important;
   transition: all 0.15s ease-in;
 }
 
 .muted_font {
-  color: #CCCCCC;
+  color: #BFBFBF;
 }
 
 .syntax_highlight_option {
@@ -276,4 +291,40 @@ ol div {
   .input_percent {
     width: 49%;
   }
+}
+
+.breadcrumb {
+  padding: 0;
+  background: #353535;
+  border-radius: 0;
+}
+
+.breadcrumb li {
+  color: #fff;
+  padding-top: 10px;
+  font-size: 16px;
+}
+
+.breadcrumb li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.breadcrumb li a:hover {
+  color: #E5E5E5;
+  text-decoration: none;
+}
+
+.last:after {
+  content: "" !important;
+}
+
+.breadcrumb li:after {
+  content: "\00a0\f054";
+  margin: 0 6px 0 6px;
+}
+
+.breadcrumb li:last-child:after {
+  content: "";
+  margin: 0 6px 0 6px;
 }

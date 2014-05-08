@@ -2,6 +2,10 @@
 
   {% block document_title %}{% trans %}Rules{% endtrans %}{% endblock %}
 
+  {% block breadcrumb %}
+    {{ breadcrumb.add(block('document_title'), build_url('rules')) }}
+  {% endblock %}
+
   {% block document_content %}
     {% set site_url = config.full_url %}
 

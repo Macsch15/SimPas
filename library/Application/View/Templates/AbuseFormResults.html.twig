@@ -8,6 +8,12 @@
     {% endif %}
   {% endblock %}
 
+  {% block breadcrumb %}
+    {{ breadcrumb.add('Paste'|trans ~ ': ' ~ paste_id, build_url('paste/' ~ paste_id)) }}
+    {{ breadcrumb.add('Send abuse for paste'|trans ~ ' ' ~ paste_id, build_url('abuse/' ~ paste_id)) }}
+    {{ breadcrumb.add(success ? 'Report sent'|trans : 'Report not sent'|trans) }}
+  {% endblock %}
+
   {% block document_content %}
     {% if success == true %}
       <div class="panel panel-success">

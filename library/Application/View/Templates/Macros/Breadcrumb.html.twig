@@ -1,0 +1,7 @@
+{% macro add(location_title, location_url) %}
+  {% if location_url is not empty %}
+    <li><a href="{{ location_url }}"><span class="font"><b>{{ location_title }}</b></span></a></li>
+  {% else %}
+    <li><span class="font"><b>{{ location_title }}</b></span></li>
+  {% endif %}
+{% endmacro %}

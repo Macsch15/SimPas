@@ -7,6 +7,10 @@
       {% endif %}
   {% endblock %}
 
+  {% block breadcrumb %}
+    {{ breadcrumb.add('Paste'|trans ~ ': ' ~ paste.unique_id, build_url('paste/' ~ paste.unique_id)) }}
+  {% endblock %}
+
   {% block document_header %}
     {{ parent() }}
 

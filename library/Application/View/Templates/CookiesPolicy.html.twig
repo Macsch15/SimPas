@@ -2,6 +2,10 @@
 
   {% block document_title %}{% trans %}Cookies policy{% endtrans %}{% endblock %}
 
+  {% block breadcrumb %}
+    {{ breadcrumb.add(block('document_title'), build_url('cookies')) }}
+  {% endblock %}
+
   {% block document_content %}
     <h3>{% trans %}Cookies policy{% endtrans %}</h3>
     <div style="padding: 10px;">

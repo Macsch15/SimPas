@@ -2,6 +2,11 @@
 
   {% block document_title %}{% trans %}Send abuse{% endtrans %}{% endblock %}
 
+  {% block breadcrumb %}
+    {{ breadcrumb.add('Paste'|trans ~ ': ' ~ paste_id, build_url('paste/' ~ paste_id)) }}
+    {{ breadcrumb.add('Send abuse for paste'|trans ~ ' ' ~ paste_id, build_url('abuse/' ~ paste_id)) }}
+  {% endblock %}
+
   {% block document_content %}
     {% if config.admin_email is not empty %}
       <form method="post" action="{{ build_url('abuse/' ~ paste_id ~ '/results') }}">
