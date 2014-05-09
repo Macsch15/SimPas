@@ -11,7 +11,8 @@ body {
     visibility: hidden;
   }
 
-  #zclip_copy *, .pre_code {
+  #zclip_copy *, 
+  .pre_code {
     visibility: visible;
   }
 
@@ -23,7 +24,7 @@ body {
 
   pre {
     overflow: visible;
-  } 
+  }
 }
 
 textarea:focus, 
