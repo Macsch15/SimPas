@@ -26,6 +26,11 @@ $(function() {
     }  
   });
 
+  $('a#print').click(function() {
+    window.print();
+    return false;
+  });
+
   $('textarea.form-control').each(function() {
     if ($(this).val().length == 0) {
       $('button.submit_button').addClass('disabled');

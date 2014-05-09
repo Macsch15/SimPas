@@ -6,6 +6,26 @@ body {
   background: #fff;
 }
 
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #zclip_copy *, .pre_code {
+    visibility: visible;
+  }
+
+  .container, 
+  #zclip_copy {
+    position: absolute;
+    top: 1px;
+  }
+
+  pre {
+    overflow: visible;
+  } 
+}
+
 textarea:focus, 
 input[type="text"]:focus, 
 input[type="password"]:focus, 
