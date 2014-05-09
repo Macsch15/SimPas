@@ -10,5 +10,25 @@
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
   {% block document_content %}{% endblock %}
+
+  {% block document_javascript %}
+    <script src="{{ assets('js', 'jquery-2.1.1.min.js') }}"></script>
+    <script src="{{ assets('js', 'bootstrap.min.js') }}"></script>
+    <script src="{{ assets('js', 'simpas.js') }}"></script>
+    <script src="{{ assets('js', 'jquery.zclip.min.js') }}"></script>
+    <script>
+      $(function() {
+        $('a#zclip').zclip({
+          path: "{{ assets('js', 'ZeroClipboard.swf') }}",
+          copy: $('pre#zclip_copy').text()
+        });
+
+        $('#zclip').click(function () {
+          $(this).addClass('disabled');
+          $(this).html('<i class="fa fa-check"></i> {% trans %}Copied to clipboard!{% endtrans %}');
+        });
+      });
+    </script>
+  {% endblock %}
 </body>
 </html>
