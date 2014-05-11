@@ -13,6 +13,12 @@ $(function() {
     }
   });
 
+  $('form#send_paste').submit(function() {
+    $(".progress").animate({
+      height: 8
+    }, 50);
+  });
+
   $('button#options').click(function() {
     $('div#form_data').empty();
 

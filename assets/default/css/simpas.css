@@ -27,6 +27,17 @@ body {
   }
 }
 
+.progress {
+  margin: 0;
+  height: 0;
+}
+
+.progress-bar {
+  float: none;
+  position: absolute;
+  height: 8px;
+}
+
 textarea:focus, 
 input[type="text"]:focus, 
 input[type="password"]:focus, 
@@ -138,6 +149,10 @@ ol div {
 
 .navbar-brand {
   color: #fff !important;
+}
+
+.navbar-collapse {
+  border-top: 0;
 }
 
 .navbar-toggle {
