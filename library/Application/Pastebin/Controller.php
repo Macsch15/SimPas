@@ -116,7 +116,8 @@ class Controller extends View
         
         // Template render
         $this->render([
-            'paste' => (new ReadPaste($this->application))->read($request['id'])
+            'paste' => (new ReadPaste($this->application))->read($request['id']),
+            'shorten_url' => new ShortenUrlApi()
         ]);
 
         return $this->{'ReadPaste'};
@@ -145,8 +146,7 @@ class Controller extends View
             'paste_author' => HttpRequest::post('post_paste_author', true),
             'paste_start_from_line' => $this->startListCountingFromLine(),
             'paste_visibility' => $this->pasteVisibility(),
-            'paste_author_website' => $this->authorWebsite(),
-            'paste_short_url' => $this->saveShortUrl($request['id'])
+            'paste_author_website' => $this->authorWebsite()
         ];
     }
 
@@ -381,23 +381,6 @@ class Controller extends View
     private function stringToBytes($string)
     {
         return round(strlen($string) / (pow(1024, 0) / pow(10, 0))) / pow(10, 0);
-    }
-
-    /**
-    * Shorten URL
-    * 
-    * @param int $paste_id 
-    * @return string|null
-    */
-    private function saveShortUrl($paste_id)
-    {
-        if(filter_var(htmlspecialchars((new ShortenUrlApi())->shorten($this->application->buildUrl('paste/' . $paste_id))), FILTER_VALIDATE_URL) === false
-            || $this->config()->short_url === false
-        ) {
-            return null;
-        }
-
-        return (new ShortenUrlApi())->shorten(($this->application->buildUrl('paste/' . $paste_id)));
     }
 
     /**
