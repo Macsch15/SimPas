@@ -37,7 +37,7 @@ class ReadPaste
         // Prepare query
         $query = $this->data_source
         ->get()
-        ->prepare('SELECT unique_id, time, size, length, syntax, content, ip_address, raw_content, title, author, start_from_line, visibility, author_website
+        ->prepare('SELECT unique_id, time, size, length, syntax, content, ip_address, raw_content, title, author, start_from_line, visibility, author_website, short_url
             FROM ' . $this->config('Database')->prefix  . 'pastes WHERE unique_id = :paste_id LIMIT 1');
 
         // Filter

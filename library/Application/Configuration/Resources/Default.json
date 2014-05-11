@@ -26,7 +26,7 @@
     "banned_ip": ["8.8.8.8", "8.8.8.*"],
     "google_analytics_ua_code": "",
     "google_analytics_domain": "",
-    "short_url": false,
+    "short_url": true,
     "latest_pastes": 20,
     "antispam_enabled": true,
     "author_website_enabled": true

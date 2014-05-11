@@ -30,7 +30,7 @@ class Application
      * 
      * @return string
      */
-    const ENVIRONMENT = 'prod';
+    const ENVIRONMENT = 'dev';
 
     /**
     * Template cache

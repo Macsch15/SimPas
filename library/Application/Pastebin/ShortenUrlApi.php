@@ -40,7 +40,7 @@ class ShortenUrlApi
     * Shorten URL
     * 
     * @param string $long_url 
-    * @return array|bool
+    * @return array|null
     */
     public function shorten($long_url)
     {
@@ -52,7 +52,7 @@ class ShortenUrlApi
         $response = json_decode($response, true);
 
         if($response == null || $response['errorCode'] !== 0) {
-            return false;
+            return null;
         }
 
         $short_url = null;
