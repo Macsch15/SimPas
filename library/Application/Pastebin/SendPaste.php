@@ -49,7 +49,8 @@ class SendPaste
             author,
             start_from_line,
             visibility,
-            author_website
+            author_website,
+            short_url
         ) VALUES (
             :unique_id,
             :time,
@@ -63,7 +64,8 @@ class SendPaste
             :author,
             :start_from_line,
             :visibility,
-            :author_website
+            :author_website,
+            :short_url
         );');
 
         // Filter
@@ -80,6 +82,7 @@ class SendPaste
         $query->bindValue(':start_from_line', $container['paste_start_from_line'], constant('PDO::PARAM_INT'));
         $query->bindValue(':visibility', $container['paste_visibility']);
         $query->bindValue(':author_website', $container['paste_author_website']);
+        $query->bindValue(':short_url', $container['paste_short_url']);
 
         // Execute
         $query->execute();
