@@ -50,7 +50,7 @@ class Tests extends PHPUnit_Framework_TestCase
 
     public function testShortenurlFail()
     {
-        $this->assertFalse((new ShortenUrlApi)->shorten('http//www.example.com'));
+        $this->assertNull((new ShortenUrlApi)->shorten('http//www.example.com'));
     }
 
     public function testPredbfilterRC()
