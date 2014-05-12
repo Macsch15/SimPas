@@ -358,7 +358,7 @@ ol div {
 }
 
 .last:after {
-  content: "" !important;
+  content: "\00a0" !important;
 }
 
 .breadcrumb li:after {
@@ -367,6 +367,6 @@ ol div {
 }
 
 .breadcrumb li:last-child:after {
-  content: "";
+  content: "\00a0";
   margin: 0 6px 0 6px;
 }
