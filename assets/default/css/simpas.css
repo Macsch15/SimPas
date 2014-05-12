@@ -28,14 +28,20 @@ body {
 }
 
 .progress {
+  position: absolute;
+  width: 100%;
+  height: 0px;
   margin: 0;
-  height: 0;
+  z-index: 9999;
+  border-radius: 0;
 }
 
 .progress-bar {
-  float: none;
-  position: absolute;
-  height: 8px;
+  height: 6px;
+}
+
+.progress.active .progress-bar {
+  animation-duration: 0.30s;
 }
 
 textarea:focus, 

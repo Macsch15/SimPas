@@ -15,7 +15,7 @@ $(function() {
 
   $('form#send_paste').submit(function() {
     $(".progress").animate({
-      height: 8
+      height: 6
     }, 50);
   });
 
