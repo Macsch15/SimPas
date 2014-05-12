@@ -97,8 +97,8 @@ author_website_enabled | Author website enabled?  | true/false  | true
     Key       |  Description  |   Value type  | Default value
 ------------- | ------------- | ------------- | -------------
 driver  | Datasource driver. Available: **mysql** or **postgresql** | String | mysql
-server  | MySQL Server  | String  | localhost
-port  | MySQL custom port  | Integer  | 3306
+server  | Database server  | String  | localhost
+port  | Database custom port  | Integer  | 3306
 database  | Database name  | String  | newsimpas
 username  | Database username  | String  | root
 password  | Database password  | String | *void*
