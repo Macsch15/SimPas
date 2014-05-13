@@ -8,6 +8,20 @@ use Application\Configuration\Configuration;
 class LatestPastes extends View
 {
     use Configuration;
+
+    /**
+    * Application
+    * 
+    * @var object
+    */
+    private $application;
+    
+    /**
+    * DataBase
+    * 
+    * @var object
+    */
+    private $data_source;
     
     /**
     * Construct
