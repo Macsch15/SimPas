@@ -50,8 +50,7 @@ class SendPaste
             start_from_line,
             visibility,
             author_website,
-            short_url,
-            expire
+            short_url
         ) VALUES (
             :unique_id,
             :time,
@@ -66,8 +65,7 @@ class SendPaste
             :start_from_line,
             :visibility,
             :author_website,
-            :short_url,
-            :expire
+            :short_url
         );');
 
         // Filter
@@ -85,7 +83,6 @@ class SendPaste
         $query->bindValue(':visibility', $container['paste_visibility']);
         $query->bindValue(':author_website', $container['paste_author_website']);
         $query->bindValue(':short_url', $container['paste_short_url']);
-        $query->bindValue(':expire', $container['paste_expire']);
 
         // Execute
         $query->execute();
