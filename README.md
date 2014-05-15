@@ -90,6 +90,7 @@ short_url  | Use short URL's providing by bit.ly? (can be slow)  | true/false  |
 latest_pastes  | Number of pastes displayed on ```/latest``` page  | Integer  | 20
 antispam_enabled  | Questions&Answers enabled?  | true/false  | true
 author_website_enabled | Author website enabled?  | true/false  | true
+delete_expired_pastes | Delete expired pastes? | true/false | true
 
 ####library/Application/Configuration/Resources/Database.json
 
