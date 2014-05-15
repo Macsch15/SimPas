@@ -75,7 +75,7 @@ class Controller extends View
         }
 
         // Paste expired?
-        if((new PasteExpire($this->application))->expired($request['id']) === true) {
+        if((new PasteExpire($this->application))->isExpired($request['id']) === true) {
             return $this->sendFriendlyClientError(_('Requested paste has expired.'), true);
         }
 
@@ -153,7 +153,7 @@ class Controller extends View
             'paste_visibility' => $this->pasteVisibility(),
             'paste_author_website' => $this->authorWebsite(),
             'paste_short_url' => $this->saveShortUrl($request['id']),
-            'paste_expire' => (new PasteExpire($this->application))->save(HttpRequest::post('post_paste_expire'))
+            'paste_expire' => (new PasteExpire($this->application))->validateExpiryTimeFromClient(HttpRequest::post('post_paste_expire'))
         ];
     }
 
