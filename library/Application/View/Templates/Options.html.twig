@@ -7,3 +7,14 @@
   <label for="__startfromline">{% trans %}Start from line (optional){% endtrans %}</label>
   <input type="text" pattern="\d+" autocomplete="off" name="post_start_from_line" class="form-control" id="__startfromline" placeholder="{% trans %}Enter number...{% endtrans %}">
 </div>
+<hr />
+<div class="form-group">
+  <label for="paste_expire">{% trans %}Expire (optional){% endtrans %}</label>
+  <select id="paste_expire" name="post_paste_expire" class="form-control">
+    <option value="never" selected="selected">{% trans %}Never{% endtrans %}</option>
+    <option value="1hour">{% trans %}1 hour{% endtrans %}</option>
+    <option value="1week">{% trans %}1 week{% endtrans %}</option>
+    <option value="1month">{% trans %}1 month{% endtrans %}</option>
+    <option value="1year">{% trans %}1 year{% endtrans %}</option>
+  </select>
+</div>

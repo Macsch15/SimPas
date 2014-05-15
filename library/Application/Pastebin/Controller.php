@@ -7,6 +7,7 @@ use Application\Configuration\Configuration;
 use Application\Pastebin\SyntaxHighlighter;
 use Application\Pastebin\SendPaste;
 use Application\Pastebin\ReadPaste;
+use Application\Pastebin\PasteExpire;
 use Application\HttpRequest\HttpRequest;
 use Application\Pastebin\ShortenUrlApi;
 use Application\Security\QuestionsAndAnswers\QuestionsAndAnswers;
@@ -71,6 +72,11 @@ class Controller extends View
         // Paste exists?
         if(HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
             return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
+        }
+
+        // Paste expired?
+        if((new PasteExpire($this->application))->expired($request['id']) === true) {
+            return $this->sendFriendlyClientError(_('Requested paste has expired.'), true);
         }
 
         // Anti-spam
@@ -146,7 +152,8 @@ class Controller extends View
             'paste_start_from_line' => $this->startListCountingFromLine(),
             'paste_visibility' => $this->pasteVisibility(),
             'paste_author_website' => $this->authorWebsite(),
-            'paste_short_url' => $this->saveShortUrl($request['id'])
+            'paste_short_url' => $this->saveShortUrl($request['id']),
+            'paste_expire' => (new PasteExpire($this->application))->save(HttpRequest::post('post_paste_expire'))
         ];
     }
 

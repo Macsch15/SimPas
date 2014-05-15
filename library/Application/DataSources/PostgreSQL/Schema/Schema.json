@@ -14,6 +14,7 @@
         "start_from_line": "INT",
         "visibility": "TEXT",
         "author_website": "VARCHAR(255) DEFAULT NULL",
-        "short_url": "VARCHAR(255) DEFAULT NULL"
+        "short_url": "VARCHAR(255) DEFAULT NULL",
+        "expire": "VARCHAR(15)"
     }
 }}
