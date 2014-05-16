@@ -32,6 +32,8 @@ $(function() {
     }  
   });
 
+  $('span.parse_date').html(moment($('span.parse_date').text()).fromNow());
+
   $('a#print').click(function() {
     window.print();
     return false;

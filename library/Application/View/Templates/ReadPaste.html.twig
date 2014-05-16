@@ -73,7 +73,7 @@
       </div>
 
       <small class="muted_font">
-        {% trans %}Submitted{% endtrans %} {{ paste.time|date("d.m.Y") }}&nbsp;&nbsp;
+        {% trans %}Submitted{% endtrans %} <span class="parse_date tooltip-top" title="{{ paste.time|date("Y-m-d H:i:s") }}">{{ paste.time|date("Y-m-d H:i:s") }}</span>&nbsp;&nbsp;
 
         {% if paste.author_website is not empty and config.author_website_enabled == true %}
           <a rel="nofollow" class="tooltip-top" title="{{ paste.author_website }}" href="{{ paste.author_website }}"><span class="glyphicon glyphicon-link"></span> {% trans %}Author website link{% endtrans %}</a>&nbsp;&nbsp;
