@@ -32,7 +32,9 @@ $(function() {
     }  
   });
 
-  $('span.parse_date').html(moment($('span.parse_date').text()).fromNow());
+  $('span.parse_date').each(function() {
+    $(this).html(moment($(this).text()).fromNow());
+  })
 
   $('a#print').click(function() {
     window.print();
