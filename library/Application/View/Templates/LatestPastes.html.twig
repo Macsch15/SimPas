@@ -28,7 +28,7 @@
                 <td>{{ key.title is not empty ? key.title : '-' }}</td>
                 <td>{{ key.author is not empty ? key.author : '-' }}</td>
                 <td><span class="parse_date tooltip-top" title="{{ key.time|date("Y-m-d H:i:s") }}">{{ key.time|date("Y-m-d H:i:s") }}</span></td>
-                <td>{{ key.syntax }}</span></td>
+                <td>{{ key.syntax }}</td>
               </tr>
             {% endfor %}
           </tbody>
