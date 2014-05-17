@@ -411,3 +411,10 @@ ol div {
 .latest_syntax {
   margin: 0 10px 0 0;
 }
+
+.tooltip-inner {
+  padding: 9px;
+  border-radius: 0;
+  font-size: 11px;
+  text-transform: uppercase;
+}
