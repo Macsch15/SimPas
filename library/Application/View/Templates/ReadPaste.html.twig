@@ -30,12 +30,12 @@
 
     <div class="paste_title" itemprop="name">
       <span class="tooltip-top" title="{{ paste.visibility == 'private' ? 'This paste is private'|trans : 'This paste is public'|trans }}">
-        <i class="fa {{ paste.visibility == 'private' ? 'text-danger fa-lock' : 'text-success fa-unlock' }}"></i> 
+        <i class="fa {{ paste.visibility == 'private' ? 'fa-lock' : 'muted_font fa-unlock' }}"></i> 
       </span>
 
       {% trans %}Paste{% endtrans %} &quot;<a href="{{ build_url('paste/' ~ paste.unique_id) }}">{{ paste_h4|raw }}</a>&quot;
 
-      <span title="{% trans %}Syntax highlighting{% endtrans %}" class="tooltip-top label label-warning"><i class="fa fa-puzzle-piece"></i> {{ paste.syntax }}</span>
+      <span title="{% trans %}Syntax highlighting{% endtrans %}" class="tooltip-top label label-success"><i class="fa fa-puzzle-piece"></i> {{ paste.syntax }}</span>
 
       {% if paste.author is not empty %}
         {% set paste_author = paste.author|length > 15 ? "<span class=\"tooltip-top\" title=\"" ~ paste.author ~ "\">" ~ paste.author|slice(0, 15) ~ "...</span>" : paste.author %}
@@ -73,8 +73,14 @@
       </div>
 
       <small class="muted_font">
-        {% trans %}Submitted{% endtrans %} <span class="parse_date tooltip-top" title="{{ paste.time|date("Y-m-d H:i:s") }}">{{ paste.time|date("Y-m-d H:i:s") }}</span>&nbsp;&nbsp;
+        {% trans %}Submitted{% endtrans %} <span class="parse_date tooltip-top" title="{{ paste.time|date("Y-m-d H:i:s") }}">{{ paste.time|date("Y-m-d H:i:s") }}</span> {% trans %}and{% endtrans %}
 
+        {% if paste.expire is not empty and paste.expire == 'never' %}
+          {% trans %}never expires{% endtrans %}
+        {% else %}
+          {% trans %}will expire in{% endtrans %} <span class="parse_date date_no_suffix">{{ paste.expire|date("Y-m-d H:i:s") }}</span>
+        {% endif %}
+        &nbsp;&nbsp;
         {% if paste.author_website is not empty and config.author_website_enabled == true %}
           <a rel="nofollow" class="tooltip-top" title="{{ paste.author_website }}" href="{{ paste.author_website }}"><span class="glyphicon glyphicon-link"></span> {% trans %}Author website link{% endtrans %}</a>&nbsp;&nbsp;
         {% endif %}
