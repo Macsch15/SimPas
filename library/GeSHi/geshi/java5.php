@@ -51,7 +51,7 @@
  ************************************************************************************/
 
 $language_data = array (
-    'LANG_NAME' => 'Java(TM) 2 Platform Standard Edition 5.0',
+    'LANG_NAME' => 'Java(TM) 2 PSE 5.0',
     'COMMENT_SINGLE' => array(1 => '//'),
     'COMMENT_MULTI' => array('/*' => '*/'),
     'COMMENT_REGEXP' => array(

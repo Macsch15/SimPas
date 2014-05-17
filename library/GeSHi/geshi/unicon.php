@@ -42,7 +42,7 @@
  ************************************************************************************/
 
 $language_data = array(
-    'LANG_NAME' => 'Unicon (Unified Extended Dialect of Icon)',
+    'LANG_NAME' => 'Unicon',
     'COMMENT_SINGLE' => array(1 => '#'),
     'COMMENT_MULTI' => array(),
     'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
