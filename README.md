@@ -41,7 +41,7 @@ SimPas doesn't have an upgrader. Only way to install fresh release is to re-uplo
 $ php cmd/console CacheRebuild
 ```
 
-**Some** releases may need re-sync database schema, in this case command above is not enough, you must fire this as well in command-line:
+Some (e.g from 0.2 to 0.3) releases may need re-sync database schema, in this case command above is not enough, you must fire this as well in command-line:
 
 ```
 $ php cmd/console SyncDb
