@@ -33,7 +33,11 @@ $(function() {
   });
 
   $('span.parse_date').each(function() {
-    $(this).html(moment($(this).text()).fromNow());
+    if(!$(this).hasClass('date_no_suffix')) {
+      $(this).html(moment($(this).text()).fromNow());
+    } else {
+      $(this).html(moment($(this).text()).fromNow(true));
+    }
   })
 
   $('a#print').click(function() {

@@ -370,3 +370,44 @@ ol div {
   content: "\00a0";
   margin: 0 6px 0 6px;
 }
+
+.latest {
+  border-bottom: 1px #E3E3E3 dotted;
+}
+
+.latest:last-child {
+  border-bottom: none;
+}
+
+.latest h3 {
+  font-size: 18px;
+}
+
+.latest_hot {
+  float: left;
+  font-size: 36px;
+  margin: 0 5px 0 -41px;
+  color: #FFB700;
+}
+
+.latest_author {
+  color: #707070;
+}
+
+.latest_website {
+  float: right;
+  background: #F0F0F0;
+  padding: 4px 8px 4px 8px;
+  border-radius: 3px;
+  color: #7D7D7D;
+}
+
+.latest_website:hover {
+  background: #53728C;
+  transition: all 0.15s ease-in-out;
+  color: #fff;
+}
+
+.latest_syntax {
+  margin: 0 10px 0 0;
+}

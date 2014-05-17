@@ -4,6 +4,7 @@ namespace Application\Pastebin;
 use Application\Application;
 use Application\View\View;
 use Application\Configuration\Configuration;
+use Application\Pastebin\PasteExpire;
 
 class LatestPastes extends View
 {
@@ -46,7 +47,8 @@ class LatestPastes extends View
     {
         // Template render
         $this->render([
-            'container' => $this->publicPastesContainer()
+            'container' => $this->publicPastesContainer(),
+            'paste_expire' => new PasteExpire($this->application)
         ]);
 
         return $this->{'LatestPastes'};
@@ -62,7 +64,7 @@ class LatestPastes extends View
         // Prepare query
         $query = $this->data_source
         ->get()
-        ->prepare('SELECT unique_id, time, syntax, title, author, visibility
+        ->prepare('SELECT unique_id, time, syntax, title, author, visibility, author_website, expire
             FROM ' . $this->config('Database')->prefix  . 'pastes WHERE visibility = :visibility ORDER BY time DESC LIMIT :limit');
 
         // Filter
