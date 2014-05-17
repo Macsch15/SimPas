@@ -25,7 +25,7 @@ class Tests extends PHPUnit_Framework_TestCase
 
     public function testSyntaxHighligherCount()
     {
-        $this->assertCount(222, (new SyntaxHighlighter)->languagesToArray());
+        $this->assertCount(217, (new SyntaxHighlighter)->languagesToArray());
     }
 
     public function testSyntaxHighligherParser()
