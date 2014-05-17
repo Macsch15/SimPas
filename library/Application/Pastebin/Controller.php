@@ -153,7 +153,7 @@ class Controller extends View
             'paste_visibility' => $this->pasteVisibility(),
             'paste_author_website' => $this->authorWebsite(),
             'paste_short_url' => $this->saveShortUrl($request['id']),
-            'paste_expire' => (new PasteExpire($this->application))->validateExpiryTimeFromClient(HttpRequest::post('post_paste_expire'))
+            'paste_expire' => (new PasteExpire($this->application))->validateExpireTimeFromClient(HttpRequest::post('post_paste_expire'))
         ];
     }
 

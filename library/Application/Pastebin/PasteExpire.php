@@ -48,22 +48,22 @@ class PasteExpire
             return false;
         }
 
-        // Get the expiry time
-        $expiry_time = (new ReadPaste($this->application))->read($paste_id)['expire'];
+        // Get the expire time
+        $expire_time = (new ReadPaste($this->application))->read($paste_id)['expire'];
 
         // Empty?
-        if($expiry_time == null) {
+        if($expire_time == null) {
             $expiry_time = 'never';
         }
 
         // Not expire?
-        if($expiry_time === 'never') {
+        if($expire_time === 'never') {
             return false;
         }
 
         // Test
-        if($expiry_time < time()) {
-            // Remove expired paste from datasource
+        if($expire_time < time()) {
+            // Remove expired paste from database
             if($this->config()->delete_expired_pastes === true) {
                 // Prepare query
                 $query = $this->data_source
@@ -84,25 +84,25 @@ class PasteExpire
     /**
     * Validate expiry time from client
     * 
-    * @param string $post_expiry 
+    * @param string $post_expire
     * @return string|int
     */
-    public function validateExpiryTimeFromClient($post_expiry)
+    public function validateExpireTimeFromClient($post_expire)
     {
         // Empty?
-        if($post_expiry == null) {
-            $post_expiry = 'never';
+        if($post_expire == null) {
+            $post_expire = 'never';
         }
 
         // Test
-        switch($post_expiry) {
+        switch($post_expire) {
             case 'never':
             default:
                 return 'never';
                 break;
             case '1hour':
                 // 1 hour
-                return time() + 30;
+                return time() + 3600;
                 break;
             case '1week':
                 // 1 week
