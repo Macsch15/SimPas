@@ -11,7 +11,7 @@
 
   <div class="paste_title" itemprop="name">
     <span class="tooltip-top" title="{{ paste.visibility == 'private' ? 'This paste is private'|trans : 'This paste is public'|trans }}">
-      <i class="fa {{ paste.visibility == 'private' ? 'text-danger fa-lock' : 'text-success fa-unlock' }}"></i> 
+      <i class="fa {{ paste.visibility == 'private' ? 'fa-lock' : 'muted_font fa-unlock' }}"></i> 
     </span>
 
     {% trans %}Paste{% endtrans %} &quot;<a href="{{ build_url('paste/' ~ paste.unique_id) }}">{{ paste_h4|raw }}</a>&quot;
