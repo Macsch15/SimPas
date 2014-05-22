@@ -76,7 +76,7 @@ max_chars  | Maximum characters in paste   | Integer  | 50000
 max_size_in_kb  | Maximum size of paste (in KB)  | Integer  | 512
 translations  | SimPas translations is powered by [GetText](http://en.wikipedia.org/wiki/Gettext). You can translate this by using software e.g [Poedit](http://poedit.net/). If translation is configured move it to ```library/Application/Translations/Resource``` | true/false  | false
 translation_domain  | This is filename of .po and .mo file in ```library/Application/Translation/Resource/{locale}/LC_MESSAGES/```  | String  | messages
-locale  | Required. Using for HTML documents and translation. [List of all locales](http://framework.zend.com/manual/1.12/en/zend.locale.appendix.html)  | Array  | ```["en", "en_EN"]```
+locale  | Required. Using for HTML documents, translation and relative date. [List of all locales](http://framework.zend.com/manual/1.12/en/zend.locale.appendix.html)  | Array  | ```["en", "en_EN"]```
 accented_characters  | Special characters for specific language  | String  | ĘÓĄŚŁŻŹĆŃęóąśłżźćń
 default_timezone  | Timezone. [List of all timezones](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)  | String  | Europe/Warsaw
 charset  | Charset  | String  | UTF-8
