@@ -38,7 +38,7 @@
             {% endif %}
             <br />
             <small>
-              {% trans %}Authored{% endtrans %} <span class="extra_date date_no_suffix tooltip-top" title="{{ key.time|date("Y-m-d H:i:s") }}">{{ key.time|date("Y-m-d H:i:s") }}</span> 
+              {% trans %}Authored{% endtrans %} <span class="extra_date tooltip-top" title="{{ key.time|date("Y-m-d H:i:s") }}">{{ key.time|date("Y-m-d H:i:s") }}</span> 
               {% trans %}and{% endtrans %}
               {% if paste_expire.isExpired(key.unique_id) == true %}
                 <b>{% trans %}expired{% endtrans %}</b>
