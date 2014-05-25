@@ -42,7 +42,7 @@
       <br />
 
       {% if config.antispam_enabled == true %}
-        <h4 class="muted_font hidden-xs pull-left"><i class="fa fa-question-circle"></i> {% trans %}Anti-spam question{% endtrans %}</h4><br /><br />
+        <h4 class="muted_font pull-left"><i class="fa fa-question-circle"></i> {% trans %}Anti-spam question{% endtrans %}</h4><br /><br />
         {% set antispam_question = antispam.question() %}
         <label for="antispamquestion">{{ antispam_question }}</label>
         <input type="hidden" name="post_antispam_question" value="{{ antispam_question }}">
