@@ -32,7 +32,7 @@ $(function() {
     }  
   });
 
-  $('span.parse_date').each(function() {
+  $('span.extra_date').each(function() {
     if(!$(this).hasClass('date_no_suffix')) {
       $(this).html(moment($(this).text()).fromNow());
     } else {

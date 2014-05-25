@@ -73,12 +73,12 @@
       </div>
 
       <small class="muted_font">
-        {% trans %}Submitted{% endtrans %} <span class="parse_date tooltip-top" title="{{ paste.time|date("Y-m-d H:i:s") }}">{{ paste.time|date("Y-m-d H:i:s") }}</span> {% trans %}and{% endtrans %}
+        {% trans %}Submitted{% endtrans %} <span class="extra_date tooltip-top" title="{{ paste.time|date("Y-m-d H:i:s") }}">{{ paste.time|date("Y-m-d H:i:s") }}</span> {% trans %}and{% endtrans %}
 
         {% if paste.expire is not empty and paste.expire == 'never' %}
           {% trans %}never expires{% endtrans %}
         {% else %}
-          {% trans %}will expire in{% endtrans %} <span class="parse_date date_no_suffix">{{ paste.expire|date("Y-m-d H:i:s") }}</span>
+          {% trans %}will expire in{% endtrans %} <span class="extra_date date_no_suffix">{{ paste.expire|date("Y-m-d H:i:s") }}</span>
         {% endif %}
         &nbsp;&nbsp;
         {% if paste.author_website is not empty and config.author_website_enabled == true %}
