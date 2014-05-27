@@ -1,6 +1,7 @@
 @import url('./bootstrap.min.css');
 @import url('./font-awesome.min.css');
 @import url('./chosen.css');
+@import url('./diff.css');
 
 body {
   background: #fff;
@@ -291,6 +292,11 @@ ol div {
   z-index: 50000 !important;
 }
 
+.small_form {
+  width: 588px;
+  margin: 0 auto;
+}
+
 .to_top a {
   margin: 0 8px 0 0;
 }
@@ -417,4 +423,13 @@ ol div {
   border-radius: 0;
   font-size: 11px;
   text-transform: uppercase;
+}
+
+.diff_input_width {
+  width: 255px !important;
+}
+
+.diff_text_help {
+  padding: 35px 0 15px 0;
+  font-style: italic;
 }

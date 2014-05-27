@@ -1,0 +1,31 @@
+{% extends "BaseBlock.html.twig" %}
+
+  {% block document_title %}{% trans %}Compare {{ left_id }} with {{ right_id }}{% endtrans %}{% endblock %}
+
+  {% block breadcrumb %}
+    {{ breadcrumb.add('Compare'|trans ~ ' ' ~ left_id, build_url('compare/' ~ left_id)) }}
+    {{ breadcrumb.add(block('document_title'), build_url('compare/' ~ left_id ~ '/with/' ~ right_id)) }}
+  {% endblock %}
+
+  {% block document_content %}
+    <h4 style="margin-top: 0" class="muted_font pull-left"><i class="fa fa-cubes"></i> {% trans %}Comparing {{ left_id }} with {{ right_id }}{% endtrans %}</h4>
+    <br /><br />
+    
+    {% if diff_results is not empty %}
+      {{ diff_results|raw }}
+    {% else %}
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <i class="fa fa-exclamation-circle fa-lg"></i> <b>{% trans %}Pastes are the same{% endtrans %}</b>
+          </h3>
+        </div>
+        <div class="panel-body">
+          {% trans %}Paste {{ left_id }} and {{ right_id }} are the same.{% endtrans %}
+        </div>
+      </div>
+
+      <a href="{{ build_url('paste/' ~ left_id) }}" class="btn btn-primary"><i class="fa fa-reply"></i> {% trans %}Return to paste{% endtrans %}</a>
+      <a href="{{ build_url() }}" class="btn btn-primary"><i class="fa fa-home"></i> {% trans %}Return to index page{% endtrans %}</a>
+    {% endif %}
+  {% endblock %}

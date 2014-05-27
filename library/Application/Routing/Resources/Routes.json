@@ -75,5 +75,22 @@
         "requirements": {
             "id": "\\d+"
         }
+    },
+
+    "/compare/{left}/with/{right}": {
+        "controller": "Application\\Pastebin\\Compare",
+        "action": "compare",
+        "requirements": {
+            "left": "\\d+",
+            "right": "\\d+"
+        }
+    },
+
+    "/compare/{left}": {
+        "controller": "Application\\Pastebin\\Compare",
+        "action": "form",
+        "requirements": {
+            "left": "\\d+"
+        }
     }
 }}
