@@ -11,6 +11,7 @@ use Application\Pastebin\PasteExpire;
 use Application\HttpRequest\HttpRequest;
 use Application\Pastebin\ShortenUrlApi;
 use Application\Security\QuestionsAndAnswers\QuestionsAndAnswers;
+use Application\Pastebin\Helpers\Strings;
 
 class Controller extends View
 {
@@ -139,7 +140,7 @@ class Controller extends View
         return [
             'paste_id' => $request['id'],
             'paste_time' => time(),
-            'paste_size' => $this->stringToBytes(HttpRequest::post('post_paste_content')),
+            'paste_size' => Strings::stringToBytes(HttpRequest::post('post_paste_content')),
             'paste_length' => strlen(HttpRequest::post('post_paste_content')),
             'paste_syntax' => (new SyntaxHighlighter)->validateLanguage(HttpRequest::post('post_syntax_highlight_language')),
             'paste_content' => (new SyntaxHighlighter)->parseCode(HttpRequest::post('post_paste_content'),
@@ -380,17 +381,6 @@ class Controller extends View
     }
 
     /**
-    * Convert string to bytes
-    *
-    * @param string $string
-    * @return int
-    */
-    private function stringToBytes($string)
-    {
-        return round(strlen($string) / (pow(1024, 0) / pow(10, 0))) / pow(10, 0);
-    }
-
-    /**
     * Shorten URL
     * 
     * @param int $paste_id 
@@ -419,7 +409,7 @@ class Controller extends View
             return false;
         }
 
-        if(ceil($this->stringToBytes($content) / 1024) > $this->config()->max_size_in_kb) {
+        if(ceil(Strings::stringToBytes($content) / 1024) > $this->config()->max_size_in_kb) {
             return false;
         }
 
