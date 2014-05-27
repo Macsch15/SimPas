@@ -9,7 +9,9 @@
   {% block document_content %}
     <form class="form-inline" method="post" action="{{ build_url('compare/' ~ left_id) }}">
       <div class="small_form">
-        <h4 style="margin-top: 0" class="muted_font pull-left"><i class="fa fa-cubes"></i> {% trans %}Compare {{ left_id }}{% endtrans %}</h4>
+        {% set left_link = '<a class="muted_font" href="' ~ build_url('paste/' ~ left_id) ~ '">' ~ left_id ~ '</a>' %}
+        
+        <h4 style="margin-top: 0" class="muted_font pull-left"><i class="fa fa-cubes"></i> {% trans %}Compare {{ left_link }}{% endtrans %}</h4>
         
         <div class="diff_text_help">
           {% trans %}Enter in the field below paste id or full url to compare.{% endtrans %}

@@ -8,7 +8,10 @@
   {% endblock %}
 
   {% block document_content %}
-    <h4 style="margin-top: 0" class="muted_font pull-left"><i class="fa fa-cubes"></i> {% trans %}Comparing {{ left_id }} with {{ right_id }}{% endtrans %}</h4>
+    {% set left_link = '<a class="muted_font" href="' ~ build_url('paste/' ~ left_id) ~ '">' ~ left_id ~ '</a>' %}
+    {% set right_link = '<a class="muted_font" href="' ~ build_url('paste/' ~ right_id) ~ '">' ~ right_id ~ '</a>' %}
+
+    <h4 style="margin-top: 0" class="muted_font pull-left"><i class="fa fa-cubes"></i> {% trans %}Comparing {{ left_link }} with {{ right_link }}{% endtrans %}</h4>
     <br /><br />
     
     {% if diff_results is not empty %}
