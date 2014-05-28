@@ -123,7 +123,7 @@ class Routing extends View
                     $controller = new $data['controller']($this->application);
 
                     // Call the controller
-                    call_user_func([$controller, $data['action'] . 'Action']);
+                    call_user_func([$controller, $data['action'] . 'Action'], []);
 
                     return false;
                 }
