@@ -9,14 +9,6 @@
   {% block document_content %}
     <h3>{% trans %}Cookies policy{% endtrans %}</h3>
     <div style="padding: 10px;">
-      <p><strong>{% trans %}About cookies{% endtrans %}</strong></p>
-      <p>{% trans %}Cookies are information packets sent by web servers to web browsers, and stored by the web browsers.{% endtrans %}</p>
-      <p>{% trans %}The information is then sent back to the server each time the browser requests a page from the server. This enables a web server to identify and track web browsers.{% endtrans %}</p>
-      <p>{% trans %}There are two main kinds of cookies: session cookies and persistent cookies. Session cookies are deleted from your computer when you close your browser, whereas persistent cookies remain stored on your computer until deleted, or until they reach their expiry date.{% endtrans %}</p>
-      <p><strong>{% trans %}Refusing cookies{% endtrans %}</strong></p>
-      <p>{% trans %}Most browsers allow you to refuse to accept cookies.{% endtrans %}</p>
-      <p>{% trans %}In Internet Explorer, you can refuse all cookies by clicking “Tools”, “Internet Options”, “Privacy”, and selecting “Block all cookies” using the sliding selector.{% endtrans %}</p>
-      <p>{% trans %}In Firefox, you can adjust your cookies settings by clicking “Tools”, “Options” and “Privacy”.{% endtrans %}</p>
-      <p>{% trans %}Blocking cookies will have a negative impact upon the usability of this website.{% endtrans %}</p>
+      {% include 'Text/Cookies.html.twig' %}
     </div>
   {% endblock %}
