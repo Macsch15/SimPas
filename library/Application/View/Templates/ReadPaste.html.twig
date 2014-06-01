@@ -35,7 +35,7 @@
 
       {% trans %}Paste{% endtrans %} &quot;<a href="{{ build_url('paste/' ~ paste.unique_id) }}">{{ paste_h4|raw }}</a>&quot;
 
-      <span title="{% trans %}Syntax highlighting{% endtrans %}" class="tooltip-top label label-success"><i class="fa fa-puzzle-piece"></i> {{ paste.syntax }}</span>
+      <span title="{% trans %}Syntax highlighting{% endtrans %}" class="tooltip-top label label-success">{{ paste.syntax }}</span>
 
       {% if paste.author is not empty %}
         {% set paste_author = paste.author|length > 15 ? "<span class=\"tooltip-top\" title=\"" ~ paste.author ~ "\">" ~ paste.author|slice(0, 15) ~ "...</span>" : paste.author %}

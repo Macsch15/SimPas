@@ -16,7 +16,7 @@
 
     {% trans %}Paste{% endtrans %} &quot;<a href="{{ build_url('paste/' ~ paste.unique_id) }}">{{ paste_h4|raw }}</a>&quot;
 
-    <span title="{% trans %}Syntax highlighting{% endtrans %}" class="tooltip-top label label-warning"><i class="fa fa-puzzle-piece"></i> {{ paste.syntax }}</span>
+    <span title="{% trans %}Syntax highlighting{% endtrans %}" class="tooltip-top label label-success">{{ paste.syntax }}</span>
 
     {% if paste.author is not empty %}
       {% set paste_author = paste.author|length > 15 ? "<span class=\"tooltip-top\" title=\"" ~ paste.author ~ "\">" ~ paste.author|slice(0, 15) ~ "...</span>" : paste.author %}
@@ -25,8 +25,8 @@
   </div>
 
   <ul class="list-inline">
-    <li><a href="#" id="zclip" class="btn btn-primary btn-sm"><i class="fa fa-copy fa-lg"></i> {% trans %}Copy to clipboard{% endtrans %}</a></li>
-    <li><a href="{{ build_url('raw/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-terminal fa-lg"></i> {% trans %}Raw mode{% endtrans %}</a></li>
+    <li><a href="#" id="zclip" class="btn btn-primary btn-sm"><i class="fa fa-copy fa-lg"></i> {% trans %}Copy{% endtrans %}</a></li>
+    <li><a href="{{ build_url('raw/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-terminal fa-lg"></i> {% trans %}Raw{% endtrans %}</a></li>
     <li><a href="{{ build_url('download/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-download fa-lg"></i> {% trans %}Download{% endtrans %}</a></li>
   </ul>
 
