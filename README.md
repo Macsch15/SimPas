@@ -152,9 +152,13 @@ How I can translate "Rules" and "Cookies policy"?
 ======
 
 In files:
-```library/Application/View/Templates/Text/Rules.html.twig```
+```
+library/Application/View/Templates/Text/Rules.html.twig
+```
 and
-```library/Application/View/Templates/Text/Cookies.html.twig```
+```
+library/Application/View/Templates/Text/Cookies.html.twig
+```
 
 You can translate it or simply copy HTML template from other site.
 
