@@ -1,0 +1,798 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SimPas Polish\n"
+"POT-Creation-Date: 2014-06-02 13:21+0100\n"
+"PO-Revision-Date: 2014-06-02 13:22+0100\n"
+"Last-Translator: \n"
+"Language-Team: Macsch15\n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-Basepath: H:\\program files\\xampp\\htdocs\\SimPas\\develop\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: H:\\program files\\xampp\\htdocs\\SimPas\\develop\n"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/library/Application/Application.php:177
+#, php-format
+msgid "%s on line %d in file %s"
+msgstr "%s w linii %d w pliku %s"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Compare.php:44
+msgid "Requested paste (left) doesn't exists."
+msgstr "Żądana wklejka (lewa) nie istnieje."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Compare.php:48
+msgid "Requested paste (right) doesn't exists."
+msgstr "Żądana wklejka (prawa) nie istnieje."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Compare.php:79
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Compare.php:102
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Controller.php:75
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Controller.php:280
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Controller.php:429
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/ReportAbuse.php:47
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/ReportAbuse.php:74
+msgid "Requested paste doesn't exists."
+msgstr "Żądana wklejka nie istnieje."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Compare.php:86
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Controller.php:109
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/ReportAbuse.php:89
+msgid ""
+"Some field there are empty or contains prohibited characters (e.g only "
+"spaces)."
+msgstr ""
+"Niektóre pola są puste albo zawierają niedozwolone znaki (np. tylko space)"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Compare.php:94
+msgid "Submitted URL is not valid."
+msgstr "Przekazany adres URL nie jest poprawny"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Controller.php:80
+msgid "Requested paste has expired."
+msgstr "Żądana wklejka wygasła."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Controller.php:88
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/ReportAbuse.php:82
+msgid "Wrong anti-spam answer. Refresh page and try again."
+msgstr ""
+"Zła odpowiedź na pytanie anty-spamowe. Odśwież stronę i spóbuj ponownie."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Controller.php:93
+msgid "You have no permissions to send paste."
+msgstr "Nie posiadasz uprawnień do wysyłania wklejek."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Controller.php:98
+msgid "Size or length in this paste is more than allowed."
+msgstr "Wielkość lub długość wklejki jest większa niż dozwolona."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Controller.php:115
+#, php-format
+msgid ""
+"Anty-flood is enabled. Please wait at least %d seconds before attempting to "
+"send paste again."
+msgstr ""
+"Ochrona anty-spamowa jest włączona. Odczekaj przynajmniej %d sekund przed "
+"następną próbą wysłania wklejki."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/ReportAbuse.php:69
+msgid "Action are not allowed. Aborting."
+msgstr "Akcja niedozwolona. Przerywanie."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/ReportAbuse.php:98
+#, php-format
+msgid "You have received abuse report at %s"
+msgstr "Otrzymano raport o nadużyciu na stronie %s"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/library/Diff/Diff/Renderer/Html/Inline.php:64
+msgid "Old"
+msgstr "Stary"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/library/Diff/Diff/Renderer/Html/Inline.php:65
+msgid "New"
+msgstr "Nowy"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/library/Diff/Diff/Renderer/Html/Inline.php:66
+msgid "Differences"
+msgstr "Raport różnicowy"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:26
+msgid "Share this paste"
+msgstr "Udostępnij tą wklejkę"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:34
+msgid "BBCode"
+msgstr "BBCode"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:41
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:87
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:100
+#: files\xampp\htdocs\SimPas\develop/storage/templates/97/ec/dfcce4767bc57ec0c7cfb60e2826cd778c2f32fcb2efbe11156d4daf705b.php:65
+#: files\xampp\htdocs\SimPas\develop/storage/templates/d1/fe/88d933bd9441265c2192361b487f73aeac4be9cac8f5c6b3e7f892a487c0.php:56
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:59
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:121
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:40
+msgid "Paste"
+msgstr "Wklejka"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:49
+msgid "Direct link"
+msgstr "Link"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:65
+msgid "Short URL"
+msgstr "Krótki URL"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:80
+msgid "HTML"
+msgstr "HTML"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:95
+msgid "Markdown"
+msgstr "Markdown"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:110
+msgid "Iframe embed"
+msgstr "Osadzenie"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:121
+msgid "JSON API"
+msgstr "JSON API"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:138
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:167
+msgid "Share on Twitter"
+msgstr "Udostępnij na Twitter"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:145
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:174
+msgid "Share on Google+"
+msgstr "Udostępnij na Google+"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:152
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:181
+msgid "Share on Facebook"
+msgstr "Udostępnij na Facebook"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:159
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:188
+msgid "Share on LinkedIn"
+msgstr "Udostępnij na LinkedIn"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:199
+msgid "Close"
+msgstr "Zamknij"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/0f/64/f8aaeac1c2c79f62e9f23ea06153b19b321847c429e3972ee3b9c3043bb1.php:32
+#: files\xampp\htdocs\SimPas\develop/storage/templates/0f/64/f8aaeac1c2c79f62e9f23ea06153b19b321847c429e3972ee3b9c3043bb1.php:50
+msgid "Cookies policy"
+msgstr "Polityka ciasteczek"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/2b/f9/95b2ee8642ca376b3c06c44efef84bf44af2f647e84162cca9374aa989c0.php:23
+msgid "Line numbering"
+msgstr "Numerowanie linii"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/2b/f9/95b2ee8642ca376b3c06c44efef84bf44af2f647e84162cca9374aa989c0.php:30
+msgid "Start from line (optional)"
+msgstr "Rozpocznij od linii (opcjonalne)"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/2b/f9/95b2ee8642ca376b3c06c44efef84bf44af2f647e84162cca9374aa989c0.php:34
+msgid "Enter number..."
+msgstr "Wpisz liczbę..."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/2b/f9/95b2ee8642ca376b3c06c44efef84bf44af2f647e84162cca9374aa989c0.php:41
+msgid "Expire (optional)"
+msgstr "Wygasa (opcjonalnie)"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/2b/f9/95b2ee8642ca376b3c06c44efef84bf44af2f647e84162cca9374aa989c0.php:46
+msgid "Never"
+msgstr "Nigdy"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/2b/f9/95b2ee8642ca376b3c06c44efef84bf44af2f647e84162cca9374aa989c0.php:50
+msgid "1 hour"
+msgstr "1 godzina"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/2b/f9/95b2ee8642ca376b3c06c44efef84bf44af2f647e84162cca9374aa989c0.php:54
+msgid "1 week"
+msgstr "1 tydzień"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/2b/f9/95b2ee8642ca376b3c06c44efef84bf44af2f647e84162cca9374aa989c0.php:58
+msgid "1 month"
+msgstr "1 miesiąc"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/2b/f9/95b2ee8642ca376b3c06c44efef84bf44af2f647e84162cca9374aa989c0.php:62
+msgid "1 year"
+msgstr "1 rok"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/33/c1/60c9bbfaddb7797431bb56ec2f989a294a714deb946ff6d51a65dd08c15c.php:32
+#: files\xampp\htdocs\SimPas\develop/storage/templates/33/c1/60c9bbfaddb7797431bb56ec2f989a294a714deb946ff6d51a65dd08c15c.php:53
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:70
+msgid "Latest pastes"
+msgstr "Ostatnie wklejki"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/33/c1/60c9bbfaddb7797431bb56ec2f989a294a714deb946ff6d51a65dd08c15c.php:75
+msgid "Author website"
+msgstr "Strona autora"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/33/c1/60c9bbfaddb7797431bb56ec2f989a294a714deb946ff6d51a65dd08c15c.php:87
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:149
+#: files\xampp\htdocs\SimPas\develop/storage/templates/97/ec/dfcce4767bc57ec0c7cfb60e2826cd778c2f32fcb2efbe11156d4daf705b.php:74
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:130
+msgid "Syntax highlighting"
+msgstr "Kolorowanie składni"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/33/c1/60c9bbfaddb7797431bb56ec2f989a294a714deb946ff6d51a65dd08c15c.php:107
+#: files\xampp\htdocs\SimPas\develop/storage/templates/97/ec/dfcce4767bc57ec0c7cfb60e2826cd778c2f32fcb2efbe11156d4daf705b.php:87
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:44
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:143
+msgid "by"
+msgstr "przez"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/33/c1/60c9bbfaddb7797431bb56ec2f989a294a714deb946ff6d51a65dd08c15c.php:118
+msgid "Authored"
+msgstr "Dodana"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/33/c1/60c9bbfaddb7797431bb56ec2f989a294a714deb946ff6d51a65dd08c15c.php:126
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:234
+msgid "and"
+msgstr "i"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/33/c1/60c9bbfaddb7797431bb56ec2f989a294a714deb946ff6d51a65dd08c15c.php:132
+msgid "expired"
+msgstr "wygasa"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/33/c1/60c9bbfaddb7797431bb56ec2f989a294a714deb946ff6d51a65dd08c15c.php:141
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:242
+msgid "never expires"
+msgstr "nigdy nie wygasa"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/33/c1/60c9bbfaddb7797431bb56ec2f989a294a714deb946ff6d51a65dd08c15c.php:147
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:248
+msgid "will expire in"
+msgstr "wygaśnie w ciągu"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/33/c1/60c9bbfaddb7797431bb56ec2f989a294a714deb946ff6d51a65dd08c15c.php:174
+msgid "No results"
+msgstr "Brak wyników"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/33/c1/60c9bbfaddb7797431bb56ec2f989a294a714deb946ff6d51a65dd08c15c.php:181
+msgid "No results found. Send a public paste and try again."
+msgstr ""
+"Brak znalezionych wyników. Wyślij publiczną wklejkę i spróbuj ponownie."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/33/c1/60c9bbfaddb7797431bb56ec2f989a294a714deb946ff6d51a65dd08c15c.php:190
+#: files\xampp\htdocs\SimPas\develop/storage/templates/34/d1/69aa81fa43fd95f0cd4ca493fcb1412d309f6c502e9429d9f51097a5512e.php:71
+#: files\xampp\htdocs\SimPas\develop/storage/templates/97/2e/af4ac05ef75845a0a9519294e36b1d199a9536f85246e73df279fca7a0ea.php:68
+#: files\xampp\htdocs\SimPas\develop/storage/templates/ab/0e/8c015174fa40b545e563ed5e8540d14d5281fb46f55423c3afea928ba69e.php:103
+#: files\xampp\htdocs\SimPas\develop/storage/templates/d1/fe/88d933bd9441265c2192361b487f73aeac4be9cac8f5c6b3e7f892a487c0.php:103
+#: files\xampp\htdocs\SimPas\develop/storage/templates/d1/fe/88d933bd9441265c2192361b487f73aeac4be9cac8f5c6b3e7f892a487c0.php:135
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:187
+msgid "Return to index page"
+msgstr "Wróć do strony głównej"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/34/d1/69aa81fa43fd95f0cd4ca493fcb1412d309f6c502e9429d9f51097a5512e.php:34
+#: files\xampp\htdocs\SimPas\develop/storage/templates/34/d1/69aa81fa43fd95f0cd4ca493fcb1412d309f6c502e9429d9f51097a5512e.php:59
+msgid "An error encountered!"
+msgstr "Napotkano błędy PHP"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/35/1b/ea25054e4336b3d05c8d3580e8082c9a1557057e43b4dbd4d7beb9a354c4.php:32
+msgid "Compare %left_id%"
+msgstr "Porównaj %left_id%"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/35/1b/ea25054e4336b3d05c8d3580e8082c9a1557057e43b4dbd4d7beb9a354c4.php:60
+msgid "Compare %left_link%"
+msgstr "Porównaj %left_link%"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/35/1b/ea25054e4336b3d05c8d3580e8082c9a1557057e43b4dbd4d7beb9a354c4.php:66
+msgid "Enter in the field below paste id or full url to compare."
+msgstr ""
+"Wpisz w pole poniżej identyfikator albo cały adres URL wklejki żeby porównać."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/35/1b/ea25054e4336b3d05c8d3580e8082c9a1557057e43b4dbd4d7beb9a354c4.php:75
+msgid "with"
+msgstr "z"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/35/1b/ea25054e4336b3d05c8d3580e8082c9a1557057e43b4dbd4d7beb9a354c4.php:80
+msgid "Enter paste id or URL..."
+msgstr "Wpisz id wklejki albo URL..."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/35/1b/ea25054e4336b3d05c8d3580e8082c9a1557057e43b4dbd4d7beb9a354c4.php:87
+#: files\xampp\htdocs\SimPas\develop/storage/templates/ab/0e/8c015174fa40b545e563ed5e8540d14d5281fb46f55423c3afea928ba69e.php:40
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:181
+msgid "Compare"
+msgstr "Porównaj"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:40
+msgid "Title (optional)"
+msgstr "Tytuł (opcjonalne)"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:53
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:72
+msgid "Author (optional)"
+msgstr "Autor (opcjonalne)"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:59
+msgid "Author website (optional)"
+msgstr "Strona autora (opcjonalne)"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:83
+msgid "Paste text or code in the field below"
+msgstr "Wklej tekst lub kod w pole poniżej"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:87
+msgid "Pastebin options"
+msgstr "Opcje wklejki"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:108
+msgid "Maximum: %max_chars% chars / %max_size%KB"
+msgstr "Maksymalnie: %max_chars% znaków  / %max_size%KB"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:114
+msgid "Paste content (required)"
+msgstr "Zawartość wklejki (wymagane)"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:123
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:77
+msgid "Anti-spam question"
+msgstr "Pytanie anty-spamowe"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:138
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:92
+msgid "Type answer here (required)"
+msgstr "Wpisz odpowiedź (wymagane)"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:179
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:198
+msgid "Send this paste"
+msgstr "Wyślij tą wklejkę"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:184
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:203
+msgid "Send private paste"
+msgstr "Wyślij prywatną wklejkę"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:190
+#: files\xampp\htdocs\SimPas\develop/storage/templates/36/54/7f453b45b9a0b6011a75681a3bc227ea169471d2b20fba476332b43f0f0c.php:209
+msgid "Send public paste"
+msgstr "Wyślij publiczną wklejkę"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/39/f1/1e35cb391d714969df0c9ab692789c62a935cbc2931caae6f644b1f076c3.php:112
+msgid "Copied to clipboard!"
+msgstr "Skopiowano do schowka!"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/5b/7b/5ed592decf982070470bd185afdd898929517a07137571d715ab225afbbd.php:32
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:64
+msgid "Rules"
+msgstr "Zasady"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/5b/7b/5ed592decf982070470bd185afdd898929517a07137571d715ab225afbbd.php:55
+msgid "Terms and Conditions"
+msgstr "Regulamin"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/97/2e/af4ac05ef75845a0a9519294e36b1d199a9536f85246e73df279fca7a0ea.php:32
+#: files\xampp\htdocs\SimPas\develop/storage/templates/97/2e/af4ac05ef75845a0a9519294e36b1d199a9536f85246e73df279fca7a0ea.php:55
+msgid "404 Page not found"
+msgstr "Błąd 404 strona nie znaleziona"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/97/2e/af4ac05ef75845a0a9519294e36b1d199a9536f85246e73df279fca7a0ea.php:60
+msgid "SimPas couldn't locate the page you're requesting to view"
+msgstr "SimPas nie może zlokalizować strony którą żądasz"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/97/ec/dfcce4767bc57ec0c7cfb60e2826cd778c2f32fcb2efbe11156d4daf705b.php:55
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:111
+msgid "This paste is private"
+msgstr "Wklejka jest prywatna"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/97/ec/dfcce4767bc57ec0c7cfb60e2826cd778c2f32fcb2efbe11156d4daf705b.php:55
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:111
+msgid "This paste is public"
+msgstr "Wklejka jest publiczna"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/97/ec/dfcce4767bc57ec0c7cfb60e2826cd778c2f32fcb2efbe11156d4daf705b.php:99
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:155
+msgid "Copy"
+msgstr "Kopiuj"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/97/ec/dfcce4767bc57ec0c7cfb60e2826cd778c2f32fcb2efbe11156d4daf705b.php:105
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:161
+msgid "Raw"
+msgstr "Tryb surowy"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/97/ec/dfcce4767bc57ec0c7cfb60e2826cd778c2f32fcb2efbe11156d4daf705b.php:111
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:167
+msgid "Download"
+msgstr "Pobierz"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:58
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:90
+msgid "Page Index"
+msgstr "Strona główna"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:105
+msgid ""
+"It is recommended to enable JavaScript. Without it, this page may don't work "
+"correctly."
+msgstr ""
+"Zalecane jest włączenie JavaScript. Bez niego strona może nie działać "
+"poprawnie."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:120
+msgid "Core error encountered!"
+msgstr "Napotkano błędy PHP"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:124
+msgid "Error message"
+msgstr "Treść błędu"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:163
+msgid "This site uses cookies."
+msgstr "Strona używa ciasteczek"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:167
+msgid "Read more about cookies policy"
+msgstr "Przeczytaj więcej o polityce ciasteczek"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:182
+msgid "Allocated memory: %utilisedMemory%KB"
+msgstr "Używana pamięć: %utilisedMemory%KB"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:186
+msgid "GZIP Compression"
+msgstr "Kompresja GZIP"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:337
+msgid "Copied!"
+msgstr "Skopiowano!"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:343
+msgid "Oops, nothing found!"
+msgstr "Oops, nic nie znaleziono!"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:355
+msgid "chars left"
+msgstr "znaków pozostało"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:38
+msgid "%type% exception detected!"
+msgstr "Wykryto wyjątek: %type% "
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:44
+msgid "Exception detected!"
+msgstr "Wykryto wyjątek"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:55
+#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:226
+msgid "500 Internal Server Error"
+msgstr "500 Wewnętrzny błąd"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:75
+msgid "Catastrophic error! :C"
+msgstr "Katastrofalny błąd! :C"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:86
+msgid "500 Internal Server Error &mdash; Exception %type%"
+msgstr "500 Wewnętrzny błąd &mdash; Wyjątek %type% "
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:95
+msgid "In file"
+msgstr "W pliku"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:104
+msgid "at line"
+msgstr "w linii"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:144
+msgid "Stack Trace"
+msgstr "Wywołania"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:173
+msgid "File"
+msgstr "Plik"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:183
+msgid "Line"
+msgstr "Linia"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:193
+msgid "Class"
+msgstr "Klasa"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:235
+msgid "Exception in"
+msgstr "Wyjątek w"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:258
+msgid ""
+"Please contact the administrator %admin_email% and report it about this "
+"error."
+msgstr ""
+"Skontaktuj się z administratorem %admin_email% i poinformuj go o tym błędzie."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:268
+msgid "More information about this exception are available in the error log."
+msgstr "Więcej informacji o tym błędzie znajduje się w logu błędów."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/ab/0e/8c015174fa40b545e563ed5e8540d14d5281fb46f55423c3afea928ba69e.php:32
+msgid "Compare %left_id% with %right_id%"
+msgstr "Porównaj %left_id% z %right_id%"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/ab/0e/8c015174fa40b545e563ed5e8540d14d5281fb46f55423c3afea928ba69e.php:62
+msgid "Comparing %left_link% with %right_link%"
+msgstr "Porównywanie %left_link% z %right_id%"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/ab/0e/8c015174fa40b545e563ed5e8540d14d5281fb46f55423c3afea928ba69e.php:81
+msgid "Pastes are the same"
+msgstr "Wklejki są identyczne"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/ab/0e/8c015174fa40b545e563ed5e8540d14d5281fb46f55423c3afea928ba69e.php:88
+msgid "Paste %left_id% and %right_id% are the same."
+msgstr "Wklejki %left_id% wraz z %right_id% są identyczne."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/ab/0e/8c015174fa40b545e563ed5e8540d14d5281fb46f55423c3afea928ba69e.php:97
+#: files\xampp\htdocs\SimPas\develop/storage/templates/d1/fe/88d933bd9441265c2192361b487f73aeac4be9cac8f5c6b3e7f892a487c0.php:97
+#: files\xampp\htdocs\SimPas\develop/storage/templates/d1/fe/88d933bd9441265c2192361b487f73aeac4be9cac8f5c6b3e7f892a487c0.php:129
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:127
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:157
+msgid "Return to paste"
+msgstr "Powróć do wklejki"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/ba/30/eb092273a81e0dcac9ac367a745a3c6a205eab9aff45de243e004b3bd2ee.php:31
+msgid "Site is currently offline"
+msgstr "Strona jest aktualnie wyłączona"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/ba/30/eb092273a81e0dcac9ac367a745a3c6a205eab9aff45de243e004b3bd2ee.php:45
+msgid "This site is currently offline"
+msgstr "Ta strona jest atualnie wyłączona"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/ba/30/eb092273a81e0dcac9ac367a745a3c6a205eab9aff45de243e004b3bd2ee.php:76
+msgid "%site_title% is currently under maintenance. We be back later."
+msgstr ""
+"Na stronie %site_title% jest aktualnie przeprowadzana konserwacja i jest ona "
+"wyłączona. Wrócimy wkrótce."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/d1/fe/88d933bd9441265c2192361b487f73aeac4be9cac8f5c6b3e7f892a487c0.php:37
+msgid "Success! Abuse sent"
+msgstr "Powodzenie! Zgłoszenie wysłane"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/d1/fe/88d933bd9441265c2192361b487f73aeac4be9cac8f5c6b3e7f892a487c0.php:43
+msgid "Failed! Abuse not sent"
+msgstr "Niepowodzenie! Zgłoszenie nie zostało wysłane"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/d1/fe/88d933bd9441265c2192361b487f73aeac4be9cac8f5c6b3e7f892a487c0.php:60
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:44
+msgid "Send abuse for paste"
+msgstr "Wyślij nadużycie dla wklejki"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/d1/fe/88d933bd9441265c2192361b487f73aeac4be9cac8f5c6b3e7f892a487c0.php:64
+msgid "Report sent"
+msgstr "Raport wysłany"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/d1/fe/88d933bd9441265c2192361b487f73aeac4be9cac8f5c6b3e7f892a487c0.php:64
+msgid "Report not sent"
+msgstr "Raport nie został wysłany"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/d1/fe/88d933bd9441265c2192361b487f73aeac4be9cac8f5c6b3e7f892a487c0.php:81
+msgid "Success!"
+msgstr "Powodzenie!"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/d1/fe/88d933bd9441265c2192361b487f73aeac4be9cac8f5c6b3e7f892a487c0.php:88
+msgid "Your report has been sent to administrator. Thanks."
+msgstr "Twój raport został dostarczony administratorowi. Dziękujemy."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/d1/fe/88d933bd9441265c2192361b487f73aeac4be9cac8f5c6b3e7f892a487c0.php:113
+msgid "Failed!"
+msgstr "Niepowodzenie!"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/d1/fe/88d933bd9441265c2192361b487f73aeac4be9cac8f5c6b3e7f892a487c0.php:120
+msgid "Your report has been NOT sent to administrator. Please try later."
+msgstr "Twój raport NIE został wysłany do administratora. Spóbuj później."
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:171
+msgid "Share"
+msgstr "Udostępnij"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:175
+msgid "Print"
+msgstr "Drukuj"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:219
+msgid "Go to top"
+msgstr "Idź do góry"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:228
+msgid "Submitted"
+msgstr "Wysłany"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:265
+msgid "Author website link"
+msgstr "Strona WWW autora"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:279
+msgid "Report abuse"
+msgstr "Wyślij zgłoszenie o nadużyciu"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/e4/88/9ecf4675d6d102409bebbf3c830e5963cd9fa5baebd0b7e77c4e9e9c1b3d.php:296
+msgid "Characters"
+msgstr "Znaków"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:32
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:106
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:112
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:136
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:142
+msgid "Send abuse"
+msgstr "Wyślij zgłoszenie o nadużyciu"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:62
+msgid "Abuse Form"
+msgstr "Formularz zgłoszenia"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:68
+msgid "Reason (required)"
+msgstr "Powód (wymagane)"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:120
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:150
+msgid "I changed my mind"
+msgstr "Zmieniłem zdanie"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:171
+msgid "Abuse Form Error"
+msgstr "Błąd formularza zgłoszenia"
+
+#: H:\program
+#: files\xampp\htdocs\SimPas\develop/storage/templates/f1/35/3ac108c96f8e6e8e45d9bb1e34e102f9a3d22ee4eac208840f4078b7ffc8.php:178
+msgid ""
+"\"Report abuse\" is not configured. Please check whether e-mail of "
+"administrator in configuration file is inscribed."
+msgstr ""
+"\"Wyślij zgłoszenie o nadużyciu\" nie jest skonfigurowany. Sprawdź czy jest "
+"wpisany adres e-mail administratora w pliku konfiguracyjnym."
+
+#~ msgid "Copy to clipboard"
+#~ msgstr "Kopiuj do schowka"
+
+#~ msgid "Raw mode"
+#~ msgstr "Tryb surowy"
+
+#~ msgid "About cookies"
+#~ msgstr "O ciasteczkach"
