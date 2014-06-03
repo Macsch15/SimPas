@@ -247,6 +247,7 @@ ol div {
 
 .popover, .modal-content {
   box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
+  border: none;
   border-radius: 0;
 }
 
