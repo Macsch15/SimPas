@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SimPas Polish\n"
 "POT-Creation-Date: 2014-06-02 13:21+0100\n"
-"PO-Revision-Date: 2014-06-02 13:22+0100\n"
+"PO-Revision-Date: 2014-06-09 12:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: Macsch15\n"
 "Language: pl_PL\n"
@@ -51,12 +51,12 @@ msgid ""
 "Some field there are empty or contains prohibited characters (e.g only "
 "spaces)."
 msgstr ""
-"Niektóre pola są puste albo zawierają niedozwolone znaki (np. tylko space)"
+"Niektóre pola są puste albo zawierają niedozwolone znaki (np. tylko spacje)"
 
 #: H:\program
 #: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Compare.php:94
 msgid "Submitted URL is not valid."
-msgstr "Przekazany adres URL nie jest poprawny"
+msgstr "Przekazany adres URL nie jest poprawny."
 
 #: H:\program
 #: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/Controller.php:80
@@ -93,7 +93,7 @@ msgstr ""
 #: H:\program
 #: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/ReportAbuse.php:69
 msgid "Action are not allowed. Aborting."
-msgstr "Akcja niedozwolona. Przerywanie."
+msgstr "Akcja niedozwolona."
 
 #: H:\program
 #: files\xampp\htdocs\SimPas\develop/library/Application/Pastebin/ReportAbuse.php:98
