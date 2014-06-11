@@ -16,6 +16,7 @@
         "author_website": "VARCHAR(255) DEFAULT NULL",
         "short_url": "VARCHAR(255) DEFAULT NULL",
         "expire": "VARCHAR(15)",
+        "hits": "INT(10) DEFAULT 0",
 
         "__options__": {
             "primary_key": "paste_id",

@@ -64,7 +64,7 @@ class LatestPastes extends View
         // Prepare query
         $query = $this->data_source
         ->get()
-        ->prepare('SELECT unique_id, time, syntax, title, author, visibility, author_website, expire
+        ->prepare('SELECT unique_id, time, syntax, title, author, visibility, author_website, expire, hits
             FROM ' . $this->config('Database')->prefix  . 'pastes WHERE visibility = :visibility ORDER BY time DESC LIMIT :limit');
 
         // Filter

@@ -12,11 +12,11 @@
 
       {% for key in container %}
         <div class="latest">
-          {#
-          <div class="hidden-xs hidden-sm">
-            <span class="glyphicon glyphicon-fire fa-lg latest_hot"></span>
-          </div>
-          #}
+          {% if key.hits >= config.hot_paste %}
+            <div class="hidden-xs hidden-sm">
+              <span class="glyphicon glyphicon-fire fa-lg latest_hot"></span>
+            </div>
+          {% endif %}
           
           {% if key.author_website is not empty %}
             <a href="{{ key.author_website }}" rel="nofollow">

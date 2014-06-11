@@ -12,6 +12,7 @@ use Application\HttpRequest\HttpRequest;
 use Application\Pastebin\ShortenUrlApi;
 use Application\Security\QuestionsAndAnswers\QuestionsAndAnswers;
 use Application\Pastebin\Helpers\Strings;
+use Application\Pastebin\Hits;
 
 class Controller extends View
 {
@@ -120,6 +121,9 @@ class Controller extends View
         if((new ReadPaste($this->application))->pasteExists($request['id']) === false) {
             (new SendPaste($this->application))->send($this->toSendDataContainer($request));
         }
+
+        // Update paste hit
+        (new Hits($this->application))->update($request['id']);
         
         // Template render
         $this->render([

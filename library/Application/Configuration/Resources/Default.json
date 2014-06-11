@@ -30,5 +30,9 @@
     "latest_pastes": 20,
     "antispam_enabled": true,
     "author_website_enabled": true,
-    "delete_expired_pastes": true
+    "delete_expired_pastes": true,
+    "cookie_path": "",
+    "cookie_domain": "",
+    "cookie_secure": false,
+    "hot_paste": 1500
 }

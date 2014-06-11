@@ -91,6 +91,10 @@ latest_pastes  | Number of pastes displayed on ```/latest``` page  | Integer  | 
 antispam_enabled  | Questions&Answers enabled?  | true/false  | true
 author_website_enabled | Author website enabled?  | true/false  | true
 delete_expired_pastes | Delete expired pastes? | true/false | true
+cookie_path | Cookies path | String | *void*
+cookie_domain | Cookies domain | String | *void*
+cookie_secure | Use secure cookies? | true/false | false
+hot_paste | Number of hits needed to make "hot paste" | Integer | 1500
 
 ####library/Application/Configuration/Resources/Database.json
 
