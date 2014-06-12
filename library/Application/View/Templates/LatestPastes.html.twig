@@ -14,7 +14,7 @@
         <div class="latest">
           {% if key.hits >= config.hot_paste %}
             <div class="hidden-xs hidden-sm">
-              <span class="glyphicon glyphicon-fire fa-lg latest_hot"></span>
+              <span title="{% trans %}Popular paste{% endtrans %}" class="tooltip-top glyphicon glyphicon-fire fa-lg latest_hot"></span>
             </div>
           {% endif %}
           
