@@ -69,7 +69,7 @@ class Swift_Signers_DomainKeySigner implements Swift_Signers_HeaderSigner
     /**
      * Must we embed signed headers?
      *
-     * @var boolean
+     * @var bool
      */
     protected $_debugHeaders = false;
 
@@ -142,7 +142,7 @@ class Swift_Signers_DomainKeySigner implements Swift_Signers_HeaderSigner
      * @return Swift_Signers_DomainKeySigner
      */
     public static function newInstance($privateKey, $domainName, $selector) {
-    	return new static($privateKey, $domainName, $selector);
+        return new static($privateKey, $domainName, $selector);
     }
     
     /**
@@ -230,7 +230,7 @@ class Swift_Signers_DomainKeySigner implements Swift_Signers_HeaderSigner
         // Don't have to mirror anything
         foreach ($this->_bound as $k => $stream) {
             if ($stream === $is) {
-            	unset($this->_bound[$k]);
+                unset($this->_bound[$k]);
 
                 return;
             }
@@ -299,7 +299,7 @@ class Swift_Signers_DomainKeySigner implements Swift_Signers_HeaderSigner
     /**
      * Enable / disable the DebugHeaders
      *
-     * @param boolean $debug
+     * @param bool    $debug
      * @return Swift_Signers_DomainKeySigner
      */
     public function setDebugHeaders($debug)
@@ -501,6 +501,10 @@ class Swift_Signers_DomainKeySigner implements Swift_Signers_HeaderSigner
         $this->_canonLine = '';
     }
 
+    /**
+     * @throws Swift_SwiftException
+     * @return string
+     */
     private function _getEncryptedHash()
     {
         $signature = '';
