@@ -95,6 +95,7 @@ cookie_path | Cookies path | String | *void*
 cookie_domain | Cookies domain | String | *void*
 cookie_secure | Use secure cookies? | true/false | false
 hot_paste | Number of hits needed to make "hot paste" | Integer | 1500
+show_cookies_info | Display information about using cookies in footer? | true/false | false
 
 ####library/Application/Configuration/Resources/Database.json
 

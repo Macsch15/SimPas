@@ -34,5 +34,6 @@
     "cookie_path": "",
     "cookie_domain": "",
     "cookie_secure": false,
-    "hot_paste": 1500
+    "hot_paste": 1500,
+    "show_cookies_info": true
 }

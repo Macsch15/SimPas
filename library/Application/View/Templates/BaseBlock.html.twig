@@ -81,9 +81,11 @@
   </div>
 
   <footer class="containter wrap copyright hidden-xs hidden-sm">
-    <div class="pull-left link_underline">
-      {% trans %}This site uses cookies.{% endtrans %} <a href="{{ build_url('cookies') }}">{% trans %}Read more about cookies policy{% endtrans %}</a>
-    </div>
+    {% if config.show_cookies_info == true %}
+      <div class="pull-left link_underline">
+        {% trans %}This site uses cookies.{% endtrans %} <a href="{{ build_url('cookies') }}">{% trans %}Read more about cookies policy{% endtrans %}</a>
+      </div>
+    {% endif %}
 
     {% if constant('Application\\Application::ENVIRONMENT') == 'dev' %}
       <br /><br />
