@@ -1,35 +1,26 @@
 $(function() {
-  $('.tooltip-top').tooltip({placement: 'top', container: 'body'}) 
-  $('.tooltip-bottom').tooltip({placement: 'bottom', container: 'body'}) 
-  $('.tooltip-left').tooltip({placement: 'left', container: 'body'}) 
-  $('.tooltip-right').tooltip({placement: 'right', container: 'body'})
+  $('.tooltip-top').tooltip({placement: 'top', container: 'body'});
+  $('.tooltip-bottom').tooltip({placement: 'bottom', container: 'body'});
+  $('.tooltip-left').tooltip({placement: 'left', container: 'body'});
+  $('.tooltip-right').tooltip({placement: 'right', container: 'body'});
 
-  $('button#options').popover({ 
+  $('button#options').clickover({ 
     html : true,
-    trigger: 'manual',
-    delay: { show: 50, hide: 50 },
-    content: function() {
-      return $("#popover_content").html();
-    }
+    global_close: true,
+    onShown: function () {
+      $('div#popover_content').remove();
+    },
+    onHidden: function () {
+      $('div#form_data').empty();
+      $($('div.popover').clone(true, true)).appendTo('div#form_data');
+    },
+    content: $("#popover_content").html()
   });
 
   $('form#send_paste').submit(function() {
     $(".progress").animate({
       height: 6
     }, 50);
-  });
-
-  $('button#options').click(function() {
-    $('div#form_data').empty();
-
-    if($('div.popover').length == 0) {
-      $('button#options').popover('show');
-      $('div#popover_content').remove();
-    } else {
-      $('button#options').popover('hide');
-      $('div#form_data').empty();
-      $($('div.popover').clone(true, true)).appendTo('div#form_data');
-    }  
   });
 
   $('span.extra_date').each(function() {
