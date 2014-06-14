@@ -1,9 +1,12 @@
+// DOM Ready fired?
 $(function() {
+  // BS: Tooltips
   $('.tooltip-top').tooltip({placement: 'top', container: 'body'});
   $('.tooltip-bottom').tooltip({placement: 'bottom', container: 'body'});
   $('.tooltip-left').tooltip({placement: 'left', container: 'body'});
   $('.tooltip-right').tooltip({placement: 'right', container: 'body'});
 
+  // BS: Popovers
   $('button#options').clickover({ 
     html : true,
     global_close: true,
@@ -17,12 +20,14 @@ $(function() {
     content: $("#popover_content").html()
   });
 
+  // Sending progress bar
   $('form#send_paste').submit(function() {
     $(".progress").animate({
       height: 6
     }, 50);
   });
 
+  // Relative dates
   $('span.extra_date').each(function() {
     if(!$(this).hasClass('date_no_suffix')) {
       $(this).html(moment($(this).text()).fromNow());
@@ -31,11 +36,13 @@ $(function() {
     }
   })
 
+  // Print action
   $('a#print').click(function() {
     window.print();
     return false;
   });
 
+  // Disable sending button if textarea is empty
   $('textarea.form-control').each(function() {
     if ($(this).val().length == 0) {
       $('button.submit_button').addClass('disabled');
@@ -50,6 +57,7 @@ $(function() {
     }
   });
 
+  // Get and focus to specific line
   if(document.location.hash) {
     showLine();
   }
@@ -59,8 +67,10 @@ $(function() {
     $(this).addClass('line_active');
   });
 
+  // Focus textarea on load
   $("textarea#_chars_left").eq(0).focus();
 
+  // Tabs in textarea
   $('body').on('keydown', 'textarea#_chars_left', function(e) {
     var keyCode = e.keyCode || e.which;
 
