@@ -30,14 +30,12 @@ class QuestionsAndAnswers
 
         if(is_array($this->config('QuestionsAndAnswers', true)[$field_client_question]) === true) {
             foreach($this->config('QuestionsAndAnswers', true)[$field_client_question] as $answer) {
-                if(trim(strtolower($field_client_answer)) == trim(strtolower($answer))) {
+                if(strcasecmp($field_client_answer, $answer) === 0) {
                     $valid = true;
                 }
             }
         } else {
-            if(trim(strtolower($field_client_answer)) == 
-                trim(strtolower($this->config('QuestionsAndAnswers', true)[$field_client_question]))
-            ) {
+            if(strcasecmp($field_client_answer, $this->config('QuestionsAndAnswers', true)[$field_client_question]) === 0) {
                 $valid = true;
             }
         }
