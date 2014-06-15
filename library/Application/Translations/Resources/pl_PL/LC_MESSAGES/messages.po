@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SimPas Polish\n"
-"POT-Creation-Date: 2014-06-12 06:55+0100\n"
-"PO-Revision-Date: 2014-06-12 06:55+0100\n"
+"POT-Creation-Date: 2014-06-15 21:13+0100\n"
+"PO-Revision-Date: 2014-06-15 21:13+0100\n"
 "Last-Translator: \n"
 "Language-Team: Macsch15\n"
 "Language: pl_PL\n"
@@ -501,113 +501,39 @@ msgid "Error message"
 msgstr "Treść błędu"
 
 #: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:163
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:167
 msgid "This site uses cookies."
 msgstr "Strona używa ciasteczek"
 
 #: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:167
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:171
 msgid "Read more about cookies policy"
 msgstr "Przeczytaj więcej o polityce ciasteczek"
 
 #: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:182
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:189
 msgid "Allocated memory: %utilisedMemory%KB"
 msgstr "Używana pamięć: %utilisedMemory%KB"
 
 #: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:186
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:193
 msgid "GZIP Compression"
 msgstr "Kompresja GZIP"
 
 #: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:337
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:348
 msgid "Copied!"
 msgstr "Skopiowano!"
 
 #: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:343
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:354
 msgid "Oops, nothing found!"
 msgstr "Oops, nic nie znaleziono!"
 
 #: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:355
+#: files\xampp\htdocs\SimPas\develop/storage/templates/9e/bc/7ef19735a46657319e108234459ef777b01dd09dbc4f0c6ec6ff3748e46f.php:366
 msgid "chars left"
 msgstr "znaków pozostało"
-
-#: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:38
-msgid "%type% exception detected!"
-msgstr "Wykryto wyjątek: %type% "
-
-#: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:44
-msgid "Exception detected!"
-msgstr "Wykryto wyjątek"
-
-#: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:55
-#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:226
-msgid "500 Internal Server Error"
-msgstr "500 Wewnętrzny błąd"
-
-#: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:75
-msgid "Catastrophic error! :C"
-msgstr "Katastrofalny błąd! :C"
-
-#: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:86
-msgid "500 Internal Server Error &mdash; Exception %type%"
-msgstr "500 Wewnętrzny błąd &mdash; Wyjątek %type% "
-
-#: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:95
-msgid "In file"
-msgstr "W pliku"
-
-#: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:104
-msgid "at line"
-msgstr "w linii"
-
-#: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:144
-msgid "Stack Trace"
-msgstr "Wywołania"
-
-#: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:173
-msgid "File"
-msgstr "Plik"
-
-#: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:183
-msgid "Line"
-msgstr "Linia"
-
-#: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:193
-msgid "Class"
-msgstr "Klasa"
-
-#: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:235
-msgid "Exception in"
-msgstr "Wyjątek w"
-
-#: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:258
-msgid ""
-"Please contact the administrator %admin_email% and report it about this "
-"error."
-msgstr ""
-"Skontaktuj się z administratorem %admin_email% i poinformuj go o tym błędzie."
-
-#: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/a9/f8/172fb3915d597d2de81658c299ee2635d55463a3b4dda5b37023aed637cc.php:268
-msgid "More information about this exception are available in the error log."
-msgstr "Więcej informacji o tym błędzie znajduje się w logu błędów."
 
 #: H:\program
 #: files\xampp\htdocs\SimPas\develop/storage/templates/ab/0e/8c015174fa40b545e563ed5e8540d14d5281fb46f55423c3afea928ba69e.php:32
@@ -780,8 +706,79 @@ msgstr ""
 "\"Wyślij zgłoszenie o nadużyciu\" nie jest skonfigurowany. Sprawdź czy jest "
 "wpisany adres e-mail administratora w pliku konfiguracyjnym."
 
+#~ msgid "Undefined configuration file \"%s\""
+#~ msgstr "Nieznany plik konfiguracyjny \"%s\""
+
+#~ msgid "Maximum stack depth exceeded"
+#~ msgstr "Przekroczono maksymalny poziom zagnieżdżenia danych"
+
+#~ msgid "Unexpected control character found"
+#~ msgstr "Niespodziewany znak kontrolny"
+
+#~ msgid "Syntax error, malformed JSON"
+#~ msgstr "Błąd składni. Zniekształcony plik JSON"
+
+#~ msgid "Malformed UTF-8 characters, possibly incorrectly encoded"
+#~ msgstr "Zniekształcone znaki UTF-8. Prawdopodobnie plik jest źle kodowany"
+
+#~ msgid "Unknown error"
+#~ msgstr "Nieznany błąd"
+
+#~ msgid "JSON Error:"
+#~ msgstr "Błąd JSON:"
+
+#~ msgid "in"
+#~ msgstr "w"
+
 #~ msgid "An error encountered!"
 #~ msgstr "Napotkano błędy PHP"
+
+#~ msgid "%type% exception detected!"
+#~ msgstr "Wykryto wyjątek: %type% "
+
+#~ msgid "Exception detected!"
+#~ msgstr "Wykryto wyjątek"
+
+#~ msgid "500 Internal Server Error"
+#~ msgstr "500 Wewnętrzny błąd"
+
+#~ msgid "Catastrophic error! :C"
+#~ msgstr "Katastrofalny błąd! :C"
+
+#~ msgid "500 Internal Server Error &mdash; Exception %type%"
+#~ msgstr "500 Wewnętrzny błąd &mdash; Wyjątek %type% "
+
+#~ msgid "In file"
+#~ msgstr "W pliku"
+
+#~ msgid "at line"
+#~ msgstr "w linii"
+
+#~ msgid "Stack Trace"
+#~ msgstr "Wywołania"
+
+#~ msgid "File"
+#~ msgstr "Plik"
+
+#~ msgid "Line"
+#~ msgstr "Linia"
+
+#~ msgid "Class"
+#~ msgstr "Klasa"
+
+#~ msgid "Exception in"
+#~ msgstr "Wyjątek w"
+
+#~ msgid ""
+#~ "Please contact the administrator %admin_email% and report it about this "
+#~ "error."
+#~ msgstr ""
+#~ "Skontaktuj się z administratorem %admin_email% i poinformuj go o tym "
+#~ "błędzie."
+
+#~ msgid ""
+#~ "More information about this exception are available in the error log."
+#~ msgstr "Więcej informacji o tym błędzie znajduje się w logu błędów."
 
 #~ msgid "404 Page not found"
 #~ msgstr "Błąd 404 strona nie znaleziona"
