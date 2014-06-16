@@ -56,7 +56,7 @@ trait Configuration
             }
 
             if($error_message !== false) {
-                throw new JsonException('JSON Error:' . ' ' . $error_message . ' ' . 'in' . ' ' . $entity . '.json');
+                throw new JsonException('JSON Error: ' . $error_message . ' in ' . $entity . '.json');
             }
 
             return $json_decode;
