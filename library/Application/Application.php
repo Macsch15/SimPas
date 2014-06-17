@@ -44,7 +44,7 @@ class Application
      * 
      * @return string
      */
-    const VERSION = '0.2';
+    const VERSION = '0.3';
 
     /**
      * Application version long
