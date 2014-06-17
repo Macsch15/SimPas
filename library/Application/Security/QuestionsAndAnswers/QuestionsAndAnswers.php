@@ -28,14 +28,22 @@ class QuestionsAndAnswers
             return $valid;
         }
 
+        $strcmp = function ($left, $right) {
+            if($this->config()->antispam_case_sensitive === true) {
+                return strcmp($left, $right);
+            }
+
+            return strcasecmp($left, $right);
+        };
+
         if(is_array($this->config('QuestionsAndAnswers', true)[$field_client_question]) === true) {
             foreach($this->config('QuestionsAndAnswers', true)[$field_client_question] as $answer) {
-                if(strcasecmp($field_client_answer, $answer) === 0) {
+                if($strcmp($field_client_answer, $answer) === 0) {
                     $valid = true;
                 }
             }
         } else {
-            if(strcasecmp($field_client_answer, $this->config('QuestionsAndAnswers', true)[$field_client_question]) === 0) {
+            if($strcmp($field_client_answer, $this->config('QuestionsAndAnswers', true)[$field_client_question]) === 0) {
                 $valid = true;
             }
         }
