@@ -5,6 +5,7 @@ use Application\Application;
 use Application\FileManager\FileManager;
 use Application\Exception\AssetNotFound;
 use Application\Exception\ExceptionRuntime;
+use Application\Exception\JsonException;
 use Application\View\ClientError;
 use Application\View\View;
 
@@ -48,7 +49,7 @@ class Routing extends View
     /**
     * Construct
     *
-    * @throws Application\Exception\ExceptionRuntime
+    * @throws Application\Exception\JsonException
     * @throws Application\Exception\AssetNotFound
     * @return void
     */
@@ -70,8 +71,32 @@ class Routing extends View
         // Parse JSON
         $this->routes_json = json_decode($this->routes_source, true);
 
-        if($this->routes_json == null) {
-            throw new ExceptionRuntime('Something goes wrong with routes file.');
+        switch(json_last_error()) {
+            case JSON_ERROR_NONE:
+                $error_message = false;
+                break;
+            case JSON_ERROR_DEPTH:
+                $error_message = 'Maximum stack depth exceeded';
+                break;
+            case JSON_ERROR_STATE_MISMATCH:
+                $error_message = 'Underflow or the modes mismatch';
+                break;
+            case JSON_ERROR_CTRL_CHAR:
+                $error_message = 'Unexpected control character found';
+                break;
+            case JSON_ERROR_SYNTAX:
+                $error_message = 'Syntax error, malformed JSON';
+                break;
+            case JSON_ERROR_UTF8:
+                $error_message = 'Malformed UTF-8 characters, possibly incorrectly encoded';
+                break;
+            default:
+                $error_message = 'Unknown error';
+                break;
+        }
+
+        if($error_message !== false) {
+            throw new JsonException('JSON Error: ' . $error_message . ' in Routes.json');
         }
         
         // Client request
