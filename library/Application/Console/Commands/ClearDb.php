@@ -36,8 +36,8 @@ class ClearDb
         $this->data_source = $application->dbConnectionAccessor();
         $this->console = $console;
 
-        $this->console->writeStdout('WARNING! This command remove all existing pastes and tables.');
-        $this->console->writeStdout('After cleaning, you must create new tables by command "php cmd/console SyncDb"');
+        $this->console->writeStdout('WARNING! This command will remove ALL existing pastes and tables.');
+        $this->console->writeStdout('After cleaning, you must re-sync database schema by command "php cmd/console SyncDb"');
         $this->console->writeStdout('Press any key to continue...', false, null);
 
         // Key confirmation
