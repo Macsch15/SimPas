@@ -13,7 +13,8 @@ class Console
     private $commands = [
         'SyncDb',
         'ClearDb',
-        'CacheRebuild'        
+        'CacheRebuild',
+        'EraseExpiredPastes'    
     ];
 
     /**
