@@ -153,6 +153,12 @@ $ php cmd/console ClearDb
 $ php cmd/console CacheRebuild
 ```
 
+**Erasing all expired pastes**
+
+```
+$ php cmd/console EraseExpiredPastes
+```
+
 How I can translate "Rules" and "Cookies policy"?
 ======
 
