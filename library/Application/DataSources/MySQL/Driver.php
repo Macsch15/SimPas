@@ -14,13 +14,6 @@ class Driver
     use Configuration;
 
     /**
-     * Is connected
-     *
-     * @var boolean
-     */
-    private $is_connected = false;
-
-    /**
      * PDO
      *
      * @var object
@@ -37,31 +30,17 @@ class Driver
     {
         // try-catch
         try {
-            if($this->isConnected() === false) {
-                // Try PDO connect
-                $this->pdo = new PDO(
-                    sprintf('mysql:host=%s;port=%d;dbname=%s', $this->config('Database')->server, $this->config('Database')->port, $this->config('Database')->database),
-                    $this->config('Database')->username, $this->config('Database')->password
-                );
+            // Try PDO connect
+            $this->pdo = new PDO(
+                sprintf('mysql:host=%s;port=%d;dbname=%s', $this->config('Database')->server, $this->config('Database')->port, $this->config('Database')->database),
+                $this->config('Database')->username, $this->config('Database')->password
+            );
 
-                // Set attributes
-                $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-                $this->is_connected = true;
-            }
+            // Set attributes
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch(PDOException $exception) {
             throw new ExceptionRuntime($exception->getMessage());
         }
-    }
-
-    /**
-     * Is connected
-     * 
-     * @return boolean
-     */
-    public function isConnected()
-    {
-        return $this->is_connected;
     }
 
     /**
