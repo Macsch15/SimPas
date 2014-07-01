@@ -65,9 +65,8 @@ class View extends Exception
         $this->twig->addExtension(new Twig_Extensions_Extension_I18n());
 
         // Assets function
-        $_this = $this; // Hello stupid closures.
-        $this->twig->addFunction(new Twig_SimpleFunction('assets', function ($folder, $entity) use ($_this) {
-            return $_this->assets($folder, $entity);
+        $this->twig->addFunction(new Twig_SimpleFunction('assets', function ($folder, $entity) {
+            return $this->assets($folder, $entity);
         }));
 
         // Build URL
