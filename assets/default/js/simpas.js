@@ -28,8 +28,13 @@ $(function() {
   });
 
   // Relative dates
-  $('span.extra_date').each(function() {
-    if(!$(this).hasClass('date_no_suffix')) {
+  $('time').each(function() {
+    $(this).tooltip({
+      placement: 'top',
+      title: $(this).html()
+    });
+
+    if(!$(this).hasClass('no_suffix')) {
       $(this).html(moment($(this).text()).fromNow());
     } else {
       $(this).html(moment($(this).text()).fromNow(true));
