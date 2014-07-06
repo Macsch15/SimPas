@@ -76,9 +76,7 @@ class ClearDb
     */
     private function clear()
     {
-        $tables = $this->prepareSchema();
-
-        foreach($tables['tables'] as $table => $table_fields) {
+        foreach($this->prepareSchema()['tables'] as $table => $table_fields) {
             $_clearQuery = 'DROP TABLE IF EXISTS ' . $this->config('Database')->prefix . $table;
 
             $this->console->writeStdout('Removing table "' . $this->config('Database')->prefix . $table . '"...', false, ' ');

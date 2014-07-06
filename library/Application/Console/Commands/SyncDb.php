@@ -71,9 +71,7 @@ class SyncDb
     {
         $this->console->writeStdout('Selected datasource driver: ' . $this->config('Database')->driver);
 
-        $tables = $this->prepareSchema();
-
-        foreach($tables['tables'] as $table => $table_fields) {
+        foreach($this->prepareSchema()['tables'] as $table => $table_fields) {
             switch($this->config('Database')->driver) {
                 case 'mysql':
                 default:
