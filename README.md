@@ -74,12 +74,12 @@ offline_message_allow_html  | Allow to use HTML entities in offline message?  | 
 theme  | Default theme. If you want add new one, you can copy "default" folder (in /assets/), rename, edit CSS/JS and enter in this setting new folder name  | String  | default
 max_chars  | Maximum characters in paste   | Integer  | 50000
 max_size_in_kb  | Maximum size of paste (in KB)  | Integer  | 512
-translations  | SimPas translations is powered by [GetText](http://en.wikipedia.org/wiki/Gettext). You can translate this by using software e.g [Poedit](http://poedit.net/). If translation is configured move it to ```library/Application/Translations/Resource``` | true/false  | false
-translation_domain  | This is filename of .po and .mo file in ```library/Application/Translation/Resource/{locale}/LC_MESSAGES/```  | String  | messages
+translations  | SimPas translations are powered by [GetText](http://en.wikipedia.org/wiki/Gettext). You can translate this by using software (e.g [Poedit](http://poedit.net/)). When translation is configured, move it to ```library/Application/Translations/Resource``` | true/false  | false
+translation_domain  | Filename of .po and .mo file in ```library/Application/Translation/Resource/{locale}/LC_MESSAGES/```  | String  | messages
 locale  | Required. Using for HTML documents, translation and relative date. [List of all locales](http://framework.zend.com/manual/1.12/en/zend.locale.appendix.html)  | Array  | ```["en", "en_EN"]```
 accented_characters  | Special characters for specific language  | String  | ĘÓĄŚŁŻŹĆŃęóąśłżźćń
 default_timezone  | Timezone. [List of all timezones](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)  | String  | Europe/Warsaw
-charset  | Charset  | String  | UTF-8
+charset  | Charset.  | String  | UTF-8
 gzip_compression  | [GZip](http://en.wikipedia.org/wiki/Gzip) compression. Required ```zlib``` library  | true/false  | false
 antyflood_enabled  | Antyflood  | true/false  | true
 antyflood_delay_in_seconds  | Antyflood delay (in seconds)  | Integer  | 30
