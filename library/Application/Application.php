@@ -47,13 +47,6 @@ class Application
     const VERSION = '0.3';
 
     /**
-     * Application version long
-     * 
-     * @return string
-     */
-    const VERSION_LONG = '2000';
-
-    /**
      * Application name
      * 
      * @return string
