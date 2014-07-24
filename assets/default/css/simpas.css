@@ -12,12 +12,12 @@ body {
     visibility: hidden;
   }
 
-  #zclip_copy *, 
+  #zclip_copy *,
   .pre_code {
     visibility: visible;
   }
 
-  .container, 
+  .container,
   #zclip_copy {
     position: absolute;
     top: 1px;
@@ -45,21 +45,25 @@ body {
   animation-duration: 0.30s;
 }
 
-textarea:focus, 
-input[type="text"]:focus, 
-input[type="password"]:focus, 
-input[type="datetime"]:focus, 
-input[type="datetime-local"]:focus, 
-input[type="date"]:focus, 
-input[type="month"]:focus, 
-input[type="time"]:focus, 
-input[type="week"]:focus, 
-input[type="number"]:focus, 
+.alert {
+  padding: 9px;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
 input[type="email"]:focus,
-input[type="url"]:focus, 
+input[type="url"]:focus,
 input[type="search"]:focus,
-input[type="tel"]:focus, 
-input[type="color"]:focus, 
+input[type="tel"]:focus,
+input[type="color"]:focus,
 .uneditable-input:focus,
 .form-control:focus {
   box-shadow: none !important;
@@ -167,7 +171,7 @@ ol div {
   border: 1px #719CBF solid !important;
 }
 
-.navbar-toggle:hover, 
+.navbar-toggle:hover,
 .navbar-toggle:active,
 .navbar-toggle:focus {
   background: #5F83A1 !important;
@@ -207,6 +211,7 @@ ol div {
 .main_button {
   background: #545454;
   color: #fff;
+  min-width: 150px;
 }
 
 .main_button:hover {
