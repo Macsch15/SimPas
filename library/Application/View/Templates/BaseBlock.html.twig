@@ -81,18 +81,18 @@
   </div>
 
   <footer class="containter wrap copyright hidden-xs hidden-sm">
-    {% if config.show_cookies_info == true %}
-      <div class="pull-left link_underline">
-        {% trans %}This site uses cookies.{% endtrans %} <a href="{{ build_url('cookies') }}">{% trans %}Read more about cookies policy{% endtrans %}</a>
-      </div>
-    {% endif %}
-
     {% if constant('Application\\Application::ENVIRONMENT') == 'dev' %}
       <br /><br />
       <div class="pull-left">
         {% set utilisedMemory = app.getUtilisedMemory() %}
         <span class="glyphicon glyphicon-tasks"></span> {% trans %}Allocated memory: {{ utilisedMemory }}KB{% endtrans %}<br />
         <div style="text-align: left"><span class="glyphicon glyphicon-compressed"></span> {% trans %}GZIP Compression{% endtrans %}: {{ config.gzip_compression ? "On" : "Off" }}</div>
+      </div>
+    {% endif %}
+
+    {% if config.show_cookies_info == true %}
+      <div class="link_underline">
+        {% trans %}This site uses cookies.{% endtrans %} <a href="{{ build_url('cookies') }}">{% trans %}Read more about cookies policy{% endtrans %}</a>
       </div>
     {% endif %}
 
