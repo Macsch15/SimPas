@@ -9,7 +9,7 @@ Requirements
 ======
 * PHP 5.4 (5.5 recommended) and above
 * MySQL or PostgreSQL access
-* Shell access on server
+* Shell access on server (CLI)
 
 
 How to Install?
