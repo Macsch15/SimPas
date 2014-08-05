@@ -87,20 +87,20 @@ class View extends Exception
     }
 
     /**
-    * View accessor
-    * 
-    * @return Twig_Environment object
-    */
+     * View accessor
+     * 
+     * @return Twig_Environment object
+     */
     public function view()
     {
         return $this->twig;
     }
 
     /**
-    * List of template names
-    * 
-    * @return array
-    */
+     * List of template names
+     * 
+     * @return array
+     */
     public function getTemplatesList()
     {
         foreach($this->loader->getPaths() as $_path) {
@@ -162,10 +162,10 @@ class View extends Exception
     }
 
     /**
-    * Check whether client has perrmisions to display page
-    *  
-    * @return bool
-    */
+     * Check whether client has perrmisions to display page
+     *  
+     * @return bool
+     */
     private function clientHasNoPermissionsToDisplayPage()
     {
         if($this->config()->site_offline === true 
@@ -178,12 +178,12 @@ class View extends Exception
     }
 
     /**
-    * Client error
-    * 
-    * @param string $message
-    * @param bool $not_found_header
-    * @return void
-    */
+     * Client error
+     * 
+     * @param string $message
+     * @param bool $not_found_header
+     * @return void
+     */
     public function sendFriendlyClientError($message, $not_found_header = false)
     {
         if($not_found_header === true) {
@@ -197,11 +197,11 @@ class View extends Exception
     }
 
     /**
-    * Regenerate template cache
-    * 
-    * @param bool $debug
-    * @return bool|array
-    */
+     * Regenerate template cache
+     * 
+     * @param bool $debug
+     * @return bool|array
+     */
     public function regenerateTemplateCache($debug = false)
     {
         foreach($this->getTemplatesList() as $_template) {

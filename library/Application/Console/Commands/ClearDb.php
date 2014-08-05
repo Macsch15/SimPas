@@ -11,10 +11,10 @@ class ClearDb
     use Configuration;
 
     /**
-    * DataBase
-    * 
-    * @var object
-    */
+     * DataBase
+     * 
+     * @var object
+     */
     private $data_source;
 
     /**
@@ -25,12 +25,12 @@ class ClearDb
     private $console;
 
     /**
-    * Construct
-    * 
-    * @param Console $console
-    * @param Application $application
-    * @return void
-    */
+     * Construct
+     * 
+     * @param Console $console
+     * @param Application $application
+     * @return void
+     */
     public function __construct(Console $console, Application $application)
     {
         $this->data_source = $application->dbConnectionAccessor();
@@ -48,10 +48,10 @@ class ClearDb
     }
 
     /**
-    * Prepare database schema
-    * 
-    * @return array
-    */
+     * Prepare database schema
+     * 
+     * @return array
+     */
     private function prepareSchema()
     {
         $this->console->writeStdout('Preparing database schema...', false, ' ');
@@ -70,10 +70,10 @@ class ClearDb
     }
 
     /**
-    * Clear
-    * 
-    * @return void
-    */
+     * Clear
+     * 
+     * @return void
+     */
     private function clear()
     {
         foreach($this->prepareSchema()['tables'] as $table => $table_fields) {

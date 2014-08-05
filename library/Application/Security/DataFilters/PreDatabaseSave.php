@@ -8,11 +8,11 @@ class PreDatabaseSave
     use Configuration;
 
     /**
-    * Filter
-    * 
-    * @param string $string
-    * @return string
-    */
+     * Filter
+     * 
+     * @param string $string
+     * @return string
+     */
     public function filter($string, $restricted_characters)
     {
         if($restricted_characters === 'html') {
@@ -35,11 +35,11 @@ class PreDatabaseSave
     }
 
     /**
-    * Remove prohibited characters
-    * 
-    * @param string $string
-    * @return string
-    */
+     * Remove prohibited characters
+     * 
+     * @param string $string
+     * @return string
+     */
     private function normalizeString($string)
     {
         return preg_replace('/[^A-Za-z0-9' . $this->config()->accented_characters . '_\-!?\s\.]+/', '', $string);

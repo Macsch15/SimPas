@@ -9,29 +9,29 @@ class SendPaste
     use Configuration;
 
     /**
-    * DataBase
-    * 
-    * @var object
-    */
+     * DataBase
+     * 
+     * @var object
+     */
     private $data_source;
 
     /**
-    * Construct
-    *
-    * @param Application $application
-    * @return void
-    */
+     * Construct
+     *
+     * @param Application $application
+     * @return void
+     */
     public function __construct(Application $application)
     {
         $this->data_source = $application->dbConnectionAccessor();
     }
 
     /**
-    * Send paste
-    * 
-    * @param array $container
-    * @return void
-    */
+     * Send paste
+     * 
+     * @param array $container
+     * @return void
+     */
     public function send(array $container) {
         // Prepare query
         $query = $this->data_source
@@ -92,11 +92,11 @@ class SendPaste
     }
 
     /**
-    * Normalize paste title and author
-    * 
-    * @param string $string 
-    * @return string
-    */
+     * Normalize paste title and author
+     * 
+     * @param string $string 
+     * @return string
+     */
     private function normalizeTitleAndAuthorField($string)
     {
         if(strlen($string) > 50) {
@@ -107,10 +107,10 @@ class SendPaste
     }
 
     /**
-    * Generate ID
-    * 
-    * @return int
-    */
+     * Generate ID
+     * 
+     * @return int
+     */
     public function generateId()
     {
         $id = time();

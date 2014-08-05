@@ -11,25 +11,25 @@ class Hits
     use Configuration;
 
     /**
-    * Application
-    * 
-    * @var object
-    */
+     * Application
+     * 
+     * @var object
+     */
     private $application;
 
     /**
-    * DataBase
-    * 
-    * @var object
-    */
+     * DataBase
+     * 
+     * @var object
+     */
     private $data_source;
 
     /**
-    * Construct
-    * 
-    * @param Application $application
-    * @return void
-    */
+     * Construct
+     * 
+     * @param Application $application
+     * @return void
+     */
     public function __construct(Application $application)
     {
         $this->application = $application;
@@ -37,11 +37,11 @@ class Hits
     }
 
     /**
-    * Update hit for specific paste
-    * 
-    * @param int $paste_id 
-    * @return bool
-    */
+     * Update hit for specific paste
+     * 
+     * @param int $paste_id 
+     * @return bool
+     */
     public function update($paste_id)
     {
         // Create new cookie

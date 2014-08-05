@@ -9,29 +9,29 @@ class ReadPaste
     use Configuration;
 
     /**
-    * DataBase
-    * 
-    * @var object
-    */
+     * DataBase
+     * 
+     * @var object
+     */
     private $data_source;
 
     /**
-    * Construct
-    *
-    * @param Application $application
-    * @return void
-    */
+     * Construct
+     *
+     * @param Application $application
+     * @return void
+     */
     public function __construct(Application $application)
     {
         $this->data_source = $application->dbConnectionAccessor();
     }
 
     /**
-    * Read paste data from data source
-    * 
-    * @param int $paste_id
-    * @return array
-    */
+     * Read paste data from data source
+     * 
+     * @param int $paste_id
+     * @return array
+     */
     public function read($paste_id)
     {
         // Prepare query
@@ -65,11 +65,11 @@ class ReadPaste
     }
 
     /**
-    * Paste exists
-    * 
-    * @param int $paste_id 
-    * @return bool
-    */
+     * Paste exists
+     * 
+     * @param int $paste_id 
+     * @return bool
+     */
     public function pasteExists($paste_id)
     {
         // Prepare query

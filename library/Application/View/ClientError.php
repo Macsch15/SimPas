@@ -6,10 +6,10 @@ use Application\View\View;
 class ClientError extends View
 {
     /**
-    * Send error 404 page to client
-    * 
-    * @return void
-    */
+     * Send error 404 page to client
+     * 
+     * @return void
+     */
     public function response404()
     {
         // Set headers

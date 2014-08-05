@@ -6,17 +6,17 @@ use Application\FileManager\FileManager;
 class ShortenUrlApi
 {
     /**
-    * Bit.ly Username
-    * 
-    * @var string
-    */
+     * Bit.ly Username
+     * 
+     * @var string
+     */
     private $bitly_username = 'simpasapplication';
 
     /**
-    * Bit.ly API Key
-    * 
-    * @var string
-    */
+     * Bit.ly API Key
+     * 
+     * @var string
+     */
     private $bitly_api_key = 'R_f3518c22e6f64286a06cb7b1306e4702';
 
     /**
@@ -27,21 +27,21 @@ class ShortenUrlApi
     private $file_manager;
 
     /**
-    * Construct
-    *  
-    * @return void
-    */
+     * Construct
+     *  
+     * @return void
+     */
     public function __construct()
     {
         $this->file_manager = new FileManager();
     }
 
     /**
-    * Shorten URL
-    * 
-    * @param string $long_url 
-    * @return array|null
-    */
+     * Shorten URL
+     * 
+     * @param string $long_url 
+     * @return array|null
+     */
     public function shorten($long_url)
     {
         // Get API

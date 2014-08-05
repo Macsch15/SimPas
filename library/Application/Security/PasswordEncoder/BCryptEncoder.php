@@ -6,10 +6,10 @@ use Application\Application;
 class BCryptEncoder
 {
     /**
-    * Construct
-    * 
-    * @return void
-    */
+     * Construct
+     * 
+     * @return void
+     */
     public function __construct()
     {
         if(version_compare(PHP_VERSION, '5.0.0', '>=')) {
@@ -49,7 +49,7 @@ class BCryptEncoder
      * @param array $options 
      * @return bool
      */
-    public function passwordNeedRehash($hash, array $options = [])
+    public function passwordNeedsRehash($hash, array $options = [])
     {
         return password_needs_rehash($hash, PASSWORD_BCRYPT, $options);
     }

@@ -18,10 +18,10 @@ class Application
     use Configuration;
 
     /**
-    * PHP errors container
-    * 
-    * @var array
-    */
+     * PHP errors container
+     * 
+     * @var array
+     */
     private $php_errors_container;
 
     /**
@@ -33,10 +33,10 @@ class Application
     const ENVIRONMENT = 'prod';
 
     /**
-    * Template cache
-    * 
-    * @return bool
-    */
+     * Template cache
+     * 
+     * @return bool
+     */
     const TEMPLATE_CACHE = true;
 
     /**
@@ -119,11 +119,11 @@ class Application
     }
 
     /**
-    * Build URL address
-    * 
-    * @param string $route 
-    * @return string
-    */
+     * Build URL address
+     * 
+     * @param string $route 
+     * @return string
+     */
     public function buildUrl($route = null)
     {
         if($route == null) {
@@ -139,10 +139,10 @@ class Application
     }
 
     /**
-    * Database connection accessor
-    * 
-    * @return Driver object
-    */
+     * Database connection accessor
+     * 
+     * @return Driver object
+     */
     public function dbConnectionAccessor()
     {
         switch($this->config('Database')->driver) {
@@ -157,34 +157,34 @@ class Application
     }
 
     /**
-    * PHP errors handler
-    * 
-    * @param int $errno
-    * @param string $errstr
-    * @param string $errfile
-    * @param int $errline 
-    * @return void
-    */
+     * PHP errors handler
+     * 
+     * @param int $errno
+     * @param string $errstr
+     * @param string $errfile
+     * @param int $errline 
+     * @return void
+     */
     public function engineErrorsHandler($errno, $errstr, $errfile, $errline)
     {
         $this->php_errors_container[] = sprintf(_('%s on line %d in file %s'), $errstr, $errline, $errfile);;
     }
 
     /**
-    * Fetch PHP errors
-    * 
-    * @return array
-    */
+     * Fetch PHP errors
+     * 
+     * @return array
+     */
     public function engineErrors()
     {
         return $this->php_errors_container;
     }
 
     /**
-    * Utilised memory (in KB)
-    *
-    * @return string
-    */
+     * Utilised memory (in KB)
+     *
+     * @return string
+     */
     public function getUtilisedMemory()
     {
         return round(memory_get_peak_usage() / 1024);

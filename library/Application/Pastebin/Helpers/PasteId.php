@@ -4,11 +4,11 @@ namespace Application\Pastebin\Helpers;
 class PasteId
 {
     /**
-    * Get paste id from URL
-    * 
-    * @param string $url 
-    * @return string|bool
-    */
+     * Get paste id from URL
+     * 
+     * @param string $url 
+     * @return string|bool
+     */
     public static function getFromUrl($url)
     {
         $left_pos = strpos($url, 'paste/');

@@ -11,25 +11,25 @@ class LatestPastes extends View
     use Configuration;
 
     /**
-    * Application
-    * 
-    * @var object
-    */
+     * Application
+     * 
+     * @var object
+     */
     private $application;
     
     /**
-    * DataBase
-    * 
-    * @var object
-    */
+     * DataBase
+     * 
+     * @var object
+     */
     private $data_source;
     
     /**
-    * Construct
-    * 
-    * @param Application $application
-    * @return void
-    */
+     * Construct
+     * 
+     * @param Application $application
+     * @return void
+     */
     public function __construct(Application $application)
     {
         parent::__construct($application);
@@ -39,10 +39,10 @@ class LatestPastes extends View
     }
 
     /**
-    * Latest pastes
-    *
-    * @return void
-    */
+     * Latest pastes
+     *
+     * @return void
+     */
     public function indexAction()
     {
         // Template render
@@ -55,10 +55,10 @@ class LatestPastes extends View
     }
 
     /**
-    * Public pastes container
-    * 
-    * @return array
-    */
+     * Public pastes container
+     * 
+     * @return array
+     */
     private function publicPastesContainer()
     {
         // Prepare query

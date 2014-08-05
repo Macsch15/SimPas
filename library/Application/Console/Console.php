@@ -18,12 +18,12 @@ class Console
     ];
 
     /**
-    * Construct
-    *
-    * @param Application $application
-    * @param array $cmd_argv
-    * @return void
-    */
+     * Construct
+     *
+     * @param Application $application
+     * @param array $cmd_argv
+     * @return void
+     */
     public function __construct(Application $application, array $cmd_argv)
     {
         // Command without arguments?
@@ -49,11 +49,11 @@ class Console
     }
 
     /**
-    * Avaiable commands
-    *
-    * @param bool $as_array
-    * @return string|array
-    */
+     * Avaiable commands
+     *
+     * @param bool $as_array
+     * @return string|array
+     */
     private function avaiableCommands($as_array = false)
     {
         if($as_array) {
@@ -68,14 +68,14 @@ class Console
     }
 
     /**
-    * Write message to stdout
-    * 
-    * @param string $message 
-    * @param bool $list
-    * @param string $line_separator
-    * @param string $error_message
-    * @return void
-    */
+     * Write message to stdout
+     * 
+     * @param string $message 
+     * @param bool $list
+     * @param string $line_separator
+     * @param string $error_message
+     * @return void
+     */
     public function writeStdout($message, $list = false, $line_separator = PHP_EOL, $error_message = false)
     {
         if($list === true) {
@@ -93,10 +93,10 @@ class Console
     }
 
     /**
-    * Confirmation
-    * 
-    * @return void
-    */
+     * Confirmation
+     * 
+     * @return void
+     */
     public function commandExecuteConfirmation()
     {
         return fgets(fopen('php://stdin', 'r'));

@@ -12,17 +12,17 @@ class EraseExpiredPastes
     use Configuration;
 
     /**
-    * Application
-    * 
-    * @var object
-    */
+     * Application
+     * 
+     * @var object
+     */
     private $application;
 
     /**
-    * DataBase
-    * 
-    * @var object
-    */
+     * DataBase
+     * 
+     * @var object
+     */
     private $data_source;
 
     /**
@@ -33,12 +33,12 @@ class EraseExpiredPastes
     private $console;
 
     /**
-    * Construct
-    * 
-    * @param Console $console
-    * @param Application $application
-    * @return void
-    */
+     * Construct
+     * 
+     * @param Console $console
+     * @param Application $application
+     * @return void
+     */
     public function __construct(Console $console, Application $application)
     {
         $this->application = $application;
@@ -56,10 +56,10 @@ class EraseExpiredPastes
     }
 
     /**
-    * Erase expired pastes
-    * 
-    * @return void
-    */
+     * Erase expired pastes
+     * 
+     * @return void
+     */
     private function eraseExpired()
     {
         $this->console->writeStdout('Starting...');

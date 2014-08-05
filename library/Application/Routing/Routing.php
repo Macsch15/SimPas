@@ -12,47 +12,47 @@ use Application\View\View;
 class Routing extends View
 {
     /**
-    * Routes
-    * 
-    * @var array
+     * Routes
+     * 
+     * @var array
     */
     private $_route;
 
     /**
-    * Application
-    * 
-    * @var object
-    */
+     * Application
+     * 
+     * @var object
+     */
     private $application;
 
     /**
-    * Routes file
-    * 
-    * @var string
-    */
+     * Routes file
+     * 
+     * @var string
+     */
     private $routes_file;
 
     /**
-    * Parsed JSON
-    * 
-    * @var string
-    */
+     * Parsed JSON
+     * 
+     * @var string
+     */
     private $routes_json;
 
     /**
-    * Request from client
-    * 
-    * @var string
-    */
+     * Request from client
+     * 
+     * @var string
+     */
     private $_request;
 
     /**
-    * Construct
-    *
-    * @throws Application\Exception\JsonException
-    * @throws Application\Exception\AssetNotFound
-    * @return void
-    */
+     * Construct
+     *
+     * @throws Application\Exception\JsonException
+     * @throws Application\Exception\AssetNotFound
+     * @return void
+     */
     public function __construct(Application $application)
     {
         parent::__construct($application);
@@ -116,12 +116,12 @@ class Routing extends View
     }
 
     /**
-    * Pattern Start
-    *
-    * @param Application $application
-    * @throws Application\Exception\ExceptionRuntime
-    * @return void
-    */
+     * Pattern Start
+     *
+     * @param Application $application
+     * @throws Application\Exception\ExceptionRuntime
+     * @return void
+     */
     private function patternStart(Application $application)
     {
         foreach($this->_route as $node => $data) {
@@ -189,22 +189,5 @@ class Routing extends View
 
         // Forbidden
         (new ClientError($application))->response404();
-    }
-
-    /**
-    * Storage routes
-    *  
-    * @return array
-    */
-    public function fetchAllRoutes()
-    {
-        foreach($this->_route as $route => $data) {
-            $_container[] = [
-                'route_data' => $data, 
-                'route_name' => $route
-            ];
-        }
-
-        return $_container;
     }
 }

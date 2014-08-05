@@ -8,24 +8,24 @@ use GeSHi;
 class SyntaxHighlighter
 {
     /**
-    * GeSHi object
-    * 
-    * @var object
-    */
+     * GeSHi object
+     * 
+     * @var object
+     */
     private $geshi;
 
     /**
-    * Cache path
-    * 
-    * @var string
-    */
+     * Cache path
+     * 
+     * @var string
+     */
     private $cache_path;
 
     /**
-    * Contructor
-    * 
-    * @return void
-    */
+     * Contructor
+     * 
+     * @return void
+     */
     public function __construct()
     {
         require_once Application::makePath('library:GeSHi:geshi.php');
@@ -34,20 +34,20 @@ class SyntaxHighlighter
     }
 
     /**
-    * Parse regular code to code with syntax highlighting
-    * If you've new GeSHi library, this is fix for the ZeroClipboard (issue with lines after copied)
-    * File: library/GeSHi/geshi.php
-    * Find:
-    * <code>$parsed_code .= "<li$attr_string>$start{$code[$i-1]}$end</li>$ls";</code>
-    * Replace with:
-    * <code>$parsed_code .= "<a href=\"#line-" . $i . "\"><li class=\"line_handler\" id=\"line-" . $i . "\" $attr_string>$start{$code[$i-1]}$end</li></a>\n$ls";</code>
-    * 
-    * @param string $code
-    * @param string $language
-    * @param int $start_from_line
-    * @param string $line_numbering
-    * @return string
-    */
+     * Parse regular code to code with syntax highlighting
+     * If you've new GeSHi library, this is fix for the ZeroClipboard (issue with lines after copied)
+     * File: library/GeSHi/geshi.php
+     * Find:
+     * <code>$parsed_code .= "<li$attr_string>$start{$code[$i-1]}$end</li>$ls";</code>
+     * Replace with:
+     * <code>$parsed_code .= "<a href=\"#line-" . $i . "\"><li class=\"line_handler\" id=\"line-" . $i . "\" $attr_string>$start{$code[$i-1]}$end</li></a>\n$ls";</code>
+     * 
+     * @param string $code
+     * @param string $language
+     * @param int $start_from_line
+     * @param string $line_numbering
+     * @return string
+     */
     public function parseCode($code, $language, $start_from_line = 1, $line_numbering = '1'){
         $this->geshi = new GeSHi($code, strtolower($language));
 
@@ -68,11 +68,11 @@ class SyntaxHighlighter
     }
 
     /**
-    * Validation
-    * 
-    * @param string $language 
-    * @return string
-    */
+     * Validation
+     * 
+     * @param string $language 
+     * @return string
+     */
     public function validateLanguage($language)
     {
         if(in_array($language, $this->languagesToArray(), true) === false) {
@@ -83,10 +83,10 @@ class SyntaxHighlighter
     }
 
     /**
-    * Fetch GeSHi languages names to array
-    * 
-    * @return array
-    */
+     * Fetch GeSHi languages names to array
+     * 
+     * @return array
+     */
     public function languagesToArray()
     {
         // Cache file exists
@@ -101,11 +101,11 @@ class SyntaxHighlighter
     }
 
     /**
-    * Storage syntax languages names to cache
-    * 
-    * @param bool $debug
-    * @return array
-    */
+     * Storage syntax languages names to cache
+     * 
+     * @param bool $debug
+     * @return array
+     */
     public function storageDataToCache($debug = false)
     {
         foreach(new DirectoryIterator(Application::makePath('library:GeSHi:geshi')) as $file) {

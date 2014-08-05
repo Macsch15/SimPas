@@ -15,10 +15,10 @@ class Mailer
     use Configuration;
 
     /**
-    * Construct
-    * 
-    * @return void
-    */
+     * Construct
+     * 
+     * @return void
+     */
     public function __construct()
     {
         // Include needed libraries
@@ -26,11 +26,11 @@ class Mailer
     }
 
     /**
-    * Mailer width transport
-    * 
-    * @throws MailerException
-    * @return Swift_Mailer object
-    */
+     * Mailer width transport
+     * 
+     * @throws Application\Exception\MailerException
+     * @return Swift_Mailer object
+     */
     public function mailer()
     {
         switch($this->config('Mailer')->transport) {
@@ -61,11 +61,11 @@ class Mailer
     }
 
     /**
-    * Message accessor
-    * 
-    * @param string $subject 
-    * @return Swift_Message object
-    */
+     * Message accessor
+     * 
+     * @param string $subject 
+     * @return Swift_Message object
+     */
     public function message($subject = null)
     {
         return Swift_Message::newInstance($subject);

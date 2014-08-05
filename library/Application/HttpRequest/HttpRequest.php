@@ -6,12 +6,12 @@ use Application\Security\DataFilters\PreDatabaseSave;
 class HttpRequest
 {
     /**
-    * POST Request
-    * 
-    * @param string $field_name
-    * @param bool $restricted_characters
-    * @return string|bool
-    */
+     * POST Request
+     * 
+     * @param string $field_name
+     * @param bool $restricted_characters
+     * @return string|bool
+     */
     public static function post($field_name, $restricted_characters = false)
     {
         // Element is not defined
@@ -31,12 +31,12 @@ class HttpRequest
     }
 
     /**
-    * Check whether given fields are not empty 
-    * 
-    * @param array $fields
-    * @param string $required_field
-    * @return bool
-    */
+     * Check whether given fields are not empty 
+     * 
+     * @param array $fields
+     * @param string $required_field
+     * @return bool
+     */
     public static function isEmptyField(array $fields, $required_field = null)
     {
         if(!count($fields)) {
@@ -62,10 +62,10 @@ class HttpRequest
 
 
     /**
-    * Client IP (IPv4 / IPv6)
-    * 
-    * @return string
-    */
+     * Client IP (IPv4 / IPv6)
+     * 
+     * @return string
+     */
     public static function getClientIpAddress()
     {
         $_ip = filter_var(getenv('REMOTE_ADDR'), FILTER_VALIDATE_IP);

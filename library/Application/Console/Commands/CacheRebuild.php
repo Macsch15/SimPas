@@ -19,12 +19,12 @@ class CacheRebuild extends View
     private $console;
 
     /**
-    * Construct
-    * 
-    * @param Console $console
-    * @param Application $application
-    * @return void
-    */
+     * Construct
+     * 
+     * @param Console $console
+     * @param Application $application
+     * @return void
+     */
     public function __construct(Console $console, Application $application)
     {
         parent::__construct($application);
@@ -39,10 +39,10 @@ class CacheRebuild extends View
     }
 
     /**
-    * Remove existing cache
-    * 
-    * @return void
-    */
+     * Remove existing cache
+     * 
+     * @return void
+     */
     private function clear()
     {
         $this->console->writeStdout('Removing cache...', false, ' ');
@@ -73,10 +73,10 @@ class CacheRebuild extends View
     }
 
     /**
-    * Build the cache files
-    * 
-    * @return void
-    */
+     * Build the cache files
+     * 
+     * @return void
+     */
     private function build()
     {
         $this->console->writeStdout('Building cache for templates...', false, ' ');

@@ -12,18 +12,18 @@ use Diff_Renderer_Html_Inline;
 class Compare extends View
 {
     /**
-    * Application
-    * 
-    * @var object
-    */
+     * Application
+     * 
+     * @var object
+     */
     private $application;
     
     /**
-    * Construct
-    * 
-    * @param Application $application
-    * @return void
-    */
+     * Construct
+     * 
+     * @param Application $application
+     * @return void
+     */
     public function __construct(Application $application)
     {
         parent::__construct($application);
@@ -32,11 +32,11 @@ class Compare extends View
     }
 
     /**
-    * Compare
-    * 
-    * @param array $request
-    * @return void
-    */
+     * Compare
+     * 
+     * @param array $request
+     * @return void
+     */
     public function compareAction(array $request)
     {
         // Paste exists?
@@ -67,11 +67,11 @@ class Compare extends View
     }
 
     /**
-    * Compare form
-    * 
-    * @param array $request
-    * @return void
-    */
+     * Compare form
+     * 
+     * @param array $request
+     * @return void
+     */
     public function formAction(array $request)
     {
         // Paste exists?

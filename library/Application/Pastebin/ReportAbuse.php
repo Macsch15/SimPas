@@ -14,18 +14,18 @@ class ReportAbuse extends View
     use Configuration;
 
     /**
-    * Application
-    * 
-    * @var object
-    */
+     * Application
+     * 
+     * @var object
+     */
     private $application;
 
     /**
-    * Construct
-    * 
-    * @param Application $application
-    * @return void
-    */
+     * Construct
+     * 
+     * @param Application $application
+     * @return void
+     */
     public function __construct(Application $application)
     {
         parent::__construct($application);
@@ -35,11 +35,11 @@ class ReportAbuse extends View
     }
 
     /**
-    * Report Abuse
-    *
-    * @param array $request
-    * @return void
-    */
+     * Report Abuse
+     *
+     * @param array $request
+     * @return void
+     */
     public function indexAction(array $request)
     {
         // Paste exists?
@@ -57,11 +57,11 @@ class ReportAbuse extends View
     }
 
     /**
-    * Send action
-    * 
-    * @param array $request
-    * @return void
-    */
+     * Send action
+     * 
+     * @param array $request
+     * @return void
+     */
     public function resultsAction(array $request)
     {
         // Doesn't have admin email?

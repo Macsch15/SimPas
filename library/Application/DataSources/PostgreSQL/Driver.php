@@ -56,10 +56,10 @@ class Driver
     }
 
     /**
-    * Schema
-    * 
-    * @return array
-    */
+     * Schema
+     * 
+     * @return array
+     */
     public function getSchema()
     {
         // Load and decode JSON schema

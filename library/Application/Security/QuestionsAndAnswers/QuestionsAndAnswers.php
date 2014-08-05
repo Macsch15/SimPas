@@ -9,13 +9,13 @@ class QuestionsAndAnswers
     use Configuration;
 
     /**
-    * Validate
-    *
-    * @param string $field_client_question
-    * @param string $field_client_answer
-    * @throws Application\Exception\ExceptionRuntime
-    * @return bool
-    */
+     * Validate
+     *
+     * @param string $field_client_question
+     * @param string $field_client_answer
+     * @throws Application\Exception\ExceptionRuntime
+     * @return bool
+     */
     public function validate($field_client_question, $field_client_answer)
     {
         if(count($this->config('QuestionsAndAnswers', true)) <= 0) {
@@ -52,11 +52,11 @@ class QuestionsAndAnswers
     }
 
     /**
-    * Fetch random question
-    * 
-    * @throws ExceptionRuntime
-    * @return string
-    */
+     * Fetch random question
+     * 
+     * @throws ExceptionRuntime
+     * @return string
+     */
     public function question()
     {
         if(count($this->config('QuestionsAndAnswers', true)) <= 0) {

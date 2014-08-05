@@ -11,10 +11,10 @@ class SyncDb
     use Configuration;
 
     /**
-    * DataBase
-    * 
-    * @var object
-    */
+     * DataBase
+     * 
+     * @var object
+     */
     private $data_source;
 
     /**
@@ -25,12 +25,12 @@ class SyncDb
     private $console;
 
     /**
-    * Construct
-    * 
-    * @param Console $console
-    * @param Application $application
-    * @return void
-    */
+     * Construct
+     * 
+     * @param Console $console
+     * @param Application $application
+     * @return void
+     */
     public function __construct(Console $console, Application $application)
     {
         $this->data_source = $application->dbConnectionAccessor();
@@ -41,10 +41,10 @@ class SyncDb
     }
 
     /**
-    * Prepare database schema
-    * 
-    * @return array
-    */
+     * Prepare database schema
+     * 
+     * @return array
+     */
     private function prepareSchema()
     {
         $this->console->writeStdout('Preparing database schema...', false, ' ');
@@ -63,10 +63,10 @@ class SyncDb
     }
 
     /**
-    * Sync
-    * 
-    * @return void
-    */
+     * Sync
+     * 
+     * @return void
+     */
     private function sync()
     {
         $this->console->writeStdout('Selected datasource driver: ' . $this->config('Database')->driver);

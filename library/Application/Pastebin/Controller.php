@@ -19,25 +19,25 @@ class Controller extends View
     use Configuration;
 
     /**
-    * Application
-    * 
-    * @var object
-    */
+     * Application
+     * 
+     * @var object
+     */
     private $application;
 
     /**
-    * DataBase
-    * 
-    * @var object
-    */
+     * DataBase
+     * 
+     * @var object
+     */
     private $data_source;
 
     /**
-    * Construct
-    * 
-    * @param Application $application
-    * @return void
-    */
+     * Construct
+     * 
+     * @param Application $application
+     * @return void
+     */
     public function __construct(Application $application)
     {
         parent::__construct($application);
@@ -47,10 +47,10 @@ class Controller extends View
     }
 
     /**
-    * Index page
-    * 
-    * @return void
-    */
+     * Index page
+     * 
+     * @return void
+     */
     public function indexAction()
     {
         // Template render
@@ -64,11 +64,11 @@ class Controller extends View
     }
 
     /**
-    * Read
-    * 
-    * @param array $request
-    * @return void
-    */
+     * Read
+     * 
+     * @param array $request
+     * @return void
+     */
     public function readAction(array $request)
     {
         // Paste exists?
@@ -134,11 +134,11 @@ class Controller extends View
     }
 
     /**
-    * Paste data to send container
-    *
-    * @param array $request
-    * @return array
-    */
+     * Paste data to send container
+     *
+     * @param array $request
+     * @return array
+     */
     private function toSendDataContainer(array $request)
     {
         return [
@@ -163,10 +163,10 @@ class Controller extends View
     }
 
     /**
-    * Anty-flood
-    *  
-    * @return bool
-    */
+     * Anty-flood
+     *  
+     * @return bool
+     */
     private function isFloodedClient()
     {
         // Enabled?
@@ -212,10 +212,10 @@ class Controller extends View
     }
 
     /**
-    * Paste visibility
-    *  
-    * @return string
-    */
+     * Paste visibility
+     *  
+     * @return string
+     */
     private function pasteVisibility()
     {
         switch(HttpRequest::post('post_paste_visibility')) {
@@ -230,10 +230,10 @@ class Controller extends View
     }
 
     /**
-    * Author website
-    * 
-    * @return string|null
-    */
+     * Author website
+     * 
+     * @return string|null
+     */
     private function authorWebsite()
     {
         if(HttpRequest::post('post_paste_author_website', 'html') !== false
@@ -247,10 +247,10 @@ class Controller extends View
     }
 
     /**
-    * Banned IP's
-    *  
-    * @return bool
-    */
+     * Banned IP's
+     *  
+     * @return bool
+     */
     private function clientIpIsBanned()
     {
         // Enabled?
@@ -272,11 +272,11 @@ class Controller extends View
     }
 
     /**
-    * Raw mode page
-    * 
-    * @param array $request
-    * @return void
-    */
+     * Raw mode page
+     * 
+     * @param array $request
+     * @return void
+     */
     public function rawModeAction(array $request)
     {
         // Paste exists?
@@ -296,11 +296,11 @@ class Controller extends View
     }
 
     /**
-    * Embed
-    * 
-    * @param array $request
-    * @return void
-    */
+     * Embed
+     * 
+     * @param array $request
+     * @return void
+     */
     public function embedAction(array $request)
     {
         /// Paste exists?
@@ -317,11 +317,11 @@ class Controller extends View
     }
 
     /**
-    * JSON API
-    * 
-    * @param array $request
-    * @return void
-    */
+     * JSON API
+     * 
+     * @param array $request
+     * @return void
+     */
     public function jsonApiAction(array $request)
     {
         /// Paste exists?
@@ -362,10 +362,10 @@ class Controller extends View
     }
 
     /**
-    * Start from line
-    * 
-    * @return int
-    */
+     * Start from line
+     * 
+     * @return int
+     */
     private function startListCountingFromLine()
     {
         // Default value
@@ -385,11 +385,11 @@ class Controller extends View
     }
 
     /**
-    * Shorten URL
-    * 
-    * @param int $paste_id 
-    * @return string|null
-    */
+     * Shorten URL
+     * 
+     * @param int $paste_id 
+     * @return string|null
+     */
     private function saveShortUrl($paste_id)
     {
         if(filter_var(htmlspecialchars((new ShortenUrlApi())->shorten($this->application->buildUrl('paste/' . $paste_id))), FILTER_VALIDATE_URL) === false
@@ -402,11 +402,11 @@ class Controller extends View
     }
 
     /**
-    * Size and length of paste validator
-    * 
-    * @param string $content
-    * @return bool
-    */
+     * Size and length of paste validator
+     * 
+     * @param string $content
+     * @return bool
+     */
     private function sizeAndLengthValidator($content)
     {
         if(strlen($content) > $this->config()->max_chars) {
@@ -421,11 +421,11 @@ class Controller extends View
     }
 
     /**
-    * Download action
-    * 
-    * @param array $request 
-    * @return string
-    */
+     * Download action
+     * 
+     * @param array $request 
+     * @return string
+     */
     public function downloadAction(array $request)
     {
         // Paste exists?

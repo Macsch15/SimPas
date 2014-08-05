@@ -10,25 +10,25 @@ class PasteExpire
     use Configuration;
 
     /**
-    * Application
-    * 
-    * @var object
-    */
+     * Application
+     * 
+     * @var object
+     */
     private $application;
     
     /**
-    * DataBase
-    * 
-    * @var object
-    */
+     * DataBase
+     * 
+     * @var object
+     */
     private $data_source;
     
     /**
-    * Construct
-    * 
-    * @param Application $application
-    * @return void
-    */
+     * Construct
+     * 
+     * @param Application $application
+     * @return void
+     */
     public function __construct(Application $application)
     {
         $this->application = $application;
@@ -36,11 +36,11 @@ class PasteExpire
     }
 
     /**
-    * Check expiry time
-    * 
-    * @param int $paste_id
-    * @return bool
-    */
+     * Check expiry time
+     * 
+     * @param int $paste_id
+     * @return bool
+     */
     public function isExpired($paste_id)
     {
         // Paste exists?
@@ -82,11 +82,11 @@ class PasteExpire
     }
 
     /**
-    * Validate expiry time from client
-    * 
-    * @param string $post_expire
-    * @return string|int
-    */
+     * Validate expiry time from client
+     * 
+     * @param string $post_expire
+     * @return string|int
+     */
     public function validateExpireTimeFromClient($post_expire)
     {
         // Empty?
