@@ -1,0 +1,46 @@
+.navbar {
+  background: @navbar-background;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  color: @navbar-brand-font-color !important;
+}
+
+.navbar-collapse {
+  border-top: 0;
+}
+
+.navbar-toggle {
+  color: @navbar-toggle-font-color;
+  border: 1px @navbar-toggle-border-color solid !important;
+}
+
+.navbar-toggle:hover,
+.navbar-toggle:active,
+.navbar-toggle:focus {
+  background: @navbar-toggle-background-hover !important;
+}
+
+.navbar-inner {
+  box-shadow: none !important;
+  border-bottom: 1px @navbar-inner-border-bottom-color solid;
+}
+
+.navbar .nav > li > a {
+  padding: 6px 10px 6px 10px;
+  margin: 10px 4px 10px 4px;
+  color: #fff !important;
+  float: left;
+  font-weight: bold;
+}
+
+.navbar .nav > li > a:focus {
+  color: @navbar-focus-font-color !important;
+}
+
+.navbar .nav > li > a:hover {
+  color: @navbar-hover-font-color !important;
+  transition: all 0.15s ease-in;
+}

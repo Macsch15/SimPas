@@ -1,0 +1,43 @@
+.main_button {
+  background: @button-main-background;
+  color: @button-main-background-font-color;
+  min-width: @button-main-min-width;
+}
+
+.main_button:hover {
+  background: @button-main-background-hover;
+  transition: all 0.15s ease-in;
+  color: @button-main-background-font-color-hover;
+}
+
+.button_private {
+  background: @button-private-background;
+}
+
+.button_private:hover {
+  background: @button-private-background-hover;
+  transition: all 0.15s ease-in;
+}
+
+.main_button:focus, .main_button:visited {
+  color: #fff;
+}
+
+.btn {
+  font-weight: bold;
+  transition: all 0.15s ease-in;
+}
+
+.btn-primary {
+  background: @button-primary-background;
+  border: 1px @button-primary-border-color solid !important;
+  color: @button-primary-font-color;
+  border: none;
+}
+
+.btn-primary:hover, .btn-primary:focus, .hover {
+  background: @button-primary-background-hover;
+  color: @button-primary-font-color-hover;
+  border: 1px @button-primary-border-color-hover solid !important;
+  transition: all 0.15s ease-in-out;
+}

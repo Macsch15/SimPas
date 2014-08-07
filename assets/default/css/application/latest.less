@@ -1,0 +1,40 @@
+.latest {
+  border-bottom: 1px @latest-border-bottom-color dotted;
+}
+
+.latest:last-child {
+  border-bottom: none;
+}
+
+.latest h3 {
+  font-size: @latest-h3-font-size;
+}
+
+.latest_hot {
+  float: left;
+  font-size: @latest-fontawesome-hot-icon-size;
+  margin: 0 5px 0 -41px;
+  color: @latest-fontawesome-hot-icon-color;
+}
+
+.latest_author {
+  color: @latest-author-font-color;
+}
+
+.latest_website {
+  float: right;
+  background: @latest-website-background;
+  padding: 4px 8px 4px 8px;
+  border-radius: 3px;
+  color: @latest-website-font-color;
+}
+
+.latest_website:hover {
+  background: @latest-website-background-hover;
+  transition: all 0.15s ease-in-out;
+  color: @latest-website-font-color-hover;
+}
+
+.latest_syntax {
+  margin: 0 10px 0 0;
+}

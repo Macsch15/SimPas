@@ -1,0 +1,16 @@
+.progress {
+  position: absolute;
+  width: 100%;
+  height: 0px;
+  margin: 0;
+  z-index: 9999;
+  border-radius: 0;
+}
+
+.progress-bar {
+  height: @progress-bar-height;
+}
+
+.progress.active .progress-bar {
+  animation-duration: @progress-bar-animation-duration;
+}

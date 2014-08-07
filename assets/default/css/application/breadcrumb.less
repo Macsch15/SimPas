@@ -1,0 +1,35 @@
+.breadcrumb {
+  padding: 0;
+  background: @breadcrumb-background;
+  border-radius: 0;
+}
+
+.breadcrumb li {
+  color: @breadcrumb-font-color;
+  padding-top: 10px;
+  font-size: @breadcrumb-font-size;
+}
+
+.breadcrumb li a {
+  color: @breadcrumb-font-color;
+  text-decoration: none;
+}
+
+.breadcrumb li a:hover {
+  color: @breadcrumb-font-color-hover;
+  text-decoration: none;
+}
+
+.last:after {
+  content: "\00a0" !important;
+}
+
+.breadcrumb li:after {
+  content: @breadcrumb-fontawesome-arrow;
+  margin: 0 6px 0 6px;
+}
+
+.breadcrumb li:last-child:after {
+  content: "\00a0";
+  margin: 0 6px 0 6px;
+}
