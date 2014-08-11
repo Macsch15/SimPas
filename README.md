@@ -44,7 +44,7 @@ $ php cmd/console CacheRebuild
 Some (e.g from 0.2 to 0.3) releases may need re-sync database schema, in this case command above is not enough, you must fire this as well in command-line:
 
 ```
-$ php cmd/console SyncDb
+$ php cmd/console UpdateDb
 ```
 
 *Upgrader be maybe coming soon. Who knows?*
@@ -139,6 +139,12 @@ Command line interface
 
 ```
 $ php cmd/console SyncDb
+```
+
+**Update Database schema**
+
+```
+$ php cmd/console UpdateDb
 ```
 
 **Clear Database**
