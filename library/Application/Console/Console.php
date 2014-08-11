@@ -14,7 +14,8 @@ class Console
         'SyncDb',
         'ClearDb',
         'CacheRebuild',
-        'EraseExpiredPastes'    
+        'EraseExpiredPastes',
+        'UpdateDb'
     ];
 
     /**

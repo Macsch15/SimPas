@@ -69,42 +69,12 @@ class SyncDb
      */
     private function sync()
     {
-        $this->console->writeStdout('Selected datasource driver: ' . $this->config('Database')->driver);
+        $this->console->writeStdout('Selected driver: ' . $this->config('Database')->driver);
 
         foreach($this->prepareSchema()['tables'] as $table => $table_fields) {
             switch($this->config('Database')->driver) {
                 case 'mysql':
                 default:
-                    if(count($this->data_source->get()->query('SHOW TABLES')->fetchAll())) {
-                        // Table already exists? Check whether new fields has been added
-                        foreach($table_fields as $field_name => $field_value) {
-                            // Ignore
-                            if($field_name === '__options__') {
-                                continue;
-                            }
-
-                            // Prepare query
-                            $field_exists = $this->data_source->get()->prepare('SHOW COLUMNS FROM ' . $this->config('Database')->prefix . $table . ' WHERE Field= :field');
-
-                            // Filter
-                            $field_exists->bindValue(':field', $field_name);
-
-                            // Execute
-                            $field_exists->execute();
-
-                            // Test
-                            if(!count($field_exists->fetchAll())) {
-                                // Add new field
-                                $this->data_source->get()->query('ALTER TABLE ' . $this->config('Database')->prefix . $table . ' ADD ' . '`' . $field_name . '` ' . $field_value);
-
-                                // Send the message
-                                $this->console->writeStdout('Added field: ' . $field_name);
-                            }
-                        }
-
-                        return $this->console->writeStdout('Succeeded');
-                    }
-
                     // Table
                     $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS ' . $this->config('Database')->prefix . $table . '( ';
 
@@ -123,48 +93,6 @@ class SyncDb
                     $_createTablesQuery .= ' DEFAULT CHARSET=\'' . $this->config('Database')->charset . '\' DEFAULT COLLATE=\'' . $this->config('Database')->collate . '\';';
                     break;
                 case 'postgresql':
-                    // Prepare query
-                    $table_exists = $this->data_source->get()->prepare('SELECT * FROM information_schema.tables WHERE table_schema = :public');
-
-                    // Filter
-                    $table_exists->bindValue(':public', 'public');
-
-                    // Execute
-                    $table_exists->execute();
-
-                    if(count($table_exists->fetchAll())) {
-                        // Table already exists? Check whether new fields has been added
-                        foreach($table_fields as $field_name => $field_value) {
-                            // Ignore
-                            if($field_name === '__options__') {
-                                continue;
-                            }
-
-                            // Prepare query
-                            $field_exists = $this->data_source->get()->prepare('
-                                SELECT column_name 
-                                FROM information_schema.columns 
-                                WHERE table_name=:table and column_name=:field_name');
-
-                            // Filter
-                            $field_exists->bindValue(':table', $this->config('Database')->prefix . $table);
-                            $field_exists->bindValue(':field_name', $field_name);
-
-                            // Execute
-                            $field_exists->execute();
-
-                            if(!count($field_exists->fetchAll())) {
-                                // Add new field
-                                $this->data_source->get()->query('ALTER TABLE ' . $this->config('Database')->prefix . $table . ' ADD ' . $field_name . ' ' . $field_value);
-
-                                // Send the message
-                                $this->console->writeStdout('Added field: ' . $field_name);
-                            }
-                        }
-
-                        return $this->console->writeStdout('Succeeded');
-                    }
-
                     // Table
                     $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS ' . $this->config('Database')->prefix . $table . '( ';
 
