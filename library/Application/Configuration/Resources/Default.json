@@ -1,6 +1,6 @@
 {
-    "full_url": "http://localhost/SimPas/comments/",
-    "assets_url": "http://localhost/SimPas/comments/assets/", 
+    "full_url": "http://localhost/SimPas/develop/",
+    "assets_url": "http://localhost/SimPas/develop/assets/", 
     "site_title": "SimPas Application",
     "site_description_crawlers": "SimPas Application",
     "show_index_in_urls": false,
@@ -36,5 +36,6 @@
     "cookie_domain": "",
     "cookie_secure": false,
     "hot_paste": 1500,
-    "show_cookies_info": true
+    "show_cookies_info": true,
+    "password_protected_pastes": true
 }
