@@ -50,10 +50,10 @@
 
         <br />
       {% endif %}
-
+      
       <div class="col-lg-4 col-md-3 col-sm-4 col-xs-9 syntax_highlight_option pull-left">
         <h4 class="muted_font"><i class="fa fa-puzzle-piece"></i> {% trans %}Syntax highlighting{% endtrans %}</h4>
-        <select class="form-control chzn-select" name="post_syntax_highlight_language">
+        <select class="form-control chzn-drop-up" name="post_syntax_highlight_language">
           {% for languages in geshi_languages %}
             <option value="{{ languages }}"{{ languages|lower == config.default_geshi_language|lower ? " selected=\"selected\"" : "" }}>{{ languages }}</option>
           {% endfor %}

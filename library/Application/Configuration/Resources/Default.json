@@ -36,6 +36,5 @@
     "cookie_domain": "",
     "cookie_secure": false,
     "hot_paste": 1500,
-    "show_cookies_info": true,
-    "password_protected_pastes": true
+    "show_cookies_info": true
 }
