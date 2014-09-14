@@ -46,7 +46,7 @@ class EraseExpiredPastes
         $this->console = $console;
 
         $this->console->writeStdout('WARNING! This command will erase all EXPIRED pastes.');
-        $this->console->writeStdout('Press any key to continue...', false, null);
+        $this->console->writeStdout('Press "Enter" to continue...', false, null);
 
         // Key confirmation
         $this->console->commandExecuteConfirmation();
