@@ -68,7 +68,7 @@ class Exception
         // Load file
         $file = @file($this->file);
 
-        if(count($file) >= 7) {
+        if (count($file) >= 7) {
             $lines[$this->line-4] = (isset($file[$this->line-4]) ? $file[$this->line-4] : null);
             $lines[$this->line-3] = (isset($file[$this->line-3]) ? $file[$this->line-3] : null);
             $lines[$this->line-2] = (isset($file[$this->line-2]) ? $file[$this->line-2] : null);

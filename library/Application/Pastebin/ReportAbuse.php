@@ -83,7 +83,7 @@ class ReportAbuse extends View
         }
 
         // Empty fields
-        if(HttpRequest::post('post_paste_abuse_reason') === false || 
+        if (HttpRequest::post('post_paste_abuse_reason') === false || 
             HttpRequest::isEmptyField([HttpRequest::post('post_paste_abuse_reason')])
         ) {
             return $this->sendFriendlyClientError(_('Some field there are empty or contains prohibited characters (e.g only spaces).'));

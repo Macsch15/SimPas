@@ -54,7 +54,7 @@ class Diff_Renderer_Html_Inline extends Diff_Renderer_Html_Array
 	{
 		$changes = parent::render();
 		$html = '';
-		if(empty($changes)) {
+		if (empty($changes)) {
 			return $html;
 		}
 

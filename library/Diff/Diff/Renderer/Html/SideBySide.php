@@ -55,7 +55,7 @@ class Diff_Renderer_Html_SideBySide extends Diff_Renderer_Html_Array
 		$changes = parent::render();
 
 		$html = '';
-		if(empty($changes)) {
+		if (empty($changes)) {
 			return $html;
 		}
 
@@ -115,7 +115,7 @@ class Diff_Renderer_Html_SideBySide extends Diff_Renderer_Html_Array
 				}
 				// Show modified lines on both sides
 				else if($change['tag'] == 'replace') {
-					if(count($change['base']['lines']) >= count($change['changed']['lines'])) {
+					if (count($change['base']['lines']) >= count($change['changed']['lines'])) {
 						foreach($change['base']['lines'] as $no => $line) {
 							$fromLine = $change['base']['offset'] + $no + 1;
 							$html .= '<tr>';

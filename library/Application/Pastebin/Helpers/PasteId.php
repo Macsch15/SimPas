@@ -19,7 +19,7 @@ class PasteId
 
         $trim_left = substr($url, $left_pos + 6);
 
-        if(strpos($trim_left, '/')) {
+        if (strpos($trim_left, '/')) {
             $trim_left = substr($trim_left, null, strpos($trim_left, '/'));
         }
 

@@ -49,7 +49,7 @@ class CacheRebuild extends View
 
         // try-catch
         try {
-            foreach(new RecursiveIteratorIterator(
+            foreach (new RecursiveIteratorIterator(
                 new RecursiveDirectoryIterator(Application::makePath('storage'), RecursiveDirectoryIterator::SKIP_DOTS), 
                 RecursiveIteratorIterator::SELF_FIRST, RecursiveIteratorIterator::CATCH_GET_CHILD) as $file
             ) {
@@ -82,7 +82,7 @@ class CacheRebuild extends View
         $this->console->writeStdout('Building cache for templates...', false, ' ');
 
         // Create template cache
-        if(count($this->regenerateTemplateCache(true))) {
+        if (count($this->regenerateTemplateCache(true))) {
             $this->console->writeStdout('Succeeded');
         } else {
             $this->console->writeStdout('Failed');
@@ -91,7 +91,7 @@ class CacheRebuild extends View
         $this->console->writeStdout('Building cache for GeSHi...', false, ' ');
 
         // Create GeSHi cache
-        if(is_int((new SyntaxHighlighter)->storageDataToCache(true))) {
+        if (is_int((new SyntaxHighlighter)->storageDataToCache(true))) {
             $this->console->writeStdout('Succeeded');
         } else {
             $this->console->writeStdout('Failed');

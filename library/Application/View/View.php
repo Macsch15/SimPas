@@ -104,7 +104,7 @@ class View extends Exception
     public function getTemplatesList()
     {
         foreach($this->loader->getPaths() as $_path) {
-            foreach(new DirectoryIterator($_path) as $template_name) {
+            foreach (new DirectoryIterator($_path) as $template_name) {
                 // Ignore dots and non-template files
                 if($template_name->isDot() || substr($template_name->getFileName(), -5) !== '.twig') {
                     continue;

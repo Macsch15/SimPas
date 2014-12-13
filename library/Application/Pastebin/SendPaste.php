@@ -99,7 +99,7 @@ class SendPaste
      */
     private function normalizeTitleAndAuthorField($string)
     {
-        if(strlen($string) > 50) {
+        if (strlen($string) > 50) {
             $string = substr($string, 0, 50);
         }
 

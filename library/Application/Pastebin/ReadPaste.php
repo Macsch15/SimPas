@@ -84,7 +84,7 @@ class ReadPaste
         $rows = $query->fetchAll();
 
         // Test
-        if(is_array($rows) && count($rows)) {
+        if (is_array($rows) && count($rows)) {
             return true;
         }
 

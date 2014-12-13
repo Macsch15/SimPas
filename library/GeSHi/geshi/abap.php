@@ -57,7 +57,7 @@
  *     Note: for adding this functionality within your php program, you can execute this code:
  *       function add_urls_to_multi_tokens( $matches ) {
  *           $url = preg_replace( "/[ \n]+/" , "_" , $matches[3] );
- *           if( $url == $matches[3] ) return $matches[0] ;
+ *           if ( $url == $matches[3] ) return $matches[0] ;
  *           else return $matches[1]."<a href=\"http://help.sap.com/abapdocu/en/ABAP".strtoupper($url).".htm\">".$matches[3]."</a>".$matches[4];
  *           }
  *       $html = $geshi->parse_code();

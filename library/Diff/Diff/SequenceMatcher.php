@@ -164,7 +164,7 @@ class Diff_SequenceMatcher
 
 		for($i = 0; $i < $length; ++$i) {
 			$char = $this->b[$i];
-			if(isset($this->b2j[$char])) {
+			if (isset($this->b2j[$char])) {
 				if($length >= 200 && count($this->b2j[$char]) * 100 > $length) {
 					$popularDict[$char] = 1;
 					unset($this->b2j[$char]);
@@ -181,21 +181,21 @@ class Diff_SequenceMatcher
 		}
 
 		// Remove leftovers
-		foreach(array_keys($popularDict) as $char) {
+		foreach (array_keys($popularDict) as $char) {
 			unset($this->b2j[$char]);
 		}
 
 		$this->junkDict = array();
-		if(is_callable($this->junkCallback)) {
-			foreach(array_keys($popularDict) as $char) {
-				if(call_user_func($this->junkCallback, $char)) {
+		if (is_callable($this->junkCallback)) {
+			foreach (array_keys($popularDict) as $char) {
+				if (call_user_func($this->junkCallback, $char)) {
 					$this->junkDict[$char] = 1;
 					unset($popularDict[$char]);
 				}
 			}
 
-			foreach(array_keys($this->b2j) as $char) {
-				if(call_user_func($this->junkCallback, $char)) {
+			foreach (array_keys($this->b2j) as $char) {
+				if (call_user_func($this->junkCallback, $char)) {
 					$this->junkDict[$char] = 1;
 					unset($this->b2j[$char]);
 				}
@@ -211,7 +211,7 @@ class Diff_SequenceMatcher
 	 */
 	private function isBJunk($b)
 	{
-		if(isset($this->juncDict[$b])) {
+		if (isset($this->juncDict[$b])) {
 			return true;
 		}
 
@@ -521,7 +521,7 @@ class Diff_SequenceMatcher
 	public function getGroupedOpcodes($context=3)
 	{
 		$opCodes = $this->getOpCodes();
-		if(empty($opCodes)) {
+		if (empty($opCodes)) {
 			$opCodes = array(
 				array(
 					'equal',
@@ -643,7 +643,7 @@ class Diff_SequenceMatcher
 		$aLength = count ($this->a);
 		for($i = 0; $i < $aLength; ++$i) {
 			$char = $this->a[$i];
-			if(isset($avail[$char])) {
+			if (isset($avail[$char])) {
 				$numb = $avail[$char];
 			}
 			else {
@@ -693,7 +693,7 @@ class Diff_SequenceMatcher
 	/**
 	 * Helper function that provides the ability to return the value for a key
 	 * in an array of it exists, or if it doesn't then return a default value.
-	 * Essentially cleaner than doing a series of if(isset()) {} else {} calls.
+	 * Essentially cleaner than doing a series of if (isset()) {} else {} calls.
 	 *
 	 * @param array $array The array to search.
 	 * @param string $key The key to check that exists.
@@ -702,7 +702,7 @@ class Diff_SequenceMatcher
 	 */
 	private function arrayGetDefault($array, $key, $default)
 	{
-		if(isset($array[$key])) {
+		if (isset($array[$key])) {
 			return $array[$key];
 		}
 		else {
@@ -729,10 +729,10 @@ class Diff_SequenceMatcher
 			}
 		}
 
-		if(count($a) == $count($b)) {
+		if (count($a) == $count($b)) {
 			return 0;
 		}
-		else if(count($a) < count($b)) {
+		else if (count($a) < count($b)) {
 			return -1;
 		}
 		else {

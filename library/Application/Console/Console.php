@@ -28,7 +28,7 @@ class Console
     public function __construct(Application $application, array $cmd_argv)
     {
         // Command without arguments?
-        if(count($cmd_argv) <= 1) {
+        if (count($cmd_argv) <= 1) {
             return $this->avaiableCommands();
         }
 
@@ -37,7 +37,7 @@ class Console
 
         foreach($cmd_argv as $arguments) {
             // Arguments validation
-            if(in_array($arguments, $this->avaiableCommands(true), true) === false) {
+            if (in_array($arguments, $this->avaiableCommands(true), true) === false) {
                 return $this->avaiableCommands();
             }
 

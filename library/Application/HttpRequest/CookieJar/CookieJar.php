@@ -28,7 +28,7 @@ class CookieJar
      */
     public function get($name)
     {
-        if(isset($_COOKIE[$name])) {
+        if (isset($_COOKIE[$name])) {
             return trim(str_replace(["\0", "\n", "\t", "\s"], '', $_COOKIE[$name]));
         }
 
@@ -43,7 +43,7 @@ class CookieJar
      */
     public function destroy($name)
     {
-        if(isset($_COOKIE[$name])) {
+        if (isset($_COOKIE[$name])) {
             unset($_COOKIE[$name]);
         }
 

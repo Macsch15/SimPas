@@ -1,5 +1,5 @@
 <?php
-if(version_compare(phpversion(), '5.4.0', '<')) {
+if (version_compare(phpversion(), '5.4.0', '<')) {
     die('Requires PHP 5.4 or higher');
 }
 

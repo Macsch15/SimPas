@@ -95,7 +95,7 @@ class UpdateDb
             switch($this->config('Database')->driver) {
                 case 'mysql':
                     // Add new tables
-                    if(in_array($this->config('Database')->prefix . $table, $tables_in_db, true) === false) {
+                    if (in_array($this->config('Database')->prefix . $table, $tables_in_db, true) === false) {
                         $_createTableQuery = 'CREATE TABLE ' . $this->config('Database')->prefix . $table . '( ';
 
                         foreach($table_fields as $field_name => $field_value) {
@@ -153,7 +153,7 @@ class UpdateDb
                     break;
                 case 'postgresql':
                     // Add new tables
-                    if(in_array($this->config('Database')->prefix . $table, $tables_in_db, true) === false) {
+                    if (in_array($this->config('Database')->prefix . $table, $tables_in_db, true) === false) {
                         $_createTableQuery = 'CREATE TABLE ' . $this->config('Database')->prefix . $table . '( ';
 
                         foreach($table_fields as $field_name => $field_value) {

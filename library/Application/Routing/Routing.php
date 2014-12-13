@@ -71,7 +71,7 @@ class Routing extends View
         // Parse JSON
         $this->routes_json = json_decode($this->routes_source, true);
 
-        switch(json_last_error()) {
+        switch (json_last_error()) {
             case JSON_ERROR_NONE:
                 $error_message = false;
                 break;
@@ -103,7 +103,7 @@ class Routing extends View
         $this->_request = '/' . getenv('QUERY_STRING');
 
         // Check routes
-        if(count($this->routes_json['routes']) == 0) {
+        if (count($this->routes_json['routes']) == 0) {
             return false;
         }
 
@@ -126,22 +126,22 @@ class Routing extends View
     {
         foreach($this->_route as $node => $data) {
             // Pattern static
-            if(isset($data['static']) && $data['static'] === true) {
+            if (isset($data['static']) && $data['static'] === true) {
                 if($node === $this->_request || $node . '/' === $this->_request) {
                     // Controller is not needed. Start parse template
-                    if(isset($data['template'])) {
+                    if (isset($data['template'])) {
                         return $this->{$data['template']};
                     }
 
                     // Controller is not defined
-                    if(isset($data['controller']) === false || empty($data['controller']) ||
+                    if (isset($data['controller']) === false || empty($data['controller']) ||
                         isset($data['action']) === false || empty($data['action'])
                     ) {
                         throw new ExceptionRuntime(sprintf('Controller or action in route: ++%s+-+ is not defined', $node));
                     }
 
                     // Controller not found
-                    if(method_exists($data['controller'], $data['action'] . 'Action') === false) {
+                    if (method_exists($data['controller'], $data['action'] . 'Action') === false) {
                         throw new ExceptionRuntime('++' . $data['controller'] . '::' . $data['action'] . 'Action()+-+ doesn\'t exists');
                     }
 
@@ -154,7 +154,7 @@ class Routing extends View
                 }
             // Pattern match
             } else {
-                if(isset($data['requirements']) && $data['requirements'] > 0) {
+                if (isset($data['requirements']) && $data['requirements'] > 0) {
                     foreach($data['requirements'] as $args => $regex) {
                         $node = str_replace('{' . $args . '}', '(?P<' . $args . '>' . $regex . ')', $node);
                     }
@@ -164,16 +164,16 @@ class Routing extends View
 
                 $node = str_replace('/', '\/', $node);
 
-                if(preg_match('/^' . $node . '\/?$/', $this->_request, $arguments)) {
+                if (preg_match('/^' . $node . '\/?$/', $this->_request, $arguments)) {
                     // Controller is not defined
-                    if(isset($data['controller']) === false || empty($data['controller']) ||
+                    if (isset($data['controller']) === false || empty($data['controller']) ||
                         isset($data['action']) === false || empty($data['action'])
                     ) {
                         throw new ExceptionRuntime(sprintf('Controller or action in route: ++%s+-+ is not defined', $node));
                     }
 
                     // Controller not found
-                    if(method_exists($data['controller'], $data['action'] . 'Action') === false) {
+                    if (method_exists($data['controller'], $data['action'] . 'Action') === false) {
                         throw new ExceptionRuntime('++' . $data['controller'] . '::' . $data['action'] . 'Action()+-+ doesn\'t exists');
                     }
 

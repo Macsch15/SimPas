@@ -22,12 +22,12 @@ class FileManager
     public function getContentsFromUrl($url, array $http_attributes = [], 
         $timeout = 60, $headers = false
     ) {
-        if(extension_loaded('curl') === false) {
+        if (extension_loaded('curl') === false) {
             throw new ExceptionRuntime('cURL extension must be installed');
         }
 
         // Check URL
-        if(filter_var($url, FILTER_VALIDATE_URL) === false) {
+        if (filter_var($url, FILTER_VALIDATE_URL) === false) {
             throw new ExceptionInvalidArgument(sprintf('++%s+-+ is not URL', $url));
         }
 

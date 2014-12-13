@@ -18,7 +18,7 @@ class QuestionsAndAnswers
      */
     public function validate($field_client_question, $field_client_answer)
     {
-        if(count($this->config('QuestionsAndAnswers', true)) <= 0) {
+        if (count($this->config('QuestionsAndAnswers', true)) <= 0) {
             throw new ExceptionRuntime('You must define some question and answer in configuration file.');
         }
 
@@ -36,7 +36,7 @@ class QuestionsAndAnswers
             return strcasecmp($left, $right);
         };
 
-        if(is_array($this->config('QuestionsAndAnswers', true)[$field_client_question]) === true) {
+        if (is_array($this->config('QuestionsAndAnswers', true)[$field_client_question]) === true) {
             foreach($this->config('QuestionsAndAnswers', true)[$field_client_question] as $answer) {
                 if($strcmp($field_client_answer, $answer) === 0) {
                     $valid = true;
@@ -59,7 +59,7 @@ class QuestionsAndAnswers
      */
     public function question()
     {
-        if(count($this->config('QuestionsAndAnswers', true)) <= 0) {
+        if (count($this->config('QuestionsAndAnswers', true)) <= 0) {
             throw new ExceptionRuntime('You must define some question and answer in configuration file.');
         }
 

@@ -24,14 +24,14 @@ trait Configuration
             $_path = __DIR__ . DIRECTORY_SEPARATOR . 'Resources' . DIRECTORY_SEPARATOR . $entity . '.json';
 
             // Wrong configuration file
-            if(file_exists($_path) === false) {
+            if (file_exists($_path) === false) {
                 throw new AssetNotFound(sprintf('Undefined configuration file "%s"', $entity));
             }
 
             // Decode JSON as object or array
             $json_decode = json_decode((new FileManager)->getContentsFromFile($_path), ($as_array === true ?: false));
 
-            switch(json_last_error()) {
+            switch (json_last_error()) {
                 case JSON_ERROR_NONE:
                     $error_message = false;
                     break;

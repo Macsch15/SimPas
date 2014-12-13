@@ -15,12 +15,12 @@ class Autoloader
         // Register autoload
         spl_autoload_register(function ($class) use ($directory) {
             // Class already exists?
-            if(class_exists($class, false)) {
+            if (class_exists($class, false)) {
                 return true;
             }
 
             // Normalize class name
-            if(preg_match('/[^A-Za-z0-9\\\_]/', $class)) {
+            if (preg_match('/[^A-Za-z0-9\\\_]/', $class)) {
                 return false;
             }
 
@@ -28,7 +28,7 @@ class Autoloader
             $class .= '.php';
             $class = $directory . str_replace(['_', '\\', '\0'], DIRECTORY_SEPARATOR, $class);
 
-            if(is_file($class) && file_exists($class)) {
+            if (is_file($class) && file_exists($class)) {
                 require_once $class;
             }
 

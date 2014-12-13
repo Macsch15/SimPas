@@ -80,15 +80,15 @@ class Compare extends View
         }
         
         // Have data from form?
-        if(HttpRequest::post('post_compare_right') !== false) {
+        if (HttpRequest::post('post_compare_right') !== false) {
             // Empty fields
-            if(HttpRequest::isEmptyField([HttpRequest::post('post_compare_right')])) {
+            if (HttpRequest::isEmptyField([HttpRequest::post('post_compare_right')])) {
                 return $this->sendFriendlyClientError(_('Some field there are empty or contains prohibited characters (e.g only spaces).'));
             }
 
             // URL?
-            if(filter_var(HttpRequest::post('post_compare_right', 'html'), FILTER_VALIDATE_URL) !== false) {
-                if(PasteId::getFromUrl(HttpRequest::post('post_compare_right', 'html')) !== false) {
+            if (filter_var(HttpRequest::post('post_compare_right', 'html'), FILTER_VALIDATE_URL) !== false) {
+                if (PasteId::getFromUrl(HttpRequest::post('post_compare_right', 'html')) !== false) {
                     $right = PasteId::getFromUrl(HttpRequest::post('post_compare_right', 'html'));
                 } else {
                     return $this->sendFriendlyClientError(_('Submitted URL is not valid.'), true);

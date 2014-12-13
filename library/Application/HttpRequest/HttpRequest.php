@@ -15,7 +15,7 @@ class HttpRequest
     public static function post($field_name, $restricted_characters = false)
     {
         // Element is not defined
-        if(isset($_POST[$field_name]) === false) {
+        if (isset($_POST[$field_name]) === false) {
             return false;
         }
 

@@ -35,7 +35,7 @@ class Mailer
     {
         switch($this->config('Mailer')->transport) {
             case 'smtp':
-                if(function_exists('proc_open') === false) {
+                if (function_exists('proc_open') === false) {
                     throw new MailerException('proc_* functions are not available on your PHP installation. This is required for SMTP transport.');
                 }
 
@@ -49,7 +49,7 @@ class Mailer
                 $transport = Swift_MailTransport::newInstance();
                 break;
             case 'sendmail':
-                if(function_exists('proc_open') === false) {
+                if (function_exists('proc_open') === false) {
                     throw new MailerException('proc_* functions are not available on your PHP installation. This is required for Sendmail transport.');
                 }
 

@@ -30,7 +30,7 @@ class Application
      * 
      * @return string
      */
-    const ENVIRONMENT = 'prod';
+    const ENVIRONMENT = 'dev';
 
     /**
      * Template cache
@@ -62,13 +62,13 @@ class Application
     public function __construct(array $cmd_argv = [])
     {
         // CLI request
-        if(strtolower(php_sapi_name()) === 'cli') {
+        if (strtolower(php_sapi_name()) === 'cli') {
             new Console($this, $cmd_argv);
             die();
         }
 
         // Error level
-        if(Application::ENVIRONMENT === 'dev') {
+        if (Application::ENVIRONMENT === 'dev') {
             // All errors
             error_reporting(E_ALL);
             // Error handler

@@ -75,7 +75,7 @@ class SyntaxHighlighter
      */
     public function validateLanguage($language)
     {
-        if(in_array($language, $this->languagesToArray(), true) === false) {
+        if (in_array($language, $this->languagesToArray(), true) === false) {
             $language = 'Text';
         }
 
@@ -90,7 +90,7 @@ class SyntaxHighlighter
     public function languagesToArray()
     {
         // Cache file exists
-        if(file_exists($this->cache_path . DIRECTORY_SEPARATOR . 'geshi.php')) {
+        if (file_exists($this->cache_path . DIRECTORY_SEPARATOR . 'geshi.php')) {
             require_once $this->cache_path . DIRECTORY_SEPARATOR . 'geshi.php';
         // Cache file doesn't exists, create it.
         } else {
@@ -108,7 +108,7 @@ class SyntaxHighlighter
      */
     public function storageDataToCache($debug = false)
     {
-        foreach(new DirectoryIterator(Application::makePath('library:GeSHi:geshi')) as $file) {
+        foreach (new DirectoryIterator(Application::makePath('library:GeSHi:geshi')) as $file) {
             if($file->isDot() || substr($file->getFileName(), -4) !== '.php') {
                 continue;
             }
@@ -126,7 +126,7 @@ class SyntaxHighlighter
             $to_save = str_replace("\n", " ", $to_save);
 
             // Create cache directory if not exists
-            if(is_dir($this->cache_path) === false) {
+            if (is_dir($this->cache_path) === false) {
                 @mkdir($this->cache_path, 0777);
             }
 

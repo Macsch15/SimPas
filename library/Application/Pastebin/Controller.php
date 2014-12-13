@@ -72,7 +72,7 @@ class Controller extends View
     public function readAction(array $request)
     {
         // Paste exists?
-        if(HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
+        if (HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
             return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
         }
 
@@ -82,7 +82,7 @@ class Controller extends View
         }
 
         // Anti-spam
-        if(HttpRequest::post('post_poked') !== false && $this->config()->antispam_enabled === true && 
+        if (HttpRequest::post('post_poked') !== false && $this->config()->antispam_enabled === true && 
             (new QuestionsAndAnswers())->validate(HttpRequest::post('post_antispam_question'), 
                 HttpRequest::post('post_antispam_answer')) === false
         ) {
@@ -100,7 +100,7 @@ class Controller extends View
         }
 
         // Empty fields
-        if(HttpRequest::isEmptyField([
+        if (HttpRequest::isEmptyField([
             HttpRequest::post('post_paste_content'),
             HttpRequest::post('post_paste_title', true),
             HttpRequest::post('post_paste_author', true)
@@ -218,7 +218,7 @@ class Controller extends View
      */
     private function pasteVisibility()
     {
-        switch(HttpRequest::post('post_paste_visibility')) {
+        switch (HttpRequest::post('post_paste_visibility')) {
             case 'public':
                 return 'public';
                 break;
@@ -236,7 +236,7 @@ class Controller extends View
      */
     private function authorWebsite()
     {
-        if(HttpRequest::post('post_paste_author_website', 'html') !== false
+        if (HttpRequest::post('post_paste_author_website', 'html') !== false
             && filter_var(HttpRequest::post('post_paste_author_website', 'html'), FILTER_VALIDATE_URL) !== false
             && $this->config()->author_website_enabled === true
         ) {
@@ -254,7 +254,7 @@ class Controller extends View
     private function clientIpIsBanned()
     {
         // Enabled?
-        if(is_array($this->config()->banned_ip) === false || !count($this->config()->banned_ip)) {
+        if (is_array($this->config()->banned_ip) === false || !count($this->config()->banned_ip)) {
             return false;
         }
 
@@ -263,7 +263,7 @@ class Controller extends View
             $banned_ip = str_replace(['*', '.'], ['(\d+)', '\.'], $banned_ip);
 
             // Test
-            if(preg_match('/' . $banned_ip . '/', HttpRequest::getClientIpAddress())) {
+            if (preg_match('/' . $banned_ip . '/', HttpRequest::getClientIpAddress())) {
                 return true;
             }
         }
@@ -280,7 +280,7 @@ class Controller extends View
     public function rawModeAction(array $request)
     {
         // Paste exists?
-        if(HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
+        if (HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
             return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'));
         }
 
@@ -304,7 +304,7 @@ class Controller extends View
     public function embedAction(array $request)
     {
         /// Paste exists?
-        if(HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
+        if (HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
             return false;
         }
         
@@ -325,7 +325,7 @@ class Controller extends View
     public function jsonApiAction(array $request)
     {
         /// Paste exists?
-        if(HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
+        if (HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
             $json_response['error'] = 'Requested paste doesn\'t exists.';
         }
 
@@ -333,7 +333,7 @@ class Controller extends View
         header('Content-type: text/plain; charset=UTF-8');
 
         // Storage data to array
-        if(isset($json_response['error']) === false) {
+        if (isset($json_response['error']) === false) {
             $json_response = [
                 'paste_id' => (new ReadPaste($this->application))->read($request['id'])['unique_id'],
                 'submitted' => (new ReadPaste($this->application))->read($request['id'])['time'],
@@ -372,7 +372,7 @@ class Controller extends View
         $start_from_line = 1;
 
         // Selected by client
-        if(HttpRequest::post('post_start_from_line')) {
+        if (HttpRequest::post('post_start_from_line')) {
             // Valid integer
             if(!preg_match('/\d+/', HttpRequest::post('post_start_from_line'))) {
                 $start_from_line = 1;
@@ -392,7 +392,7 @@ class Controller extends View
      */
     private function saveShortUrl($paste_id)
     {
-        if(filter_var(htmlspecialchars((new ShortenUrlApi())->shorten($this->application->buildUrl('paste/' . $paste_id))), FILTER_VALIDATE_URL) === false
+        if (filter_var(htmlspecialchars((new ShortenUrlApi())->shorten($this->application->buildUrl('paste/' . $paste_id))), FILTER_VALIDATE_URL) === false
             || $this->config()->short_url === false
         ) {
             return null;
@@ -409,11 +409,11 @@ class Controller extends View
      */
     private function sizeAndLengthValidator($content)
     {
-        if(strlen($content) > $this->config()->max_chars) {
+        if (strlen($content) > $this->config()->max_chars) {
             return false;
         }
 
-        if(ceil(Strings::stringToBytes($content) / 1024) > $this->config()->max_size_in_kb) {
+        if (ceil(Strings::stringToBytes($content) / 1024) > $this->config()->max_size_in_kb) {
             return false;
         }
 
@@ -429,7 +429,7 @@ class Controller extends View
     public function downloadAction(array $request)
     {
         // Paste exists?
-        if(HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
+        if (HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
             return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'));
         }
 
