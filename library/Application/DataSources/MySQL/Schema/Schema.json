@@ -22,18 +22,5 @@
             "primary_key": "paste_id",
             "engine": "InnoDB"
         }
-    },
-
-    "password_session": {
-        "id": "INT NOT NULL AUTO_INCREMENT",
-        "client_id": "CHAR(32)",
-        "expires": "VARCHAR(15)",
-        "password": "CHAR(60)",
-        "se": "CHAR(60)",
-
-        "__options__": {
-            "primary_key": "id",
-            "engine": "InnoDB"
-        }
     }
 }}
