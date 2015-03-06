@@ -1,0 +1,7 @@
+{
+    "name": "macsch15/simpas",
+    "description": "Lightweight pastebin application",
+    "require": {
+        "php": ">=5.4.0"
+    }
+}
