@@ -14,19 +14,7 @@ Requirements
 
 How to Install?
 ======
-
-##With composer
-```
-$ composer require macsch15/simpas
-```
-
-##Without composer
-```
-$ git clone https://github.com/Macsch15/SimPas.git
-```
-
-###Then
-Edit configuration files:
+Copy all files to your server and edit configuration files:
 
 ```
 library/Application/Configuration/Resources/Database.json
