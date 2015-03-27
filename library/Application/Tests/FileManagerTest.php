@@ -13,6 +13,6 @@ class FileManagerTest extends PHPUnit_Framework_TestCase
      */
     public function testFilemanagerNotExistingUrl()
     {
-        $this->assertFalse((new FileManager)->getContentsFromUrl('http://www..com'));
+        (new FileManager)->getContentsFromUrl('://www..com');
     }
 }
