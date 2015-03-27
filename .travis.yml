@@ -2,7 +2,7 @@ language: php
 
 branches:
   except:
-    - /^develop/
+    - develop
 
 php:
   - 5.4
