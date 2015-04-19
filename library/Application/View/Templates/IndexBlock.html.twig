@@ -4,12 +4,12 @@
     <form method="post" id="send_paste" action="{{ build_url('paste/' ~ paste_id) }}">
 
       <div class="pull-left input_percent" style="margin-right: 2%;">
-        <input type="text" autocomplete="off" name="post_paste_title" pattern="[A-Za-z0-9{{ config.accented_characters is not empty ? config.accented_characters : null }}\-_?\.!\s]+" class="form-control" placeholder="{% trans %}Title (optional){% endtrans %}">
+        <input type="text" autocomplete="off" name="post_paste_title" class="form-control" placeholder="{% trans %}Title (optional){% endtrans %}">
       </div>
       {% if config.author_website_enabled == true %}
         <div class="pull-left input_percent">
           <div class="input-group">
-            <input type="text" autocomplete="off" name="post_paste_author" pattern="[A-Za-z0-9{{ config.accented_characters is not empty ? config.accented_characters : null }}\-_?\.!\s]+" class="form-control" placeholder="{% trans %}Author (optional){% endtrans %}">
+            <input type="text" autocomplete="off" name="post_paste_author" class="form-control" placeholder="{% trans %}Author (optional){% endtrans %}">
 
             <span class="input-group-addon author_website">
               <input type="url" autocomplete="off" name="post_paste_author_website" placeholder="{% trans %}Author website (optional){% endtrans %}">
@@ -18,7 +18,7 @@
         </div>
       {% else %}
         <div class="pull-left input_percent">
-          <input type="text" autocomplete="off" name="post_paste_author" pattern="[A-Za-z0-9{{ config.accented_characters is not empty ? config.accented_characters : null }}\-_?\.!\s]+" class="form-control" placeholder="{% trans %}Author (optional){% endtrans %}">
+          <input type="text" autocomplete="off" name="post_paste_author" class="form-control" placeholder="{% trans %}Author (optional){% endtrans %}">
         </div>
       {% endif %}
 
