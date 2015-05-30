@@ -1,7 +1,7 @@
 SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.svg?branch=master)](https://travis-ci.org/Macsch15/SimPas)
 ======
 
-Simple Pastebin Application based on PHP.
+Fat-free Pastebin Application
 
 Demo is here: http://www.pastebin.macsch15.pl
 
