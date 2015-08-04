@@ -62,11 +62,6 @@ $(function() {
     }
   });
 
-  // Get and focus to specific line
-  if(document.location.hash) {
-    showLine();
-  }
-
   $('li.line_handler').click(function() {
     $('li.line_active').removeClass('line_active');
     $(this).addClass('line_active');
@@ -88,10 +83,3 @@ $(function() {
     }
   });
 });
-
-function showLine() {
-  var hashName = window.location.hash;
-  var lineNumber = hashName.slice(6);
-
-  $('#line-' + lineNumber).addClass('line_active');
-}

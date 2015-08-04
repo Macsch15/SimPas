@@ -35,12 +35,6 @@ class SyntaxHighlighter
 
     /**
      * Parse regular code to code with syntax highlighting
-     * If you've new GeSHi library, this is fix for the ZeroClipboard (issue with lines after copied)
-     * File: library/GeSHi/geshi.php
-     * Find:
-     * <code>$parsed_code .= "<li$attr_string>$start{$code[$i-1]}$end</li>$ls";</code>
-     * Replace with:
-     * <code>$parsed_code .= "<a href=\"#line-" . $i . "\"><li class=\"line_handler\" id=\"line-" . $i . "\" $attr_string>$start{$code[$i-1]}$end</li></a>\n$ls";</code>
      * 
      * @param string $code
      * @param string $language

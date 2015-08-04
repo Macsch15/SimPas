@@ -3953,7 +3953,7 @@ class GeSHi {
                     $attr_string .= ' ' . $key . '="' . implode(' ', $attr) . '"';
                 }
 
-                $parsed_code .= "<a href=\"#line-" . $i . "\"><li class=\"line_handler\" id=\"line-" . $i . "\" $attr_string>$start{$code[$i-1]}$end</li></a>\n$ls";
+                $parsed_code .= "<li$attr_string>$start{$code[$i-1]}$end</li>$ls\n";
                 unset($code[$i - 1]);
             }
         } else {
