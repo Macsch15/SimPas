@@ -1,4 +1,4 @@
-SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.svg?branch=master)](https://travis-ci.org/Macsch15/SimPas)
+SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.svg?branch=master)](https://travis-ci.org/Macsch15/SimPas) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Macsch15/SimPas?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 ======
 
 Fat-free Pastebin Application
