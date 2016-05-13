@@ -4,23 +4,33 @@
   font-size: 24px !important;
   font-weight: normal !important; }
 
-html, body {
-  height: 100%; }
+.row {
+  background: #fff;
+  padding: 25px 0 25px 0; }
 
-pre {
-  padding: 0 !important;
-  border: 1px #CDCDCD solid !important;
-  border-radius: 0 !important; }
+.navbar-top {
+  background: #3A3A3A;
+  color: #fff;
+  padding: 10px;
+  font-size: 16px; }
+  .navbar-top ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .navbar-top li {
+    float: left;
+    margin: 0 10px 0 10px; }
+    .navbar-top li:first-child {
+      margin: 0 10px 0 0px; }
 
-.hljs {
-  padding: 15px !important; }
+.navbar-user {
+  padding: 10px;
+  color: #fff; }
+  .navbar-user > img {
+    margin-right: 3px; }
 
-.wrap {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin-bottom: -50px;
-  background: #E3E3E3; }
+.container > .entity-row {
+  border: 1px #C9C9C9 solid !important; }
 
 .entity-title {
   margin: 0 0 10px 0; }
@@ -28,9 +38,6 @@ pre {
     color: #DDD090; }
   .entity-title > .visibility > .fa-lock {
     color: #A6DE90; }
-
-.container > .entity-row {
-  border: 1px #C9C9C9 solid !important; }
 
 .entity-row {
   padding: 25px 0 25px 0; }
@@ -68,35 +75,6 @@ pre {
     .entity-head ul:last-child, .entity-head li:last-child {
       margin: 0 0 0 10px; }
 
-.row {
-  background: #fff;
-  padding: 25px 0 25px 0; }
-
-.brand-logo {
-  display: inline;
-  font-size: 14px; }
-
-.navbar-top {
-  background: #3A3A3A;
-  color: #fff;
-  padding: 10px;
-  font-size: 16px; }
-  .navbar-top ul {
-    list-style: none;
-    margin: 0;
-    padding: 0; }
-  .navbar-top li {
-    float: left;
-    margin: 0 10px 0 10px; }
-    .navbar-top li:first-child {
-      margin: 0 10px 0 0px; }
-
-.navbar-user {
-  padding: 10px;
-  color: #fff; }
-  .navbar-user > img {
-    margin-right: 3px; }
-
 .user-avatar {
   background: #fff;
   padding: 1px;
@@ -104,17 +82,39 @@ pre {
   vertical-align: bottom;
   border-radius: 50%; }
 
+.logout-button {
+  padding: 9px; }
+  .logout-button > .btn {
+    padding: 2px 8px 2px 8px; }
+
+html, body {
+  height: 100%; }
+
+pre {
+  padding: 0 !important;
+  border: 1px #CDCDCD solid !important;
+  border-radius: 0 !important; }
+
+.hljs {
+  padding: 15px !important; }
+
+.wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -50px;
+  background: #E3E3E3; }
+
+.brand-logo {
+  display: inline;
+  font-size: 14px; }
+
 .container-space {
   margin: 0 0 150px 0; }
 
 .confirmation-text {
   font-size: 16px;
   text-align: center; }
-
-.logout-button {
-  padding: 9px; }
-  .logout-button > .btn {
-    padding: 2px 8px 2px 8px; }
 
 footer {
   background: #808080;

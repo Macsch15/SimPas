@@ -1,0 +1,15 @@
+.user-avatar {
+    background: #fff;
+    padding: 1px;
+    border: 1px #B2B2B2 solid;
+    vertical-align: bottom;
+    @include border-radius(50%);
+}
+
+.logout-button {
+    padding: 9px;
+
+    & > .btn {
+        padding: 2px 8px 2px 8px;
+    }
+}
