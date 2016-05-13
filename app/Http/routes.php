@@ -1,6 +1,6 @@
 <?php
 Route::get('/', function () {
-    return view('index');
+    return view('pastebin.index');
 });
 
 Route::get('show/{unique_id}', 'PastebinController@show')
