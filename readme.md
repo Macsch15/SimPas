@@ -18,7 +18,7 @@ $ composer install
 $ php artisan migrate
 ```
 
-Before fire ```php artisan migrate``` command, you must edit your database configuration in file **.env**.
+**Remember!** Before fire ```php artisan migrate``` command configure database connection in file **.env**.
 
 ###MIT Licence
 
