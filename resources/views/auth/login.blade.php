@@ -1,13 +1,15 @@
 @extends('layout')
 
 @section('content')
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <a href="{{ route('auth.social', ['provider' => 'github']) }}" class="btn btn-block btn-social btn-github">
-              <span class="fa fa-github"></span> Log in with GitHub
-            </a>
+    @if (config('services.github.client_id') != 'client-id')
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <a href="{{ route('auth.social', ['provider' => 'github']) }}" class="btn btn-block btn-social btn-github">
+                  <span class="fa fa-github"></span> Log in with GitHub
+                </a>
+            </div>
         </div>
-    </div>
+    @endif
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

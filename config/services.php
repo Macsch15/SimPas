@@ -15,9 +15,9 @@ return [
     */
 
     'github' => [
-        'client_id' => 'client-id',
-        'client_secret' => 'client-secret',
-        'redirect' => 'http://your-site.com/auth/github/callback',
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => env('GITHUB_CALLBACK_URL'),
     ],
 
     'mailgun' => [
