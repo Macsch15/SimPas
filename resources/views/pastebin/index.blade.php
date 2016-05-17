@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="entity-head">
-        Maximum length of content: 50 000 characters
+        Maximum length of content: {{ config('pastebin.max_content_length') }} characters
 
         <div class="pull-right">
             <ul>
