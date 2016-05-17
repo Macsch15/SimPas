@@ -3,7 +3,7 @@
 namespace SimPas\Http\Controllers\Auth;
 
 use SimPas\Http\Controllers\Controller;
-use SimPas\User;
+use SimPas\Repository\User;
 use Socialite;
 use Auth;
 

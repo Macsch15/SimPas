@@ -1,6 +1,6 @@
 <?php
 
-namespace SimPas;
+namespace SimPas\Repository;
 
 use Illuminate\Database\Eloquent\Model;
 

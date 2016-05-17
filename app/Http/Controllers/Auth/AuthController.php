@@ -2,7 +2,7 @@
 
 namespace SimPas\Http\Controllers\Auth;
 
-use SimPas\User;
+use SimPas\Repository\User;
 use Validator;
 use SimPas\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;

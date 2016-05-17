@@ -4,7 +4,7 @@ namespace SimPas\Http\Controllers;
 
 use SimPas\Http\Requests\PastebinRequest;
 use SimPas\Http\Requests;
-use SimPas\PastebinRecord;
+use SimPas\Repository\PastebinRecord;
 use Auth;
 
 class PastebinController extends Controller
