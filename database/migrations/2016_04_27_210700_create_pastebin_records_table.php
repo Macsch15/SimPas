@@ -18,6 +18,8 @@ class CreatePastebinRecordsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('title');
             $table->longText('content');
+            $table->boolean('disable_syntax_highlighting')->default(false);
+            $table->boolean('is_private')->default(true);
             $table->timestamps();
         });
     }

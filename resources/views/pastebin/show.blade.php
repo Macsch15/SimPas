@@ -39,13 +39,7 @@
                 </span>
                 {{ $entity->title }}
             </h2>
-            <pre><code>{{ $entity->content }}</code></pre>
+            <pre><code {!! $entity->disable_syntax_highlighting ? 'class="nohighlight"' : null !!}>{{ $entity->content }}</code></pre>
         </div>
     </div>
-
-<!--     @if (Auth::guest() === false)
-        {{ Form::open(['url' => route('pastebin.delete', ['unique_id' => $entity->unique_id]), 'method' => 'delete']) }}
-            {{ Form::submit('Delete paste', ['class' => 'btn btn-danger']) }}
-        {{ Form::close() }}
-    @endif -->
 @endsection

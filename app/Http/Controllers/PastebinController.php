@@ -22,6 +22,8 @@ class PastebinController extends Controller
         $record->user_id = Auth::guest() ? 0 : Auth::id();
         $record->title = $request->title;
         $record->content = $request->content;
+        $record->disable_syntax_highlighting = $request->has('disable_syntax_highlighting');
+        $record->is_private = $request->has('visibility.private');
 
         $record->save();
 

@@ -52,8 +52,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ url('/login') }}">Login</a></li>
-                            <li><a href="{{ url('/register') }}">Register</a></li>
+                            <li><a href="{{ url('/login') }}">{{ trans('pastebin.layout_button_login') }}</a></li>
+                            <li><a href="{{ url('/register') }}">{{ trans('pastebin.layout_button_register') }}</a></li>
                         @else
                             <li class="navbar-user">
                                 <img class="user-avatar" width="22" src="//www.gravatar.com/avatar/{{ md5(Auth::user()->email) }}.jpg" alt="Avatar" />
