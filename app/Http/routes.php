@@ -19,6 +19,7 @@ Route::post('store', 'PastebinController@store')
     ->name('pastebin.store');
 
 Route::get('entities', 'PastebinController@entities')
+    ->middleware('auth')
     ->name('pastebin.entities');
 
 Route::auth();

@@ -59,7 +59,7 @@ class PastebinController extends Controller
         $entity = $record->where('unique_id', $unique_id)->first();
 
         if (Auth::id() !== $entity->user_id) {
-            throw new \Exception('No permission');
+            throw new \Exception('No permission to perform this action.');
         }
 
         $entity->delete();
@@ -70,19 +70,11 @@ class PastebinController extends Controller
     /**
      * Show entities for user
      *
-     * @param SimPas\PastebinRecord $record 
-     * @throws \Exception
+     * @param SimPas\PastebinRecord $record
      * @return \Illuminate\Http\Response
      */
     public function entities(PastebinRecord $record)
     {
-        if (Auth::guest() === true) {
-            throw new \Exception('Only registered users can use this.');
-        }
-
-        $entity = $record->where('user_id', Auth::id())->get();
-
-        return $entity;
-
+        return $record->where('user_id', Auth::id())->get();
     }
 }
