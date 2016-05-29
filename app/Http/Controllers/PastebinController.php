@@ -58,9 +58,9 @@ class PastebinController extends Controller
     {
         $entity = $record->where('unique_id', $unique_id)->first();
 
-        if (Auth::id() !== $entity->user_id) {
-            throw new \Exception('No permission to perform this action.');
-        }
+        #if (Auth::id() !== $entity->user_id) {
+            return abort(403, 'Unauthorized action.');
+        #}
 
         $entity->delete();
 
