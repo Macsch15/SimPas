@@ -15,7 +15,6 @@
                 <ul>
                     <li><i class="fa fa-list-alt" aria-hidden="true"></i></li>
                     <li><i class="fa fa-heart" aria-hidden="true"></i></li>
-
                 </ul>
 
                 <ul class="pull-right">
@@ -66,7 +65,7 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control input-sm" id="exampleInputName2" placeholder="Search...">
                                 </div>
-                                <button type="submit" class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                                <button type="submit" class="btn btn-sm btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </form>
                         </li>
                     </ul>
@@ -86,7 +85,7 @@
             </div>
 
             <div class="pull-left">
-                <a href="#"><i class="fa fa-arrow-up"></i> Go to top</a>
+                <a href="#"><i class="fa fa-arrow-up" aria-hidden="true"></i> Go to top</a>
             </div>
         </div>
     </footer>

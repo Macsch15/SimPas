@@ -48,14 +48,14 @@
                     'type' => 'submit'
                 ])
             }}
-            {{ Form::button('<i class="fa fa-lock"></i> Private', [
+            {{ Form::button('<i class="fa fa-lock" aria-hidden="true"></i> Private', [
                     'name' => 'visibility[private]',
                     'class' => 'btn btn-success btn-lg pull-right',
                     'style' => 'margin-right: 10px',
                     'type' => 'submit'
                 ])
             }}
-            {{ Form::button('<span class="glyphicon glyphicon-cloud-upload"></span> Save as...', [
+            {{ Form::button('<span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Save as...', [
                     'disabled',
                     'class' => 'btn btn-lg pull-right'
                 ])
