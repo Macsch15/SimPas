@@ -13,17 +13,28 @@
         <nav class="navbar-top">
             <div class="container">
                 <ul>
-                    <li><i class="fa fa-home"></i></li>
-                    <li><i class="fa fa-asterisk"></i></li>
-                    <li><i class="fa fa-bookmark"></i></li>
-                    <li><i class="fa fa fa-bars"></i></li>
+                    <li><i class="fa fa-list-alt" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-heart" aria-hidden="true"></i></li>
+
                 </ul>
 
                 <ul class="pull-right">
-                    <li><i class="fa fa-home"></i></li>
-                    <li><i class="fa fa-asterisk"></i></li>
-                    <li><i class="fa fa-bookmark"></i></li>
-                    <li><i class="fa fa fa-bars"></i></li>
+                    <li>
+                        <!-- Authentication Links -->
+                        @if (Auth::guest())
+                            <li><a href="{{ url('/login') }}">{{ trans('pastebin.layout_button_login') }}</a></li>
+                            <li><a href="{{ url('/register') }}">{{ trans('pastebin.layout_button_register') }}</a></li>
+                        @else
+                            <li class="navbar-user">
+                                <img class="user-avatar" width="22" src="//www.gravatar.com/avatar/{{ md5(Auth::user()->email) }}.jpg" alt="Avatar" />
+                                {{ Auth::user()->name }}
+                            </li>
+
+                            <div class="pull-right logout-button">
+                                <a class="btn btn-danger" href="{{ url('/logout') }}"><i class="fa fa-power-off" aria-hidden="true"></i></a>
+                            </div>
+                        @endif
+                    </li>
                 </ul>                
             </div>
         </nav>
@@ -50,20 +61,14 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ url('/login') }}">{{ trans('pastebin.layout_button_login') }}</a></li>
-                            <li><a href="{{ url('/register') }}">{{ trans('pastebin.layout_button_register') }}</a></li>
-                        @else
-                            <li class="navbar-user">
-                                <img class="user-avatar" width="22" src="//www.gravatar.com/avatar/{{ md5(Auth::user()->email) }}.jpg" alt="Avatar" />
-                                {{ Auth::user()->name }}
-                            </li>
-
-                            <div class="pull-right logout-button">
-                                <a class="btn btn-danger" href="{{ url('/logout') }}"><i class="fa fa-power-off" aria-hidden="true"></i></a>
-                            </div>
-                        @endif
+                        <li class="search-form">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <input type="text" class="form-control input-sm" id="exampleInputName2" placeholder="Search...">
+                                </div>
+                                <button type="submit" class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </div>
