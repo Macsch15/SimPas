@@ -42,15 +42,17 @@
             }}
             <br />
 
-            {{ Form::submit('Public', [
+            {{ Form::button('Public', [
                     'name' => 'visibility[public]',
-                    'class' => 'btn btn-primary btn-lg pull-right'
+                    'class' => 'btn btn-primary btn-lg pull-right',
+                    'type' => 'submit'
                 ])
             }}
-            {{ Form::submit('Private', [
+            {{ Form::button('<i class="fa fa-lock"></i> Private', [
                     'name' => 'visibility[private]',
                     'class' => 'btn btn-success btn-lg pull-right',
-                    'style' => 'margin-right: 10px'
+                    'style' => 'margin-right: 10px',
+                    'type' => 'submit'
                 ])
             }}
             {{ Form::button('<span class="glyphicon glyphicon-cloud-upload"></span> Save as...', [
