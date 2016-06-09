@@ -23,10 +23,32 @@ Route::get('entities', 'PastebinController@entities')
     ->middleware('auth')
     ->name('pastebin.entities');
 
-Route::auth();
-
 Route::get('auth/{provider}', 'Auth\SocialAuthController@redirect')
     ->name('auth.social');
 
 Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@callback')
     ->name('auth.social.callback');
+
+Route::get('login', 'Auth\AuthController@showLoginForm')
+    ->name('auth.login.form');
+
+Route::post('login', 'Auth\AuthController@login')
+    ->name('auth.login');
+
+Route::get('logout', 'Auth\AuthController@logout')
+    ->name('auth.logout');
+
+Route::get('register', 'Auth\AuthController@showRegistrationForm')
+    ->name('auth.register.form');
+
+Route::post('register', 'Auth\AuthController@register')
+    ->name('auth.register');
+
+Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm')
+    ->name('auth.password_reset.form');
+
+Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail')
+    ->name('auth.password_reset.email');
+
+Route::post('password/reset', 'Auth\PasswordController@reset')
+    ->name('auth.password_reset.password');
