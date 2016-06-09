@@ -57,11 +57,6 @@ class PastebinController extends Controller
     public function delete(PastebinRecord $record, $unique_id)
     {
         $entity = $record->where('unique_id', $unique_id)->first();
-
-        #if (Auth::id() !== $entity->user_id) {
-            return abort(403, 'Unauthorized action.');
-        #}
-
         $entity->delete();
 
         return redirect('/');

@@ -13,6 +13,7 @@ Route::delete('show/{unique_id}', 'PastebinController@delete')
     ->where([
         'unique_id' => '[A-Za-z0-9]+'
     ])
+    ->middleware('author')
     ->name('pastebin.delete');
 
 Route::post('store', 'PastebinController@store')
