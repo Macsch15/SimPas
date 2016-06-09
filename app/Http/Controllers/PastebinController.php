@@ -6,6 +6,7 @@ use SimPas\Http\Requests\PastebinRequest;
 use SimPas\Http\Requests;
 use SimPas\Repository\PastebinRecord;
 use Auth;
+use Session;
 
 class PastebinController extends Controller
 {
@@ -58,6 +59,8 @@ class PastebinController extends Controller
     {
         $entity = $record->where('unique_id', $unique_id)->first();
         $entity->delete();
+
+        Session::flash('flash_message', 'Pastebin successfully deleted');
 
         return redirect('/');
     }

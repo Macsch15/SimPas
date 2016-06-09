@@ -18,6 +18,13 @@
     </div>
     <div class="row entity-row">
         <div class="col-md-10 col-md-offset-1">
+            @if(Session::has('flash_message'))
+                <div class="alert alert-success">
+                    <i class="fa fa-check" aria-hidden="true"></i> {{ Session::get('flash_message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                </div>
+            @endif
+
             @if (count($errors))
                 @foreach ($errors->all() as $error)
                     <div class="alert alert-danger">
