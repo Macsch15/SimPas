@@ -17,11 +17,26 @@
     list-style: none;
     margin: 0;
     padding: 0; }
+  .navbar-top > .container {
+    padding: 0; }
+    .navbar-top > .container > .pull-right {
+      padding: 3px;
+      font-size: 14px; }
   .navbar-top li {
     float: left;
     margin: 0 10px 0 10px; }
     .navbar-top li:first-child {
       margin: 0 10px 0 0px; }
+    .navbar-top li:last-child {
+      margin: 0 0 0 10px; }
+    .navbar-top li a {
+      color: #fff; }
+      .navbar-top li a:hover {
+        color: #CDCDCD !important;
+        text-decoration: none; }
+      .navbar-top li a:active, .navbar-top li a:visited {
+        color: #fff;
+        text-decoration: none; }
 
 .navbar-user {
   font-size: 16px;
@@ -86,9 +101,6 @@
 
 .logout-button > .btn {
   padding: 2px 8px 2px 8px; }
-
-.search-form {
-  padding: 8px; }
 
 html, body {
   height: 100%; }

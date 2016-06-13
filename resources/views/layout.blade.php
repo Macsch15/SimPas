@@ -14,15 +14,17 @@
             <div class="container">
                 <ul>
                     <li><i class="fa fa-list-alt" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-heart" aria-hidden="true"></i></li>
+                    @if (Auth::check())
+                        <li><i class="fa fa-heart" aria-hidden="true"></i></li>
+                    @endif
                 </ul>
 
                 <ul class="pull-right">
                     <li>
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ url('/login') }}">{{ trans('pastebin.layout_button_login') }}</a></li>
-                            <li><a href="{{ url('/register') }}">{{ trans('pastebin.layout_button_register') }}</a></li>
+                            <li><a href="{{ url('/login') }}"><i class="fa fa-user" aria-hidden="true"></i> {{ trans('pastebin.layout_button_login') }}</a></li>
+                            <li><a href="{{ url('/register') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> {{ trans('pastebin.layout_button_register') }}</a></li>
                         @else
                             <li class="navbar-user">
                                 <img class="user-avatar" width="22" src="//www.gravatar.com/avatar/{{ md5(Auth::user()->email) }}.jpg" alt="Avatar" />
@@ -42,7 +44,7 @@
                 <div class="navbar-header">
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="sr-only">{{ trans('pastebin.toggle_nav') }}</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -55,20 +57,6 @@
                         </div>
                         SimPas
                     </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="search-form">
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <input type="text" class="form-control input-sm" id="exampleInputName2" placeholder="Search...">
-                                </div>
-                                <button type="submit" class="btn btn-sm btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
-                            </form>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </nav>
@@ -85,7 +73,7 @@
             </div>
 
             <div class="pull-left">
-                <a href="#"><i class="fa fa-arrow-up" aria-hidden="true"></i> Go to top</a>
+                <a href="#"><i class="fa fa-arrow-up" aria-hidden="true"></i> {{ trans('pastebin.go_top') }}</a>
             </div>
         </div>
     </footer>
@@ -95,9 +83,9 @@
     <script>
         $(function () {
             $('[data-toggle=confirmation]').confirmation({
-                'title': '<div class="confirmation-text">Are you sure?</div>',
-                'btnOkLabel': 'Yup',
-                'btnCancelLabel': 'NOOO!',
+                'title': '<div class="confirmation-text">{{ trans('pastebin.delete_confirmation_text') }}</div>',
+                'btnOkLabel': '{{ trans('pastebin.button_confirmation_agree') }}',
+                'btnCancelLabel': '{{ trans('pastebin.button_confirmation_no') }}',
                 'btnOkClass': 'btn btn-danger',
                 'btnCancelClass': 'btn btn-default',
                 'popout': true

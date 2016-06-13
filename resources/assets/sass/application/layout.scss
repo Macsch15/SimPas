@@ -4,56 +4,55 @@
 @import "navbar";
 @import "entity";
 @import "user";
-@import "search";
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700&subset=latin,latin-ext);
 
 html, body {
-    height: 100%;
+  height: 100%;
 }
 
 pre {
-    padding: 0 !important;
-    border: 1px #CDCDCD solid !important;
-    border-radius: 0 !important;
+  padding: 0 !important;
+  border: 1px #CDCDCD solid !important;
+  border-radius: 0 !important;
 }
 
 .hljs {
-    padding: 15px !important;
+  padding: 15px !important;
 }
 
 .wrap {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin-bottom: -50px;
-    background: #E3E3E3;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -50px;
+  background: #E3E3E3;
 }
 
 .brand-logo {
-    display: inline;
-    font-size: 14px;
+  display: inline;
+  font-size: 14px;
 }
 
 .container-space {
-    margin: 0 0 150px 0;
+  margin: 0 0 150px 0;
 }
 
 .confirmation-text {
-    font-size: 16px;
-    text-align: center;
+  font-size: 16px;
+  text-align: center;
 }
 
 footer {
-    background: #808080;
-    padding: 15px 0 15px 0;
-    width: 100%;
-    color: #fff;
+  background: #808080;
+  padding: 15px 0 15px 0;
+  width: 100%;
+  color: #fff;
 
-    & a,
-    & a:hover,
-    & a:active {
-        color: #fff;
-        text-decoration: none;        
-    }
+  & a,
+  & a:hover,
+  & a:active {
+    color: #fff;
+    text-decoration: none;    
+  }
 }
