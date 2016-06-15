@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Raleway&subset=latin-ext);
 .navbar-brand {
   font-size: 24px !important;
   font-weight: normal !important; }
@@ -7,6 +7,9 @@
 .row {
   background: #fff;
   padding: 25px 0 25px 0; }
+
+.navbar {
+  padding: 5px; }
 
 .navbar-top {
   background: #3A3A3A;
@@ -121,8 +124,10 @@ pre {
   background: #E3E3E3; }
 
 .brand-logo {
-  display: inline;
-  font-size: 14px; }
+  display: inline; }
+  .brand-logo img {
+    width: 34px;
+    height: auto; }
 
 .container-space {
   margin: 0 0 150px 0; }
@@ -1194,7 +1199,7 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
@@ -5263,7 +5268,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -5376,7 +5381,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;

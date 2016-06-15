@@ -18,58 +18,38 @@
             <div class="panel panel-default">
                 <div class="panel-heading">{{ trans('auth.login') }}</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                        {!! csrf_field() !!}
+                    {{ Form::open(['url' => route('auth.login.form')]) }}
+                        {{ Form::label('email', trans('auth.email')) }}
+                        {{ Form::text('email', null, [
+                            'class' => 'form-control input-lg',
+                            'id' => 'email'
+                        ]) }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">{{ trans('auth.email') }}</label>
+                        <br />
 
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                        {{ Form::label('password', trans('auth.password')) }}
+                        {{ Form::password('password', [
+                            'class' => 'form-control input-lg',
+                            'id' => 'password'
+                        ]) }}
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        <div class="checkbox checkbox-success checkbox-circle">
+                            {{ Form::checkbox('remember', null, false, ['id' => 'remember_me']) }}
+                            {{ Form::label('remember_me', trans('auth.remember_me')) }}
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">{{ trans('auth.password') }}</label>
-
-                            <div class="col-md-6">
-                                <input type="password" class="form-control" name="password">
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> {{ trans('auth.remember_me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-sign-in"></i> Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">{{ trans('auth.reset_password_link_title') }}</a>
-                            </div>
-                        </div>
-                    </form>
+                        {{ Form::button('<i class="fa fa-btn fa-sign-in"></i> Login', [
+                            'class' => 'btn btn-primary',
+                            'type' => 'submit'
+                        ])}}
+                    {{ Form::close() }}
                 </div>
+
+                  <ul class="list-group">
+                    <li class="list-group-item pull-right">
+                        <a href="{{ route('auth.password_reset.form') }}">{{ trans('auth.reset_password_link_title') }}</a>
+                    </li>
+                  </ul>
             </div>
         </div>
     </div>

@@ -53,15 +53,30 @@
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <div class="brand-logo">
-                            &lt; /&gt; 
+                            <img src="{{ asset('img/logo.png') }}" />  SimPas
                         </div>
-                        SimPas
+                        
                     </a>
                 </div>
             </div>
         </nav>
 
         <div class="container container-space">
+            @if(Session::has('flash_message'))
+                <div class="alert alert-success">
+                    <i class="fa fa-check" aria-hidden="true"></i> {{ Session::get('flash_message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                </div>
+            @endif
+
+            @if (count($errors))
+                @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <strong>{{ trans('pastebin.error_encountered') }}</strong> {{ $error }}
+                    </div>
+                @endforeach
+            @endif
             @yield('content')
         </div>
     </div>

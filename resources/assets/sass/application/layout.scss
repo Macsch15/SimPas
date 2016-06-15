@@ -5,7 +5,7 @@
 @import "entity";
 @import "user";
 
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Raleway&subset=latin-ext);
 
 html, body {
   height: 100%;
@@ -31,7 +31,11 @@ pre {
 
 .brand-logo {
   display: inline;
-  font-size: 14px;
+
+  & img {
+    width: 34px;
+    height: auto;
+  }
 }
 
 .container-space {
