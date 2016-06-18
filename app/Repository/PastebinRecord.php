@@ -24,4 +24,18 @@ class PastebinRecord extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * [Scope] Check if pastebin is edited
+     *
+     * @return bool
+     */
+    public function scopeIsEdited()
+    {
+        if ($this->created_at->getTimestamp() !== $this->updated_at->getTimestamp()) {
+            return true;
+        }
+
+        return false;
+    }
 }
