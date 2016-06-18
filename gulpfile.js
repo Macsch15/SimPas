@@ -2,7 +2,7 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.styles([
-      'agate.css'
+      'github.css'
     ]);
   
     mix.sass('app.scss');
