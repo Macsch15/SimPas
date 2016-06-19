@@ -35,12 +35,14 @@
 
             {{ Form::button(trans('pastebin.pastebin_button_public'), [
                     'name' => 'visibility[public]',
+                    'value' => trans('pastebin.pastebin_button_public'),
                     'class' => 'btn btn-primary btn-lg pull-right',
                     'type' => 'submit'
                 ])
             }}
             {{ Form::button('<i class="fa fa-lock" aria-hidden="true"></i> ' . trans('pastebin.pastebin_button_private'), [
                     'name' => 'visibility[private]',
+                    'value' => trans('pastebin.pastebin_button_private'),
                     'class' => 'btn btn-success btn-lg pull-right',
                     'style' => 'margin-right: 10px',
                     'type' => 'submit'
