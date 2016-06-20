@@ -2,10 +2,10 @@
 
 namespace SimPas\Http\Controllers\Auth;
 
-use SimPas\Http\Controllers\Controller;
+use SimPas\Http\Controllers\ControllerAbstract;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
-class PasswordController extends Controller
+class PasswordController extends ControllerAbstract
 {
     /*
     |--------------------------------------------------------------------------

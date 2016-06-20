@@ -2,12 +2,12 @@
 
 namespace SimPas\Http\Controllers\Auth;
 
-use SimPas\Http\Controllers\Controller;
+use SimPas\Http\Controllers\ControllerAbstract;
 use SimPas\Repository\User;
 use Socialite;
 use Auth;
 
-class SocialAuthController extends Controller
+class SocialAuthController extends ControllerAbstract
 {
     /**
      * Create a new controller instance.

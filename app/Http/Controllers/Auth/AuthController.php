@@ -4,11 +4,11 @@ namespace SimPas\Http\Controllers\Auth;
 
 use SimPas\Repository\User;
 use Validator;
-use SimPas\Http\Controllers\Controller;
+use SimPas\Http\Controllers\ControllerAbstract;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
-class AuthController extends Controller
+class AuthController extends ControllerAbstract
 {
     /*
     |--------------------------------------------------------------------------

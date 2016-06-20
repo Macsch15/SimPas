@@ -8,7 +8,7 @@ use SimPas\Repository\PastebinRecord;
 use Auth;
 use Session;
 
-class PastebinController extends Controller
+class PastebinController extends ControllerAbstract
 {
     /**
      * Create pastebin
