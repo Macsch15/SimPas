@@ -53,7 +53,7 @@
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                         <div class="brand-logo">
-                            <img src="{{ asset('img/logo.png') }}" />  SimPas
+                            <img src="{{ asset('img/logo.png') }}" /> SimPas
                         </div>
                         
                     </a>

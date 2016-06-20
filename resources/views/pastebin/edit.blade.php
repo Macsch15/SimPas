@@ -1,6 +1,6 @@
 @extends('entity')
 
-@section('title', 'Editing "' . $entity->title . '"')
+@section('title', trans('pastebin.editing_title', ['title' => $entity->title]))
 @section('entity_title', $entity->title)
 @section('entity_content')
     {{ Form::model($entity, ['route' => ['pastebin.update', $unique_id], 'method' => 'patch']) }}
@@ -18,7 +18,7 @@
             ])
         }}
         <br />
-        {{ Form::button('<i class="fa fa-check" aria-hidden="true"></i> Edit', [
+        {{ Form::button('<i class="fa fa-check" aria-hidden="true"></i> ' . trans('pastebin.edit_button'), [
                 'class' => 'btn btn-success btn-lg pull-right',
                 'style' => 'margin-left: 10px',
                 'type' => 'submit'
@@ -26,7 +26,7 @@
         }}
 
         <a class="btn btn-danger btn-lg pull-right" href="{{ route('pastebin.show', ['unique_id' => $unique_id]) }}">
-            <i class="fa fa-times" aria-hidden="true"></i> Abort
+            <i class="fa fa-times" aria-hidden="true"></i> {{ trans('pastebin.edit_abort_button') }}
         </a>
     {{ Form::close() }}
 @endsection

@@ -21,7 +21,7 @@ class IsAuthorOfPastebin
         $entity = PastebinRecord::where('unique_id', $unique_id)->first();
 
         if (Auth::id() !== $entity->user_id) {
-            return abort(403, 'Unauthorized action.');
+            return abort(403, trans('pastebin.unauthorized_action'));
         }
 
         return $next($request);

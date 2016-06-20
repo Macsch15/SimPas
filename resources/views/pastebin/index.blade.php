@@ -5,7 +5,7 @@
 @section('content')
     {{ Form::open(['url' => route('pastebin.store'), 'method' => 'post']) }}
     <div class="entity-head">
-        {{ trans('pastebin.max_length', ['length' => config('pastebin.max_content_length')]) }}
+        {{ trans_choice('pastebin.max_length', config('pastebin.max_content_length'), ['length' => config('pastebin.max_content_length')]) }}
 
         <div class="pull-right">
             <ul>

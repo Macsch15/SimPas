@@ -10,5 +10,5 @@ return [
     'password' => 'Password',
     'remember_me' => 'Remember Me',
     'reset_password_link_title' => 'Forgot Your Password?',
-
+    'unauthorized_action' => 'Unauthorized action',
 ];

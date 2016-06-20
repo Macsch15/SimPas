@@ -9,7 +9,7 @@ return [
     'button_confirmation_agree' => 'Yes, I\'m sure',
     'button_confirmation_no' => 'No',
     'index_page_title' => 'Homepage',
-    'max_length' => 'Maximum length of pastebin: :length characters',
+    'max_length' => 'Maximum length of pastebin: :length character|Maximum length of pastebin: :length characters',
     'error_encountered' => 'Error encountered!',
     'disable_syntax_highlighting' => 'Disable syntax highlighting',
     'pastebin_title_placeholder' => 'Enter title of the pastebin...',
@@ -17,6 +17,10 @@ return [
     'pastebin_button_private' => 'Private',
     'pastebin_button_public' => 'Public',
     'save_as' => 'Save as..',
-
+    'guest' => 'Guest',
+    'updated_at' => '(Updated :date)',
+    'editing_title' => 'Editing: :title',
+    'edit_button' => 'Edit',
+    'edit_abort_button' => 'Abort',
 
 ];

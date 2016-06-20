@@ -3,11 +3,11 @@
 @section('content')
     <div class="entity-head">
         <img class="user-avatar" width="20" src="//www.gravatar.com/avatar/{{ md5($entity->user['email']) }}.jpg" alt="Avatar" />
-        {{ $entity->user['id'] != null ? $entity->user['name'] : 'Guest' }}
+        {{ $entity->user['id'] != null ? $entity->user['name'] : trans('pastebin.guest') }}
         <span title="{{ $entity->created_at }}" class="date">{{ $entity->created_at->diffForHumans() }}</span>
 
         @if ($entity->isEdited() === true)
-            <span title="{{ $entity->updated_at }}" class="date">(Updated {{ $entity->updated_at->diffForHumans() }})</span>
+            <span title="{{ $entity->updated_at }}" class="date">{{ trans('pastebin.updated_at', ['date' => $entity->updated_at->diffForHumans()]) }}</span>
         @endif
 
         <div class="pull-right">
