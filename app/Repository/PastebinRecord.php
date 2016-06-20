@@ -32,10 +32,6 @@ class PastebinRecord extends Model
      */
     public function scopeIsEdited()
     {
-        if ($this->created_at->getTimestamp() !== $this->updated_at->getTimestamp()) {
-            return true;
-        }
-
-        return false;
+        return $this->created_at->getTimestamp() !== $this->updated_at->getTimestamp();
     }
 }
