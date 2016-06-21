@@ -10,8 +10,6 @@
             <span title="{{ $entity->updated_at }}" class="date">{{ trans('pastebin.updated_at', ['date' => $entity->updated_at->diffForHumans()]) }}</span>
         @endif
 
-        {{ dd($entity->user) }}
-
         <div class="pull-right">
             <ul>
                 <li><i class="fa fa-lg fa-code" aria-hidden="true"></i></li>
