@@ -3,6 +3,7 @@
 namespace SimPas\Repository;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class PastebinRecord extends Model
 {
@@ -16,9 +17,9 @@ class PastebinRecord extends Model
     ];
 
     /**
-     * Get author of paste
+     * Get author of pastebin
      *
-     * @return void
+     * @return SimPas\Repository\User
      */
     public function user()
     {
@@ -26,12 +27,22 @@ class PastebinRecord extends Model
     }
 
     /**
-     * [Scope] Check if pastebin is edited
+     * Check if pastebin is edited
      *
-     * @return bool
+     * @return bool|Illuminate\Database\Eloquent\Builder
      */
     public function scopeIsEdited()
     {
         return $this->created_at->getTimestamp() !== $this->updated_at->getTimestamp();
+    }
+
+    /**
+     * Check if current user is author of pastebin
+     *
+     * @return bool|Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeIsAuthor()
+    {
+        return Auth::check() && Auth::id() === $this->user_id;
     }
 }

@@ -10,32 +10,32 @@
             <span title="{{ $entity->updated_at }}" class="date">{{ trans('pastebin.updated_at', ['date' => $entity->updated_at->diffForHumans()]) }}</span>
         @endif
 
+        {{ dd($entity->user) }}
+
         <div class="pull-right">
             <ul>
                 <li><i class="fa fa-lg fa-code" aria-hidden="true"></i></li>
                 <li><i class="fa fa-lg fa-retweet" aria-hidden="true"></i></li>
                 <li><span class="glyphicon glyphicon-cloud-download fa-lg"></span></li>
                 <li class="favorite"><i class="fa fa-lg fa-heart" aria-hidden="true"></i></li>
+                @if ($entity->isAuthor() === true)
                 <li>
-                    @if (Auth::check() and Auth::id() === $entity->user_id)
-                        <a href="{{ route('pastebin.edit', ['unique_id' => $entity->unique_id]) }}">
-                            <i class="fa fa-lg fa-pencil" aria-hidden="true"></i>
-                        </a>
-                    @endif
+                    <a href="{{ route('pastebin.edit', ['unique_id' => $entity->unique_id]) }}">
+                        <i class="fa fa-lg fa-pencil" aria-hidden="true"></i>
+                    </a>
                 </li>
                 <li class="trash">
-                    @if (Auth::check() and Auth::id() === $entity->user_id)
-                        {{ Form::open(['url' => route('pastebin.delete', ['unique_id' => $entity->unique_id]), 'method' => 'delete']) }}
-                            {{ Form::button('<i class="fa fa-lg fa-trash" aria-hidden="true"></i>', [
-                                    'data-toggle' => 'confirmation',
-                                    'data-placement' => 'bottom',
-                                    'type' => 'submit',
-                                    'class' => 'form-control'
-                                ]) 
-                            }}
-                        {{ Form::close() }}
-                    @endif
+                    {{ Form::open(['url' => route('pastebin.delete', ['unique_id' => $entity->unique_id]), 'method' => 'delete']) }}
+                        {{ Form::button('<i class="fa fa-lg fa-trash" aria-hidden="true"></i>', [
+                                'data-toggle' => 'confirmation',
+                                'data-placement' => 'bottom',
+                                'type' => 'submit',
+                                'class' => 'form-control'
+                            ]) 
+                        }}
+                    {{ Form::close() }}
                 </li>
+                @endif
             </ul>
         </div>
     </div>
