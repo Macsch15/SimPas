@@ -9,44 +9,42 @@
   padding: 25px 0 25px 0; }
 
 .navbar {
-  padding: 5px; }
+  padding: 14px 0 14px 0; }
 
-.navbar-top {
-  background: #3A3A3A;
-  color: #fff;
-  padding: 9px 10px 7px 10px;
-  font-size: 18px; }
-  .navbar-top ul {
-    list-style: none;
-    margin: 0;
-    padding: 0; }
-  .navbar-top > .container {
-    padding: 0; }
-    .navbar-top > .container > .pull-right {
-      padding: 3px;
-      font-size: 14px; }
-  .navbar-top li {
-    float: left;
-    margin: 0 10px 0 10px; }
-    .navbar-top li:first-child {
-      margin: 0 10px 0 0px; }
-    .navbar-top li:last-child {
-      margin: 0 0 0 10px; }
-    .navbar-top li a {
-      color: #fff; }
-      .navbar-top li a:hover {
-        color: #CDCDCD !important;
-        text-decoration: none; }
-      .navbar-top li a:active, .navbar-top li a:visited {
-        color: #fff;
-        text-decoration: none; }
+.navbar-menu {
+  margin: 0 0 15px -15px; }
+  .navbar-menu > .btn {
+    padding: 8px 15px 8px 15px;
+    background: #fff;
+    color: #737373; }
+    .navbar-menu > .btn:hover {
+      background: #EBEBEB;
+      border-bottom: 1px #337ab7 solid;
+      text-decoration: none;
+      color: #5C5C5C; }
+      .navbar-menu > .btn:hover > .fa-heart {
+        color: #99D46C; }
+    .navbar-menu > .btn:active, .navbar-menu > .btn:visited, .navbar-menu > .btn:focus {
+      background: #EBEBEB;
+      text-decoration: none; }
 
 .navbar-user {
   font-size: 16px;
-  color: #fff;
-  padding: 2px 0 0; }
+  color: #8A8A8A;
+  padding: 10px 0 0; }
   .navbar-user > img {
-    margin-right: 3px; }
+    margin-right: 3px;
+    vertical-align: middle; }
+
+.navbar-guest {
+  font-size: 16px;
+  padding: 5px 0 0; }
+  .navbar-guest > .btn {
+    padding: 5px 0 0 15px; }
+  .navbar-guest a {
+    text-decoration: none !important; }
+    .navbar-guest a:hover, .navbar-guest a:active, .navbar-guest a:visited {
+      text-decoration: none !important; }
 
 .container > .entity-row {
   border: 1px #C9C9C9 solid !important; }
@@ -99,14 +97,20 @@
   background: #fff;
   padding: 1px;
   border: 1px #B2B2B2 solid;
-  vertical-align: bottom;
   border-radius: 50%; }
 
 .logout-button > .btn {
-  padding: 2px 8px 2px 8px; }
+  padding: 2px 0 2px 25px;
+  color: #8A8A8A !important; }
+  .logout-button > .btn:hover {
+    color: #5C5C5C !important; }
+
+* {
+  outline: 0 !important; }
 
 html, body {
-  height: 100%; }
+  height: 100%;
+  background: #E3E3E3; }
 
 pre {
   padding: 0 !important;
@@ -124,7 +128,8 @@ pre {
   background: #E3E3E3; }
 
 .brand-logo {
-  display: inline; }
+  display: inline;
+  color: #5C5C5C; }
   .brand-logo img {
     width: 34px;
     height: auto; }
@@ -3777,7 +3782,7 @@ tbody.collapse.in {
 .navbar {
   position: relative;
   min-height: 42px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   border: 1px solid transparent; }
   .navbar:before, .navbar:after {
     content: " ";
@@ -4054,8 +4059,8 @@ tbody.collapse.in {
       margin-right: 0; } }
 
 .navbar-default {
-  background-color: #006FB0;
-  border-color: #005a8f; }
+  background-color: #fff;
+  border-color: #eeeeee; }
   .navbar-default .navbar-brand {
     color: #fff; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -4070,7 +4075,7 @@ tbody.collapse.in {
       background-color: #0088D6; }
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #fff;
-    background-color: #005a8f; }
+    background-color: #eeeeee; }
   .navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus {
     color: #ccc;
     background-color: transparent; }
@@ -4082,9 +4087,9 @@ tbody.collapse.in {
       background-color: #888; }
   .navbar-default .navbar-collapse,
   .navbar-default .navbar-form {
-    border-color: #005a8f; }
+    border-color: #eeeeee; }
   .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    background-color: #005a8f;
+    background-color: #eeeeee;
     color: #fff; }
   @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
@@ -4094,7 +4099,7 @@ tbody.collapse.in {
         background-color: #0088D6; }
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
       color: #fff;
-      background-color: #005a8f; }
+      background-color: #eeeeee; }
     .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
       color: #ccc;
       background-color: transparent; } }

@@ -22,5 +22,8 @@ return [
     'editing_title' => 'Editing: :title',
     'edit_button' => 'Edit',
     'edit_abort_button' => 'Abort',
-
+    'homepage' => 'Homepage',
+    'last_activity' => 'Last activity',
+    'favorites' => 'Favorites',
+    'tooltip_logout' => 'Logout'
 ];

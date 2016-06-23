@@ -2,12 +2,16 @@
   background: #fff;
   padding: 1px;
   border: 1px #B2B2B2 solid;
-  vertical-align: bottom;
   @include border-radius(50%);
 }
 
 .logout-button {
   & > .btn {
-    padding: 2px 8px 2px 8px;
+    padding: 2px 0 2px 25px;
+    color: #8A8A8A !important;
+
+    &:hover {
+      color: #5C5C5C !important;
+    }
   }
 }

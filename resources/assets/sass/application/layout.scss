@@ -7,8 +7,13 @@
 
 @import url(https://fonts.googleapis.com/css?family=Raleway&subset=latin-ext);
 
+* {
+  outline: 0 !important;
+}
+
 html, body {
   height: 100%;
+  background: #E3E3E3;
 }
 
 pre {
@@ -31,6 +36,7 @@ pre {
 
 .brand-logo {
   display: inline;
+  color: #5C5C5C;
 
   & img {
     width: 34px;

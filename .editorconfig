@@ -3,10 +3,10 @@ root = true
 [*]
 end_of_line = LF
 
-[*.php]
+[{*.php,*.js}]
 indent_style = space
 indent_size = 4
 
-[{*.css,*.scss,*.html,*.js}]
+[{*.css,*.scss,*.html}]
 indent_style = space
 indent_size = 2

@@ -10,58 +10,52 @@
 </head>
 <body>
     <div class="wrap">
-        <nav class="navbar-top">
-            <div class="container">
-                <ul>
-                    <li><i class="fa fa-list-alt" aria-hidden="true"></i></li>
-                    @if (Auth::check())
-                        <li><i class="fa fa-heart" aria-hidden="true"></i></li>
-                    @endif
-                </ul>
-
-                <ul class="pull-right">
-                    <li>
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ url('/login') }}"><i class="fa fa-user" aria-hidden="true"></i> {{ trans('pastebin.layout_button_login') }}</a></li>
-                            <li><a href="{{ url('/register') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> {{ trans('pastebin.layout_button_register') }}</a></li>
-                        @else
-                            <li class="navbar-user">
-                                <img class="user-avatar" width="22" src="//www.gravatar.com/avatar/{{ md5(Auth::user()->email) }}.jpg" alt="Avatar" />
-                                {{ Auth::user()->name }}
-                            </li>
-
-                            <div class="pull-right logout-button">
-                                <a class="btn btn-danger" href="{{ url('/logout') }}"><i class="fa fa-power-off" aria-hidden="true"></i></a>
-                            </div>
-                        @endif
-                    </li>
-                </ul>                
-            </div>
-        </nav>
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        <div class="brand-logo">
+                            SimPas
+                        </div>
+                    </a>   
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#user-responsive">
                         <span class="sr-only">{{ trans('pastebin.toggle_nav') }}</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
+                    </button>                 
+                </div>
 
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        <div class="brand-logo">
-                            <img src="{{ asset('img/logo.png') }}" /> SimPas
+                <div id="user-responsive" class="pull-right collapse navbar-collapse">
+                    @if (Auth::guest())
+                        <div class="navbar-guest">
+                            <a class="btn btn-link" href="{{ url('/login') }}"><i class="fa fa-user" aria-hidden="true"></i> {{ trans('pastebin.layout_button_login') }}</a>
+                            <a class="btn btn-link" href="{{ url('/register') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> {{ trans('pastebin.layout_button_register') }}</a>
                         </div>
-                        
-                    </a>
+                    @else
+                        <div class="navbar-user">
+                            <img class="user-avatar" width="30" src="//www.gravatar.com/avatar/{{ md5(Auth::user()->email) }}.jpg" alt="Avatar" />
+                            {{ Auth::user()->name }}
+
+                            <div class="pull-right logout-button">
+                                <a class="btn btn-link" href="{{ url('/logout') }}">
+                                    <i data-toggle="tooltip" data-placement="bottom" title="{{ trans('pastebin.tooltip_logout') }}" class="fa fa-power-off" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
         </nav>
 
         <div class="container container-space">
+            <div class="navbar-menu">
+                <a href="{{ url('/') }}" class="btn btn-link"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('pastebin.homepage') }}</a>
+                <a href="#" class="btn btn-link"><i class="fa fa-list-alt" aria-hidden="true"></i> {{ trans('pastebin.last_activity') }}</a>
+                <a href="#" class="btn btn-link"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('pastebin.favorites') }}</a>
+            </div>
+
             @if(Session::has('flash_message'))
                 <div class="alert alert-success">
                     <i class="fa fa-check" aria-hidden="true"></i> {{ Session::get('flash_message') }}
@@ -81,7 +75,7 @@
         </div>
     </div>
 
-    <footer>
+    <footer class="hidden-sm hidden-md hidden-xs">
         <div class="container">
             <div class="pull-right">
                 &copy; SimPas Application by Macsch15
@@ -94,18 +88,12 @@
     </footer>
 
     <script src="{{ asset('js/all.js') }}"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
     <script>
-        $(function () {
-            $('[data-toggle=confirmation]').confirmation({
-                'title': '<div class="confirmation-text">{{ trans('pastebin.delete_confirmation_text') }}</div>',
-                'btnOkLabel': '{{ trans('pastebin.button_confirmation_agree') }}',
-                'btnCancelLabel': '{{ trans('pastebin.button_confirmation_no') }}',
-                'btnOkClass': 'btn btn-danger',
-                'btnCancelClass': 'btn btn-default',
-                'popout': true
-            });
-        });
+        new SimPas().bootSyntaxHighlighting(
+            '{{ trans('pastebin.delete_confirmation_text') }}',
+            '{{ trans('pastebin.button_confirmation_agree') }}',
+            '{{ trans('pastebin.button_confirmation_no') }}'
+        );
     </script>
 </body>
 </html>
