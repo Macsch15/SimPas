@@ -41,9 +41,16 @@
                             {{ Auth::user()->name }}
 
                             <div class="pull-right logout-button">
-                                <a class="btn btn-link" href="{{ url('/logout') }}">
-                                    <i data-toggle="tooltip" data-placement="bottom" title="{{ trans('pastebin.tooltip_logout') }}" class="fa fa-power-off" aria-hidden="true"></i>
-                                </a>
+                                {{ Form::open(['url' => url('/logout')]) }}
+                                    {{ Form::button('<i class="fa fa-power-off" aria-hidden="true"></i>', [
+                                            'type' => 'submit',
+                                            'class' => 'btn btn-link',
+                                            'data-toggle' => 'tooltip',
+                                            'data-placement' => 'bottom',
+                                            'title' => trans('pastebin.tooltip_logout')
+                                        ]) 
+                                    }}
+                                {{ Form::close() }}
                             </div>
                         </div>
                     @endif

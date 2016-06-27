@@ -6,8 +6,8 @@
 }
 
 .logout-button {
-  & > .btn {
-    padding: 2px 0 2px 25px;
+  & > form > .btn {
+    margin: -3px -3px 0 12px;
     color: #8A8A8A !important;
 
     &:hover {

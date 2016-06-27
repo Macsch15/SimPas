@@ -105,10 +105,10 @@
   border: 1px #B2B2B2 solid;
   border-radius: 50%; }
 
-.logout-button > .btn {
-  padding: 2px 0 2px 25px;
+.logout-button > form > .btn {
+  margin: -3px -3px 0 12px;
   color: #8A8A8A !important; }
-  .logout-button > .btn:hover {
+  .logout-button > form > .btn:hover {
     color: #5C5C5C !important; }
 
 * {

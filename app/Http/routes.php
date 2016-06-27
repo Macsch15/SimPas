@@ -49,7 +49,7 @@ Route::get('login', 'Auth\AuthController@showLoginForm')
 Route::post('login', 'Auth\AuthController@login')
     ->name('auth.login');
 
-Route::get('logout', 'Auth\AuthController@logout')
+Route::post('logout', 'Auth\AuthController@logout')
     ->name('auth.logout');
 
 Route::get('register', 'Auth\AuthController@showRegistrationForm')
