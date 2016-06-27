@@ -23,10 +23,15 @@ class PastebinRequest extends Request
      */
     public function rules()
     {
-        return [
+        $rules = collect([
             'title' => sprintf('required|max:%d', config('pastebin.max_title_length')),
             'content' => sprintf('required|max:%d', config('pastebin.max_content_length')),
-            'g-recaptcha-response' => 'required|recaptcha'
-        ];
+        ]);
+
+        if (config('recaptcha.enabled') === true) {
+            $rules->put('g-recaptcha-response', 'required|recaptcha');
+        }
+
+        return $rules->all();
     }
 }

@@ -54,7 +54,7 @@
                     ])
                 }}
 
-                @if (env('RECAPTCHA_PUBLIC_KEY') != null && env('RECAPTCHA_PRIVATE_KEY') != null)
+                @if (config('recaptcha.enabled') === true)
                     {!! Recaptcha::render() !!}
                 @endif
             </div>
