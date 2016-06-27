@@ -6,7 +6,6 @@ use SimPas\Http\Requests\PastebinRequest;
 use SimPas\Http\Requests;
 use SimPas\Repository\PastebinRecord;
 use Auth;
-use Session;
 
 class PastebinController extends ControllerAbstract
 {
@@ -60,9 +59,7 @@ class PastebinController extends ControllerAbstract
         $entity = $record->where('unique_id', $unique_id)->first();
         $entity->delete();
 
-        Session::flash('flash_message', trans('pastebin.successfully_deleted'));
-
-        return redirect('/');
+        return redirect('/')->with('flash_message', trans('pastebin.successfully_deleted'));
     }
 
     /**
@@ -95,11 +92,9 @@ class PastebinController extends ControllerAbstract
 
         $record->save();
 
-        Session::flash('flash_message', trans('pastebin.successfully_edited'));
-
         return redirect()->route('pastebin.show', [
             'unique_id' => $unique_id
-        ]);
+        ])->with('flash_message', trans('pastebin.successfully_edited'));
     }
 
     /**
