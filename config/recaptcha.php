@@ -46,9 +46,8 @@ return [
     |
     */
     'options'     => [
-
-        'curl_timeout' => 1,
-
+        'lang' => config('app.locale'),
+        'curl_timeout' => 1
     ],
 
     /*
