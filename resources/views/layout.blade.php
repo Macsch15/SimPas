@@ -41,7 +41,7 @@
                             {{ Auth::user()->name }}
 
                             <div class="pull-right logout-button">
-                                {{ Form::open(['url' => url('/logout')]) }}
+                                {{ Form::open(['route' => 'auth.logout']) }}
                                     {{ Form::button('<i class="fa fa-power-off" aria-hidden="true"></i>', [
                                             'type' => 'submit',
                                             'class' => 'btn btn-link',
