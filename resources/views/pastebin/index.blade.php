@@ -53,6 +53,10 @@
                         'class' => 'btn btn-lg pull-right'
                     ])
                 }}
+
+                @if (env('RECAPTCHA_PUBLIC_KEY') != null && env('RECAPTCHA_PRIVATE_KEY') != null)
+                    {!! Recaptcha::render() !!}
+                @endif
             </div>
         </div>
     {{ Form::close() }}

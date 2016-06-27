@@ -10,7 +10,8 @@
         "laravelcollective/html": "5.2.*",
         "themsaid/laravel-langman": "1.2.*",
         "laravel/socialite": "^2.0",
-        "radic/blade-extensions": "~6.2"
+        "radic/blade-extensions": "~6.2",
+        "greggilbert/recaptcha": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

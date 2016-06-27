@@ -77,6 +77,10 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
+                                @if (env('RECAPTCHA_PUBLIC_KEY') != null && env('RECAPTCHA_PRIVATE_KEY') != null)
+                                    {!! Recaptcha::render() !!}<br />
+                                @endif
+
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa fa-btn fa-user"></i> Register
                                 </button>

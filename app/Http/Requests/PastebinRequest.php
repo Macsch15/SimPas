@@ -25,7 +25,8 @@ class PastebinRequest extends Request
     {
         return [
             'title' => sprintf('required|max:%d', config('pastebin.max_title_length')),
-            'content' => sprintf('required|max:%d', config('pastebin.max_content_length'))
+            'content' => sprintf('required|max:%d', config('pastebin.max_content_length')),
+            'g-recaptcha-response' => 'required|recaptcha'
         ];
     }
 }
