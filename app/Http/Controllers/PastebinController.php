@@ -2,7 +2,8 @@
 
 namespace SimPas\Http\Controllers;
 
-use SimPas\Http\Requests\PastebinRequest;
+use SimPas\Http\Requests\StoreRequest;
+use SimPas\Http\Requests\UpdateRequest;
 use SimPas\Http\Requests;
 use SimPas\Repository\PastebinRecord;
 use Auth;
@@ -13,10 +14,10 @@ class PastebinController extends ControllerAbstract
      * Create pastebin
      *
      * @param SimPas\PastebinRecord $record
-     * @param SimPas\Http\Requests\PastebinRequest $request
+     * @param SimPas\Http\Requests\StoreRequest $request
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
-    public function store(PastebinRecord $record, PastebinRequest $request)
+    public function store(PastebinRecord $record, StoreRequest $request)
     {
         $record->unique_id = str_random(20);
         $record->user_id = Auth::guest() ? 0 : Auth::id();
@@ -80,11 +81,11 @@ class PastebinController extends ControllerAbstract
      * Update pastebin record in the database
      *
      * @param SimPas\PastebinRecord $record
-     * @param SimPas\Http\Requests\PastebinRequest $request
+     * @param SimPas\Http\Requests\UpdateRequest $request
      * @param string $unique_id
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
-    public function update(PastebinRecord $record, PastebinRequest $request, $unique_id)
+    public function update(PastebinRecord $record, UpdateRequest $request, $unique_id)
     {
         $record = $record->where('unique_id', $unique_id)->first();
         $record->title = $request->title;

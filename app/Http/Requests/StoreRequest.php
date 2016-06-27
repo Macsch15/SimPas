@@ -4,7 +4,7 @@ namespace SimPas\Http\Requests;
 
 use SimPas\Http\Requests\Request;
 
-class PastebinRequest extends Request
+class StoreRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
