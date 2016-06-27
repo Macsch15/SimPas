@@ -60,7 +60,7 @@ class PastebinController extends ControllerAbstract
         $entity = $record->where('unique_id', $unique_id)->first();
         $entity->delete();
 
-        Session::flash('flash_message', 'Pastebin successfully deleted');
+        Session::flash('flash_message', trans('pastebin.successfully_deleted'));
 
         return redirect('/');
     }
@@ -95,7 +95,7 @@ class PastebinController extends ControllerAbstract
 
         $record->save();
 
-        Session::flash('flash_message', 'Pastebin successfully edited');
+        Session::flash('flash_message', trans('pastebin.successfully_edited'));
 
         return redirect()->route('pastebin.show', [
             'unique_id' => $unique_id
@@ -110,6 +110,6 @@ class PastebinController extends ControllerAbstract
      */
     public function entities(PastebinRecord $record)
     {
-        return $record->where('user_id', Auth::id())->get();
+        return $record->where('user_id', Auth::id())->orderBy('id', 'desc')->get();
     }
 }

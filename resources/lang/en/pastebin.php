@@ -25,5 +25,8 @@ return [
     'homepage' => 'Homepage',
     'last_activity' => 'Last activity',
     'favorites' => 'Favorites',
-    'tooltip_logout' => 'Logout'
+    'tooltip_logout' => 'Logout',
+    'breadcrumb_edit' => 'edit',
+    'successfully_deleted' => 'Pastebin successfully deleted',
+    'successfully_edited' => 'Pastebin successfully edited',
 ];
