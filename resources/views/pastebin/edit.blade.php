@@ -1,7 +1,11 @@
 @extends('entity')
+@include('macros.breadcrumb')
 
 @section('title', trans('pastebin.editing_title', ['title' => $entity->title]))
 @section('entity_title', $entity->title)
+@section('breadcrumb')
+    @macro('breadcrumb', ['add' => ['url' => route('pastebin.show', ['unique_id' => $entity->unique_id]), 'title' => $entity->title], ['url' => route('pastebin.edit', ['unique_id' => $entity->unique_id]), 'title' => trans('pastebin.breadcrumb_edit')]])
+@endsection
 @section('entity_content')
     {{ Form::model($entity, ['route' => ['pastebin.update', $unique_id], 'method' => 'patch']) }}
         {{ Form::text('title', null, [

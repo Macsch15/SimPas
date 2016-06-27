@@ -17,7 +17,9 @@
                         <div class="brand-logo">
                             SimPas
                         </div>
-                    </a>   
+                    </a>
+
+                    @yield('breadcrumb')
 
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#user-responsive">
                         <span class="sr-only">{{ trans('pastebin.toggle_nav') }}</span>
@@ -54,6 +56,7 @@
                 <a href="{{ url('/') }}" class="btn btn-link"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('pastebin.homepage') }}</a>
                 <a href="#" class="btn btn-link"><i class="fa fa-list-alt" aria-hidden="true"></i> {{ trans('pastebin.last_activity') }}</a>
                 <a href="#" class="btn btn-link"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('pastebin.favorites') }}</a>
+                <a href="#" class="btn btn-link"><i class="fa fa-user" aria-hidden="true"></i> My pastebin</a>
             </div>
 
             @if(Session::has('flash_message'))

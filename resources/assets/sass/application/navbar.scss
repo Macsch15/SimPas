@@ -1,5 +1,5 @@
 .navbar {
-  padding: 14px 0 14px 0;
+  padding: 16px 0 16px 0;
 }
 
 .navbar-menu {
@@ -51,8 +51,12 @@
 
   & a {
     text-decoration: none !important;
+    color: #5C5C5C !important;
 
-    &:hover,
+    &:hover {
+      color: #000000 !important;
+    }
+
     &:active,
     &:visited {
       text-decoration: none !important;

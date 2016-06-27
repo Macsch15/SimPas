@@ -9,7 +9,8 @@
         "laravel/framework": "5.2.*",
         "laravelcollective/html": "5.2.*",
         "themsaid/laravel-langman": "1.2.*",
-        "laravel/socialite": "^2.0"
+        "laravel/socialite": "^2.0",
+        "radic/blade-extensions": "~6.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
