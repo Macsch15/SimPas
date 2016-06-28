@@ -3,11 +3,12 @@
 namespace SimPas\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Carbon\Carbon;
 
-class AppServiceProvider extends ServiceProvider
+class CarbonServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
+     * Bootstrap the application services.
      *
      * @return void
      */
@@ -17,12 +18,12 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register any application services.
+     * Register the application services.
      *
      * @return void
      */
     public function register()
     {
-        //
+        Carbon::setLocale(config('app.locale'));
     }
 }

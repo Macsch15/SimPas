@@ -27,6 +27,7 @@ return [
     'favorites' => 'Favorites',
     'tooltip_logout' => 'Logout',
     'breadcrumb_edit' => 'edit',
+    'breadcrumb_pastebin' => 'Pastebin',
     'successfully_deleted' => 'Pastebin successfully deleted',
     'successfully_edited' => 'Pastebin successfully edited',
 ];

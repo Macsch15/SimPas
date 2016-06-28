@@ -1,0 +1,1 @@
+<li {!! $active ? 'class="active"' : null !!}>{{ $title }}</li>

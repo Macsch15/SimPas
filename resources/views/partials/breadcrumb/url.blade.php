@@ -1,0 +1,1 @@
+<li {!! $active ? 'class="active"' : null !!}><a href="{{ $url }}">{{ $title }}</a></li>

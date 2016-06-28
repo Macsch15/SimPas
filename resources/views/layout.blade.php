@@ -19,7 +19,12 @@
                         </div>
                     </a>
 
-                    @yield('breadcrumb')
+                    @if (Breadcrumb::count())
+                        <ol class="pull-left breadcrumb">
+                          <li class="active">{{ trans('pastebin.breadcrumb_pastebin') }}</li>
+                          @yield('breadcrumb')
+                        </ol>
+                    @endif
 
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#user-responsive">
                         <span class="sr-only">{{ trans('pastebin.toggle_nav') }}</span>

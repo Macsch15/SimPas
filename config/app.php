@@ -63,6 +63,8 @@ return [
         SimPas\Providers\AuthServiceProvider::class,
         SimPas\Providers\EventServiceProvider::class,
         SimPas\Providers\RouteServiceProvider::class,
+        SimPas\Providers\CarbonServiceProvider::class,
+        SimPas\Providers\BreadcrumbServiceProvider::class,
 
     ],
 
@@ -111,6 +113,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
+        'Breadcrumb' => SimPas\Breadcrumb\Facades\Breadcrumb::class,
 
     ],
 
