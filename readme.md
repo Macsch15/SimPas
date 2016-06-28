@@ -1,4 +1,4 @@
-#SimPas
+#SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.svg?branch=master)](https://travis-ci.org/Macsch15/SimPas)
 
 #####Fat-free Pastebin Application
 (Version 0.7) *Work in progress...*
@@ -18,7 +18,7 @@ $ composer install
 $ php artisan migrate
 ```
 
-**Remember!** Before fire ```php artisan migrate``` command configure database connection in file **.env**.
+**Remember!** Configure database connection in **.env** before fire ```php artisan migrate```.
 
 ###MIT Licence
 

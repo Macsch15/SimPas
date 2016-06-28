@@ -25,7 +25,8 @@
             "database"
         ],
         "psr-4": {
-            "SimPas\\": "app/"
+            "SimPas\\": "app/",
+            "SimPas\\Tests\\": "tests/"
         }
     },
     "autoload-dev": {
