@@ -44,6 +44,11 @@
     list-style: none;
     display: inline;
     margin: 0 10px 0 10px;
+    color: #6F6F6F;
+
+    & a {
+      color: #6F6F6F;
+    }
 
     & > .trash {
       & > form {
