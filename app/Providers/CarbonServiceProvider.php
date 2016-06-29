@@ -24,6 +24,16 @@ class CarbonServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->setLocaleForCarbon();
+    }
+
+    /**
+     * Set locale for Carbon
+     *
+     * @return void
+     */
+    public function setLocaleForCarbon()
+    {
         Carbon::setLocale(config('app.locale'));
     }
 }
