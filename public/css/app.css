@@ -83,7 +83,10 @@
   .entity-head ul, .entity-head li {
     list-style: none;
     display: inline;
-    margin: 0 10px 0 10px; }
+    margin: 0 10px 0 10px;
+    color: #6F6F6F; }
+    .entity-head ul a, .entity-head li a {
+      color: #6F6F6F; }
     .entity-head ul > .trash > form, .entity-head li > .trash > form {
       float: right; }
       .entity-head ul > .trash > form > button, .entity-head li > .trash > form > button {
