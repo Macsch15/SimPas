@@ -17,7 +17,7 @@
                 <li><span class="glyphicon glyphicon-cloud-download fa-lg"></span></li>
                 <li class="favorite"><i class="fa fa-lg fa-heart" aria-hidden="true"></i></li>
                 @if ($entity->isAuthor() === true)
-                <li>
+                <li data-toggle="tooltip" data-placement="bottom" title="{{ trans('pastebin.tooltip_edit') }}">
                     <a href="{{ route('pastebin.edit', ['unique_id' => $entity->unique_id]) }}">
                         <i class="fa fa-lg fa-pencil" aria-hidden="true"></i>
                     </a>
