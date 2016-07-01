@@ -7,6 +7,7 @@ Route::get('show/{unique_id}', 'PastebinController@show')
     ->where([
         'unique_id' => '[A-Za-z0-9]+'
     ])
+    ->middleware('can_see')
     ->name('pastebin.show');
 
 Route::delete('show/{unique_id}', 'PastebinController@delete')

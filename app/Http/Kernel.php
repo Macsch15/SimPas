@@ -50,5 +50,6 @@ class Kernel extends HttpKernel
         'guest' => \SimPas\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'author' => \SimPas\Http\Middleware\IsAuthorOfPastebin::class,
+        'can_see' => \SimPas\Http\Middleware\CanSee::class
     ];
 }

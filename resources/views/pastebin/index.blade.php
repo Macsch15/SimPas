@@ -40,7 +40,7 @@
                         'type' => 'submit'
                     ])
                 }}
-                {{ Form::button('<i class="fa fa-lock" aria-hidden="true"></i> ' . trans('pastebin.pastebin_button_private'), [
+                {{ Form::button('<i class="fa fa-lock" aria-hidden="true"></i> ' . (Auth::check() ? trans('pastebin.pastebin_button_private') : 'Not listed'), [
                         'name' => 'visibility[private]',
                         'value' => trans('pastebin.pastebin_button_private'),
                         'class' => 'btn btn-success btn-lg pull-right',
@@ -48,6 +48,13 @@
                         'type' => 'submit'
                     ])
                 }}
+
+                @if (Auth::guest())
+                    <div class="pull-right btn btn-lg">
+                        <i data-toggle="tooltip" data-placement="top" title="Only logged in users can create private pastebin" class="fa fa-question-circle" aria-hidden="true"></i>                   
+                    </div>
+                @endif
+
                 {{ Form::button('<span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> ' . trans('pastebin.save_as'), [
                         'disabled',
                         'class' => 'btn btn-lg pull-right'
