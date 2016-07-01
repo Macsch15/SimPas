@@ -30,6 +30,7 @@ class SimPas
     bootBootstrapUtils()
     {
         $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="popover"]').popover();
     }
 
     bootSyntaxHighlighting(title, labelOk, labelCancel)

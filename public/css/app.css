@@ -105,7 +105,7 @@
 .user-avatar {
   background: #fff;
   padding: 1px;
-  border: 1px #B2B2B2 solid;
+  border: 2px #B2B2B2 solid;
   border-radius: 50%; }
 
 .logout-button > form > .btn {
