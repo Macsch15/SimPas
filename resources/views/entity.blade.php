@@ -3,7 +3,7 @@
 @section('content')
     <div class="entity-head">
         <img class="user-avatar" width="20" src="//www.gravatar.com/avatar/{{ md5($entity->user['email']) }}.jpg" alt="Avatar" />
-        {{ $entity->user['id'] != null ? $entity->user['name'] : trans('pastebin.guest') }}
+        <b>{{ $entity->user['id'] != null ? $entity->user['name'] : trans('pastebin.guest') }}</b>
         <span title="{{ $entity->created_at }}" class="date">{{ $entity->created_at->diffForHumans() }}</span>
 
         @if ($entity->isEdited() === true)

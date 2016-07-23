@@ -57,7 +57,7 @@
 
                 {{ Form::button('<span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> ' . trans('pastebin.save_as'), [
                         'disabled',
-                        'class' => 'btn btn-lg pull-right'
+                        'class' => 'btn btn-lg btn-link-trasparent pull-right'
                     ])
                 }}
 

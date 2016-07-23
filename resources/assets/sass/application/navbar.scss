@@ -2,6 +2,10 @@
   padding: 16px 0 16px 0;
 }
 
+.navbar-default {
+  border: none !important;
+}
+
 .navbar-menu {
   margin: 0 0 15px -15px;
 
@@ -10,22 +14,16 @@
     background: #fff;
     color: #737373;
 
-    &:hover {
+    &:hover,
+    &:focus {
       & > .fa-heart {
         color: #99D46C;
       }
 
-      background: #EBEBEB;
+      background: #fff;
       border-bottom: 1px #337ab7 solid;
       text-decoration: none;
       color: #5C5C5C;
-    }
-
-    &:active,
-    &:visited,
-    &:focus {
-      background: #EBEBEB;
-      text-decoration: none;
     }
   }
 }

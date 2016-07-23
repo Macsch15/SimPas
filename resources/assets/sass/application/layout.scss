@@ -17,13 +17,17 @@ input, textarea {
 
 html, body {
   height: 100%;
-  background: #E3E3E3;
+  background: #F2F2F2;
 }
 
 pre {
   padding: 0 !important;
   border: 1px #CDCDCD solid !important;
   border-radius: 0 !important;
+}
+
+.btn-link-trasparent {
+  background: transparent;
 }
 
 .hljs {
@@ -35,7 +39,7 @@ pre {
   height: auto !important;
   height: 100%;
   margin-bottom: -50px;
-  background: #E3E3E3;
+  background: #F2F2F2;
 }
 
 .brand-logo {

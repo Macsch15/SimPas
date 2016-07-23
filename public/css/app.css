@@ -9,10 +9,14 @@
   padding: 25px 0 25px 0; }
 
 .breadcrumb {
-  margin: 0 !important; }
+  margin: 0 !important;
+  background: #fff !important; }
 
 .navbar {
   padding: 16px 0 16px 0; }
+
+.navbar-default {
+  border: none !important; }
 
 .navbar-menu {
   margin: 0 0 15px -15px; }
@@ -20,16 +24,13 @@
     padding: 8px 15px 8px 15px;
     background: #fff;
     color: #737373; }
-    .navbar-menu > .btn:hover {
-      background: #EBEBEB;
+    .navbar-menu > .btn:hover, .navbar-menu > .btn:focus {
+      background: #fff;
       border-bottom: 1px #337ab7 solid;
       text-decoration: none;
       color: #5C5C5C; }
-      .navbar-menu > .btn:hover > .fa-heart {
+      .navbar-menu > .btn:hover > .fa-heart, .navbar-menu > .btn:focus > .fa-heart {
         color: #99D46C; }
-    .navbar-menu > .btn:active, .navbar-menu > .btn:visited, .navbar-menu > .btn:focus {
-      background: #EBEBEB;
-      text-decoration: none; }
 
 .navbar-user {
   font-size: 16px;
@@ -53,7 +54,7 @@
       text-decoration: none !important; }
 
 .container > .entity-row {
-  border: 1px #C9C9C9 solid !important; }
+  border: 1px #DBDBDB solid !important; }
 
 .entity-title {
   margin: 0 0 10px 0; }
@@ -64,14 +65,14 @@
 
 .entity-row {
   padding: 25px 0 25px 0;
-  border: 1px #C9C9C9 solid; }
+  border: 1px #DBDBDB solid; }
 
 .entity-head {
   padding: 15px;
-  background: #E0E0E0 !important;
-  border-top: 1px #C9C9C9 solid;
-  border-left: 1px #C9C9C9 solid;
-  border-right: 1px #C9C9C9 solid;
+  background: #F0F0F0 !important;
+  border-top: 1px #DBDBDB solid;
+  border-left: 1px #DBDBDB solid;
+  border-right: 1px #DBDBDB solid;
   color: #676767;
   font-size: 14px;
   margin-left: -15px;
@@ -122,12 +123,15 @@ input, textarea {
 
 html, body {
   height: 100%;
-  background: #E3E3E3; }
+  background: #F2F2F2; }
 
 pre {
   padding: 0 !important;
   border: 1px #CDCDCD solid !important;
   border-radius: 0 !important; }
+
+.btn-link-trasparent {
+  background: transparent; }
 
 .hljs {
   padding: 15px !important; }
@@ -137,7 +141,7 @@ pre {
   height: auto !important;
   height: 100%;
   margin-bottom: -50px;
-  background: #E3E3E3; }
+  background: #F2F2F2; }
 
 .brand-logo {
   display: inline;
