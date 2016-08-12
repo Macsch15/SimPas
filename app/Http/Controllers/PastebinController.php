@@ -2,13 +2,13 @@
 
 namespace SimPas\Http\Controllers;
 
+use SimPas\Http\Requests;
+use Illuminate\Support\Facades\Auth;
+use SimPas\Repository\PastebinRecord;
 use SimPas\Http\Requests\StoreRequest;
 use SimPas\Http\Requests\UpdateRequest;
-use SimPas\Http\Requests;
-use SimPas\Repository\PastebinRecord;
-use Auth;
 
-class PastebinController extends ControllerAbstract
+class PastebinController extends Controller
 {
     /**
      * Create pastebin

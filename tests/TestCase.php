@@ -12,7 +12,7 @@ class TestCase extends TestCaseFoundation
      *
      * @var string
      */
-    protected $baseUrl = 'http://localhost';
+    protected $baseUrl = 'http://simpas.dev';
 
     /**
      * Creates the application.

@@ -8,8 +8,8 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class CanSeeTest extends TestCase
 {
-    public function testHttpTest()
+    public function testHttp()
     {
-        // ...
+
     }
 }
