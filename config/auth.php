@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => SimPas\Respository\User::class,
+            'model' => SimPas\Repository\User::class,
         ],
 
         // 'users' => [
@@ -98,6 +98,7 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'email' => 'auth.emails.password',
             'table' => 'password_resets',
             'expire' => 60,
         ],

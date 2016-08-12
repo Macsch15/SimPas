@@ -3,7 +3,7 @@
 namespace SimPas\Http\Requests;
 
 use SimPas\Http\Requests\Request;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 
 class UpdateRequest extends Request
 {
@@ -25,10 +25,8 @@ class UpdateRequest extends Request
     public function rules()
     {
         return [
-            'title' => sprintf('required|max:%d', 
-                config('pastebin.max_title_length')),
-            'content' => sprintf('required|max:%d', 
-                config('pastebin.max_content_length'))
+            'title' => sprintf('required|max:%d', config('pastebin.max_title_length')),
+            'content' => sprintf('required|max:%d', config('pastebin.max_content_length'))
         ];
     }
 }
