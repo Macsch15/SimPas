@@ -3,7 +3,7 @@
 namespace SimPas\Http\Middleware;
 
 use Closure;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use SimPas\Repository\PastebinRecord;
 
 class CanSee

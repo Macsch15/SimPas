@@ -2,9 +2,9 @@
 
 namespace SimPas\Http\Middleware;
 
-use SimPas\Repository\PastebinRecord;
-use Auth;
 use Closure;
+use Illuminate\Support\Facades\Auth;
+use SimPas\Repository\PastebinRecord;
 
 class IsAuthorOfPastebin
 {

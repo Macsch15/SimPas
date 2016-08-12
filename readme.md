@@ -6,7 +6,7 @@
 Archive 0.6: [0.6 branch](https://github.com/Macsch15/SimPas/tree/archive)
 
 ###Requirements
-- PHP 5.6
+- PHP 5.6.4 or later
 - Support for PostgreSQL, MySQL, SQLite or SQL Server
 - Composer and CLI access
 
