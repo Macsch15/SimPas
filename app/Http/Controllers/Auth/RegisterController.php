@@ -2,8 +2,8 @@
 
 namespace SimPas\Http\Controllers\Auth;
 
-use SimPas\User;
 use Validator;
+use SimPas\Repository\User;
 use SimPas\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
