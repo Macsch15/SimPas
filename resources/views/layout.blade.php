@@ -104,7 +104,7 @@
 
     <script src="{{ asset('js/all.js') }}"></script>
     <script>
-        new SimPas().bootSyntaxHighlighting(
+        new SimPas().bootConfirmation(
             '{{ trans('pastebin.delete_confirmation_text') }}',
             '{{ trans('pastebin.button_confirmation_agree') }}',
             '{{ trans('pastebin.button_confirmation_no') }}'
