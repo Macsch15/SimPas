@@ -19,7 +19,7 @@ class PastebinController extends Controller
      */
     public function store(PastebinRecord $record, StoreRequest $request)
     {
-        $record->unique_id = str_random(20);
+        $record->unique_id = str_random(15);
         $record->user_id = Auth::guest() ? 0 : Auth::id();
         $record->title = $request->title;
         $record->content = $request->content;
@@ -42,9 +42,10 @@ class PastebinController extends Controller
      */
     public function show(PastebinRecord $record, $unique_id)
     {
-        return view('pastebin.show', [
-            'entity' => $record->where('unique_id', $unique_id)->first()
-        ]);
+        $record = $record->where('unique_id', $unique_id)->first();
+
+        return view('pastebin.show')
+            ->withEntity($record);
     }
 
     /**
@@ -60,7 +61,8 @@ class PastebinController extends Controller
         $entity = $record->where('unique_id', $unique_id)->first();
         $entity->delete();
 
-        return redirect('/')->with('flash_message', trans('pastebin.successfully_deleted'));
+        return redirect('/')
+            ->with('flash_message', trans('pastebin.successfully_deleted'));
     }
 
     /**
@@ -74,7 +76,9 @@ class PastebinController extends Controller
     {
         $record = $record->where('unique_id', $unique_id)->first();
 
-        return view('pastebin.edit', ['entity' => $record, 'unique_id' => $unique_id]);
+        return view('pastebin.edit')
+            ->withEntity($record)
+            ->withUniqueId($unique_id);
     }
 
     /**
@@ -106,6 +110,6 @@ class PastebinController extends Controller
      */
     public function entities(PastebinRecord $record)
     {
-        return $record->where('user_id', Auth::id())->orderBy('id', 'desc')->get();
+        //
     }
 }
