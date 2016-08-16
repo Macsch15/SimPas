@@ -3,6 +3,8 @@
 #####Fat-free Pastebin Application
 (Version 0.7) *Work in progress...*
 
+![SimPas](https://raw.githubusercontent.com/Macsch15/SimPas/master/image.png)
+
 Archive 0.6: [0.6 branch](https://github.com/Macsch15/SimPas/tree/archive)
 
 ###Requirements
