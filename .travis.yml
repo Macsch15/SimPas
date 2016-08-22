@@ -6,13 +6,12 @@ before_install:
 php:
   - 5.6
   - 7.0
-  - nightly
+  - 7.1
   - hhvm
 
 matrix:
   allow_failures:
     - php: hhvm
-    - php: nightly
 
 before_script:
   - composer install
