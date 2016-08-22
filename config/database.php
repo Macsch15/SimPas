@@ -79,6 +79,19 @@ return [
             'sslmode' => 'prefer',
         ],
 
+        'tests' => [
+            'driver' => env('TEST_DB_CONNECTION', 'pgsql'),
+            'host' => env('TEST_DB_HOST', 'localhost'),
+            'port' => env('TEST_DB_PORT', '5432'),
+            'database' => env('TEST_DB_DATABASE', 'forge'),
+            'username' => env('TEST_DB_USERNAME', 'forge'),
+            'password' => env('TEST_DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'schema' => 'public',
+            'sslmode' => 'prefer',
+        ],
+
     ],
 
     /*
