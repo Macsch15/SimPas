@@ -1,5 +1,3 @@
 @import "application/layout";
-@import "bootstrap3/stylesheets/bootstrap";
-@import "fontawesome/stylesheets/font-awesome";
-@import "bootstrap-social/bootstrap-social";
-@import "bootstrap-utils/awesome-bootstrap-checkbox";
+@import "../../../vendor/twbs/bootstrap/scss/bootstrap";
+@import "../../../vendor/components/font-awesome/scss/font-awesome";

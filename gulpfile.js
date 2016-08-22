@@ -23,7 +23,6 @@ elixir(mix => {
     mix.scripts([
       'jquery.min.js',
       'bootstrap.min.js',
-      'bootstrap-confirmation.min.js',
       'highlight.min.js',
       'simpas.js'
     ]);
