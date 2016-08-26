@@ -56,13 +56,13 @@
 
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                        {{ Form::button('<i class="fa fa-btn fa-sign-in"></i> Login', [
+                        {{ Form::button('<i class="fa fa-key" aria-hidden="true"></i> Login', [
                             'class' => 'btn btn-outline-primary',
                             'type' => 'submit'
                         ])}}
 
                         <a class="btn btn-outline-secondary" href="{{ route('auth.password_reset.form') }}">
-                            {{ trans('auth.reset_password_link_title') }}
+                            <i class="fa fa-life-ring" aria-hidden="true"></i> {{ trans('auth.reset_password_link_title') }}
                         </a>
                     </div>
                 </div>
