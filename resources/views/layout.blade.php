@@ -10,58 +10,53 @@
 </head>
 <body>
     <div class="wrap">
-        <nav class="navbar navbar-default navbar-static-top">
+        <div class="navbar-container">
             <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        <div class="brand-logo">
-                            SimPas
+                <nav class="navbar navbar navbar-static-top">
+                    <div class="navbar-toggleable-xs" id="navbar-header">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="{{ url('/') }}">
+                                <div class="brand-logo">
+                                    SimPas
+                                </div>
+                            </a>
+
+                            @if (Breadcrumb::count())
+                                <ol class="pull-left breadcrumb">
+                                  <span class="breadcrumb-item active">{{ trans('pastebin.breadcrumb_pastebin') }}</span>
+                                  @yield('breadcrumb')
+                                </ol>
+                            @endif              
                         </div>
-                    </a>
 
-                    @if (Breadcrumb::count())
-                        <ol class="pull-left breadcrumb">
-                          <li class="active">{{ trans('pastebin.breadcrumb_pastebin') }}</li>
-                          @yield('breadcrumb')
-                        </ol>
-                    @endif
-
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#user-responsive">
-                        <span class="sr-only">{{ trans('pastebin.toggle_nav') }}</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>                 
-                </div>
-
-                <div id="user-responsive" class="pull-right collapse navbar-collapse">
-                    @if (Auth::guest())
-                        <div class="navbar-guest">
-                            <a class="btn btn-link" href="{{ url('/login') }}"><i class="fa fa-user" aria-hidden="true"></i> {{ trans('pastebin.layout_button_login') }}</a>
-                            <a class="btn btn-link" href="{{ url('/register') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> {{ trans('pastebin.layout_button_register') }}</a>
-                        </div>
-                    @else
-                        <div class="navbar-user">
-                            <img class="user-avatar" width="30" src="//www.gravatar.com/avatar/{{ md5(Auth::user()->email) }}.jpg" alt="Avatar" />
-                            {{ Auth::user()->name }}
-
-                            <div class="pull-right logout-button">
-                                {{ Form::open(['route' => 'auth.logout']) }}
-                                    {{ Form::button('<i class="fa fa-power-off" aria-hidden="true"></i>', [
-                                            'type' => 'submit',
-                                            'class' => 'btn btn-link',
-                                            'data-toggle' => 'tooltip',
-                                            'data-placement' => 'bottom',
-                                            'title' => trans('pastebin.tooltip_logout')
-                                        ]) 
-                                    }}
-                                {{ Form::close() }}
+                        @if (Auth::guest())
+                            <div class="navbar-guest pull-right">
+                                <a class="btn btn-link" href="{{ url('/login') }}"><i class="fa fa-user" aria-hidden="true"></i> {{ trans('pastebin.layout_button_login') }}</a>
+                                <a class="btn btn-link" href="{{ url('/register') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> {{ trans('pastebin.layout_button_register') }}</a>
                             </div>
-                        </div>
-                    @endif
-                </div>
+                        @else
+                            <div class="navbar-user pull-right">
+                                <img class="user-avatar" width="30" src="//www.gravatar.com/avatar/{{ md5(Auth::user()->email) }}.jpg" alt="Avatar" />
+                                {{ Auth::user()->name }}
+
+                                <div class="pull-right logout-button">
+                                    {{ Form::open(['route' => 'auth.logout']) }}
+                                        {{ Form::button('<i class="fa fa-power-off" aria-hidden="true"></i>', [
+                                                'type' => 'submit',
+                                                'class' => 'btn btn-link',
+                                                'data-toggle' => 'tooltip',
+                                                'data-placement' => 'bottom',
+                                                'title' => trans('pastebin.tooltip_logout')
+                                            ])
+                                        }}
+                                    {{ Form::close() }}
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                </nav>
             </div>
-        </nav>
+        </div>
 
         <div class="container container-space">
             <div class="navbar-menu">
@@ -78,14 +73,6 @@
                 </div>
             @endif
 
-            @if (count($errors))
-                @foreach ($errors->all() as $error)
-                    <div class="alert alert-danger">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <strong>{{ trans('pastebin.error_encountered') }}</strong> {{ $error }}
-                    </div>
-                @endforeach
-            @endif
             @yield('content')
         </div>
     </div>
@@ -104,11 +91,7 @@
 
     <script src="{{ asset('js/all.js') }}"></script>
     <script>
-        new SimPas().bootConfirmation(
-            '{{ trans('pastebin.delete_confirmation_text') }}',
-            '{{ trans('pastebin.button_confirmation_agree') }}',
-            '{{ trans('pastebin.button_confirmation_no') }}'
-        );
+        const app = new SimPas();
     </script>
 </body>
 </html>

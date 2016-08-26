@@ -1,1 +1,1 @@
-<li {!! $active ? 'class="active"' : null !!}>{{ $title }}</li>
+<li class="breadcrumb-item{!! $active ? ' active' : '' !!}">{{ $title }}</li>
