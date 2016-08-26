@@ -10,12 +10,7 @@
             ]) }}
 
             <div class="pull-right">
-                <ul>
-                    <li class="checkbox checkbox-success checkbox-circle">
-                        {{ Form::checkbox('disable_syntax_highlighting', null, false, ['id' => 'disable_syntax_highlighting']) }}
-                        {{ Form::label('disable_syntax_highlighting', trans('pastebin.disable_syntax_highlighting')) }}
-                    </li>
-                </ul>
+                {{ Form::customCheckbox('disable_syntax_highlighting', trans('pastebin.disable_syntax_highlighting')) }}
             </div>
         </div>
         <div class="row entity-row">

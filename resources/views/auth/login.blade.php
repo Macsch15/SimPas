@@ -49,8 +49,7 @@
                     <label class="col-sm-2"></label>
                     <div class="col-sm-10">
                         <div class="form-check">
-                            {{ Form::checkbox('remember', null, false, ['id' => 'remember_me']) }}
-                            {{ Form::label('remember_me', trans('auth.remember_me')) }}
+                            {{ Form::customCheckbox('remember_me', trans('auth.remember_me')) }}
                         </div>
                     </div>
                 </div>
