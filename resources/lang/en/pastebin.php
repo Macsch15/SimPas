@@ -30,4 +30,9 @@ return [
     'successfully_deleted' => 'Pastebin successfully deleted',
     'successfully_edited' => 'Pastebin successfully edited',
     'email_example_placeholder' => 'joe@example.com',
+    'error_encountered_title' => 'Error encountered',
+    'not_found_error' => '404 Not Found',
+    'not_found_error_message' => 'Page you are looking for does not exists.',
+    'go_to_index' => 'Go to index',
+
 ];

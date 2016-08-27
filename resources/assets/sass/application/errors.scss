@@ -1,0 +1,24 @@
+.error {
+  text-align: center;
+  padding: 0 0 25px 0;
+
+  & > h5 {
+    padding: 0 0 15px;
+  }
+
+  &-warning {
+    font-size: 86px;
+
+    & > .fa-exclamation-triangle {
+      color: #D3D631;
+    }
+  }
+
+  &-message {
+    font-size: 38px;
+
+    &:after {
+      content: '(｡•́︿•̀｡)';
+    }
+  }
+}

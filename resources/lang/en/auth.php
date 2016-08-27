@@ -29,4 +29,5 @@ return [
     'remember_me' => 'Remember Me',
     'reset_password_link_title' => 'Forgot Your Password?',
     'unauthorized_action' => 'Unauthorized action',
+    'unauthorized_action_message' => 'You does not have permissions to access this resource.',
 ];

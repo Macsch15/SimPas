@@ -121,6 +121,20 @@
   .logout-button > form > .btn:hover {
     color: #5C5C5C !important; }
 
+.error {
+  text-align: center;
+  padding: 0 0 25px 0; }
+  .error > h5 {
+    padding: 0 0 15px; }
+  .error-warning {
+    font-size: 86px; }
+    .error-warning > .fa-exclamation-triangle {
+      color: #D3D631; }
+  .error-message {
+    font-size: 38px; }
+    .error-message:after {
+      content: '(｡•́︿•̀｡)'; }
+
 * {
   outline: 0 !important; }
 
