@@ -12,7 +12,7 @@
                         'class' => 'col-sm-2 col-form-label'
                     ]) }}
                     <div class="col-sm-10">
-                        {{ Form::text('email', null, [
+                        {{ Form::email('email', null, [
                             'class' => 'form-control' . ($errors->has('email') ? ' form-control-warning' : ''),
                             'placeholder' => trans('pastebin.email_example_placeholder'),
                             'id' => 'email'
