@@ -16,16 +16,4 @@ class SimPas
     {
         hljs.initHighlightingOnLoad();
     }
-
-    bootConfirmation(title, labelOk, labelCancel)
-    {
-        $('[data-toggle=confirmation]').confirmation({
-            'title': `<div class="confirmation-text">${title}</div>`,
-            'btnOkLabel': labelOk,
-            'btnCancelLabel': labelCancel,
-            'btnOkClass': 'btn btn-danger',
-            'btnCancelClass': 'btn btn-default',
-            'popout': true
-        });    
-    }
 }

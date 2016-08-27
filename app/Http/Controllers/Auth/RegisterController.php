@@ -40,6 +40,16 @@ class RegisterController extends Controller
     }
 
     /**
+     * Display Terms of Service page
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function termsOfSerivce()
+    {
+        return view('auth.tos');
+    }
+
+    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
@@ -50,7 +60,8 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|min:8|max:75|confirmed',
+            'tos' => 'required'
         ]);
     }
 

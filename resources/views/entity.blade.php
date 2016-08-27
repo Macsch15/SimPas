@@ -14,8 +14,8 @@
             <ul>
                 <li><i class="fa fa-lg fa-code" aria-hidden="true"></i></li>
                 <li><i class="fa fa-lg fa-retweet" aria-hidden="true"></i></li>
-                <li><span class="glyphicon glyphicon-cloud-download fa-lg"></span></li>
-                <li class="favorite"><i class="fa fa-lg fa-heart" aria-hidden="true"></i></li>
+                <li><i class="fa fa-lg fa-cloud-download" aria-hidden="true"></i></li>
+                <li><i class="fa fa-lg fa-heart" aria-hidden="true"></i></li>
                 @if ($entity->isAuthor() === true)
                 <li data-toggle="tooltip" data-placement="bottom" title="{{ trans('pastebin.tooltip_edit') }}">
                     <a href="{{ route('pastebin.edit', ['unique_id' => $entity->unique_id]) }}">
@@ -25,8 +25,9 @@
                 <li class="trash">
                     {{ Form::open(['url' => route('pastebin.delete', ['unique_id' => $entity->unique_id]), 'method' => 'delete']) }}
                         {{ Form::button('<i class="fa fa-lg fa-trash" aria-hidden="true"></i>', [
-                                'data-toggle' => 'confirmation',
+                                'data-toggle' => 'tooltip',
                                 'data-placement' => 'bottom',
+                                'title' => trans('pastebin.toolip_delete'),
                                 'type' => 'submit',
                                 'class' => 'form-control'
                             ]) 
@@ -39,7 +40,7 @@
     </div>
 
     <div class="row entity-row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12 col-md-offset-1">
             <h2 class="entity-title"> 
                 <span class="visibility">
                     <i class="fa {{ $entity->is_private ? 'fa-lock' : 'fa-unlock-alt' }}" aria-hidden="true"></i>

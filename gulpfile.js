@@ -22,6 +22,7 @@ elixir(mix => {
 
     mix.scripts([
       'jquery.min.js',
+      'tether.min.js',
       'bootstrap.min.js',
       'highlight.min.js',
       'simpas.js'

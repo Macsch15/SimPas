@@ -61,3 +61,6 @@ Route::post('password/email', 'Auth\ResetPasswordController@sendResetLinkEmail')
 
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')
     ->name('auth.password_reset.password');
+
+Route::get('terms-of-service', 'Auth\RegisterController@termsOfSerivce')
+    ->name('auth.tos');

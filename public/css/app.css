@@ -1,19 +1,27 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Raleway&subset=latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Hind+Siliguri:400,700&subset=latin-ext);
 .navbar-brand {
   font-size: 24px !important;
   font-weight: normal !important; }
 
 .row {
   background: #fff;
-  padding: 25px 0 25px 0; }
+  padding: 10px 0 0 0; }
+
+.row-border {
+  border: 1px #DBDBDB solid; }
 
 .breadcrumb {
   margin: 0 !important;
+  padding: 10px !important;
   background: #fff !important; }
 
 .navbar {
-  padding: 16px 0 16px 0; }
+  padding: 16px 0 16px 0;
+  background: #fff; }
+
+.navbar-container {
+  background: #fff; }
 
 .navbar-default {
   border: none !important; }
@@ -29,8 +37,6 @@
       border-bottom: 1px #337ab7 solid;
       text-decoration: none;
       color: #5C5C5C; }
-      .navbar-menu > .btn:hover > .fa-heart, .navbar-menu > .btn:focus > .fa-heart {
-        color: #99D46C; }
 
 .navbar-user {
   font-size: 16px;
@@ -118,8 +124,8 @@
 * {
   outline: 0 !important; }
 
-input, textarea {
-  font-family: 'Consolas' !important; }
+input, textarea, code {
+  font-family: 'Fira Code', 'Consolas' !important; }
 
 html, body {
   height: 100%;
@@ -140,7 +146,7 @@ pre {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin-bottom: -50px;
+  margin-bottom: -54px;
   background: #F2F2F2; }
 
 .brand-logo {
@@ -425,7 +431,7 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Hind Siliguri", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   color: #373a3c;
@@ -2943,7 +2949,7 @@ input[type="button"].btn-block {
     clear: both; }
   @media (min-width: 544px) {
     .navbar {
-      border-radius: 0.25rem; } }
+      border-radius: 0; } }
 
 .navbar-full {
   z-index: 1000; }
@@ -4082,7 +4088,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Raleway", sans-serif;
+  font-family: "Hind Siliguri", sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -4161,7 +4167,7 @@ button.close {
   display: block;
   max-width: 276px;
   padding: 1px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Hind Siliguri", sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
