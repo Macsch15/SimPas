@@ -6,6 +6,7 @@
     <div class="row row-border">
         <div class="col-md-12 col-md-offset-2">
             <h4>{{ trans('auth.login') }}</h5>
+
             {{ Form::open(['url' => route('auth.login.form')]) }}
                 <div class="form-group row{{ $errors->has('email') ? ' has-warning' : '' }}">
                     {{ Form::label('email', trans('auth.email'), [
@@ -56,7 +57,7 @@
 
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                        {{ Form::button('<i class="fa fa-key" aria-hidden="true"></i> Login', [
+                        {{ Form::button('<i class="fa fa-key" aria-hidden="true"></i> ' . trans('auth.login'), [
                             'class' => 'btn btn-outline-primary',
                             'type' => 'submit'
                         ])}}
