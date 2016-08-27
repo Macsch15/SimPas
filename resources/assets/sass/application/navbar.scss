@@ -1,5 +1,10 @@
 .navbar {
   padding: 16px 0 16px 0;
+  background: #fff;
+}
+
+.navbar-container {
+  background: #fff;
 }
 
 .navbar-default {
@@ -16,10 +21,6 @@
 
     &:hover,
     &:focus {
-      & > .fa-heart {
-        color: #99D46C;
-      }
-
       background: #fff;
       border-bottom: 1px #337ab7 solid;
       text-decoration: none;

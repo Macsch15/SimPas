@@ -178,6 +178,7 @@ return [
         SimPas\Providers\RouteServiceProvider::class,
         SimPas\Providers\CarbonServiceProvider::class,
         SimPas\Providers\BreadcrumbServiceProvider::class,
+        SimPas\Providers\FormServiceProvider::class,
 
     ],
 
