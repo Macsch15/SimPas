@@ -20,6 +20,10 @@ class CanSee
         $unique_id = $request->route()->bindParameters($request)['unique_id'];
         $entity = PastebinRecord::where('unique_id', $unique_id)->first();
 
+        if (!$entity) {
+            abort(404);
+        }
+
         if ($entity->is_private === true && $entity->user_id !== 0) {
             if (Auth::guest() === true) {
                 abort(403);

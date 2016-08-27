@@ -20,6 +20,10 @@ class IsAuthorOfPastebin
         $unique_id = $request->route()->bindParameters($request)['unique_id'];
         $entity = PastebinRecord::where('unique_id', $unique_id)->first();
 
+        if (!$entity) {
+            abort(404);
+        }
+
         if (Auth::id() !== $entity->user_id) {
             return abort(403);
         }
