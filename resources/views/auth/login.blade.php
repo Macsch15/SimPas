@@ -62,6 +62,9 @@
                             'type' => 'submit'
                         ])}}
 
+                        <a class="btn btn-outline-secondary" href="{{ route('auth.register.form') }}">
+                            <i class="fa fa-user-plus" aria-hidden="true"></i> {{ trans('auth.register') }}
+                        </a>
                         <a class="btn btn-outline-secondary" href="{{ route('auth.password_reset.form') }}">
                             <i class="fa fa-life-ring" aria-hidden="true"></i> {{ trans('auth.reset_password_link_title') }}
                         </a>

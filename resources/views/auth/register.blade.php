@@ -109,6 +109,10 @@
                             'class' => 'btn btn-outline-primary',
                             'type' => 'submit'
                         ])}}
+
+                        <a class="btn btn-outline-secondary" href="{{ route('auth.login.form') }}">
+                            <i class="fa fa-key" aria-hidden="true"></i> {{ trans('auth.login') }}
+                        </a>                        
                     </div>
                 </div>
             {{ Form::close() }}

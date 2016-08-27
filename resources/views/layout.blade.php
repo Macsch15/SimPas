@@ -31,8 +31,12 @@
 
                         @if (Auth::guest())
                             <div class="navbar-guest pull-right">
-                                <a class="btn btn-link" href="{{ url('/login') }}"><i class="fa fa-user" aria-hidden="true"></i> {{ trans('pastebin.layout_button_login') }}</a>
-                                <a class="btn btn-link" href="{{ url('/register') }}"><i class="fa fa-sign-in" aria-hidden="true"></i> {{ trans('pastebin.layout_button_register') }}</a>
+                                <a class="btn btn-link" href="{{ url('/login') }}">
+                                    <i class="fa fa-key" aria-hidden="true"></i> {{ trans('pastebin.layout_button_login') }}
+                                </a>
+                                <a class="btn btn-link" href="{{ url('/register') }}">
+                                    <i class="fa fa-user-plus" aria-hidden="true"></i> {{ trans('pastebin.layout_button_register') }}
+                                </a>
                             </div>
                         @else
                             <div class="navbar-user pull-right">
@@ -60,7 +64,6 @@
 
         <div class="container container-space">
             <div class="navbar-menu">
-                <a href="{{ url('/') }}" class="btn btn-link"><i class="fa fa-home" aria-hidden="true"></i> {{ trans('pastebin.homepage') }}</a>
                 <a href="#" class="btn btn-link"><i class="fa fa-list-alt" aria-hidden="true"></i> {{ trans('pastebin.last_activity') }}</a>
                 <a href="#" class="btn btn-link"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('pastebin.favorites') }}</a>
                 <a href="#" class="btn btn-link"><i class="fa fa-user" aria-hidden="true"></i> My pastebin</a>
