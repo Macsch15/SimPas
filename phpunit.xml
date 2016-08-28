@@ -27,8 +27,5 @@
         <env name="SESSION_DRIVER" value="array"/>
         <env name="QUEUE_DRIVER" value="sync"/>
         <env name="DB_CONNECTION" value="tests"/>
-        <env name="TEST_DB_DATABASE" value="travis_ci_test"/>
-        <env name="TEST_DB_USERNAME" value="postgres"/>
-        <env name="TEST_DB_PASSWORD" value=""/>
     </php>
 </phpunit>
