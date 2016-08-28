@@ -1,8 +1,12 @@
 language: php
 
+services:
+  - postgresql
+
 before_install:
   - composer self-update
   - cp .env.example .env
+  - psql -c 'create database travis_ci_test;' -U postgres
 
 php:
   - 5.6
@@ -19,4 +23,6 @@ install:
 
 script:
   - php artisan key:generate
+  - php artisan migrate
+  - php artisan db:seed
   - phpunit --verbose
