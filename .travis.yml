@@ -1,12 +1,12 @@
 language: php
 
-addons:
-  postgresql: "9.4"
+services:
+  - mysql
 
 before_install:
   - composer self-update
   - cp .env.example .env
-  - psql -c 'create database travis_ci_test;' -U postgres
+  - mysql -e 'create database simpas_tests;'
 
 php:
   - 5.6
