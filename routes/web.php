@@ -64,3 +64,6 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')
 
 Route::get('terms-of-service', 'Auth\RegisterController@termsOfSerivce')
     ->name('auth.tos');
+
+Route::get('activity', 'PastebinController@activity')
+    ->name('pastebin.activity');

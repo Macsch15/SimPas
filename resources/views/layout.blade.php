@@ -64,9 +64,15 @@
 
         <div class="container container-space">
             <div class="navbar-menu">
-                <a href="#" class="btn btn-link"><i class="fa fa-list-alt" aria-hidden="true"></i> {{ trans('pastebin.last_activity') }}</a>
-                <a href="#" class="btn btn-link"><i class="fa fa-heart" aria-hidden="true"></i> {{ trans('pastebin.favorites') }}</a>
-                <a href="#" class="btn btn-link"><i class="fa fa-user" aria-hidden="true"></i> My pastebin</a>
+                <a href="{{ route('pastebin.activity') }}" class="btn btn-link">
+                    <i class="fa fa-list-alt" aria-hidden="true"></i> {{ trans('pastebin.last_activity') }}
+                </a>
+                <a href="#" class="btn btn-link">
+                    <i class="fa fa-heart" aria-hidden="true"></i> {{ trans('pastebin.favorites') }}
+                </a>
+                <a href="#" class="btn btn-link">
+                    <i class="fa fa-user" aria-hidden="true"></i> My pastebin
+                </a>
             </div>
 
             @if(Session::has('flash_message'))
