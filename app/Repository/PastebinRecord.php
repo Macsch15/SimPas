@@ -29,9 +29,9 @@ class PastebinRecord extends Model
     /**
      * Check if pastebin is edited
      *
-     * @return bool|Illuminate\Database\Eloquent\Builder
+     * @return bool
      */
-    public function scopeIsEdited()
+    public function isEdited()
     {
         return $this->created_at->getTimestamp() !== $this->updated_at->getTimestamp();
     }
@@ -39,10 +39,20 @@ class PastebinRecord extends Model
     /**
      * Check if current user is author of pastebin
      *
-     * @return bool|Illuminate\Database\Eloquent\Builder
+     * @return bool
      */
-    public function scopeIsAuthor()
+    public function isAuthor()
     {
         return Auth::check() && Auth::id() === $this->user_id;
+    }
+
+    /**
+     * Check if pastebin is created by user
+     *
+     * @return bool
+     */
+    public function createdByUser()
+    {
+        return $this->user_id !== 0;
     }
 }

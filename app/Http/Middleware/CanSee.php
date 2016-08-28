@@ -29,7 +29,7 @@ class CanSee
                 abort(403);
             }
 
-            if (Auth::id() === $entity->user_id) {
+            if ($entity->isAuthor()) {
                 return $next($request);
             }
 

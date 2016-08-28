@@ -24,7 +24,7 @@ class IsAuthorOfPastebin
             abort(404);
         }
 
-        if (Auth::id() !== $entity->user_id) {
+        if (!$entity->isAuthor()) {
             return abort(403);
         }
 
