@@ -2,6 +2,7 @@ language: php
 
 before_install:
   - composer self-update
+  - cp .env.example .env
 
 php:
   - 5.6
