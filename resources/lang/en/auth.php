@@ -21,7 +21,7 @@ return [
     'tos_title' => 'Terms of Service',
     'name' => 'Name',
     'password_confirmation' => 'Confirm password',
-    'password_help_text' => 'Passwords must be at least 8 characters. Case sensitive. Strong passwords include special characters (@, ?, $ etc.). Avoid common words and names',
+    'password_help_text' => 'Password must be at least 8 characters. Case sensitive. Strong passwords include special characters (@, ?, $ etc.). Avoid common words and names',
     'tos' => 'I agree to the <a href=":tos_url">Terms of Use</a>',
     'name_example_placeholder' => 'Joe Stroman',
     'email' => 'E-Mail Address',
