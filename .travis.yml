@@ -17,4 +17,5 @@ before_script:
   - composer install
 
 script:
+  - php artisan key:generate
   - phpunit --verbose
