@@ -15,7 +15,7 @@ $factory->define(\SimPas\Repository\User::class, function (Faker\Generator $fake
     return [
         'name' => $faker->name,
         'email' => $faker->safeEmail,
-        'password' => bcrypt(str_random(10)),
+        'password' => '$2y$10$ubBu6t8pMAtLriTy8WI0P./6jAzNPuoKDTJcCixY9Qbyl9VNk9R8W',
         'remember_token' => str_random(10),
     ];
 });
