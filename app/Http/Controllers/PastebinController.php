@@ -2,19 +2,19 @@
 
 namespace SimPas\Http\Controllers;
 
-use SimPas\Http\Requests;
 use Illuminate\Support\Facades\Auth;
-use SimPas\Repository\PastebinRecord;
 use SimPas\Http\Requests\StoreRequest;
 use SimPas\Http\Requests\UpdateRequest;
+use SimPas\Repository\PastebinRecord;
 
 class PastebinController extends Controller
 {
     /**
-     * Create pastebin
+     * Create pastebin.
      *
-     * @param SimPas\PastebinRecord $record
+     * @param SimPas\PastebinRecord             $record
      * @param SimPas\Http\Requests\StoreRequest $request
+     *
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function store(PastebinRecord $record, StoreRequest $request)
@@ -29,15 +29,16 @@ class PastebinController extends Controller
         $record->save();
 
         return redirect()->route('pastebin.show', [
-            'unique_id' => $record->find($record->id)['unique_id']
+            'unique_id' => $record->find($record->id)['unique_id'],
         ]);
     }
 
     /**
-     * Show pastebin
+     * Show pastebin.
      *
      * @param SimPas\PastebinRecord $record
-     * @param string $unique_id
+     * @param string                $unique_id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(PastebinRecord $record, $unique_id)
@@ -49,11 +50,13 @@ class PastebinController extends Controller
     }
 
     /**
-     * Delete pastebin
+     * Delete pastebin.
      *
      * @param SimPas\PastebinRecord $record
-     * @param string $unique_id
+     * @param string                $unique_id
+     *
      * @throws \Exception
+     *
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function delete(PastebinRecord $record, $unique_id)
@@ -66,10 +69,11 @@ class PastebinController extends Controller
     }
 
     /**
-     * Show edit form
+     * Show edit form.
      *
      * @param SimPas\PastebinRecord $record
-     * @param string $unique_id
+     * @param string                $unique_id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(PastebinRecord $record, $unique_id)
@@ -82,11 +86,12 @@ class PastebinController extends Controller
     }
 
     /**
-     * Update pastebin record in the database
+     * Update pastebin record in the database.
      *
-     * @param SimPas\PastebinRecord $record
+     * @param SimPas\PastebinRecord              $record
      * @param SimPas\Http\Requests\UpdateRequest $request
-     * @param string $unique_id
+     * @param string                             $unique_id
+     *
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function update(PastebinRecord $record, UpdateRequest $request, $unique_id)
@@ -98,14 +103,15 @@ class PastebinController extends Controller
         $record->save();
 
         return redirect()->route('pastebin.show', [
-            'unique_id' => $unique_id
+            'unique_id' => $unique_id,
         ])->with('flash_message', trans('pastebin.successfully_edited'));
     }
 
     /**
-     * Show last activity
+     * Show last activity.
      *
      * @param SimPas\PastebinRecord $record
+     *
      * @return \Illuminate\Http\Response
      */
     public function activity(PastebinRecord $record)
@@ -120,9 +126,10 @@ class PastebinController extends Controller
     }
 
     /**
-     * Show entities for user
+     * Show entities for user.
      *
      * @param SimPas\PastebinRecord $record
+     *
      * @return \Illuminate\Http\Response
      */
     public function entities(PastebinRecord $record)

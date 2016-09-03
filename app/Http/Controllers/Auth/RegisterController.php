@@ -2,10 +2,10 @@
 
 namespace SimPas\Http\Controllers\Auth;
 
-use Validator;
-use SimPas\Repository\User;
-use SimPas\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use SimPas\Http\Controllers\Controller;
+use SimPas\Repository\User;
+use Validator;
 
 class RegisterController extends Controller
 {
@@ -40,7 +40,7 @@ class RegisterController extends Controller
     }
 
     /**
-     * Display Terms of Service page
+     * Display Terms of Service page.
      *
      * @return \Illuminate\Http\Response
      */
@@ -52,30 +52,32 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'name'     => 'required|max:255',
+            'email'    => 'required|email|max:255|unique:users',
             'password' => 'required|min:8|confirmed',
-            'tos' => 'required'
+            'tos'      => 'required',
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return User
      */
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'name'     => $data['name'],
+            'email'    => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
     }

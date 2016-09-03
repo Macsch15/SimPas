@@ -15,11 +15,11 @@ class FormServiceProvider extends ServiceProvider
     public function boot()
     {
         Form::component('customCheckbox', 'components.form.custom_checkbox', [
-            'name', 'label', 'checked'
+            'name', 'label', 'checked',
         ]);
 
         Form::component('customRadio', 'components.form.custom_radio', [
-            'name', 'label', 'checked'
+            'name', 'label', 'checked',
         ]);
     }
 

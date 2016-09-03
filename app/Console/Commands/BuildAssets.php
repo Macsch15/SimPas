@@ -45,7 +45,7 @@ class BuildAssets extends Command
     }
 
     /**
-     * Build fonts
+     * Build fonts.
      *
      * @return void
      */
@@ -58,27 +58,26 @@ class BuildAssets extends Command
         }
 
         $directories = collect([
-            base_path('/vendor/components/font-awesome/fonts') => $fonts_path
+            base_path('/vendor/components/font-awesome/fonts') => $fonts_path,
             // ...
         ]);
 
         $directories->each(function ($target, $source) {
-            File::copyDirectory($source, $target);  
+            File::copyDirectory($source, $target);
         });
 
         $this->comment('Building fonts...');
     }
 
     /**
-     * Build javascript
+     * Build javascript.
      *
      * @return void
      */
     private function buildJs()
     {
         $js_files = collect([
-            base_path('vendor/twbs/bootstrap/dist/js/bootstrap.min.js')
-                => base_path('resources/assets/js/bootstrap.min.js')
+            base_path('vendor/twbs/bootstrap/dist/js/bootstrap.min.js') => base_path('resources/assets/js/bootstrap.min.js'),
             // ...
         ]);
 

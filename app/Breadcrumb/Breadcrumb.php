@@ -10,11 +10,12 @@ class Breadcrumb
     private $breadcrumb;
 
     /**
-     * Push link into breadcrumb
+     * Push link into breadcrumb.
      *
      * @param string $title
      * @param string $url
-     * @param bool $active
+     * @param bool   $active
+     *
      * @return \Illuminate\Http\Response
      */
     public function push($title, $url = null, $active = false)
@@ -22,8 +23,8 @@ class Breadcrumb
         $this->breadcrumb[] = $title;
 
         $render = collect([
-            'title' => $title,
-            'active' => $active
+            'title'  => $title,
+            'active' => $active,
         ]);
 
         if ($url === null) {
@@ -36,9 +37,9 @@ class Breadcrumb
     }
 
     /**
-     * Count breadcrumbs
+     * Count breadcrumbs.
      *
-     * @return integer
+     * @return int
      */
     public function count()
     {

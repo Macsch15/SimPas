@@ -3,8 +3,8 @@
 namespace SimPas\Providers;
 
 use App;
-use SimPas\Breadcrumb\Breadcrumb;
 use Illuminate\Support\ServiceProvider;
+use SimPas\Breadcrumb\Breadcrumb;
 
 class BreadcrumbServiceProvider extends ServiceProvider
 {
@@ -25,7 +25,7 @@ class BreadcrumbServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        App::bind('breadcrumb', function() {
+        App::bind('breadcrumb', function () {
             return new Breadcrumb();
         });
     }

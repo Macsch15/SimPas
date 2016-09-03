@@ -2,8 +2,8 @@
 
 namespace SimPas\Http\Controllers\Auth;
 
-use SimPas\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use SimPas\Http\Controllers\Controller;
 
 class ForgotPasswordController extends Controller
 {

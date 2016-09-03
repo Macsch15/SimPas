@@ -4,10 +4,10 @@ namespace SimPas\Breadcrumb\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class Breadcrumb extends Facade 
+class Breadcrumb extends Facade
 {
     /**
-     * {@inherindoc}
+     * {@inherindoc}.
      */
     protected static function getFacadeAccessor()
     {
