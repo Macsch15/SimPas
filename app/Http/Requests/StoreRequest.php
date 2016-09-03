@@ -2,8 +2,6 @@
 
 namespace SimPas\Http\Requests;
 
-use SimPas\Http\Requests\Request;
-
 class StoreRequest extends Request
 {
     /**
@@ -24,7 +22,7 @@ class StoreRequest extends Request
     public function rules()
     {
         $rules = collect([
-            'title' => sprintf('required|max:%d', config('pastebin.max_title_length')),
+            'title'   => sprintf('required|max:%d', config('pastebin.max_title_length')),
             'content' => sprintf('required|max:%d', config('pastebin.max_content_length')),
         ]);
 

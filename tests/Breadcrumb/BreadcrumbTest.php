@@ -3,9 +3,6 @@
 namespace SimPas\Tests;
 
 use SimPas\Breadcrumb\Facades\Breadcrumb;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 
 class BreadcrumbTest extends TestCase
 {
@@ -42,9 +39,9 @@ class BreadcrumbTest extends TestCase
             ->getData();
 
         $expected = [
-            'title' => 'Hello',
+            'title'  => 'Hello',
             'active' => false,
-            'url' => '/hello'
+            'url'    => '/hello',
         ];
 
         $this->assertSame($breadcrumb, $expected);
@@ -56,12 +53,12 @@ class BreadcrumbTest extends TestCase
             ->getData();
 
         $expected = [
-            'title' => 'Hello',
+            'title'  => 'Hello',
             'active' => true,
-            'url' => '/hello'
+            'url'    => '/hello',
         ];
 
-        $this->assertSame($breadcrumb, $expected);     
+        $this->assertSame($breadcrumb, $expected);
     }
 
     public function testBreadcrumbTemplateUrl()
@@ -69,7 +66,7 @@ class BreadcrumbTest extends TestCase
         $breadcrumb = Breadcrumb::push('Hello', '/hello')
             ->getName();
 
-        $this->assertSame('partials.breadcrumb.url', $breadcrumb);       
+        $this->assertSame('partials.breadcrumb.url', $breadcrumb);
     }
 
     public function testBreadcrumbTemplateText()
@@ -77,6 +74,6 @@ class BreadcrumbTest extends TestCase
         $breadcrumb = Breadcrumb::push('Hello')
             ->getName();
 
-        $this->assertSame('partials.breadcrumb.text', $breadcrumb);       
+        $this->assertSame('partials.breadcrumb.text', $breadcrumb);
     }
 }

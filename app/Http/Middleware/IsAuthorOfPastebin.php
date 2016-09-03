@@ -3,7 +3,6 @@
 namespace SimPas\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
 use SimPas\Repository\PastebinRecord;
 
 class IsAuthorOfPastebin
@@ -11,8 +10,9 @@ class IsAuthorOfPastebin
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)

@@ -2,8 +2,8 @@
 
 namespace SimPas\Repository;
 
-use Illuminate\Database\Eloquent\Model;
 use Auth;
+use Illuminate\Database\Eloquent\Model;
 
 class PastebinRecord extends Model
 {
@@ -13,11 +13,11 @@ class PastebinRecord extends Model
      * @var array
      */
     protected $fillable = [
-        'unique_id', 'user_id', 'title', 'content'
+        'unique_id', 'user_id', 'title', 'content',
     ];
 
     /**
-     * Get author of pastebin
+     * Get author of pastebin.
      *
      * @return SimPas\Repository\User
      */
@@ -27,7 +27,7 @@ class PastebinRecord extends Model
     }
 
     /**
-     * Check if pastebin is edited
+     * Check if pastebin is edited.
      *
      * @return bool
      */
@@ -37,7 +37,7 @@ class PastebinRecord extends Model
     }
 
     /**
-     * Check if current user is author of pastebin
+     * Check if current user is author of pastebin.
      *
      * @return bool
      */
@@ -47,7 +47,7 @@ class PastebinRecord extends Model
     }
 
     /**
-     * Check if pastebin is created by user
+     * Check if pastebin is created by user.
      *
      * @return bool
      */

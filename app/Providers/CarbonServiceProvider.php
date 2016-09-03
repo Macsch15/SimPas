@@ -2,8 +2,8 @@
 
 namespace SimPas\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Carbon\Carbon;
+use Illuminate\Support\ServiceProvider;
 
 class CarbonServiceProvider extends ServiceProvider
 {
@@ -28,7 +28,7 @@ class CarbonServiceProvider extends ServiceProvider
     }
 
     /**
-     * Set locale for Carbon
+     * Set locale for Carbon.
      *
      * @return void
      */
