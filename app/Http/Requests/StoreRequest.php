@@ -21,15 +21,9 @@ class StoreRequest extends Request
      */
     public function rules()
     {
-        $rules = collect([
+        return [
             'title'   => sprintf('required|max:%d', config('pastebin.max_title_length')),
             'content' => sprintf('required|max:%d', config('pastebin.max_content_length')),
-        ]);
-
-        if (config('recaptcha.enabled') === true) {
-            $rules->put('g-recaptcha-response', 'required|recaptcha');
-        }
-
-        return $rules->all();
+        ];
     }
 }
