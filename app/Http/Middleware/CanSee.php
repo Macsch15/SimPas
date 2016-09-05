@@ -18,8 +18,8 @@ class CanSee
      */
     public function handle($request, Closure $next)
     {
-        $unique_id = $request->route()->bindParameters($request)['unique_id'];
-        $entity = PastebinRecord::where('unique_id', $unique_id)->first();
+        $uniqueId = $request->route()->bindParameters($request)['unique_id'];
+        $entity = PastebinRecord::where('unique_id', $uniqueId)->first();
 
         if (!$entity) {
             abort(404);
