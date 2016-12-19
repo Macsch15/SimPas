@@ -3,7 +3,7 @@
 namespace SimPas\Http\Middleware;
 
 use Closure;
-use SimPas\Repository\PastebinRecord;
+use SimPas\Models\PastebinRecord;
 
 class IsAuthorOfPastebin
 {

@@ -4,7 +4,7 @@ namespace SimPas\Http\Controllers\Auth;
 
 use Illuminate\Foundation\Auth\RegistersUsers;
 use SimPas\Http\Controllers\Controller;
-use SimPas\Repository\User;
+use SimPas\Models\User;
 use Validator;
 
 class RegisterController extends Controller

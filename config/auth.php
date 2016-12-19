@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model'  => \SimPas\Repository\User::class,
+            'model'  => \SimPas\Models\User::class,
         ],
 
         // 'users' => [

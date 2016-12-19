@@ -5,7 +5,7 @@ namespace SimPas\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use SimPas\Http\Requests\StoreRequest;
 use SimPas\Http\Requests\UpdateRequest;
-use SimPas\Repository\PastebinRecord;
+use SimPas\Models\PastebinRecord;
 
 class PastebinController extends Controller
 {

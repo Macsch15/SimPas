@@ -4,7 +4,7 @@ namespace SimPas\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
-use SimPas\Repository\PastebinRecord;
+use SimPas\Models\PastebinRecord;
 
 class CanSee
 {
