@@ -1,4 +1,4 @@
-#SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.svg?branch=master)](https://travis-ci.org/Macsch15/SimPas) [![StyleCI](https://styleci.io/repos/16285783/shield)](https://styleci.io/repos/16285783)
+#SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.svg?branch=master)](https://travis-ci.org/Macsch15/SimPas)
 
 #####Fat-free Pastebin Application
 (Version 0.7) *Work in progress...*
