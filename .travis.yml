@@ -8,6 +8,9 @@ before_install:
   - cp .env.example .env
   - mysql -e 'create database simpas_tests;'
 
+before_script:
+  - npm install -g gulp
+
 php:
   - 5.6
   - 7.0
