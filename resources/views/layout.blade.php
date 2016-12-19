@@ -100,7 +100,7 @@
 
     <script src="{{ asset('js/all.js') }}"></script>
     <script>
-        const app = new SimPas();
+        var app = new SimPas();
     </script>
 </body>
 </html>

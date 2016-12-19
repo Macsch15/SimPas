@@ -25,8 +25,6 @@ class BreadcrumbServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        App::bind('breadcrumb', function () {
-            return new Breadcrumb();
-        });
+        App::bind('breadcrumb', Breadcrumb::class);
     }
 }
