@@ -53,10 +53,6 @@ class BuildAssets extends Command
     {
         $fonts_path = base_path('/public/fonts');
 
-        if (File::exists($fonts_path)) {
-            File::deleteDirectory($fonts_path);
-        }
-
         $directories = collect([
             base_path('/vendor/components/font-awesome/fonts') => $fonts_path,
             // ...
