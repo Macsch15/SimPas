@@ -71,7 +71,7 @@
                     <i class="fa fa-heart" aria-hidden="true"></i> {{ trans('pastebin.favorites') }}
                 </a>
                 <a href="#" class="btn btn-link">
-                    <i class="fa fa-user" aria-hidden="true"></i> My pastebin
+                    <i class="fa fa-user-circle" aria-hidden="true"></i> My pastebin
                 </a>
             </div>
 

@@ -31,7 +31,6 @@
                         @endif                        
                     </div>
                 </div>
-
                 <div class="form-group row{{ $errors->has('content') ? ' has-warning' : '' }}">
                     <div class="col-sm-12">
                         {{ Form::textarea('content', null, [
@@ -71,7 +70,7 @@
                     </div>
                 @endif
 
-                {{ Form::button('<span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> ' . trans('pastebin.save_as'), [
+                {{ Form::button('<i class="fa fa-cloud-upload" aria-hidden="true"></i> ' . trans('pastebin.save_as'), [
                         'disabled',
                         'class' => 'btn btn-lg btn-link-trasparent pull-right'
                     ])
