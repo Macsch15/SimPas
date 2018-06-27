@@ -1,30 +1,21 @@
 #SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.svg?branch=master)](https://travis-ci.org/Macsch15/SimPas)
 
 #####Fat-free Pastebin Application
-(Version 0.7) *Work in progress...*
+*Work in progress...*
 
 ![SimPas](https://raw.githubusercontent.com/Macsch15/SimPas/master/image.png)
 
 Archive 0.6: [0.6 branch](https://github.com/Macsch15/SimPas/tree/archive)
 
-###Requirements
-- PHP 5.6.4 or later
-- Support for PostgreSQL, MySQL, SQLite or SQL Server
-- Composer and CLI access
-
-###Downloading and installing
-```
-$ git clone https://github.com/Macsch15/SimPas.git
-$ cd SimPas
-$ composer install
-$ php artisan migrate
-```
-
-**Remember!** Configure database connection in **.env** before fire ```php artisan migrate```.
+## Author
+**Maciej Schmidt**
+- [:fa-home: Homepage](http://www.macsch15.pl/ "Homepage")
+- [:fa-twitter: Twitter](https://twitter.com/Macsch15 "Twitter")
+- [:fa-heart: Donate with PayPal](https://www.paypal.me/MaciejSchmidt "Donate with PayPal")
 
 ###MIT Licence
 
-Copyright (c) 2016 Maciej Schmidt
+Copyright (c) 2018 Maciej Schmidt
 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
 of this software and associated documentation files (the "Software"), to deal
