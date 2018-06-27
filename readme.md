@@ -1,6 +1,6 @@
-#SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.svg?branch=master)](https://travis-ci.org/Macsch15/SimPas)
+# SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.svg?branch=master)](https://travis-ci.org/Macsch15/SimPas)
 
-#####Fat-free Pastebin Application
+#### Fat-free Pastebin Application
 *Work in progress...*
 
 ![SimPas](https://raw.githubusercontent.com/Macsch15/SimPas/master/image.png)
@@ -9,11 +9,11 @@ Archive 0.6: [0.6 branch](https://github.com/Macsch15/SimPas/tree/archive)
 
 ## Author
 **Maciej Schmidt**
-- [:fa-home: Homepage](http://www.macsch15.pl/ "Homepage")
-- [:fa-twitter: Twitter](https://twitter.com/Macsch15 "Twitter")
-- [:fa-heart: Donate with PayPal](https://www.paypal.me/MaciejSchmidt "Donate with PayPal")
+- [Homepage](http://www.macsch15.pl/ "Homepage")
+- [Twitter](https://twitter.com/Macsch15 "Twitter")
+- [Donate with PayPal](https://www.paypal.me/MaciejSchmidt "Donate with PayPal")
 
-###MIT Licence
+## MIT Licence
 
 Copyright (c) 2018 Maciej Schmidt
 
