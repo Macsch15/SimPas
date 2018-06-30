@@ -7,6 +7,20 @@
 
 Archive 0.6: [0.6 branch](https://github.com/Macsch15/SimPas/tree/archive)
 
+### Requirements
+- PHP >= 7.1.3
+- OpenSSL PHP Extension
+- PDO PHP Extension
+- Mbstring PHP Extension
+- Tokenizer PHP Extension
+- XML PHP Extension
+- Ctype PHP Extension
+- JSON PHP Extension
+- Support for PostgreSQL, MySQL, SQLite or SQL Server
+- Composer and Command Line Interface (CLI) access
+- (optional-dev) Git
+- (optional-dev) Node.js (with NPM)
+
 ## Author
 **Maciej Schmidt**
 - [Homepage](http://www.macsch15.pl/ "Homepage")
