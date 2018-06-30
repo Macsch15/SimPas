@@ -21,12 +21,12 @@
                                 </div>
                             </a>
 
-                            @if (Breadcrumb::count())
+{{--                             @if (Breadcrumb::count())
                                 <ol class="pull-left breadcrumb">
                                   <span class="breadcrumb-item active">{{ trans('pastebin.breadcrumb_pastebin') }}</span>
                                   @yield('breadcrumb')
                                 </ol>
-                            @endif              
+                            @endif   --}}            
                         </div>
 
                         @if (Auth::guest())

@@ -3,26 +3,26 @@
 @section('title', trans('pastebin.index_page_title'))
 
 @section('content')
-    {{ Form::open(['url' => route('pastebin.store'), 'method' => 'post']) }}
+    <form action="{{ route('pastebin.store') }}" method="POST">
         <div class="entity-head">
             {{ trans_choice('pastebin.max_length', config('pastebin.max_content_length'), [
                 'length' => config('pastebin.max_content_length')
             ]) }}
 
             <div class="pull-right">
-                {{ Form::customCheckbox('disable_syntax_highlighting', trans('pastebin.disable_syntax_highlighting')) }}
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="disable_syntax_highlighting">
+                  @lang('pastebin.disable_syntax_highlighting')
+                </label>
+              </div>
             </div>
         </div>
         <div class="row entity-row">
             <div class="col-md-12 col-md-offset-1">
                 <div class="form-group row{{ $errors->has('title') ? ' has-warning' : '' }}">
                     <div class="col-sm-12">
-                        {{ Form::text('title', null, [
-                                'id' => 'input-title',
-                                'class' => 'form-control' . ($errors->has('title') ? ' form-control-warning' : ''),
-                                'placeholder' => trans('pastebin.pastebin_title_placeholder')
-                            ])
-                        }}
+                        <input type="text" name="title" class="form-control {{ !$errors->has('title') ?: 'form-control-warning' }}" id="input-title" placeholder="@lang('pastebin.pastebin_title_placeholder')">
 
                         @if ($errors->has('title'))
                             <div class="form-control-feedback">
@@ -33,12 +33,7 @@
                 </div>
                 <div class="form-group row{{ $errors->has('content') ? ' has-warning' : '' }}">
                     <div class="col-sm-12">
-                        {{ Form::textarea('content', null, [
-                                'id' => 'input-content',
-                                'class' => 'form-control' . ($errors->has('content') ? ' form-control-warning' : ''),
-                                'placeholder' => trans('pastebin.pastebin_content_placeholder')
-                            ])
-                        }}
+                        <textarea name="content" id="input-content" class="form-control {{ !$errors->has('title') ?: 'form-control-warning' }}" rows="12" placeholder="@lang('pastebin.pastebin_content_placeholder')"></textarea>
 
                         @if ($errors->has('content'))
                             <div class="form-control-feedback">
@@ -48,21 +43,8 @@
                     </div>
                 </div>
 
-                {{ Form::button(trans('pastebin.pastebin_button_public'), [
-                        'name' => 'visibility[public]',
-                        'value' => trans('pastebin.pastebin_button_public'),
-                        'class' => 'btn btn-primary btn-lg pull-right',
-                        'type' => 'submit'
-                    ])
-                }}
-                {{ Form::button('<i class="fa fa-lock" aria-hidden="true"></i> ' . (Auth::check() ? trans('pastebin.pastebin_button_private') : 'Not listed'), [
-                        'name' => 'visibility[private]',
-                        'value' => trans('pastebin.pastebin_button_private'),
-                        'class' => 'btn btn-success btn-lg pull-right',
-                        'style' => 'margin-right: 10px',
-                        'type' => 'submit'
-                    ])
-                }}
+                <button type="submit" value="@lang('pastebin.pastebin_button_public')" name="visibility[public]" class="btn btn-primary btn-lg pull-right">@lang('pastebin.pastebin_button_public')</button>
+                <button type="submit" value="@lang('pastebin.pastebin_button_private')" name="visibility[private]" class="btn btn-success btn-lg mr-1 pull-right"><i class="fa fa-lock" aria-hidden="true"></i> {{ Auth::check() ? __('pastebin.pastebin_button_private') : 'Not listed' }}</button>
 
                 @if (Auth::guest())
                     <div class="pull-right btn btn-lg">
@@ -70,12 +52,11 @@
                     </div>
                 @endif
 
-                {{ Form::button('<i class="fa fa-cloud-upload" aria-hidden="true"></i> ' . trans('pastebin.save_as'), [
-                        'disabled',
-                        'class' => 'btn btn-lg btn-link-trasparent pull-right'
-                    ])
-                }}
+                <button type="submit" disabled value="@lang('pastebin.pastebin_button_public')" class="btn btn-lg btn-link-trasparent pull-right"><i class="fa fa-cloud-upload" aria-hidden="true"></i> @lang('pastebin.save_as')</button>
             </div>
         </div>
-    {{ Form::close() }}
+
+        @csrf
+        @method('post')
+    </form>
 @endsection
