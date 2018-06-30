@@ -1,4 +1,5 @@
 <?php
+use Faker\Generator as Faker;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,7 +12,7 @@
 |
 */
 
-$factory->define(\SimPas\Repository\User::class, function (Faker\Generator $faker) {
+$factory->define(\SimPas\Repository\User::class, function (Faker $faker) {
     return [
         'name'           => $faker->name,
         'email'          => $faker->safeEmail,
@@ -20,7 +21,7 @@ $factory->define(\SimPas\Repository\User::class, function (Faker\Generator $fake
     ];
 });
 
-$factory->define(\SimPas\Repository\PastebinRecord::class, function (Faker\Generator $faker) {
+$factory->define(\SimPas\Repository\PastebinRecord::class, function (Faker $faker) {
     return [
         'unique_id'                   => str_random(15),
         'user_id'                     => mt_rand(10, 50),
