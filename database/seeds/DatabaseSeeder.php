@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory(\SimPas\Repository\User::class, 50)->create();
-        factory(\SimPas\Repository\PastebinRecord::class, 150)->create();
+        factory(\SimPas\Models\User::class, 50)->create();
+        factory(\SimPas\Models\PastebinRecord::class, 150)->create();
     }
 }
