@@ -17,7 +17,7 @@ class IsAuthorOfPastebin
      */
     public function handle($request, Closure $next)
     {
-        $uniqueId = $request->route()->bindParameters($request)['unique_id'];
+        $uniqueId = $request->route()->parameters['unique_id'];
         $entity = PastebinRecord::where('unique_id', $uniqueId)->first();
 
         if (!$entity) {
