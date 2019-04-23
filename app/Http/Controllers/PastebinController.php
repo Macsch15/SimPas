@@ -118,7 +118,6 @@ class PastebinController extends Controller
     {
         $record = $record
             ->where('is_private', false)
-            ->orderBy('created_at', 'desc')
             ->paginate(config('pastebin.activity_results_per_page'));
 
         return view('pastebin.activity')
