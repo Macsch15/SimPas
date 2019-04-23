@@ -23,16 +23,11 @@
                     </a>
                 </li>
                 <li class="trash">
-                    {{ Form::open(['url' => route('pastebin.delete', ['unique_id' => $entity->unique_id]), 'method' => 'delete']) }}
-                        {{ Form::button('<i class="fa fa-lg fa-trash" aria-hidden="true"></i>', [
-                                'data-toggle' => 'tooltip',
-                                'data-placement' => 'bottom',
-                                'title' => trans('pastebin.toolip_delete'),
-                                'type' => 'submit',
-                                'class' => 'form-control'
-                            ]) 
-                        }}
-                    {{ Form::close() }}
+                    <form action="{{ route('pastebin.delete', ['unique_id' => $entity->unique_id]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="form-control" data-toggle="tooltip" data-placement="bottom" title="{{ trans('pastebin.toolip_delete') }}"><i class="fa fa-lg fa-trash" aria-hidden="true"></i></button>
+                    </form>
                 </li>
                 @endif
             </ul>
@@ -41,7 +36,7 @@
 
     <div class="row entity-row">
         <div class="col-md-12 col-md-offset-1">
-            <h2 class="entity-title"> 
+            <h2 class="entity-title">
                 <span class="visibility">
                     <i class="fa {{ $entity->is_private ? 'fa-lock' : 'fa-unlock-alt' }}" aria-hidden="true"></i>
                 </span>
