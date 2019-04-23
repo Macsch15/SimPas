@@ -7,30 +7,21 @@
     {!! Breadcrumb::push(trans('pastebin.breadcrumb_edit'), route('pastebin.edit', ['unique_id' => $entity->unique_id])) !!}
 @endsection
 @section('entity_content')
-    {{ Form::model($entity, ['route' => ['pastebin.update', $unique_id], 'method' => 'patch']) }}
-        {{ Form::text('title', null, [
-                'id' => 'input-title',
-                'class' => 'form-control input-lg',
-                'placeholder' => trans('pastebin.pastebin_title_placeholder')
-            ])
-        }}
-        <br />
-        {{ Form::textarea('content', null, [
-                'id' => 'input-content',
-                'class' => 'form-control input-lg',
-                'placeholder' => trans('pastebin.pastebin_content_placeholder')
-            ])
-        }}
-        <br />
-        {{ Form::button('<i class="fa fa-check" aria-hidden="true"></i> ' . trans('pastebin.edit_button'), [
-                'class' => 'btn btn-success btn-lg pull-right',
-                'style' => 'margin-left: 10px',
-                'type' => 'submit'
-            ])
-        }}
+    <form action="{{ route('pastebin.update', ['unique_id' => $uniqueId]) }}" method="POST">
+        <div class="form-group">
+            <input type="text" name="title" value="{{ old('title', $entity->title) }}" id="input-title" class="form-control input-lg" placeholder="{{ trans('pastebin.pastebin_title_placeholder') }}" />
+        </div>
 
-        <a class="btn btn-danger btn-lg pull-right" href="{{ route('pastebin.show', ['unique_id' => $unique_id]) }}">
+        <div class="form-group">
+            <textarea name="content" rows="10" id="input-content" class="form-control input-lg" placeholder="{{ trans('pastebin.pastebin_content_placeholder') }}">{{ old('content', $entity->content) }}</textarea>
+        </div>
+
+        @csrf
+        @method('PATCH')
+
+        <button type="submit" class="btn btn-success btn-lg pull-right ml-1 mt-1"><i class="fa fa-check" aria-hidden="true"></i> {{ trans('pastebin.edit_button') }}</button>
+        <a class="btn btn-danger btn-lg mt-1 pull-right" href="{{ route('pastebin.show', ['unique_id' => $uniqueId]) }}">
             <i class="fa fa-times" aria-hidden="true"></i> {{ trans('pastebin.edit_abort_button') }}
         </a>
-    {{ Form::close() }}
+    </form>
 @endsection
