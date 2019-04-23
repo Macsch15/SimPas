@@ -15,10 +15,7 @@
                 {{ $record->title }}<br />
             @endforeach
 
-            {{-- Yup --}}
-
             {{ $entity->links() }}
-            {{ $entity->total() }}
         </div>
     </div>
 @endsection
