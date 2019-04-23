@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,7 +26,7 @@
                                   <span class="breadcrumb-item active">{{ trans('pastebin.breadcrumb_pastebin') }}</span>
                                   @yield('breadcrumb')
                                 </ol>
-                            @endif   --}}            
+                            @endif   --}}
                         </div>
 
                         @if (Auth::guest())
@@ -44,16 +44,13 @@
                                 {{ Auth::user()->name }}
 
                                 <div class="pull-right logout-button">
-                                    {{ Form::open(['route' => 'auth.logout']) }}
-                                        {{ Form::button('<i class="fa fa-power-off" aria-hidden="true"></i>', [
-                                                'type' => 'submit',
-                                                'class' => 'btn btn-link',
-                                                'data-toggle' => 'tooltip',
-                                                'data-placement' => 'bottom',
-                                                'title' => trans('pastebin.tooltip_logout')
-                                            ])
-                                        }}
-                                    {{ Form::close() }}
+                                    <form action="{{ route('auth.logout') }}" method="POST">
+                                        @csrf
+                                        @method('POST')
+                                        <button type="submit" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="{{ trans('pastebin.tooltip_logout') }}">
+                                            <i class="fa fa-power-off" aria-hidden="true"></i>
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         @endif
