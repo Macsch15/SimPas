@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('path.public', function() {
-            return base_path(config('pastebin.public_directory');
+            return base_path(config('pastebin.public_directory'));
         });
     }
 }
