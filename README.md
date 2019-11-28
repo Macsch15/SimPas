@@ -3,7 +3,7 @@ SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.svg?branch=master)
 
 Fat-free Pastebin Application
 
-Demo is here: http://www.pastebin.macsch15.pl
+[![Image: QC3JcsybrX7v68KkVGLseO8ZqZLkxo](https://storage.macsch15.pl/images/QC3JcsybrX7v68KkVGLseO8ZqZLkxo.png)](https://storage.macsch15.pl/images/QC3JcsybrX7v68KkVGLseO8ZqZLkxo.png)
 
 Requirements
 ======
@@ -54,12 +54,12 @@ Settings
 ======
 :exclamation: **IMPORTANT: Always use backslash for single and double quote, e.g ```you\'re``` ```you\"re```**
 
-####library/Application/Configuration/Resources/Default.json
+#### library/Application/Configuration/Resources/Default.json
 
 
-    Key       |  Description  |   Value type  | Default value
-------------- | ------------- | ------------- | -------------
-full_url      | Full address of SimPas installation **with ending slash**  |  String  |  http://localhost/SimPas/develop/
+|    Key      |  Description | Value type | Default value |
+|-------------|-------------|-------------| ------------- |
+full_url     | Full address of SimPas installation **with ending slash**  |  String  |  http://localhost/SimPas/develop/
 assets_url    | Assets (CSS, JS...) address (usually ```http://base-url.com/assets/```). You can use subdomain e.g ```http://assets.base-url.com/```. **Remember about ending slash.**  | String  | http://localhost/SimPas/develop/assets/
 site_title    | Site title displayed on page index  | String  | SimPas Application
 site_description_crawlers  | Site description for crawlers (e.g Google)  | String  | SimPas Application
@@ -97,11 +97,11 @@ cookie_secure | Use secure cookies? | true/false | false
 hot_paste | Number of hits needed to make "hot paste" | Integer | 1500
 show_cookies_info | Display information about using cookies in footer? | true/false | false
 
-####library/Application/Configuration/Resources/Database.json
+#### library/Application/Configuration/Resources/Database.json
 
 
-    Key       |  Description  |   Value type  | Default value
-------------- | ------------- | ------------- | -------------
+|    Key       |  Description  |   Value type  | Default value |
+|------------- | ------------- | ------------- | ------------- |
 driver  | Datasource driver. Available: **mysql** or **postgresql** | String | mysql
 server  | Database server  | String  | localhost
 port  | Database custom port  | Integer  | 3306
@@ -114,8 +114,8 @@ collate  | Database collate  | String  | utf8_general_ci
 ####library/Application/Configuration/Resources/Mailer.json
 
 
-    Key       |  Description  |   Value type  | Default value
-------------- | ------------- | ------------- | -------------
+|    Key       |  Description  |   Value type  | Default value |
+| ------------- | ------------- | ------------- | ------------- |
 transport  | Available: **mail** (sending email by php mail()), **smtp** and **sendmail**  | String  | mail
 host  | Server (for SMTP transport)  | String  | localhost
 port  | Port (for SMTP transport)  | Integer  | 25
@@ -124,12 +124,12 @@ password  | Password (for SMTP transport)  | String  | *void*
 protocol  | Protocol (for SMTP transport). Available: **tls**, **ssl**  | String  | tls
 sendmail_command  | Sendmail command (for sendmail transport)  | String  | ```/usr/sbin/sendmail -bs```
 
-####library/Application/Configuration/Resources/QuestionsAndAnswers.json
+#### library/Application/Configuration/Resources/QuestionsAndAnswers.json
 
 
-    Key       |     Value
-------------- | -------------
-Question      |    Answer. Can be multiple choices, e.g ```["5", "Five"]```
+|    Key       |     Value    |
+|------------- | -------------|
+Question       |    Answer. Can be multiple choices, e.g ```["5", "Five"]```
 
 
 Command line interface
@@ -179,9 +179,32 @@ library/Application/View/Templates/Text/Cookies.html.twig
 
 You can translate it or simply copy HTML template from other site.
 
-Author
-======
+## Author
+**Maciej Schmidt**
+- [Homepage](https://www.macsch15.pl/ "Homepage")
+- [Twitter](https://twitter.com/Macsch15 "Twitter")
+- [Donate with PayPal](https://www.paypal.me/MaciejSchmidt "Donate with PayPal")
 
-**Macsch15**
-* E-Mail: poczta@macsch15.pl
-* Twitter: https://twitter.com/Macsch15
+## Bug reports and feedback
+If you have found bug, please report it on [issue tracker](https://github.com/Macsch15/SimPas/issues "issue tracker").
+
+If you discover a security vulnerability, please send an e-mail to *macsch15[at]protonmail.com*.
+
+### MIT Licence
+
+Copyright (c) 2019 Maciej Schmidt
+
+Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished
+to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
