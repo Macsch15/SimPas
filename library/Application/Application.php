@@ -30,7 +30,7 @@ class Application
      * 
      * @return string
      */
-    const ENVIRONMENT = 'dev';
+    const ENVIRONMENT = 'prod';
 
     /**
      * Template cache
@@ -44,7 +44,7 @@ class Application
      * 
      * @return string
      */
-    const VERSION = '0.3';
+    const VERSION = '0.6.1';
 
     /**
      * Application name
