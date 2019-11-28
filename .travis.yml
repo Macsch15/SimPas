@@ -2,14 +2,7 @@ language: php
 
 sudo: false
 
-before_install:
-  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.0" ]]; then composer require --dev --no-update phpunit/phpunit ^6; fi
-
 php:
   - 5.6
-  - 7.0
-  - 7.1
-  - 7.2
-  - 7.3
 
 script: phpunit --configuration phpunit.xml.dist
