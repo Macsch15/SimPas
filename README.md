@@ -7,7 +7,7 @@ Fat-free Pastebin Application
 
 Requirements
 ======
-* PHP 5.4 (5.5 recommended) and above
+* PHP 5.4 (7.3 recommended) and above
 * MySQL or PostgreSQL access
 * Shell access on server (CLI)
 
