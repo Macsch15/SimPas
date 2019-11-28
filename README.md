@@ -5,6 +5,8 @@ Fat-free Pastebin Application
 
 [![Image: QC3JcsybrX7v68KkVGLseO8ZqZLkxo](https://storage.macsch15.pl/images/QC3JcsybrX7v68KkVGLseO8ZqZLkxo.png)](https://storage.macsch15.pl/images/QC3JcsybrX7v68KkVGLseO8ZqZLkxo.png)
 
+[![Image: nD6oDrNAi4YiuS8Yblfm0VUTOQaIhh](https://storage.macsch15.pl/images/nD6oDrNAi4YiuS8Yblfm0VUTOQaIhh.png)](https://storage.macsch15.pl/images/nD6oDrNAi4YiuS8Yblfm0VUTOQaIhh.png)
+
 Requirements
 ======
 * PHP 5.4 (7.0 recommended) and above
