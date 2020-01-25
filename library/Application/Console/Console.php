@@ -23,7 +23,7 @@ class Console
      *
      * @param Application $application
      * @param array $cmd_argv
-     * @return void
+     * @return array|string
      */
     public function __construct(Application $application, array $cmd_argv)
     {

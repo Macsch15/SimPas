@@ -3,14 +3,13 @@ namespace Application\View;
 
 use Application\Application;
 use Application\Configuration\Configuration;
-use Application\View\Exception;
 use Application\HttpRequest\HttpRequest;
-use Twig_Autoloader;
-use Twig_Loader_Filesystem;
-use Twig_Environment;
-use Twig_SimpleFunction;
-use Twig_Extensions_Extension_I18n;
 use DirectoryIterator;
+use Twig_Autoloader;
+use Twig_Environment;
+use Twig_Extensions_Extension_I18n;
+use Twig_Loader_Filesystem;
+use Twig_SimpleFunction;
 
 class View extends Exception
 {
@@ -121,7 +120,9 @@ class View extends Exception
      * Twig environment accessor
      *
      * @param string $template_name
-     * @return Twig_Environment object
+     * @return \Twig_TemplateInterface
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function twig($template_name)
     {
@@ -130,9 +131,11 @@ class View extends Exception
 
     /**
      * Magic __get
-     * 
-     * @param string $template_name 
-     * @return void
+     *
+     * @param string $template_name
+     * @return bool
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function __get($template_name)
     {
@@ -179,10 +182,12 @@ class View extends Exception
 
     /**
      * Client error
-     * 
+     *
      * @param string $message
      * @param bool $not_found_header
      * @return void
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function sendFriendlyClientError($message, $not_found_header = false)
     {
@@ -198,9 +203,11 @@ class View extends Exception
 
     /**
      * Regenerate template cache
-     * 
+     *
      * @param bool $debug
      * @return bool|array
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function regenerateTemplateCache($debug = false)
     {

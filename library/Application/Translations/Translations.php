@@ -12,16 +12,16 @@ class Translations
 
     /**
      * Translation Setup
-     * 
-     * @throws Application\Exception\ExceptionRuntime
-     * @throws Application\Exception\AssetNotFound
+     *
      * @return void
+     * @throws AssetNotFound
+     * @throws ExceptionRuntime
      */
     public function __construct()
     {
         // Translations is disabled?
         if($this->config()->translations === false) {
-            return false;
+            return;
         }
 
         // Locale doesn't exists?

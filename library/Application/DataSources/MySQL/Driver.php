@@ -2,9 +2,8 @@
 namespace Application\DataSources\MySQL;
 
 use Application\Application;
-use Application\Exception\ExceptionRuntime;
-use Application\Exception\ExceptionInvalidArgument;
 use Application\Configuration\Configuration;
+use Application\Exception\ExceptionRuntime;
 use Application\FileManager\FileManager;
 use PDO;
 use PDOException;
@@ -23,8 +22,8 @@ class Driver
     /**
      * Connect
      *
-     * @throws Application\Exception\ExceptionRuntime
      * @return void
+     * @throws ExceptionRuntime
      */
     public function __construct()
     {
@@ -55,9 +54,9 @@ class Driver
 
     /**
     * Schema
-    * 
-    * @return array
-    */
+     *
+     * @return bool|array
+     */
     public function getSchema()
     {
         // Load and decode JSON schema

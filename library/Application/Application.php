@@ -1,17 +1,17 @@
 <?php
 namespace Application;
 
-use Application\Exception\ExceptionRuntime;
-use Application\Exception\ExceptionInvalidArgument;
-use Application\Exception\AssetNotFound;
-use Application\Exception\MailerException;
-use Application\View\View;
-use Application\Translations\Translations;
-use Application\Routing\Routing;
 use Application\Configuration\Configuration;
 use Application\Console\Console;
 use Application\DataSources\MySQL\Driver as MysqlDriver;
 use Application\DataSources\PostgreSQL\Driver as PostgresqlDriver;
+use Application\Exception\AssetNotFound;
+use Application\Exception\ExceptionInvalidArgument;
+use Application\Exception\ExceptionRuntime;
+use Application\Exception\MailerException;
+use Application\Routing\Routing;
+use Application\Translations\Translations;
+use Application\View\View;
 
 class Application
 {
@@ -140,8 +140,9 @@ class Application
 
     /**
      * Database connection accessor
-     * 
-     * @return Driver object
+     *
+     * @return MysqlDriver|PostgresqlDriver object
+     * @throws ExceptionRuntime
      */
     public function dbConnectionAccessor()
     {

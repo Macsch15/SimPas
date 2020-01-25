@@ -9,8 +9,9 @@ class PreDatabaseSave
 
     /**
      * Filter
-     * 
+     *
      * @param string $string
+     * @param $restricted_characters
      * @return string
      */
     public function filter($string, $restricted_characters)

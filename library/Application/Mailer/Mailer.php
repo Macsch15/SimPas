@@ -4,11 +4,11 @@ namespace Application\Mailer;
 use Application\Application;
 use Application\Configuration\Configuration;
 use Application\Exception\MailerException;
-use Swift_SmtpTransport;
 use Swift_Mailer;
-use Swift_Message;
 use Swift_MailTransport;
+use Swift_Message;
 use Swift_SendmailTransport;
+use Swift_SmtpTransport;
 
 class Mailer
 {
@@ -27,9 +27,9 @@ class Mailer
 
     /**
      * Mailer width transport
-     * 
-     * @throws Application\Exception\MailerException
+     *
      * @return Swift_Mailer object
+     * @throws MailerException
      */
     public function mailer()
     {

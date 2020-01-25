@@ -2,10 +2,10 @@
 namespace Application\Routing;
 
 use Application\Application;
-use Application\FileManager\FileManager;
 use Application\Exception\AssetNotFound;
 use Application\Exception\ExceptionRuntime;
 use Application\Exception\JsonException;
+use Application\FileManager\FileManager;
 use Application\View\ClientError;
 use Application\View\View;
 
@@ -47,11 +47,16 @@ class Routing extends View
     private $_request;
 
     /**
+     * @var bool|string
+     */
+    private $routes_source;
+
+    /**
      * Construct
      *
-     * @throws Application\Exception\JsonException
-     * @throws Application\Exception\AssetNotFound
-     * @return void
+     * @param Application $application
+     * @throws AssetNotFound
+     * @throws JsonException
      */
     public function __construct(Application $application)
     {
@@ -119,8 +124,9 @@ class Routing extends View
      * Pattern Start
      *
      * @param Application $application
+     * @return bool
+     * @throws ExceptionRuntime
      * @throws Application\Exception\ExceptionRuntime
-     * @return void
      */
     private function patternStart(Application $application)
     {

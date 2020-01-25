@@ -1,9 +1,9 @@
 <?php
 namespace Application\Configuration;
 
-use Application\FileManager\FileManager;
 use Application\Exception\AssetNotFound;
 use Application\Exception\JsonException;
+use Application\FileManager\FileManager;
 
 trait Configuration
 {
@@ -13,8 +13,6 @@ trait Configuration
      * @param string $entity
      * @param bool $as_array
      * @return object|array
-     * @throws Application\Exception\JsonException
-     * @throws Application\Exception\AssetNotFound
      */
     public function config($entity = 'Default', $as_array = false)
     {

@@ -1,10 +1,8 @@
 <?php
 namespace Application\FileManager;
 
-use Application\Application;
-use Application\Exception\ExceptionRuntime;
 use Application\Exception\ExceptionInvalidArgument;
-use DirectoryIterator;
+use Application\Exception\ExceptionRuntime;
 
 class FileManager
 {
@@ -15,9 +13,9 @@ class FileManager
      * @param array $http_attributes
      * @param int $timeout
      * @param bool $headers
-     * @throws Application\Exception\ExceptionRuntime
-     * @throws Application\Exception\ExceptionInvalidArgument
      * @return string|bool
+     * @throws ExceptionInvalidArgument
+     * @throws ExceptionRuntime
      */
     public function getContentsFromUrl($url, array $http_attributes = [], 
         $timeout = 60, $headers = false

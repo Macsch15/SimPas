@@ -2,17 +2,11 @@
 namespace Application\Pastebin;
 
 use Application\Application;
-use Application\View\View;
 use Application\Configuration\Configuration;
-use Application\Pastebin\SyntaxHighlighter;
-use Application\Pastebin\SendPaste;
-use Application\Pastebin\ReadPaste;
-use Application\Pastebin\PasteExpire;
 use Application\HttpRequest\HttpRequest;
-use Application\Pastebin\ShortenUrlApi;
-use Application\Security\QuestionsAndAnswers\QuestionsAndAnswers;
 use Application\Pastebin\Helpers\Strings;
-use Application\Pastebin\Hits;
+use Application\Security\QuestionsAndAnswers\QuestionsAndAnswers;
+use Application\View\View;
 
 class Controller extends View
 {
@@ -299,7 +293,7 @@ class Controller extends View
      * Embed
      * 
      * @param array $request
-     * @return void
+     * @return void|bool
      */
     public function embedAction(array $request)
     {
@@ -386,13 +380,13 @@ class Controller extends View
 
     /**
      * Shorten URL
-     * 
-     * @param int $paste_id 
-     * @return string|null
+     *
+     * @param int $paste_id
+     * @return array
      */
     private function saveShortUrl($paste_id)
     {
-        if (filter_var(htmlspecialchars((new ShortenUrlApi())->shorten($this->application->buildUrl('paste/' . $paste_id))), FILTER_VALIDATE_URL) === false
+        if (filter_var(htmlspecialchars((string)(new ShortenUrlApi())->shorten($this->application->buildUrl('paste/' . $paste_id))), FILTER_VALIDATE_URL) === false
             || $this->config()->short_url === false
         ) {
             return null;
