@@ -6,8 +6,8 @@ if(strtolower(php_sapi_name()) !== 'cli') {
 
 set_time_limit(0);
 
-if(version_compare(phpversion(), '5.4.0', '<')) {
-    die('Requires PHP 5.4 or higher');
+if(version_compare(phpversion(), '7.3.0', '<')) {
+    die('Requires PHP 7.3 or higher');
 }
 
 use Application\Autoloader;

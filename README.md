@@ -9,7 +9,7 @@ Fat-free Pastebin Application
 
 Requirements
 ======
-* PHP 5.4 (7.0 recommended) and above
+* PHP 7.3 and above
 * MySQL or PostgreSQL access
 * Shell access on server (CLI)
 
@@ -19,11 +19,11 @@ How to Install?
 Copy all files to your server and edit configuration files:
 
 ```
-library/Application/Configuration/Resources/Database.json
+config/database.php
 ```
 
 ```
-library/Application/Configuration/Resources/Default.json
+config/app.php
 ```
 
 After you set configuration, type in command line
@@ -56,7 +56,7 @@ Settings
 ======
 :exclamation: **IMPORTANT: Always use backslash for single and double quote, e.g ```you\'re``` ```you\"re```**
 
-#### library/Application/Configuration/Resources/Default.json
+#### config/app.php
 
 
 |    Key      |  Description | Value type | Default value |
@@ -99,7 +99,7 @@ cookie_secure | Use secure cookies? | true/false | false
 hot_paste | Number of hits needed to make "hot paste" | Integer | 1500
 show_cookies_info | Display information about using cookies in footer? | true/false | false
 
-#### library/Application/Configuration/Resources/Database.json
+#### config/database.php
 
 
 |    Key       |  Description  |   Value type  | Default value |
@@ -113,7 +113,7 @@ password  | Database password  | String | *void*
 charset  | Database charset  | String  | utf8
 collate  | Database collate  | String  | utf8_general_ci
 
-####library/Application/Configuration/Resources/Mailer.json
+#### config/mailer.php
 
 
 |    Key       |  Description  |   Value type  | Default value |
@@ -126,7 +126,7 @@ password  | Password (for SMTP transport)  | String  | *void*
 protocol  | Protocol (for SMTP transport). Available: **tls**, **ssl**  | String  | tls
 sendmail_command  | Sendmail command (for sendmail transport)  | String  | ```/usr/sbin/sendmail -bs```
 
-#### library/Application/Configuration/Resources/QuestionsAndAnswers.json
+#### config/qa.php
 
 
 |    Key       |     Value    |
@@ -194,7 +194,7 @@ If you discover a security vulnerability, please send an e-mail to *macsch15[at]
 
 ### MIT Licence
 
-Copyright (c) 2019 Maciej Schmidt
+Copyright (c) 2020 Maciej Schmidt
 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
 of this software and associated documentation files (the "Software"), to deal

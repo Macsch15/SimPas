@@ -4,8 +4,6 @@ namespace Application\Routing;
 use Application\Application;
 use Application\Exception\AssetNotFound;
 use Application\Exception\ExceptionRuntime;
-use Application\Exception\JsonException;
-use Application\FileManager\FileManager;
 use Application\View\ClientError;
 use Application\View\View;
 
@@ -26,20 +24,6 @@ class Routing extends View
     private $application;
 
     /**
-     * Routes file
-     * 
-     * @var string
-     */
-    private $routes_file;
-
-    /**
-     * Parsed JSON
-     * 
-     * @var string
-     */
-    private $routes_json;
-
-    /**
      * Request from client
      * 
      * @var string
@@ -47,72 +31,36 @@ class Routing extends View
     private $_request;
 
     /**
-     * @var bool|string
-     */
-    private $routes_source;
-
-    /**
      * Construct
      *
      * @param Application $application
      * @throws AssetNotFound
-     * @throws JsonException
+     * @throws ExceptionRuntime
      */
     public function __construct(Application $application)
     {
         parent::__construct($application);
 
-        // Load JSON file
-        $this->routes_source = (new FileManager)->getContentsFromFile(Application::makePath('library:Application:Routing:Resources:Routes.json'));
+        $routesPath = Application::makePath('routes:routes.php');
+
+        if (file_exists($routesPath) === false) {
+            throw new AssetNotFound('Error encountered while trying load routes file.');
+        }
 
         // Application object
         $this->application = $application;
 
-        // JSON file not found
-        if($this->routes_source === false) {
-            throw new AssetNotFound('Error encountered while trying load routes file. Check whether this file exists on ++library/Application/Routing/Resources/Routes.json+-+');
-        }
+        $routes = array_merge(require $routesPath);
 
-        // Parse JSON
-        $this->routes_json = json_decode($this->routes_source, true);
-
-        switch (json_last_error()) {
-            case JSON_ERROR_NONE:
-                $error_message = false;
-                break;
-            case JSON_ERROR_DEPTH:
-                $error_message = 'Maximum stack depth exceeded';
-                break;
-            case JSON_ERROR_STATE_MISMATCH:
-                $error_message = 'Underflow or the modes mismatch';
-                break;
-            case JSON_ERROR_CTRL_CHAR:
-                $error_message = 'Unexpected control character found';
-                break;
-            case JSON_ERROR_SYNTAX:
-                $error_message = 'Syntax error, malformed JSON';
-                break;
-            case JSON_ERROR_UTF8:
-                $error_message = 'Malformed UTF-8 characters, possibly incorrectly encoded';
-                break;
-            default:
-                $error_message = 'Unknown error';
-                break;
-        }
-
-        if($error_message !== false) {
-            throw new JsonException('JSON Error: ' . $error_message . ' in Routes.json');
-        }
-        
         // Client request
         $this->_request = '/' . getenv('QUERY_STRING');
 
         // Check routes
-        if (count($this->routes_json['routes']) == 0) {
+        if (count($routes['routes']) === 0) {
             return false;
         }
 
-        foreach($this->routes_json['routes'] as $route_name => $route_data) {
+        foreach($routes['routes'] as $route_name => $route_data) {
             $this->_route[$route_name] = $route_data;
         }
 
@@ -126,7 +74,7 @@ class Routing extends View
      * @param Application $application
      * @return bool
      * @throws ExceptionRuntime
-     * @throws Application\Exception\ExceptionRuntime
+     * @throws \Application\Exception\ExceptionRuntime
      */
     private function patternStart(Application $application)
     {
