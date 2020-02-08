@@ -8,7 +8,7 @@
 
   {% block document_content %}
     {% if container|length > 0 %}
-      <h4 style="margin-top: 0" class="muted_font"><i class="fa fa-history"></i> {% trans %}Latest pastes{% endtrans %}</h4>
+      <h4 style="margin-top: 0" class="muted_font"><i class="fas fa-history"></i>&nbsp;{% trans %}Latest pastes{% endtrans %}</h4>
 
       {% for key in container %}
         <div class="latest">
@@ -21,7 +21,7 @@
           {% if key.author_website is not empty %}
             <a href="{{ key.author_website }}" rel="nofollow">
               <span class="latest_website tooltip-top" title="{% trans %}Author website{% endtrans %}">
-                <i class="fa fa-globe fa-lg"></i>
+                <i class="fas fa-globe fa-lg"></i>
               </span>
             </a>
           {% endif %}
@@ -38,15 +38,15 @@
             {% endif %}
             <br />
             <small>
-              {% trans %}Authored{% endtrans %} <time>{{ key.time|date("Y-m-d H:i:s") }}</time>
-              {% trans %}and{% endtrans %}
+              {% trans %}Authored{% endtrans %}&nbsp;<time>{{ key.time|date("Y-m-d H:i:s") }}</time>&nbsp;
+              {% trans %}and{% endtrans %}&nbsp;
               {% if paste_expire.isExpired(key.unique_id) == true %}
                 <b>{% trans %}expired{% endtrans %}</b>
               {% else %}
                 {% if key.expire is not empty and key.expire == 'never' %}
                   {% trans %}never expires{% endtrans %}
                 {% else %}
-                  {% trans %}will expire in{% endtrans %} <time class="no_suffix">{{ key.expire|date("Y-m-d H:i:s") }}</title>
+                  {% trans %}will expire in{% endtrans %}&nbsp;<time class="no_suffix">{{ key.expire|date("Y-m-d H:i:s") }}</time>
                 {% endif %}
               {% endif %}
             </small>
@@ -57,7 +57,7 @@
         <div class="panel panel-info">
           <div class="panel-heading">
             <h3 class="panel-title">
-              <i class="fa fa-exclamation-circle fa-lg"></i> <b>{% trans %}No results{% endtrans %}</b>
+              <i class="fas fa-exclamation-circle fa-lg"></i>&nbsp;<b>{% trans %}No results{% endtrans %}</b>
             </h3>
           </div>
           <div class="panel-body">
@@ -65,6 +65,6 @@
           </div>
         </div>
 
-        <a href="{{ build_url() }}" class="btn btn-primary"><i class="fa fa-home"></i> {% trans %}Return to index page{% endtrans %}</a>
+        <a href="{{ build_url() }}" class="btn btn-primary"><i class="fas fa-home"></i>&nbsp;{% trans %}Return to index page{% endtrans %}</a>
       {% endif %}
   {% endblock %}

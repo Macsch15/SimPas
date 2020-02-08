@@ -12,6 +12,7 @@
     {% if config.shortcut_icon_url is not empty %}
     <link rel="shortcut icon" href="{{ config.shortcut_icon_url }}">
     {% endif %}
+    <script src="https://kit.fontawesome.com/123c96bf9e.js" crossorigin="anonymous"></script>
   {% endblock %}
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -32,9 +33,9 @@
 
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-left">
-            <li><a class="tooltip-bottom" title="{% trans %}Page Index{% endtrans %}" href="{{ build_url() }}"><i class="fa fa-home fa-lg"></i></a></li>
-            <li><a class="tooltip-bottom" title="{% trans %}Rules{% endtrans %}" href="{{ build_url('rules') }}"><i class="fa fa-gavel fa-lg"></i></a></li>
-            <li><a class="tooltip-bottom" title="{% trans %}Latest pastes{% endtrans %}" href="{{ build_url('latest') }}"><i class="fa fa-history fa-lg"></i></a></li>
+            <li><a class="tooltip-bottom" title="{% trans %}Page Index{% endtrans %}" href="{{ build_url() }}"><i class="fas fa-home fa-lg"></i></a></li>
+            <li><a class="tooltip-bottom" title="{% trans %}Rules{% endtrans %}" href="{{ build_url('rules') }}"><i class="fas fa-gavel fa-lg"></i></a></li>
+            <li><a class="tooltip-bottom" title="{% trans %}Latest pastes{% endtrans %}" href="{{ build_url('latest') }}"><i class="fas fa-history fa-lg"></i></a></li>
           </ul>
         </div>
       </div>
@@ -54,14 +55,14 @@
 
   <div class="container wrap wrap_content">
     <noscript>
-      <div class="alert alert-info hidden-xs"><i class="fa fa-exclamation-triangle fa-lg"></i> 
+      <div class="alert alert-info hidden-xs"><i class="fas fa-exclamation-triangle fa-lg"></i>
         {% trans %}It is recommended to enable JavaScript. Without it, this page may don't work correctly.{% endtrans %}
       </div>
     </noscript>
 
     {% if app.engineErrors()|length > 0 %}
     <div class="pull-left error_exclamation">
-      <i class="fa fa-exclamation-triangle"></i>
+      <i class="fas fa-exclamation-triangle"></i>
     </div>
 
     <h3 style="color: #808080">{% trans %}Core error encountered!{% endtrans %}</h3>
@@ -85,8 +86,8 @@
       <br /><br />
       <div class="pull-left">
         {% set utilisedMemory = app.getUtilisedMemory() %}
-        <span class="glyphicon glyphicon-tasks"></span> {% trans %}Allocated memory: {{ utilisedMemory }}KB{% endtrans %}<br />
-        <div style="text-align: left"><span class="glyphicon glyphicon-compressed"></span> {% trans %}GZIP Compression{% endtrans %}: {{ config.gzip_compression ? "On" : "Off" }}</div>
+        {% trans %}Allocated memory: {{ utilisedMemory }}KB{% endtrans %}<br />
+        <div style="text-align: left">{% trans %}GZIP Compression{% endtrans %}: {{ config.gzip_compression ? "On" : "Off" }}</div>
       </div>
     {% endif %}
 
@@ -96,7 +97,7 @@
       </div>
     {% endif %}
 
-    <a href="http://www.macsch15.pl">Powered by SimPas Application by Macsch15</a>
+    <a href="https://www.macsch15.pl">Powered by SimPas Application by Macsch15</a>
   </footer>
 
   {% block document_javascript %}
@@ -111,7 +112,6 @@
     <script src="{{ assets('js', 'bootstrapx-clickover.js') }}"></script>
     <script src="{{ assets('js', 'simpas.js') }}"></script>
     <script src="{{ assets('js', 'jquery.maxlength-min.js') }}"></script>
-    <script src="{{ assets('js', 'jquery.zclip.min.js') }}"></script>
     {% if config.google_analytics_ua_code is not empty and config.google_analytics_domain is not empty %}
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -125,16 +125,6 @@
     {% endif %}
     <script>
       $(function() {
-        $('a#zclip').zclip({
-          path: "{{ assets('js', 'ZeroClipboard.swf') }}",
-          copy: $('pre#zclip_copy').text()
-        });
-
-        $('#zclip').click(function () {
-          $(this).addClass('disabled');
-          $(this).html('<i class="fa fa-check"></i> {% trans %}Copied!{% endtrans %}');
-        });
-
         $(".chzn-select").chosen({no_results_text: "{% trans %}Oops, nothing found!{% endtrans %}"});
 
         $('#_chars_left').maxlength({  

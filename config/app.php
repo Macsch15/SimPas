@@ -35,7 +35,7 @@ return [
     'google_analytics_domain' => '',
     'short_url' => false,
     'latest_pastes' => 20,
-    'antispam_enabled' => true,
+    'antispam_enabled' => false,
     'antispam_case_sensitive' => false,
     'author_website_enabled' => true,
     'delete_expired_pastes' => true,

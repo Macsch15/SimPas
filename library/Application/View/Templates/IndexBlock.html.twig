@@ -24,7 +24,7 @@
 
       <br /><br />
 
-      <h4 class="muted_font hidden-xs pull-left"><i class="fa fa-code"></i> {% trans %}Paste text or code in the field below{% endtrans %}</h4>
+      <h4 class="muted_font hidden-xs pull-left"><i class="fas fa-code"></i>&nbsp;{% trans %}Paste text or code in the field below{% endtrans %}</h4>
       <button type="button" id="options" data-toggle="popover" data-placement="left" style="margin-left: 4px; margin-bottom: 3px" title="{% trans %}Pastebin options{% endtrans %}" class="options_button btn btn-default pull-right"><i class="fa fa-sliders fa-lg"></i></button>
 
       <div id="form_data" class="hide"></div>
@@ -35,14 +35,14 @@
       {% set max_chars = config.max_chars %}
       {% set max_size = config.max_size_in_kb %}
       <div style="margin: 7px">
-        <span style="padding: 4px" class="pull-right label label-default"><i class="fa fa-tasks fa-lg"></i> {% trans %}Maximum: {{ max_chars }} chars / {{ max_size }}KB{% endtrans %}</span>
+        <span style="padding: 4px" class="pull-right label label-default"><i class="fas fa-tasks fa-lg"></i>&nbsp;{% trans %}Maximum: {{ max_chars }} chars / {{ max_size }}KB{% endtrans %}</span>
       </div>
     
       <textarea id="_chars_left" style="height: 350px;" required="required" name="post_paste_content" class="form-control" placeholder="{% trans %}Paste content (required){% endtrans %}..."></textarea>
       <br />
 
       {% if config.antispam_enabled == true %}
-        <h4 class="muted_font pull-left"><i class="fa fa-question-circle"></i> {% trans %}Anti-spam question{% endtrans %}</h4><br /><br />
+        <h4 class="muted_font pull-left"><i class="fas fa-question-circle"></i>&nbsp;{% trans %}Anti-spam question{% endtrans %}</h4><br /><br />
         {% set antispam_question = antispam.question() %}
         <label for="antispamquestion">{{ antispam_question }}</label>
         <input type="hidden" name="post_antispam_question" value="{{ antispam_question }}">
@@ -52,7 +52,7 @@
       {% endif %}
       
       <div class="col-lg-4 col-md-3 col-sm-4 col-xs-9 syntax_highlight_option pull-left">
-        <h4 class="muted_font"><i class="fa fa-puzzle-piece"></i> {% trans %}Syntax highlighting{% endtrans %}</h4>
+        <h4 class="muted_font"><i class="fas fa-puzzle-piece"></i>&nbsp;{% trans %}Syntax highlighting{% endtrans %}</h4>
         <select class="form-control chzn-drop-up" name="post_syntax_highlight_language">
           {% for languages in geshi_languages %}
             <option value="{{ languages }}"{{ languages|lower == config.default_geshi_language|lower ? " selected=\"selected\"" : "" }}>{{ languages }}</option>
@@ -63,7 +63,7 @@
       <input type="hidden" name="post_poked" value="1">
 
       <div class="hidden-xs pull-right">
-        <h4 class="muted_font"><span class="glyphicon glyphicon-cloud-upload"></span> {% trans %}Send this paste{% endtrans %}</h4>
+        <h4 class="muted_font"><span class="glyphicon glyphicon-cloud-upload"></span>&nbsp;{% trans %}Send this paste{% endtrans %}</h4>
         <button name="post_paste_visibility" value="private" type="submit" class="btn main_button button_private submit_button">
           {% trans %}Send private paste{% endtrans %}
         </button>
@@ -73,7 +73,7 @@
       </div>
 
       <div class="visible-xs pull-left">
-        <h4 class="muted_font"><span class="glyphicon glyphicon-cloud-upload"></span> {% trans %}Send this paste{% endtrans %}</h4>
+        <h4 class="muted_font"><span class="glyphicon glyphicon-cloud-upload"></span>&nbsp;{% trans %}Send this paste{% endtrans %}</h4>
         <button name="post_paste_visibility" value="private" type="submit" class="btn main_button button_private submit_button">
           {% trans %}Send private paste{% endtrans %}
         </button>
