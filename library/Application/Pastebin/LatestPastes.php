@@ -65,10 +65,10 @@ class LatestPastes extends View
         $query = $this->data_source
         ->get()
         ->prepare('SELECT unique_id, time, syntax, title, author, visibility, author_website, expire, hits
-            FROM ' . $this->config('Database')->prefix  . 'pastes WHERE visibility = :visibility ORDER BY time DESC LIMIT :limit');
+            FROM ' . $this->config('database')['prefix']  . 'pastes WHERE visibility = :visibility ORDER BY time DESC LIMIT :limit');
 
         // Filter
-        $query->bindValue(':limit', $this->config()->latest_pastes, constant('PDO::PARAM_INT'));
+        $query->bindValue(':limit', $this->config()['latest_pastes'], constant('PDO::PARAM_INT'));
         $query->bindValue(':visibility', 'public');
 
         // Execute

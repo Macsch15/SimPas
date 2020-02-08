@@ -26,10 +26,11 @@ class SyncDb
 
     /**
      * Construct
-     * 
+     *
      * @param Console $console
      * @param Application $application
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function __construct(Console $console, Application $application)
     {
@@ -69,14 +70,14 @@ class SyncDb
      */
     private function sync()
     {
-        $this->console->writeStdout('Selected driver: ' . $this->config('Database')->driver);
+        $this->console->writeStdout('Selected driver: ' . $this->config('database')['driver']);
 
         foreach($this->prepareSchema()['tables'] as $table => $table_fields) {
-            switch($this->config('Database')->driver) {
+            switch($this->config('database')['driver']) {
                 case 'mysql':
                 default:
                     // Table
-                    $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS ' . $this->config('Database')->prefix . $table . '( ';
+                    $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS ' . $this->config('database')['prefix'] . $table . '( ';
 
                     foreach($table_fields as $field_name => $field_value) {
                         // Ignore
@@ -90,11 +91,11 @@ class SyncDb
 
                     // Table options
                     $_createTablesQuery .= 'PRIMARY KEY(' . $table_fields['__options__']['primary_key'] . ')) ENGINE=' . $table_fields['__options__']['engine'];
-                    $_createTablesQuery .= ' DEFAULT CHARSET=\'' . $this->config('Database')->charset . '\' DEFAULT COLLATE=\'' . $this->config('Database')->collate . '\';';
+                    $_createTablesQuery .= ' DEFAULT CHARSET=\'' . $this->config('database')['charset'] . '\' DEFAULT COLLATE=\'' . $this->config('database')['collate'] . '\';';
                     break;
                 case 'postgresql':
                     // Table
-                    $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS ' . $this->config('Database')->prefix . $table . '( ';
+                    $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS ' . $this->config('database')['prefix'] . $table . '( ';
 
                     foreach($table_fields as $field_name => $field_value) {
                         // Ignore
@@ -110,7 +111,7 @@ class SyncDb
                     break;
             }
 
-            $this->console->writeStdout('Creating table "' . $this->config('Database')->prefix . $table . '"...', false, ' ');
+            $this->console->writeStdout('Creating table "' . $this->config('database')['prefix'] . $table . '"...', false, ' ');
             
             // try-catch
             try {
@@ -125,6 +126,6 @@ class SyncDb
 
         // Final message
         $this->console->writeStdout(null);
-        $this->console->writeStdout('SimPas is ready for work now. Visit your home site: ' . $this->config()->full_url);
+        $this->console->writeStdout('SimPas is ready for work now. Visit your home site: ' . $this->config()['full_url']);
     }
 }

@@ -36,7 +36,7 @@ class SendPaste
         // Prepare query
         $query = $this->data_source
         ->get()
-        ->prepare('INSERT INTO ' . $this->config('Database')->prefix . 'pastes (
+        ->prepare('INSERT INTO ' . $this->config('database')['prefix'] . 'pastes (
             unique_id,
             time,
             size,

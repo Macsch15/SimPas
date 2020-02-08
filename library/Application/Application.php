@@ -30,7 +30,7 @@ class Application
      * 
      * @return string
      */
-    const ENVIRONMENT = 'prod';
+    const ENVIRONMENT = 'dev';
 
     /**
      * Template cache
@@ -44,7 +44,7 @@ class Application
      * 
      * @return string
      */
-    const VERSION = '0.6.1';
+    const VERSION = '0.7.0';
 
     /**
      * Application name
@@ -82,7 +82,7 @@ class Application
 
         // Timezone settings
         if(!ini_get('date.timezone')) {
-            @date_default_timezone_set($this->config()->default_timezone);
+            @date_default_timezone_set($this->config()['default_timezone']);
         }
 
         // Try-catch
@@ -127,14 +127,14 @@ class Application
     public function buildUrl($route = null)
     {
         if($route == null) {
-            return $this->config()->full_url;
+            return $this->config()['full_url'];
         }
 
-        if($this->config()->show_index_in_urls === true) {
+        if($this->config()['show_index_in_urls'] === true) {
             // If you can't use mod rewrite add index to URL
-            return $this->config()->full_url . 'index.php?' . $route;
+            return $this->config()['full_url'] . 'index.php?' . $route;
         } else {
-            return $this->config()->full_url . $route;
+            return $this->config()['full_url'] . $route;
         }
     }
 
@@ -146,7 +146,7 @@ class Application
      */
     public function dbConnectionAccessor()
     {
-        switch($this->config('Database')->driver) {
+        switch($this->config('database')['driver']) {
             case 'mysql':
             default:
                 return new MysqlDriver();

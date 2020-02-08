@@ -55,7 +55,7 @@ class Hits
         // Prepare query
         $query = $this->data_source
         ->get()
-        ->prepare('UPDATE ' . $this->config('Database')->prefix . 'pastes SET hits = hits + 1 WHERE unique_id = :paste_id');
+        ->prepare('UPDATE ' . $this->config('database')['prefix'] . 'pastes SET hits = hits + 1 WHERE unique_id = :paste_id');
 
         // Filter
         $query->bindValue(':paste_id', $paste_id, constant('PDO::PARAM_INT'));

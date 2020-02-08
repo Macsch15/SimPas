@@ -67,7 +67,7 @@ class EraseExpiredPastes
         // Start query
         $query = $this->data_source
         ->get()
-        ->query('SELECT unique_id FROM ' . $this->config('Database')->prefix . 'pastes');
+        ->query('SELECT unique_id FROM ' . $this->config('database')['prefix'] . 'pastes');
 
         foreach($query as $row) {
             // Paste expired?
@@ -77,7 +77,7 @@ class EraseExpiredPastes
                 // Prepare query
                 $query = $this->data_source
                 ->get()
-                ->prepare('DELETE FROM ' . $this->config('Database')->prefix . 'pastes WHERE unique_id = :paste_id');
+                ->prepare('DELETE FROM ' . $this->config('database')['prefix'] . 'pastes WHERE unique_id = :paste_id');
 
                 // Filter and execute
                 $query->bindValue(':paste_id', $row['unique_id'], constant('PDO::PARAM_INT'));

@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'full_url' => 'http://localhost/SimPas/',
-    'assets_url' => 'http://localhost/SimPas/assets/',
+    'full_url' => 'http://simpas.devenv/',
+    'assets_url' => 'http://simpas.devenv/assets/',
     'site_title' => 'SimPas Application',
     'site_description_crawlers' => 'SimPas Application',
     'show_index_in_urls' => true,

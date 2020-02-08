@@ -53,7 +53,7 @@ class ReadPaste
             short_url, 
             expire,
             hits
-        FROM ' . $this->config('Database')->prefix  . 'pastes WHERE unique_id = :paste_id LIMIT 1');
+        FROM ' . $this->config('database')['prefix']  . 'pastes WHERE unique_id = :paste_id LIMIT 1');
 
         // Filter
         $query->bindValue(':paste_id', $paste_id, constant('PDO::PARAM_INT'));
@@ -75,7 +75,7 @@ class ReadPaste
         // Prepare query
         $query = $this->data_source
         ->get()
-        ->prepare('SELECT unique_id FROM ' . $this->config('Database')->prefix . 'pastes WHERE unique_id = :paste_id');
+        ->prepare('SELECT unique_id FROM ' . $this->config('database')['prefix'] . 'pastes WHERE unique_id = :paste_id');
 
         // Filter and execute
         $query->bindValue(':paste_id', $paste_id, constant('PDO::PARAM_INT'));

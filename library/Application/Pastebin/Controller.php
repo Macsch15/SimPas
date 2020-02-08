@@ -76,7 +76,7 @@ class Controller extends View
         }
 
         // Anti-spam
-        if (HttpRequest::post('post_poked') !== false && $this->config()->antispam_enabled === true && 
+        if (HttpRequest::post('post_poked') !== false && $this->config()['antispam_enabled'] === true &&
             (new QuestionsAndAnswers())->validate(HttpRequest::post('post_antispam_question'), 
                 HttpRequest::post('post_antispam_answer')) === false
         ) {
@@ -108,7 +108,7 @@ class Controller extends View
         if($this->isFloodedClient() === true) {
             return $this->sendFriendlyClientError(
                 sprintf(_('Anty-flood is enabled. Please wait at least %d seconds before attempting to send paste again.'), 
-                    $this->config()->antyflood_delay_in_seconds));
+                    $this->config()['antyflood_delay_in_seconds']));
         }
 
         // Storage to database paste if doesn't exists
@@ -164,14 +164,14 @@ class Controller extends View
     private function isFloodedClient()
     {
         // Enabled?
-        if($this->config()->antyflood_enabled === false || HttpRequest::post('post_poked') === false) {
+        if($this->config()['antyflood_enabled'] === false || HttpRequest::post('post_poked') === false) {
             return false;
         }
 
         // Search client IP from Database
         $query = $this->data_source
         ->get()
-        ->prepare('SELECT ip_address FROM ' . $this->config('Database')->prefix . 'pastes WHERE ip_address = :ip_address');
+        ->prepare('SELECT ip_address FROM ' . $this->config('database')['prefix'] . 'pastes WHERE ip_address = :ip_address');
 
         // Filter and execute
         $query->bindValue(':ip_address', HttpRequest::getClientIpAddress());
@@ -187,12 +187,12 @@ class Controller extends View
         // Is flood?
         $query = $this->data_source
         ->get()
-        ->prepare('SELECT ip_address, time FROM ' . $this->config('Database')->prefix . 'pastes WHERE ip_address = :ip_address 
+        ->prepare('SELECT ip_address, time FROM ' . $this->config('database')['prefix'] . 'pastes WHERE ip_address = :ip_address 
             AND time >= :time');
 
         // Filter and execute
         $query->bindValue(':ip_address', HttpRequest::getClientIpAddress());
-        $query->bindValue(':time', time() - $this->config()->antyflood_delay_in_seconds);
+        $query->bindValue(':time', time() - $this->config()['antyflood_delay_in_seconds']);
         $query->execute();
 
         $rows = $query->fetchAll();
@@ -232,7 +232,7 @@ class Controller extends View
     {
         if (HttpRequest::post('post_paste_author_website', 'html') !== false
             && filter_var(HttpRequest::post('post_paste_author_website', 'html'), FILTER_VALIDATE_URL) !== false
-            && $this->config()->author_website_enabled === true
+            && $this->config()['author_website_enabled'] === true
         ) {
             return HttpRequest::post('post_paste_author_website', 'html');
         }
@@ -248,11 +248,11 @@ class Controller extends View
     private function clientIpIsBanned()
     {
         // Enabled?
-        if (is_array($this->config()->banned_ip) === false || !count($this->config()->banned_ip)) {
+        if (is_array($this->config()['banned_ip']) === false || !count($this->config()['banned_ip'])) {
             return false;
         }
 
-        foreach($this->config()->banned_ip as $banned_ip) {
+        foreach($this->config()['banned_ip'] as $banned_ip) {
             // Wildcard
             $banned_ip = str_replace(['*', '.'], ['(\d+)', '\.'], $banned_ip);
 
@@ -387,7 +387,7 @@ class Controller extends View
     private function saveShortUrl($paste_id)
     {
         if (filter_var(htmlspecialchars((string)(new ShortenUrlApi())->shorten($this->application->buildUrl('paste/' . $paste_id))), FILTER_VALIDATE_URL) === false
-            || $this->config()->short_url === false
+            || $this->config()['short_url'] === false
         ) {
             return null;
         }
@@ -403,11 +403,11 @@ class Controller extends View
      */
     private function sizeAndLengthValidator($content)
     {
-        if (strlen($content) > $this->config()->max_chars) {
+        if (strlen($content) > $this->config()['max_chars']) {
             return false;
         }
 
-        if (ceil(Strings::stringToBytes($content) / 1024) > $this->config()->max_size_in_kb) {
+        if (ceil(Strings::stringToBytes($content) / 1024) > $this->config()['max_size_in_kb']) {
             return false;
         }
 

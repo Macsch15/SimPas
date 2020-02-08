@@ -17,7 +17,7 @@ class CookieJar
      */
     public function set($name, $value, $expire = 86400)
     {
-        return setcookie($name, $value, time() + $expire, $this->config()->cookie_path, $this->config()->cookie_domain, $this->config()->cookie_secure);
+        return setcookie($name, $value, time() + $expire, $this->config()['cookie_path'], $this->config()['cookie_domain'], $this->config()['cookie_secure']);
     }
 
     /**
@@ -47,6 +47,6 @@ class CookieJar
             unset($_COOKIE[$name]);
         }
 
-        return setcookie($name, null, -1, $this->config()->cookie_path, $this->config()->cookie_domain, $this->config()->cookie_secure);
+        return setcookie($name, null, -1, $this->config()['cookie_path'], $this->config()['cookie_domain'], $this->config()['cookie_secure']);
     }
 }

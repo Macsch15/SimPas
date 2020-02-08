@@ -22,9 +22,10 @@ class ReportAbuse extends View
 
     /**
      * Construct
-     * 
+     *
      * @param Application $application
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function __construct(Application $application)
     {
@@ -39,6 +40,8 @@ class ReportAbuse extends View
      *
      * @param array $request
      * @return void
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function indexAction(array $request)
     {
@@ -58,14 +61,18 @@ class ReportAbuse extends View
 
     /**
      * Send action
-     * 
+     *
      * @param array $request
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
+     * @throws \Application\Exception\MailerException
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function resultsAction(array $request)
     {
         // Doesn't have admin email?
-        if($this->config()->admin_email == null) {
+        if($this->config()['admin_email'] == null) {
             return $this->sendFriendlyClientError(_('Action are not allowed. Aborting.'), true);
         }
 
@@ -75,7 +82,7 @@ class ReportAbuse extends View
         }
 
         // Anti-spam
-        if($this->config()->antispam_enabled === true && 
+        if($this->config()['antispam_enabled'] === true &&
             (new QuestionsAndAnswers())->validate(HttpRequest::post('post_antispam_question'), 
                 HttpRequest::post('post_antispam_answer')) === false || HttpRequest::post('post_antispam_answer') === false
         ) {
@@ -95,9 +102,9 @@ class ReportAbuse extends View
             'ip_address' => HttpRequest::getClientIpAddress()
         ]);
 
-        $message = (new Mailer)->message(sprintf(_('You have received abuse report at %s'), $this->config()->site_title))
-        ->setFrom([$this->config()->admin_email => $this->config()->site_title])
-        ->setTo($this->config()->admin_email)
+        $message = (new Mailer)->message(sprintf(_('You have received abuse report at %s'), $this->config()['site_title']))
+        ->setFrom([$this->config()['admin_email'] => $this->config()['site_title']])
+        ->setTo($this->config()['admin_email'])
         ->setBody($render_mail, 'text/html');
 
         $success = false;

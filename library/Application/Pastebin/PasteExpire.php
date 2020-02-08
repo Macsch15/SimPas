@@ -64,11 +64,11 @@ class PasteExpire
         // Test
         if($expire_time < time()) {
             // Remove expired paste from database
-            if($this->config()->delete_expired_pastes === true) {
+            if($this->config()['delete_expired_pastes'] === true) {
                 // Prepare query
                 $query = $this->data_source
                 ->get()
-                ->prepare('DELETE FROM ' . $this->config('Database')->prefix . 'pastes WHERE unique_id = :paste_id');
+                ->prepare('DELETE FROM ' . $this->config('database')['prefix'] . 'pastes WHERE unique_id = :paste_id');
 
                 // Filter and execute
                 $query->bindValue(':paste_id', $paste_id, constant('PDO::PARAM_INT'));

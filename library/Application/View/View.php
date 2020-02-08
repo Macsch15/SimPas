@@ -145,7 +145,7 @@ class View extends Exception
         }
 
         // GZIP Compression
-        if($this->config()->gzip_compression === true && extension_loaded('zlib')) {
+        if($this->config()['gzip_compression'] === true && extension_loaded('zlib')) {
             // Start GZIP compression
             ob_start('ob_gzhandler');
 
@@ -171,8 +171,8 @@ class View extends Exception
      */
     private function clientHasNoPermissionsToDisplayPage()
     {
-        if($this->config()->site_offline === true 
-            && $this->config()->offline_allow_ip !== HttpRequest::getClientIpAddress()
+        if($this->config()['site_offline'] === true
+            && $this->config()['offline_allow_ip'] !== HttpRequest::getClientIpAddress()
         ) {
             return true;
         } 
@@ -237,6 +237,6 @@ class View extends Exception
      */
     public function assets($folder, $entity)
     {
-        return $this->config()->assets_url . $this->config()->theme . '/' . $folder . '/' . $entity;
+        return $this->config()['assets_url'] . $this->config()['theme'] . '/' . $folder . '/' . $entity;
     }
 }

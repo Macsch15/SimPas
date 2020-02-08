@@ -33,16 +33,16 @@ class Mailer
      */
     public function mailer()
     {
-        switch($this->config('Mailer')->transport) {
+        switch($this->config('mailer')['transport']) {
             case 'smtp':
                 if (function_exists('proc_open') === false) {
                     throw new MailerException('proc_* functions are not available on your PHP installation. This is required for SMTP transport.');
                 }
 
-                $transport = Swift_SmtpTransport::newInstance($this->config('Mailer')->host, $this->config('Mailer')->port, 
-                    $this->config('Mailer')->protocol)
-                ->setUsername($this->config('Mailer')->username)
-                ->setPassword($this->config('Mailer')->password);
+                $transport = Swift_SmtpTransport::newInstance($this->config('mailer')['host'], $this->config('mailer')['port'],
+                    $this->config('mailer')['protocol'])
+                ->setUsername($this->config('mailer')['username'])
+                ->setPassword($this->config('mailer')['password']);
                 break;
             case 'mail':
             default:
@@ -53,7 +53,7 @@ class Mailer
                     throw new MailerException('proc_* functions are not available on your PHP installation. This is required for Sendmail transport.');
                 }
 
-                $transport = Swift_SendmailTransport::newInstance($this->config()->sendmail_command);
+                $transport = Swift_SendmailTransport::newInstance($this->config()['sendmail_command']);
                 break;
         }
 
