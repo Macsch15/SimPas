@@ -50,7 +50,6 @@
     </div>
 
     <ul class="list-inline hidden-xs">
-      <li><a href="#" id="zclip" class="btn btn-primary btn-sm"><i class="fa fa-copy fa-lg"></i> {% trans %}Copy{% endtrans %}</a></li>
       <li><a href="{{ build_url('raw/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-terminal fa-lg"></i> {% trans %}Raw{% endtrans %}</a></li>
       <li><a href="{{ build_url('download/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-cloud-download fa-lg"></span> {% trans %}Download{% endtrans %}</a></li>
       <li><a data-toggle="modal" href="#share" class="btn btn-primary btn-sm"><i class="fa fa-share fa-lg"></i> {% trans %}Share{% endtrans %}</a></li>
@@ -59,7 +58,6 @@
     </ul>
 
     <ul class="list-inline visible-xs">
-      <li><a href="#" id="zclip" class="btn btn-primary btn-sm"><i class="fa fa-copy fa-lg"></i></a></li>
       <li><a href="{{ build_url('raw/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-terminal fa-lg"></i></a></li>
       <li><a href="{{ build_url('download/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-download fa-lg"></i></a></li>
       <li><a data-toggle="modal" href="#share" class="btn btn-primary btn-sm"><i class="fa fa-share fa-lg"></i></a></li>

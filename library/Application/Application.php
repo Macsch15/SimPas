@@ -37,7 +37,7 @@ class Application
      * 
      * @return bool
      */
-    const TEMPLATE_CACHE = true;
+    const TEMPLATE_CACHE = false;
 
     /**
      * Application version
