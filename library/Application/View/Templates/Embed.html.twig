@@ -11,7 +11,7 @@
 
   <div class="paste_title" itemprop="name">
     <span class="tooltip-top" title="{{ paste.visibility == 'private' ? 'This paste is private'|trans : 'This paste is public'|trans }}">
-      <i class="fa {{ paste.visibility == 'private' ? 'fa-lock' : 'muted_font fa-unlock' }}"></i> 
+      <i class="fas {{ paste.visibility == 'private' ? ' fa-lock' : ' muted_font fa-lock-open' }}"></i>
     </span>
 
     {% trans %}Paste{% endtrans %} &quot;<a href="{{ build_url('paste/' ~ paste.unique_id) }}">{{ paste_h4|raw }}</a>&quot;
@@ -25,9 +25,8 @@
   </div>
 
   <ul class="list-inline">
-    <li><a href="#" id="zclip" class="btn btn-primary btn-sm"><i class="fa fa-copy fa-lg"></i> {% trans %}Copy{% endtrans %}</a></li>
-    <li><a href="{{ build_url('raw/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-terminal fa-lg"></i> {% trans %}Raw{% endtrans %}</a></li>
-    <li><a href="{{ build_url('download/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-download fa-lg"></i> {% trans %}Download{% endtrans %}</a></li>
+    <li><a href="{{ build_url('raw/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><i class="fas fa-terminal fa-lg"></i>&nbsp;{% trans %}Raw{% endtrans %}</a></li>
+    <li><a href="{{ build_url('download/' ~ paste.unique_id) }}" class="btn btn-primary btn-sm"><i class="fas fa-download fa-lg"></i>&nbsp;{% trans %}Download{% endtrans %}</a></li>
   </ul>
 
   {{ paste.content|raw }}
