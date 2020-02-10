@@ -5,7 +5,6 @@ use Application\Application;
 use Application\Configuration\Configuration;
 use Application\HttpRequest\HttpRequest;
 use DirectoryIterator;
-use Twig_Autoloader;
 use Twig_Environment;
 use Twig_Extensions_Extension_I18n;
 use Twig_Loader_Filesystem;
@@ -44,9 +43,6 @@ class View extends Exception
      */
     public function __construct(Application $application)
     {
-        // Register Twig
-        Twig_Autoloader::register();
-
         $this->loader = new Twig_Loader_Filesystem(__DIR__ . DIRECTORY_SEPARATOR . 'Templates');
 
         // Setup Twig Environment
