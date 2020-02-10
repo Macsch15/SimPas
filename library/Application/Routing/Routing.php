@@ -118,7 +118,7 @@ class Routing extends View
 
                 $node = str_replace('/', '\/', $node);
 
-                if (preg_match('/^' . $node . '\/?$/', $this->_request, $arguments)) {
+                if (preg_match('/^' . $node . '\/?(.*?)$/', $this->_request, $arguments)) {
                     // Controller is not defined
                     if (isset($data['controller']) === false || empty($data['controller']) ||
                         isset($data['action']) === false || empty($data['action'])
