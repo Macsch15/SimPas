@@ -17,6 +17,8 @@ local.properties
 .loadpath
 vendor/
 composer.lock
+.idea/
+storage/
 
 # External tool builders
 .externalToolBuilders/
