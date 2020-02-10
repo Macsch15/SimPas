@@ -5,6 +5,6 @@ if (version_compare(phpversion(), '7.3.0', '<')) {
 
 use Application\Application;
 
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 new Application();

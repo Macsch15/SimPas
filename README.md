@@ -62,7 +62,6 @@ Settings
 |    Key      |  Description | Value type | Default value |
 |-------------|-------------|-------------| ------------- |
 full_url     | Full address of SimPas installation **with ending slash**  |  String  |  http://localhost/SimPas/develop/
-assets_url    | Assets (CSS, JS...) address (usually ```http://base-url.com/assets/```). You can use subdomain e.g ```http://assets.base-url.com/```. **Remember about ending slash.**  | String  | http://localhost/SimPas/develop/assets/
 site_title    | Site title displayed on page index  | String  | SimPas Application
 site_description_crawlers  | Site description for crawlers (e.g Google)  | String  | SimPas Application
 show_index_in_urls  | Change for "true" only if your server NOT have a mod_rewrite | true/false  | false
