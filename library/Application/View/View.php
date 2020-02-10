@@ -43,7 +43,7 @@ class View extends Exception
      */
     public function __construct(Application $application)
     {
-        $this->loader = new Twig_Loader_Filesystem(__DIR__ . DIRECTORY_SEPARATOR . 'Templates');
+        $this->loader = new Twig_Loader_Filesystem(Application::makePath('views'));
 
         // Setup Twig Environment
         $this->twig = new Twig_Environment($this->loader, [
