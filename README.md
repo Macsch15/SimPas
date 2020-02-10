@@ -30,7 +30,7 @@ After you set configuration, type in command line
 
 
 ```
-$ php cmd/console SyncDb
+$ php cli SyncDb
 ```
 
 I have old release! How I can update SimPas?
@@ -40,13 +40,13 @@ Bad news.
 SimPas doesn't have an upgrader. Only way to install fresh release is to re-upload all files, configure low-level settings and enter the command:
 
 ```
-$ php cmd/console CacheRebuild
+$ php cli CacheRebuild
 ```
 
 Some (e.g from 0.2 to 0.3) releases may need re-sync database schema, in this case command above is not enough, you must fire this as well in command-line:
 
 ```
-$ php cmd/console UpdateDb
+$ php cli UpdateDb
 ```
 
 *Upgrader be maybe coming soon. Who knows?*
@@ -140,31 +140,31 @@ Command line interface
 **Create Database schema**
 
 ```
-$ php cmd/console SyncDb
+$ php cli SyncDb
 ```
 
 **Update Database schema**
 
 ```
-$ php cmd/console UpdateDb
+$ php cli UpdateDb
 ```
 
 **Clear Database**
 
 ```
-$ php cmd/console ClearDb
+$ php cli ClearDb
 ```
 
 **Rebuild cache**
 
 ```
-$ php cmd/console CacheRebuild
+$ php cli CacheRebuild
 ```
 
 **Erasing all expired pastes**
 
 ```
-$ php cmd/console EraseExpiredPastes
+$ php cli EraseExpiredPastes
 ```
 
 How I can translate "Rules" and "Cookies policy"?
