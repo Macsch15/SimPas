@@ -98,6 +98,8 @@ class View extends Exception
      */
     public function getTemplatesList()
     {
+        $_templates = [];
+
         foreach($this->loader->getPaths() as $_path) {
             foreach (new DirectoryIterator($_path) as $template_name) {
                 // Ignore dots and non-template files

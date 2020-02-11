@@ -42,6 +42,7 @@ class ReportAbuse extends View
      * @return void
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Syntax
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function indexAction(array $request)
     {

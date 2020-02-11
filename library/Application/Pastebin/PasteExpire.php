@@ -22,12 +22,13 @@ class PasteExpire
      * @var object
      */
     private $data_source;
-    
+
     /**
      * Construct
-     * 
+     *
      * @param Application $application
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function __construct(Application $application)
     {
@@ -53,7 +54,7 @@ class PasteExpire
 
         // Empty?
         if($expire_time == null) {
-            $expiry_time = 'never';
+            $expire_time = 'never';
         }
 
         // Not expire?
@@ -117,8 +118,5 @@ class PasteExpire
                 return time() + 31536000;
                 break;
         }
-
-        // Still here?
-        return 'never';
     }
 }

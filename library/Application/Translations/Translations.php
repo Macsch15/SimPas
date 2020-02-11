@@ -19,11 +19,6 @@ class Translations
      */
     public function __construct()
     {
-        // Translations is disabled?
-        if($this->config()['translations'] === false) {
-            return;
-        }
-
         // Locale doesn't exists?
         if($this->config()['translations'] === true && $this->config()['locale'][1] == null) {
             throw new ExceptionRuntime('Locale is required when translation is enabled');

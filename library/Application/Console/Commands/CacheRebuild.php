@@ -74,8 +74,10 @@ class CacheRebuild extends View
 
     /**
      * Build the cache files
-     * 
+     *
      * @return void
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     private function build()
     {

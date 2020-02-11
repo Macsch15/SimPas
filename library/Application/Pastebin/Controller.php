@@ -28,9 +28,10 @@ class Controller extends View
 
     /**
      * Construct
-     * 
+     *
      * @param Application $application
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function __construct(Application $application)
     {
@@ -42,8 +43,9 @@ class Controller extends View
 
     /**
      * Index page
-     * 
+     *
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function indexAction()
     {
@@ -59,9 +61,12 @@ class Controller extends View
 
     /**
      * Read
-     * 
+     *
      * @param array $request
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function readAction(array $request)
     {
@@ -267,9 +272,11 @@ class Controller extends View
 
     /**
      * Raw mode page
-     * 
+     *
      * @param array $request
      * @return void
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function rawModeAction(array $request)
     {
@@ -416,9 +423,11 @@ class Controller extends View
 
     /**
      * Download action
-     * 
-     * @param array $request 
+     *
+     * @param array $request
      * @return string
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function downloadAction(array $request)
     {

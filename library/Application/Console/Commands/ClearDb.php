@@ -26,10 +26,11 @@ class ClearDb
 
     /**
      * Construct
-     * 
+     *
      * @param Console $console
      * @param Application $application
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function __construct(Console $console, Application $application)
     {

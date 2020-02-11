@@ -53,7 +53,7 @@ class Driver
     }
 
     /**
-    * Schema
+     * Schema
      *
      * @return bool|array
      */

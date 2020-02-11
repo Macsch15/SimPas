@@ -33,9 +33,11 @@ class Compare extends View
 
     /**
      * Compare
-     * 
+     *
      * @param array $request
      * @return void
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function compareAction(array $request)
     {
@@ -49,8 +51,8 @@ class Compare extends View
         }
 
         // Include diff lib
-        require_once Application::makePath('library/Diff/Diff.php');
-        require_once Application::makePath('library/Diff/Diff/Renderer/Html/Inline.php');
+        require Application::makePath('library/Diff/Diff.php');
+        require Application::makePath('library/Diff/Diff/Renderer/Html/Inline.php');
 
         // Get paste content
         $left = (new ReadPaste($this->application))->read($request['left'])['raw_content'];
@@ -68,9 +70,11 @@ class Compare extends View
 
     /**
      * Compare form
-     * 
+     *
      * @param array $request
      * @return void
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function formAction(array $request)
     {

@@ -34,10 +34,11 @@ class EraseExpiredPastes
 
     /**
      * Construct
-     * 
+     *
      * @param Console $console
      * @param Application $application
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function __construct(Console $console, Application $application)
     {
@@ -57,8 +58,9 @@ class EraseExpiredPastes
 
     /**
      * Erase expired pastes
-     * 
+     *
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
      */
     private function eraseExpired()
     {

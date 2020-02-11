@@ -85,9 +85,10 @@ class Exception
 
     /**
      * Storage last exception in cache
-     * 
+     *
      * @param object $exception
      * @return void
+     * @throws \Exception
      */
     private function saveLastException($exception)
     {

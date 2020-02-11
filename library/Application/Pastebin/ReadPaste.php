@@ -20,6 +20,7 @@ class ReadPaste
      *
      * @param Application $application
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function __construct(Application $application)
     {

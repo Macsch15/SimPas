@@ -55,11 +55,6 @@ class Routing extends View
         // Client request
         $this->_request = '/' . getenv('QUERY_STRING');
 
-        // Check routes
-        if (count($routes['routes']) === 0) {
-            return false;
-        }
-
         foreach($routes['routes'] as $route_name => $route_data) {
             $this->_route[$route_name] = $route_data;
         }

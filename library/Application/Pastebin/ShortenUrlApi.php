@@ -38,9 +38,11 @@ class ShortenUrlApi
 
     /**
      * Shorten URL
-     * 
-     * @param string $long_url 
+     *
+     * @param string $long_url
      * @return array|null
+     * @throws \Application\Exception\ExceptionInvalidArgument
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function shorten($long_url)
     {

@@ -23,12 +23,13 @@ class LatestPastes extends View
      * @var object
      */
     private $data_source;
-    
+
     /**
      * Construct
-     * 
+     *
      * @param Application $application
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function __construct(Application $application)
     {

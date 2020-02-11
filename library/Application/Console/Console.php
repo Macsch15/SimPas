@@ -50,7 +50,7 @@ class Console
     }
 
     /**
-     * Avaiable commands
+     * Available commands
      *
      * @param bool $as_array
      * @return string|array
@@ -70,11 +70,11 @@ class Console
 
     /**
      * Write message to stdout
-     * 
-     * @param string $message 
+     *
+     * @param string $message
      * @param bool $list
      * @param string $line_separator
-     * @param string $error_message
+     * @param bool $error_message
      * @return void
      */
     public function writeStdout($message, $list = false, $line_separator = PHP_EOL, $error_message = false)
