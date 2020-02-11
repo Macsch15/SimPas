@@ -31,7 +31,6 @@ return [
         '8.8.8.*'
     ],
     'google_analytics_ua_code' => '',
-    'google_analytics_domain' => '',
     'short_url' => false,
     'latest_pastes' => 20,
     'antispam_enabled' => false,
