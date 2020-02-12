@@ -87,10 +87,10 @@ class Application
 
         // Try-catch
         try {
-            // Translations
-            new Translations();
+            if ($this->config()['translations'] === true) {
+                new Translations();
+            }
 
-            // Routing
             new Routing($this);
         } catch(ExceptionRuntime $exception) {
             (new View($this))->drawExceptionMessage($exception, 'Runtime');
