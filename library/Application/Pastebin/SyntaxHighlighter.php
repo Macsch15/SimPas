@@ -28,7 +28,7 @@ class SyntaxHighlighter
      */
     public function __construct()
     {
-        require Application::makePath('library:GeSHi:geshi.php');
+        require_once Application::makePath('library:GeSHi:geshi.php');
 
         $this->cache_path = Application::makePath('storage:geshi');
     }

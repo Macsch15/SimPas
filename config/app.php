@@ -18,8 +18,8 @@ return [
     'translations' => false,
     'translation_domain' => 'messages',
     'locale' => [
-        'en',
-        'en_EN'
+        'pl',
+        'pl_PL'
     ],
     'default_timezone' => 'Europe/Warsaw',
     'charset' => 'UTF-8',
