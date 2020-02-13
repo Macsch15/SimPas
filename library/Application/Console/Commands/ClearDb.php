@@ -41,10 +41,8 @@ class ClearDb
         $this->console->writeStdout('After cleaning, you must re-sync database schema by command "php cmd/console SyncDb"');
         $this->console->writeStdout('Press "Enter" to continue...', false, null);
 
-        // Key confirmation
         $this->console->commandExecuteConfirmation();
 
-        // Clear
         $this->clear();
     }
 
@@ -57,10 +55,8 @@ class ClearDb
     {
         $this->console->writeStdout('Preparing database schema...', false, ' ');
 
-        // Load schema
         $schema_file = $this->data_source->getSchema();
 
-        // Schema test
         if($schema_file !== false) {
             $this->console->writeStdout('Succeeded');
         } else {
@@ -82,7 +78,6 @@ class ClearDb
 
             $this->console->writeStdout('Removing table "' . $this->config('database')['prefix'] . $table . '"...', false, ' ');
 
-            // try-catch
             try {
                 $this->data_source->get()->query($_clearQuery);
 

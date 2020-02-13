@@ -35,7 +35,6 @@ class ReadPaste
      */
     public function read($paste_id)
     {
-        // Prepare query
         $query = $this->data_source
         ->get()
         ->prepare('SELECT 
@@ -56,10 +55,7 @@ class ReadPaste
             hits
         FROM ' . $this->config('database')['prefix']  . 'pastes WHERE unique_id = :paste_id LIMIT 1');
 
-        // Filter
         $query->bindValue(':paste_id', $paste_id, constant('PDO::PARAM_INT'));
-
-        // Execute
         $query->execute();
 
         return $query->fetchAll()[0];
@@ -73,18 +69,15 @@ class ReadPaste
      */
     public function pasteExists($paste_id)
     {
-        // Prepare query
         $query = $this->data_source
         ->get()
         ->prepare('SELECT unique_id FROM ' . $this->config('database')['prefix'] . 'pastes WHERE unique_id = :paste_id');
 
-        // Filter and execute
         $query->bindValue(':paste_id', $paste_id, constant('PDO::PARAM_INT'));
         $query->execute();
 
         $rows = $query->fetchAll();
 
-        // Test
         if (is_array($rows) && count($rows)) {
             return true;
         }

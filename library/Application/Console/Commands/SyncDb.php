@@ -37,7 +37,6 @@ class SyncDb
         $this->data_source = $application->dbConnectionAccessor();
         $this->console = $console;
 
-        // Sync
         $this->sync();
     }
 
@@ -50,10 +49,8 @@ class SyncDb
     {
         $this->console->writeStdout('Preparing database schema...', false, ' ');
 
-        // Load schema
         $schema_file = $this->data_source->getSchema();
 
-        // Schema test
         if($schema_file !== false) {
             $this->console->writeStdout('Succeeded');
         } else {
@@ -76,34 +73,27 @@ class SyncDb
             switch($this->config('database')['driver']) {
                 case 'mysql':
                 default:
-                    // Table
                     $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS ' . $this->config('database')['prefix'] . $table . '( ';
 
                     foreach($table_fields as $field_name => $field_value) {
-                        // Ignore
                         if($field_name === '__options__') {
                             continue;
                         }
 
-                        // Fields
                         $_createTablesQuery .= '`' . $field_name . '` ' . $field_value . ',';
                     }
 
-                    // Table options
                     $_createTablesQuery .= 'PRIMARY KEY(' . $table_fields['__options__']['primary_key'] . ')) ENGINE=' . $table_fields['__options__']['engine'];
                     $_createTablesQuery .= ' DEFAULT CHARSET=\'' . $this->config('database')['charset'] . '\' DEFAULT COLLATE=\'' . $this->config('database')['collate'] . '\';';
                     break;
                 case 'postgresql':
-                    // Table
                     $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS ' . $this->config('database')['prefix'] . $table . '( ';
 
                     foreach($table_fields as $field_name => $field_value) {
-                        // Ignore
                         if($field_name === '__options__') {
                             continue;
                         }
 
-                        // Fields
                         $_createTablesQuery .= $field_name . ' ' . $field_value . ',';
                     }
 
@@ -113,9 +103,7 @@ class SyncDb
 
             $this->console->writeStdout('Creating table "' . $this->config('database')['prefix'] . $table . '"...', false, ' ');
             
-            // try-catch
             try {
-                // Execute
                 $this->data_source->get()->query($_createTablesQuery);
 
                 $this->console->writeStdout('Succeeded');
@@ -124,7 +112,6 @@ class SyncDb
             }
         }
 
-        // Final message
         $this->console->writeStdout(null);
         $this->console->writeStdout('SimPas is ready for work now. Visit your home site: ' . $this->config()['full_url']);
     }

@@ -34,7 +34,6 @@ class SendPaste
      * @return void
      */
     public function send(array $container) {
-        // Prepare query
         $query = $this->data_source
         ->get()
         ->prepare('INSERT INTO ' . $this->config('database')['prefix'] . 'pastes (
@@ -71,7 +70,6 @@ class SendPaste
             :expire
         );');
 
-        // Filter
         $query->bindValue(':unique_id', $container['paste_id'], constant('PDO::PARAM_INT'));
         $query->bindValue(':time', $container['paste_time'], constant('PDO::PARAM_INT'));
         $query->bindValue(':size', $container['paste_size'], constant('PDO::PARAM_INT'));
@@ -88,7 +86,6 @@ class SendPaste
         $query->bindValue(':short_url', $container['paste_short_url']);
         $query->bindValue(':expire', $container['paste_expire']);
 
-        // Execute
         $query->execute();
     }
 

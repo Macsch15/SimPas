@@ -46,11 +46,9 @@ class ShortenUrlApi
      */
     public function shorten($long_url)
     {
-        // Get API
-        $response = $this->file_manager->getContentsFromUrl(sprintf('http://api.bit.ly/shorten?version=2.0.1&longUrl=%s&login=%s&apiKey=%s', 
+        $response = $this->file_manager->getContentsFromUrl(sprintf('http://api.bit.ly/shorten?version=2.0.1&longUrl=%s&login=%s&apiKey=%s',
             urlencode($long_url), $this->bitly_username, $this->bitly_api_key));
 
-        // Decode from JSON
         $response = json_decode($response, true);
 
         if($response == null || $response['errorCode'] !== 0) {
@@ -59,7 +57,6 @@ class ShortenUrlApi
 
         $short_url = null;
 
-        // Fetch short URL
         foreach($response['results'] as $site) {
             $short_url = $site['shortUrl'];
         }

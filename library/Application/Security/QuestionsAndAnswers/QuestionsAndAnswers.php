@@ -64,6 +64,7 @@ class QuestionsAndAnswers
         }
 
         $questions_container = [];
+
         foreach($this->config('qa') as $question => $answer) {
             $questions_container[] = $question;
         }

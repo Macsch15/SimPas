@@ -24,29 +24,20 @@ class FileManager
             throw new ExceptionRuntime('cURL extension must be installed');
         }
 
-        // Check URL
         if (filter_var($url, FILTER_VALIDATE_URL) === false) {
             throw new ExceptionInvalidArgument(sprintf('++%s+-+ is not URL', $url));
         }
 
-        // Create cURL resource
         $handle = curl_init();
 
-        // Get content
         curl_setopt($handle, CURLOPT_URL, $url);
-        // Headers
         curl_setopt($handle, CURLOPT_HEADER, $headers);
-        // Return transfer
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-        // Set timeout
         curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, $timeout);
-        // HTTP attributes
         curl_setopt($handle, CURLOPT_POSTFIELDS, $http_attributes);
         
-        // Execute!
         $exec = curl_exec($handle);
 
-        // Close session
         curl_close($handle);
 
         return $exec;
@@ -60,10 +51,8 @@ class FileManager
      */
     public function getContentsFromFile($file)
     {
-        // Get data
         $data = @file_get_contents($file);
 
-        // Fail?
         if($data === false) {
             return false;
         }

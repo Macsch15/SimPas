@@ -27,24 +27,19 @@ class Console
      */
     public function __construct(Application $application, array $cmd_argv)
     {
-        // Command without arguments?
         if (count($cmd_argv) <= 1) {
             return $this->avaiableCommands();
         }
 
-        // Shift first value of array
         array_shift($cmd_argv);
 
         foreach($cmd_argv as $arguments) {
-            // Arguments validation
             if (in_array($arguments, $this->avaiableCommands(true), true) === false) {
                 return $this->avaiableCommands();
             }
 
-            // Add namespace
             $arguments = 'Application\\Console\\Commands\\' . $arguments;
 
-            // Run the command controller
             new $arguments($this, $application);
         }
     }

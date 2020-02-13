@@ -21,8 +21,7 @@ class Mailer
      */
     public function __construct()
     {
-        // Include needed libraries
-        require_once Application::makePath('library:Swiftmailer:lib:swift_required.php');
+        require Application::makePath('library:Swiftmailer:lib:swift_required.php');
     }
 
     /**

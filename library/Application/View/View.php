@@ -45,26 +45,21 @@ class View extends Exception
     {
         $this->loader = new Twig_Loader_Filesystem(Application::makePath('views'));
 
-        // Setup Twig Environment
         $this->twig = new Twig_Environment($this->loader, [
                 'cache'            => (Application::TEMPLATE_CACHE === true ? Application::makePath('storage:templates') : false),
                 'auto_reload'      => (Application::ENVIRONMENT === 'dev' ?: false),
                 'strict_variables' => (Application::ENVIRONMENT === 'dev' ?: false)
         ]);
 
-        // Add globals and functions
         $this->twig->addGlobal('app', $application);
         $this->twig->addGlobal('config', $this->config());
 
-        // Add translations extension
         $this->twig->addExtension(new Twig_Extensions_Extension_I18n());
 
-        // Assets function
         $this->twig->addFunction(new Twig_SimpleFunction('assets', function ($folder, $entity) {
             return $this->assets($folder, $entity);
         }));
 
-        // Build URL
         $this->twig->addFunction(new Twig_SimpleFunction('build_url', function ($route = null) use ($application) {
             return $application->buildUrl($route);
         }));
@@ -102,7 +97,6 @@ class View extends Exception
 
         foreach($this->loader->getPaths() as $_path) {
             foreach (new DirectoryIterator($_path) as $template_name) {
-                // Ignore dots and non-template files
                 if($template_name->isDot() || substr($template_name->getFileName(), -5) !== '.twig') {
                     continue;
                 }
@@ -137,23 +131,17 @@ class View extends Exception
      */
     public function __get($template_name)
     {
-        // Site is offline
         if($this->clientHasNoPermissionsToDisplayPage() === true) {
             return $this->twig('SiteOffline.html.twig')->display([]);
         }
 
-        // GZIP Compression
         if($this->config()['gzip_compression'] === true && extension_loaded('zlib')) {
-            // Start GZIP compression
             ob_start('ob_gzhandler');
 
-            // Content
             $this->twig($template_name . '.html.twig')->display($this->render);
 
-            // Close connection
             header('Connection: close');
 
-            // Flush
             ob_end_flush();
 
             return true;
@@ -190,7 +178,6 @@ class View extends Exception
     public function sendFriendlyClientError($message, $not_found_header = false)
     {
         if($not_found_header === true) {
-            // Set headers
             header('HTTP/1.1 404 Not Found', true, 404);
         }
 
@@ -209,11 +196,11 @@ class View extends Exception
      */
     public function regenerateTemplateCache($debug = false)
     {
+        $created_cache = [];
+
         foreach($this->getTemplatesList() as $_template) {
-            // Create cache
             $this->twig($_template);
 
-            // Debug
             if($debug === true) {
                 $created_cache[] = $_template;
             }

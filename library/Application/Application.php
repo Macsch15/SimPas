@@ -58,34 +58,27 @@ class Application
      *
      * @param array $cmd_argv
      * @return void
+     * @throws \Exception
      */
     public function __construct(array $cmd_argv = [])
     {
-        // CLI request
         if (strtolower(php_sapi_name()) === 'cli') {
             new Console($this, $cmd_argv);
             die();
         }
 
-        // Error level
         if (Application::ENVIRONMENT === 'dev') {
-            // All errors
             error_reporting(E_ALL);
-            // Error handler
             set_error_handler([$this, 'engineErrorsHandler']);
         } else {
-            // No errors
             error_reporting(0);
-            // Error handler
             set_error_handler([$this, 'engineErrorsHandler'], 0);
         }
 
-        // Timezone settings
         if(!ini_get('date.timezone')) {
             @date_default_timezone_set($this->config()['default_timezone']);
         }
 
-        // Try-catch
         try {
             if ($this->config()['translations'] === true) {
                 new Translations();
@@ -131,7 +124,6 @@ class Application
         }
 
         if($this->config()['show_index_in_urls'] === true) {
-            // If you can't use mod rewrite add index to URL
             return $this->config()['full_url'] . 'index.php?' . $route;
         } else {
             return $this->config()['full_url'] . $route;

@@ -3,7 +3,10 @@
         "php": "^7.2",
         "twig/twig": "1.15.*",
         "twig/extensions": "1.2.*",
-        "geshi/geshi": "v1.0.9.1"
+        "geshi/geshi": "v1.0.9.1",
+        "ext-curl": "*",
+        "ext-pdo": "*",
+        "ext-gettext": "*"
     },
 
     "autoload": {
