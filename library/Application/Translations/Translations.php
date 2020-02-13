@@ -23,8 +23,7 @@ class Translations
             throw new ExceptionRuntime('Locale is required when translation is enabled');
         }
 
-        $file = Application::makePath('library:Application:Translations:Resources:' .
-            $this->config()['locale'][1] . ':LC_MESSAGES:' . $this->config()['translation_domain']);
+        $file = Application::makePath('translations:' . $this->config()['locale'][1] . ':LC_MESSAGES:' . $this->config()['translation_domain']);
 
         if (file_exists($file . '.po') === false) {
             throw new AssetNotFound(sprintf('Translation file: ++%s+-+ not found', $file . '.po'));
@@ -36,10 +35,10 @@ class Translations
 
         $m_time = filemtime($file . '.mo');
 
-        if (file_exists(Application::makePath('library:Application:Translations:Resources:' .
+        if (file_exists(Application::makePath('translations:' .
             $this->config()['locale'][1] . ':LC_MESSAGES:' . $this->config()['translation_domain'] . '_' . $m_time . '.mo')) === false
         ) {
-            copy($file . '.mo', Application::makePath('library:Application:Translations:Resources:' . 
+            copy($file . '.mo', Application::makePath('translations:' .
                 $this->config()['locale'][1] . ':LC_MESSAGES:' . $this->config()['translation_domain'] . '_' . $m_time . '.mo'));
         }
 
@@ -48,7 +47,7 @@ class Translations
         setlocale(LC_ALL, $this->config()['locale'][1]);
         setlocale(LC_TIME, $this->config()['locale'][1]);
 
-        bindtextdomain($this->config()['translation_domain'] . '_' . $m_time, Application::makePath('library:Application:Translations:Resources'));
+        bindtextdomain($this->config()['translation_domain'] . '_' . $m_time, Application::makePath('translations'));
         textdomain($this->config()['translation_domain'] . '_' . $m_time);
     }
 }

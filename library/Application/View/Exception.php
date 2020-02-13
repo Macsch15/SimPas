@@ -94,6 +94,6 @@ class Exception
         $_sourceToSave .= '-- Exception file: ' . $exception->getFile() . PHP_EOL;
         $_sourceToSave .= '-- Exception line: ' . $exception->getLine();
 
-        @file_put_contents(Application::makePath('storage:last_exception.cgi'), $_sourceToSave);
+        @file_put_contents(Application::makePath('storage:last_exception.log'), $_sourceToSave);
     }
 }
