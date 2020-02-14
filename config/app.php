@@ -15,7 +15,7 @@ return [
     'theme' => 'default',
     'max_chars' => 50000,
     'max_size_in_kb' => 512,
-    'translations' => false,
+    'translations' => true,
     'translation_domain' => 'messages',
     'locale' => [
         'pl',
