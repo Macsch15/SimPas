@@ -16,7 +16,12 @@ Requirements
 
 How to Install?
 ======
-Copy all files to your server and edit configuration files:
+Run composer:
+```
+$ composer install
+```
+
+Edit configuration files:
 
 ```
 config/database.php
