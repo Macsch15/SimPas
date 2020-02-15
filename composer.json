@@ -6,7 +6,8 @@
         "geshi/geshi": "v1.0.9.1",
         "ext-curl": "*",
         "ext-pdo": "*",
-        "ext-gettext": "*"
+        "ext-gettext": "*",
+        "swiftmailer/swiftmailer": "5.4.*"
     },
 
     "autoload": {

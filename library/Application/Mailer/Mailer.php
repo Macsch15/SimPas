@@ -1,7 +1,6 @@
 <?php
 namespace Application\Mailer;
 
-use Application\Application;
 use Application\Configuration\Configuration;
 use Application\Exception\MailerException;
 use Swift_Mailer;
@@ -13,16 +12,6 @@ use Swift_SmtpTransport;
 class Mailer
 {
     use Configuration;
-
-    /**
-     * Construct
-     * 
-     * @return void
-     */
-    public function __construct()
-    {
-        require Application::makePath('library:Swiftmailer:lib:swift_required.php');
-    }
 
     /**
      * Mailer width transport
@@ -38,25 +27,24 @@ class Mailer
                     throw new MailerException('proc_* functions are not available on your PHP installation. This is required for SMTP transport.');
                 }
 
-                $transport = Swift_SmtpTransport::newInstance($this->config('mailer')['host'], $this->config('mailer')['port'],
-                    $this->config('mailer')['protocol'])
-                ->setUsername($this->config('mailer')['username'])
-                ->setPassword($this->config('mailer')['password']);
+                $transport = (new Swift_SmtpTransport($this->config('mailer')['host'], $this->config('mailer')['port']))
+                    ->setUsername($this->config('mailer')['username'])
+                    ->setPassword($this->config('mailer')['password']);
                 break;
             case 'mail':
             default:
-                $transport = Swift_MailTransport::newInstance();
+                $transport = new Swift_MailTransport;
                 break;
             case 'sendmail':
                 if (function_exists('proc_open') === false) {
                     throw new MailerException('proc_* functions are not available on your PHP installation. This is required for Sendmail transport.');
                 }
 
-                $transport = Swift_SendmailTransport::newInstance($this->config()['sendmail_command']);
+                $transport = new Swift_SendmailTransport($this->config()['sendmail_command']);
                 break;
         }
 
-        return Swift_Mailer::newInstance($transport);
+        return new Swift_Mailer($transport);
     }
 
     /**
@@ -67,6 +55,6 @@ class Mailer
      */
     public function message($subject = null)
     {
-        return Swift_Message::newInstance($subject);
+        return new Swift_Message($subject);
     }
 }
