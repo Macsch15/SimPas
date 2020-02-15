@@ -38,6 +38,8 @@ After you set configuration, type in command line
 $ php cli SyncDb
 ```
 
+After installing SimPas, you should configure your web server document / web root to be the **public** directory.
+
 I have old release! How I can update SimPas?
 ======
 
