@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SimPas Polish\n"
 "POT-Creation-Date: 2014-06-15 21:13+0100\n"
-"PO-Revision-Date: 2020-02-13 20:56+0100\n"
+"PO-Revision-Date: 2020-02-18 20:28+0100\n"
 "Last-Translator: \n"
 "Language-Team: Macsch15\n"
 "Language: pl_PL\n"
@@ -173,12 +173,6 @@ msgstr "JSON API"
 #: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:167
 msgid "Share on Twitter"
 msgstr "Udostępnij na Twitter"
-
-#: H:\program
-#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:145
-#: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:174
-msgid "Share on Google+"
-msgstr "Udostępnij na Google+"
 
 #: H:\program
 #: files\xampp\htdocs\SimPas\develop/storage/templates/02/bb/5d00230d57b21edb7fa87ac7fa02a37f33c6163cae5d7832ff4a4450b1a9.php:152
