@@ -1,4 +1,4 @@
-SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.svg?branch=master)](https://travis-ci.org/Macsch15/SimPas)
+SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.svg?branch=master)](https://travis-ci.org/Macsch15/SimPas) [![StyleCI](https://github.styleci.io/repos/16285783/shield?branch=master)](https://github.styleci.io/repos/16285783)
 ======
 
 Fat-free Pastebin Application
@@ -39,6 +39,12 @@ $ php cli SyncDb
 ```
 
 After installing SimPas, you should configure your web server document / web root to be the **public** directory.
+
+Testing
+======
+```
+$ ./vendor/phpunit
+```
 
 I have old release! How I can update SimPas?
 ======
