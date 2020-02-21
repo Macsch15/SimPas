@@ -33,24 +33,24 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'XBasic',
-    'COMMENT_SINGLE' => array(1 => "'"),
-    'COMMENT_MULTI' => array(),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array('"'),
-    'ESCAPE_CHAR' => '',
-    'KEYWORDS' => array(
-        1 => array(
+$language_data = [
+    'LANG_NAME'      => 'XBasic',
+    'COMMENT_SINGLE' => [1 => "'"],
+    'COMMENT_MULTI'  => [],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'QUOTEMARKS'     => ['"'],
+    'ESCAPE_CHAR'    => '',
+    'KEYWORDS'       => [
+        1 => [
             'WHILE', 'UNTIL', 'TRUE', 'TO', 'THEN', 'SUB', 'STOP', 'STEP',
             'SELECT', 'RETURN', 'PROGRAM', 'NEXT', 'LOOP', 'IFZ',
             'IFT', 'IFF', 'IF', 'GOTO', 'GOSUB', 'FOR', 'FALSE', 'EXIT',
-            'ENDIF', 'END', 'ELSE', 'DO', 'CASE', 'ALL'
-            ),
-        2 => array(
+            'ENDIF', 'END', 'ELSE', 'DO', 'CASE', 'ALL',
+        ],
+        2 => [
             'XMAKE', 'XLONGAT', 'XLONG', 'WRITE', 'VOID', 'VERSION$', 'VERSION',
             'USHORTAT', 'USHORT', 'UNION', 'ULONGAT', 'ULONG', 'UCASE$',
-            'UBYTEAT', 'UBYTE', 'UBOUND', 'TYPE','TRIM$', 'TAB', 'SWAP',
+            'UBYTEAT', 'UBYTE', 'UBOUND', 'TYPE', 'TRIM$', 'TAB', 'SWAP',
             'SUBADDRESS', 'SUBADDR', 'STUFF$', 'STRING', 'STRING$', 'STR$',
             'STATIC', 'SSHORTAT', 'SSHORT', 'SPACE$', 'SMAKE', 'SLONGAT', 'SLONG',
             'SIZE', 'SINGLEAT', 'SINGLE', 'SIGNED$', 'SIGN', 'SHELL', 'SHARED',
@@ -67,77 +67,75 @@ $language_data = array (
             'EOF', 'DOUBLEAT', 'DOUBLE', 'DMAKE', 'DLOW', 'DIM', 'DHIGH',
             'DECLARE', 'DEC', 'DCOMPLEX', 'CSTRING$', 'CSIZE', 'CSIZE$', 'CLR',
             'CLOSE', 'CLEAR', 'CJUST$', 'CHR$', 'CFUNCTION', 'BITFIELD', 'BINB$',
-            'BIN$', 'AUTOX', 'AUTOS', 'AUTO', 'ATTACH', 'ASC', 'ABS'
-            ),
-        3 => array(
-            'XOR', 'OR', 'NOT', 'MOD', 'AND'
-            ),
-        4 => array(
+            'BIN$', 'AUTOX', 'AUTOS', 'AUTO', 'ATTACH', 'ASC', 'ABS',
+        ],
+        3 => [
+            'XOR', 'OR', 'NOT', 'MOD', 'AND',
+        ],
+        4 => [
             'TANH', 'TAN', 'SQRT', 'SINH', 'SIN', 'SECH', 'SEC', 'POWER',
             'LOG10', 'LOG', 'EXP10', 'EXP', 'CSCH', 'CSC', 'COTH', 'COT', 'COSH',
             'COS', 'ATANH', 'ATAN', 'ASINH', 'ASIN', 'ASECH', 'ASEC', 'ACSCH',
-            'ACSC', 'ACOSH', 'ACOS'
-            )
-        ),
-    'SYMBOLS' => array(
+            'ACSC', 'ACOSH', 'ACOS',
+        ],
+    ],
+    'SYMBOLS' => [
         '(', ')', '[', ']', '!', '@', '%', '&', '*', '|', '/', '<', '>',
-        '=','+','-'
-        ),
-    'CASE_SENSITIVE' => array(
+        '=', '+', '-',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => false,
-        2 => false,
-        3 => false,
-        4 => false
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => false,
+        2              => false,
+        3              => false,
+        4              => false,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #00a1a1;font-weight: bold',
             2 => 'color: #000066;font-weight: bold',
             3 => 'color: #00a166;font-weight: bold',
-            4 => 'color: #0066a1;font-weight: bold'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #808080;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #66cc66;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #ff0000;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #cc66cc;'
-            ),
-        'METHODS' => array(
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #66cc66;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099;'
-            ),
-        'SCRIPT' => array(
-            ),
-        'REGEXPS' => array(
-            )
-        ),
-    'URLS' => array(
+            4 => 'color: #0066a1;font-weight: bold',
+        ],
+        'COMMENTS' => [
+            1 => 'color: #808080;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #66cc66;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #ff0000;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #cc66cc;',
+        ],
+        'METHODS' => [
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #66cc66;',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #000099;',
+        ],
+        'SCRIPT' => [
+        ],
+        'REGEXPS' => [
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
         3 => 'http://www.xbasic.org',
-        4 => 'http://www.xbasic.org'
-        ),
-    'OOLANG' => false,
-    'OBJECT_SPLITTERS' => array(
-        ),
-    'REGEXPS' => array(
-        ),
+        4 => 'http://www.xbasic.org',
+    ],
+    'OOLANG'           => false,
+    'OBJECT_SPLITTERS' => [
+    ],
+    'REGEXPS' => [
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        )
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+];

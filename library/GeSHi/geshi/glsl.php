@@ -37,32 +37,32 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'glSlang',
-    'COMMENT_SINGLE' => array(1 => '//', 2 => '#'),
-    'COMMENT_MULTI' => array('/*' => '*/'),
-    'COMMENT_REGEXP' => array(
+$language_data = [
+    'LANG_NAME'      => 'glSlang',
+    'COMMENT_SINGLE' => [1 => '//', 2 => '#'],
+    'COMMENT_MULTI'  => ['/*' => '*/'],
+    'COMMENT_REGEXP' => [
         //Multiline-continued single-line comments
         1 => '/\/\/(?:\\\\\\\\|\\\\\\n|.)*$/m',
         //Multiline-continued preprocessor define
-        2 => '/#(?:\\\\\\\\|\\\\\\n|.)*$/m'
-        ),
+        2 => '/#(?:\\\\\\\\|\\\\\\n|.)*$/m',
+    ],
     'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array("'", '"'),
-    'ESCAPE_CHAR' => '\\',
-    'KEYWORDS' => array(
-        1 => array(
+    'QUOTEMARKS'    => ["'", '"'],
+    'ESCAPE_CHAR'   => '\\',
+    'KEYWORDS'      => [
+        1 => [
             'if', 'else', 'for', 'while', 'do', 'break', 'continue', 'asm',
             'switch', 'case', 'default', 'return', 'discard',
-            'namespace', 'using', 'sizeof', 'cast'
-            ),
-        2 => array(
+            'namespace', 'using', 'sizeof', 'cast',
+        ],
+        2 => [
             'const', 'uniform', 'attribute', 'centroid', 'varying', 'invariant',
             'in', 'out', 'inout', 'input', 'output', 'typedef', 'volatile',
             'public', 'static', 'extern', 'external', 'packed',
-            'inline', 'noinline', 'noperspective', 'flat'
-            ),
-        3 => array(
+            'inline', 'noinline', 'noperspective', 'flat',
+        ],
+        3 => [
             'void', 'bool', 'int', 'long', 'short', 'float', 'half', 'fixed',
             'unsigned', 'lowp', 'mediump', 'highp', 'precision',
             'vec2', 'vec3', 'vec4', 'bvec2', 'bvec3', 'bvec4',
@@ -72,12 +72,12 @@ $language_data = array (
             'mat2x3', 'mat3x3', 'mat4x3', 'mat2x4', 'mat3x4', 'mat4x4',
             'sampler1D', 'sampler2D', 'sampler3D', 'samplerCube',
             'sampler1DShadow', 'sampler2DShadow',
-            'struct', 'class', 'union', 'enum', 'interface', 'template'
-            ),
-        4 => array(
-            'this', 'false', 'true'
-            ),
-        5 => array(
+            'struct', 'class', 'union', 'enum', 'interface', 'template',
+        ],
+        4 => [
+            'this', 'false', 'true',
+        ],
+        5 => [
             'radians', 'degrees', 'sin', 'cos', 'tan', 'asin', 'acos', 'atan',
             'pow', 'exp2', 'log2', 'sqrt', 'inversesqrt', 'abs', 'sign', 'ceil',
             'floor', 'fract', 'mod', 'min', 'max', 'clamp', 'mix', 'step',
@@ -90,9 +90,9 @@ $language_data = array (
             'texture3DLod', 'texture3DProjLod', 'textureCube', 'textureCubeLod',
             'shadow1D', 'shadow1DProj', 'shadow1DLod', 'shadow1DProjLod',
             'shadow2D', 'shadow2DProj', 'shadow2DLod', 'shadow2DProjLod',
-            'noise1', 'noise2', 'noise3', 'noise4'
-            ),
-        6 => array(
+            'noise1', 'noise2', 'noise3', 'noise4',
+        ],
+        6 => [
             'gl_Position', 'gl_PointSize', 'gl_ClipVertex', 'gl_FragColor',
             'gl_FragData', 'gl_FragDepth', 'gl_FragCoord', 'gl_FrontFacing',
             'gl_Color', 'gl_SecondaryColor', 'gl_Normal', 'gl_Vertex',
@@ -120,86 +120,84 @@ $language_data = array (
             'gl_ObjectPlaneT', 'gl_ObjectPlaneR', 'gl_ObjectPlaneQ',
             'gl_EyePlaneS', 'gl_EyePlaneT', 'gl_EyePlaneR', 'gl_EyePlaneQ',
             'gl_FrontColor', 'gl_BackColor', 'gl_FrontSecondaryColor',
-            'gl_BackSecondaryColor', 'gl_FogFragCoord', 'gl_PointCoord'
-            )
-        ),
-    'SYMBOLS' => array(
+            'gl_BackSecondaryColor', 'gl_FogFragCoord', 'gl_PointCoord',
+        ],
+    ],
+    'SYMBOLS' => [
         '(', ')', '{', '}', '[', ']', '=', '+', '-', '*', '/', '!', '%', '^',
-        '&', '?', ':', '.', '|', ';', ',', '<', '>'
-        ),
-    'CASE_SENSITIVE' => array(
+        '&', '?', ':', '.', '|', ';', ',', '<', '>',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => true,
-        2 => true,
-        3 => true,
-        4 => true,
-        5 => true,
-        6 => true,
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => true,
+        2              => true,
+        3              => true,
+        4              => true,
+        5              => true,
+        6              => true,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #000000; font-weight: bold;',
             2 => 'color: #333399; font-weight: bold;',
             3 => 'color: #000066; font-weight: bold;',
             4 => 'color: #333399; font-weight: bold;',
             5 => 'color: #993333; font-weight: bold;',
-            6 => 'color: #551111;'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #666666; font-style: italic;',
-            2 => 'color: #009900;',
-            'MULTI' => 'color: #666666; font-style: italic;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099; font-weight: bold;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #000066;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #ff0000;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #0000ff;'
-            ),
-        'METHODS' => array(
-            1 => 'color: #006600;'
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #000066;'
-            ),
-        'REGEXPS' => array(
-            ),
-        'SCRIPT' => array(
-            )
-        ),
-    'URLS' => array(
+            6 => 'color: #551111;',
+        ],
+        'COMMENTS' => [
+            1       => 'color: #666666; font-style: italic;',
+            2       => 'color: #009900;',
+            'MULTI' => 'color: #666666; font-style: italic;',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #000099; font-weight: bold;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #000066;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #ff0000;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #0000ff;',
+        ],
+        'METHODS' => [
+            1 => 'color: #006600;',
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #000066;',
+        ],
+        'REGEXPS' => [
+        ],
+        'SCRIPT' => [
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
         3 => '',
         4 => '',
         5 => '',
-        6 => ''
-        ),
-    'OOLANG' => true,
-    'OBJECT_SPLITTERS' => array(
-        1 => '.'
-        ),
-    'REGEXPS' => array(
-        ),
+        6 => '',
+    ],
+    'OOLANG'           => true,
+    'OBJECT_SPLITTERS' => [
+        1 => '.',
+    ],
+    'REGEXPS' => [
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        ),
-    'TAB_WIDTH' => 4,
-    'PARSER_CONTROL' => array(
-        'OOLANG' => array(
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+    'TAB_WIDTH'      => 4,
+    'PARSER_CONTROL' => [
+        'OOLANG' => [
             'MATCH_BEFORE' => '',
-            'MATCH_AFTER' => '[a-zA-Z_][a-zA-Z0-9_]*',
-            'MATCH_SPACES' => '[\s]*'
-        )
-    )
-);
-
-?>
+            'MATCH_AFTER'  => '[a-zA-Z_][a-zA-Z0-9_]*',
+            'MATCH_SPACES' => '[\s]*',
+        ],
+    ],
+];

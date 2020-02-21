@@ -53,15 +53,15 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'SQL',
-    'COMMENT_SINGLE' => array(1 =>'--'),
-    'COMMENT_MULTI' => array('/*' => '*/'),
-    'CASE_KEYWORDS' => 1,
-    'QUOTEMARKS' => array("'", '"', '`'),
-    'ESCAPE_CHAR' => '\\',
-    'KEYWORDS' => array(
-        1 => array(
+$language_data = [
+    'LANG_NAME'      => 'SQL',
+    'COMMENT_SINGLE' => [1 =>'--'],
+    'COMMENT_MULTI'  => ['/*' => '*/'],
+    'CASE_KEYWORDS'  => 1,
+    'QUOTEMARKS'     => ["'", '"', '`'],
+    'ESCAPE_CHAR'    => '\\',
+    'KEYWORDS'       => [
+        1 => [
             'ADD', 'ALL', 'ALTER', 'AND', 'AS', 'ASC', 'AUTO_INCREMENT',
             'BEFORE', 'BEGIN', 'BETWEEN', 'BIGINT', 'BINARY', 'BLOB', 'BOOLEAN', 'BOTH', 'BY',
             'CALL', 'CASE', 'CAST', 'CEIL', 'CEILING', 'CHANGE', 'CHAR', 'CHAR_LENGTH', 'CHARACTER',
@@ -106,60 +106,58 @@ $language_data = array (
             'WHEN', 'WHERE', 'WITH', 'WITHIN', 'WITHOUT', 'WORK', 'WRITE',
             'XOR',
             'YEAR',
-            'ZEROFILL'
-            )
-        ),
-    'SYMBOLS' => array(
-        '(', ')', '=', '<', '>', '|', ',', '.', '+', '-', '*', '/'
-        ),
-    'CASE_SENSITIVE' => array(
+            'ZEROFILL',
+        ],
+    ],
+    'SYMBOLS' => [
+        '(', ')', '=', '<', '>', '|', ',', '.', '+', '-', '*', '/',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => false
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
-            1 => 'color: #993333; font-weight: bold;'
-            ),
-        'COMMENTS' => array(
+        1              => false,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
+            1 => 'color: #993333; font-weight: bold;',
+        ],
+        'COMMENTS' => [
             1 => 'color: #808080; font-style: italic;',
             //2 => 'color: #808080; font-style: italic;',
-            'MULTI' => 'color: #808080; font-style: italic;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099; font-weight: bold;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #66cc66;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #ff0000;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #cc66cc;'
-            ),
-        'METHODS' => array(
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #66cc66;'
-            ),
-        'SCRIPT' => array(
-            ),
-        'REGEXPS' => array(
-            )
-        ),
-    'URLS' => array(
-        1 => ''
-        ),
-    'OOLANG' => false,
-    'OBJECT_SPLITTERS' => array(
-        ),
-    'REGEXPS' => array(
-        ),
+            'MULTI' => 'color: #808080; font-style: italic;',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #000099; font-weight: bold;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #66cc66;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #ff0000;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #cc66cc;',
+        ],
+        'METHODS' => [
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #66cc66;',
+        ],
+        'SCRIPT' => [
+        ],
+        'REGEXPS' => [
+        ],
+    ],
+    'URLS' => [
+        1 => '',
+    ],
+    'OOLANG'           => false,
+    'OBJECT_SPLITTERS' => [
+    ],
+    'REGEXPS' => [
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        )
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+];

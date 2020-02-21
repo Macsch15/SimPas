@@ -37,15 +37,15 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'GADV 4CS',
-    'COMMENT_SINGLE' => array(1 => "//"),
-    'COMMENT_MULTI' => array(),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array('"'),
-    'ESCAPE_CHAR' => '',
-    'KEYWORDS' => array(
-        1 => array(
+$language_data = [
+    'LANG_NAME'      => 'GADV 4CS',
+    'COMMENT_SINGLE' => [1 => '//'],
+    'COMMENT_MULTI'  => [],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'QUOTEMARKS'     => ['"'],
+    'ESCAPE_CHAR'    => '',
+    'KEYWORDS'       => [
+        1 => [
             'All', 'AllMatches', 'And', 'And_Filters', 'As', 'Asc', 'BasedOn',
             'BestMatch', 'Block', 'Buffer', 'ByRef', 'ByVal', 'Call', 'Channel',
             'Chr', 'Clear', 'Close', 'Confirm', 'Const', 'Continue', 'Cos',
@@ -74,66 +74,64 @@ $language_data = array (
             'StartCritical', 'Starts', 'Static', 'Step', 'Stop', 'String', 'Sub',
             'System_Error', 'TerminateAllChilds', 'Terminates', 'Then', 'Throw', 'TimeOut',
             'To', 'TooLate', 'Trunc', 'UBound', 'Unexpected', 'Until', 'User_Error',
-            'View', 'Wait', 'Warning', 'While', 'XOr'
-            ),
-        2 => array(
-            'alias', 'winapi', 'long', 'char', 'double', 'float', 'int', 'short', 'lib'
-            )
-        ),
-    'SYMBOLS' => array(
-        '=', ':=', '<', '>', '<>'
-        ),
-    'CASE_SENSITIVE' => array(
+            'View', 'Wait', 'Warning', 'While', 'XOr',
+        ],
+        2 => [
+            'alias', 'winapi', 'long', 'char', 'double', 'float', 'int', 'short', 'lib',
+        ],
+    ],
+    'SYMBOLS' => [
+        '=', ':=', '<', '>', '<>',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => false,
-        2 => false
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => false,
+        2              => false,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #0000C0; font-weight: bold;',
-            2 => 'color: #808080;'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #008000;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #000080;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #800080;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #cc66cc;'
-            ),
-        'METHODS' => array(
-            1 => 'color: #66cc66;'
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #000080;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099;'
-            ),
-        'SCRIPT' => array(
-            ),
-        'REGEXPS' => array(
-            )
-        ),
-    'URLS' => array(
+            2 => 'color: #808080;',
+        ],
+        'COMMENTS' => [
+            1 => 'color: #008000;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #000080;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #800080;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #cc66cc;',
+        ],
+        'METHODS' => [
+            1 => 'color: #66cc66;',
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #000080;',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #000099;',
+        ],
+        'SCRIPT' => [
+        ],
+        'REGEXPS' => [
+        ],
+    ],
+    'URLS' => [
         1 => '',
-        2 => ''
-        ),
-    'OOLANG' => true,
-    'OBJECT_SPLITTERS' => array(
-        1 => '.'
-        ),
-    'REGEXPS' => array(
-        ),
+        2 => '',
+    ],
+    'OOLANG'           => true,
+    'OBJECT_SPLITTERS' => [
+        1 => '.',
+    ],
+    'REGEXPS' => [
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        )
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+];

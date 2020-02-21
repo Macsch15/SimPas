@@ -1,4 +1,5 @@
 <?php
+
 namespace Application\Security\QuestionsAndAnswers;
 
 use Application\Configuration\Configuration;
@@ -9,12 +10,14 @@ class QuestionsAndAnswers
     use Configuration;
 
     /**
-     * Validate
+     * Validate.
      *
      * @param string $field_client_question
      * @param string $field_client_answer
-     * @return bool
+     *
      * @throws ExceptionRuntime
+     *
+     * @return bool
      */
     public function validate($field_client_question, $field_client_answer)
     {
@@ -24,12 +27,12 @@ class QuestionsAndAnswers
 
         $valid = false;
 
-        if($field_client_question == null || $field_client_answer == null) {
+        if ($field_client_question == null || $field_client_answer == null) {
             return $valid;
         }
 
         $strcmp = function ($left, $right) {
-            if($this->config()['antispam_case_sensitive'] === true) {
+            if ($this->config()['antispam_case_sensitive'] === true) {
                 return strcmp($left, $right);
             }
 
@@ -37,13 +40,13 @@ class QuestionsAndAnswers
         };
 
         if (is_array($this->config('qa')[$field_client_question]) === true) {
-            foreach($this->config('qa')[$field_client_question] as $answer) {
-                if($strcmp($field_client_answer, $answer) === 0) {
+            foreach ($this->config('qa')[$field_client_question] as $answer) {
+                if ($strcmp($field_client_answer, $answer) === 0) {
                     $valid = true;
                 }
             }
         } else {
-            if($strcmp($field_client_answer, $this->config('qa')[$field_client_question]) === 0) {
+            if ($strcmp($field_client_answer, $this->config('qa')[$field_client_question]) === 0) {
                 $valid = true;
             }
         }
@@ -52,9 +55,10 @@ class QuestionsAndAnswers
     }
 
     /**
-     * Fetch random question
-     * 
+     * Fetch random question.
+     *
      * @throws ExceptionRuntime
+     *
      * @return string
      */
     public function question()
@@ -65,7 +69,7 @@ class QuestionsAndAnswers
 
         $questions_container = [];
 
-        foreach($this->config('qa') as $question => $answer) {
+        foreach ($this->config('qa') as $question => $answer) {
             $questions_container[] = $question;
         }
 

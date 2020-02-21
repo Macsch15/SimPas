@@ -43,77 +43,75 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'bnf',
-    'COMMENT_SINGLE' => array(';'),
-    'COMMENT_MULTI' => array(),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array('"', "'"),
-    'ESCAPE_CHAR' => '',
-    'KEYWORDS' => array(),
-    'SYMBOLS' => array(
-        0 => array('(', ')'),
-        1 => array('<', '>'),
-        2 => array('[', ']'),
-        3 => array('{', '}'),
-        4 => array('=', '*', '/', '|', ':'),
-    ),
-    'CASE_SENSITIVE' => array(
-        GESHI_COMMENTS => false
-    ),
-    'STYLES' => array(
-        'KEYWORDS' => array(),
-        'COMMENTS' => array(
+$language_data = [
+    'LANG_NAME'      => 'bnf',
+    'COMMENT_SINGLE' => [';'],
+    'COMMENT_MULTI'  => [],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'QUOTEMARKS'     => ['"', "'"],
+    'ESCAPE_CHAR'    => '',
+    'KEYWORDS'       => [],
+    'SYMBOLS'        => [
+        0 => ['(', ')'],
+        1 => ['<', '>'],
+        2 => ['[', ']'],
+        3 => ['{', '}'],
+        4 => ['=', '*', '/', '|', ':'],
+    ],
+    'CASE_SENSITIVE' => [
+        GESHI_COMMENTS => false,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [],
+        'COMMENTS' => [
             0 => 'color: #666666; font-style: italic;', // Single Line comments
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => ''
-            ),
-        'BRACKETS' => array(
-            0 => ''
-            ),
-        'STRINGS' => array(
+        ],
+        'ESCAPE_CHAR' => [
+            0 => '',
+        ],
+        'BRACKETS' => [
+            0 => '',
+        ],
+        'STRINGS' => [
             0 => 'color: #a00;',
-            1 => 'color: #a00;'
-            ),
-        'NUMBERS' => array(
-            0 => ''
-            ),
-        'METHODS' => array(
-            0 => ''
-            ),
-        'SYMBOLS' => array(
+            1 => 'color: #a00;',
+        ],
+        'NUMBERS' => [
+            0 => '',
+        ],
+        'METHODS' => [
+            0 => '',
+        ],
+        'SYMBOLS' => [
             0 => 'color: #000066; font-weight: bold;', // Round brackets
             1 => 'color: #000066; font-weight: bold;', // Angel Brackets
             2 => 'color: #000066; font-weight: bold;', // Square Brackets
             3 => 'color: #000066; font-weight: bold;', // BRaces
             4 => 'color: #006600; font-weight: bold;', // Other operator symbols
-        ),
-        'REGEXPS' => array(
+        ],
+        'REGEXPS' => [
             0 => 'color: #007;',
-            ),
-        'SCRIPT' => array(
-            0 => ''
-            )
-        ),
-    'URLS' => array(),
-    'OOLANG' => false,
-    'OBJECT_SPLITTERS' => array(),
-    'REGEXPS' => array(
+        ],
+        'SCRIPT' => [
+            0 => '',
+        ],
+    ],
+    'URLS'             => [],
+    'OOLANG'           => false,
+    'OBJECT_SPLITTERS' => [],
+    'REGEXPS'          => [
         //terminal symbols
-        0 => array(
-            GESHI_SEARCH => '(&lt;)([^&]+?)(&gt;)',
-            GESHI_REPLACE => '\\2',
+        0 => [
+            GESHI_SEARCH    => '(&lt;)([^&]+?)(&gt;)',
+            GESHI_REPLACE   => '\\2',
             GESHI_MODIFIERS => '',
-            GESHI_BEFORE => '\\1',
-            GESHI_AFTER => '\\3'
-            ),
-        ),
+            GESHI_BEFORE    => '\\1',
+            GESHI_AFTER     => '\\3',
+        ],
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        )
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+];

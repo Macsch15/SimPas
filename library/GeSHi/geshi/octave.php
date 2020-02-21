@@ -40,16 +40,16 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'GNU Octave',
-    'COMMENT_SINGLE' => array(1 => '#', 2 => '%'),
+$language_data = [
+    'LANG_NAME'      => 'GNU Octave',
+    'COMMENT_SINGLE' => [1 => '#', 2 => '%'],
     // we can't use COMMENT_MULTI since start and end of block comments need to
     // be alone on the line (optionally, with whitespace). See COMMENT_REGEXP
-    'COMMENT_MULTI' => array(),
+    'COMMENT_MULTI' => [],
     // we can't use QUOTEMARKS, not even HARDQUOTE, see COMMENT_REGEXP
-    'QUOTEMARKS' => array(),
-    'ESCAPE_CHAR' => '',
-    'COMMENT_REGEXP' => array(
+    'QUOTEMARKS'     => [],
+    'ESCAPE_CHAR'    => '',
+    'COMMENT_REGEXP' => [
         // Single quote strings: we can't use QUOTEMARKS here since new
         // lines will break the string. Plus, single quote strings do not even
         // allow for continuation markers, only double quote strings allow it.
@@ -73,39 +73,38 @@ $language_data = array (
         // that at least pkg is highlighted if new commands are implemented
         6 => "/\bpkg(?!\s*\()\s+((un)?install|update|(un)?load|list|(global|local)_list|describe|prefix|(re)?build)?\b/",
         // Function handles
-        7 => "/@([a-z_][a-z1-9_]*)?/i",
-        ),
-    'NUMBERS' =>
-        GESHI_NUMBER_INT_BASIC |
+        7 => '/@([a-z_][a-z1-9_]*)?/i',
+    ],
+    'NUMBERS' => GESHI_NUMBER_INT_BASIC |
         GESHI_NUMBER_OCT_PREFIX |
         GESHI_NUMBER_HEX_PREFIX |
         GESHI_NUMBER_FLT_SCI_ZERO,
     'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'KEYWORDS' => array(
+    'KEYWORDS'      => [
         // Data types
-        1 => array(
+        1 => [
             'cell', 'char', 'double', 'uint8', 'uint16', 'uint32', 'uint64',
-            'int8','int16', 'int32', 'int64', 'logical', 'single', 'struct'
-            ),
+            'int8', 'int16', 'int32', 'int64', 'logical', 'single', 'struct',
+        ],
         // Storage type
-        2 => array(
-            'global', 'persistent', 'static'
-            ),
+        2 => [
+            'global', 'persistent', 'static',
+        ],
         // Internal variable
-        3 => array(
-            'ans'
-            ),
+        3 => [
+            'ans',
+        ],
         // Reserved words
-        4 => array(
+        4 => [
             'break', 'case', 'catch', 'continue', 'do', 'else', 'elseif', 'end',
             'end_try_catch', 'end_unwind_protect', 'endfor', 'endfunction',
             'endif', 'endparfor', 'endswitch', 'endwhile', 'for', 'function',
             'if', 'otherwise', 'parfor', 'return',
             'switch', 'try', 'until', 'unwind_protect',
-            'unwind_protect_cleanup', 'varargin', 'varargout', 'while'
-            ),
+            'unwind_protect_cleanup', 'varargin', 'varargout', 'while',
+        ],
         // Built in
-        5 => array(
+        5 => [
             'P_tmpdir', 'abs', 'acos', 'acosh',
             'add_input_event_hook', 'addlistener', 'addpath', 'addproperty',
             'all', 'allow_noninteger_range_as_index', 'and', 'angle', 'any',
@@ -123,7 +122,7 @@ $language_data = array (
             'default_save_options', 'dellistener', 'diag', 'diary', 'diff',
             'disp', 'do_braindead_shortcircuit_evaluation', 'do_string_escapes',
             'doc_cache_file', 'drawnow', 'dup2', 'echo',
-            'echo_executing_commands', 'edit_history','eq', 'erf', 'erfc',
+            'echo_executing_commands', 'edit_history', 'eq', 'erf', 'erfc',
             'erfcx', 'erfinv', 'errno', 'errno_list', 'error', 'eval', 'evalin',
             'exec', 'exist', 'exit', 'exp', 'expm1', 'eye', 'fclear',
             'fclose', 'fcntl', 'fdisp', 'feof', 'ferror', 'feval', 'fflush',
@@ -190,10 +189,10 @@ $language_data = array (
             'umask', 'uminus', 'uname', 'undo_string_escapes', 'unlink',
             'uplus', 'upper', 'usage', 'usleep', 'vec', 'vectorize', 'vertcat',
             'waitfor', 'waitpid', 'warning', 'warranty', 'who', 'whos',
-            'whos_line_format', 'yes_or_no', 'zeros'
-            ),
+            'whos_line_format', 'yes_or_no', 'zeros',
+        ],
         // Octave functions
-        6 => array(
+        6 => [
             'accumarray', 'accumdim', 'acosd', 'acot', 'acotd', 'acoth', 'acsc',
             'acscd', 'acsch', 'addpref', 'addtodate', 'allchild', 'amd',
             'ancestor', 'anova', 'arch_fit', 'arch_rnd', 'arch_test',
@@ -350,10 +349,10 @@ $language_data = array (
             'quad_options', 'rande', 'randg', 'randn', 'randp', 'randperm',
             'regexpi', 'regexprep', 'rsf2csf', 'setgrent', 'setpwent', 'sprank',
             'strftime', 'strptime', 'strrep', 'svd_driver', 'symamd', 'triu',
-            'urlread'
-            ),
+            'urlread',
+        ],
         // Private builtin
-        7 => array(
+        7 => [
             '__accumarray_max__', '__accumarray_min__', '__accumarray_sum__',
             '__accumdim_sum__', '__builtins__', '__calc_dimensions__',
             '__current_scope__', '__display_tokens__', '__dump_symtab_info__',
@@ -369,10 +368,10 @@ $language_data = array (
             '__operators__', '__parent_classes__', '__parser_debug_flag__',
             '__pathorig__', '__profiler_data__', '__profiler_enable__',
             '__profiler_reset__', '__request_drawnow__', '__sort_rows_idx__',
-            '__token_count__', '__varval__', '__version_info__', '__which__'
-        ),
+            '__token_count__', '__varval__', '__version_info__', '__which__',
+        ],
         // Private Octave functions
-        8 => array(
+        8 => [
             '__all_opts__', '__contourc__', '__delaunayn__', '__dispatch__',
             '__dsearchn__', '__finish__', '__fltk_uigetfile__',
             '__glpk__', '__gnuplot_drawnow__', '__init_fltk__',
@@ -383,10 +382,10 @@ $language_data = array (
             '__ftp_delete__', '__ftp_dir__', '__ftp_mget__', '__ftp_mkdir__',
             '__ftp_mode__', '__ftp_mput__', '__ftp_pwd__', '__ftp_rename__',
             '__ftp_rmdir__', '__magick_finfo__', '__magick_format_list__',
-            '__magick_write__'
-            ),
+            '__magick_write__',
+        ],
         // Builtin Global Variables
-        9 => array(
+        9 => [
             'EDITOR', 'EXEC_PATH', 'F_DUPFD', 'F_GETFD', 'F_GETFL', 'F_SETFD',
             'F_SETFL', 'IMAGE_PATH', 'OCTAVE_HOME',
             'OCTAVE_VERSION', 'O_APPEND', 'O_ASYNC', 'O_CREAT', 'O_EXCL',
@@ -395,121 +394,119 @@ $language_data = array (
             'SEEK_SET', 'SIG', 'S_ISBLK', 'S_ISCHR', 'S_ISDIR', 'S_ISFIFO',
             'S_ISLNK', 'S_ISREG', 'S_ISSOCK', 'WCONTINUE', 'WCOREDUMP',
             'WEXITSTATUS', 'WIFCONTINUED', 'WIFEXITED', 'WIFSIGNALED',
-            'WIFSTOPPED', 'WNOHANG', 'WSTOPSIG', 'WTERMSIG', 'WUNTRACED'
-            ),
+            'WIFSTOPPED', 'WNOHANG', 'WSTOPSIG', 'WTERMSIG', 'WUNTRACED',
+        ],
         // Constant functions
-        10 => array (
+        10 => [
             'e', 'eps', 'inf', 'Inf', 'nan', 'NaN', 'NA', 'pi', 'i', 'I', 'j',
-            'J', 'true', 'false'
-            ),
-        ),
-    'SYMBOLS' => array(
+            'J', 'true', 'false',
+        ],
+    ],
+    'SYMBOLS' => [
         // Comparison & logical
-        0 => array(
-            '!', '!=', '&', '&&','|', '||', '~', '~=',
-            '<', '<=', '==', '>', '>='
-            ),
+        0 => [
+            '!', '!=', '&', '&&', '|', '||', '~', '~=',
+            '<', '<=', '==', '>', '>=',
+        ],
         // Aritmethical
-        1 => array(
-            '*', '**', '+', '++', '-', '--', '/', "\\","'"
-            ),
+        1 => [
+            '*', '**', '+', '++', '-', '--', '/', '\\', "'",
+        ],
         // Elementwise arithmetical
-        2 => array(
-            '.*', '.**','./', '.^', '^',".\\",".'"
-            ),
+        2 => [
+            '.*', '.**', './', '.^', '^', '.\\', ".'",
+        ],
         // Arithmetical & assignation
-        3 => array(
-            '*=','+=','-=','/=','\=','**=','^=',
-            '.*=','.+=','.-=','./=','.\=','.**=','.^=','='
-            ),
+        3 => [
+            '*=', '+=', '-=', '/=', '\=', '**=', '^=',
+            '.*=', '.+=', '.-=', './=', '.\=', '.**=', '.^=', '=',
+        ],
         // Indexer
-        4 => array(
-            ':'
-            ),
+        4 => [
+            ':',
+        ],
         // Delimiters
-        5 => array(
-            ',', '...', ';'
-            ),
-        ),
-    'CASE_SENSITIVE' => array(
+        5 => [
+            ',', '...', ';',
+        ],
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => true,
-        1 => true,
-        2 => true,
-        3 => true,
-        4 => true,
-        5 => true,
-        6 => true,
-        7 => true,
-        8 => true,
-        9 => true,
-        10 => true,
-        ),
-    'URLS' => array(
-        1 => 'http://octave.sourceforge.net/octave/function/{FNAME}.html',
-        2 => '',
-        3 => '',
-        4 => '',
-        5 => 'http://octave.sourceforge.net/octave/function/{FNAME}.html',
-        6 => 'http://octave.sourceforge.net/octave/function/{FNAME}.html',
-        7 => '',
-        8 => '',
-        9 => 'http://octave.sourceforge.net/octave/function/{FNAME}.html',
+        1              => true,
+        2              => true,
+        3              => true,
+        4              => true,
+        5              => true,
+        6              => true,
+        7              => true,
+        8              => true,
+        9              => true,
+        10             => true,
+    ],
+    'URLS' => [
+        1  => 'http://octave.sourceforge.net/octave/function/{FNAME}.html',
+        2  => '',
+        3  => '',
+        4  => '',
+        5  => 'http://octave.sourceforge.net/octave/function/{FNAME}.html',
+        6  => 'http://octave.sourceforge.net/octave/function/{FNAME}.html',
+        7  => '',
+        8  => '',
+        9  => 'http://octave.sourceforge.net/octave/function/{FNAME}.html',
         10 => 'http://octave.sourceforge.net/octave/function/{FNAME}.html',
-        ),
-    'OOLANG' => true,
-    'OBJECT_SPLITTERS' => array(
+    ],
+    'OOLANG'           => true,
+    'OBJECT_SPLITTERS' => [
         1 => '.',
-        ),
-    'REGEXPS' => array(),
-    'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(),
-    'HIGHLIGHT_STRICT_BLOCK' => array(),
-    'STYLES' => array(
-        'COMMENTS' => array(
-            1 => 'color: #0000FF; font-style: italic;', // single quote strings
-            2 => 'color: #0000FF; font-style: italic;', // double quote strings
-            3 => 'color: #FF00FF; font-style: italic;', // single quote strings
-            4 => 'color: #FF00FF; font-style: italic;', // double quote strings
-            5 => 'color: #0000FF; font-style: italic;', // block comments
-            6 => 'color: #996600; font-weight:bold;',   // packaging system
-            7 => 'color: #006600; font-weight:bold;',   // function handles
+    ],
+    'REGEXPS'                => [],
+    'STRICT_MODE_APPLIES'    => GESHI_NEVER,
+    'SCRIPT_DELIMITERS'      => [],
+    'HIGHLIGHT_STRICT_BLOCK' => [],
+    'STYLES'                 => [
+        'COMMENTS' => [
+            1       => 'color: #0000FF; font-style: italic;', // single quote strings
+            2       => 'color: #0000FF; font-style: italic;', // double quote strings
+            3       => 'color: #FF00FF; font-style: italic;', // single quote strings
+            4       => 'color: #FF00FF; font-style: italic;', // double quote strings
+            5       => 'color: #0000FF; font-style: italic;', // block comments
+            6       => 'color: #996600; font-weight:bold;',   // packaging system
+            7       => 'color: #006600; font-weight:bold;',   // function handles
             'MULTI' => 'color: #0000FF; font-style: italic;',
-            ),
-        'KEYWORDS' => array(
-            1 => 'color: #2E8B57; font-weight:bold;',   // Data types
-            2 => 'color: #2E8B57;',                     // Storage type
-            3 => 'color: #0000FF; font-weight:bold;',   // Internal variable
-            4 => 'color: #990000; font-weight:bold;',   // Reserved words
-            5 => 'color: #008A8C; font-weight:bold;',   // Built-in
-            6 => 'color: #008A8C;',                     // Octave functions
-            9 => 'color: #000000; font-weight:bold;',   // Builtin Global Variables
+        ],
+        'KEYWORDS' => [
+            1  => 'color: #2E8B57; font-weight:bold;',   // Data types
+            2  => 'color: #2E8B57;',                     // Storage type
+            3  => 'color: #0000FF; font-weight:bold;',   // Internal variable
+            4  => 'color: #990000; font-weight:bold;',   // Reserved words
+            5  => 'color: #008A8C; font-weight:bold;',   // Built-in
+            6  => 'color: #008A8C;',                     // Octave functions
+            9  => 'color: #000000; font-weight:bold;',   // Builtin Global Variables
             10 => 'color: #008A8C; font-weight:bold;',  // Constant functions
-            ),
-        'ESCAPE_CHAR' => array(),
-        'BRACKETS' => array(
+        ],
+        'ESCAPE_CHAR' => [],
+        'BRACKETS'    => [
             0 => 'color: #080;',
-            ),
-        'STRINGS' => array(
+        ],
+        'STRINGS' => [
             // strings were specified on the COMMENT_REGEXP section
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #cc66cc;',
-            GESHI_NUMBER_OCT_PREFIX => 'color: #208080;',
-            GESHI_NUMBER_HEX_PREFIX => 'color: #208080;',
+        ],
+        'NUMBERS' => [
+            0                         => 'color: #cc66cc;',
+            GESHI_NUMBER_OCT_PREFIX   => 'color: #208080;',
+            GESHI_NUMBER_HEX_PREFIX   => 'color: #208080;',
             GESHI_NUMBER_FLT_SCI_ZERO => 'color:#800080;',
-            ),
-        'METHODS' => array(),
-        'SYMBOLS' => array(
+        ],
+        'METHODS' => [],
+        'SYMBOLS' => [
             0 => 'color: #FF9696; font-weight:bold;',   // Comparison & logical
             1 => 'color: #CC0000; font-weight:bold;',   // Aritmethical
             2 => 'color: #993333; font-weight:bold;',   // Elementwise arithmetical
             3 => 'color: #FF0000; font-weight:bold;',   // Arithmetical & assignation
             4 => 'color: #33F;',                        // Indexer
             5 => 'color: #33F;',                        // Delimiters
-            ),
-        'REGEXPS' => array(),
-        'SCRIPT' => array(),
-        )
-);
-
-?>
+        ],
+        'REGEXPS' => [],
+        'SCRIPT'  => [],
+    ],
+];

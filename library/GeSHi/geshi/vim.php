@@ -50,20 +50,20 @@
  *
  ************************************************************************************/
 
-$language_data = array(
-    'LANG_NAME' => 'Vim Script',
-    'COMMENT_SINGLE' => array(),
-    'COMMENT_REGEXP' => array(
+$language_data = [
+    'LANG_NAME'      => 'Vim Script',
+    'COMMENT_SINGLE' => [],
+    'COMMENT_REGEXP' => [
         1 => "/\s*\"[^\"]*?$/m",
         //Regular expressions (Ported from perl.php)
-//        2 => "/(?<=[\\s^])(s|tr|y)\\/(?:\\\\.|(?!\n)[^\\/\\\\])+\\/(?:\\\\.|(?!\n)[^\\/\\\\])*\\/[msixpogcde]*(?=[\\s$\\.\\;])|(?<=[\\s^(=])(m|q[qrwx]?)?\\/(?:\\\\.|(?!\n)[^\\/\\\\])+\\/[msixpogc]*(?=[\\s$\\.\\,\\;\\)])/iU",
-        ),
-    'COMMENT_MULTI' => array(),
+        //        2 => "/(?<=[\\s^])(s|tr|y)\\/(?:\\\\.|(?!\n)[^\\/\\\\])+\\/(?:\\\\.|(?!\n)[^\\/\\\\])*\\/[msixpogcde]*(?=[\\s$\\.\\;])|(?<=[\\s^(=])(m|q[qrwx]?)?\\/(?:\\\\.|(?!\n)[^\\/\\\\])+\\/[msixpogc]*(?=[\\s$\\.\\,\\;\\)])/iU",
+    ],
+    'COMMENT_MULTI' => [],
     'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array("'", '"'),
-    'ESCAPE_CHAR' => '\\',
-    'KEYWORDS' => array(
-        1 => array(
+    'QUOTEMARKS'    => ["'", '"'],
+    'ESCAPE_CHAR'   => '\\',
+    'KEYWORDS'      => [
+        1 => [
             'au', 'augroup', 'autocmd', 'brea', 'break', 'bufadd',
             'bufcreate', 'bufdelete', 'bufenter', 'buffilepost',
             'buffilepre', 'bufleave', 'bufnew', 'bufnewfile',
@@ -99,9 +99,9 @@ $language_data = array(
             'unle', 'unlet', 'unlo', 'unloc', 'unlock', 'unlockv',
             'unlockva', 'unlockvar', 'user', 'usergettingbored',
             'vimenter', 'vimleave', 'vimleavepre', 'vimresized', 'wh',
-            'whi', 'whil', 'while', 'winenter', 'winleave'
-            ),
-        2 => array(
+            'whi', 'whil', 'while', 'winenter', 'winleave',
+        ],
+        2 => [
             '&lt;CR&gt;', '&lt;Esc&gt;', '&lt;F1&gt;', '&lt;F10&gt;',
             '&lt;F11&gt;', '&lt;F12&gt;', '&lt;F2&gt;', '&lt;F3&gt;',
             '&lt;F4&gt;', '&lt;F5&gt;', '&lt;F6&gt;', '&lt;F7&gt;',
@@ -285,9 +285,9 @@ $language_data = array(
             'winminheight', 'winminwidth', 'winwidth', 'wiv',
             'wiw', 'wm', 'wmh', 'wmnu', 'wmw', 'wop', 'wrap',
             'wrapmargin', 'wrapscan', 'write', 'writeany',
-            'writebackup', 'writedelay', 'ws', 'ww'
-            ),
-        3 => array(
+            'writebackup', 'writedelay', 'ws', 'ww',
+        ],
+        3 => [
             'BufAdd', 'BufCreate', 'BufDelete', 'BufEnter', 'BufFilePost',
             'BufFilePre', 'BufHidden', 'BufLeave', 'BufNew', 'BufNewFile',
             'BufRead', 'BufReadCmd', 'BufReadPost', 'BufReadPre',
@@ -357,64 +357,62 @@ $language_data = array(
             'taglist', 'tempname', 'tolower', 'toupper', 'trunc',
             'type', 'values', 'virtcol', 'visualmode', 'winbufnr',
             'wincol', 'winline', 'winnr', 'winrestcmd',
-            'winrestview', 'winsaveview', 'writefile'
-            )
-        ),
-    'SYMBOLS' => array(
+            'winrestview', 'winsaveview', 'writefile',
+        ],
+    ],
+    'SYMBOLS' => [
         '(', ')', '[', ']', '{', '}', '!', '%', '&', '*', '|', '/', '<', '>',
-        '^', '-', '+', '~', '?', ':', '$', '@', '.'
-        ),
-    'CASE_SENSITIVE' => array(
+        '^', '-', '+', '~', '?', ':', '$', '@', '.',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => true,
-        2 => true,
-        3 => true
-        ),
-    'STYLES' => array(
-        'BRACKETS' => array(
-            0 => 'color: #000000;'
-            ),
-        'COMMENTS' => array(
+        1              => true,
+        2              => true,
+        3              => true,
+    ],
+    'STYLES' => [
+        'BRACKETS' => [
+            0 => 'color: #000000;',
+        ],
+        'COMMENTS' => [
             1 => 'color: #adadad; font-style: italic;',
-//            2 => 'color: #009966; font-style: italic;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => ''
-            ),
-        'KEYWORDS' => array(
+            //            2 => 'color: #009966; font-style: italic;'
+        ],
+        'ESCAPE_CHAR' => [
+            0 => '',
+        ],
+        'KEYWORDS' => [
             1 => 'color: #804040;',
             2 => 'color: #668080;',
-            3 => 'color: #25BB4D;'
-            ),
-        'METHODS' => array(
+            3 => 'color: #25BB4D;',
+        ],
+        'METHODS' => [
             0 => 'color: #000000;',
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #000000; font-weight:bold;'
-            ),
-        'REGEXPS' => array(
-            ),
-        'SCRIPT' => array(
-            ),
-        'STRINGS' => array(
-            0 => 'color: #C5A22D;'
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #000000;'
-            )
-        ),
-    'URLS' => array(
+        ],
+        'NUMBERS' => [
+            0 => 'color: #000000; font-weight:bold;',
+        ],
+        'REGEXPS' => [
+        ],
+        'SCRIPT' => [
+        ],
+        'STRINGS' => [
+            0 => 'color: #C5A22D;',
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #000000;',
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
-        3 => ''
-        ),
-    'OOLANG' => false, //Save some time as OO identifiers aren't used
-    'OBJECT_SPLITTERS' => array(),
-    'REGEXPS' => array(
-        ),
-    'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(),
-    'HIGHLIGHT_STRICT_BLOCK' => array()
-);
-
-?>
+        3 => '',
+    ],
+    'OOLANG'           => false, //Save some time as OO identifiers aren't used
+    'OBJECT_SPLITTERS' => [],
+    'REGEXPS'          => [
+    ],
+    'STRICT_MODE_APPLIES'    => GESHI_NEVER,
+    'SCRIPT_DELIMITERS'      => [],
+    'HIGHLIGHT_STRICT_BLOCK' => [],
+];

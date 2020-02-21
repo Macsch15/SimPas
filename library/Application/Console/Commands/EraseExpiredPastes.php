@@ -1,9 +1,10 @@
 <?php
+
 namespace Application\Console\Commands;
 
 use Application\Application;
-use Application\Console\Console;
 use Application\Configuration\Configuration;
+use Application\Console\Console;
 use Application\Pastebin\PasteExpire;
 
 class EraseExpiredPastes
@@ -11,33 +12,35 @@ class EraseExpiredPastes
     use Configuration;
 
     /**
-     * Application
-     * 
+     * Application.
+     *
      * @var object
      */
     private $application;
 
     /**
-     * DataBase
-     * 
+     * DataBase.
+     *
      * @var object
      */
     private $data_source;
 
     /**
-     * Console
-     * 
+     * Console.
+     *
      * @var object
      */
     private $console;
 
     /**
-     * Construct
+     * Construct.
      *
-     * @param Console $console
+     * @param Console     $console
      * @param Application $application
-     * @return void
+     *
      * @throws \Application\Exception\ExceptionRuntime
+     *
+     * @return void
      */
     public function __construct(Console $console, Application $application)
     {
@@ -54,10 +57,11 @@ class EraseExpiredPastes
     }
 
     /**
-     * Erase expired pastes
+     * Erase expired pastes.
+     *
+     * @throws \Application\Exception\ExceptionRuntime
      *
      * @return void
-     * @throws \Application\Exception\ExceptionRuntime
      */
     private function eraseExpired()
     {
@@ -65,15 +69,15 @@ class EraseExpiredPastes
 
         $query = $this->data_source
         ->get()
-        ->query('SELECT unique_id FROM ' . $this->config('database')['prefix'] . 'pastes');
+        ->query('SELECT unique_id FROM '.$this->config('database')['prefix'].'pastes');
 
-        foreach($query as $row) {
-            if((new PasteExpire($this->application))->isExpired($row['unique_id']) === true) {
-                $this->console->writeStdout('Removing ' . $row['unique_id'] . '...');
+        foreach ($query as $row) {
+            if ((new PasteExpire($this->application))->isExpired($row['unique_id']) === true) {
+                $this->console->writeStdout('Removing '.$row['unique_id'].'...');
 
                 $query = $this->data_source
                 ->get()
-                ->prepare('DELETE FROM ' . $this->config('database')['prefix'] . 'pastes WHERE unique_id = :paste_id');
+                ->prepare('DELETE FROM '.$this->config('database')['prefix'].'pastes WHERE unique_id = :paste_id');
 
                 $query->bindValue(':paste_id', $row['unique_id'], constant('PDO::PARAM_INT'));
                 $query->execute();

@@ -39,20 +39,20 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'C (Mac)',
-    'COMMENT_SINGLE' => array(1 => '//', 2 => '#'),
-    'COMMENT_MULTI' => array('/*' => '*/'),
-    'COMMENT_REGEXP' => array(
+$language_data = [
+    'LANG_NAME'      => 'C (Mac)',
+    'COMMENT_SINGLE' => [1 => '//', 2 => '#'],
+    'COMMENT_MULTI'  => ['/*' => '*/'],
+    'COMMENT_REGEXP' => [
         //Multiline-continued single-line comments
         1 => '/\/\/(?:\\\\\\\\|\\\\\\n|.)*$/m',
         //Multiline-continued preprocessor define
-        2 => '/#(?:\\\\\\\\|\\\\\\n|.)*$/m'
-        ),
+        2 => '/#(?:\\\\\\\\|\\\\\\n|.)*$/m',
+    ],
     'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array("'", '"'),
-    'ESCAPE_CHAR' => '',
-    'ESCAPE_REGEXP' => array(
+    'QUOTEMARKS'    => ["'", '"'],
+    'ESCAPE_CHAR'   => '',
+    'ESCAPE_REGEXP' => [
         //Simple Single Char Escapes
         1 => "#\\\\[\\\\abfnrtv\'\"?\n]#i",
         //Hexadecimal Char Specs
@@ -62,18 +62,17 @@ $language_data = array (
         //Hexadecimal Char Specs
         4 => "#\\\\U[\da-fA-F]{8}#",
         //Octal Char Specs
-        5 => "#\\\\[0-7]{1,3}#"
-        ),
-    'NUMBERS' =>
-        GESHI_NUMBER_INT_BASIC | GESHI_NUMBER_INT_CSTYLE | GESHI_NUMBER_BIN_PREFIX_0B |
+        5 => '#\\\\[0-7]{1,3}#',
+    ],
+    'NUMBERS' => GESHI_NUMBER_INT_BASIC | GESHI_NUMBER_INT_CSTYLE | GESHI_NUMBER_BIN_PREFIX_0B |
         GESHI_NUMBER_OCT_PREFIX | GESHI_NUMBER_HEX_PREFIX | GESHI_NUMBER_FLT_NONSCI |
         GESHI_NUMBER_FLT_NONSCI_F | GESHI_NUMBER_FLT_SCI_SHORT | GESHI_NUMBER_FLT_SCI_ZERO,
-    'KEYWORDS' => array(
-        1 => array(
+    'KEYWORDS' => [
+        1 => [
             'if', 'return', 'while', 'case', 'continue', 'default',
-            'do', 'else', 'for', 'switch', 'goto'
-            ),
-        2 => array(
+            'do', 'else', 'for', 'switch', 'goto',
+        ],
+        2 => [
             'NULL', 'false', 'break', 'true', 'enum', 'errno', 'EDOM',
             'ERANGE', 'FLT_RADIX', 'FLT_ROUNDS', 'FLT_DIG', 'DBL_DIG', 'LDBL_DIG',
             'FLT_EPSILON', 'DBL_EPSILON', 'LDBL_EPSILON', 'FLT_MANT_DIG', 'DBL_MANT_DIG',
@@ -87,9 +86,9 @@ $language_data = array (
             'SEEK_CUR', 'SEEK_END', 'SEEK_SET', 'TMP_MAX', 'stdin', 'stdout', 'stderr',
             'EXIT_FAILURE', 'EXIT_SUCCESS', 'RAND_MAX', 'CLOCKS_PER_SEC',
             // Mac-specific constants:
-            'kCFAllocatorDefault'
-            ),
-        3 => array(
+            'kCFAllocatorDefault',
+        ],
+        3 => [
             'printf', 'fprintf', 'snprintf', 'sprintf', 'assert',
             'isalnum', 'isalpha', 'isdigit', 'iscntrl', 'isgraph', 'islower', 'isprint',
             'ispunct', 'isspace', 'isupper', 'isxdigit', 'tolower', 'toupper',
@@ -108,9 +107,9 @@ $language_data = array (
             'strcmp', 'strncmp', 'strcoll', 'strchr', 'strrchr', 'strspn', 'strcspn',
             'strpbrk', 'strstr', 'strlen', 'strerror', 'strtok', 'strxfrm', 'memcpy',
             'memmove', 'memcmp', 'memchr', 'memset', 'clock', 'time', 'difftime', 'mktime',
-            'asctime', 'ctime', 'gmtime', 'localtime', 'strftime'
-            ),
-        4 => array(
+            'asctime', 'ctime', 'gmtime', 'localtime', 'strftime',
+        ],
+        4 => [
             'auto', 'char', 'const', 'double',  'float', 'int', 'long',
             'register', 'short', 'signed', 'static', 'struct',
             'typedef', 'union', 'unsigned', 'void', 'volatile', 'extern', 'jmp_buf',
@@ -141,87 +140,85 @@ $language_data = array (
             'CFMutableDataRef', 'CFMutableSetRef', 'CFNumberRef', 'CFPlugInRef', 'CFPlugInInstanceRef',
             'CFRunLoopRef', 'CFRunLoopObserverRef', 'CFRunLoopSourceRef', 'CFRunLoopTimerRef', 'CFSocketRef',
             'CFTimeZoneRef', 'CFTypeRef', 'CFUserNotificationRef', 'CFUUIDRef', 'CFXMLNodeRef', 'CFXMLParserRef',
-            'CFXMLTreeRef'
-            ),
-        ),
-    'SYMBOLS' => array(
-        '(', ')', '{', '}', '[', ']', '=', '+', '-', '*', '/', '!', '%', '^', '&', ':'
-        ),
-    'CASE_SENSITIVE' => array(
+            'CFXMLTreeRef',
+        ],
+    ],
+    'SYMBOLS' => [
+        '(', ')', '{', '}', '[', ']', '=', '+', '-', '*', '/', '!', '%', '^', '&', ':',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => true,
-        2 => true,
-        3 => true,
-        4 => true,
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => true,
+        2              => true,
+        3              => true,
+        4              => true,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #0000ff;',
             2 => 'color: #0000ff;',
             3 => 'color: #0000dd;',
-            4 => 'color: #0000ff;'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #ff0000;',
-            2 => 'color: #339900;',
-            'MULTI' => 'color: #ff0000; font-style: italic;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099; font-weight: bold;',
-            1 => 'color: #000099; font-weight: bold;',
-            2 => 'color: #660099; font-weight: bold;',
-            3 => 'color: #660099; font-weight: bold;',
-            4 => 'color: #660099; font-weight: bold;',
-            5 => 'color: #006699; font-weight: bold;',
+            4 => 'color: #0000ff;',
+        ],
+        'COMMENTS' => [
+            1       => 'color: #ff0000;',
+            2       => 'color: #339900;',
+            'MULTI' => 'color: #ff0000; font-style: italic;',
+        ],
+        'ESCAPE_CHAR' => [
+            0      => 'color: #000099; font-weight: bold;',
+            1      => 'color: #000099; font-weight: bold;',
+            2      => 'color: #660099; font-weight: bold;',
+            3      => 'color: #660099; font-weight: bold;',
+            4      => 'color: #660099; font-weight: bold;',
+            5      => 'color: #006699; font-weight: bold;',
             'HARD' => '',
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #000000;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #666666;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #0000dd;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #000000;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #666666;',
+        ],
+        'NUMBERS' => [
+            0                          => 'color: #0000dd;',
             GESHI_NUMBER_BIN_PREFIX_0B => 'color: #208080;',
-            GESHI_NUMBER_OCT_PREFIX => 'color: #208080;',
-            GESHI_NUMBER_HEX_PREFIX => 'color: #208080;',
+            GESHI_NUMBER_OCT_PREFIX    => 'color: #208080;',
+            GESHI_NUMBER_HEX_PREFIX    => 'color: #208080;',
             GESHI_NUMBER_FLT_SCI_SHORT => 'color:#800080;',
-            GESHI_NUMBER_FLT_SCI_ZERO => 'color:#800080;',
-            GESHI_NUMBER_FLT_NONSCI_F => 'color:#800080;',
-            GESHI_NUMBER_FLT_NONSCI => 'color:#800080;'
-            ),
-        'METHODS' => array(
+            GESHI_NUMBER_FLT_SCI_ZERO  => 'color:#800080;',
+            GESHI_NUMBER_FLT_NONSCI_F  => 'color:#800080;',
+            GESHI_NUMBER_FLT_NONSCI    => 'color:#800080;',
+        ],
+        'METHODS' => [
             1 => 'color: #00eeff;',
-            2 => 'color: #00eeff;'
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #000000;'
-            ),
-        'REGEXPS' => array(
-            ),
-        'SCRIPT' => array(
-            )
-        ),
-    'URLS' => array(
+            2 => 'color: #00eeff;',
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #000000;',
+        ],
+        'REGEXPS' => [
+        ],
+        'SCRIPT' => [
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
         3 => 'http://www.opengroup.org/onlinepubs/009695399/functions/{FNAMEL}.html',
-        4 => ''
-        ),
-    'OOLANG' => true,
-    'OBJECT_SPLITTERS' => array(
+        4 => '',
+    ],
+    'OOLANG'           => true,
+    'OBJECT_SPLITTERS' => [
         1 => '.',
-        2 => '::'
-        ),
-    'REGEXPS' => array(
-        ),
+        2 => '::',
+    ],
+    'REGEXPS' => [
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        ),
-    'TAB_WIDTH' => 4
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+    'TAB_WIDTH' => 4,
+];

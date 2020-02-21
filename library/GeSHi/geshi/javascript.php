@@ -43,132 +43,130 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'Javascript',
-    'COMMENT_SINGLE' => array(1 => '//'),
-    'COMMENT_MULTI' => array('/*' => '*/'),
-    'COMMENT_REGEXP' => array(
+$language_data = [
+    'LANG_NAME'      => 'Javascript',
+    'COMMENT_SINGLE' => [1 => '//'],
+    'COMMENT_MULTI'  => ['/*' => '*/'],
+    'COMMENT_REGEXP' => [
         //Regular Expressions
-        2 => "/(?<=[\\s^])(s|tr|y)\\/(?!\*)(?!\s)(?:\\\\.|(?!\n)[^\\/\\\\])+(?<!\s)\\/(?!\s)(?:\\\\.|(?!\n)[^\\/\\\\])*(?<!\s)\\/[msixpogcde]*(?=[\\s$\\.\\;])|(?<=[\\s^(=])(m|q[qrwx]?)?\\/(?!\*)(?!\s)(?:\\\\.|(?!\n)[^\\/\\\\])+(?<!\s)\\/[msixpogc]*(?=[\\s$\\.\\,\\;\\)])/iU"
-        ),
+        2 => "/(?<=[\\s^])(s|tr|y)\\/(?!\*)(?!\s)(?:\\\\.|(?!\n)[^\\/\\\\])+(?<!\s)\\/(?!\s)(?:\\\\.|(?!\n)[^\\/\\\\])*(?<!\s)\\/[msixpogcde]*(?=[\\s$\\.\\;])|(?<=[\\s^(=])(m|q[qrwx]?)?\\/(?!\*)(?!\s)(?:\\\\.|(?!\n)[^\\/\\\\])+(?<!\s)\\/[msixpogc]*(?=[\\s$\\.\\,\\;\\)])/iU",
+    ],
     'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array("'", '"'),
-    'ESCAPE_CHAR' => '\\',
-    'KEYWORDS' => array(
-        1 => array(
+    'QUOTEMARKS'    => ["'", '"'],
+    'ESCAPE_CHAR'   => '\\',
+    'KEYWORDS'      => [
+        1 => [
             //reserved/keywords; also some non-reserved keywords
-            'break','case','catch','const','continue',
-            'default','delete','do',
+            'break', 'case', 'catch', 'const', 'continue',
+            'default', 'delete', 'do',
             'else',
-            'finally','for','function',
-            'get','goto',
-            'if','in','instanceof',
+            'finally', 'for', 'function',
+            'get', 'goto',
+            'if', 'in', 'instanceof',
             'new',
             'prototype',
             'return',
-            'set','static','switch',
-            'this','throw','try','typeof',
-            'var','void'
-            ),
-        2 => array(
+            'set', 'static', 'switch',
+            'this', 'throw', 'try', 'typeof',
+            'var', 'void',
+        ],
+        2 => [
             //reserved/non-keywords; metaconstants
-            'false','null','true','undefined','NaN','Infinity'
-            ),
-        3 => array(
+            'false', 'null', 'true', 'undefined', 'NaN', 'Infinity',
+        ],
+        3 => [
             //magic properties/functions
-            '__proto__','__defineGetter__','__defineSetter__','hasOwnProperty','hasProperty'
-            ),
-        4 => array(
+            '__proto__', '__defineGetter__', '__defineSetter__', 'hasOwnProperty', 'hasProperty',
+        ],
+        4 => [
             //type constructors
-            'Object', 'Function', 'Date', 'Math', 'String', 'Number', 'Boolean', 'Array'
-            ),
-        5 => array(
+            'Object', 'Function', 'Date', 'Math', 'String', 'Number', 'Boolean', 'Array',
+        ],
+        5 => [
             //reserved, but invalid in language
-            'abstract','boolean','byte','char','class','debugger','double','enum','export','extends',
-            'final','float','implements','import','int','interface','long','native',
-            'short','super','synchronized','throws','transient','volatile'
-            ),
-        ),
-    'SYMBOLS' => array(
+            'abstract', 'boolean', 'byte', 'char', 'class', 'debugger', 'double', 'enum', 'export', 'extends',
+            'final', 'float', 'implements', 'import', 'int', 'interface', 'long', 'native',
+            'short', 'super', 'synchronized', 'throws', 'transient', 'volatile',
+        ],
+    ],
+    'SYMBOLS' => [
         '(', ')', '[', ']', '{', '}',
         '+', '-', '*', '/', '%',
         '!', '@', '&', '|', '^',
         '<', '>', '=',
-        ',', ';', '?', ':'
-        ),
-    'CASE_SENSITIVE' => array(
+        ',', ';', '?', ':',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => true,
-        2 => true,
-        3 => true,
-        4 => true,
-        5 => true
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => true,
+        2              => true,
+        3              => true,
+        4              => true,
+        5              => true,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #000066; font-weight: bold;',
             2 => 'color: #003366; font-weight: bold;',
             3 => 'color: #000066;',
-            5 => 'color: #FF0000;'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #006600; font-style: italic;',
-            2 => 'color: #009966; font-style: italic;',
-            'MULTI' => 'color: #006600; font-style: italic;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099; font-weight: bold;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #009900;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #3366CC;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #CC0000;'
-            ),
-        'METHODS' => array(
-            1 => 'color: #660066;'
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #339933;'
-            ),
-        'REGEXPS' => array(
-            ),
-        'SCRIPT' => array(
+            5 => 'color: #FF0000;',
+        ],
+        'COMMENTS' => [
+            1       => 'color: #006600; font-style: italic;',
+            2       => 'color: #009966; font-style: italic;',
+            'MULTI' => 'color: #006600; font-style: italic;',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #000099; font-weight: bold;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #009900;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #3366CC;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #CC0000;',
+        ],
+        'METHODS' => [
+            1 => 'color: #660066;',
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #339933;',
+        ],
+        'REGEXPS' => [
+        ],
+        'SCRIPT' => [
             0 => '',
             1 => '',
             2 => '',
-            3 => ''
-            )
-        ),
-    'URLS' => array(
+            3 => '',
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
         3 => '',
         4 => '',
-        5 => ''
-    ),
-    'OOLANG' => true,
-    'OBJECT_SPLITTERS' => array(
-        1 => '.'
-        ),
-    'REGEXPS' => array(
-        ),
+        5 => '',
+    ],
+    'OOLANG'           => true,
+    'OBJECT_SPLITTERS' => [
+        1 => '.',
+    ],
+    'REGEXPS' => [
+    ],
     'STRICT_MODE_APPLIES' => GESHI_MAYBE,
-    'SCRIPT_DELIMITERS' => array(
-        0 => array(
-            '<script type="text/javascript">' => '</script>'
-            ),
-        1 => array(
-            '<script language="javascript">' => '</script>'
-            )
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
+    'SCRIPT_DELIMITERS'   => [
+        0 => [
+            '<script type="text/javascript">' => '</script>',
+        ],
+        1 => [
+            '<script language="javascript">' => '</script>',
+        ],
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
         0 => true,
-        1 => true
-        )
-);
-
-?>
+        1 => true,
+    ],
+];

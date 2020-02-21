@@ -1,6 +1,7 @@
 <?php
-use PHPUnit\Framework\TestCase;
+
 use Application\Pastebin\Helpers\Strings;
+use PHPUnit\Framework\TestCase;
 
 class StringToBytesTest extends TestCase
 {

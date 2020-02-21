@@ -1,28 +1,30 @@
 <?php
+
 namespace Application\Console\Commands;
 
 use Application\Application;
 use Application\Console\Console;
-use Application\View\View;
 use Application\Pastebin\SyntaxHighlighter;
+use Application\View\View;
+use Exception;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
-use Exception;
 
 class CacheRebuild extends View
 {
     /**
-     * Console
-     * 
+     * Console.
+     *
      * @var object
      */
     private $console;
 
     /**
-     * Construct
+     * Construct.
      *
-     * @param Console $console
+     * @param Console     $console
      * @param Application $application
+     *
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Syntax
      */
@@ -37,8 +39,8 @@ class CacheRebuild extends View
     }
 
     /**
-     * Remove existing cache
-     * 
+     * Remove existing cache.
+     *
      * @return void
      */
     private function clear()
@@ -47,14 +49,14 @@ class CacheRebuild extends View
 
         try {
             foreach (new RecursiveIteratorIterator(
-                new RecursiveDirectoryIterator(Application::makePath('storage'), RecursiveDirectoryIterator::SKIP_DOTS), 
+                new RecursiveDirectoryIterator(Application::makePath('storage'), RecursiveDirectoryIterator::SKIP_DOTS),
                 RecursiveIteratorIterator::SELF_FIRST, RecursiveIteratorIterator::CATCH_GET_CHILD) as $file
             ) {
-                if($file->getFileName() === '.htaccess') {
+                if ($file->getFileName() === '.htaccess') {
                     continue;
                 }
-                
-                if($file->isDir()) {
+
+                if ($file->isDir()) {
                     @rmdir($file->getRealPath());
                 } else {
                     @unlink($file->getRealPath());
@@ -62,17 +64,18 @@ class CacheRebuild extends View
             }
 
             $this->console->writeStdout('Succeeded');
-        } catch(Exception $exeption) {
+        } catch (Exception $exeption) {
             $this->console->writeStdout('Failed');
         }
     }
 
     /**
-     * Build the cache files
+     * Build the cache files.
      *
-     * @return void
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Syntax
+     *
+     * @return void
      */
     private function build()
     {
@@ -86,7 +89,7 @@ class CacheRebuild extends View
 
         $this->console->writeStdout('Building cache for GeSHi...', false, ' ');
 
-        if (is_int((new SyntaxHighlighter)->storageDataToCache(true))) {
+        if (is_int((new SyntaxHighlighter())->storageDataToCache(true))) {
             $this->console->writeStdout('Succeeded');
         } else {
             $this->console->writeStdout('Failed');

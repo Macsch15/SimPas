@@ -1,6 +1,7 @@
 <?php
-use PHPUnit\Framework\TestCase;
+
 use Application\HttpRequest\HttpRequest;
+use PHPUnit\Framework\TestCase;
 
 class HttpRequestTest extends TestCase
 {

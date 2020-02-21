@@ -36,81 +36,79 @@
  *
  ************************************************************************************/
 
-$language_data = array(
-    'LANG_NAME' => 'Objeck Programming Language',
-    'COMMENT_SINGLE' => array(1 => '#'),
-    'COMMENT_MULTI' => array('#~' => '~#'),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array('"'),
-    'ESCAPE_CHAR' => '\\',
-    'KEYWORDS' => array(
-        1 => array(
+$language_data = [
+    'LANG_NAME'      => 'Objeck Programming Language',
+    'COMMENT_SINGLE' => [1 => '#'],
+    'COMMENT_MULTI'  => ['#~' => '~#'],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'QUOTEMARKS'     => ['"'],
+    'ESCAPE_CHAR'    => '\\',
+    'KEYWORDS'       => [
+        1 => [
             'virtual', 'if', 'else', 'do', 'while', 'use', 'bundle', 'native',
             'static', 'public', 'private', 'class', 'function', 'method',
-            'select', 'other', 'enum', 'for', 'each', 'label', 'return', 'from'
-            ),
-        2 => array(
-            'Byte', 'Int', 'Nil', 'Float', 'Char', 'Bool', 'String'
-            ),
-        3 => array(
-            'true', 'false'
-            )
-        ),
-    'SYMBOLS' => array(
-        1 => array(
+            'select', 'other', 'enum', 'for', 'each', 'label', 'return', 'from',
+        ],
+        2 => [
+            'Byte', 'Int', 'Nil', 'Float', 'Char', 'Bool', 'String',
+        ],
+        3 => [
+            'true', 'false',
+        ],
+    ],
+    'SYMBOLS' => [
+        1 => [
             '(', ')', '{', '}', '[', ']', '+', '-', '*', '/', '%', '=', '<', '>', '&', '|', ':', ';', ',', '+=', '-=', '*=', '/=',
-            )
-        ),
-    'CASE_SENSITIVE' => array(
+        ],
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => true,
-        2 => true,
-        3 => true
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => true,
+        2              => true,
+        3              => true,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #b1b100;',
             2 => 'color: #b1b100;',
-            3 => 'color: #b1b100;'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #666666; font-style: italic;',
-            'MULTI' => 'color: #666666; font-style: italic;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099; font-weight: bold;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #009900;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #0000ff;'
-            ),
-        'NUMBERS' => array(
+            3 => 'color: #b1b100;',
+        ],
+        'COMMENTS' => [
+            1       => 'color: #666666; font-style: italic;',
+            'MULTI' => 'color: #666666; font-style: italic;',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #000099; font-weight: bold;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #009900;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #0000ff;',
+        ],
+        'NUMBERS' => [
             0 => 'color: #cc66cc;',
-            ),
-        'METHODS' => array(
-            0 => 'color: #004000;'
-            ),
-        'SYMBOLS' => array(
-            1 => 'color: #339933;'
-            ),
-        'REGEXPS' => array(),
-        'SCRIPT' => array()
-        ),
-    'URLS' => array(
+        ],
+        'METHODS' => [
+            0 => 'color: #004000;',
+        ],
+        'SYMBOLS' => [
+            1 => 'color: #339933;',
+        ],
+        'REGEXPS' => [],
+        'SCRIPT'  => [],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
-        3 => ''
-        ),
-    'OOLANG' => true,
-    'OBJECT_SPLITTERS' => array(
-        1 => '-&gt;'
-        ),
-    'REGEXPS' => array(),
-    'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(),
-    'HIGHLIGHT_STRICT_BLOCK' => array()
-);
-
-?>
+        3 => '',
+    ],
+    'OOLANG'           => true,
+    'OBJECT_SPLITTERS' => [
+        1 => '-&gt;',
+    ],
+    'REGEXPS'                => [],
+    'STRICT_MODE_APPLIES'    => GESHI_NEVER,
+    'SCRIPT_DELIMITERS'      => [],
+    'HIGHLIGHT_STRICT_BLOCK' => [],
+];

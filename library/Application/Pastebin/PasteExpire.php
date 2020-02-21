@@ -1,8 +1,8 @@
 <?php
+
 namespace Application\Pastebin;
 
 use Application\Application;
-use Application\Pastebin\ReadPaste;
 use Application\Configuration\Configuration;
 
 class PasteExpire
@@ -10,25 +10,27 @@ class PasteExpire
     use Configuration;
 
     /**
-     * Application
-     * 
+     * Application.
+     *
      * @var object
      */
     private $application;
-    
+
     /**
-     * DataBase
-     * 
+     * DataBase.
+     *
      * @var object
      */
     private $data_source;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param Application $application
-     * @return void
+     *
      * @throws \Application\Exception\ExceptionRuntime
+     *
+     * @return void
      */
     public function __construct(Application $application)
     {
@@ -37,33 +39,35 @@ class PasteExpire
     }
 
     /**
-     * Check expiry time
+     * Check expiry time.
      *
      * @param int $paste_id
-     * @return bool
+     *
      * @throws \Application\Exception\ExceptionRuntime
+     *
+     * @return bool
      */
     public function isExpired($paste_id)
     {
-        if((new ReadPaste($this->application))->pasteExists($paste_id) === false) {
+        if ((new ReadPaste($this->application))->pasteExists($paste_id) === false) {
             return false;
         }
 
         $expire_time = (new ReadPaste($this->application))->read($paste_id)['expire'];
 
-        if($expire_time == null) {
+        if ($expire_time == null) {
             $expire_time = 'never';
         }
 
-        if($expire_time === 'never') {
+        if ($expire_time === 'never') {
             return false;
         }
 
-        if($expire_time < time()) {
-            if($this->config()['delete_expired_pastes'] === true) {
+        if ($expire_time < time()) {
+            if ($this->config()['delete_expired_pastes'] === true) {
                 $query = $this->data_source
                 ->get()
-                ->prepare('DELETE FROM ' . $this->config('database')['prefix'] . 'pastes WHERE unique_id = :paste_id');
+                ->prepare('DELETE FROM '.$this->config('database')['prefix'].'pastes WHERE unique_id = :paste_id');
 
                 $query->bindValue(':paste_id', $paste_id, constant('PDO::PARAM_INT'));
                 $query->execute();
@@ -76,18 +80,19 @@ class PasteExpire
     }
 
     /**
-     * Validate expiry time from client
-     * 
+     * Validate expiry time from client.
+     *
      * @param string $post_expire
+     *
      * @return string|int
      */
     public function validateExpireTimeFromClient($post_expire)
     {
-        if($post_expire == null) {
+        if ($post_expire == null) {
             $post_expire = 'never';
         }
 
-        switch($post_expire) {
+        switch ($post_expire) {
             case 'never':
             default:
                 return 'never';

@@ -36,65 +36,65 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'BASCOM AVR',
-    'COMMENT_SINGLE' => array(1 => "'"),
-    'COMMENT_MULTI' => array(),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array('"'),
-    'ESCAPE_CHAR' => '',
-    'KEYWORDS' => array(
-        1 => array(
+$language_data = [
+    'LANG_NAME'      => 'BASCOM AVR',
+    'COMMENT_SINGLE' => [1 => "'"],
+    'COMMENT_MULTI'  => [],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'QUOTEMARKS'     => ['"'],
+    'ESCAPE_CHAR'    => '',
+    'KEYWORDS'       => [
+        1 => [
             // Navy Blue Bold Keywords
-            '1WRESET' , '1WREAD' , '1WWRITE' , '1WSEARCHFIRST' , '1WSEARCHNEXT' ,'1WVERIFY' , '1WIRECOUNT',
-            'CONFIG' , 'ACI' , 'ADC' , 'BCCARD' , 'CLOCK' , 'COM1' ,
-            'COM2' , 'PS2EMU' , 'ATEMU' , 'I2CSLAVE' ,
-            'INPUT', 'OUTPUT', 'GRAPHLCD' , 'KEYBOARD' , 'TIMER0' , 'TIMER1' ,
-            'LCDBUS' , 'LCDMODE' , '1WIRE' , 'LCD' , 'SERIALOUT' ,
-            'SERIALIN' , 'SPI' , 'LCDPIN' , 'SDA' , 'SCL' ,
-            'WATCHDOG' , 'PORT' , 'COUNTER0', 'COUNTER1' , 'TCPIP' , 'TWISLAVE' ,
-            'X10' , 'XRAM' , 'USB',
-            'BCD' , 'GRAY2BIN' , 'BIN2GRAY' , 'BIN' , 'MAKEBCD' , 'MAKEDEC' , 'MAKEINT' , 'FORMAT' , 'FUSING' , 'BINVAL' ,
-            'CRC8' , 'CRC16' , 'CRC16UNI' , 'CRC32' , 'HIGH' , 'HIGHW' , 'LOW',
-            'DATE' , 'TIME'  , 'DATE$' , 'TIME$' , 'DAYOFWEEK' , 'DAYOFYEAR' , 'SECOFDAY' , 'SECELAPSED' , 'SYSDAY' , 'SYSSEC' , 'SYSSECELAPSED',
-            'WAIT'  , 'WAITMS' , 'WAITUS' , 'DELAY',
-            'BSAVE' , 'BLOAD' , 'GET' , 'VER' , 'DISKFREE' , 'DIR' , 'DriveReset' , 'DriveInit' , 'LINE' , 'INITFILESYSTEM' ,
-            'EOF' , 'WRITE' , 'FLUSH' , 'FREEFILE' , 'FILEATTR' , 'FILEDATE' , 'FILETIME' , 'FILEDATETIME' , 'FILELEN' , 'SEEK' ,
-            'KILL' , 'DriveGetIdentity' , 'DriveWriteSector' , 'DriveReadSector' , 'LOC' , 'LOF' , 'PUT' , 'OPEN' , 'CLOSE',
-            'GLCDCMD' , 'GLCDDATA' , 'SETFONT' , 'PSET' , 'SHOWPIC' , 'SHOWPICE' , 'CIRCLE' , 'BOX',
-            'I2CINIT' , 'I2CRECEIVE' , 'I2CSEND' , 'I2CSTART','I2CSTOP','I2CRBYTE','I2CWBYTE',
-            'ALIAS' , 'BITWAIT' , 'TOGGLE' , 'RESET' , 'SET' , 'SHIFTIN' , 'SHIFTOUT' , 'DEBOUNCE' , 'PULSEIN' , 'PULSEOUT',
-            'IDLE' , 'POWERDOWN' , 'POWERSAVE' , 'ON', 'INTERRUPT' , 'ENABLE' , 'DISABLE' , 'START' , 'VERSION' , 'CLOCKDIVISION' , 'CRYSTAL' , 'STOP',
-            'ADR' , 'ADR2' , 'WRITEEEPROM' , 'CPEEK' , 'CPEEKH' , 'PEEK' , 'POKE' , 'OUT' , 'READEEPROM' , 'DATA' , 'INP' , 'READ' , 'RESTORE' , 'LOOKDOWN' , 'LOOKUP' , 'LOOKUPSTR' , 'LOAD' , 'LOADADR' , 'LOADLABEL' , 'LOADWORDADR' , 'MEMCOPY',
-            'RC5SEND' , 'RC6SEND' , 'GETRC5' , 'SONYSEND',
-            'BAUD' , 'BAUD1', 'BUFSPACE' , 'CLEAR', 'ECHO' , 'WAITKEY' , 'ISCHARWAITING' , 'INKEY' , 'INPUTBIN' , 'INPUTHEX' , 'PRINT', 'PRINT1','PRINT0', 'PRINTBIN' , 'SERIN' , 'SEROUT' , 'SPC' , 'MAKEMODBUS',
-            'SPIIN' , 'SPIINIT' , 'SPIMOVE' , 'SPIOUT', 'SINGLE',
-            'ASC' , 'UCASE' , 'LCASE' , 'TRIM' , 'SPLIT' , 'LTRIM' , 'INSTR' , 'SPACE' , 'RTRIM' , 'LEFT' , 'LEN' , 'MID' , 'RIGHT' , 'VAL' , 'STR' , 'CHR' , 'CHECKSUM' , 'HEX' , 'HEXVAL',
-            'BASE64DEC' , 'BASE64ENC' , 'IP2STR' , 'UDPREAD' , 'UDPWRITE' , 'UDPWRITESTR' , 'TCPWRITE' , 'TCPWRITESTR' , 'TCPREAD' , 'GETDSTIP' , 'GETDSTPORT' , 'SOCKETSTAT' , 'SOCKETCONNECT' , 'SOCKETLISTEN' , 'GETSOCKET' , 'CLOSESOCKET' ,
-            'SETTCP' , 'GETTCPREGS' , 'SETTCPREGS' , 'SETIPPROTOCOL' , 'TCPCHECKSUM',
-            'HOME' , 'CURSOR' , 'UPPERLINE' , 'THIRDLINE' , 'INITLCD' , 'LOWERLINE' , 'LCDAT' , 'FOURTHLINE' , 'DISPLAY' , 'LCDCONTRAST' , 'LOCATE' , 'SHIFTCURSOR' , 'DEFLCDCHAR' , 'SHIFTLCD' , 'CLS',
-            'ACOS' , 'ASIN' , 'ATN' , 'ATN2' , 'EXP' , 'RAD2DEG' , 'FRAC' , 'TAN' , 'TANH' , 'COS' , 'COSH' , 'LOG' , 'LOG10' , 'ROUND' , 'ABS' , 'INT' , 'MAX' , 'MIN' , 'SQR' , 'SGN' , 'POWER' , 'SIN' , 'SINH' , 'FIX' , 'INCR' , 'DECR' , 'DEG2RAD',
-            'DBG' , 'DEBUG', 'DTMFOUT' , 'ENCODER' , 'GETADC' , 'GETKBD' , 'GETATKBD' , 'GETRC' , 'VALUE' , 'POPALL' , 'PS2MOUSEXY' , 'PUSHALL' ,
-            'RETURN'  , 'RND' , 'ROTATE' , 'SENDSCAN' , 'SENDSCANKBD' , 'SHIFT' , 'SOUND' , 'STCHECK' , 'SWAP' , 'VARPTR' , 'X10DETECT' , 'X10SEND' , 'READMAGCARD' , 'REM' , 'BITS' , 'BYVAL' , 'CALL' , 'READHITAG',
+            '1WRESET', '1WREAD', '1WWRITE', '1WSEARCHFIRST', '1WSEARCHNEXT', '1WVERIFY', '1WIRECOUNT',
+            'CONFIG', 'ACI', 'ADC', 'BCCARD', 'CLOCK', 'COM1',
+            'COM2', 'PS2EMU', 'ATEMU', 'I2CSLAVE',
+            'INPUT', 'OUTPUT', 'GRAPHLCD', 'KEYBOARD', 'TIMER0', 'TIMER1',
+            'LCDBUS', 'LCDMODE', '1WIRE', 'LCD', 'SERIALOUT',
+            'SERIALIN', 'SPI', 'LCDPIN', 'SDA', 'SCL',
+            'WATCHDOG', 'PORT', 'COUNTER0', 'COUNTER1', 'TCPIP', 'TWISLAVE',
+            'X10', 'XRAM', 'USB',
+            'BCD', 'GRAY2BIN', 'BIN2GRAY', 'BIN', 'MAKEBCD', 'MAKEDEC', 'MAKEINT', 'FORMAT', 'FUSING', 'BINVAL',
+            'CRC8', 'CRC16', 'CRC16UNI', 'CRC32', 'HIGH', 'HIGHW', 'LOW',
+            'DATE', 'TIME', 'DATE$', 'TIME$', 'DAYOFWEEK', 'DAYOFYEAR', 'SECOFDAY', 'SECELAPSED', 'SYSDAY', 'SYSSEC', 'SYSSECELAPSED',
+            'WAIT', 'WAITMS', 'WAITUS', 'DELAY',
+            'BSAVE', 'BLOAD', 'GET', 'VER', 'DISKFREE', 'DIR', 'DriveReset', 'DriveInit', 'LINE', 'INITFILESYSTEM',
+            'EOF', 'WRITE', 'FLUSH', 'FREEFILE', 'FILEATTR', 'FILEDATE', 'FILETIME', 'FILEDATETIME', 'FILELEN', 'SEEK',
+            'KILL', 'DriveGetIdentity', 'DriveWriteSector', 'DriveReadSector', 'LOC', 'LOF', 'PUT', 'OPEN', 'CLOSE',
+            'GLCDCMD', 'GLCDDATA', 'SETFONT', 'PSET', 'SHOWPIC', 'SHOWPICE', 'CIRCLE', 'BOX',
+            'I2CINIT', 'I2CRECEIVE', 'I2CSEND', 'I2CSTART', 'I2CSTOP', 'I2CRBYTE', 'I2CWBYTE',
+            'ALIAS', 'BITWAIT', 'TOGGLE', 'RESET', 'SET', 'SHIFTIN', 'SHIFTOUT', 'DEBOUNCE', 'PULSEIN', 'PULSEOUT',
+            'IDLE', 'POWERDOWN', 'POWERSAVE', 'ON', 'INTERRUPT', 'ENABLE', 'DISABLE', 'START', 'VERSION', 'CLOCKDIVISION', 'CRYSTAL', 'STOP',
+            'ADR', 'ADR2', 'WRITEEEPROM', 'CPEEK', 'CPEEKH', 'PEEK', 'POKE', 'OUT', 'READEEPROM', 'DATA', 'INP', 'READ', 'RESTORE', 'LOOKDOWN', 'LOOKUP', 'LOOKUPSTR', 'LOAD', 'LOADADR', 'LOADLABEL', 'LOADWORDADR', 'MEMCOPY',
+            'RC5SEND', 'RC6SEND', 'GETRC5', 'SONYSEND',
+            'BAUD', 'BAUD1', 'BUFSPACE', 'CLEAR', 'ECHO', 'WAITKEY', 'ISCHARWAITING', 'INKEY', 'INPUTBIN', 'INPUTHEX', 'PRINT', 'PRINT1', 'PRINT0', 'PRINTBIN', 'SERIN', 'SEROUT', 'SPC', 'MAKEMODBUS',
+            'SPIIN', 'SPIINIT', 'SPIMOVE', 'SPIOUT', 'SINGLE',
+            'ASC', 'UCASE', 'LCASE', 'TRIM', 'SPLIT', 'LTRIM', 'INSTR', 'SPACE', 'RTRIM', 'LEFT', 'LEN', 'MID', 'RIGHT', 'VAL', 'STR', 'CHR', 'CHECKSUM', 'HEX', 'HEXVAL',
+            'BASE64DEC', 'BASE64ENC', 'IP2STR', 'UDPREAD', 'UDPWRITE', 'UDPWRITESTR', 'TCPWRITE', 'TCPWRITESTR', 'TCPREAD', 'GETDSTIP', 'GETDSTPORT', 'SOCKETSTAT', 'SOCKETCONNECT', 'SOCKETLISTEN', 'GETSOCKET', 'CLOSESOCKET',
+            'SETTCP', 'GETTCPREGS', 'SETTCPREGS', 'SETIPPROTOCOL', 'TCPCHECKSUM',
+            'HOME', 'CURSOR', 'UPPERLINE', 'THIRDLINE', 'INITLCD', 'LOWERLINE', 'LCDAT', 'FOURTHLINE', 'DISPLAY', 'LCDCONTRAST', 'LOCATE', 'SHIFTCURSOR', 'DEFLCDCHAR', 'SHIFTLCD', 'CLS',
+            'ACOS', 'ASIN', 'ATN', 'ATN2', 'EXP', 'RAD2DEG', 'FRAC', 'TAN', 'TANH', 'COS', 'COSH', 'LOG', 'LOG10', 'ROUND', 'ABS', 'INT', 'MAX', 'MIN', 'SQR', 'SGN', 'POWER', 'SIN', 'SINH', 'FIX', 'INCR', 'DECR', 'DEG2RAD',
+            'DBG', 'DEBUG', 'DTMFOUT', 'ENCODER', 'GETADC', 'GETKBD', 'GETATKBD', 'GETRC', 'VALUE', 'POPALL', 'PS2MOUSEXY', 'PUSHALL',
+            'RETURN', 'RND', 'ROTATE', 'SENDSCAN', 'SENDSCANKBD', 'SHIFT', 'SOUND', 'STCHECK', 'SWAP', 'VARPTR', 'X10DETECT', 'X10SEND', 'READMAGCARD', 'REM', 'BITS', 'BYVAL', 'CALL', 'READHITAG',
             'Buffered', 'Size', 'Dummy', 'Parity', 'None', 'Stopbits', 'Databits', 'Clockpol', 'Synchrone', 'Prescaler', 'Reference', 'int0', 'int1', 'Interrupts',
             'Auto', 'avcc', 'ack', 'nack', 'Pin', 'Db4', 'Db3', 'Db2', 'Db1', 'Db7', 'Db6', 'Db5', 'Db0',  'e', 'rs', 'twi',
-            ),
-        2 => array(
+        ],
+        2 => [
             // Red Lowercase Keywords
-            '$ASM' , '$BAUD' , '$BAUD1' , '$BGF' , '$BOOT' , '$CRYSTAL' , '$DATA' , '$DBG' , '$DEFAULT' , '$EEPLEAVE' , '$EEPROM' ,
-            '$EEPROMHEX' , '$EXTERNAL' , '$HWSTACK' , '$INC' , '$INCLUDE' , '$INITMICRO' , '$LCD' , '$LCDRS' , '$LCDPUTCTRL' ,
-            '$LCDPUTDATA' , '$LCDVFO' , '$LIB' , '$LOADER' , '$LOADERSIZE' , '$MAP' , '$NOCOMPILE' , '$NOINIT' , '$NORAMCLEAR' ,
-            '$PROG' , '$PROGRAMMER' , '$REGFILE' , '$RESOURCE' , '$ROMSTART', '$SERIALINPUT', '$SERIALINPUT1' , '$SERIALINPUT2LCD' ,
-            '$SERIALOUTPUT' , '$SERIALOUTPUT1' , '$SIM' , '$SWSTACK' , '$TIMEOUT' , '$TINY' , '$WAITSTATE' , '$XRAMSIZE' , '$XRAMSTART', '$XA',
-            '#IF' , '#ELSE' , '#ENDIF', '$framesize'
-            ),
-        3 => array(
+            '$ASM', '$BAUD', '$BAUD1', '$BGF', '$BOOT', '$CRYSTAL', '$DATA', '$DBG', '$DEFAULT', '$EEPLEAVE', '$EEPROM',
+            '$EEPROMHEX', '$EXTERNAL', '$HWSTACK', '$INC', '$INCLUDE', '$INITMICRO', '$LCD', '$LCDRS', '$LCDPUTCTRL',
+            '$LCDPUTDATA', '$LCDVFO', '$LIB', '$LOADER', '$LOADERSIZE', '$MAP', '$NOCOMPILE', '$NOINIT', '$NORAMCLEAR',
+            '$PROG', '$PROGRAMMER', '$REGFILE', '$RESOURCE', '$ROMSTART', '$SERIALINPUT', '$SERIALINPUT1', '$SERIALINPUT2LCD',
+            '$SERIALOUTPUT', '$SERIALOUTPUT1', '$SIM', '$SWSTACK', '$TIMEOUT', '$TINY', '$WAITSTATE', '$XRAMSIZE', '$XRAMSTART', '$XA',
+            '#IF', '#ELSE', '#ENDIF', '$framesize',
+        ],
+        3 => [
             // Blue Lowercase Keywords
             'IF', 'THEN', 'ELSE', 'END', 'WHILE', 'WEND', 'DO', 'LOOP', 'SELECT', 'CASE', 'FOR', 'NEXT',
-            'GOSUB' , 'GOTO' , 'LOCAL' , 'SUB' , 'DEFBIT', 'DEFBYTE', 'DEFINT', 'DEFWORD', 'DEFLNG', 'DEFSNG', 'DEFDBL',
-            'CONST', 'DECLARE', 'FUNCTION', 'DIM', 'EXIT', 'LONG', 'INTEGER', 'BYTE', 'AS', 'STRING', 'WORD'
-            ),
-        4 => array(
+            'GOSUB', 'GOTO', 'LOCAL', 'SUB', 'DEFBIT', 'DEFBYTE', 'DEFINT', 'DEFWORD', 'DEFLNG', 'DEFSNG', 'DEFDBL',
+            'CONST', 'DECLARE', 'FUNCTION', 'DIM', 'EXIT', 'LONG', 'INTEGER', 'BYTE', 'AS', 'STRING', 'WORD',
+        ],
+        4 => [
             //light blue
             'PINA.0', 'PINA.1', 'PINA.2', 'PINA.3', 'PINA.4', 'PINA.5', 'PINA.6', 'PINA.7',
             'PINB.0', 'PINB.1', 'PINB.2', 'PINB.3', 'PINB.4', 'PINB.5', 'PINB.6', 'PINB.7',
@@ -117,69 +117,67 @@ $language_data = array (
             'DDRE.0', 'DDRE.1', 'DDRE.2', 'DDRE.3', 'DDRE.4', 'DDRE.5', 'DDRE.6', 'DDRE.7',
             'DDRF.0', 'DDRF.1', 'DDRF.2', 'DDRF.3', 'DDRF.4', 'DDRF.5', 'DDRF.6', 'DDRF.7',
 
-            'DDRA','DDRB','DDRC','DDRD','DDRE','DDRF',
-            'PORTA','PORTB','PORTC','PORTD','PORTE','PORTF',
-            'PINA','PINB','PINC','PIND','PINE','PINF',
-            )
-        ),
-    'SYMBOLS' => array(
-        '=', '<', '>', '>=', '<=', '+', '-', '*', '/', '%', '(', ')', '{', '}', '[', ']',  ';', ':', '$', '&H'
-        ),
-    'CASE_SENSITIVE' => array(
+            'DDRA', 'DDRB', 'DDRC', 'DDRD', 'DDRE', 'DDRF',
+            'PORTA', 'PORTB', 'PORTC', 'PORTD', 'PORTE', 'PORTF',
+            'PINA', 'PINB', 'PINC', 'PIND', 'PINE', 'PINF',
+        ],
+    ],
+    'SYMBOLS' => [
+        '=', '<', '>', '>=', '<=', '+', '-', '*', '/', '%', '(', ')', '{', '}', '[', ']',  ';', ':', '$', '&H',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => false,
-        2 => false,
-        3 => false,
-        4 => false,
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => false,
+        2              => false,
+        3              => false,
+        4              => false,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #000080; font-weight: bold;',
             2 => 'color: #FF0000;',
             3 => 'color: #0000FF;',
             4 => 'color: #0080FF;',
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #657CC4; font-style: italic;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #000080;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #008000;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #000080; font-weight: bold;'
-            ),
-        'METHODS' => array(
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #0000FF;'
-            ),
-        'ESCAPE_CHAR' => array(
-            ),
-        'SCRIPT' => array(
-            ),
-        'REGEXPS' => array(
-            )
-        ),
-    'URLS' => array(
+        ],
+        'COMMENTS' => [
+            1 => 'color: #657CC4; font-style: italic;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #000080;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #008000;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #000080; font-weight: bold;',
+        ],
+        'METHODS' => [
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #0000FF;',
+        ],
+        'ESCAPE_CHAR' => [
+        ],
+        'SCRIPT' => [
+        ],
+        'REGEXPS' => [
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
         3 => '',
-        4 => ''
-        ),
-    'OOLANG' => false,
-    'OBJECT_SPLITTERS' => array(
-        ),
-    'REGEXPS' => array(
-        ),
+        4 => '',
+    ],
+    'OOLANG'           => false,
+    'OBJECT_SPLITTERS' => [
+    ],
+    'REGEXPS' => [
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        ),
-    'TAB_WIDTH' => 4
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+    'TAB_WIDTH' => 4,
+];

@@ -40,23 +40,23 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'MapBasic',
-    'COMMENT_SINGLE' => array(1 => "'"),
-    'COMMENT_MULTI' => array(),
-    'COMMENT_REGEXP' => array(),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array('"'),
-    'ESCAPE_CHAR' => '',
-    'KEYWORDS' => array(
-/*
+$language_data = [
+    'LANG_NAME'      => 'MapBasic',
+    'COMMENT_SINGLE' => [1 => "'"],
+    'COMMENT_MULTI'  => [],
+    'COMMENT_REGEXP' => [],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'QUOTEMARKS'     => ['"'],
+    'ESCAPE_CHAR'    => '',
+    'KEYWORDS'       => [
+        /*
         1 - Statements + Clauses + Data Types + Logical Operators, Geographical Operators + SQL
         2 - Special Procedures
         3 - Functions
         4 - Constants
         5 - Extended keywords (case sensitive)
 */
-        1 => array(
+        1 => [
             'Add', 'Alias', 'All', 'Alter', 'And', 'Any', 'Application', 'Arc',
             'Area', 'As', 'AutoLabel', 'Bar', 'Beep', 'Begin', 'Bind',
             'Browse', 'Brush', 'BrushPicker', 'Button', 'ButtonPad',
@@ -95,15 +95,15 @@ $language_data = array (
             'Timeout', 'To', 'Transaction', 'Transform', 'Type', 'UnDim',
             'Units', 'Unlink', 'Update', 'Using', 'VALUES', 'Version',
             'Versioning', 'Wend', 'WFS', 'WHERE', 'While', 'Window', 'Within',
-            'Workspace', 'Write'
-            ),
-        2 => array(
+            'Workspace', 'Write',
+        ],
+        2 => [
             'EndHandler', 'ForegroundTaskSwitchHandler', 'Main',
             'RemoteMapGenHandler', 'RemoteMsgHandler', 'SelChangedHandler',
             'ToolHandler', 'WinChangedHandler', 'WinClosedHandler',
-            'WinFocusChangedHandler'
-            ),
-        3 => array(
+            'WinFocusChangedHandler',
+        ],
+        3 => [
             'Abs', 'Acos', 'ApplicationDirectory$', 'AreaOverlap', 'Asc',
             'Asin', 'Ask', 'Atn', 'Avg', 'Buffer', 'ButtonPadInfo',
             'CartesianArea', 'CartesianBuffer', 'CartesianConnectObjects',
@@ -178,9 +178,9 @@ $language_data = array (
             'StyleAttr', 'Sum', 'SystemInfo', 'TableInfo', 'Tan',
             'TempFileName$', 'TextSize', 'Time', 'Timer', 'TriggerControl',
             'TrueFileName$', 'UBound', 'UCase$', 'UnitAbbr$', 'UnitName$',
-            'Val', 'Weekday', 'WindowID', 'WindowInfo', 'WtAvg', 'Year'
-            ),
-        4 => array(
+            'Val', 'Weekday', 'WindowID', 'WindowInfo', 'WtAvg', 'Year',
+        ],
+        4 => [
             'BLACK', 'BLUE', 'BRUSH_BACKCOLOR', 'BRUSH_FORECOLOR',
             'BRUSH_PATTERN', 'BTNPAD_INFO_FLOATING', 'BTNPAD_INFO_NBTNS',
             'BTNPAD_INFO_WIDTH', 'BTNPAD_INFO_WINID', 'BTNPAD_INFO_X',
@@ -764,9 +764,9 @@ $language_data = array (
             'WIN_STATE_MAXIMIZED', 'WIN_STATE_MINIMIZED', 'WIN_STATE_NORMAL',
             'WIN_STATISTICS', 'WIN_STYLE_CHILD', 'WIN_STYLE_POPUP',
             'WIN_STYLE_POPUP_FULLCAPTION', 'WIN_STYLE_STANDARD',
-            'WIN_SYMBOLPICKER', 'WIN_TOOLBAR', 'WIN_TOOLPICKER', 'YELLOW'
-            ),
-        5 => array(
+            'WIN_SYMBOLPICKER', 'WIN_TOOLBAR', 'WIN_TOOLPICKER', 'YELLOW',
+        ],
+        5 => [
             'Abbrs', 'Above', 'Access', 'Active', 'Address', 'Advanced',
             'Affine', 'Align', 'Alpha', 'alpha_value', 'Always', 'Angle',
             'Animate', 'Antialiasing', 'Append', 'Apply', 'ApplyUpdates',
@@ -831,78 +831,76 @@ $language_data = array (
             'Vary', 'Vector', 'Versioned', 'View', 'ViewDisplayPopup',
             'VisibleOnly', 'VMDefault', 'VMGrid', 'VMRaster', 'Voronoi',
             'Warnings', 'Wedge', 'West', 'Width', 'With', 'XY', 'XYINDEX',
-            'Yaw', 'Zoom'
-            )
-        ),
-    'SYMBOLS' => array(
-            //Numeric/String Operators + Comparison Operators
-            '(', ')', '[', ']', '+', '-', '*', '/', '\\', '^', '&',
-            '=', '<', '>'
-        ),
-    'CASE_SENSITIVE' => array(
+            'Yaw', 'Zoom',
+        ],
+    ],
+    'SYMBOLS' => [
+        //Numeric/String Operators + Comparison Operators
+        '(', ')', '[', ']', '+', '-', '*', '/', '\\', '^', '&',
+        '=', '<', '>',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => false,
-        2 => false,
-        3 => false,
-        4 => false,
-        5 => true
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => false,
+        2              => false,
+        3              => false,
+        4              => false,
+        5              => true,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #0000ff;',        //Statements + Clauses + Data Types + Logical Operators, Geographical Operators + SQL
             2 => 'color: #2391af;',        //Special Procedures
             3 => 'color: #2391af;',        //Functions
             4 => 'color: #c635cb;',        //Constants
-            5 => 'color: #0000ff;'         //Extended keywords (case sensitive)
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #008000;',
-            'MULTI' => 'color: #008000;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #000000;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #a31515;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #000000;'
-            ),
-        'METHODS' => array(
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #000000;'
-            ),
-        'ESCAPE_CHAR' => array(
-            ),
-        'SCRIPT' => array(
-            ),
-        'REGEXPS' => array(
+            5 => 'color: #0000ff;',         //Extended keywords (case sensitive)
+        ],
+        'COMMENTS' => [
+            1       => 'color: #008000;',
+            'MULTI' => 'color: #008000;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #000000;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #a31515;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #000000;',
+        ],
+        'METHODS' => [
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #000000;',
+        ],
+        'ESCAPE_CHAR' => [
+        ],
+        'SCRIPT' => [
+        ],
+        'REGEXPS' => [
             0 => 'color: #12198b;',            //Table Attributes
-            1 => 'color: #2391af;'             //Data Types
-            )
-        ),
-    'URLS' => array(
+            1 => 'color: #2391af;',             //Data Types
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
         3 => '',
         4 => '',
-        5 => ''
-        ),
-    'OOLANG' => false,
-    'OBJECT_SPLITTERS' => array(
-        ),
-    'REGEXPS' => array(
-            //Table Attribute
-            0 => "[\\.]{1}[a-zA-Z0-9_]+",
-            //Data Type
-            1 => "(?xi) \\s+ as \\s+ (Alias|Brush|Date|Float|Font|Integer|Logical|Object|Pen|SmallInt|String|Symbol)"
-        ),
+        5 => '',
+    ],
+    'OOLANG'           => false,
+    'OBJECT_SPLITTERS' => [
+    ],
+    'REGEXPS' => [
+        //Table Attribute
+        0 => '[\\.]{1}[a-zA-Z0-9_]+',
+        //Data Type
+        1 => '(?xi) \\s+ as \\s+ (Alias|Brush|Date|Float|Font|Integer|Logical|Object|Pen|SmallInt|String|Symbol)',
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        ),
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+];

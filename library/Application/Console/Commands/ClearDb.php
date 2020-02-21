@@ -1,9 +1,10 @@
 <?php
+
 namespace Application\Console\Commands;
 
 use Application\Application;
-use Application\Console\Console;
 use Application\Configuration\Configuration;
+use Application\Console\Console;
 use Exception;
 
 class ClearDb
@@ -11,26 +12,28 @@ class ClearDb
     use Configuration;
 
     /**
-     * DataBase
-     * 
+     * DataBase.
+     *
      * @var object
      */
     private $data_source;
 
     /**
-     * Console
-     * 
+     * Console.
+     *
      * @var object
      */
     private $console;
 
     /**
-     * Construct
+     * Construct.
      *
-     * @param Console $console
+     * @param Console     $console
      * @param Application $application
-     * @return void
+     *
      * @throws \Application\Exception\ExceptionRuntime
+     *
+     * @return void
      */
     public function __construct(Console $console, Application $application)
     {
@@ -47,8 +50,8 @@ class ClearDb
     }
 
     /**
-     * Prepare database schema
-     * 
+     * Prepare database schema.
+     *
      * @return array
      */
     private function prepareSchema()
@@ -57,7 +60,7 @@ class ClearDb
 
         $schema_file = $this->data_source->getSchema();
 
-        if($schema_file !== false) {
+        if ($schema_file !== false) {
             $this->console->writeStdout('Succeeded');
         } else {
             die($this->console->writeStdout('Failed'));
@@ -67,22 +70,22 @@ class ClearDb
     }
 
     /**
-     * Clear
-     * 
+     * Clear.
+     *
      * @return void
      */
     private function clear()
     {
-        foreach($this->prepareSchema()['tables'] as $table => $table_fields) {
-            $_clearQuery = 'DROP TABLE IF EXISTS ' . $this->config('database')['prefix'] . $table;
+        foreach ($this->prepareSchema()['tables'] as $table => $table_fields) {
+            $_clearQuery = 'DROP TABLE IF EXISTS '.$this->config('database')['prefix'].$table;
 
-            $this->console->writeStdout('Removing table "' . $this->config('database')['prefix'] . $table . '"...', false, ' ');
+            $this->console->writeStdout('Removing table "'.$this->config('database')['prefix'].$table.'"...', false, ' ');
 
             try {
                 $this->data_source->get()->query($_clearQuery);
 
                 $this->console->writeStdout('Succeeded');
-            } catch(Exception $exception) {
+            } catch (Exception $exception) {
                 die($this->console->writeStdout('Failed', false, null, $exception->getMessage()));
             }
         }
