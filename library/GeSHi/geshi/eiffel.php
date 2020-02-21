@@ -37,15 +37,15 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'Eiffel',
-    'COMMENT_SINGLE' => array(1 => '--'),
-    'COMMENT_MULTI' => array(),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array("'", '"'),
-    'ESCAPE_CHAR' => '%',
-    'KEYWORDS' => array(
-        1 => array(
+$language_data = [
+    'LANG_NAME'      => 'Eiffel',
+    'COMMENT_SINGLE' => [1 => '--'],
+    'COMMENT_MULTI'  => [],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'QUOTEMARKS'     => ["'", '"'],
+    'ESCAPE_CHAR'    => '%',
+    'KEYWORDS'       => [
+        1 => [
             'separate',
             'invariant',
             'inherit',
@@ -53,9 +53,9 @@ $language_data = array (
             'feature',
             'expanded',
             'deferred',
-            'class'
-            ),
-        2 => array(
+            'class',
+        ],
+        2 => [
             'xor',
             'when',
             'variant',
@@ -101,17 +101,17 @@ $language_data = array (
             'as',
             'and',
             'alias',
-            'agent'
-            ),
-        3 => array(
+            'agent',
+        ],
+        3 => [
             'Void',
             'True',
             'Result',
             'Precursor',
             'False',
-            'Current'
-            ),
-        4 => array(
+            'Current',
+        ],
+        4 => [
             'UNIX_SIGNALS',
             'UNIX_FILE_INFO',
             'UNBOUNDED',
@@ -286,9 +286,9 @@ $language_data = array (
             'ARRAY',
             'ARGUMENTS',
             'ANY',
-            'ACTIVE'
-            ),
-        5 => array(
+            'ACTIVE',
+        ],
+        5 => [
             'yes',
             'visible',
             'trace',
@@ -321,75 +321,73 @@ $language_data = array (
             'assertion',
             'array_optimization',
             'all',
-            'address_expression'
-            ),
-        ),
-    'SYMBOLS' => array(
+            'address_expression',
+        ],
+    ],
+    'SYMBOLS' => [
         '+', '-', '*', '?', '=', '/', '%', '&', '>', '<', '^', '!', '|', ':',
-        '(', ')', '{', '}', '[', ']', '#'
-        ),
-    'CASE_SENSITIVE' => array(
+        '(', ')', '{', '}', '[', ']', '#',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => false,
-        2 => false,
-        3 => false,
-        4 => true,
-        5 => false,
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => false,
+        2              => false,
+        3              => false,
+        4              => true,
+        5              => false,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #0600FF; font-weight: bold;',
             2 => 'color: #0600FF; font-weight: bold;',
             3 => 'color: #800080;',
             4 => 'color: #800000',
-            5 => 'color: #603000;'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #008000; font-style: italic;',
-            'MULTI' => ''
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #005070; font-weight: bold;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #FF0000;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #0080A0;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #FF0000;'
-            ),
-        'METHODS' => array(
+            5 => 'color: #603000;',
+        ],
+        'COMMENTS' => [
+            1       => 'color: #008000; font-style: italic;',
+            'MULTI' => '',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #005070; font-weight: bold;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #FF0000;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #0080A0;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #FF0000;',
+        ],
+        'METHODS' => [
             1 => 'color: #000060;',
-            2 => 'color: #000050;'
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #600000;'
-            ),
-        'REGEXPS' => array(
-            ),
-        'SCRIPT' => array(
-            )
-        ),
-    'URLS' => array(
+            2 => 'color: #000050;',
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #600000;',
+        ],
+        'REGEXPS' => [
+        ],
+        'SCRIPT' => [
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
         3 => '',
         4 => 'http://www.google.com/search?q=site%3Ahttp%3A%2F%2Fdocs.eiffel.com%2Feiffelstudio%2Flibraries+{FNAMEL}&amp;btnI=I%27m+Feeling+Lucky',
-        5 => ''
-        ),
-    'OOLANG' => true,
-    'OBJECT_SPLITTERS' => array(
-        1 => '.'
-        ),
-    'REGEXPS' => array(
-        ),
+        5 => '',
+    ],
+    'OOLANG'           => true,
+    'OBJECT_SPLITTERS' => [
+        1 => '.',
+    ],
+    'REGEXPS' => [
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        )
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+];

@@ -1,4 +1,5 @@
 <?php
+
 namespace Application\Mailer;
 
 use Application\Configuration\Configuration;
@@ -14,14 +15,15 @@ class Mailer
     use Configuration;
 
     /**
-     * Mailer width transport
+     * Mailer width transport.
+     *
+     * @throws MailerException
      *
      * @return Swift_Mailer object
-     * @throws MailerException
      */
     public function mailer()
     {
-        switch($this->config('mailer')['transport']) {
+        switch ($this->config('mailer')['transport']) {
             case 'smtp':
                 if (function_exists('proc_open') === false) {
                     throw new MailerException('proc_* functions are not available on your PHP installation. This is required for SMTP transport.');
@@ -33,7 +35,7 @@ class Mailer
                 break;
             case 'mail':
             default:
-                $transport = new Swift_MailTransport;
+                $transport = new Swift_MailTransport();
                 break;
             case 'sendmail':
                 if (function_exists('proc_open') === false) {
@@ -48,9 +50,10 @@ class Mailer
     }
 
     /**
-     * Message accessor
-     * 
-     * @param string $subject 
+     * Message accessor.
+     *
+     * @param string $subject
+     *
      * @return Swift_Message object
      */
     public function message($subject = null)

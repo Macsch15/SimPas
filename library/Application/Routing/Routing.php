@@ -1,4 +1,5 @@
 <?php
+
 namespace Application\Routing;
 
 use Application\Application;
@@ -10,30 +11,31 @@ use Application\View\View;
 class Routing extends View
 {
     /**
-     * Routes
-     * 
+     * Routes.
+     *
      * @var array
-    */
+     */
     private $_route;
 
     /**
-     * Application
-     * 
+     * Application.
+     *
      * @var object
      */
     private $application;
 
     /**
-     * Request from client
-     * 
+     * Request from client.
+     *
      * @var string
      */
     private $_request;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param Application $application
+     *
      * @throws AssetNotFound
      * @throws ExceptionRuntime
      */
@@ -51,9 +53,9 @@ class Routing extends View
 
         $routes = array_merge(require $routesPath);
 
-        $this->_request = '/' . getenv('QUERY_STRING');
+        $this->_request = '/'.getenv('QUERY_STRING');
 
-        foreach($routes['routes'] as $route_name => $route_data) {
+        foreach ($routes['routes'] as $route_name => $route_data) {
             $this->_route[$route_name] = $route_data;
         }
 
@@ -61,18 +63,20 @@ class Routing extends View
     }
 
     /**
-     * Pattern Start
+     * Pattern Start.
      *
      * @param Application $application
-     * @return bool
+     *
      * @throws ExceptionRuntime
      * @throws \Application\Exception\ExceptionRuntime
+     *
+     * @return bool
      */
     private function patternStart(Application $application)
     {
-        foreach($this->_route as $node => $data) {
+        foreach ($this->_route as $node => $data) {
             if (isset($data['static']) && $data['static'] === true) {
-                if($node === $this->_request || $node . '/' === $this->_request) {
+                if ($node === $this->_request || $node.'/' === $this->_request) {
                     if (isset($data['template'])) {
                         return $this->{$data['template']};
                     }
@@ -83,20 +87,20 @@ class Routing extends View
                         throw new ExceptionRuntime(sprintf('Controller or action in route: ++%s+-+ is not defined', $node));
                     }
 
-                    if (method_exists($data['controller'], $data['action'] . 'Action') === false) {
-                        throw new ExceptionRuntime('++' . $data['controller'] . '::' . $data['action'] . 'Action()+-+ doesn\'t exists');
+                    if (method_exists($data['controller'], $data['action'].'Action') === false) {
+                        throw new ExceptionRuntime('++'.$data['controller'].'::'.$data['action'].'Action()+-+ doesn\'t exists');
                     }
 
                     $controller = new $data['controller']($this->application);
 
-                    call_user_func([$controller, $data['action'] . 'Action'], []);
+                    call_user_func([$controller, $data['action'].'Action'], []);
 
                     return false;
                 }
             } else {
                 if (isset($data['requirements']) && $data['requirements'] > 0) {
-                    foreach($data['requirements'] as $args => $regex) {
-                        $node = str_replace('{' . $args . '}', '(?P<' . $args . '>' . $regex . ')', $node);
+                    foreach ($data['requirements'] as $args => $regex) {
+                        $node = str_replace('{'.$args.'}', '(?P<'.$args.'>'.$regex.')', $node);
                     }
                 } else {
                     throw new ExceptionRuntime('Requirements in regex-type routes must be defined');
@@ -104,20 +108,20 @@ class Routing extends View
 
                 $node = str_replace('/', '\/', $node);
 
-                if (preg_match('/^' . $node . '\/?(.*?)$/', $this->_request, $arguments)) {
+                if (preg_match('/^'.$node.'\/?(.*?)$/', $this->_request, $arguments)) {
                     if (isset($data['controller']) === false || empty($data['controller']) ||
                         isset($data['action']) === false || empty($data['action'])
                     ) {
                         throw new ExceptionRuntime(sprintf('Controller or action in route: ++%s+-+ is not defined', $node));
                     }
 
-                    if (method_exists($data['controller'], $data['action'] . 'Action') === false) {
-                        throw new ExceptionRuntime('++' . $data['controller'] . '::' . $data['action'] . 'Action()+-+ doesn\'t exists');
+                    if (method_exists($data['controller'], $data['action'].'Action') === false) {
+                        throw new ExceptionRuntime('++'.$data['controller'].'::'.$data['action'].'Action()+-+ doesn\'t exists');
                     }
 
                     $controller = new $data['controller']($this->application);
 
-                    call_user_func([$controller, $data['action'] . 'Action'], $arguments);
+                    call_user_func([$controller, $data['action'].'Action'], $arguments);
 
                     return false;
                 }

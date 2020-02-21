@@ -1,12 +1,11 @@
 <?php
-namespace Application\View;
 
-use Application\View\View;
+namespace Application\View;
 
 class ClientError extends View
 {
     /**
-     * Send error 404 page to client
+     * Send error 404 page to client.
      *
      * @return bool
      */

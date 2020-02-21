@@ -1,4 +1,5 @@
 <?php
+
 namespace Application\Security\DataFilters;
 
 use Application\Configuration\Configuration;
@@ -8,27 +9,28 @@ class PreDatabaseSave
     use Configuration;
 
     /**
-     * Filter
+     * Filter.
      *
      * @param string $string
      * @param $restricted_characters
+     *
      * @return string
      */
     public function filter($string, $restricted_characters)
     {
-        if($restricted_characters === 'html') {
+        if ($restricted_characters === 'html') {
             return htmlspecialchars($string);
         }
 
-        if($restricted_characters === 'slashes') {
+        if ($restricted_characters === 'slashes') {
             return addslashes($string);
         }
 
-        if($restricted_characters === 'htmlslashes') {
+        if ($restricted_characters === 'htmlslashes') {
             return htmlspecialchars(addslashes($string));
         }
 
-        if($restricted_characters === true) {
+        if ($restricted_characters === true) {
             $string = $this->normalizeString($string);
         }
 
@@ -36,9 +38,10 @@ class PreDatabaseSave
     }
 
     /**
-     * Remove prohibited characters
-     * 
+     * Remove prohibited characters.
+     *
      * @param string $string
+     *
      * @return string
      */
     private function normalizeString($string)

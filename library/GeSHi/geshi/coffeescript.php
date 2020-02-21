@@ -34,113 +34,111 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'CoffeeScript',
-    'COMMENT_SINGLE' => array(1 => '#'),
-    'COMMENT_MULTI' => array('###' => '###'),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
+$language_data = [
+    'LANG_NAME'      => 'CoffeeScript',
+    'COMMENT_SINGLE' => [1 => '#'],
+    'COMMENT_MULTI'  => ['###' => '###'],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
     //Longest quotemarks ALWAYS first
-    'QUOTEMARKS' => array('"""', "'''", '"', "'"),
+    'QUOTEMARKS'  => ['"""', "'''", '"', "'"],
     'ESCAPE_CHAR' => '\\',
-    'KEYWORDS' => array(
+    'KEYWORDS'    => [
 
         /*
         ** Set 1: control keywords
         */
-        1 => array(
+        1 => [
             'break', 'by', 'catch', 'continue', 'else', 'finally', 'for', 'in', 'of', 'if',
-            'return', 'switch', 'then', 'throw', 'try', 'unless', 'when', 'while', 'until'
-            ),
+            'return', 'switch', 'then', 'throw', 'try', 'unless', 'when', 'while', 'until',
+        ],
 
         /*
         ** Set 2: logic keywords
         */
-        2 => array(
-            'and', 'or', 'is', 'isnt', 'not'
-            ),
+        2 => [
+            'and', 'or', 'is', 'isnt', 'not',
+        ],
 
         /*
         ** Set 3: other keywords
         */
-        3 => array(
+        3 => [
             'instanceof', 'new', 'delete', 'typeof',
-            'class', 'super', 'this', 'extends'
-            ),
+            'class', 'super', 'this', 'extends',
+        ],
 
         /*
         ** Set 4: constants
         */
-        4 => array(
+        4 => [
             'true', 'false', 'on', 'off', 'yes', 'no',
-            'Infinity', 'NaN', 'undefined', 'null'
-            )
-        ),
-    'SYMBOLS' => array(
-            '(', ')', '[', ']', '{', '}', '*', '&', '|', '%', '!', ',', ';', '<', '>', '?', '`',
-            '+', '-', '*', '/', '->', '=>', '<<', '>>', '@', ':', '^'
-        ),
-    'CASE_SENSITIVE' => array(
+            'Infinity', 'NaN', 'undefined', 'null',
+        ],
+    ],
+    'SYMBOLS' => [
+        '(', ')', '[', ']', '{', '}', '*', '&', '|', '%', '!', ',', ';', '<', '>', '?', '`',
+        '+', '-', '*', '/', '->', '=>', '<<', '>>', '@', ':', '^',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => true,
-        2 => true,
-        3 => true,
-        4 => true
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => true,
+        2              => true,
+        3              => true,
+        4              => true,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #ff7700;font-weight:bold;',
             2 => 'color: #008000;',
             3 => 'color: #dc143c;',
-            4 => 'color: #0000cd;'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #808080; font-style: italic;',
-            'MULTI' => 'color: #808080; font-style: italic;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099; font-weight: bold;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: black;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #483d8b;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #ff4500;'
-            ),
-        'METHODS' => array(
-            1 => 'color: black;'
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #66cc66;'
-            ),
-        'REGEXPS' => array(
-            ),
-        'SCRIPT' => array(
-            )
-        ),
-    'URLS' => array(
+            4 => 'color: #0000cd;',
+        ],
+        'COMMENTS' => [
+            1       => 'color: #808080; font-style: italic;',
+            'MULTI' => 'color: #808080; font-style: italic;',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #000099; font-weight: bold;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: black;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #483d8b;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #ff4500;',
+        ],
+        'METHODS' => [
+            1 => 'color: black;',
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #66cc66;',
+        ],
+        'REGEXPS' => [
+        ],
+        'SCRIPT' => [
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
         3 => '',
-        4 => ''
-        ),
-    'OOLANG' => true,
-    'OBJECT_SPLITTERS' => array(
-        1 => '.'
-        ),
-    'REGEXPS' => array(
-        ),
+        4 => '',
+    ],
+    'OOLANG'           => true,
+    'OBJECT_SPLITTERS' => [
+        1 => '.',
+    ],
+    'REGEXPS' => [
+    ],
     'STRICT_MODE_APPLIES' => GESHI_MAYBE,
-    'SCRIPT_DELIMITERS' => array(
-        0 => array(
-            '<script type="text/coffeescript">' => '</script>'
-            )
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        0 => true
-        )
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+        0 => [
+            '<script type="text/coffeescript">' => '</script>',
+        ],
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+        0 => true,
+    ],
+];

@@ -1,35 +1,37 @@
 <?php
+
 namespace Application\Pastebin;
 
 use Application\Application;
-use Application\View\View;
 use Application\Configuration\Configuration;
-use Application\Pastebin\PasteExpire;
+use Application\View\View;
 
 class LatestPastes extends View
 {
     use Configuration;
 
     /**
-     * Application
-     * 
+     * Application.
+     *
      * @var object
      */
     private $application;
-    
+
     /**
-     * DataBase
-     * 
+     * DataBase.
+     *
      * @var object
      */
     private $data_source;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param Application $application
-     * @return void
+     *
      * @throws \Application\Exception\ExceptionRuntime
+     *
+     * @return void
      */
     public function __construct(Application $application)
     {
@@ -40,24 +42,25 @@ class LatestPastes extends View
     }
 
     /**
-     * Latest pastes
+     * Latest pastes.
+     *
+     * @throws \Application\Exception\ExceptionRuntime
      *
      * @return void
-     * @throws \Application\Exception\ExceptionRuntime
      */
     public function indexAction()
     {
         $this->render([
-            'container' => $this->publicPastesContainer(),
-            'paste_expire' => new PasteExpire($this->application)
+            'container'    => $this->publicPastesContainer(),
+            'paste_expire' => new PasteExpire($this->application),
         ]);
 
         return $this->{'LatestPastes'};
     }
 
     /**
-     * Public pastes container
-     * 
+     * Public pastes container.
+     *
      * @return array
      */
     private function publicPastesContainer()
@@ -65,7 +68,7 @@ class LatestPastes extends View
         $query = $this->data_source
         ->get()
         ->prepare('SELECT unique_id, time, syntax, title, author, visibility, author_website, expire, hits
-            FROM ' . $this->config('database')['prefix']  . 'pastes WHERE visibility = :visibility ORDER BY time DESC LIMIT :limit');
+            FROM '.$this->config('database')['prefix'].'pastes WHERE visibility = :visibility ORDER BY time DESC LIMIT :limit');
 
         $query->bindValue(':limit', $this->config()['latest_pastes'], constant('PDO::PARAM_INT'));
         $query->bindValue(':visibility', 'public');

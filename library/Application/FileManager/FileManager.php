@@ -1,4 +1,5 @@
 <?php
+
 namespace Application\FileManager;
 
 use Application\Exception\ExceptionInvalidArgument;
@@ -7,17 +8,19 @@ use Application\Exception\ExceptionRuntime;
 class FileManager
 {
     /**
-     * Get url contents
-     * 
+     * Get url contents.
+     *
      * @param string $url
-     * @param array $http_attributes
-     * @param int $timeout
-     * @param bool $headers
-     * @return string|bool
+     * @param array  $http_attributes
+     * @param int    $timeout
+     * @param bool   $headers
+     *
      * @throws ExceptionInvalidArgument
      * @throws ExceptionRuntime
+     *
+     * @return string|bool
      */
-    public function getContentsFromUrl($url, array $http_attributes = [], 
+    public function getContentsFromUrl($url, array $http_attributes = [],
         $timeout = 60, $headers = false
     ) {
         if (extension_loaded('curl') === false) {
@@ -35,7 +38,7 @@ class FileManager
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, $timeout);
         curl_setopt($handle, CURLOPT_POSTFIELDS, $http_attributes);
-        
+
         $exec = curl_exec($handle);
 
         curl_close($handle);
@@ -44,16 +47,17 @@ class FileManager
     }
 
     /**
-     * Get contents from file
-     * 
+     * Get contents from file.
+     *
      * @param string $file
+     *
      * @return string|bool
      */
     public function getContentsFromFile($file)
     {
         $data = @file_get_contents($file);
 
-        if($data === false) {
+        if ($data === false) {
             return false;
         }
 

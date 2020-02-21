@@ -41,32 +41,32 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'Oracle 11 SQL',
-    'COMMENT_SINGLE' => array(1 => '--'),
-    'COMMENT_MULTI' => array('/*' => '*/'),
-    'CASE_KEYWORDS' => GESHI_CAPS_UPPER,
-    'QUOTEMARKS' => array("'", '"', '`'),
-    'ESCAPE_CHAR' => '\\',
-    'KEYWORDS' => array(
-//Put your package names here - e.g. select distinct ''''|| lower(name) || ''',' from user_source;
-//        6 => array(
-//            ),
+$language_data = [
+    'LANG_NAME'      => 'Oracle 11 SQL',
+    'COMMENT_SINGLE' => [1 => '--'],
+    'COMMENT_MULTI'  => ['/*' => '*/'],
+    'CASE_KEYWORDS'  => GESHI_CAPS_UPPER,
+    'QUOTEMARKS'     => ["'", '"', '`'],
+    'ESCAPE_CHAR'    => '\\',
+    'KEYWORDS'       => [
+        //Put your package names here - e.g. select distinct ''''|| lower(name) || ''',' from user_source;
+        //        6 => array(
+        //            ),
 
-//Put your table names here - e.g. select distinct ''''|| lower(table_name) || ''',' from user_tables;
-//        5 => array(
-//            ),
+        //Put your table names here - e.g. select distinct ''''|| lower(table_name) || ''',' from user_tables;
+        //        5 => array(
+        //            ),
 
-//Put your view names here - e.g. select distinct ''''|| lower(view_name) || ''',' from user_views;
-//        4 => array(
-//            ),
+        //Put your view names here - e.g. select distinct ''''|| lower(view_name) || ''',' from user_views;
+        //        4 => array(
+        //            ),
 
-//Put your table field names here - e.g. select distinct ''''|| lower(column_name) || ''',' from user_tab_columns;
-//        3 => array(
-//            ),
+        //Put your table field names here - e.g. select distinct ''''|| lower(column_name) || ''',' from user_tab_columns;
+        //        3 => array(
+        //            ),
 
         //Put ORACLE reserved keywords here (11i).  I like mine uppercase.
-        1 => array(
+        1 => [
             'ABS',
             'ACCESS',
             'ACOS',
@@ -548,67 +548,65 @@ $language_data = array (
             'XMLTABLE',
             'XMLTRANSFORM',
             'YEAR',
-            'ZONE'
-            )
-        ),
-    'SYMBOLS' => array(
-        '(', ')', '=', '<', '>', '|', '+', '-', '*', '/', ','
-        ),
-    'CASE_SENSITIVE' => array(
+            'ZONE',
+        ],
+    ],
+    'SYMBOLS' => [
+        '(', ')', '=', '<', '>', '|', '+', '-', '*', '/', ',',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => false,
-//        3 => false,
-//        4 => false,
-//        5 => false,
-//        6 => false
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
-            1 => 'color: #993333; font-weight: bold; text-transform: uppercase;'
-            ),
-        'COMMENTS' => array(
+        1              => false,
+        //        3 => false,
+        //        4 => false,
+        //        5 => false,
+        //        6 => false
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
+            1 => 'color: #993333; font-weight: bold; text-transform: uppercase;',
+        ],
+        'COMMENTS' => [
             1 => 'color: #808080; font-style: italic;',
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099; font-weight: bold;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #66cc66;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #ff0000;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #cc66cc;'
-            ),
-        'METHODS' => array(
-            1 => 'color: #ff0000;'
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #66cc66;'
-            ),
-        'SCRIPT' => array(
-            ),
-        'REGEXPS' => array(
-            )
-        ),
-    'URLS' => array(
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #000099; font-weight: bold;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #66cc66;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #ff0000;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #cc66cc;',
+        ],
+        'METHODS' => [
+            1 => 'color: #ff0000;',
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #66cc66;',
+        ],
+        'SCRIPT' => [
+        ],
+        'REGEXPS' => [
+        ],
+    ],
+    'URLS' => [
         1 => '',
-//        3 => '',
-//        4 => '',
-//        5 => '',
-//        6 => ''
-        ),
-    'OOLANG' => false,
-    'OBJECT_SPLITTERS' => array(
-        ),
-    'REGEXPS' => array(
-        ),
+        //        3 => '',
+        //        4 => '',
+        //        5 => '',
+        //        6 => ''
+    ],
+    'OOLANG'           => false,
+    'OBJECT_SPLITTERS' => [
+    ],
+    'REGEXPS' => [
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        )
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+];

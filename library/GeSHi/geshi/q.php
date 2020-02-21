@@ -40,26 +40,26 @@
  *
  ************************************************************************************/
 
-$language_data = array (
+$language_data = [
     'LANG_NAME'                 => 'q/kdb+',
-    'COMMENT_SINGLE'            => array(1 => '//'),
-    'COMMENT_MULTI'             => array(),
-    'COMMENT_REGEXP'            => array(
-        2 => '/ \s\/.*/',         # This needs to get fixed up, since it won't catch some instances
-        # Multi line comments (Moved from REGEXPS)
-        3 => '/^\/\s*?\n.*?\n\\\s*?\n/smi'
-        ),
+    'COMMENT_SINGLE'            => [1 => '//'],
+    'COMMENT_MULTI'             => [],
+    'COMMENT_REGEXP'            => [
+        2 => '/ \s\/.*/',         // This needs to get fixed up, since it won't catch some instances
+        // Multi line comments (Moved from REGEXPS)
+        3 => '/^\/\s*?\n.*?\n\\\s*?\n/smi',
+    ],
     'CASE_KEYWORDS'             => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS'                => array('"'),
+    'QUOTEMARKS'                => ['"'],
     'ESCAPE_CHAR'               => '\\',
     'OOLANG'                    => false,
-    'OBJECT_SPLITTERS'          => array(),
+    'OBJECT_SPLITTERS'          => [],
     'STRICT_MODE_APPLIES'       => GESHI_NEVER,
-    'SCRIPT_DELIMITERS'         => array(),
-    'HIGHLIGHT_STRICT_BLOCK'    => array(),
+    'SCRIPT_DELIMITERS'         => [],
+    'HIGHLIGHT_STRICT_BLOCK'    => [],
     'TAB_WIDTH'                 => 4,
-    'KEYWORDS' => array(
-        1 => array(
+    'KEYWORDS'                  => [
+        1 => [
             'abs', 'acos', 'all', 'and', 'any', 'asc', 'asin', 'asof', 'atan', 'attr', 'avg', 'avgs', 'bin', 'ceiling',
             'cols', 'cor', 'cos', 'count', 'cov', 'cross', 'cut', 'deltas', 'desc', 'dev', 'differ', 'distinct',
             'div', 'each', 'enlist', 'eval', 'except', 'exec', 'exit', 'exp', 'fills', 'first', 'flip', 'floor',
@@ -72,78 +72,76 @@ $language_data = array (
             'sin', 'sqrt', 'ss', 'ssr', 'string', 'sublist', 'sum', 'sums', 'sv', 'system', 'tables', 'tan', 'til', 'trim',
             'txf', 'type', 'ungroup', 'union', 'upper', 'upsert', 'value', 'var', 'view', 'views', 'vs',
             'wavg', 'within', 'wsum', 'xasc', 'xbar', 'xcol', 'xcols', 'xdesc', 'xexp', 'xgroup', 'xkey',
-            'xlog', 'xprev', 'xrank'
-            ),
-        # kdb database template keywords
-        2 => array(
+            'xlog', 'xprev', 'xrank',
+        ],
+        // kdb database template keywords
+        2 => [
             'aj', 'by', 'delete', 'fby', 'from', 'ij', 'lj', 'pj', 'select', 'uj', 'update', 'where', 'wj',
-            ),
-        ),
-    'SYMBOLS' => array(
-        '?', '#', ',', '_', '@', '.', '^', '~', '$', '!', '\\', '\\', '/:', '\:', "'", "':", '::', '+', '-', '%', '*'
-        ),
-    'CASE_SENSITIVE' => array(
+        ],
+    ],
+    'SYMBOLS' => [
+        '?', '#', ',', '_', '@', '.', '^', '~', '$', '!', '\\', '\\', '/:', '\:', "'", "':", '::', '+', '-', '%', '*',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => true,
-        2 => true,
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => true,
+        2              => true,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #000099; font-weight: bold;',
             2 => 'color: #009900; font-weight: bold;',
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #666666; font-style: italic;',
-            2 => 'color: #666666; font-style: italic;',
-            3 => 'color: #808080; font-style: italic;',
-            'MULTI' => 'color: #808080; font-style: italic;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099; font-weight: bold;',
-            1 => 'color: #000099; font-weight: bold;',
-            2 => 'color: #660099; font-weight: bold;',
-            3 => 'color: #660099; font-weight: bold;',
-            4 => 'color: #660099; font-weight: bold;',
-            5 => 'color: #006699; font-weight: bold;',
+        ],
+        'COMMENTS' => [
+            1       => 'color: #666666; font-style: italic;',
+            2       => 'color: #666666; font-style: italic;',
+            3       => 'color: #808080; font-style: italic;',
+            'MULTI' => 'color: #808080; font-style: italic;',
+        ],
+        'ESCAPE_CHAR' => [
+            0      => 'color: #000099; font-weight: bold;',
+            1      => 'color: #000099; font-weight: bold;',
+            2      => 'color: #660099; font-weight: bold;',
+            3      => 'color: #660099; font-weight: bold;',
+            4      => 'color: #660099; font-weight: bold;',
+            5      => 'color: #006699; font-weight: bold;',
             'HARD' => '',
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #009900;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #990000;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #0000dd;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #009900;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #990000;',
+        ],
+        'NUMBERS' => [
+            0                          => 'color: #0000dd;',
             GESHI_NUMBER_BIN_PREFIX_0B => 'color: #208080;',
-            GESHI_NUMBER_OCT_PREFIX => 'color: #208080;',
-            GESHI_NUMBER_HEX_PREFIX => 'color: #208080;',
+            GESHI_NUMBER_OCT_PREFIX    => 'color: #208080;',
+            GESHI_NUMBER_HEX_PREFIX    => 'color: #208080;',
             GESHI_NUMBER_FLT_SCI_SHORT => 'color:#800080;',
-            GESHI_NUMBER_FLT_SCI_ZERO => 'color:#800080;',
-            GESHI_NUMBER_FLT_NONSCI_F => 'color:#800080;',
-            GESHI_NUMBER_FLT_NONSCI => 'color:#800080;'
-            ),
-        'METHODS' => array(
+            GESHI_NUMBER_FLT_SCI_ZERO  => 'color:#800080;',
+            GESHI_NUMBER_FLT_NONSCI_F  => 'color:#800080;',
+            GESHI_NUMBER_FLT_NONSCI    => 'color:#800080;',
+        ],
+        'METHODS' => [
             1 => 'color: #202020;',
-            2 => 'color: #202020;'
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #339933;'
-            ),
-        'REGEXPS' => array(
+            2 => 'color: #202020;',
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #339933;',
+        ],
+        'REGEXPS' => [
             2   => 'color: #999900;',
-            ),
-        'SCRIPT' => array(
-            )
-        ),
-    'REGEXPS' => array(
-        # Symbols
+        ],
+        'SCRIPT' => [
+        ],
+    ],
+    'REGEXPS' => [
+        // Symbols
         2 => '`[^\s"]*',
-        ),
-    'URLS'  => array(
+    ],
+    'URLS'  => [
         1   => '',
         2   => '',
-        ),
-);
-
-?>
+    ],
+];

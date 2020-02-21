@@ -1,6 +1,7 @@
 <?php
-use PHPUnit\Framework\TestCase;
+
 use Application\Pastebin\Helpers\PasteId;
+use PHPUnit\Framework\TestCase;
 
 class PasteIdFromUrlTest extends TestCase
 {

@@ -1,4 +1,5 @@
 <?php
+
 namespace Application\DataSources\MySQL;
 
 use Application\Application;
@@ -13,17 +14,18 @@ class Driver
     use Configuration;
 
     /**
-     * PDO
+     * PDO.
      *
      * @var object
      */
     private $pdo;
 
     /**
-     * Connect
+     * Connect.
+     *
+     * @throws ExceptionRuntime
      *
      * @return void
-     * @throws ExceptionRuntime
      */
     public function __construct()
     {
@@ -34,13 +36,13 @@ class Driver
             );
 
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch(PDOException $exception) {
+        } catch (PDOException $exception) {
             throw new ExceptionRuntime($exception->getMessage());
         }
     }
 
     /**
-     * Database accessor
+     * Database accessor.
      *
      * @return PDO object
      */
@@ -50,16 +52,16 @@ class Driver
     }
 
     /**
-     * Schema
+     * Schema.
      *
      * @return bool|array
      */
     public function getSchema()
     {
-        $schema_file = (new FileManager)->getContentsFromFile(Application::makePath('library:Application:DataSources:MySQL:Schema:Schema.json'));
+        $schema_file = (new FileManager())->getContentsFromFile(Application::makePath('library:Application:DataSources:MySQL:Schema:Schema.json'));
         $schema_file = json_decode($schema_file, true);
 
-        if($schema_file === null) {
+        if ($schema_file === null) {
             return false;
         }
 

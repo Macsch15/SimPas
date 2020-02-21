@@ -1,4 +1,5 @@
 <?php
+
 namespace Application\Pastebin;
 
 use Application\Application;
@@ -9,18 +10,20 @@ class ReadPaste
     use Configuration;
 
     /**
-     * DataBase
-     * 
+     * DataBase.
+     *
      * @var object
      */
     private $data_source;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param Application $application
-     * @return void
+     *
      * @throws \Application\Exception\ExceptionRuntime
+     *
+     * @return void
      */
     public function __construct(Application $application)
     {
@@ -28,9 +31,10 @@ class ReadPaste
     }
 
     /**
-     * Read paste data from data source
-     * 
+     * Read paste data from data source.
+     *
      * @param int $paste_id
+     *
      * @return array
      */
     public function read($paste_id)
@@ -53,7 +57,7 @@ class ReadPaste
             short_url, 
             expire,
             hits
-        FROM ' . $this->config('database')['prefix']  . 'pastes WHERE unique_id = :paste_id LIMIT 1');
+        FROM '.$this->config('database')['prefix'].'pastes WHERE unique_id = :paste_id LIMIT 1');
 
         $query->bindValue(':paste_id', $paste_id, constant('PDO::PARAM_INT'));
         $query->execute();
@@ -62,16 +66,17 @@ class ReadPaste
     }
 
     /**
-     * Paste exists
-     * 
-     * @param int $paste_id 
+     * Paste exists.
+     *
+     * @param int $paste_id
+     *
      * @return bool
      */
     public function pasteExists($paste_id)
     {
         $query = $this->data_source
         ->get()
-        ->prepare('SELECT unique_id FROM ' . $this->config('database')['prefix'] . 'pastes WHERE unique_id = :paste_id');
+        ->prepare('SELECT unique_id FROM '.$this->config('database')['prefix'].'pastes WHERE unique_id = :paste_id');
 
         $query->bindValue(':paste_id', $paste_id, constant('PDO::PARAM_INT'));
         $query->execute();

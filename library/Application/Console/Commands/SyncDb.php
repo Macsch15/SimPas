@@ -1,9 +1,10 @@
 <?php
+
 namespace Application\Console\Commands;
 
 use Application\Application;
-use Application\Console\Console;
 use Application\Configuration\Configuration;
+use Application\Console\Console;
 use Exception;
 
 class SyncDb
@@ -11,26 +12,28 @@ class SyncDb
     use Configuration;
 
     /**
-     * DataBase
-     * 
+     * DataBase.
+     *
      * @var object
      */
     private $data_source;
 
     /**
-     * Console
-     * 
+     * Console.
+     *
      * @var object
      */
     private $console;
 
     /**
-     * Construct
+     * Construct.
      *
-     * @param Console $console
+     * @param Console     $console
      * @param Application $application
-     * @return void
+     *
      * @throws \Application\Exception\ExceptionRuntime
+     *
+     * @return void
      */
     public function __construct(Console $console, Application $application)
     {
@@ -41,8 +44,8 @@ class SyncDb
     }
 
     /**
-     * Prepare database schema
-     * 
+     * Prepare database schema.
+     *
      * @return array
      */
     private function prepareSchema()
@@ -51,7 +54,7 @@ class SyncDb
 
         $schema_file = $this->data_source->getSchema();
 
-        if($schema_file !== false) {
+        if ($schema_file !== false) {
             $this->console->writeStdout('Succeeded');
         } else {
             die($this->console->writeStdout('Failed'));
@@ -61,58 +64,58 @@ class SyncDb
     }
 
     /**
-     * Sync
-     * 
+     * Sync.
+     *
      * @return void
      */
     private function sync()
     {
-        $this->console->writeStdout('Selected driver: ' . $this->config('database')['driver']);
+        $this->console->writeStdout('Selected driver: '.$this->config('database')['driver']);
 
-        foreach($this->prepareSchema()['tables'] as $table => $table_fields) {
-            switch($this->config('database')['driver']) {
+        foreach ($this->prepareSchema()['tables'] as $table => $table_fields) {
+            switch ($this->config('database')['driver']) {
                 case 'mysql':
                 default:
-                    $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS ' . $this->config('database')['prefix'] . $table . '( ';
+                    $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS '.$this->config('database')['prefix'].$table.'( ';
 
-                    foreach($table_fields as $field_name => $field_value) {
-                        if($field_name === '__options__') {
+                    foreach ($table_fields as $field_name => $field_value) {
+                        if ($field_name === '__options__') {
                             continue;
                         }
 
-                        $_createTablesQuery .= '`' . $field_name . '` ' . $field_value . ',';
+                        $_createTablesQuery .= '`'.$field_name.'` '.$field_value.',';
                     }
 
-                    $_createTablesQuery .= 'PRIMARY KEY(' . $table_fields['__options__']['primary_key'] . ')) ENGINE=' . $table_fields['__options__']['engine'];
-                    $_createTablesQuery .= ' DEFAULT CHARSET=\'' . $this->config('database')['charset'] . '\' DEFAULT COLLATE=\'' . $this->config('database')['collate'] . '\';';
+                    $_createTablesQuery .= 'PRIMARY KEY('.$table_fields['__options__']['primary_key'].')) ENGINE='.$table_fields['__options__']['engine'];
+                    $_createTablesQuery .= ' DEFAULT CHARSET=\''.$this->config('database')['charset'].'\' DEFAULT COLLATE=\''.$this->config('database')['collate'].'\';';
                     break;
                 case 'postgresql':
-                    $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS ' . $this->config('database')['prefix'] . $table . '( ';
+                    $_createTablesQuery = 'CREATE TABLE IF NOT EXISTS '.$this->config('database')['prefix'].$table.'( ';
 
-                    foreach($table_fields as $field_name => $field_value) {
-                        if($field_name === '__options__') {
+                    foreach ($table_fields as $field_name => $field_value) {
+                        if ($field_name === '__options__') {
                             continue;
                         }
 
-                        $_createTablesQuery .= $field_name . ' ' . $field_value . ',';
+                        $_createTablesQuery .= $field_name.' '.$field_value.',';
                     }
 
-                    $_createTablesQuery = substr($_createTablesQuery, 0, -1) . ');';
+                    $_createTablesQuery = substr($_createTablesQuery, 0, -1).');';
                     break;
             }
 
-            $this->console->writeStdout('Creating table "' . $this->config('database')['prefix'] . $table . '"...', false, ' ');
-            
+            $this->console->writeStdout('Creating table "'.$this->config('database')['prefix'].$table.'"...', false, ' ');
+
             try {
                 $this->data_source->get()->query($_createTablesQuery);
 
                 $this->console->writeStdout('Succeeded');
-            } catch(Exception $exception) {
+            } catch (Exception $exception) {
                 die($this->console->writeStdout('Failed', false, null, $exception->getMessage()));
             }
         }
 
         $this->console->writeStdout(null);
-        $this->console->writeStdout('SimPas is ready for work now. Visit your home site: ' . $this->config()['full_url']);
+        $this->console->writeStdout('SimPas is ready for work now. Visit your home site: '.$this->config()['full_url']);
     }
 }

@@ -38,19 +38,19 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'Io',
-    'COMMENT_SINGLE' => array(1 => '//', 2 => '#'),
-    'COMMENT_MULTI' => array('/*' => '*/'),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array('"'),
-    'ESCAPE_CHAR' => '\\',
-    'KEYWORDS' => array(
-        1 => array(
+$language_data = [
+    'LANG_NAME'      => 'Io',
+    'COMMENT_SINGLE' => [1 => '//', 2 => '#'],
+    'COMMENT_MULTI'  => ['/*' => '*/'],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'QUOTEMARKS'     => ['"'],
+    'ESCAPE_CHAR'    => '\\',
+    'KEYWORDS'       => [
+        1 => [
             'and', 'break', 'else', 'elseif', 'exit', 'for', 'foreach', 'if', 'ifFalse', 'ifNil',
-            'ifTrue', 'or', 'pass', 'raise', 'return', 'then', 'try', 'wait', 'while', 'yield'
-            ),
-        2 => array(
+            'ifTrue', 'or', 'pass', 'raise', 'return', 'then', 'try', 'wait', 'while', 'yield',
+        ],
+        2 => [
             'activate', 'activeCoroCount', 'asString', 'block', 'catch', 'clone', 'collectGarbage',
             'compileString', 'continue', 'do', 'doFile', 'doMessage', 'doString', 'forward',
             'getSlot', 'getenv', 'hasSlot', 'isActive', 'isNil', 'isResumable', 'list', 'message',
@@ -58,9 +58,9 @@ $language_data = array (
             'raiseResumable', 'removeSlot', 'resend', 'resume', 'schedulerSleepSeconds', 'self',
             'sender', 'setSchedulerSleepSeconds', 'setSlot', 'shallowCopy', 'slotNames', 'super',
             'system', 'thisBlock', 'thisContext', 'thisMessage', 'type', 'uniqueId', 'updateSlot',
-            'write'
-            ),
-        3 => array(
+            'write',
+        ],
+        3 => [
             'Array', 'AudioDevice', 'AudioMixer', 'Block', 'Box', 'Buffer', 'CFunction', 'CGI',
             'Color', 'Curses', 'DBM', 'DNSResolver', 'DOConnection', 'DOProxy', 'DOServer',
             'Date', 'Directory', 'Duration', 'DynLib', 'Error', 'Exception', 'FFT', 'File',
@@ -70,69 +70,67 @@ $language_data = array (
             'NULL', 'Nil', 'Nop', 'Notifiction', 'Number', 'Object', 'OpenGL', 'Point', 'Protos',
             'Regex', 'SGMLTag', 'SQLite', 'Server', 'ShowMessage', 'SleepyCat', 'SleepyCatCursor',
             'Socket', 'SocketManager', 'Sound', 'Soup', 'Store', 'String', 'Tree', 'UDPSender',
-            'UDPReceiver', 'URL', 'User', 'Warning', 'WeakLink'
-            )
-        ),
-    'SYMBOLS' => array(
-        '(', ')', '[', ']', '{', '}', '!', '@', '%', '&', '*', '|', '/', '<', '>'
-        ),
-    'CASE_SENSITIVE' => array(
+            'UDPReceiver', 'URL', 'User', 'Warning', 'WeakLink',
+        ],
+    ],
+    'SYMBOLS' => [
+        '(', ')', '[', ']', '{', '}', '!', '@', '%', '&', '*', '|', '/', '<', '>',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => false,
-        2 => false,
-        3 => false,
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => false,
+        2              => false,
+        3              => false,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #b1b100;',
             2 => 'color: #000000; font-weight: bold;',
-            3 => 'color: #000066;'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #808080; font-style: italic;',
-            2 => 'color: #808080; font-style: italic;',
-            'MULTI' => 'color: #808080; font-style: italic;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099; font-weight: bold;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #66cc66;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #ff0000;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #cc66cc;'
-            ),
-        'METHODS' => array(
+            3 => 'color: #000066;',
+        ],
+        'COMMENTS' => [
+            1       => 'color: #808080; font-style: italic;',
+            2       => 'color: #808080; font-style: italic;',
+            'MULTI' => 'color: #808080; font-style: italic;',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #000099; font-weight: bold;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #66cc66;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #ff0000;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #cc66cc;',
+        ],
+        'METHODS' => [
             1 => 'color: #006600;',
-            2 => 'color: #006600;'
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #66cc66;'
-            ),
-        'REGEXPS' => array(
-            ),
-        'SCRIPT' => array(
-            0 => ''
-            )
-        ),
-    'URLS' => array(
+            2 => 'color: #006600;',
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #66cc66;',
+        ],
+        'REGEXPS' => [
+        ],
+        'SCRIPT' => [
+            0 => '',
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
-        3 => ''
-        ),
-    'OOLANG' => false,
-    'OBJECT_SPLITTERS' => array(
-        ),
-    'REGEXPS' => array(
-        ),
+        3 => '',
+    ],
+    'OOLANG'           => false,
+    'OBJECT_SPLITTERS' => [
+    ],
+    'REGEXPS' => [
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        )
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+];

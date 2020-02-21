@@ -1,12 +1,14 @@
 <?php
+
 namespace Application\Pastebin\Helpers;
 
 class Strings
 {
     /**
-     * Convert string to bytes
+     * Convert string to bytes.
      *
      * @param string $string
+     *
      * @return int
      */
     public static function stringToBytes($string)

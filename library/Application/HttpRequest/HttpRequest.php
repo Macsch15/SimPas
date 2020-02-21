@@ -1,4 +1,5 @@
 <?php
+
 namespace Application\HttpRequest;
 
 use Application\Security\DataFilters\PreDatabaseSave;
@@ -6,10 +7,11 @@ use Application\Security\DataFilters\PreDatabaseSave;
 class HttpRequest
 {
     /**
-     * POST Request
-     * 
+     * POST Request.
+     *
      * @param string $field_name
-     * @param bool $restricted_characters
+     * @param bool   $restricted_characters
+     *
      * @return string|bool
      */
     public static function post($field_name, $restricted_characters = false)
@@ -18,38 +20,39 @@ class HttpRequest
             return false;
         }
 
-        if($_POST[$field_name] == null) {
+        if ($_POST[$field_name] == null) {
             return false;
         }
 
-        $_POST[$field_name] = (new PreDatabaseSave)->filter($_POST[$field_name], $restricted_characters);
+        $_POST[$field_name] = (new PreDatabaseSave())->filter($_POST[$field_name], $restricted_characters);
 
         return $_POST[$field_name];
     }
 
     /**
-     * Check whether given fields are not empty 
-     * 
-     * @param array $fields
+     * Check whether given fields are not empty.
+     *
+     * @param array  $fields
      * @param string $required_field
+     *
      * @return bool
      */
     public static function isEmptyField(array $fields, $required_field = null)
     {
-        if(!count($fields)) {
+        if (!count($fields)) {
             return false;
         }
 
         $empty = false;
 
-        foreach($fields as $field) {
-            if($field === false && $field !== $required_field) {
+        foreach ($fields as $field) {
+            if ($field === false && $field !== $required_field) {
                 continue;
             }
 
             $field = preg_replace('/[\s\t\r\n]+/s', null, $field);
 
-            if($field == null) {
+            if ($field == null) {
                 $empty = true;
             }
         }
@@ -57,17 +60,16 @@ class HttpRequest
         return $empty;
     }
 
-
     /**
-     * Client IP (IPv4 / IPv6)
-     * 
+     * Client IP (IPv4 / IPv6).
+     *
      * @return string
      */
     public static function getClientIpAddress()
     {
         $_ip = filter_var(getenv('REMOTE_ADDR'), FILTER_VALIDATE_IP);
 
-        if($_ip === false) {
+        if ($_ip === false) {
             $_ip = '0.0.0.0';
         }
 

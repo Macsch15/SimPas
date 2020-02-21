@@ -38,19 +38,19 @@
  *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  *****************************************************************************/
-$language_data = array (
-    'LANG_NAME' => 'ProvideX',
-    'COMMENT_SINGLE' => array(1 => '!'),
-    'COMMENT_MULTI' => array('/*' => '*/'),
-    'COMMENT_REGEXP' => array(
+$language_data = [
+    'LANG_NAME'      => 'ProvideX',
+    'COMMENT_SINGLE' => [1 => '!'],
+    'COMMENT_MULTI'  => ['/*' => '*/'],
+    'COMMENT_REGEXP' => [
         // Single-Line Comments using REM command
-        2 => "/\bREM\b.*?$/i"
-        ),
+        2 => "/\bREM\b.*?$/i",
+    ],
     'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array('"'),
-    'ESCAPE_CHAR' => '',
-    'KEYWORDS' => array(
-        1 => array(
+    'QUOTEMARKS'    => ['"'],
+    'ESCAPE_CHAR'   => '',
+    'KEYWORDS'      => [
+        1 => [
             // Directives
             '*break', '*continue', '*end', '*escape', '*next', '*proceed',
             '*retry', '*return', '*same', 'accept', 'add index', 'addr',
@@ -82,9 +82,9 @@ $language_data = array (
             'then', 'to', 'translate', 'tristate_box', 'unlock', 'until',
             'update', 'user_lex', 'v_scrollbar', 'vardrop_box', 'varlist_box',
             'via', 'video_palette', 'wait', 'wend', 'while', 'winprt_setup',
-            'with', 'write'
-            ),
-        2 => array(
+            'with', 'write',
+        ],
+        2 => [
             // System Functions
             '@x', '@y', 'abs', 'acs', 'and', 'arg', 'asc', 'asn', 'ath',
             'atn', 'bin', 'bsz', 'chg', 'chr', 'cmp', 'cos', 'cpl',
@@ -101,9 +101,9 @@ $language_data = array (
             'sin', 'sqr', 'srt', 'ssz', 'stk', 'stp', 'str', 'sub',
             'swp', 'sys', 'tan', 'tbl', 'tcb', 'tmr', 'trx', 'tsk',
             'txh', 'txw', 'ucp', 'ucs', 'upk', 'vin', 'vis', 'xeq',
-            'xfa', 'xor', '_obj'
-            ),
-        3 => array(
+            'xfa', 'xor', '_obj',
+        ],
+        3 => [
             // System Variables
             // Vars that are duplicates of functions
             // 'ctl', 'err', 'pfx', 'prm', 'rnd', 'sep', 'sys',
@@ -111,10 +111,10 @@ $language_data = array (
             'gfn', 'gid', 'hfn', 'hlp', 'hwd', 'lfa', 'lfo', 'lip',
             'lpg', 'lwd', 'mse', 'msl', 'nar', 'nid', 'pgn', 'psz',
             'quo', 'ret', 'sid', 'ssn', 'tim', 'tme', 'tms', 'tsm',
-            'uid', 'unt', 'who'
+            'uid', 'unt', 'who',
 
-            ),
-        4 => array(
+        ],
+        4 => [
             // Nomads Variables
             '%Flmaint_Lib$', '%Flmaint_Msg$', '%Nomads_Activation_Ok',
             '%Nomads_Auto_Qry', '%Nomads_Disable_Debug',
@@ -159,9 +159,9 @@ $language_data = array (
             'Next_Folder', 'Next_Id', 'Next_Id$', 'No_Flush', 'Prime_Key$',
             'Prior_Val', 'Prior_Val$', 'Qry_Val$', 'Refresh_Flg',
             'Replacement_Folder$', 'Replacement_Lib$', 'Replacement_Scrn$',
-            'Scrn_Id$', 'Scrn_K$', 'Scrn_Lib$', 'Tab_Table$', '_Eom$'
-            ),
-        5 => array(
+            'Scrn_Id$', 'Scrn_K$', 'Scrn_Lib$', 'Tab_Table$', '_Eom$',
+        ],
+        5 => [
             // Mnemonics
             "'!w'", "'*c'", "'*h'", "'*i'", "'*o'", "'*r'", "'*x'",
             "'+b'", "'+d'", "'+e'", "'+f'", "'+i'", "'+n'",
@@ -195,105 +195,103 @@ $language_data = array (
             "'wc'", "'wd'", "'wg'", "'white'", "'window'", "'wm'",
             "'wp'", "'wr'", "'wrap'", "'ws'", "'wx'", "'xp'", "'yellow'",
             "'zx'", "'_black'", "'_blue'", "'_colour'", "'_green'",
-            "'_magenta'", "'_red'", "'_white'", "'_yellow'"
-            ),
-        ),
-    'SYMBOLS' => array(
-        0 => array('+', '-', '*', '/', '^', '|'),
-        1 => array('++', '--', '+=', '-=', '*=', '/=', '^=', '|='),
-        2 => array('&lt;', '&gt;', '='),
-        3 => array('(', ')', '[', ']', '{', '}'),
-        4 => array(',', '@', ';', '\\')
-        ),
-    'CASE_SENSITIVE' => array(
+            "'_magenta'", "'_red'", "'_white'", "'_yellow'",
+        ],
+    ],
+    'SYMBOLS' => [
+        0 => ['+', '-', '*', '/', '^', '|'],
+        1 => ['++', '--', '+=', '-=', '*=', '/=', '^=', '|='],
+        2 => ['&lt;', '&gt;', '='],
+        3 => ['(', ')', '[', ']', '{', '}'],
+        4 => [',', '@', ';', '\\'],
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => false,
-        2 => false,
-        3 => false,
-        4 => false,
-        5 => false,
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => false,
+        2              => false,
+        3              => false,
+        4              => false,
+        5              => false,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: navy;', // Directives
             2 => 'color: blue;', // System Functions
             3 => 'color: blue;', // System Variables
             4 => 'color: #6A5ACD; font-style: italic;', // Nomads Global Variables
             5 => 'color: #BDB76B;', // Mnemonics
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #008080; font-style: italic;',
-            2 => 'color: #008080;',
-            'MULTI' => 'color: #008080; font-style: italic;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #000066;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: green;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #00008B;'
-            ),
-        'METHODS' => array(
-            ),
-        'SYMBOLS' => array(
+        ],
+        'COMMENTS' => [
+            1       => 'color: #008080; font-style: italic;',
+            2       => 'color: #008080;',
+            'MULTI' => 'color: #008080; font-style: italic;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #000066;',
+        ],
+        'STRINGS' => [
+            0 => 'color: green;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #00008B;',
+        ],
+        'METHODS' => [
+        ],
+        'SYMBOLS' => [
             0 => 'color: #008000;',
             1 => 'color: #000099;',
             2 => 'color: #000099;',
             3 => 'color: #0000C9;',
-            4 => 'color: #000099;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099;'
-            ),
-        'SCRIPT' => array(
-            ),
-        'REGEXPS' => array(
+            4 => 'color: #000099;',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #000099;',
+        ],
+        'SCRIPT' => [
+        ],
+        'REGEXPS' => [
             1 => 'color: #006400; font-weight: bold',
-            2 => 'color: #6A5ACD;'
-            )
-        ),
-    'URLS' => array(
+            2 => 'color: #6A5ACD;',
+        ],
+    ],
+    'URLS' => [
         1 => 'http://www.allbasic.info./wiki/index.php/PX:Directive_{FNAME}',
         2 => 'http://www.allbasic.info./wiki/index.php/PX:System_function_{FNAME}',
         3 => 'http://www.allbasic.info./wiki/index.php/PX:System_variable_{FNAME}',
         4 => 'http://www.allbasic.info./wiki/index.php/PX:Nomads_{FNAME}',
-        5 => 'http://www.allbasic.info./wiki/index.php/PX:Mnemonic_{FNAMEU}'
-        ),
-    'OOLANG' => true,
-    'OBJECT_SPLITTERS' => array(
-        1 => "'"
-        ),
-    'REGEXPS' => array(
-        1 => array(
+        5 => 'http://www.allbasic.info./wiki/index.php/PX:Mnemonic_{FNAMEU}',
+    ],
+    'OOLANG'           => true,
+    'OBJECT_SPLITTERS' => [
+        1 => "'",
+    ],
+    'REGEXPS' => [
+        1 => [
             // Line Labels
-            GESHI_SEARCH => '([[:space:]])([a-zA-Z_][a-zA-Z0-9_]+)(:)',
-            GESHI_REPLACE => '\\2',
+            GESHI_SEARCH    => '([[:space:]])([a-zA-Z_][a-zA-Z0-9_]+)(:)',
+            GESHI_REPLACE   => '\\2',
             GESHI_MODIFIERS => '',
-            GESHI_BEFORE => '\\1',
-            GESHI_AFTER => '\\3'
-            ),
-        2 => array(
+            GESHI_BEFORE    => '\\1',
+            GESHI_AFTER     => '\\3',
+        ],
+        2 => [
             // Global String Variables
-            GESHI_SEARCH => '(\%)([a-zA-Z_][a-zA-Z0-9_]+)(\$)',
-            GESHI_REPLACE => '\\1\\2\\3',
+            GESHI_SEARCH    => '(\%)([a-zA-Z_][a-zA-Z0-9_]+)(\$)',
+            GESHI_REPLACE   => '\\1\\2\\3',
             GESHI_MODIFIERS => '',
-            GESHI_BEFORE => '',
-            GESHI_AFTER => ''
-            )
-        ),
+            GESHI_BEFORE    => '',
+            GESHI_AFTER     => '',
+        ],
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        ),
-    'PARSER_CONTROL' => array(
-        'ENABLE_FLAGS' => array(
-            'NUMBERS' => GESHI_NEVER
-            )
-        ),
-    'TAB_WIDTH' => 4
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+    'PARSER_CONTROL' => [
+        'ENABLE_FLAGS' => [
+            'NUMBERS' => GESHI_NEVER,
+        ],
+    ],
+    'TAB_WIDTH' => 4,
+];

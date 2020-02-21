@@ -1,14 +1,14 @@
 <?php
 
 use Application\Exception\ExceptionInvalidArgument;
-use PHPUnit\Framework\TestCase;
 use Application\FileManager\FileManager;
+use PHPUnit\Framework\TestCase;
 
 class FileManagerTest extends TestCase
 {
     public function testFilemanagerNotExistingFile()
     {
-        $this->assertFalse((new FileManager)->getContentsFromFile('SomeFile'));
+        $this->assertFalse((new FileManager())->getContentsFromFile('SomeFile'));
     }
 
     /**
@@ -19,6 +19,6 @@ class FileManagerTest extends TestCase
     {
         $this->expectException(ExceptionInvalidArgument::class);
 
-        (new FileManager)->getContentsFromUrl('://www..com');
+        (new FileManager())->getContentsFromUrl('://www..com');
     }
 }

@@ -5,7 +5,7 @@
  * Author: G�nter Dannoritzer <dannoritzer@web.de>
  * Copyright: (C) 2008 Guenter Dannoritzer
  * Release Version: 1.0.8.11
- * Date Started: 2008/05/28
+ * Date Started: 2008/05/28.
  *
  * Verilog language file for GeSHi.
  *
@@ -38,18 +38,17 @@
  *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  ************************************************************************************/
-
-$language_data = array (
-    'LANG_NAME' => 'Verilog',
-    'COMMENT_SINGLE' => array(1 => '//'),
-    'COMMENT_MULTI' => array('/*' => '*/'),
-    'COMMENT_REGEXP' => array(1 => '/\/\/(?:\\\\\\\\|\\\\\\n|.)*$/m'),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array('"'),
-    'ESCAPE_CHAR' => '\\',
-    'KEYWORDS' => array(
+$language_data = [
+    'LANG_NAME'      => 'Verilog',
+    'COMMENT_SINGLE' => [1 => '//'],
+    'COMMENT_MULTI'  => ['/*' => '*/'],
+    'COMMENT_REGEXP' => [1 => '/\/\/(?:\\\\\\\\|\\\\\\n|.)*$/m'],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'QUOTEMARKS'     => ['"'],
+    'ESCAPE_CHAR'    => '\\',
+    'KEYWORDS'       => [
         // keywords
-        1 => array('always', 'and', 'assign', 'begin', 'buf', 'bufif0', 'bufif1', 'case',
+        1 => ['always', 'and', 'assign', 'begin', 'buf', 'bufif0', 'bufif1', 'case',
             'casex', 'casez', 'cmos', 'deassign', 'default', 'defparam',
             'disable', 'edge', 'else', 'end', 'endcase', 'endfunction',
             'endmodule', 'endprimitive', 'endspecify', 'endtable', 'endtask',
@@ -64,10 +63,10 @@ $language_data = array (
             'strong0', 'strong1', 'supply0', 'supply1', 'table', 'task',
             'time', 'tran', 'tranif0', 'tranif1', 'tri', 'tri0', 'tri1',
             'triand', 'trior', 'trireg', 'vectored', 'wait', 'wand', 'weak0',
-            'weak1', 'while', 'wire', 'wor', 'xnor', 'xor'
-            ),
+            'weak1', 'while', 'wire', 'wor', 'xnor', 'xor',
+        ],
         // system tasks
-        2 => array(
+        2 => [
             '$display', '$monitor',
             '$dumpall', '$dumpfile', '$dumpflush', '$dumplimit', '$dumpoff',
             '$dumpon', '$dumpvars',
@@ -78,96 +77,94 @@ $language_data = array (
             '$random',
             '$readmemb', '$readmemh', '$readmemx',
             '$signed', '$stime', '$stop',
-            '$strobe', '$time', '$unsigned', '$write'
-            ),
+            '$strobe', '$time', '$unsigned', '$write',
+        ],
         // macros
-        3 => array(
+        3 => [
             '`default-net', '`define',
             '`celldefine', '`default_nettype', '`else', '`elsif', '`endcelldefine',
             '`endif', '`ifdef', '`ifndef', '`include', '`line', '`nounconnected_drive',
-            '`resetall', '`timescale', '`unconnected_drive', '`undef'
-            ),
-        ),
-    'SYMBOLS' => array(
+            '`resetall', '`timescale', '`unconnected_drive', '`undef',
+        ],
+    ],
+    'SYMBOLS' => [
         '(', ')', '{', '}', '[', ']', '=', '+', '-', '*', '/', '!', '%',
         '^', '&', '|', '~',
         '?', ':',
         '#', '<<', '<<<',
         '>', '<', '>=', '<=',
-        '@', ';', ','
-        ),
-    'CASE_SENSITIVE' => array(
+        '@', ';', ',',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => false,
-        2 => false,
-        3 => false
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => false,
+        2              => false,
+        3              => false,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #A52A2A; font-weight: bold;',
             2 => 'color: #9932CC;',
-            3 => 'color: #008800;'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #00008B; font-style: italic;',
-            'MULTI' => 'color: #00008B; font-style: italic;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #9F79EE'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #9F79EE;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #FF00FF;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #ff0055;'
-            ),
-        'METHODS' => array(
+            3 => 'color: #008800;',
+        ],
+        'COMMENTS' => [
+            1       => 'color: #00008B; font-style: italic;',
+            'MULTI' => 'color: #00008B; font-style: italic;',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #9F79EE',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #9F79EE;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #FF00FF;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #ff0055;',
+        ],
+        'METHODS' => [
             1 => 'color: #202020;',
-            2 => 'color: #202020;'
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #5D478B;'
-            ),
-        'REGEXPS' => array(
+            2 => 'color: #202020;',
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #5D478B;',
+        ],
+        'REGEXPS' => [
             0 => 'color: #ff0055;',
             1 => 'color: #ff0055;',
-            ),
-        'SCRIPT' => array(
+        ],
+        'SCRIPT' => [
             0 => '',
             1 => '',
             2 => '',
-            3 => ''
-            )
-        ),
-    'URLS' => array(
+            3 => '',
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
-        3 => ''
-        ),
-    'OOLANG' => false,
-    'OBJECT_SPLITTERS' => array(
-        1 => ''
-        ),
-    'REGEXPS' => array(
+        3 => '',
+    ],
+    'OOLANG'           => false,
+    'OBJECT_SPLITTERS' => [
+        1 => '',
+    ],
+    'REGEXPS' => [
         // numbers
         0 => "\d'[bdh][0-9_a-fA-FxXzZ]+",
         // time -> 1, 10, or 100; s, ms, us, ns, ps, of fs
-        1 => "1[0]{0,2}[munpf]?s"
-        ),
+        1 => '1[0]{0,2}[munpf]?s',
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        1 => ''
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
+    'SCRIPT_DELIMITERS'   => [
+        1 => '',
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
         0 => true,
         1 => true,
         2 => true,
-        3 => true
-        ),
-    'TAB_WIDTH' => 4
-);
-
-?>
+        3 => true,
+    ],
+    'TAB_WIDTH' => 4,
+];

@@ -4,85 +4,85 @@ return [
     'routes' => [
         '/' => [
             'controller' => 'Application\Pastebin\Controller',
-            'action' => 'index',
-            'static' => true
+            'action'     => 'index',
+            'static'     => true,
         ],
         '/paste/{id}' => [
-            'controller' => 'Application\Pastebin\Controller',
-            'action' => 'read',
+            'controller'   => 'Application\Pastebin\Controller',
+            'action'       => 'read',
             'requirements' => [
-                'id' => '\d+'
-            ]
+                'id' => '\d+',
+            ],
         ],
         '/raw/{id}' => [
-            'controller' => 'Application\Pastebin\Controller',
-            'action' => 'rawMode',
+            'controller'   => 'Application\Pastebin\Controller',
+            'action'       => 'rawMode',
             'requirements' => [
-                'id' => '\d+'
-            ]
+                'id' => '\d+',
+            ],
         ],
         '/rules' => [
             'template' => 'Rules',
-            'static' => true
+            'static'   => true,
         ],
         '/cookies' => [
             'template' => 'CookiesPolicy',
-            'static' => true
+            'static'   => true,
         ],
         '/latest' => [
             'controller' => 'Application\Pastebin\LatestPastes',
-            'action' => 'index',
-            'static' => true
+            'action'     => 'index',
+            'static'     => true,
         ],
         '/abuse/{id}' => [
-            'controller' => 'Application\Pastebin\ReportAbuse',
-            'action' => 'index',
+            'controller'   => 'Application\Pastebin\ReportAbuse',
+            'action'       => 'index',
             'requirements' => [
-                'id' => '\d+'
-            ]
+                'id' => '\d+',
+            ],
         ],
         '/abuse/{id}/results' => [
-            'controller' => 'Application\Pastebin\ReportAbuse',
-            'action' => 'results',
+            'controller'   => 'Application\Pastebin\ReportAbuse',
+            'action'       => 'results',
             'requirements' => [
-                'id' => '\d+'
-            ]
+                'id' => '\d+',
+            ],
         ],
         '/download/{id}' => [
-            'controller' => 'Application\Pastebin\Controller',
-            'action' => 'download',
+            'controller'   => 'Application\Pastebin\Controller',
+            'action'       => 'download',
             'requirements' => [
-                'id' => '\d+'
-            ]
+                'id' => '\d+',
+            ],
         ],
         '/embed/{id}' => [
-            'controller' => 'Application\Pastebin\Controller',
-            'action' => 'embed',
+            'controller'   => 'Application\Pastebin\Controller',
+            'action'       => 'embed',
             'requirements' => [
-                'id' => '\d+'
-            ]
+                'id' => '\d+',
+            ],
         ],
         '/api/{id}' => [
-            'controller' => 'Application\Pastebin\Controller',
-            'action' => 'jsonApi',
+            'controller'   => 'Application\Pastebin\Controller',
+            'action'       => 'jsonApi',
             'requirements' => [
-                'id' => '\d+'
-            ]
+                'id' => '\d+',
+            ],
         ],
         '/compare/{left}/with/{right}' => [
-            'controller' => 'Application\Pastebin\Compare',
-            'action' => 'compare',
+            'controller'   => 'Application\Pastebin\Compare',
+            'action'       => 'compare',
             'requirements' => [
-                'left' => '\d+',
-                'right' => '\d+'
-            ]
+                'left'  => '\d+',
+                'right' => '\d+',
+            ],
         ],
         '/compare/{left}' => [
-            'controller' => 'Application\Pastebin\Compare',
-            'action' => 'form',
+            'controller'   => 'Application\Pastebin\Compare',
+            'action'       => 'form',
             'requirements' => [
-                'left' => '\d+'
-            ]
-        ]
-    ]
-]; 
+                'left' => '\d+',
+            ],
+        ],
+    ],
+];

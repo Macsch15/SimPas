@@ -40,23 +40,23 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'ooRexx',
-    'COMMENT_SINGLE' => array(1 => '--'),
-    'COMMENT_MULTI' => array('/*' => '*/'),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array("'", '"'),
-    'ESCAPE_CHAR' => '',
-    'KEYWORDS' => array(
-        1 => array(
+$language_data = [
+    'LANG_NAME'      => 'ooRexx',
+    'COMMENT_SINGLE' => [1 => '--'],
+    'COMMENT_MULTI'  => ['/*' => '*/'],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'QUOTEMARKS'     => ["'", '"'],
+    'ESCAPE_CHAR'    => '',
+    'KEYWORDS'       => [
+        1 => [
             'address', 'arg', 'attribute', 'call', 'constant', 'do',
             'drop', 'exit', 'if',
             'interpret', 'iterate', 'leave', 'loop', 'nop', 'numeric',
             'parse', 'procedure', 'pull', 'push', 'queue',
             'raise', 'reply', 'return', 'say', 'select', 'signal',
-            'use'
-            ),
-        2 => array(
+            'use',
+        ],
+        2 => [
             'abstract', 'any', 'arguments', 'array', 'by',
             'continue', 'digits', 'engineering', 'error',
             'expose', 'external', 'failure', 'for', 'forever',
@@ -67,19 +67,19 @@ $language_data = array (
             'private', 'protected', 'public', 'scientific', 'set',
             'source', 'subclass', 'syntax', 'to', 'unguarded',
             'unprotected', 'until', 'user',
-            'version', 'while', 'with'
-            ),
-        3 => array(
-            'else', 'end', 'otherwise', 'then', 'when'
-            ),
-        4 => array(
-            'rc', 'result', 'self', 'sigl', 'super'
-            ),
-        5 => array(
+            'version', 'while', 'with',
+        ],
+        3 => [
+            'else', 'end', 'otherwise', 'then', 'when',
+        ],
+        4 => [
+            'rc', 'result', 'self', 'sigl', 'super',
+        ],
+        5 => [
             '::attribute', '::class', '::constant', '::method',
-            '::optins', '::requires', '::routine'
-            ),
-        6 => array(
+            '::optins', '::requires', '::routine',
+        ],
+        6 => [
             'abbrev', 'abs', 'beep', 'bitand', 'bitor',
             'bitxor', 'b2x', 'center', 'centre', 'changestr', 'charin',
             'charout', 'chars', 'compare', 'condition', 'copies',
@@ -93,79 +93,77 @@ $language_data = array (
             'space', 'stream', 'strip', 'substr', 'subword', 'symbol',
             'time', 'trace', 'translate', 'trunc', 'upper', 'userid',
             'value', 'var', 'verify', 'word', 'wordindex', 'wordlength',
-            'wordpos', 'words', 'xrange', 'x2b', 'x2c', 'x2d'
-            )
-        ),
-    'SYMBOLS' => array(
+            'wordpos', 'words', 'xrange', 'x2b', 'x2c', 'x2d',
+        ],
+    ],
+    'SYMBOLS' => [
         '(', ')', '<', '>', '[', ']', '=', '+', '-', '*', '/', '!', '%', '^', '&', ':',
-        '<', '>'
-        ),
-    'CASE_SENSITIVE' => array(
+        '<', '>',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => true,
-        1 => false,
-        2 => false,
-        3 => false,
-        4 => false,
-        5 => false,
-        6 => false
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => false,
+        2              => false,
+        3              => false,
+        4              => false,
+        5              => false,
+        6              => false,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #b1b100;',
             2 => 'color: #ff0000; font-weight: bold;',
             3 => 'color: #00ff00; font-weight: bold;',
             4 => 'color: #0000ff; font-weight: bold;',
             5 => 'color: #880088; font-weight: bold;',
-            6 => 'color: #888800; font-weight: bold;'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #666666;',
-            'MULTI' => 'color: #808080;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099; font-weight: bold;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #66cc66;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #ff0000;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #cc66cc;'
-            ),
-        'METHODS' => array(
+            6 => 'color: #888800; font-weight: bold;',
+        ],
+        'COMMENTS' => [
+            1       => 'color: #666666;',
+            'MULTI' => 'color: #808080;',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #000099; font-weight: bold;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #66cc66;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #ff0000;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #cc66cc;',
+        ],
+        'METHODS' => [
             1 => 'color: #202020;',
-            2 => 'color: #202020;'
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #66cc66;'
-            ),
-        'REGEXPS' => array(
-            ),
-        'SCRIPT' => array(
-            )
-        ),
-    'URLS' => array(
+            2 => 'color: #202020;',
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #66cc66;',
+        ],
+        'REGEXPS' => [
+        ],
+        'SCRIPT' => [
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
         3 => '',
         4 => '',
         5 => '',
-        6 => ''
-        ),
-    'OOLANG' => true,
-    'OBJECT_SPLITTERS' => array(
-        1 => '.'
-        ),
-    'REGEXPS' => array(
-        ),
+        6 => '',
+    ],
+    'OOLANG'           => true,
+    'OBJECT_SPLITTERS' => [
+        1 => '.',
+    ],
+    'REGEXPS' => [
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        ),
-    'TAB_WIDTH' => 4
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+    'TAB_WIDTH' => 4,
+];

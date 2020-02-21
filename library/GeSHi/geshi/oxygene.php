@@ -37,118 +37,116 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'Oxygene (Delphi Prism)',
-    'COMMENT_SINGLE' => array(1 => '//'),
-    'COMMENT_MULTI' => array('(*' => '*)', '{' => '}'),
+$language_data = [
+    'LANG_NAME'      => 'Oxygene (Delphi Prism)',
+    'COMMENT_SINGLE' => [1 => '//'],
+    'COMMENT_MULTI'  => ['(*' => '*)', '{' => '}'],
     //Compiler directives
-    'COMMENT_REGEXP' => array(2 => '/{\\$.*?}|\\(\\*\\$.*?\\*\\)/U'),
-    'CASE_KEYWORDS' => 0,
-    'QUOTEMARKS' => array("'"),
-    'ESCAPE_CHAR' => '',
-    'KEYWORDS' => array(
-        1 => array(
+    'COMMENT_REGEXP' => [2 => '/{\\$.*?}|\\(\\*\\$.*?\\*\\)/U'],
+    'CASE_KEYWORDS'  => 0,
+    'QUOTEMARKS'     => ["'"],
+    'ESCAPE_CHAR'    => '',
+    'KEYWORDS'       => [
+        1 => [
             'and',   'begin', 'case', 'const',  'div', 'do', 'downto', 'else',
             'end',  'for',  'function', 'if', 'in', 'mod', 'not', 'of', 'or',
             'procedure', 'repeat', 'record', 'set', 'shl', 'shr', 'then', 'to',
-            'type', 'until', 'uses', 'var','while', 'with', 'xor', 'exit', 'break',
+            'type', 'until', 'uses', 'var', 'while', 'with', 'xor', 'exit', 'break',
             'class', 'constructor', 'inherited', 'private', 'public', 'protected',
             'property', 'As', 'Is', 'Unit', 'Continue', 'Try', 'Except', 'Forward',
-            'Interface','Implementation', 'nil', 'out', 'loop', 'namespace', 'true',
+            'Interface', 'Implementation', 'nil', 'out', 'loop', 'namespace', 'true',
             'false', 'new', 'ensure', 'require', 'on', 'event', 'delegate', 'method',
-            'raise', 'assembly', 'module', 'using','locking', 'old', 'invariants', 'operator',
+            'raise', 'assembly', 'module', 'using', 'locking', 'old', 'invariants', 'operator',
             'self', 'async', 'finalizer', 'where', 'yield', 'nullable', 'Future',
-            'From',  'Finally', 'dynamic'
-            ),
-        2 => array(
-            'override', 'virtual', 'External', 'read', 'add', 'remove','final', 'abstract',
+            'From',  'Finally', 'dynamic',
+        ],
+        2 => [
+            'override', 'virtual', 'External', 'read', 'add', 'remove', 'final', 'abstract',
             'empty', 'global', 'locked', 'sealed', 'reintroduce', 'implements', 'each',
             'default', 'partial', 'finalize', 'enum', 'flags', 'result', 'readonly', 'unsafe',
             'pinned', 'matching', 'static', 'has', 'step', 'iterator', 'inline', 'nested',
             'Implies', 'Select', 'Order', 'By', 'Desc', 'Asc', 'Group', 'Join', 'Take',
             'Skip', 'Concat', 'Union', 'Reverse', 'Distinct', 'Into', 'Equals', 'params',
             'sequence', 'index', 'notify', 'Parallel', 'create', 'array', 'Queryable', 'Aspect',
-            'volatile', 'write'
-            ),
-        3 => array(
-            'chr', 'ord', 'inc', 'dec', 'assert', 'iff', 'assigned','futureAssigned', 'length', 'low', 'high', 'typeOf', 'sizeOf', 'disposeAndNil', 'Coalesce', 'unquote'
-            ),
-        ),
-    'CASE_SENSITIVE' => array(
+            'volatile', 'write',
+        ],
+        3 => [
+            'chr', 'ord', 'inc', 'dec', 'assert', 'iff', 'assigned', 'futureAssigned', 'length', 'low', 'high', 'typeOf', 'sizeOf', 'disposeAndNil', 'Coalesce', 'unquote',
+        ],
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => false,
-        2 => false,
-        3 => false,
-//        4 => false,
-        ),
-    'SYMBOLS' => array(
-        0 => array('(', ')', '[', ']'),
-        1 => array('.', ',', ':', ';'),
-        2 => array('@', '^'),
-        3 => array('=', '+', '-', '*', '/')
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => false,
+        2              => false,
+        3              => false,
+        //        4 => false,
+    ],
+    'SYMBOLS' => [
+        0 => ['(', ')', '[', ']'],
+        1 => ['.', ',', ':', ';'],
+        2 => ['@', '^'],
+        3 => ['=', '+', '-', '*', '/'],
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #000000; font-weight: bold;',
             2 => 'color: #000000; font-weight: bold;',
             3 => 'color: #000066;',
-//            4 => 'color: #000066; font-weight: bold;'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #808080; font-style: italic;',
-            2 => 'color: #008000; font-style: italic;',
-            'MULTI' => 'color: #808080; font-style: italic;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #ff0000; font-weight: bold;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #000066;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #ff0000;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #0000ff;'
-            ),
-        'METHODS' => array(
-            1 => 'color: #000000;'
-            ),
-        'REGEXPS' => array(
+            //            4 => 'color: #000066; font-weight: bold;'
+        ],
+        'COMMENTS' => [
+            1       => 'color: #808080; font-style: italic;',
+            2       => 'color: #008000; font-style: italic;',
+            'MULTI' => 'color: #808080; font-style: italic;',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #ff0000; font-weight: bold;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #000066;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #ff0000;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #0000ff;',
+        ],
+        'METHODS' => [
+            1 => 'color: #000000;',
+        ],
+        'REGEXPS' => [
             0 => 'color: #9ac;',
-            1 => 'color: #ff0000;'
-            ),
-        'SYMBOLS' => array(
+            1 => 'color: #ff0000;',
+        ],
+        'SYMBOLS' => [
             0 => 'color: #000066;',
             1 => 'color: #000066;',
             2 => 'color: #000066;',
-            3 => 'color: #000066;'
-            ),
-        'SCRIPT' => array(
-            )
-        ),
-    'URLS' => array(
+            3 => 'color: #000066;',
+        ],
+        'SCRIPT' => [
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
         3 => '',
-//        4 => ''
-        ),
-    'OOLANG' => true,
-    'OBJECT_SPLITTERS' => array(
-        1 => '.'
-        ),
-    'REGEXPS' => array(
+        //        4 => ''
+    ],
+    'OOLANG'           => true,
+    'OBJECT_SPLITTERS' => [
+        1 => '.',
+    ],
+    'REGEXPS' => [
         //Hex numbers
         0 => '\$[0-9a-fA-F]+',
         //Characters
-        1 => '\#\$?[0-9]{1,3}'
-        ),
+        1 => '\#\$?[0-9]{1,3}',
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        ),
-    'TAB_WIDTH' => 2
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+    'TAB_WIDTH' => 2,
+];

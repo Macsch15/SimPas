@@ -36,29 +36,29 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'SciLab',
-    'COMMENT_SINGLE' => array(1 => '//'),
-    'COMMENT_MULTI' => array(),
-    'COMMENT_REGEXP' => array(
-        2 => "/(?<=\)|\]|\w)'/"
-        ),
+$language_data = [
+    'LANG_NAME'      => 'SciLab',
+    'COMMENT_SINGLE' => [1 => '//'],
+    'COMMENT_MULTI'  => [],
+    'COMMENT_REGEXP' => [
+        2 => "/(?<=\)|\]|\w)'/",
+    ],
     'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array('"'),
-    'ESCAPE_CHAR' => '\\',
-    'HARDQUOTE' => array("'", "'"),
-    'HARDESCAPE' => array(),
-    'KEYWORDS' => array(
-        1 => array(
-            'if', 'else', 'elseif', 'end', 'select', 'case', 'for', 'while', 'break'
-            ),
-        2 => array(
+    'QUOTEMARKS'    => ['"'],
+    'ESCAPE_CHAR'   => '\\',
+    'HARDQUOTE'     => ["'", "'"],
+    'HARDESCAPE'    => [],
+    'KEYWORDS'      => [
+        1 => [
+            'if', 'else', 'elseif', 'end', 'select', 'case', 'for', 'while', 'break',
+        ],
+        2 => [
             'STDIN', 'STDOUT', 'STDERR',
             '%i', '%pi', '%e', '%eps', '%nan', '%inf', '%s', '%t', '%f',
             'usual', 'polynomial', 'boolean', 'character', 'function', 'rational', 'state-space',
-            'sparse', 'boolean sparse', 'list', 'tlist', 'library', 'endfunction'
-            ),
-        3 => array(
+            'sparse', 'boolean sparse', 'list', 'tlist', 'library', 'endfunction',
+        ],
+        3 => [
             '%asn', '%helps', '%k', '%sn', 'abcd', 'abinv', 'abort', 'about', 'About_M2SCI_tools',
             'abs', 'acos', 'acosh', 'acoshm', 'acosm', 'AdCommunications', 'add_demo', 'add_edge',
             'add_help_chapter', 'add_node', 'add_palette', 'addcolor', 'addf', 'addinter', 'addmenu',
@@ -67,8 +67,8 @@ $language_data = array (
             'arma', 'arma2p', 'armac', 'armax', 'armax1', 'arsimul', 'artest', 'articul', 'ascii',
             'asciimat', 'asin', 'asinh', 'asinhm', 'asinm', 'assignation', 'atan', 'atanh', 'atanhm',
             'atanm', 'augment', 'auread', 'auwrite', 'axes_properties', 'axis_properties', 'backslash',
-            'balanc', 'balreal', 'bandwr', 'banner','bar', 'barh', 'barhomogenize', 'basename', 'bdiag',
-            'beep', 'besselh', 'besseli', 'besselj', 'besselk', 'bessely', 'best_match', 'beta','bezout',
+            'balanc', 'balreal', 'bandwr', 'banner', 'bar', 'barh', 'barhomogenize', 'basename', 'bdiag',
+            'beep', 'besselh', 'besseli', 'besselj', 'besselk', 'bessely', 'best_match', 'beta', 'bezout',
             'bifish', 'bilin', 'binomial', 'black', 'bloc2exp', 'bloc2ss', 'bode', 'bool2s',
             'boucle', 'brackets', 'browsevar', 'bsplin3val', 'bstap', 'buttmag', 'buttondialog',
             'bvode', 'bvodeS', 'c_link', 'cainv', 'calendar', 'calerf', 'calfrq', 'call', 'canon', 'casc',
@@ -76,7 +76,7 @@ $language_data = array (
             'cdfgam', 'cdfnbn', 'cdfnor', 'cdfpoi', 'cdft', 'ceil', 'cell', 'cell2mat', 'cellstr', 'center',
             'cepstrum', 'chain_struct', 'chaintest', 'champ', 'champ_properties', 'champ1', 'char', 'chart',
             'chartooem', 'chdir', 'cheb1mag', 'cheb2mag', 'check_graph', 'chepol', 'chfact', 'chol', 'chsolve',
-            'circuit', 'classmarkov', 'clc', 'clean', 'clear', 'clear_pixmap', 'clearfun', 'clearglobal','clf',
+            'circuit', 'classmarkov', 'clc', 'clean', 'clear', 'clear_pixmap', 'clearfun', 'clearglobal', 'clf',
             'clipboard', 'close', 'cls2dls', 'cmb_lin', 'cmndred', 'cmoment', 'code2str', 'coeff', 'coff', 'coffg',
             'colcomp', 'colcompr', 'colinout', 'colon', 'color', 'color_list', 'colorbar', 'colordef', 'colormap',
             'colregul', 'comma', 'comments', 'comp', 'companion', 'comparison', 'Compound_properties', 'con_nodes',
@@ -215,81 +215,79 @@ $language_data = array (
             'xgrid', 'xinfo', 'xinit', 'xlfont', 'xload', 'xls_open', 'xls_read', 'xmltohtml', 'xname', 'xnumb', 'xpause',
             'xpoly', 'xpolys', 'xrect', 'xrects', 'xrpoly', 'xs2bmp', 'xs2emf', 'xs2eps', 'xs2fig', 'xs2gif', 'xs2ppm',
             'xs2ps', 'xsave', 'xsegs', 'xselect', 'xset', 'xsetech', 'xsetm', 'xstring', 'xstringb', 'xstringl', 'xtape',
-            'xtitle', 'yulewalk', 'zeropen', 'zeros', 'zgrid', 'zoom_rect', 'zpbutt', 'zpch1', 'zpch2', 'zpell'
-            )
-        ),
-    'SYMBOLS' => array(
+            'xtitle', 'yulewalk', 'zeropen', 'zeros', 'zgrid', 'zoom_rect', 'zpbutt', 'zpch1', 'zpch2', 'zpell',
+        ],
+    ],
+    'SYMBOLS' => [
         '<', '>', '=',
         '!', '@', '~', '&', '|',
-        '+','-', '*', '/', '%',
-        ',', ';', '?', ':', "'"
-        ),
-    'CASE_SENSITIVE' => array(
+        '+', '-', '*', '/', '%',
+        ',', ';', '?', ':', "'",
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => true,
-        1 => true,
-        2 => true,
-        3 => true,
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => true,
+        2              => true,
+        3              => true,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #b1b100;',
             2 => 'color: #000000; font-weight: bold;',
-            3 => 'color: #000066;'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #666666; font-style: italic;',
-            2 => '',
-            'MULTI' => 'color: #666666; font-style: italic;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099; font-weight: bold;',
-            'HARD' => 'color: #000099; font-weight: bold;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #009900;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #ff0000;',
-            'HARD' => 'color: #ff0000;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #cc66cc;'
-            ),
-        'METHODS' => array(
+            3 => 'color: #000066;',
+        ],
+        'COMMENTS' => [
+            1       => 'color: #666666; font-style: italic;',
+            2       => '',
+            'MULTI' => 'color: #666666; font-style: italic;',
+        ],
+        'ESCAPE_CHAR' => [
+            0      => 'color: #000099; font-weight: bold;',
+            'HARD' => 'color: #000099; font-weight: bold;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #009900;',
+        ],
+        'STRINGS' => [
+            0      => 'color: #ff0000;',
+            'HARD' => 'color: #ff0000;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #cc66cc;',
+        ],
+        'METHODS' => [
             1 => 'color: #006600;',
-            2 => 'color: #006600;'
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #339933;'
-            ),
-        'REGEXPS' => array(
+            2 => 'color: #006600;',
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #339933;',
+        ],
+        'REGEXPS' => [
             0 => 'color: #0000ff;',
             4 => 'color: #009999;',
-            ),
-        'SCRIPT' => array(
-            )
-        ),
-    'URLS' => array(
+        ],
+        'SCRIPT' => [
+        ],
+    ],
+    'URLS' => [
         1 => 'http://www.scilab.org/product/dic-mat-sci/M2SCI_doc.htm',
         2 => 'http://www.scilab.org/product/dic-mat-sci/M2SCI_doc.htm',
-        3 => 'http://www.scilab.org/product/dic-mat-sci/M2SCI_doc.htm'
-        ),
-    'OOLANG' => true,
-    'OBJECT_SPLITTERS' => array(
+        3 => 'http://www.scilab.org/product/dic-mat-sci/M2SCI_doc.htm',
+    ],
+    'OOLANG'           => true,
+    'OBJECT_SPLITTERS' => [
         1 => '-&gt;',
-        2 => '::'
-        ),
-    'REGEXPS' => array(
+        2 => '::',
+    ],
+    'REGEXPS' => [
         //Variable
         0 => '[\\$%@]+[a-zA-Z_][a-zA-Z0-9_]*',
         //File Descriptor
         4 => '&lt;[a-zA-Z_][a-zA-Z0-9_]*&gt;',
-        ),
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        )
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+];

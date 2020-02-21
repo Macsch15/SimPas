@@ -1,19 +1,21 @@
 <?php
+
 namespace Application\Pastebin\Helpers;
 
 class PasteId
 {
     /**
-     * Get paste id from URL
-     * 
-     * @param string $url 
+     * Get paste id from URL.
+     *
+     * @param string $url
+     *
      * @return string|bool
      */
     public static function getFromUrl($url)
     {
         $left_pos = strpos($url, 'paste/');
 
-        if(!$left_pos) {
+        if (!$left_pos) {
             return false;
         }
 
@@ -23,7 +25,7 @@ class PasteId
             $trim_left = substr($trim_left, null, strpos($trim_left, '/'));
         }
 
-        if($trim_left == null) {
+        if ($trim_left == null) {
             return false;
         }
 

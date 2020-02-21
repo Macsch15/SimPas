@@ -1,4 +1,5 @@
 <?php
+
 namespace Application\Pastebin;
 
 use Application\Application;
@@ -9,18 +10,20 @@ class SendPaste
     use Configuration;
 
     /**
-     * DataBase
-     * 
+     * DataBase.
+     *
      * @var object
      */
     private $data_source;
 
     /**
-     * Construct
+     * Construct.
      *
      * @param Application $application
-     * @return void
+     *
      * @throws \Application\Exception\ExceptionRuntime
+     *
+     * @return void
      */
     public function __construct(Application $application)
     {
@@ -28,15 +31,17 @@ class SendPaste
     }
 
     /**
-     * Send paste
-     * 
+     * Send paste.
+     *
      * @param array $container
+     *
      * @return void
      */
-    public function send(array $container) {
+    public function send(array $container)
+    {
         $query = $this->data_source
         ->get()
-        ->prepare('INSERT INTO ' . $this->config('database')['prefix'] . 'pastes (
+        ->prepare('INSERT INTO '.$this->config('database')['prefix'].'pastes (
             unique_id,
             time,
             size,
@@ -90,9 +95,10 @@ class SendPaste
     }
 
     /**
-     * Normalize paste title and author
-     * 
-     * @param string $string 
+     * Normalize paste title and author.
+     *
+     * @param string $string
+     *
      * @return string
      */
     private function normalizeTitleAndAuthorField($string)
@@ -105,19 +111,19 @@ class SendPaste
     }
 
     /**
-     * Generate ID
-     * 
+     * Generate ID.
+     *
      * @return int
      */
     public function generateId()
     {
         $id = time();
         $id = substr($id, 2);
-        $id = mt_rand(0, 15) . $id;
+        $id = mt_rand(0, 15).$id;
 
-        $uniq = (int)uniqid();
-        $uniq = (isset($uniq[0]) && isset($uniq[1]) ? $uniq[0] . $uniq[1] : 0);
+        $uniq = (int) uniqid();
+        $uniq = (isset($uniq[0]) && isset($uniq[1]) ? $uniq[0].$uniq[1] : 0);
 
-        return (int)$id . $uniq;
+        return (int) $id.$uniq;
     }
 }
