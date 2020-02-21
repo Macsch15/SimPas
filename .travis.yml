@@ -2,12 +2,10 @@ language: php
 
 sudo: false
 
+before_script: composer install
+
 php:
-  - 5.6
-  - 7.0
-  - 7.1
-  - 7.2
   - 7.3
   - 7.4
 
-script: phpunit --configuration phpunit.xml.dist
+script: ./vendor/bin/phpunit

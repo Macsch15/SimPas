@@ -1,7 +1,8 @@
 <?php
+use PHPUnit\Framework\TestCase;
 use Application\Pastebin\SyntaxHighlighter;
 
-class SyntaxHighlighterTest extends PHPUnit_Framework_TestCase
+class SyntaxHighlighterTest extends TestCase
 {
     public function testSyntaxHighligherCount()
     {

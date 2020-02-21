@@ -1,7 +1,8 @@
 <?php
+use PHPUnit\Framework\TestCase;
 use Application\Security\DataFilters\PreDatabaseSave;
 
-class PreDatabaseFilterTest extends PHPUnit_Framework_TestCase
+class PreDatabaseFilterTest extends TestCase
 {
     public function testPredbfilterRestrictedCharacters()
     {

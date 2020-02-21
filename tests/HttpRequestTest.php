@@ -1,7 +1,8 @@
 <?php
+use PHPUnit\Framework\TestCase;
 use Application\HttpRequest\HttpRequest;
 
-class HttpRequestTest extends PHPUnit_Framework_TestCase
+class HttpRequestTest extends TestCase
 {
     public function testHttpRequestPostActionDoesNotExists()
     {

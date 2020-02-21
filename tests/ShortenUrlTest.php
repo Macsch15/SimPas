@@ -1,7 +1,8 @@
 <?php
+use PHPUnit\Framework\TestCase;
 use Application\Pastebin\ShortenUrlApi;
 
-class ShortenUrlTest extends PHPUnit_Framework_TestCase
+class ShortenUrlTest extends TestCase
 {
     public function testShortenurlFail()
     {
