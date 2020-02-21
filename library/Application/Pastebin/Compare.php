@@ -1,27 +1,28 @@
 <?php
+
 namespace Application\Pastebin;
 
 use Application\Application;
-use Application\View\View;
 use Application\HttpRequest\HttpRequest;
-use Application\Pastebin\ReadPaste;
 use Application\Pastebin\Helpers\PasteId;
+use Application\View\View;
 use Diff;
 use Diff_Renderer_Html_Inline;
 
 class Compare extends View
 {
     /**
-     * Application
-     * 
+     * Application.
+     *
      * @var object
      */
     private $application;
-    
+
     /**
-     * Construct
-     * 
+     * Construct.
+     *
      * @param Application $application
+     *
      * @return void
      */
     public function __construct(Application $application)
@@ -32,22 +33,24 @@ class Compare extends View
     }
 
     /**
-     * Compare
+     * Compare.
      *
      * @param array $request
-     * @return void
+     *
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Syntax
      * @throws \Application\Exception\ExceptionRuntime
+     *
+     * @return void
      */
     public function compareAction(array $request)
     {
-        if((new ReadPaste($this->application))->pasteExists($request['left']) === false) {
-            return $this->sendFriendlyClientError(_('Requested paste (left) doesn\'t exists.'), true); 
+        if ((new ReadPaste($this->application))->pasteExists($request['left']) === false) {
+            return $this->sendFriendlyClientError(_('Requested paste (left) doesn\'t exists.'), true);
         }
 
-        if((new ReadPaste($this->application))->pasteExists($request['right']) === false) {
-            return $this->sendFriendlyClientError(_('Requested paste (right) doesn\'t exists.'), true); 
+        if ((new ReadPaste($this->application))->pasteExists($request['right']) === false) {
+            return $this->sendFriendlyClientError(_('Requested paste (right) doesn\'t exists.'), true);
         }
 
         require Application::makePath('library/Diff/Diff.php');
@@ -58,28 +61,30 @@ class Compare extends View
 
         $this->render([
             'diff_results' => (new Diff(explode("\n", $left), explode("\n", $right)))->render(new Diff_Renderer_Html_Inline()),
-            'left_id' => $request['left'],
-            'right_id' => $request['right']
+            'left_id'      => $request['left'],
+            'right_id'     => $request['right'],
         ]);
 
         return $this->{'Diff'};
     }
 
     /**
-     * Compare form
+     * Compare form.
      *
      * @param array $request
-     * @return void
+     *
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Syntax
      * @throws \Application\Exception\ExceptionRuntime
+     *
+     * @return void
      */
     public function formAction(array $request)
     {
-        if((new ReadPaste($this->application))->pasteExists($request['left']) === false) {
+        if ((new ReadPaste($this->application))->pasteExists($request['left']) === false) {
             return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
         }
-        
+
         if (HttpRequest::post('post_compare_right') !== false) {
             if (HttpRequest::isEmptyField([HttpRequest::post('post_compare_right')])) {
                 return $this->sendFriendlyClientError(_('Some field there are empty or contains prohibited characters (e.g only spaces).'));
@@ -95,15 +100,15 @@ class Compare extends View
                 $right = HttpRequest::post('post_compare_right', 'html');
             }
 
-            if((new ReadPaste($this->application))->pasteExists($right) === false) {
+            if ((new ReadPaste($this->application))->pasteExists($right) === false) {
                 return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
             }
 
-            header('Location:' . $this->application->buildUrl('compare/' . $request['left'] . '/with/' . $right));
+            header('Location:'.$this->application->buildUrl('compare/'.$request['left'].'/with/'.$right));
         }
 
         $this->render([
-            'left_id' => $request['left']
+            'left_id' => $request['left'],
         ]);
 
         return $this->{'DiffForm'};

@@ -37,33 +37,33 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'Haskell',
-    'COMMENT_SINGLE' => array( 1 => '--'),
-    'COMMENT_MULTI' => array('{-' => '-}'),
-    'COMMENT_REGEXP' => array(
-        2 => "/-->/",
-        3 => "/{-(?:(?R)|.)-}/s", //Nested Comments
-        ),
+$language_data = [
+    'LANG_NAME'      => 'Haskell',
+    'COMMENT_SINGLE' => [1 => '--'],
+    'COMMENT_MULTI'  => ['{-' => '-}'],
+    'COMMENT_REGEXP' => [
+        2 => '/-->/',
+        3 => '/{-(?:(?R)|.)-}/s', //Nested Comments
+    ],
     'CASE_KEYWORDS' => 0,
-    'QUOTEMARKS' => array('"',"'"),
-    'ESCAPE_CHAR' => '\\',
-    'KEYWORDS' => array(
+    'QUOTEMARKS'    => ['"', "'"],
+    'ESCAPE_CHAR'   => '\\',
+    'KEYWORDS'      => [
         /* main haskell keywords */
-        1 => array(
+        1 => [
             'as',
             'case', 'of', 'class', 'data', 'default',
             'deriving', 'do', 'forall', 'hiding', 'if', 'then',
             'else', 'import', 'infix', 'infixl', 'infixr',
             'instance', 'let', 'in', 'module', 'newtype',
-            'qualified', 'type', 'where'
-            ),
+            'qualified', 'type', 'where',
+        ],
         /* define names of main librarys, so we can link to it */
-        2 => array(
-            'Foreign', 'Numeric', 'Prelude'
-            ),
+        2 => [
+            'Foreign', 'Numeric', 'Prelude',
+        ],
         /* just link to Prelude functions, cause it's the default opened library when starting Haskell */
-        3 => array(
+        3 => [
             'not', 'otherwise', 'maybe',
             'either', 'fst', 'snd', 'curry', 'uncurry',
             'compare',
@@ -86,9 +86,9 @@ $language_data = array (
             'lcm', 'fromIntegral', 'realToFrac',
             'return', 'fail', 'fmap',
             'mapM', 'mapM_', 'sequence', 'sequence_',
-            'id', 'const','flip',
+            'id', 'const', 'flip',
             'until', 'asTypeOf', 'error', 'undefined',
-            'seq','map','filter', 'head',
+            'seq', 'map', 'filter', 'head',
             'last', 'tail', 'init', 'null', 'length',
             'reverse', 'foldl', 'foldl1', 'foldr',
             'foldr1', 'and', 'or', 'any', 'all', 'sum',
@@ -105,77 +105,77 @@ $language_data = array (
             'read', 'lex', 'putChar', 'putStr', 'putStrLn',
             'print', 'getChar', 'getLine', 'getContents',
             'interact', 'readFile', 'writeFile', 'appendFile',
-            'readIO', 'readLn', 'ioError', 'userError', 'catch'
-            ),
+            'readIO', 'readLn', 'ioError', 'userError', 'catch',
+        ],
         /* here Prelude Types */
-        4 => array (
+        4 => [
             'Bool', 'Maybe', 'Either', 'Ord', 'Ordering',
             'Char', 'String', 'Eq', 'Enum', 'Bounded',
             'Int', 'Integer', 'Float', 'Double', 'Rational',
             'Num', 'Real', 'Integral', 'Fractional',
             'Floating', 'RealFrac', 'RealFloat', 'Monad',
             'Functor', 'Show', 'ShowS', 'Read', 'ReadS',
-            'IO'
-            ),
+            'IO',
+        ],
         /* finally Prelude Exceptions */
-        5 => array (
-            'IOError', 'IOException'
-            )
-        ),
+        5 => [
+            'IOError', 'IOException',
+        ],
+    ],
     /* highlighting symbols is really important in Haskell */
-    'SYMBOLS' => array(
+    'SYMBOLS' => [
         '|', '->', '<-', '@', '!', '::', '_', '~', '=', '?',
         '&&', '||', '==', '/=', '<', '<=', '>',
-        '>=','+', '-', '*','/', '%', '**', '^', '^^',
+        '>=', '+', '-', '*', '/', '%', '**', '^', '^^',
         '>>=', '>>', '=<<',  '$', '.', ',', '$!',
-        '++', '!!'
-        ),
-    'CASE_SENSITIVE' => array(
+        '++', '!!',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => true,
-        2 => true, /* functions name are case seinsitive */
-        3 => true, /* types name too */
-        4 => true, /* finally exceptions too */
-        5 => true
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => true,
+        2              => true, /* functions name are case seinsitive */
+        3              => true, /* types name too */
+        4              => true, /* finally exceptions too */
+        5              => true,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #06c; font-weight: bold;', /* nice blue */
             2 => 'color: #06c; font-weight: bold;', /* blue as well */
             3 => 'font-weight: bold;', /* make the preduled functions bold */
             4 => 'color: #cccc00; font-weight: bold;', /* give types a different bg */
-            5 => 'color: maroon;'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #5d478b; font-style: italic;',
-            2 => 'color: #339933; font-weight: bold;',
-            3 => 'color: #5d478b; font-style: italic;', /* light purple */
-            'MULTI' => 'color: #5d478b; font-style: italic;' /* light purple */
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'background-color: #3cb371; font-weight: bold;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: green;'
-            ),
-        'STRINGS' => array(
-            0 => 'background-color: #3cb371;' /* nice green */
-            ),
-        'NUMBERS' => array(
-            0 => 'color: red;' /* pink */
-            ),
-        'METHODS' => array(
-            1 => 'color: #060;' /* dark green */
-            ),
-        'REGEXPS' => array(
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #339933; font-weight: bold;'
-            ),
-        'SCRIPT' => array(
-            )
-        ),
-    'URLS' => array(
+            5 => 'color: maroon;',
+        ],
+        'COMMENTS' => [
+            1       => 'color: #5d478b; font-style: italic;',
+            2       => 'color: #339933; font-weight: bold;',
+            3       => 'color: #5d478b; font-style: italic;', /* light purple */
+            'MULTI' => 'color: #5d478b; font-style: italic;', /* light purple */
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'background-color: #3cb371; font-weight: bold;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: green;',
+        ],
+        'STRINGS' => [
+            0 => 'background-color: #3cb371;', /* nice green */
+        ],
+        'NUMBERS' => [
+            0 => 'color: red;', /* pink */
+        ],
+        'METHODS' => [
+            1 => 'color: #060;', /* dark green */
+        ],
+        'REGEXPS' => [
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #339933; font-weight: bold;',
+        ],
+        'SCRIPT' => [
+        ],
+    ],
+    'URLS' => [
         /* some of keywords are Prelude functions */
         1 => '',
         /* link to the wanted library */
@@ -186,17 +186,15 @@ $language_data = array (
         4 => 'http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t:{FNAME}',
         /* link to Prelude exceptions */
         5 => 'http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t:{FNAME}',
-        ),
-    'OOLANG' => false,
-    'OBJECT_SPLITTERS' => array(
-        ),
-    'REGEXPS' => array(
-        ),
+    ],
+    'OOLANG'           => false,
+    'OBJECT_SPLITTERS' => [
+    ],
+    'REGEXPS' => [
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        )
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+];

@@ -1,4 +1,5 @@
 <?php
+
 namespace Application\HttpRequest\CookieJar;
 
 use Application\Configuration\Configuration;
@@ -6,13 +7,14 @@ use Application\Configuration\Configuration;
 class CookieJar
 {
     use Configuration;
-    
+
     /**
-     * Set new cookie
-     * 
+     * Set new cookie.
+     *
      * @param string $name
-     * @param string $value 
-     * @param int $expire
+     * @param string $value
+     * @param int    $expire
+     *
      * @return bool
      */
     public function set($name, $value, $expire = 86400)
@@ -21,9 +23,10 @@ class CookieJar
     }
 
     /**
-     * Get existing cookie
-     * 
+     * Get existing cookie.
+     *
      * @param string $name
+     *
      * @return string|bool
      */
     public function get($name)
@@ -36,9 +39,10 @@ class CookieJar
     }
 
     /**
-     * Destroy cookie
-     * 
+     * Destroy cookie.
+     *
      * @param string $name
+     *
      * @return bool
      */
     public function destroy($name)

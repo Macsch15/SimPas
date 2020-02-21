@@ -38,15 +38,15 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'X++',
-    'COMMENT_SINGLE' => array(1 => '//'),
-    'COMMENT_MULTI' => array('/*' => '*/'),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array("'", '"'),
-    'ESCAPE_CHAR' => '\\',
-    'KEYWORDS' => array(
-        1 => array( // Primitive types
+$language_data = [
+    'LANG_NAME'      => 'X++',
+    'COMMENT_SINGLE' => [1 => '//'],
+    'COMMENT_MULTI'  => ['/*' => '*/'],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'QUOTEMARKS'     => ["'", '"'],
+    'ESCAPE_CHAR'    => '\\',
+    'KEYWORDS'       => [
+        1 => [ // Primitive types
             'void',
             'str',
             'real',
@@ -55,9 +55,9 @@ $language_data = array (
             'date',
             'container',
             'boolean',
-            'anytype'
-            ),
-        2 => array( // Keywords
+            'anytype',
+        ],
+        2 => [ // Keywords
             'window',
             'while',
             'try',
@@ -100,9 +100,9 @@ $language_data = array (
             'breakpoint',
             'break',
             'at',
-            'abstract'
-            ),
-        3 => array( // Functions within the Axapta kernel
+            'abstract',
+        ],
+        3 => [ // Functions within the Axapta kernel
             'year',
             'wkofyr',
             'webwebpartstr',
@@ -304,9 +304,9 @@ $language_data = array (
             'any2date',
             'ansi2ascii',
             'acos',
-            'abs'
-            ),
-        4 => array( // X++ SQL stuff
+            'abs',
+        ],
+        4 => [ // X++ SQL stuff
             'where',
             'update_recordset',
             'ttsCommit',
@@ -345,10 +345,10 @@ $language_data = array (
             'delete_from',
             'count',
             'avg',
-            'asc'
-            )
-        ),
-    'SYMBOLS' => array( // X++ symbols
+            'asc',
+        ],
+    ],
+    'SYMBOLS' => [ // X++ symbols
         '!',
         '&',
         '(',
@@ -369,68 +369,66 @@ $language_data = array (
         '[',
         ']',
         '{',
-        '}'
-        ),
-    'CASE_SENSITIVE' => array(
+        '}',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => false,
-        2 => false,
-        3 => false,
-        4 => false
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => false,
+        2              => false,
+        3              => false,
+        4              => false,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #0000ff;',
             2 => 'color: #0000ff;',
             3 => 'color: #0000ff;',
-            4 => 'color: #0000ff;'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #007f00;',
-            'MULTI' => 'color: #007f00; font-style: italic;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000000;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #000000;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #ff0000;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #000000;'
-            ),
-        'METHODS' => array(
+            4 => 'color: #0000ff;',
+        ],
+        'COMMENTS' => [
+            1       => 'color: #007f00;',
+            'MULTI' => 'color: #007f00; font-style: italic;',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #000000;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #000000;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #ff0000;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #000000;',
+        ],
+        'METHODS' => [
             1 => 'color: #000000;',
-            2 => 'color: #000000;'
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #00007f;'
-            ),
-        'REGEXPS' => array(
-            ),
-        'SCRIPT' => array(
-            )
-        ),
-    'URLS' => array(
+            2 => 'color: #000000;',
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #00007f;',
+        ],
+        'REGEXPS' => [
+        ],
+        'SCRIPT' => [
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
         3 => '',
-        4 => ''
-        ),
-    'OOLANG' => true,
-    'OBJECT_SPLITTERS' => array(
+        4 => '',
+    ],
+    'OOLANG'           => true,
+    'OBJECT_SPLITTERS' => [
         1 => '.',
-        2 => '::'
-        ),
-    'REGEXPS' => array(
-        ),
+        2 => '::',
+    ],
+    'REGEXPS' => [
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        )
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+];

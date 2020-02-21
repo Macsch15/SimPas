@@ -37,25 +37,25 @@
  *
  ************************************************************************************/
 
-$language_data = array(
-    'LANG_NAME' => 'Nagios',
-    'COMMENT_SINGLE' => array(1 => ';', 2 => '#'),
-    'COMMENT_MULTI' => array(),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'HARDQUOTE' => array("'", "'"),
-    'QUOTEMARKS' => array("'", '"'),
-    'ESCAPE_CHAR' => '\'',
-    'KEYWORDS' => array(
-        1 => array(
-            'define'
-            ),
-        2 => array(
+$language_data = [
+    'LANG_NAME'      => 'Nagios',
+    'COMMENT_SINGLE' => [1 => ';', 2 => '#'],
+    'COMMENT_MULTI'  => [],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'HARDQUOTE'      => ["'", "'"],
+    'QUOTEMARKS'     => ["'", '"'],
+    'ESCAPE_CHAR'    => '\'',
+    'KEYWORDS'       => [
+        1 => [
+            'define',
+        ],
+        2 => [
             'command', 'contact', 'contactgroup', 'host', 'hostdependency',
             'hostescalation', 'hostextinfo', 'hostgroup', 'service',
             'servicedependency', 'serviceescalation',
-            'serviceextinfo', 'servicegroup', 'timeperiod'
-            ),
-        3 => array(
+            'serviceextinfo', 'servicegroup', 'timeperiod',
+        ],
+        3 => [
             'active_checks_enabled', 'passive_checks_enabled', 'alias',
             'display_name', 'host_name', 'address', 'hostgroups', 'parents',
             'hostgroup_members', 'members', 'service_description',
@@ -85,141 +85,139 @@ $language_data = array(
             'inherits_parent', 'execution_failure_criteria',
             'notification_failure_criteria', 'dependency_period',
             'first_notification', 'last_notification', 'escalation_period',
-            'escalation_options'
-            ),
-        4 => array(
+            'escalation_options',
+        ],
+        4 => [
             'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday',
             'sunday', 'january', 'february', 'march', 'april', 'may', 'june',
             'july', 'august', 'september', 'october', 'november', 'december',
-            'day'
-            )
-        ),
-    'SYMBOLS' => array(
-        0 => array(
-            '{', '}', ',', '+'
-            )
-        ),
-    'CASE_SENSITIVE' => array(
+            'day',
+        ],
+    ],
+    'SYMBOLS' => [
+        0 => [
+            '{', '}', ',', '+',
+        ],
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => false,
-        2 => false,
-        3 => false,
-        4 => false,
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => false,
+        2              => false,
+        3              => false,
+        4              => false,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'font-weight:bold;color:#FFDCA8;',
             2 => 'font-weight:bold;color #FFA858;',
             3 => 'font-weight:bold;color:#00C0C0;',
-            4 => 'font-weight:bold;color:#C0C0FF;'
-            ),
-        'SYMBOLS' => array(
-            0 => 'font-weight:bold;color:#000000;'
-            ),
-        'NUMBERS' => array(
-            0 => ''
-            ),
-        'COMMENTS' => array(
+            4 => 'font-weight:bold;color:#C0C0FF;',
+        ],
+        'SYMBOLS' => [
+            0 => 'font-weight:bold;color:#000000;',
+        ],
+        'NUMBERS' => [
+            0 => '',
+        ],
+        'COMMENTS' => [
             0 => 'color: #AAAAAA; font-style: italic;',
             1 => 'color: #AAAAAA; font-style: italic;',
-            2 => 'color: #AAAAAA; font-style: italic;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #009900;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #660066;',
-            'HARD' => 'color: #660066;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099; font-weight: bold;'
-            ),
-        'METHODS' => array(
-            1 => 'color: #006600;'
-            ),
-        'REGEXPS' => array(
+            2 => 'color: #AAAAAA; font-style: italic;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #009900;',
+        ],
+        'STRINGS' => [
+            0      => 'color: #660066;',
+            'HARD' => 'color: #660066;',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #000099; font-weight: bold;',
+        ],
+        'METHODS' => [
+            1 => 'color: #006600;',
+        ],
+        'REGEXPS' => [
             0 => 'font-weight:bold;color:#808080;',
             1 => 'font-weight:bold;color:#000080;',
             2 => 'font-weight:bold;color:red;',
             3 => 'font-weight:bold;color:#808000;',
             4 => 'font-weight:bold;color:blue;',
             5 => 'font-weight:bold;color:#C0FFC0;',
-            ),
-        'SCRIPT' => array(
+        ],
+        'SCRIPT' => [
             0 => '',
-            )
-        ),
-    'OOLANG' => false,
-    'OBJECT_SPLITTERS' => array(
-        1 => '\\'
-        ),
-    'REGEXPS' => array(
+        ],
+    ],
+    'OOLANG'           => false,
+    'OBJECT_SPLITTERS' => [
+        1 => '\\',
+    ],
+    'REGEXPS' => [
         // Custom macros
-        0 => array(
-            GESHI_SEARCH => '(\$[a-zA-Z_]+\$)',
-            GESHI_REPLACE => '\\1',
+        0 => [
+            GESHI_SEARCH    => '(\$[a-zA-Z_]+\$)',
+            GESHI_REPLACE   => '\\1',
             GESHI_MODIFIERS => '',
-            GESHI_BEFORE => '',
-            GESHI_AFTER => '',
-            ),
+            GESHI_BEFORE    => '',
+            GESHI_AFTER     => '',
+        ],
         // Custom macro definitions
-        1 => array(
-            GESHI_SEARCH => '(\A|\s)(_[a-zA-Z_]+)',
-            GESHI_REPLACE => '\\2',
+        1 => [
+            GESHI_SEARCH    => '(\A|\s)(_[a-zA-Z_]+)',
+            GESHI_REPLACE   => '\\2',
             GESHI_MODIFIERS => '',
-            GESHI_BEFORE => '\\1',
-            GESHI_AFTER => '',
-            ),
+            GESHI_BEFORE    => '\\1',
+            GESHI_AFTER     => '',
+        ],
         // $USERxx$
-        2 => array(
-            GESHI_SEARCH => '(\$USER[0-9]+\$)',
-            GESHI_REPLACE => '\\1',
+        2 => [
+            GESHI_SEARCH    => '(\$USER[0-9]+\$)',
+            GESHI_REPLACE   => '\\1',
             GESHI_MODIFIERS => '',
-            GESHI_BEFORE => '',
-            GESHI_AFTER => '',
-            ),
+            GESHI_BEFORE    => '',
+            GESHI_AFTER     => '',
+        ],
         // $ARGxx$
-        3 => array(
-            GESHI_SEARCH => '(\$ARG[1-9]\$)',
-            GESHI_REPLACE => '\\1',
+        3 => [
+            GESHI_SEARCH    => '(\$ARG[1-9]\$)',
+            GESHI_REPLACE   => '\\1',
             GESHI_MODIFIERS => '',
-            GESHI_BEFORE => '',
-            GESHI_AFTER => '',
-            ),
+            GESHI_BEFORE    => '',
+            GESHI_AFTER     => '',
+        ],
         // register 0
-        4 => array(
-            GESHI_SEARCH => '(\bregister[\\x20\\t]+[01])',
-            GESHI_REPLACE => '\\1',
+        4 => [
+            GESHI_SEARCH    => '(\bregister[\\x20\\t]+[01])',
+            GESHI_REPLACE   => '\\1',
             GESHI_MODIFIERS => '',
-            GESHI_BEFORE => '',
-            GESHI_AFTER => '',
-            ),
+            GESHI_BEFORE    => '',
+            GESHI_AFTER     => '',
+        ],
         // use
-        5 => array(
-            GESHI_SEARCH => '(use[\\x20\\t]+[^\\x20\\t]+)([\\x20\\t]*[$;#])',
-            GESHI_REPLACE => '\\2',
+        5 => [
+            GESHI_SEARCH    => '(use[\\x20\\t]+[^\\x20\\t]+)([\\x20\\t]*[$;#])',
+            GESHI_REPLACE   => '\\2',
             GESHI_MODIFIERS => '',
-            GESHI_BEFORE => '\\1',
-            GESHI_AFTER => '',
-            ),
-        ),
-    'URLS' => array(
+            GESHI_BEFORE    => '\\1',
+            GESHI_AFTER     => '',
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
         3 => '',
-        4 => ''
-        ),
-    'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        0 => false
-        ),
-    'TAB_WIDTH' => 4,
-    'PARSER_CONTROL' => array(
-        'ENABLE_FLAGS' => array(
-            'NUMBERS' => GESHI_NEVER
-            )
-        )
-);
-
-?>
+        4 => '',
+    ],
+    'STRICT_MODE_APPLIES'    => GESHI_NEVER,
+    'SCRIPT_DELIMITERS'      => [],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+        0 => false,
+    ],
+    'TAB_WIDTH'      => 4,
+    'PARSER_CONTROL' => [
+        'ENABLE_FLAGS' => [
+            'NUMBERS' => GESHI_NEVER,
+        ],
+    ],
+];

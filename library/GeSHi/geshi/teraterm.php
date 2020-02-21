@@ -50,16 +50,16 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'Tera Term Macro',
-    'COMMENT_SINGLE' => array(1 => ';'),
-    'COMMENT_MULTI' => array(),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array("'", '"'),
-    'ESCAPE_CHAR' => '',
-    'KEYWORDS' => array(
+$language_data = [
+    'LANG_NAME'      => 'Tera Term Macro',
+    'COMMENT_SINGLE' => [1 => ';'],
+    'COMMENT_MULTI'  => [],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'QUOTEMARKS'     => ["'", '"'],
+    'ESCAPE_CHAR'    => '',
+    'KEYWORDS'       => [
         /* Commands */
-        1 => array(
+        1 => [
             'Beep',
             'BplusRecv',
             'BplusSend',
@@ -220,10 +220,10 @@ $language_data = array (
             'YmodemRecv',
             'YmodemSend',
             'ZmodemRecv',
-            'ZmodemSend'
-            ),
+            'ZmodemSend',
+        ],
         /* System Variables */
-        2 => array(
+        2 => [
             'groupmatchstr1',
             'groupmatchstr2',
             'groupmatchstr3',
@@ -245,10 +245,10 @@ $language_data = array (
             'param8',
             'param9',
             'result',
-            'timeout'
-            ),
+            'timeout',
+        ],
         /* LogMeTT Key Words */
-        3 => array(
+        3 => [
             '$[1]',
             '$[2]',
             '$[3]',
@@ -274,81 +274,79 @@ $language_data = array (
             '$ttdir$',
             '$user$',
             '$windir$',
-        ),
+        ],
         /* Keyword Symbols */
-        4 => array(
+        4 => [
             'and',
             'not',
             'or',
-            'xor'
-            )
-        ),
-    'SYMBOLS' => array(
+            'xor',
+        ],
+    ],
+    'SYMBOLS' => [
         '(', ')', '[', ']', '{', '}',
         '+', '-', '*', '/', '%',
         '!', '&', '|', '^',
         '<', '>', '=',
         '?', ':', ';',
-        ),
-    'CASE_SENSITIVE' => array(
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => false,
-        2 => false,
-        3 => false,
-        4 => false
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => false,
+        2              => false,
+        3              => false,
+        4              => false,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #000080; font-weight: bold!important;',
             2 => 'color: #808000; font-weight: bold;',  // System Variables
             3 => 'color: #ff0000; font-weight: bold;',  // LogMeTT Key Words
-            4 => 'color: #ff00ff; font-weight: bold;'   // Keyword Symbols
-            ),
-        'COMMENTS' => array(
+            4 => 'color: #ff00ff; font-weight: bold;',   // Keyword Symbols
+        ],
+        'COMMENTS' => [
             1 => 'color: #008000; font-style: italic;',
-            ),
-        'ESCAPE_CHAR' => array(),
-        'BRACKETS' => array(
-            0 => 'color: #ff00ff; font-weight: bold;'
-        ),
-        'STRINGS' => array(
-            0 => 'color: #800080;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #008080;'
-            ),
-        'SCRIPT' => array(
-            ),
-        'METHODS' => array(
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #ff00ff; font-weight: bold;'
-            ),
-        'REGEXPS' => array(
-            0 => 'color: #0000ff; font-weight: bold;'
-            )
-        ),
-    'URLS' => array(
+        ],
+        'ESCAPE_CHAR' => [],
+        'BRACKETS'    => [
+            0 => 'color: #ff00ff; font-weight: bold;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #800080;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #008080;',
+        ],
+        'SCRIPT' => [
+        ],
+        'METHODS' => [
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #ff00ff; font-weight: bold;',
+        ],
+        'REGEXPS' => [
+            0 => 'color: #0000ff; font-weight: bold;',
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
         3 => '',
-        4 => ''
-        ),
-    'OOLANG' => false,
-    'OBJECT_SPLITTERS' => array(),
-    'REGEXPS' => array(
-        0 => array (
-            GESHI_SEARCH => '(\:[_a-zA-Z][_a-zA-Z0-9]+)',
-            GESHI_REPLACE => '\\1',
+        4 => '',
+    ],
+    'OOLANG'           => false,
+    'OBJECT_SPLITTERS' => [],
+    'REGEXPS'          => [
+        0 => [
+            GESHI_SEARCH    => '(\:[_a-zA-Z][_a-zA-Z0-9]+)',
+            GESHI_REPLACE   => '\\1',
             GESHI_MODIFIERS => '',
-            GESHI_BEFORE => '',
-            GESHI_AFTER => ''
-            )
-        ),
-    'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(),
-    'HIGHLIGHT_STRICT_BLOCK' => array(),
-    'TAB_WIDTH' => 4
-);
-
-?>
+            GESHI_BEFORE    => '',
+            GESHI_AFTER     => '',
+        ],
+    ],
+    'STRICT_MODE_APPLIES'    => GESHI_NEVER,
+    'SCRIPT_DELIMITERS'      => [],
+    'HIGHLIGHT_STRICT_BLOCK' => [],
+    'TAB_WIDTH'              => 4,
+];

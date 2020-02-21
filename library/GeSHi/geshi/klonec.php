@@ -37,23 +37,23 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'KLone C',
-    'COMMENT_SINGLE' => array(1 => '//', 2 => '#'),//#pour precede les include de C
-    'COMMENT_MULTI' => array('/*' => '*/', '<!--' => '-->' ),//comentaires C et KLone suivi de ceux pour HTML
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array("'", '"'),
-    'ESCAPE_CHAR' => '\\',
-    'KEYWORDS' => array(
-        1 => array(//mots-cles C
+$language_data = [
+    'LANG_NAME'      => 'KLone C',
+    'COMMENT_SINGLE' => [1 => '//', 2 => '#'], //#pour precede les include de C
+    'COMMENT_MULTI'  => ['/*' => '*/', '<!--' => '-->'], //comentaires C et KLone suivi de ceux pour HTML
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'QUOTEMARKS'     => ["'", '"'],
+    'ESCAPE_CHAR'    => '\\',
+    'KEYWORDS'       => [
+        1 => [//mots-cles C
             'if', 'return', 'while', 'case', 'class', 'continue', 'default',
             'do', 'else', 'for', 'switch', 'goto',
-            'null', 'break', 'true', 'enum', 'extern', 'inline', 'false'
-            ),
-        2 => array(//mots-cles KLone
+            'null', 'break', 'true', 'enum', 'extern', 'inline', 'false',
+        ],
+        2 => [//mots-cles KLone
             'out', 'request', 'response',
-            ),
-        3 => array(//fonctions C usuelles
+        ],
+        3 => [//fonctions C usuelles
             'printf', 'malloc', 'fopen', 'fclose', 'free', 'fputs', 'fgets', 'feof', 'fwrite',
             'perror', 'ferror', 'qsort', 'stats', 'sscanf', 'scanf',
             'strdup', 'strcpy', 'strcmp', 'strncpy', 'strcasecmp', 'cat', 'strcat', 'strstr',
@@ -62,9 +62,9 @@ $language_data = array (
             'usleep', 'utime', 'wait', 'waitpid', 'waitid',
             'ceil', 'eval', 'round', 'floor',
             'atoi', 'atol', 'abs', 'cos', 'sin', 'tan', 'acos', 'asin', 'atan', 'exp',
-            'time', 'ctime', 'localtime', 'asctime', 'gmtime', 'difftime', 'date'
-            ),
-        4 => array(//fonctions KLone usuelles
+            'time', 'ctime', 'localtime', 'asctime', 'gmtime', 'difftime', 'date',
+        ],
+        4 => [//fonctions KLone usuelles
             'request_get_cookies', 'request_get_cookie', 'request_get_args', 'request_get_arg',
             'request_io', 'request_get_uri', 'request_get_filename', 'request_get_query_string', 'request_get_path_info',
             'request_get_if_modified_since', 'request_get_http', 'request_get_client_request',
@@ -82,15 +82,15 @@ $language_data = array (
             'io_type', 'io_pipe', 'io_dup', 'io_copy', 'io_seek', 'io_tell', 'io_close',
             'io_free', 'io_read', 'io_printf', 'io_flush', 'io_write', 'io_putc', 'io_getc',
             'io_get_until', 'io_gets', 'io_codec_add_head', 'io_codec_add_tail',
-            'io_codecs_remove', 'io_name_set', 'io_name_get'
-            ),
-        5 => array(//types C
+            'io_codecs_remove', 'io_name_set', 'io_name_get',
+        ],
+        5 => [//types C
             'auto', 'char', 'const', 'double',  'float', 'int', 'long',
             'register', 'short', 'signed', 'sizeof', 'static', 'string', 'struct',
             'typedef', 'union', 'unsigned', 'void', 'volatile',
-            'wchar_t', 'time_t', 'FILE'
-            ),
-        6 => array(//mots-cles HTML
+            'wchar_t', 'time_t', 'FILE',
+        ],
+        6 => [//mots-cles HTML
             'a', 'abbr', 'acronym', 'address', 'applet',
 
             'base', 'basefont', 'bdo', 'big', 'blockquote', 'body', 'br', 'button', 'b',
@@ -128,8 +128,8 @@ $language_data = array (
             'ul', 'u',
 
             'var',
-            ),
-        7 => array(//autres mots-cles HTML
+        ],
+        7 => [//autres mots-cles HTML
             'abbr', 'accept-charset', 'accept', 'accesskey', 'action', 'align', 'alink', 'alt', 'archive', 'axis',
             'background', 'bgcolor', 'border',
             'cellpadding', 'cellspacing', 'char', 'charoff', 'charset', 'checked', 'cite', 'class', 'classid', 'clear', 'code', 'codebase', 'codetype', 'color', 'cols', 'colspan', 'compact', 'content', 'coords',
@@ -148,135 +148,133 @@ $language_data = array (
             'tabindex', 'target', 'text', 'title', 'type',
             'usemap',
             'valign', 'value', 'valuetype', 'version', 'vlink', 'vspace',
-            'width'
-            )
-        ),
-    'SYMBOLS' => array(
-        1 => array(
-            '<%=', '<%!', '<%', '%>'
-            ),
-        0 => array(
+            'width',
+        ],
+    ],
+    'SYMBOLS' => [
+        1 => [
+            '<%=', '<%!', '<%', '%>',
+        ],
+        0 => [
             '(', ')', '[', ']', '{', '}',
             '!', '%', '&', '|', '/',
             '<', '>',
             '=', '-', '+', '*',
-            '.', ':', ',', ';', '^'
-            )
-        ),
-    'CASE_SENSITIVE' => array(
+            '.', ':', ',', ';', '^',
+        ],
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => false,
-        2 => false,
-        3 => false,
-        4 => false,
-        5 => false,
-        6 => false,
-        7 => false
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
-            1 => 'color: #b1b100; font-weight: bold;',//pour les mots-cles C
-            2 => 'color: #000000; font-weight: bold;',//pour les mots-cles KLone
-            3 => 'color: #6600FF;',//pour les fonctions C
-            4 => 'color: #6600FF;',//pour les fonctions Klone
-            5 => 'color: #0099FF; font-weight: bold;',//pour les types C
-            6 => 'color: #990099; font-weight: bold;',//pour les mots-cles HTML
-            7 => 'color: #000066;'//pour les autres mots-cles HTML
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #808080; font-style: italic;',//commentaire sur une ligne C et KLone
-            2 => 'color: #339933;',//pour les #... en C
-            'MULTI' => 'color: #808080; font-style: italic;'//commentaire sur plusieurs lignes C et KLone
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099; font-weight: bold;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #000000;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #ff0000;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #cc66cc;'
-            ),
-        'METHODS' => array(
-            1 => 'color: #006600;',
-            2 => 'color: #006600;'
-            ),
-        'SYMBOLS' => array(
+        1              => false,
+        2              => false,
+        3              => false,
+        4              => false,
+        5              => false,
+        6              => false,
+        7              => false,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
+            1 => 'color: #b1b100; font-weight: bold;', //pour les mots-cles C
+            2 => 'color: #000000; font-weight: bold;', //pour les mots-cles KLone
+            3 => 'color: #6600FF;', //pour les fonctions C
+            4 => 'color: #6600FF;', //pour les fonctions Klone
+            5 => 'color: #0099FF; font-weight: bold;', //pour les types C
+            6 => 'color: #990099; font-weight: bold;', //pour les mots-cles HTML
+            7 => 'color: #000066;', //pour les autres mots-cles HTML
+        ],
+        'COMMENTS' => [
+            1       => 'color: #808080; font-style: italic;', //commentaire sur une ligne C et KLone
+            2       => 'color: #339933;', //pour les #... en C
+            'MULTI' => 'color: #808080; font-style: italic;', //commentaire sur plusieurs lignes C et KLone
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #000099; font-weight: bold;',
+        ],
+        'BRACKETS' => [
             0 => 'color: #000000;',
-            1 => 'color: #000000; font-weight: bold;'
-            ),
-        'REGEXPS' => array(),
-        'SCRIPT' => array(
+        ],
+        'STRINGS' => [
+            0 => 'color: #ff0000;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #cc66cc;',
+        ],
+        'METHODS' => [
+            1 => 'color: #006600;',
+            2 => 'color: #006600;',
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #000000;',
+            1 => 'color: #000000; font-weight: bold;',
+        ],
+        'REGEXPS' => [],
+        'SCRIPT'  => [
             0 => 'background-color:#ffccff; font-weight: bold; color:#000000;',
             1 => '',
             2 => '',
             3 => 'color: #00bbdd; font-weight: bold;',
             4 => 'color: #ddbb00;',
-            5 => 'color: #009900;'
-            )
-        ),
-    'URLS' => array(
+            5 => 'color: #009900;',
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
         3 => 'http://www.opengroup.org/onlinepubs/009695399/functions/{FNAMEL}.html',
         4 => 'http://www.koanlogic.com/klone/api/html/globals.html',
         5 => '',
         6 => 'http://december.com/html/4/element/{FNAMEL}.html',
-        7 => ''
-        ),
-    'OOLANG' => true,
-    'OBJECT_SPLITTERS' => array(
+        7 => '',
+    ],
+    'OOLANG'           => true,
+    'OBJECT_SPLITTERS' => [
         1 => '.',
-        2 => '::'
-        ),
-    'REGEXPS' => array(
-        ),
+        2 => '::',
+    ],
+    'REGEXPS' => [
+    ],
     'STRICT_MODE_APPLIES' => GESHI_ALWAYS,
-    'SCRIPT_DELIMITERS' => array(
+    'SCRIPT_DELIMITERS'   => [
         //delimiteurs pour KLone
-        0 => array(
-            '<%=' => '%>'
-            ),
-        1 => array(
-            '<%!' => '%>'
-            ),
-        2 => array(
-            '<%' => '%>'
-            ),
+        0 => [
+            '<%=' => '%>',
+        ],
+        1 => [
+            '<%!' => '%>',
+        ],
+        2 => [
+            '<%' => '%>',
+        ],
         //delimiteur pour HTML
-        3 => array(
-            '<!DOCTYPE' => '>'
-            ),
-        4 => array(
-            '&' => ';'
-            ),
-        5 => array(
-            '<' => '>'
-            )
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
+        3 => [
+            '<!DOCTYPE' => '>',
+        ],
+        4 => [
+            '&' => ';',
+        ],
+        5 => [
+            '<' => '>',
+        ],
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
         0 => false,
         1 => true,
         2 => true,
         3 => false,
         4 => false,
-        5 => true
-        ),
-    'TAB_WIDTH' => 4,
-    'PARSER_CONTROL' => array(
-        'KEYWORDS' => array(
-            6 => array(
+        5 => true,
+    ],
+    'TAB_WIDTH'      => 4,
+    'PARSER_CONTROL' => [
+        'KEYWORDS' => [
+            6 => [
                 'DISALLOWED_BEFORE' => '(?<=&lt;|&lt;\/)',
-                'DISALLOWED_AFTER' => '(?=\s|\/|&gt;)',
-            ),
-            7 => array(
+                'DISALLOWED_AFTER'  => '(?=\s|\/|&gt;)',
+            ],
+            7 => [
                 'DISALLOWED_AFTER' => '(?=\s*=)',
-            )
-        )
-    )
-);
-
-?>
+            ],
+        ],
+    ],
+];

@@ -39,24 +39,24 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'ActionScript',
-    'COMMENT_SINGLE' => array(1 => '//', 2 => '#'),
-    'COMMENT_MULTI' => array('/*' => '*/'),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array("'", '"'),
-    'ESCAPE_CHAR' => '\\',
-    'KEYWORDS' => array(
-        1 => array(
+$language_data = [
+    'LANG_NAME'      => 'ActionScript',
+    'COMMENT_SINGLE' => [1 => '//', 2 => '#'],
+    'COMMENT_MULTI'  => ['/*' => '*/'],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'QUOTEMARKS'     => ["'", '"'],
+    'ESCAPE_CHAR'    => '\\',
+    'KEYWORDS'       => [
+        1 => [
             '#include', 'for', 'foreach', 'each', 'if', 'elseif', 'else', 'while', 'do', 'dowhile',
-            'endwhile', 'endif', 'switch', 'case', 'endswitch', 'return', 'break', 'continue', 'in'
-            ),
-        2 => array(
+            'endwhile', 'endif', 'switch', 'case', 'endswitch', 'return', 'break', 'continue', 'in',
+        ],
+        2 => [
             'null', 'false', 'true', 'var',
             'default', 'function', 'class',
-            'new', '_global'
-            ),
-        3 => array(
+            'new', '_global',
+        ],
+        3 => [
             '#endinitclip', '#initclip', '__proto__', '_accProps', '_alpha', '_currentframe',
             '_droptarget', '_focusrect', '_framesloaded', '_height', '_highquality', '_lockroot',
             '_name', '_parent', '_quality', '_root', '_rotation', '_soundbuftime', '_target', '_totalframes',
@@ -132,66 +132,64 @@ $language_data = array (
             'underline', 'unescape', 'uninstall', 'unloadClip', 'unloadMovie', 'unLoadMovieNum', 'unshift', 'unwatch',
             'UP', 'updateAfterEvent', 'updateProperties', 'url', 'useCodePage', 'useEchoSuppression', 'useHandCursor',
             'UTC', 'valueOf', 'variable', 'version', 'Video', 'visible', 'void', 'watch', 'width',
-            'with', 'wordwrap', 'XML', 'xmlDecl', 'XMLNode', 'XMLSocket'
-            )
-        ),
-    'SYMBOLS' => array(
-        '(', ')', '[', ']', '{', '}', '!', '@', '%', '&', '*', '|', '/', '<', '>'
-        ),
-    'CASE_SENSITIVE' => array(
+            'with', 'wordwrap', 'XML', 'xmlDecl', 'XMLNode', 'XMLSocket',
+        ],
+    ],
+    'SYMBOLS' => [
+        '(', ')', '[', ']', '{', '}', '!', '@', '%', '&', '*', '|', '/', '<', '>',
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => false,
-        2 => false,
-        3 => false,
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => false,
+        2              => false,
+        3              => false,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #b1b100;',
             2 => 'color: #000000; font-weight: bold;',
-            3 => 'color: #0066CC;'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #808080; font-style: italic;',
-            2 => 'color: #808080; font-style: italic;',
-            'MULTI' => 'color: #808080; font-style: italic;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #000099; font-weight: bold;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #66cc66;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #ff0000;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #cc66cc;'
-            ),
-        'METHODS' => array(
-            1 => 'color: #006600;'
-            ),
-        'SYMBOLS' => array(
-            0 => 'color: #66cc66;'
-            ),
-        'REGEXPS' => array(
-            ),
-        'SCRIPT' => array(
-            )
-        ),
-    'URLS' => array(
+            3 => 'color: #0066CC;',
+        ],
+        'COMMENTS' => [
+            1       => 'color: #808080; font-style: italic;',
+            2       => 'color: #808080; font-style: italic;',
+            'MULTI' => 'color: #808080; font-style: italic;',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => 'color: #000099; font-weight: bold;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #66cc66;',
+        ],
+        'STRINGS' => [
+            0 => 'color: #ff0000;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #cc66cc;',
+        ],
+        'METHODS' => [
+            1 => 'color: #006600;',
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #66cc66;',
+        ],
+        'REGEXPS' => [
+        ],
+        'SCRIPT' => [
+        ],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
-        3 => ''
-        ),
-    'OOLANG' => true,
-    'OBJECT_SPLITTERS' => array(
-        1 => '.'
-        ),
-    'REGEXPS' => array(
-        ),
-    'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(),
-    'HIGHLIGHT_STRICT_BLOCK' => array()
-);
-
-?>
+        3 => '',
+    ],
+    'OOLANG'           => true,
+    'OBJECT_SPLITTERS' => [
+        1 => '.',
+    ],
+    'REGEXPS' => [
+    ],
+    'STRICT_MODE_APPLIES'    => GESHI_NEVER,
+    'SCRIPT_DELIMITERS'      => [],
+    'HIGHLIGHT_STRICT_BLOCK' => [],
+];

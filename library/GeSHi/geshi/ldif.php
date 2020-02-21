@@ -37,80 +37,78 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'LDIF',
-    'COMMENT_SINGLE' => array(1 => '#'),
-    'COMMENT_MULTI' => array(),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array(),
-    'ESCAPE_CHAR' => '',
-    'KEYWORDS' => array(
-        ),
-    'SYMBOLS' => array(
-        ),
-    'CASE_SENSITIVE' => array(
-        GESHI_COMMENTS => false
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #666666; font-style: italic;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => ''
-            ),
-        'BRACKETS' => array(
-            0 => ''
-            ),
-        'STRINGS' => array(
-            0 => 'color: #933;'
-            ),
-        'NUMBERS' => array(
-            0 => ''
-            ),
-        'METHODS' => array(
-            0 => ''
-            ),
-        'SYMBOLS' => array(
-            ),
-        'REGEXPS' => array(
+$language_data = [
+    'LANG_NAME'      => 'LDIF',
+    'COMMENT_SINGLE' => [1 => '#'],
+    'COMMENT_MULTI'  => [],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'QUOTEMARKS'     => [],
+    'ESCAPE_CHAR'    => '',
+    'KEYWORDS'       => [
+    ],
+    'SYMBOLS' => [
+    ],
+    'CASE_SENSITIVE' => [
+        GESHI_COMMENTS => false,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
+        ],
+        'COMMENTS' => [
+            1 => 'color: #666666; font-style: italic;',
+        ],
+        'ESCAPE_CHAR' => [
+            0 => '',
+        ],
+        'BRACKETS' => [
+            0 => '',
+        ],
+        'STRINGS' => [
+            0 => 'color: #933;',
+        ],
+        'NUMBERS' => [
+            0 => '',
+        ],
+        'METHODS' => [
+            0 => '',
+        ],
+        'SYMBOLS' => [
+        ],
+        'REGEXPS' => [
             0 => 'color: #000066; font-weight: bold;',
-            1 => 'color: #FF0000;'
-            ),
-        'SCRIPT' => array(
-            0 => ''
-            )
-        ),
-    'URLS' => array(
-        ),
-    'OOLANG' => false,
-    'OBJECT_SPLITTERS' => array(
-        ),
-    'REGEXPS' => array(
-        0 => array(
-            GESHI_SEARCH => '([a-zA-Z0-9_]+):(.+)',
-            GESHI_REPLACE => '\\1',
+            1 => 'color: #FF0000;',
+        ],
+        'SCRIPT' => [
+            0 => '',
+        ],
+    ],
+    'URLS' => [
+    ],
+    'OOLANG'           => false,
+    'OBJECT_SPLITTERS' => [
+    ],
+    'REGEXPS' => [
+        0 => [
+            GESHI_SEARCH    => '([a-zA-Z0-9_]+):(.+)',
+            GESHI_REPLACE   => '\\1',
             GESHI_MODIFIERS => '',
-            GESHI_BEFORE => '',
-            GESHI_AFTER => ':\\2'
-            ),
-        1 => array(
+            GESHI_BEFORE    => '',
+            GESHI_AFTER     => ':\\2',
+        ],
+        1 => [
             // Evil hackery to get around GeSHi bug: <>" and ; are added so <span>s can be matched
             // Explicit match on variable names because if a comment is before the first < of the span
             // gets chewed up...
-            GESHI_SEARCH => '([<>";a-zA-Z0-9_]+):(.+)',
-            GESHI_REPLACE => '\\2',
+            GESHI_SEARCH    => '([<>";a-zA-Z0-9_]+):(.+)',
+            GESHI_REPLACE   => '\\2',
             GESHI_MODIFIERS => '',
-            GESHI_BEFORE => '\\1:',
-            GESHI_AFTER => ''
-            )
-        ),
+            GESHI_BEFORE    => '\\1:',
+            GESHI_AFTER     => '',
+        ],
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        )
-);
-
-?>
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+];

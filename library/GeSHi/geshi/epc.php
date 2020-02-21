@@ -34,26 +34,26 @@
  *
  ************************************************************************************/
 
-$language_data = array (
-    'LANG_NAME' => 'EPC',
-    'COMMENT_SINGLE' => array('//'),
-    'COMMENT_MULTI' => array('/*' => '*/'),
-    'COMMENT_REGEXP' => array(
+$language_data = [
+    'LANG_NAME'      => 'EPC',
+    'COMMENT_SINGLE' => ['//'],
+    'COMMENT_MULTI'  => ['/*' => '*/'],
+    'COMMENT_REGEXP' => [
         //[Sections]
         //1 => "/^\\[.*\\]/"
-        ),
+    ],
     'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array(
+    'QUOTEMARKS'    => [
         0 => '"',
-        1 => '$'
-        ),
+        1 => '$',
+    ],
     'ESCAPE_CHAR' => '',
-    'KEYWORDS' => array(
-        1 => array(
+    'KEYWORDS'    => [
+        1 => [
             'if', 'then', 'else', 'endif',
-            'and', 'or', 'xor', 'hysteresis'
-            ),
-        2 => array(
+            'and', 'or', 'xor', 'hysteresis',
+        ],
+        2 => [
             'read', 'write', 'event',
             'gettime', 'settime', 'getdate', 'setdate', 'gettimedate', 'settimedate',
             'hour', 'minute', 'second', 'changehour', 'changeminute', 'changesecond',
@@ -67,88 +67,86 @@ $language_data = array (
             'log', 'max', 'min', 'mod', 'pow', 'sqrt', 'sin', 'tan', 'change', 'convert',
             'eval', 'systemstart', 'random', 'comobject', 'sleep', 'scene', 'storescene', 'callscene',
             'find', 'stringcast', 'stringset', 'stringformat', 'split', 'size',
-            'readrs232'. 'sendrs232', 'address', 'readknx',
+            'readrs232'.'sendrs232', 'address', 'readknx',
             'readudp', 'sendudp', 'connecttcp', 'closetcp', 'readtcp', 'sendtcp',
             'resolve', 'sendmail',
             'button', 'webbutton', 'chart', 'webchart', 'webdisplay', 'getslider', 'pshifter', 'mpshifter',
             'getpslider', 'mbutton', 'mbbutton', 'mchart', 'mpchart', 'mpbutton', 'pdisplay', 'pchart',
             'pbutton', 'setslider', 'setpslider', 'slider', 'pslider', 'page', 'line', 'header',
-            'footer', 'none', 'plink', 'link', 'frame', 'dframe'
-            )
-        ),
-    'SYMBOLS' => array(
-        0 => array(
+            'footer', 'none', 'plink', 'link', 'frame', 'dframe',
+        ],
+    ],
+    'SYMBOLS' => [
+        0 => [
             '%', 'b01',
-            ),
-        1 => array(
+        ],
+        1 => [
             '+', '-', '==', '>=', '=<',
-            ),
-        ),
-    'CASE_SENSITIVE' => array(
+        ],
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => true,
-        2 => true
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => true,
+        2              => true,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #e63ec3;',
-            2 => 'color: #e63ec3;'
-            ),
-        'COMMENTS' => array(
-            0 => 'color: #0000ff;'
+            2 => 'color: #e63ec3;',
+        ],
+        'COMMENTS' => [
+            0 => 'color: #0000ff;',
             //1 => 'color: #ffa500;'
-            ),
-        'ESCAPE_CHAR' => array(
-            1 => 'color: #000099;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #000000;'
-            ),
-        'STRINGS' => array(
+        ],
+        'ESCAPE_CHAR' => [
+            1 => 'color: #000099;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #000000;',
+        ],
+        'STRINGS' => [
             0 => 'color: #8a0808;',
-            1 => 'color: #6e6e6e;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #0b610b;'
-            ),
-        'METHODS' => array(
-            ),
-        'SYMBOLS' => array(
+            1 => 'color: #6e6e6e;',
+        ],
+        'NUMBERS' => [
             0 => 'color: #0b610b;',
-            1 => 'color: #e63ec3;'
-            ),
-        'REGEXPS' => array(
-            1 => 'color: #0b610b;'
-            ),
-        'SCRIPT' => array(
-            )
-        ),
-    'URLS' => array(
+        ],
+        'METHODS' => [
+        ],
+        'SYMBOLS' => [
+            0 => 'color: #0b610b;',
+            1 => 'color: #e63ec3;',
+        ],
+        'REGEXPS' => [
+            1 => 'color: #0b610b;',
+        ],
+        'SCRIPT' => [
+        ],
+    ],
+    'URLS' => [
         1 => '',
-        2 => ''
-        ),
-    'OOLANG' => false,
-    'OBJECT_SPLITTERS' => array(
-        ),
-    'REGEXPS' => array(
+        2 => '',
+    ],
+    'OOLANG'           => false,
+    'OBJECT_SPLITTERS' => [
+    ],
+    'REGEXPS' => [
         // Numbers, e.g. 255u08
-        1 => "[0-9]*[subf][0136][12468]"
-        ),
+        1 => '[0-9]*[subf][0136][12468]',
+    ],
     'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(
-        ),
-    'HIGHLIGHT_STRICT_BLOCK' => array(
-        ),
-    'TAB_WIDTH' => 4,
-    'PARSER_CONTROL' => array(
-        'COMMENTS' => array(
-            'DISALLOWED_BEFORE' => '$'
-        ),
-        'KEYWORDS' => array(
+    'SCRIPT_DELIMITERS'   => [
+    ],
+    'HIGHLIGHT_STRICT_BLOCK' => [
+    ],
+    'TAB_WIDTH'      => 4,
+    'PARSER_CONTROL' => [
+        'COMMENTS' => [
+            'DISALLOWED_BEFORE' => '$',
+        ],
+        'KEYWORDS' => [
             'DISALLOWED_BEFORE' => "(?<![\.\-a-zA-Z0-9_\$\#])",
-            'DISALLOWED_AFTER' =>  "(?![\.\-a-zA-Z0-9_%=\\/])"
-        )
-    )
-);
-
-?>
+            'DISALLOWED_AFTER'  => "(?![\.\-a-zA-Z0-9_%=\\/])",
+        ],
+    ],
+];

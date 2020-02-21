@@ -46,34 +46,33 @@
  *
  ************************************************************************************/
 
-$language_data = array(
-    'LANG_NAME' => 'Logtalk',
-    'COMMENT_SINGLE' => array(1 => '%'),
-    'COMMENT_MULTI' => array('/*' => '*/'),
-    'COMMENT_REGEXP' => array(2 => "/0'./sim"),
-    'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array("'"),
-    'HARDQUOTE' => array('"', '"'),
-    'HARDESCAPE' => array(),
-    'ESCAPE_CHAR' => '',
-    'ESCAPE_REGEXP' => array(
+$language_data = [
+    'LANG_NAME'      => 'Logtalk',
+    'COMMENT_SINGLE' => [1 => '%'],
+    'COMMENT_MULTI'  => ['/*' => '*/'],
+    'COMMENT_REGEXP' => [2 => "/0'./sim"],
+    'CASE_KEYWORDS'  => GESHI_CAPS_NO_CHANGE,
+    'QUOTEMARKS'     => ["'"],
+    'HARDQUOTE'      => ['"', '"'],
+    'HARDESCAPE'     => [],
+    'ESCAPE_CHAR'    => '',
+    'ESCAPE_REGEXP'  => [
         //Simple Single Char Escapes
         1 => "#\\\\[\\\\abfnrtv\'\"?\n]#i",
         //Hexadecimal Char Specs
         2 => "#\\\\x[\da-fA-F]+\\\\#",
         //Octal Char Specs
-        3 => "#\\\\[0-7]+\\\\#"
-        ),
-    'NUMBERS' =>
-        GESHI_NUMBER_INT_BASIC |
+        3 => '#\\\\[0-7]+\\\\#',
+    ],
+    'NUMBERS' => GESHI_NUMBER_INT_BASIC |
         GESHI_NUMBER_BIN_PREFIX_0B |
         GESHI_NUMBER_OCT_PREFIX_0O |
         GESHI_NUMBER_HEX_PREFIX |
         GESHI_NUMBER_FLT_NONSCI |
         GESHI_NUMBER_FLT_SCI_ZERO,
-    'KEYWORDS' => array(
+    'KEYWORDS' => [
         // Directives (with arguments)
-        1 => array(
+        1 => [
             // file directives
             'encoding', 'ensure_loaded',
             // flag directives
@@ -89,10 +88,10 @@ $language_data = array(
             // predicate directives
             'alias', 'coinductive', 'discontiguous', 'dynamic', 'mode', 'info', 'meta_predicate', 'multifile', 'synchronized',
             // module directives
-            'export', 'module', 'reexport', 'use_module'
-            ),
+            'export', 'module', 'reexport', 'use_module',
+        ],
         // Directives (no arguments)
-        2 => array(
+        2 => [
             // entity directives
             'dynamic',
             // multi-threading directives
@@ -100,14 +99,14 @@ $language_data = array(
             // entity closing directives
             'end_category', 'end_object', 'end_protocol',
             // conditional compilation directives
-            'else', 'endif'
-            ),
+            'else', 'endif',
+        ],
         // Entity relations
-        3 => array(
-            'complements', 'extends', 'imports', 'implements','instantiates', 'specializes'
-            ),
+        3 => [
+            'complements', 'extends', 'imports', 'implements', 'instantiates', 'specializes',
+        ],
         // Built-in predicates (with arguments)
-        4 => array(
+        4 => [
             // event handlers
             'after', 'before',
             // execution-context methods
@@ -172,10 +171,10 @@ $language_data = array(
             // hooks
             'halt',
             // sorting
-            'keysort', 'sort'
-            ),
+            'keysort', 'sort',
+        ],
         // Built-in predicates (no arguments)
-        5 => array(
+        5 => [
             // control
             'fail', 'repeat', 'true',
             // character and byte input/output predicates
@@ -185,25 +184,25 @@ $language_data = array(
             // arithemtic evaluation
             'is',
             // stream selection and control
-            'at_end_of_stream', 'flush_output'
-            ),
+            'at_end_of_stream', 'flush_output',
+        ],
         // Evaluable functors (with arguments)
-        6 => array(
+        6 => [
             'float_integer_part', 'float_fractional_part',
             'rem', 'mod', 'abs', 'sign', 'floor', 'truncate', 'round', 'ceiling',
-            'cos', 'atan', 'exp', 'log', 'sin', 'sqrt'
-            ),
+            'cos', 'atan', 'exp', 'log', 'sin', 'sqrt',
+        ],
         // Evaluable functors (no arguments)
-        7 => array(
-            'e', 'pi', 'mod', 'rem'
-            ),
-        ),
-    'SYMBOLS' => array(
-        0 => array(
+        7 => [
+            'e', 'pi', 'mod', 'rem',
+        ],
+    ],
+    'SYMBOLS' => [
+        0 => [
             // external call
-            '{', '}'
-            ),
-        1 => array(
+            '{', '}',
+        ],
+        1 => [
             // arithemtic comparison
             '=:=', '=\=', '<', '=<', '>=', '>',
             // term comparison
@@ -223,123 +222,121 @@ $language_data = array(
             // term to list predicate
             '=..',
             // unification
-            '=', '\\='
-            ),
-        2 => array(
+            '=', '\\=',
+        ],
+        2 => [
             // clause and directive functors
-            ':-'
-            )
-        ),
-    'CASE_SENSITIVE' => array(
+            ':-',
+        ],
+    ],
+    'CASE_SENSITIVE' => [
         GESHI_COMMENTS => false,
-        1 => true,
-        2 => true,
-        3 => true,
-        4 => true,
-        5 => true,
-        6 => true,
-        7 => true
-        ),
-    'STYLES' => array(
-        'KEYWORDS' => array(
+        1              => true,
+        2              => true,
+        3              => true,
+        4              => true,
+        5              => true,
+        6              => true,
+        7              => true,
+    ],
+    'STYLES' => [
+        'KEYWORDS' => [
             1 => 'color: #2e4dc9;',
             2 => 'color: #2e4dc9;',
             3 => 'color: #2e4dc9;',
             4 => 'color: #9d4f37;',
             5 => 'color: #9d4f37;',
             6 => 'color: #9d4f37;',
-            7 => 'color: #9d4f37;'
-            ),
-        'NUMBERS' => array(
-            0 => 'color: #430000;'
-            ),
-        'COMMENTS' => array(
-            1 => 'color: #60a0b0; font-style: italic;',
-            2 => 'color: #430000;',
-            'MULTI' => 'color: #60a0b0; font-style: italic;'
-            ),
-        'ESCAPE_CHAR' => array(
-            0 => 'color: #9f0000; font-weight: bold;',
-            1 => 'color: #9f0000; font-weight: bold;',
-            2 => 'color: #9f0000; font-weight: bold;',
-            3 => 'color: #9f0000; font-weight: bold;',
+            7 => 'color: #9d4f37;',
+        ],
+        'NUMBERS' => [
+            0 => 'color: #430000;',
+        ],
+        'COMMENTS' => [
+            1       => 'color: #60a0b0; font-style: italic;',
+            2       => 'color: #430000;',
+            'MULTI' => 'color: #60a0b0; font-style: italic;',
+        ],
+        'ESCAPE_CHAR' => [
+            0      => 'color: #9f0000; font-weight: bold;',
+            1      => 'color: #9f0000; font-weight: bold;',
+            2      => 'color: #9f0000; font-weight: bold;',
+            3      => 'color: #9f0000; font-weight: bold;',
             'HARD' => '',
-            ),
-        'SYMBOLS' => array(
+        ],
+        'SYMBOLS' => [
             0 => 'color: #666666;font-weight: bold;',
             1 => 'color: #666666;font-weight: bold;',
-            2 => 'color: #000000;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #000000;'
-            ),
-        'STRINGS' => array(
-            0 => 'color: #9f0000;',
-            'HARD' => 'color: #9f0000;'
-            ),
-        'METHODS' => array(
-            ),
-        'REGEXPS' => array(
-            0 => 'color: #848484;'
-            ),
-        'SCRIPT' => array()
-        ),
-    'URLS' => array(
+            2 => 'color: #000000;',
+        ],
+        'BRACKETS' => [
+            0 => 'color: #000000;',
+        ],
+        'STRINGS' => [
+            0      => 'color: #9f0000;',
+            'HARD' => 'color: #9f0000;',
+        ],
+        'METHODS' => [
+        ],
+        'REGEXPS' => [
+            0 => 'color: #848484;',
+        ],
+        'SCRIPT' => [],
+    ],
+    'URLS' => [
         1 => '',
         2 => '',
         3 => '',
         4 => '',
         5 => '',
         6 => '',
-        7 => ''
-        ),
-    'OOLANG' => false,
-    'OBJECT_SPLITTERS' => array(
-        1 => '::'
-        ),
-    'REGEXPS' => array(
+        7 => '',
+    ],
+    'OOLANG'           => false,
+    'OBJECT_SPLITTERS' => [
+        1 => '::',
+    ],
+    'REGEXPS' => [
         // variables
-        0 => '\b(?!(?:PIPE|SEMI|REG3XP\d*)[^a-zA-Z0-9_])[A-Z_][a-zA-Z0-9_]*(?![a-zA-Z0-9_])'
-        ),
-    'STRICT_MODE_APPLIES' => GESHI_NEVER,
-    'SCRIPT_DELIMITERS' => array(),
-    'HIGHLIGHT_STRICT_BLOCK' => array(),
-    'TAB_WIDTH' => 4,
-    'PARSER_CONTROL' => array(
-        'ENABLE_FLAGS' => array(
-            'BRACKETS' => GESHI_NEVER
-        ),
-        'KEYWORDS' => array(
-            1 => array(
+        0 => '\b(?!(?:PIPE|SEMI|REG3XP\d*)[^a-zA-Z0-9_])[A-Z_][a-zA-Z0-9_]*(?![a-zA-Z0-9_])',
+    ],
+    'STRICT_MODE_APPLIES'    => GESHI_NEVER,
+    'SCRIPT_DELIMITERS'      => [],
+    'HIGHLIGHT_STRICT_BLOCK' => [],
+    'TAB_WIDTH'              => 4,
+    'PARSER_CONTROL'         => [
+        'ENABLE_FLAGS' => [
+            'BRACKETS' => GESHI_NEVER,
+        ],
+        'KEYWORDS' => [
+            1 => [
                 'DISALLOWED_BEFORE' => '(?<=:-\s)',
-                'DISALLOWED_AFTER' => '(?=\()'
-            ),
-            2 => array(
+                'DISALLOWED_AFTER'  => '(?=\()',
+            ],
+            2 => [
                 'DISALLOWED_BEFORE' => '(?<=:-\s)',
-                'DISALLOWED_AFTER' => '(?=\.)'
-            ),
-            3 => array(
+                'DISALLOWED_AFTER'  => '(?=\.)',
+            ],
+            3 => [
                 'DISALLOWED_BEFORE' => '(?<![a-zA-Z0-9\$_\|\#>|^&\'"])',
-                'DISALLOWED_AFTER' => '(?=\()'
-            ),
-            4 => array(
+                'DISALLOWED_AFTER'  => '(?=\()',
+            ],
+            4 => [
                 'DISALLOWED_BEFORE' => '(?<![a-zA-Z0-9\$_\|\#>|^&\'"])',
-                'DISALLOWED_AFTER' => '(?=\()'
-            ),
-            5 => array(
+                'DISALLOWED_AFTER'  => '(?=\()',
+            ],
+            5 => [
                 'DISALLOWED_BEFORE' => '(?<![a-zA-Z0-9\$_\|\#>|^&\'"])',
-                'DISALLOWED_AFTER' => '(?![a-zA-Z0-9_\|%\\-&\'"])'
-            ),
-            6 => array(
+                'DISALLOWED_AFTER'  => '(?![a-zA-Z0-9_\|%\\-&\'"])',
+            ],
+            6 => [
                 'DISALLOWED_BEFORE' => '(?<![a-zA-Z0-9\$_\|\#;>|^&\'"])',
-                'DISALLOWED_AFTER' => '(?=\()'
-            ),
-            7 => array(
+                'DISALLOWED_AFTER'  => '(?=\()',
+            ],
+            7 => [
                 'DISALLOWED_BEFORE' => '(?<![a-zA-Z0-9\$_\|\#;>|^&\'"])',
-                'DISALLOWED_AFTER' => '(?![a-zA-Z0-9_\|%\\-&\'"])'
-            )
-        )
-    ),
-);
-
-?>
+                'DISALLOWED_AFTER'  => '(?![a-zA-Z0-9_\|%\\-&\'"])',
+            ],
+        ],
+    ],
+];
