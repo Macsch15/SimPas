@@ -26,9 +26,10 @@ class Hits
 
     /**
      * Construct
-     * 
+     *
      * @param Application $application
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function __construct(Application $application)
     {
@@ -44,23 +45,17 @@ class Hits
      */
     public function update($paste_id)
     {
-        // Create new cookie
         (new CookieJar)->set('paste_hits', md5($paste_id));
 
-        // Test
-        if((new CookieJar)->get('paste_hits') === md5($paste_id)) {
+        if ((new CookieJar)->get('paste_hits') === md5($paste_id)) {
             return false;
         }
 
-        // Prepare query
         $query = $this->data_source
         ->get()
-        ->prepare('UPDATE ' . $this->config('Database')->prefix . 'pastes SET hits = hits + 1 WHERE unique_id = :paste_id');
+        ->prepare('UPDATE ' . $this->config('database')['prefix'] . 'pastes SET hits = hits + 1 WHERE unique_id = :paste_id');
 
-        // Filter
         $query->bindValue(':paste_id', $paste_id, constant('PDO::PARAM_INT'));
-
-        // Execute
         $query->execute();
     }
 }

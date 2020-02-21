@@ -1,0 +1,70 @@
+{% extends "BaseBlock.html.twig" %}
+
+  {% block document_title %}{% trans %}Latest pastes{% endtrans %}{% endblock %}
+
+  {% block breadcrumb %}
+    {{ breadcrumb.add(block('document_title'), build_url('latest')) }}
+  {% endblock %}
+
+  {% block document_content %}
+    {% if container|length > 0 %}
+      <h4 style="margin-top: 0" class="muted_font"><i class="fas fa-history"></i>&nbsp;{% trans %}Latest pastes{% endtrans %}</h4>
+
+      {% for key in container %}
+        <div class="latest">
+          {% if key.hits >= config.hot_paste %}
+            <div class="hidden-xs hidden-sm">
+              <span title="{% trans %}Popular paste{% endtrans %}" class="tooltip-top glyphicon glyphicon-fire fa-lg latest_hot"></span>
+            </div>
+          {% endif %}
+          
+          {% if key.author_website is not empty %}
+            <a href="{{ key.author_website }}" rel="nofollow">
+              <span class="latest_website tooltip-top" title="{% trans %}Author website{% endtrans %}">
+                <i class="fas fa-globe fa-lg"></i>
+              </span>
+            </a>
+          {% endif %}
+
+          <h3>
+            <span title="{% trans %}Syntax highlighting{% endtrans %}" class="tooltip-top label label-success pull-left latest_syntax">
+              {{ key.syntax }}
+            </span>
+
+            <a href="{{ build_url('paste/' ~ key.unique_id) }}">{{ key.title is not empty ? key.title : key.unique_id }}</a> 
+
+            {% if key.author is not empty %}
+              <span class="latest_author">{% trans %}by{% endtrans %} {{ key.author }}</span>
+            {% endif %}
+            <br />
+            <small>
+              {% trans %}Authored{% endtrans %}&nbsp;<time>{{ key.time|date("Y-m-d H:i:s") }}</time>&nbsp;
+              {% trans %}and{% endtrans %}&nbsp;
+              {% if paste_expire.isExpired(key.unique_id) == true %}
+                <b>{% trans %}expired{% endtrans %}</b>
+              {% else %}
+                {% if key.expire is not empty and key.expire == 'never' %}
+                  {% trans %}never expires{% endtrans %}
+                {% else %}
+                  {% trans %}will expire in{% endtrans %}&nbsp;<time class="no_suffix">{{ key.expire|date("Y-m-d H:i:s") }}</time>
+                {% endif %}
+              {% endif %}
+            </small>
+          </h3>
+        </div>
+      {% endfor %}
+    {% else %}
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <i class="fas fa-exclamation-circle fa-lg"></i>&nbsp;<b>{% trans %}No results{% endtrans %}</b>
+            </h3>
+          </div>
+          <div class="panel-body">
+            {% trans %}No results found. Send a public paste and try again.{% endtrans %}
+          </div>
+        </div>
+
+        <a href="{{ build_url() }}" class="btn btn-primary"><i class="fas fa-home"></i>&nbsp;{% trans %}Return to index page{% endtrans %}</a>
+      {% endif %}
+  {% endblock %}

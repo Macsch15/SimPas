@@ -14,17 +14,14 @@ class HttpRequest
      */
     public static function post($field_name, $restricted_characters = false)
     {
-        // Element is not defined
         if (isset($_POST[$field_name]) === false) {
             return false;
         }
 
-        // Element is empty
         if($_POST[$field_name] == null) {
             return false;
         }
 
-        // Data filter
         $_POST[$field_name] = (new PreDatabaseSave)->filter($_POST[$field_name], $restricted_characters);
 
         return $_POST[$field_name];

@@ -23,12 +23,13 @@ class LatestPastes extends View
      * @var object
      */
     private $data_source;
-    
+
     /**
      * Construct
-     * 
+     *
      * @param Application $application
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function __construct(Application $application)
     {
@@ -42,10 +43,10 @@ class LatestPastes extends View
      * Latest pastes
      *
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function indexAction()
     {
-        // Template render
         $this->render([
             'container' => $this->publicPastesContainer(),
             'paste_expire' => new PasteExpire($this->application)
@@ -61,17 +62,13 @@ class LatestPastes extends View
      */
     private function publicPastesContainer()
     {
-        // Prepare query
         $query = $this->data_source
         ->get()
         ->prepare('SELECT unique_id, time, syntax, title, author, visibility, author_website, expire, hits
-            FROM ' . $this->config('Database')->prefix  . 'pastes WHERE visibility = :visibility ORDER BY time DESC LIMIT :limit');
+            FROM ' . $this->config('database')['prefix']  . 'pastes WHERE visibility = :visibility ORDER BY time DESC LIMIT :limit');
 
-        // Filter
-        $query->bindValue(':limit', $this->config()->latest_pastes, constant('PDO::PARAM_INT'));
+        $query->bindValue(':limit', $this->config()['latest_pastes'], constant('PDO::PARAM_INT'));
         $query->bindValue(':visibility', 'public');
-
-        // Execute
         $query->execute();
 
         return $query->fetchAll();

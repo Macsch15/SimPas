@@ -1,0 +1,21 @@
+{% extends "BaseBlock.html.twig" %}
+
+  {% block document_title %}
+    {% trans %}An error encountered!{% endtrans %}
+  {% endblock %}
+
+  {% block breadcrumb %}
+    {{ breadcrumb.add(block('document_title')) }}
+  {% endblock %}
+
+  {% block document_content %}
+    <div class="pull-left error_exclamation">
+      <i class="fa fa-exclamation-triangle"></i>
+    </div>
+
+    <h3 style="color: #808080">{% trans %}An error encountered!{% endtrans %}</h3>
+
+    <h4>{{ error_message }}</h4>
+
+    <a href="{{ build_url() }}" class="btn btn-primary"><i class="fas fa-home"></i>&nbsp;{% trans %}Return to index page{% endtrans %}</a>
+  {% endblock %}

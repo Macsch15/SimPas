@@ -33,13 +33,15 @@ class Compare extends View
 
     /**
      * Compare
-     * 
+     *
      * @param array $request
      * @return void
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function compareAction(array $request)
     {
-        // Paste exists?
         if((new ReadPaste($this->application))->pasteExists($request['left']) === false) {
             return $this->sendFriendlyClientError(_('Requested paste (left) doesn\'t exists.'), true); 
         }
@@ -48,15 +50,12 @@ class Compare extends View
             return $this->sendFriendlyClientError(_('Requested paste (right) doesn\'t exists.'), true); 
         }
 
-        // Include diff lib
-        require_once Application::makePath('library/Diff/Diff.php');
-        require_once Application::makePath('library/Diff/Diff/Renderer/Html/Inline.php');
+        require Application::makePath('library/Diff/Diff.php');
+        require Application::makePath('library/Diff/Diff/Renderer/Html/Inline.php');
 
-        // Get paste content
         $left = (new ReadPaste($this->application))->read($request['left'])['raw_content'];
         $right = (new ReadPaste($this->application))->read($request['right'])['raw_content'];
 
-        // Template render
         $this->render([
             'diff_results' => (new Diff(explode("\n", $left), explode("\n", $right)))->render(new Diff_Renderer_Html_Inline()),
             'left_id' => $request['left'],
@@ -68,25 +67,24 @@ class Compare extends View
 
     /**
      * Compare form
-     * 
+     *
      * @param array $request
      * @return void
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function formAction(array $request)
     {
-        // Paste exists?
         if((new ReadPaste($this->application))->pasteExists($request['left']) === false) {
             return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
         }
         
-        // Have data from form?
         if (HttpRequest::post('post_compare_right') !== false) {
-            // Empty fields
             if (HttpRequest::isEmptyField([HttpRequest::post('post_compare_right')])) {
                 return $this->sendFriendlyClientError(_('Some field there are empty or contains prohibited characters (e.g only spaces).'));
             }
 
-            // URL?
             if (filter_var(HttpRequest::post('post_compare_right', 'html'), FILTER_VALIDATE_URL) !== false) {
                 if (PasteId::getFromUrl(HttpRequest::post('post_compare_right', 'html')) !== false) {
                     $right = PasteId::getFromUrl(HttpRequest::post('post_compare_right', 'html'));
@@ -97,16 +95,13 @@ class Compare extends View
                 $right = HttpRequest::post('post_compare_right', 'html');
             }
 
-            // Paste exists?
             if((new ReadPaste($this->application))->pasteExists($right) === false) {
                 return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
             }
 
-            // Redirect to compare
             header('Location:' . $this->application->buildUrl('compare/' . $request['left'] . '/with/' . $right));
         }
 
-        // Template render
         $this->render([
             'left_id' => $request['left']
         ]);

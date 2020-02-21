@@ -18,7 +18,7 @@ class QuestionsAndAnswers
      */
     public function validate($field_client_question, $field_client_answer)
     {
-        if (count($this->config('QuestionsAndAnswers', true)) <= 0) {
+        if (count($this->config('qa')) <= 0) {
             throw new ExceptionRuntime('You must define some question and answer in configuration file.');
         }
 
@@ -29,21 +29,21 @@ class QuestionsAndAnswers
         }
 
         $strcmp = function ($left, $right) {
-            if($this->config()->antispam_case_sensitive === true) {
+            if($this->config()['antispam_case_sensitive'] === true) {
                 return strcmp($left, $right);
             }
 
             return strcasecmp($left, $right);
         };
 
-        if (is_array($this->config('QuestionsAndAnswers', true)[$field_client_question]) === true) {
-            foreach($this->config('QuestionsAndAnswers', true)[$field_client_question] as $answer) {
+        if (is_array($this->config('qa')[$field_client_question]) === true) {
+            foreach($this->config('qa')[$field_client_question] as $answer) {
                 if($strcmp($field_client_answer, $answer) === 0) {
                     $valid = true;
                 }
             }
         } else {
-            if($strcmp($field_client_answer, $this->config('QuestionsAndAnswers', true)[$field_client_question]) === 0) {
+            if($strcmp($field_client_answer, $this->config('qa')[$field_client_question]) === 0) {
                 $valid = true;
             }
         }
@@ -59,12 +59,13 @@ class QuestionsAndAnswers
      */
     public function question()
     {
-        if (count($this->config('QuestionsAndAnswers', true)) <= 0) {
+        if (count($this->config('qa')) <= 0) {
             throw new ExceptionRuntime('You must define some question and answer in configuration file.');
         }
 
         $questions_container = [];
-        foreach($this->config('QuestionsAndAnswers', true) as $question => $answer) {
+
+        foreach($this->config('qa') as $question => $answer) {
             $questions_container[] = $question;
         }
 

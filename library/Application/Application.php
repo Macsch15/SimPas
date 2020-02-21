@@ -44,7 +44,7 @@ class Application
      * 
      * @return string
      */
-    const VERSION = '0.6.1';
+    const VERSION = '0.7.0';
 
     /**
      * Application name
@@ -58,39 +58,32 @@ class Application
      *
      * @param array $cmd_argv
      * @return void
+     * @throws \Exception
      */
     public function __construct(array $cmd_argv = [])
     {
-        // CLI request
         if (strtolower(php_sapi_name()) === 'cli') {
             new Console($this, $cmd_argv);
             die();
         }
 
-        // Error level
         if (Application::ENVIRONMENT === 'dev') {
-            // All errors
             error_reporting(E_ALL);
-            // Error handler
             set_error_handler([$this, 'engineErrorsHandler']);
         } else {
-            // No errors
             error_reporting(0);
-            // Error handler
             set_error_handler([$this, 'engineErrorsHandler'], 0);
         }
 
-        // Timezone settings
         if(!ini_get('date.timezone')) {
-            @date_default_timezone_set($this->config()->default_timezone);
+            @date_default_timezone_set($this->config()['default_timezone']);
         }
 
-        // Try-catch
         try {
-            // Translations
-            new Translations();
+            if ($this->config()['translations'] === true) {
+                new Translations();
+            }
 
-            // Routing
             new Routing($this);
         } catch(ExceptionRuntime $exception) {
             (new View($this))->drawExceptionMessage($exception, 'Runtime');
@@ -127,14 +120,13 @@ class Application
     public function buildUrl($route = null)
     {
         if($route == null) {
-            return $this->config()->full_url;
+            return $this->config()['full_url'];
         }
 
-        if($this->config()->show_index_in_urls === true) {
-            // If you can't use mod rewrite add index to URL
-            return $this->config()->full_url . 'index.php?' . $route;
+        if($this->config()['show_index_in_urls'] === true) {
+            return $this->config()['full_url'] . 'index.php?' . $route;
         } else {
-            return $this->config()->full_url . $route;
+            return $this->config()['full_url'] . $route;
         }
     }
 
@@ -146,7 +138,7 @@ class Application
      */
     public function dbConnectionAccessor()
     {
-        switch($this->config('Database')->driver) {
+        switch($this->config('database')['driver']) {
             case 'mysql':
             default:
                 return new MysqlDriver();

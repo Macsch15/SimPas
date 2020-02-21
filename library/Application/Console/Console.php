@@ -27,30 +27,25 @@ class Console
      */
     public function __construct(Application $application, array $cmd_argv)
     {
-        // Command without arguments?
         if (count($cmd_argv) <= 1) {
             return $this->avaiableCommands();
         }
 
-        // Shift first value of array
         array_shift($cmd_argv);
 
         foreach($cmd_argv as $arguments) {
-            // Arguments validation
             if (in_array($arguments, $this->avaiableCommands(true), true) === false) {
                 return $this->avaiableCommands();
             }
 
-            // Add namespace
             $arguments = 'Application\\Console\\Commands\\' . $arguments;
 
-            // Run the command controller
             new $arguments($this, $application);
         }
     }
 
     /**
-     * Avaiable commands
+     * Available commands
      *
      * @param bool $as_array
      * @return string|array
@@ -70,11 +65,11 @@ class Console
 
     /**
      * Write message to stdout
-     * 
-     * @param string $message 
+     *
+     * @param string $message
      * @param bool $list
      * @param string $line_separator
-     * @param string $error_message
+     * @param bool $error_message
      * @return void
      */
     public function writeStdout($message, $list = false, $line_separator = PHP_EOL, $error_message = false)

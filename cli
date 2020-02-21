@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+if(strtolower(php_sapi_name()) !== 'cli') {
+    die('CLI Request required');
+}
+
+set_time_limit(0);
+
+if(version_compare(phpversion(), '7.3.0', '<')) {
+    die('Requires PHP 7.3 or higher');
+}
+
+
+use Application\Application;
+
+require 'vendor/autoload.php';
+
+new Application($argv);

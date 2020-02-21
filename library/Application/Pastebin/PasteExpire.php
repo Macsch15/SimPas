@@ -22,12 +22,13 @@ class PasteExpire
      * @var object
      */
     private $data_source;
-    
+
     /**
      * Construct
-     * 
+     *
      * @param Application $application
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function __construct(Application $application)
     {
@@ -37,40 +38,33 @@ class PasteExpire
 
     /**
      * Check expiry time
-     * 
+     *
      * @param int $paste_id
      * @return bool
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function isExpired($paste_id)
     {
-        // Paste exists?
         if((new ReadPaste($this->application))->pasteExists($paste_id) === false) {
             return false;
         }
 
-        // Get the expire time
         $expire_time = (new ReadPaste($this->application))->read($paste_id)['expire'];
 
-        // Empty?
         if($expire_time == null) {
-            $expiry_time = 'never';
+            $expire_time = 'never';
         }
 
-        // Not expire?
         if($expire_time === 'never') {
             return false;
         }
 
-        // Test
         if($expire_time < time()) {
-            // Remove expired paste from database
-            if($this->config()->delete_expired_pastes === true) {
-                // Prepare query
+            if($this->config()['delete_expired_pastes'] === true) {
                 $query = $this->data_source
                 ->get()
-                ->prepare('DELETE FROM ' . $this->config('Database')->prefix . 'pastes WHERE unique_id = :paste_id');
+                ->prepare('DELETE FROM ' . $this->config('database')['prefix'] . 'pastes WHERE unique_id = :paste_id');
 
-                // Filter and execute
                 $query->bindValue(':paste_id', $paste_id, constant('PDO::PARAM_INT'));
                 $query->execute();
             }
@@ -89,36 +83,27 @@ class PasteExpire
      */
     public function validateExpireTimeFromClient($post_expire)
     {
-        // Empty?
         if($post_expire == null) {
             $post_expire = 'never';
         }
 
-        // Test
         switch($post_expire) {
             case 'never':
             default:
                 return 'never';
                 break;
             case '1hour':
-                // 1 hour
                 return time() + 3600;
                 break;
             case '1week':
-                // 1 week
                 return time() + 604800;
                 break;
             case '1month':
-                // 1 month
                 return time() + 2629743;
                 break;
             case '1year':
-                // 1 year
                 return time() + 31536000;
                 break;
         }
-
-        // Still here?
-        return 'never';
     }
 }

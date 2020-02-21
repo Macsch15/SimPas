@@ -26,10 +26,11 @@ class ClearDb
 
     /**
      * Construct
-     * 
+     *
      * @param Console $console
      * @param Application $application
      * @return void
+     * @throws \Application\Exception\ExceptionRuntime
      */
     public function __construct(Console $console, Application $application)
     {
@@ -40,10 +41,8 @@ class ClearDb
         $this->console->writeStdout('After cleaning, you must re-sync database schema by command "php cmd/console SyncDb"');
         $this->console->writeStdout('Press "Enter" to continue...', false, null);
 
-        // Key confirmation
         $this->console->commandExecuteConfirmation();
 
-        // Clear
         $this->clear();
     }
 
@@ -56,10 +55,8 @@ class ClearDb
     {
         $this->console->writeStdout('Preparing database schema...', false, ' ');
 
-        // Load schema
         $schema_file = $this->data_source->getSchema();
 
-        // Schema test
         if($schema_file !== false) {
             $this->console->writeStdout('Succeeded');
         } else {
@@ -77,11 +74,10 @@ class ClearDb
     private function clear()
     {
         foreach($this->prepareSchema()['tables'] as $table => $table_fields) {
-            $_clearQuery = 'DROP TABLE IF EXISTS ' . $this->config('Database')->prefix . $table;
+            $_clearQuery = 'DROP TABLE IF EXISTS ' . $this->config('database')['prefix'] . $table;
 
-            $this->console->writeStdout('Removing table "' . $this->config('Database')->prefix . $table . '"...', false, ' ');
+            $this->console->writeStdout('Removing table "' . $this->config('database')['prefix'] . $table . '"...', false, ' ');
 
-            // try-catch
             try {
                 $this->data_source->get()->query($_clearQuery);
 

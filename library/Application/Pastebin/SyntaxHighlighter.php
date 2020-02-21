@@ -83,10 +83,8 @@ class SyntaxHighlighter
      */
     public function languagesToArray()
     {
-        // Cache file exists
         if (file_exists($this->cache_path . DIRECTORY_SEPARATOR . 'geshi.php')) {
-            require_once $this->cache_path . DIRECTORY_SEPARATOR . 'geshi.php';
-        // Cache file doesn't exists, create it.
+            require $this->cache_path . DIRECTORY_SEPARATOR . 'geshi.php';
         } else {
             $geshi = $this->storageDataToCache();
         }
@@ -107,24 +105,19 @@ class SyntaxHighlighter
                 continue;
             }
 
-            // Include files, this jest VERY slow.
             require Application::makePath('library:GeSHi:geshi:' . $file->getFileName());
 
-            // Remove .php from names
             $_file = str_ireplace('.php', '', $file->getFileName());
             $geshi[$_file] = $language_data['LANG_NAME'];
 
-            // Prepare cache file
             $to_save = '<?php' . PHP_EOL;
             $to_save .= '$geshi = ' . var_export($geshi, true) . ';' . PHP_EOL;
             $to_save = str_replace("\n", " ", $to_save);
 
-            // Create cache directory if not exists
             if (is_dir($this->cache_path) === false) {
                 @mkdir($this->cache_path, 0777);
             }
 
-            // Save cache file
             $put_results = @file_put_contents($this->cache_path . DIRECTORY_SEPARATOR . 'geshi.php', $to_save);
         }
 
