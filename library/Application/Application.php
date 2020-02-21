@@ -30,14 +30,14 @@ class Application
      * 
      * @return string
      */
-    const ENVIRONMENT = 'dev';
+    const ENVIRONMENT = 'prod';
 
     /**
      * Template cache
      * 
      * @return bool
      */
-    const TEMPLATE_CACHE = false;
+    const TEMPLATE_CACHE = true;
 
     /**
      * Application version

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'full_url' => 'http://simpas.devenv/public/',
+    'full_url' => 'http://simpas.devenv/',
     'site_title' => 'SimPas Application',
     'site_description_crawlers' => 'SimPas Application',
     'show_index_in_urls' => true,
@@ -13,9 +13,9 @@ return [
     'offline_message' => '',
     'offline_message_allow_html' => false,
     'theme' => 'default',
-    'max_chars' => 50000,
-    'max_size_in_kb' => 512,
-    'translations' => true,
+    'max_chars' => 500000,
+    'max_size_in_kb' => 2048,
+    'translations' => false,
     'translation_domain' => 'messages',
     'locale' => [
         'pl',
@@ -40,6 +40,6 @@ return [
     'cookie_path' => '',
     'cookie_domain' => '',
     'cookie_secure' => false,
-    'hot_paste' => 1500,
-    'show_cookies_info' => true,
+    'hot_paste' => 150,
+    'show_cookies_info' => false,
 ];
