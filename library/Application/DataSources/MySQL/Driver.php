@@ -32,7 +32,8 @@ class Driver
         try {
             $this->pdo = new PDO(
                 sprintf('mysql:host=%s;port=%d;dbname=%s', $this->config('database')['server'], $this->config('database')['port'], $this->config('database')['database']),
-                $this->config('database')['username'], $this->config('database')['password']
+                $this->config('database')['username'],
+                $this->config('database')['password']
             );
 
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

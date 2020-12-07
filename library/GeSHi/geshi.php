@@ -45,8 +45,8 @@ if (!defined('GESHI_ROOT')) {
     /** The root directory for GeSHi */
     define('GESHI_ROOT', dirname(__FILE__).DIRECTORY_SEPARATOR);
 }
-/** The language file directory for GeSHi
- * @access private */
+/** The language file directory for GeSHi.
+ */
 define('GESHI_LANG_ROOT', GESHI_ROOT.'geshi'.DIRECTORY_SEPARATOR);
 
 // Define if GeSHi should be paranoid about security
@@ -184,13 +184,15 @@ if (!function_exists('stripos')) {
 }
 
 /** some old PHP / PCRE subpatterns only support up to xxx subpatterns in
- * regular expressions. Set this to false if your PCRE lib is up to date
+ * regular expressions. Set this to false if your PCRE lib is up to date.
+ *
  * @see GeSHi->optimize_regexp_list()
  **/
 define('GESHI_MAX_PCRE_SUBPATTERNS', 500);
 /** it's also important not to generate too long regular expressions
  * be generous here... but keep in mind, that when reaching this limit we
  * still have to close open patterns. 12k should do just fine on a 16k limit.
+ *
  * @see GeSHi->optimize_regexp_list()
  **/
 define('GESHI_MAX_PCRE_LENGTH', 12288);
@@ -231,7 +233,7 @@ define('GESHI_NUMBER_FLT_SCI_ZERO', 524288);       //\d+(\.\d+)?e\d+
 //Custom formats are passed by RX array
 
 // Error detection - use these to analyse faults
-/** No sourcecode to highlight was specified
+/** No sourcecode to highlight was specified.
  * @deprecated
  */
 define('GESHI_ERROR_NO_INPUT', 1);
@@ -685,7 +687,8 @@ class geshi
             $msg = str_replace(
                 array_keys($debug_tpl_vars),
                 array_values($debug_tpl_vars),
-                $this->error_messages[$this->error]);
+                $this->error_messages[$this->error]
+            );
 
             return "<br /><strong>GeSHi Error:</strong> $msg (code {$this->error})<br />";
         }
@@ -2859,14 +2862,19 @@ class geshi
                                         $es_char_m = mb_substr(substr($part, $es_pos + 1, 16), 0, 1, $this->encoding);
                                         $string .= $es_char_m.'</span>';
                                     } elseif (!GESHI_PHP_PRE_433 && 'utf-8' == $this->encoding) {
-                                        if (preg_match("/[\xC2-\xDF][\x80-\xBF]".
+                                        if (preg_match(
+                                            "/[\xC2-\xDF][\x80-\xBF]".
                                             "|\xE0[\xA0-\xBF][\x80-\xBF]".
                                             "|[\xE1-\xEC\xEE\xEF][\x80-\xBF]{2}".
                                             "|\xED[\x80-\x9F][\x80-\xBF]".
                                             "|\xF0[\x90-\xBF][\x80-\xBF]{2}".
                                             "|[\xF1-\xF3][\x80-\xBF]{3}".
                                             "|\xF4[\x80-\x8F][\x80-\xBF]{2}/s",
-                                            $part, $es_char_m, null, $es_pos + 1)) {
+                                            $part,
+                                            $es_char_m,
+                                            null,
+                                            $es_pos + 1
+                                        )) {
                                             $es_char_m = $es_char_m[0];
                                         } else {
                                             $es_char_m = $es_char;
@@ -3053,7 +3061,8 @@ class geshi
                                 if ($check_linenumbers) {
                                     // strreplace to put close span and open span around multiline newlines
                                     $test_str = str_replace(
-                                        "\n", "</span>\n<span$attributes>",
+                                        "\n",
+                                        "</span>\n<span$attributes>",
                                         str_replace("\n ", "\n&nbsp;", $test_str)
                                     );
                                 }
@@ -3143,7 +3152,8 @@ class geshi
 
                                     // strreplace to put close span and open span around multiline newlines
                                     $test_str .= str_replace(
-                                        "\n", "</span>\n<span$attributes>",
+                                        "\n",
+                                        "</span>\n<span$attributes>",
                                         str_replace("\n ", "\n&nbsp;", $rest_of_comment)
                                     );
                                 } else {
@@ -3608,7 +3618,7 @@ class geshi
                         "/$disallowed_before_local({$keywordset})(?!\<DOT\>(?:htm|php|aspx?))$disallowed_after_local/$modifiers",
                         [$this, 'handle_keyword_replace'],
                         $stuff_to_parse
-                        );
+                    );
                 }
             }
         }
@@ -3626,7 +3636,8 @@ class geshi
                         $stuff_to_parse = preg_replace_callback(
                             '/'.$regexp[GESHI_SEARCH]."/{$regexp[GESHI_MODIFIERS]}",
                             [$this, 'handle_multiline_regexps'],
-                            $stuff_to_parse);
+                            $stuff_to_parse
+                        );
                         $this->_hmr_replace = false;
                         $this->_hmr_before = '';
                         $this->_hmr_after = '';
@@ -3634,14 +3645,18 @@ class geshi
                         $stuff_to_parse = preg_replace(
                             '/'.$regexp[GESHI_SEARCH].'/'.$regexp[GESHI_MODIFIERS],
                             $regexp[GESHI_BEFORE].'<|!REG3XP'.$key.'!>'.$regexp[GESHI_REPLACE].'|>'.$regexp[GESHI_AFTER],
-                            $stuff_to_parse);
+                            $stuff_to_parse
+                        );
                     }
                 } else {
                     if ($this->line_numbers != GESHI_NO_LINE_NUMBERS) {
                         // produce valid HTML when we match multiple lines
                         $this->_hmr_key = $key;
-                        $stuff_to_parse = preg_replace_callback('/('.$regexp.')/',
-                                              [$this, 'handle_multiline_regexps'], $stuff_to_parse);
+                        $stuff_to_parse = preg_replace_callback(
+                            '/('.$regexp.')/',
+                            [$this, 'handle_multiline_regexps'],
+                            $stuff_to_parse
+                        );
                         $this->_hmr_key = '';
                     } else {
                         $stuff_to_parse = preg_replace('/('.$regexp.')/', "<|!REG3XP$key!>\\1|>", $stuff_to_parse);
@@ -3734,8 +3749,11 @@ class geshi
         // be highlighting regardless
         //
         if ($this->lexic_permissions['BRACKETS']) {
-            $stuff_to_parse = str_replace($this->language_data['CACHE_BRACKET_MATCH'],
-                              $this->language_data['CACHE_BRACKET_REPLACE'], $stuff_to_parse);
+            $stuff_to_parse = str_replace(
+                $this->language_data['CACHE_BRACKET_MATCH'],
+                $this->language_data['CACHE_BRACKET_REPLACE'],
+                $stuff_to_parse
+            );
         }
 
         //FIX for symbol highlighting ...
@@ -3814,9 +3832,11 @@ class geshi
             if ($this->lexic_permissions['REGEXPS'][$key]) {
                 if (is_callable($this->language_data['STYLES']['REGEXPS'][$key])) {
                     $this->_rx_key = $key;
-                    $stuff_to_parse = preg_replace_callback("/!REG3XP$key!(.*)\|>/U",
+                    $stuff_to_parse = preg_replace_callback(
+                        "/!REG3XP$key!(.*)\|>/U",
                         [$this, 'handle_regexps_callback'],
-                        $stuff_to_parse);
+                        $stuff_to_parse
+                    );
                 } else {
                     if (!$this->use_classes) {
                         $attributes = ' style="'.$this->language_data['STYLES']['REGEXPS'][$key].'"';

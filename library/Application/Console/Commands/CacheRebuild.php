@@ -50,7 +50,9 @@ class CacheRebuild extends View
         try {
             foreach (new RecursiveIteratorIterator(
                 new RecursiveDirectoryIterator(Application::makePath('storage'), RecursiveDirectoryIterator::SKIP_DOTS),
-                RecursiveIteratorIterator::SELF_FIRST, RecursiveIteratorIterator::CATCH_GET_CHILD) as $file
+                RecursiveIteratorIterator::SELF_FIRST,
+                RecursiveIteratorIterator::CATCH_GET_CHILD
+            ) as $file
             ) {
                 if ($file->getFileName() === '.htaccess') {
                     continue;

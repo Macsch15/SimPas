@@ -67,7 +67,7 @@ class Application
     {
         if (strtolower(php_sapi_name()) === 'cli') {
             new Console($this, $cmd_argv);
-            die();
+            exit();
         }
 
         if (self::ENVIRONMENT === 'dev') {

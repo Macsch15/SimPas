@@ -20,8 +20,11 @@ class FileManager
      *
      * @return string|bool
      */
-    public function getContentsFromUrl($url, array $http_attributes = [],
-        $timeout = 60, $headers = false
+    public function getContentsFromUrl(
+        $url,
+        array $http_attributes = [],
+        $timeout = 60,
+        $headers = false
     ) {
         if (extension_loaded('curl') === false) {
             throw new ExceptionRuntime('cURL extension must be installed');
