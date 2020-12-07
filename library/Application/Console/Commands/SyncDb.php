@@ -57,7 +57,7 @@ class SyncDb
         if ($schema_file !== false) {
             $this->console->writeStdout('Succeeded');
         } else {
-            die($this->console->writeStdout('Failed'));
+            exit($this->console->writeStdout('Failed'));
         }
 
         return $schema_file;
@@ -111,7 +111,7 @@ class SyncDb
 
                 $this->console->writeStdout('Succeeded');
             } catch (Exception $exception) {
-                die($this->console->writeStdout('Failed', false, null, $exception->getMessage()));
+                exit($this->console->writeStdout('Failed', false, null, $exception->getMessage()));
             }
         }
 

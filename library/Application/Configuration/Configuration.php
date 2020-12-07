@@ -27,7 +27,7 @@ trait Configuration
         } catch (AssetNotFound $exception) {
             header('HTTP/1.1 502 Bad Gateway', true, 502);
 
-            die($exception->getMessage());
+            exit($exception->getMessage());
         }
     }
 }

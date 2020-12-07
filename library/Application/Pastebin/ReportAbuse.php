@@ -85,8 +85,10 @@ class ReportAbuse extends View
         }
 
         if ($this->config()['antispam_enabled'] === true &&
-            (new QuestionsAndAnswers())->validate(HttpRequest::post('post_antispam_question'),
-                HttpRequest::post('post_antispam_answer')) === false || HttpRequest::post('post_antispam_answer') === false
+            (new QuestionsAndAnswers())->validate(
+                HttpRequest::post('post_antispam_question'),
+                HttpRequest::post('post_antispam_answer')
+            ) === false || HttpRequest::post('post_antispam_answer') === false
         ) {
             return $this->sendFriendlyClientError(_('Wrong anti-spam answer. Refresh page and try again.'));
         }

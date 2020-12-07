@@ -84,8 +84,10 @@ class Controller extends View
         }
 
         if (HttpRequest::post('post_poked') !== false && $this->config()['antispam_enabled'] === true &&
-            (new QuestionsAndAnswers())->validate(HttpRequest::post('post_antispam_question'),
-                HttpRequest::post('post_antispam_answer')) === false
+            (new QuestionsAndAnswers())->validate(
+                HttpRequest::post('post_antispam_question'),
+                HttpRequest::post('post_antispam_answer')
+            ) === false
         ) {
             return $this->sendFriendlyClientError(_('Wrong anti-spam answer. Refresh page and try again.'));
         }
@@ -110,8 +112,11 @@ class Controller extends View
 
         if ($this->isFloodedClient() === true) {
             return $this->sendFriendlyClientError(
-                sprintf(_('Anty-flood is enabled. Please wait at least %d seconds before attempting to send paste again.'),
-                    $this->config()['antyflood_delay_in_seconds']));
+                sprintf(
+                    _('Anty-flood is enabled. Please wait at least %d seconds before attempting to send paste again.'),
+                    $this->config()['antyflood_delay_in_seconds']
+                )
+            );
         }
 
         if ((new ReadPaste($this->application))->pasteExists($request['id']) === false) {
@@ -144,9 +149,12 @@ class Controller extends View
             'paste_size'    => Strings::stringToBytes(HttpRequest::post('post_paste_content')),
             'paste_length'  => strlen(HttpRequest::post('post_paste_content')),
             'paste_syntax'  => (new SyntaxHighlighter())->validateLanguage(HttpRequest::post('post_syntax_highlight_language')),
-            'paste_content' => (new SyntaxHighlighter())->parseCode(HttpRequest::post('post_paste_content'),
-                strtolower(HttpRequest::post('post_syntax_highlight_language')), $this->startListCountingFromLine(),
-                    HttpRequest::post('post_checkbox_line_numbering')),
+            'paste_content' => (new SyntaxHighlighter())->parseCode(
+                HttpRequest::post('post_paste_content'),
+                strtolower(HttpRequest::post('post_syntax_highlight_language')),
+                $this->startListCountingFromLine(),
+                HttpRequest::post('post_checkbox_line_numbering')
+            ),
             'paste_client_ip'       => HttpRequest::getClientIpAddress(),
             'paste_raw_content'     => HttpRequest::post('post_paste_content'),
             'paste_title'           => HttpRequest::post('post_paste_title', true),

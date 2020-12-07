@@ -57,7 +57,7 @@ class UpdateDb
         if ($schema_file !== false) {
             $this->console->writeStdout('Succeeded');
         } else {
-            die($this->console->writeStdout('Failed'));
+            exit($this->console->writeStdout('Failed'));
         }
 
         return $schema_file;
@@ -110,7 +110,7 @@ class UpdateDb
 
                             $this->console->writeStdout('Succeeded');
                         } catch (Exception $exception) {
-                            die($this->console->writeStdout('Failed', false, null, $exception->getMessage()));
+                            exit($this->console->writeStdout('Failed', false, null, $exception->getMessage()));
                         }
                     }
 
@@ -151,7 +151,7 @@ class UpdateDb
 
                             $this->console->writeStdout('Succeeded');
                         } catch (Exception $exception) {
-                            die($this->console->writeStdout('Failed', false, null, $exception->getMessage()));
+                            exit($this->console->writeStdout('Failed', false, null, $exception->getMessage()));
                         }
                     }
 
