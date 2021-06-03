@@ -1,7 +1,7 @@
 <?php
 
-use Application\Exception\ExceptionInvalidArgument;
-use Application\FileManager\FileManager;
+use SimPas\Exception\ExceptionInvalidArgument;
+use SimPas\FileManager\FileManager;
 use PHPUnit\Framework\TestCase;
 
 class FileManagerTest extends TestCase
@@ -12,7 +12,7 @@ class FileManagerTest extends TestCase
     }
 
     /**
-     * @throws \Application\Exception\ExceptionRuntime
+     * @throws \SimPas\Exception\ExceptionRuntime
      * @throws ExceptionInvalidArgument
      */
     public function testFilemanagerNotExistingUrl()

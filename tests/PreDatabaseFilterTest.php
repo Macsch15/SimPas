@@ -1,6 +1,6 @@
 <?php
 
-use Application\Security\DataFilters\PreDatabaseSave;
+use SimPas\Security\DataFilters\PreDatabaseSave;
 use PHPUnit\Framework\TestCase;
 
 class PreDatabaseFilterTest extends TestCase

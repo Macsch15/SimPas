@@ -1,6 +1,6 @@
 <?php
 
-use Application\Pastebin\SyntaxHighlighter;
+use SimPas\Pastebin\SyntaxHighlighter;
 use PHPUnit\Framework\TestCase;
 
 class SyntaxHighlighterTest extends TestCase

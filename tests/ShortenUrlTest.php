@@ -1,6 +1,6 @@
 <?php
 
-use Application\Pastebin\ShortenUrlApi;
+use SimPas\Pastebin\ShortenUrlApi;
 use PHPUnit\Framework\TestCase;
 
 class ShortenUrlTest extends TestCase
