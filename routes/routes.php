@@ -21,10 +21,6 @@ return [
                 'id' => '\d+',
             ],
         ],
-        '/rules' => [
-            'template' => 'Rules',
-            'static'   => true,
-        ],
         '/cookies' => [
             'template' => 'CookiesPolicy',
             'static'   => true,
