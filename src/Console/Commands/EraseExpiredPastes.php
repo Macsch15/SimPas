@@ -11,36 +11,15 @@ class EraseExpiredPastes
 {
     use Configuration;
 
-    /**
-     * Application.
-     *
-     * @var object
-     */
     private $application;
-
-    /**
-     * DataBase.
-     *
-     * @var object
-     */
     private $data_source;
-
-    /**
-     * Console.
-     *
-     * @var object
-     */
     private $console;
 
     /**
-     * Construct.
-     *
+     * EraseExpiredPastes constructor.
      * @param Console $console
      * @param Application $application
-     *
-     * @return void
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
     public function __construct(Console $console, Application $application)
     {
@@ -57,11 +36,7 @@ class EraseExpiredPastes
     }
 
     /**
-     * Erase expired pastes.
-     *
-     * @return void
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
     private function eraseExpired()
     {

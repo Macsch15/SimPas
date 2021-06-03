@@ -8,24 +8,15 @@ use SimPas\Exception\ExceptionRuntime;
 class FileManager
 {
     /**
-     * Get url contents.
-     *
-     * @param string $url
+     * @param $url
      * @param array $http_attributes
      * @param int $timeout
-     * @param bool $headers
-     *
-     * @return string|bool
-     * @throws ExceptionRuntime
-     *
+     * @param false $headers
+     * @return bool|string
      * @throws ExceptionInvalidArgument
+     * @throws ExceptionRuntime
      */
-    public function getContentsFromUrl(
-        $url,
-        array $http_attributes = [],
-        $timeout = 60,
-        $headers = false
-    )
+    public function getContentsFromUrl($url, array $http_attributes = [], int $timeout = 60, bool $headers = false)
     {
         if (extension_loaded('curl') === false) {
             throw new ExceptionRuntime('cURL extension must be installed');
@@ -51,11 +42,8 @@ class FileManager
     }
 
     /**
-     * Get contents from file.
-     *
-     * @param string $file
-     *
-     * @return string|bool
+     * @param $file
+     * @return false|string
      */
     public function getContentsFromFile($file)
     {

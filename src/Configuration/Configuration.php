@@ -8,13 +8,10 @@ use SimPas\Exception\AssetNotFound;
 trait Configuration
 {
     /**
-     * Load Configuration File.
-     *
      * @param string $module
-     *
      * @return array
      */
-    public function config($module = 'app')
+    public function config($module = 'app'): array
     {
         try {
             $configPath = Application::makePath('config:' . $module . '.php');

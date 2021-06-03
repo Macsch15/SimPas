@@ -13,28 +13,13 @@ class Controller extends View
 {
     use Configuration;
 
-    /**
-     * Application.
-     *
-     * @var object
-     */
     private $application;
-
-    /**
-     * DataBase.
-     *
-     * @var object
-     */
     private $data_source;
 
     /**
-     * Construct.
-     *
+     * Controller constructor.
      * @param Application $application
-     *
-     * @return void
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
     public function __construct(Application $application)
     {
@@ -45,11 +30,8 @@ class Controller extends View
     }
 
     /**
-     * Index page.
-     *
-     * @return void
+     * @return bool
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
     public function indexAction()
     {
@@ -63,24 +45,24 @@ class Controller extends View
     }
 
     /**
-     * Read.
-     *
      * @param array $request
-     *
-     * @return void
+     * @return bool|void
+     * @throws \SimPas\Exception\ExceptionRuntime
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Syntax
-     *
-     * @throws \SimPas\Exception\ExceptionRuntime
      */
     public function readAction(array $request)
     {
         if (HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
-            return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
+            $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
+
+            return false;
         }
 
         if ((new PasteExpire($this->application))->isExpired($request['id']) === true) {
-            return $this->sendFriendlyClientError(_('Requested paste has expired.'), true);
+            $this->sendFriendlyClientError(_('Requested paste has expired.'), true);
+
+            return false;
         }
 
         if (HttpRequest::post('post_poked') !== false && $this->config()['antispam_enabled'] === true &&
@@ -89,15 +71,21 @@ class Controller extends View
                 HttpRequest::post('post_antispam_answer')
             ) === false
         ) {
-            return $this->sendFriendlyClientError(_('Wrong anti-spam answer. Refresh page and try again.'));
+            $this->sendFriendlyClientError(_('Wrong anti-spam answer. Refresh page and try again.'));
+
+            return false;
         }
 
         if ($this->clientIpIsBanned() === true && HttpRequest::post('post_poked') !== false) {
-            return $this->sendFriendlyClientError(_('You have no permissions to send paste.'));
+            $this->sendFriendlyClientError(_('You have no permissions to send paste.'));
+
+            return false;
         }
 
         if ($this->sizeAndLengthValidator(HttpRequest::post('post_paste_content')) === false) {
-            return $this->sendFriendlyClientError(_('Size or length in this paste is more than allowed.'));
+            $this->sendFriendlyClientError(_('Size or length in this paste is more than allowed.'));
+
+            return false;
         }
 
         if (HttpRequest::isEmptyField([
@@ -107,16 +95,20 @@ class Controller extends View
             ], HttpRequest::post('post_paste_content')) &&
             (new ReadPaste($this->application))->pasteExists($request['id']) === false
         ) {
-            return $this->sendFriendlyClientError(_('Some field there are empty or contains prohibited characters (e.g only spaces).'));
+            $this->sendFriendlyClientError(_('Some field there are empty or contains prohibited characters (e.g only spaces).'));
+
+            return false;
         }
 
         if ($this->isFloodedClient() === true) {
-            return $this->sendFriendlyClientError(
+            $this->sendFriendlyClientError(
                 sprintf(
                     _('Anty-flood is enabled. Please wait at least %d seconds before attempting to send paste again.'),
                     $this->config()['antyflood_delay_in_seconds']
                 )
             );
+
+            return false;
         }
 
         if ((new ReadPaste($this->application))->pasteExists($request['id']) === false) {
@@ -133,15 +125,12 @@ class Controller extends View
     }
 
     /**
-     * Paste data to send container.
-     *
      * @param array $request
-     *
      * @return array
+     * @throws \SimPas\Exception\ExceptionInvalidArgument
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
-    private function toSendDataContainer(array $request)
+    private function toSendDataContainer(array $request): array
     {
         return [
             'paste_id' => $request['id'],
@@ -168,11 +157,9 @@ class Controller extends View
     }
 
     /**
-     * Anty-flood.
-     *
      * @return bool
      */
-    private function isFloodedClient()
+    private function isFloodedClient(): bool
     {
         if ($this->config()['antyflood_enabled'] === false || HttpRequest::post('post_poked') === false) {
             return false;
@@ -210,27 +197,21 @@ class Controller extends View
     }
 
     /**
-     * Paste visibility.
-     *
      * @return string
      */
-    private function pasteVisibility()
+    private function pasteVisibility(): string
     {
         switch (HttpRequest::post('post_paste_visibility')) {
             case 'public':
                 return 'public';
-                break;
             case 'private':
             default:
                 return 'private';
-                break;
         }
     }
 
     /**
-     * Author website.
-     *
-     * @return string|null
+     * @return false|string|null
      */
     private function authorWebsite()
     {
@@ -245,11 +226,9 @@ class Controller extends View
     }
 
     /**
-     * Banned IP's.
-     *
      * @return bool
      */
-    private function clientIpIsBanned()
+    private function clientIpIsBanned(): bool
     {
         if (is_array($this->config()['banned_ip']) === false || !count($this->config()['banned_ip'])) {
             return false;
@@ -267,20 +246,18 @@ class Controller extends View
     }
 
     /**
-     * Raw mode page.
-     *
      * @param array $request
-     *
-     * @return void
-     * @throws \Twig_Error_Syntax
+     * @return bool|void
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function rawModeAction(array $request)
     {
         if (HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
-            return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'));
+            $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'));
+
+            return false;
         }
 
         header('Content-type: text/plain; charset=UTF-8');
@@ -293,15 +270,11 @@ class Controller extends View
     }
 
     /**
-     * Embed.
-     *
      * @param array $request
-     *
-     * @return void|bool
+     * @return bool
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
-    public function embedAction(array $request)
+    public function embedAction(array $request): bool
     {
         if (HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
             return false;
@@ -315,13 +288,9 @@ class Controller extends View
     }
 
     /**
-     * JSON API.
-     *
      * @param array $request
-     *
-     * @return void
+     * @return bool
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
     public function jsonApiAction(array $request)
     {
@@ -359,11 +328,9 @@ class Controller extends View
     }
 
     /**
-     * Start from line.
-     *
      * @return int
      */
-    private function startListCountingFromLine()
+    private function startListCountingFromLine(): int
     {
         $start_from_line = 1;
 
@@ -379,14 +346,10 @@ class Controller extends View
     }
 
     /**
-     * Shorten URL.
-     *
-     * @param int $paste_id
-     *
-     * @return array
-     * @throws \SimPas\Exception\ExceptionRuntime
-     *
+     * @param $paste_id
+     * @return mixed|null
      * @throws \SimPas\Exception\ExceptionInvalidArgument
+     * @throws \SimPas\Exception\ExceptionRuntime
      */
     private function saveShortUrl($paste_id)
     {
@@ -400,13 +363,10 @@ class Controller extends View
     }
 
     /**
-     * Size and length of paste validator.
-     *
-     * @param string $content
-     *
+     * @param $content
      * @return bool
      */
-    private function sizeAndLengthValidator($content)
+    private function sizeAndLengthValidator($content): bool
     {
         if (strlen($content) > $this->config()['max_chars']) {
             return false;
@@ -420,20 +380,17 @@ class Controller extends View
     }
 
     /**
-     * Download action.
-     *
      * @param array $request
-     *
-     * @return string
-     * @throws \Twig_Error_Syntax
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function downloadAction(array $request)
     {
         if (HttpRequest::post('post_poked') === false && (new ReadPaste($this->application))->pasteExists($request['id']) === false) {
-            return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'));
+            $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'));
+
+            return false;
         }
 
         header('Content-type: text/plain');

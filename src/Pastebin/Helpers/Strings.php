@@ -5,11 +5,8 @@ namespace SimPas\Pastebin\Helpers;
 class Strings
 {
     /**
-     * Convert string to bytes.
-     *
-     * @param string $string
-     *
-     * @return int
+     * @param $string
+     * @return float|int
      */
     public static function stringToBytes($string)
     {

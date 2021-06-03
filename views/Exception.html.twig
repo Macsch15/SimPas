@@ -3,7 +3,7 @@
 <head>
   <meta charset="{{ config.charset }}">
   <title>
-    {% if constant('Application\\Application::ENVIRONMENT') == 'dev' %}
+    {% if constant('SimPas\\Application::ENVIRONMENT') == 'dev' %}
       {% if type is not empty %}
         {{ type }} exception detected!
       {% else %}
@@ -17,7 +17,7 @@
 </head>
 <body>
   <div class="container wrap">
-    {% if constant('Application\\Application::ENVIRONMENT') == 'dev' %}
+    {% if constant('SimPas\\Application::ENVIRONMENT') == 'dev' %}
       <h3 style="color: #808080">Catastrophic error! :C</h3>
       <div style="margin-left: 20px;">
         <h4>
@@ -78,7 +78,7 @@
     {% endif %}
 
     <footer class="containter wrap copyright">
-      <a href="http://www.macsch15.pl">Powered by SimPas Application by Macsch15</a>
+      Powered by SimPas
     </footer>
   </div>
 </body>

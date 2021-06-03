@@ -13,21 +13,12 @@ class ReportAbuse extends View
 {
     use Configuration;
 
-    /**
-     * Application.
-     *
-     * @var object
-     */
     private $application;
 
     /**
-     * Construct.
-     *
+     * ReportAbuse constructor.
      * @param Application $application
-     *
-     * @return void
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
     public function __construct(Application $application)
     {
@@ -38,20 +29,18 @@ class ReportAbuse extends View
     }
 
     /**
-     * Report Abuse.
-     *
      * @param array $request
-     *
-     * @return void
-     * @throws \Twig_Error_Syntax
+     * @return bool|void
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function indexAction(array $request)
     {
         if ((new ReadPaste($this->application))->pasteExists($request['id']) === false) {
-            return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
+            $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
+
+            return false;
         }
 
         $this->render([
@@ -63,25 +52,25 @@ class ReportAbuse extends View
     }
 
     /**
-     * Send action.
-     *
      * @param array $request
-     *
-     * @return void
+     * @return bool|void
+     * @throws \SimPas\Exception\ExceptionRuntime
      * @throws \SimPas\Exception\MailerException
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Syntax
-     *
-     * @throws \SimPas\Exception\ExceptionRuntime
      */
     public function resultsAction(array $request)
     {
         if ($this->config()['admin_email'] == null) {
-            return $this->sendFriendlyClientError(_('Action are not allowed. Aborting.'), true);
+            $this->sendFriendlyClientError(_('Action are not allowed. Aborting.'), true);
+
+            return false;
         }
 
         if ((new ReadPaste($this->application))->pasteExists($request['id']) === false) {
-            return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
+            $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
+
+            return false;
         }
 
         if ($this->config()['antispam_enabled'] === true &&
@@ -90,13 +79,17 @@ class ReportAbuse extends View
                 HttpRequest::post('post_antispam_answer')
             ) === false || HttpRequest::post('post_antispam_answer') === false
         ) {
-            return $this->sendFriendlyClientError(_('Wrong anti-spam answer. Refresh page and try again.'));
+            $this->sendFriendlyClientError(_('Wrong anti-spam answer. Refresh page and try again.'));
+
+            return false;
         }
 
         if (HttpRequest::post('post_paste_abuse_reason') === false ||
             HttpRequest::isEmptyField([HttpRequest::post('post_paste_abuse_reason')])
         ) {
-            return $this->sendFriendlyClientError(_('Some field there are empty or contains prohibited characters (e.g only spaces).'));
+            $this->sendFriendlyClientError(_('Some field there are empty or contains prohibited characters (e.g only spaces).'));
+
+            return false;
         }
 
         $render_mail = $this->twig('EmailTemplates/Abuse.html.twig')->render([

@@ -18,50 +18,16 @@ class Application
 {
     use Configuration;
 
-    /**
-     * PHP errors container.
-     *
-     * @var array
-     */
     private $php_errors_container;
-
-    /**
-     * Application environment
-     * dev|prod.
-     *
-     * @return string
-     */
     const ENVIRONMENT = 'dev';
-
-    /**
-     * Template cache.
-     *
-     * @return bool
-     */
     const TEMPLATE_CACHE = false;
-
-    /**
-     * Application version.
-     *
-     * @return string
-     */
     const VERSION = '0.8.0';
-
-    /**
-     * Application name.
-     *
-     * @return string
-     */
     const NAME = 'SimPas';
 
     /**
-     * Main application constructor.
-     *
+     * Application constructor.
      * @param array $cmd_argv
-     *
-     * @return void
      * @throws \Exception
-     *
      */
     public function __construct(array $cmd_argv = [])
     {
@@ -102,13 +68,10 @@ class Application
     }
 
     /**
-     * Make root path.
-     *
-     * @param string $path
-     *
+     * @param null $path
      * @return string
      */
-    public static function makePath($path = null)
+    public static function makePath($path = null): string
     {
         $path = str_replace(':', DIRECTORY_SEPARATOR, $path);
 
@@ -116,11 +79,8 @@ class Application
     }
 
     /**
-     * Build URL address.
-     *
-     * @param string $route
-     *
-     * @return string
+     * @param null $route
+     * @return mixed|string
      */
     public function buildUrl($route = null)
     {
@@ -136,11 +96,7 @@ class Application
     }
 
     /**
-     * Database connection accessor.
-     *
-     * @return MysqlDriver|PostgresqlDriver object
-     * @throws ExceptionRuntime
-     *
+     * @return MysqlDriver|PostgresqlDriver
      */
     public function dbConnectionAccessor()
     {
@@ -148,22 +104,16 @@ class Application
             case 'mysql':
             default:
                 return new MysqlDriver();
-                break;
             case 'postgresql':
                 return new PostgresqlDriver();
-                break;
         }
     }
 
     /**
-     * PHP errors handler.
-     *
-     * @param int $errno
-     * @param string $errstr
-     * @param string $errfile
-     * @param int $errline
-     *
-     * @return void
+     * @param $errno
+     * @param $errstr
+     * @param $errfile
+     * @param $errline
      */
     public function engineErrorsHandler($errno, $errstr, $errfile, $errline)
     {
@@ -171,9 +121,7 @@ class Application
     }
 
     /**
-     * Fetch PHP errors.
-     *
-     * @return array
+     * @return mixed
      */
     public function engineErrors()
     {
@@ -181,11 +129,9 @@ class Application
     }
 
     /**
-     * Utilised memory (in KB).
-     *
-     * @return string
+     * @return float
      */
-    public function getUtilisedMemory()
+    public function getUtilisedMemory(): float
     {
         return round(memory_get_peak_usage() / 1024);
     }

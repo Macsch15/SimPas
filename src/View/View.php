@@ -15,33 +15,13 @@ class View extends Exception
 {
     use Configuration;
 
-    /**
-     * Twig Environment.
-     *
-     * @var object
-     */
     private $twig;
-
-    /**
-     * Twig Loader.
-     *
-     * @var object
-     */
     private $loader;
-
-    /**
-     * Render.
-     *
-     * @var array
-     */
     private $render = [];
 
     /**
-     * Twig integration.
-     *
+     * View constructor.
      * @param Application $application
-     *
-     * @return void
      */
     public function __construct(Application $application)
     {
@@ -49,8 +29,8 @@ class View extends Exception
 
         $this->twig = new Twig_Environment($this->loader, [
             'cache' => (Application::TEMPLATE_CACHE === true ? Application::makePath('storage:templates') : false),
-            'auto_reload' => (Application::ENVIRONMENT === 'dev' ?: false),
-            'strict_variables' => (Application::ENVIRONMENT === 'dev' ?: false),
+            'auto_reload' => (Application::ENVIRONMENT === 'dev'),
+            'strict_variables' => (Application::ENVIRONMENT === 'dev'),
         ]);
 
         $this->twig->addGlobal('app', $application);
@@ -68,10 +48,7 @@ class View extends Exception
     }
 
     /**
-     * Prepare elements to render.
-     *
      * @param array $display
-     *
      * @return array
      */
     public function render(array $display)
@@ -80,9 +57,7 @@ class View extends Exception
     }
 
     /**
-     * View accessor.
-     *
-     * @return Twig_Environment object
+     * @return Twig_Environment
      */
     public function view()
     {
@@ -90,11 +65,9 @@ class View extends Exception
     }
 
     /**
-     * List of template names.
-     *
      * @return array
      */
-    public function getTemplatesList()
+    public function getTemplatesList(): array
     {
         $_templates = [];
 
@@ -112,14 +85,10 @@ class View extends Exception
     }
 
     /**
-     * Twig environment accessor.
-     *
-     * @param string $template_name
-     *
+     * @param $template_name
      * @return \Twig_TemplateInterface
-     * @throws \Twig_Error_Syntax
-     *
      * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function twig($template_name)
     {
@@ -127,14 +96,10 @@ class View extends Exception
     }
 
     /**
-     * Magic __get.
-     *
-     * @param string $template_name
-     *
+     * @param $template_name
      * @return bool
-     * @throws \Twig_Error_Syntax
-     *
      * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function __get($template_name)
     {
@@ -158,11 +123,9 @@ class View extends Exception
     }
 
     /**
-     * Check whether client has perrmisions to display page.
-     *
      * @return bool
      */
-    private function clientHasNoPermissionsToDisplayPage()
+    private function clientHasNoPermissionsToDisplayPage(): bool
     {
         if ($this->config()['site_offline'] === true
             && $this->config()['offline_allow_ip'] !== HttpRequest::getClientIpAddress()
@@ -174,17 +137,13 @@ class View extends Exception
     }
 
     /**
-     * Client error.
-     *
-     * @param string $message
-     * @param bool $not_found_header
-     *
-     * @return void
-     * @throws \Twig_Error_Syntax
-     *
+     * @param $message
+     * @param false $not_found_header
+     * @return mixed
      * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
-    public function sendFriendlyClientError($message, $not_found_header = false)
+    public function sendFriendlyClientError($message, bool $not_found_header = false)
     {
         if ($not_found_header === true) {
             header('HTTP/1.1 404 Not Found', true, 404);
@@ -196,16 +155,12 @@ class View extends Exception
     }
 
     /**
-     * Regenerate template cache.
-     *
-     * @param bool $debug
-     *
-     * @return bool|array
-     * @throws \Twig_Error_Syntax
-     *
+     * @param false $debug
+     * @return array|bool
      * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
-    public function regenerateTemplateCache($debug = false)
+    public function regenerateTemplateCache(bool $debug = false)
     {
         $created_cache = [];
 
@@ -225,14 +180,11 @@ class View extends Exception
     }
 
     /**
-     * Full URL to static elements.
-     *
-     * @param string $folder
-     * @param string $entity
-     *
+     * @param $folder
+     * @param $entity
      * @return string
      */
-    public function assets($folder, $entity)
+    public function assets($folder, $entity): string
     {
         return $this->config()['full_url'] . 'assets/' . $this->config()['theme'] . '/' . $folder . '/' . $entity;
     }

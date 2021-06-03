@@ -10,28 +10,13 @@ class LatestPastes extends View
 {
     use Configuration;
 
-    /**
-     * Application.
-     *
-     * @var object
-     */
     private $application;
-
-    /**
-     * DataBase.
-     *
-     * @var object
-     */
     private $data_source;
 
     /**
-     * Construct.
-     *
+     * LatestPastes constructor.
      * @param Application $application
-     *
-     * @return void
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
     public function __construct(Application $application)
     {
@@ -42,11 +27,8 @@ class LatestPastes extends View
     }
 
     /**
-     * Latest pastes.
-     *
-     * @return void
+     * @return bool
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
     public function indexAction()
     {
@@ -59,11 +41,9 @@ class LatestPastes extends View
     }
 
     /**
-     * Public pastes container.
-     *
      * @return array
      */
-    private function publicPastesContainer()
+    private function publicPastesContainer(): array
     {
         $query = $this->data_source
             ->get()

@@ -10,16 +10,12 @@ class QuestionsAndAnswers
     use Configuration;
 
     /**
-     * Validate.
-     *
-     * @param string $field_client_question
-     * @param string $field_client_answer
-     *
+     * @param $field_client_question
+     * @param $field_client_answer
      * @return bool
      * @throws ExceptionRuntime
-     *
      */
-    public function validate($field_client_question, $field_client_answer)
+    public function validate($field_client_question, $field_client_answer): bool
     {
         if (count($this->config('qa')) <= 0) {
             throw new ExceptionRuntime('You must define some question and answer in configuration file.');
@@ -55,11 +51,8 @@ class QuestionsAndAnswers
     }
 
     /**
-     * Fetch random question.
-     *
-     * @return string
+     * @return int|mixed|string
      * @throws ExceptionRuntime
-     *
      */
     public function question()
     {

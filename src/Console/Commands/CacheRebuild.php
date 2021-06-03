@@ -9,24 +9,19 @@ use SimPas\View\View;
 use Exception;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
+use Twig_Error_Loader;
+use Twig_Error_Syntax;
 
 class CacheRebuild extends View
 {
-    /**
-     * Console.
-     *
-     * @var object
-     */
     private $console;
 
     /**
-     * Construct.
-     *
+     * CacheRebuild constructor.
      * @param Console $console
      * @param Application $application
-     *
-     * @throws \Twig_Error_Loader
-     * @throws \Twig_Error_Syntax
+     * @throws Twig_Error_Loader
+     * @throws Twig_Error_Syntax
      */
     public function __construct(Console $console, Application $application)
     {
@@ -75,9 +70,8 @@ class CacheRebuild extends View
      * Build the cache files.
      *
      * @return void
-     * @throws \Twig_Error_Syntax
-     *
-     * @throws \Twig_Error_Loader
+     * @throws Twig_Error_Syntax
+     * @throws Twig_Error_Loader
      */
     private function build()
     {

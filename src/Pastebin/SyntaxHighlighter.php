@@ -8,24 +8,10 @@ use GeSHi;
 
 class SyntaxHighlighter
 {
-    /**
-     * GeSHi object.
-     *
-     * @var object
-     */
-    private $geshi;
-
-    /**
-     * Cache path.
-     *
-     * @var string
-     */
     private $cache_path;
 
     /**
-     * Contructor.
-     *
-     * @return void
+     * SyntaxHighlighter constructor.
      */
     public function __construct()
     {
@@ -35,41 +21,35 @@ class SyntaxHighlighter
     }
 
     /**
-     * Parse regular code to code with syntax highlighting.
-     *
-     * @param string $code
-     * @param string $language
+     * @param $code
+     * @param $language
      * @param int $start_from_line
      * @param string $line_numbering
-     *
-     * @return string
+     * @return array|string|string[]
      */
-    public function parseCode($code, $language, $start_from_line = 1, $line_numbering = '1')
+    public function parseCode($code, $language, int $start_from_line = 1, string $line_numbering = '1')
     {
-        $this->geshi = new GeSHi($code, strtolower($language));
+        $geshi = new GeSHi($code, strtolower($language));
 
-        $this->geshi->overall_class = 'pre_code';
-        $this->geshi->overall_id = 'zclip_copy';
+        $geshi->overall_class = 'pre_code';
+        $geshi->overall_id = 'zclip_copy';
 
         if ($line_numbering === '1') {
-            $this->geshi->line_numbers = GESHI_NORMAL_LINE_NUMBERS;
+            $geshi->line_numbers = GESHI_NORMAL_LINE_NUMBERS;
         } else {
-            $this->geshi->line_numbers = GESHI_NO_LINE_NUMBERS;
+            $geshi->line_numbers = GESHI_NO_LINE_NUMBERS;
         }
 
-        $this->geshi->line_style1 .= 'font-size: 14px';
-        $this->geshi->line_numbers_start = $start_from_line;
-        $this->geshi->keyword_links = false;
+        $geshi->line_style1 .= 'font-size: 14px';
+        $geshi->line_numbers_start = $start_from_line;
+        $geshi->keyword_links = false;
 
-        return $this->geshi->parse_code();
+        return $geshi->parse_code();
     }
 
     /**
-     * Validation.
-     *
-     * @param string $language
-     *
-     * @return string
+     * @param $language
+     * @return mixed|string
      */
     public function validateLanguage($language)
     {
@@ -81,12 +61,12 @@ class SyntaxHighlighter
     }
 
     /**
-     * Fetch GeSHi languages names to array.
-     *
      * @return array
      */
-    public function languagesToArray()
+    public function languagesToArray(): array
     {
+        $geshi = [];
+
         if (file_exists($this->cache_path . DIRECTORY_SEPARATOR . 'geshi.php')) {
             require $this->cache_path . DIRECTORY_SEPARATOR . 'geshi.php';
         } else {
@@ -97,11 +77,8 @@ class SyntaxHighlighter
     }
 
     /**
-     * Storage syntax languages names to cache.
-     *
-     * @param bool $debug
-     *
-     * @return array
+     * @param false $debug
+     * @return false|int|mixed
      */
     public function storageDataToCache($debug = false)
     {

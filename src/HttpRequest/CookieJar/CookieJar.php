@@ -9,25 +9,19 @@ class CookieJar
     use Configuration;
 
     /**
-     * Set new cookie.
-     *
-     * @param string $name
-     * @param string $value
+     * @param $name
+     * @param $value
      * @param int $expire
-     *
      * @return bool
      */
-    public function set($name, $value, $expire = 86400)
+    public function set($name, $value, int $expire = 86400): bool
     {
         return setcookie($name, $value, time() + $expire, $this->config()['cookie_path'], $this->config()['cookie_domain'], $this->config()['cookie_secure']);
     }
 
     /**
-     * Get existing cookie.
-     *
-     * @param string $name
-     *
-     * @return string|bool
+     * @param $name
+     * @return false|string
      */
     public function get($name)
     {
@@ -39,13 +33,10 @@ class CookieJar
     }
 
     /**
-     * Destroy cookie.
-     *
-     * @param string $name
-     *
+     * @param $name
      * @return bool
      */
-    public function destroy($name)
+    public function destroy($name): bool
     {
         if (isset($_COOKIE[$name])) {
             unset($_COOKIE[$name]);

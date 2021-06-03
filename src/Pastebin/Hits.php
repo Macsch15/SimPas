@@ -10,28 +10,13 @@ class Hits
 {
     use Configuration;
 
-    /**
-     * Application.
-     *
-     * @var object
-     */
     private $application;
-
-    /**
-     * DataBase.
-     *
-     * @var object
-     */
     private $data_source;
 
     /**
-     * Construct.
-     *
+     * Hits constructor.
      * @param Application $application
-     *
-     * @return void
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
     public function __construct(Application $application)
     {
@@ -40,13 +25,10 @@ class Hits
     }
 
     /**
-     * Update hit for specific paste.
-     *
-     * @param int $paste_id
-     *
+     * @param $paste_id
      * @return bool
      */
-    public function update($paste_id)
+    public function update($paste_id): bool
     {
         (new CookieJar())->set('paste_hits', md5($paste_id));
 
@@ -60,5 +42,7 @@ class Hits
 
         $query->bindValue(':paste_id', $paste_id, constant('PDO::PARAM_INT'));
         $query->execute();
+
+        return true;
     }
 }

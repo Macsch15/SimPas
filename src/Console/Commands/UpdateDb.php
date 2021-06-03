@@ -11,29 +11,14 @@ class UpdateDb
 {
     use Configuration;
 
-    /**
-     * DataBase.
-     *
-     * @var object
-     */
     private $data_source;
-
-    /**
-     * Console.
-     *
-     * @var object
-     */
     private $console;
 
     /**
-     * Construct.
-     *
+     * UpdateDb constructor.
      * @param Console $console
      * @param Application $application
-     *
-     * @return void
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
     public function __construct(Console $console, Application $application)
     {
@@ -44,9 +29,7 @@ class UpdateDb
     }
 
     /**
-     * Prepare database schema.
-     *
-     * @return array
+     * @return array|bool
      */
     private function prepareSchema()
     {

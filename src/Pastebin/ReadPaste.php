@@ -9,21 +9,12 @@ class ReadPaste
 {
     use Configuration;
 
-    /**
-     * DataBase.
-     *
-     * @var object
-     */
     private $data_source;
 
     /**
-     * Construct.
-     *
+     * ReadPaste constructor.
      * @param Application $application
-     *
-     * @return void
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
     public function __construct(Application $application)
     {
@@ -31,11 +22,8 @@ class ReadPaste
     }
 
     /**
-     * Read paste data from data source.
-     *
-     * @param int $paste_id
-     *
-     * @return array
+     * @param $paste_id
+     * @return mixed
      */
     public function read($paste_id)
     {
@@ -66,13 +54,10 @@ class ReadPaste
     }
 
     /**
-     * Paste exists.
-     *
-     * @param int $paste_id
-     *
+     * @param $paste_id
      * @return bool
      */
-    public function pasteExists($paste_id)
+    public function pasteExists($paste_id): bool
     {
         $query = $this->data_source
             ->get()

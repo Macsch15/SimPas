@@ -13,19 +13,11 @@ class Driver
 {
     use Configuration;
 
-    /**
-     * PDO.
-     *
-     * @var object
-     */
     private $pdo;
 
     /**
-     * Connect.
-     *
-     * @return void
+     * Driver constructor.
      * @throws ExceptionRuntime
-     *
      */
     public function __construct()
     {
@@ -43,19 +35,15 @@ class Driver
     }
 
     /**
-     * Database accessor.
-     *
-     * @return PDO object
+     * @return PDO
      */
-    public function get()
+    public function get(): PDO
     {
         return $this->pdo;
     }
 
     /**
-     * Schema.
-     *
-     * @return bool|array
+     * @return false|mixed
      */
     public function getSchema()
     {

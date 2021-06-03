@@ -11,19 +11,11 @@ use Diff_Renderer_Html_Inline;
 
 class Compare extends View
 {
-    /**
-     * Application.
-     *
-     * @var object
-     */
     private $application;
 
     /**
-     * Construct.
-     *
+     * Compare constructor.
      * @param Application $application
-     *
-     * @return void
      */
     public function __construct(Application $application)
     {
@@ -33,24 +25,24 @@ class Compare extends View
     }
 
     /**
-     * Compare.
-     *
      * @param array $request
-     *
-     * @return void
-     * @throws \Twig_Error_Syntax
+     * @return bool|void
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function compareAction(array $request)
     {
         if ((new ReadPaste($this->application))->pasteExists($request['left']) === false) {
-            return $this->sendFriendlyClientError(_('Requested paste (left) doesn\'t exists.'), true);
+            $this->sendFriendlyClientError(_('Requested paste (left) doesn\'t exists.'), true);
+
+            return false;
         }
 
         if ((new ReadPaste($this->application))->pasteExists($request['right']) === false) {
-            return $this->sendFriendlyClientError(_('Requested paste (right) doesn\'t exists.'), true);
+            $this->sendFriendlyClientError(_('Requested paste (right) doesn\'t exists.'), true);
+
+            return false;
         }
 
         require Application::makePath('library/Diff/Diff.php');
@@ -69,39 +61,43 @@ class Compare extends View
     }
 
     /**
-     * Compare form.
-     *
      * @param array $request
-     *
-     * @return void
-     * @throws \Twig_Error_Syntax
+     * @return bool|void
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Syntax
      */
     public function formAction(array $request)
     {
         if ((new ReadPaste($this->application))->pasteExists($request['left']) === false) {
-            return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
+            $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
+
+            return false;
         }
 
         if (HttpRequest::post('post_compare_right') !== false) {
             if (HttpRequest::isEmptyField([HttpRequest::post('post_compare_right')])) {
-                return $this->sendFriendlyClientError(_('Some field there are empty or contains prohibited characters (e.g only spaces).'));
+                $this->sendFriendlyClientError(_('Some field there are empty or contains prohibited characters (e.g only spaces).'));
+
+                return false;
             }
 
             if (filter_var(HttpRequest::post('post_compare_right', 'html'), FILTER_VALIDATE_URL) !== false) {
                 if (PasteId::getFromUrl(HttpRequest::post('post_compare_right', 'html')) !== false) {
                     $right = PasteId::getFromUrl(HttpRequest::post('post_compare_right', 'html'));
                 } else {
-                    return $this->sendFriendlyClientError(_('Submitted URL is not valid.'), true);
+                    $this->sendFriendlyClientError(_('Submitted URL is not valid.'), true);
+
+                    return false;
                 }
             } else {
                 $right = HttpRequest::post('post_compare_right', 'html');
             }
 
             if ((new ReadPaste($this->application))->pasteExists($right) === false) {
-                return $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
+                $this->sendFriendlyClientError(_('Requested paste doesn\'t exists.'), true);
+
+                return false;
             }
 
             header('Location:' . $this->application->buildUrl('compare/' . $request['left'] . '/with/' . $right));

@@ -10,32 +10,13 @@ use SimPas\View\View;
 
 class Routing extends View
 {
-    /**
-     * Routes.
-     *
-     * @var array
-     */
     private $_route;
-
-    /**
-     * Application.
-     *
-     * @var object
-     */
     private $application;
-
-    /**
-     * Request from client.
-     *
-     * @var string
-     */
     private $_request;
 
     /**
-     * Construct.
-     *
+     * Routing constructor.
      * @param Application $application
-     *
      * @throws AssetNotFound
      * @throws ExceptionRuntime
      */
@@ -63,13 +44,8 @@ class Routing extends View
     }
 
     /**
-     * Pattern Start.
-     *
      * @param Application $application
-     *
      * @return bool
-     * @throws \SimPas\Exception\ExceptionRuntime
-     *
      * @throws ExceptionRuntime
      */
     private function patternStart(Application $application)

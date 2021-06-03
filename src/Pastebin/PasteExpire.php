@@ -9,28 +9,13 @@ class PasteExpire
 {
     use Configuration;
 
-    /**
-     * Application.
-     *
-     * @var object
-     */
     private $application;
-
-    /**
-     * DataBase.
-     *
-     * @var object
-     */
     private $data_source;
 
     /**
-     * Construct.
-     *
+     * PasteExpire constructor.
      * @param Application $application
-     *
-     * @return void
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
     public function __construct(Application $application)
     {
@@ -39,15 +24,11 @@ class PasteExpire
     }
 
     /**
-     * Check expiry time.
-     *
-     * @param int $paste_id
-     *
+     * @param $paste_id
      * @return bool
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
-    public function isExpired($paste_id)
+    public function isExpired($paste_id): bool
     {
         if ((new ReadPaste($this->application))->pasteExists($paste_id) === false) {
             return false;
@@ -80,11 +61,8 @@ class PasteExpire
     }
 
     /**
-     * Validate expiry time from client.
-     *
-     * @param string $post_expire
-     *
-     * @return string|int
+     * @param $post_expire
+     * @return int|string
      */
     public function validateExpireTimeFromClient($post_expire)
     {
@@ -96,19 +74,14 @@ class PasteExpire
             case 'never':
             default:
                 return 'never';
-                break;
             case '1hour':
                 return time() + 3600;
-                break;
             case '1week':
                 return time() + 604800;
-                break;
             case '1month':
                 return time() + 2629743;
-                break;
             case '1year':
                 return time() + 31536000;
-                break;
         }
     }
 }

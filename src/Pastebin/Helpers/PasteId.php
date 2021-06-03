@@ -5,11 +5,8 @@ namespace SimPas\Pastebin\Helpers;
 class PasteId
 {
     /**
-     * Get paste id from URL.
-     *
-     * @param string $url
-     *
-     * @return string|bool
+     * @param $url
+     * @return false|string
      */
     public static function getFromUrl($url)
     {

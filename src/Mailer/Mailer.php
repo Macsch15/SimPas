@@ -15,13 +15,10 @@ class Mailer
     use Configuration;
 
     /**
-     * Mailer width transport.
-     *
-     * @return Swift_Mailer object
+     * @return Swift_Mailer
      * @throws MailerException
-     *
      */
-    public function mailer()
+    public function mailer(): Swift_Mailer
     {
         switch ($this->config('mailer')['transport']) {
             case 'smtp':
@@ -50,11 +47,8 @@ class Mailer
     }
 
     /**
-     * Message accessor.
-     *
-     * @param string $subject
-     *
-     * @return Swift_Message object
+     * @param null $subject
+     * @return Swift_Message
      */
     public function message($subject = null)
     {

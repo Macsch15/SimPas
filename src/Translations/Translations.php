@@ -12,12 +12,9 @@ class Translations
     use Configuration;
 
     /**
-     * Translation Setup.
-     *
-     * @return void
-     * @throws ExceptionRuntime
-     *
+     * Translations constructor.
      * @throws AssetNotFound
+     * @throws ExceptionRuntime
      */
     public function __construct()
     {

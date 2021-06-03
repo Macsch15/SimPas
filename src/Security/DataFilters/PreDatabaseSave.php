@@ -9,12 +9,9 @@ class PreDatabaseSave
     use Configuration;
 
     /**
-     * Filter.
-     *
-     * @param string $string
+     * @param $string
      * @param $restricted_characters
-     *
-     * @return string
+     * @return mixed|string
      */
     public function filter($string, $restricted_characters)
     {
@@ -38,11 +35,8 @@ class PreDatabaseSave
     }
 
     /**
-     * Remove prohibited characters.
-     *
-     * @param string $string
-     *
-     * @return string
+     * @param $string
+     * @return array|string|string[]|null
      */
     private function normalizeString($string)
     {

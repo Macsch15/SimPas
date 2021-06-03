@@ -11,29 +11,14 @@ class SyncDb
 {
     use Configuration;
 
-    /**
-     * DataBase.
-     *
-     * @var object
-     */
     private $data_source;
-
-    /**
-     * Console.
-     *
-     * @var object
-     */
     private $console;
 
     /**
-     * Construct.
-     *
+     * SyncDb constructor.
      * @param Console $console
      * @param Application $application
-     *
-     * @return void
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
     public function __construct(Console $console, Application $application)
     {
@@ -44,9 +29,7 @@ class SyncDb
     }
 
     /**
-     * Prepare database schema.
-     *
-     * @return array
+     * @return array|bool
      */
     private function prepareSchema()
     {
@@ -64,11 +47,9 @@ class SyncDb
     }
 
     /**
-     * Sync.
-     *
      * @return void
      */
-    private function sync()
+    private function sync(): void
     {
         $this->console->writeStdout('Selected driver: ' . $this->config('database')['driver']);
 

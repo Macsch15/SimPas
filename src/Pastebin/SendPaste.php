@@ -9,21 +9,12 @@ class SendPaste
 {
     use Configuration;
 
-    /**
-     * DataBase.
-     *
-     * @var object
-     */
     private $data_source;
 
     /**
-     * Construct.
-     *
+     * SendPaste constructor.
      * @param Application $application
-     *
-     * @return void
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
     public function __construct(Application $application)
     {
@@ -31,11 +22,7 @@ class SendPaste
     }
 
     /**
-     * Send paste.
-     *
      * @param array $container
-     *
-     * @return void
      */
     public function send(array $container)
     {
@@ -95,11 +82,8 @@ class SendPaste
     }
 
     /**
-     * Normalize paste title and author.
-     *
-     * @param string $string
-     *
-     * @return string
+     * @param $string
+     * @return false|mixed|string
      */
     private function normalizeTitleAndAuthorField($string)
     {
@@ -111,11 +95,9 @@ class SendPaste
     }
 
     /**
-     * Generate ID.
-     *
-     * @return int
+     * @return string
      */
-    public function generateId()
+    public function generateId(): string
     {
         $id = time();
         $id = substr($id, 2);
@@ -124,6 +106,6 @@ class SendPaste
         $uniq = (int)uniqid();
         $uniq = (isset($uniq[0]) && isset($uniq[1]) ? $uniq[0] . $uniq[1] : 0);
 
-        return (int)$id . $uniq;
+        return $id . $uniq;
     }
 }

@@ -7,14 +7,11 @@ use SimPas\Security\DataFilters\PreDatabaseSave;
 class HttpRequest
 {
     /**
-     * POST Request.
-     *
-     * @param string $field_name
-     * @param bool $restricted_characters
-     *
-     * @return string|bool
+     * @param $field_name
+     * @param false $restricted_characters
+     * @return false|string
      */
-    public static function post($field_name, $restricted_characters = false)
+    public static function post($field_name, bool $restricted_characters = false)
     {
         if (isset($_POST[$field_name]) === false) {
             return false;
@@ -30,14 +27,11 @@ class HttpRequest
     }
 
     /**
-     * Check whether given fields are not empty.
-     *
      * @param array $fields
-     * @param string $required_field
-     *
+     * @param null $required_field
      * @return bool
      */
-    public static function isEmptyField(array $fields, $required_field = null)
+    public static function isEmptyField(array $fields, $required_field = null): bool
     {
         if (!count($fields)) {
             return false;
@@ -61,9 +55,7 @@ class HttpRequest
     }
 
     /**
-     * Client IP (IPv4 / IPv6).
-     *
-     * @return string
+     * @return mixed|string
      */
     public static function getClientIpAddress()
     {

@@ -26,14 +26,10 @@ class ClearDb
     private $console;
 
     /**
-     * Construct.
-     *
+     * ClearDb constructor.
      * @param Console $console
      * @param Application $application
-     *
-     * @return void
      * @throws \SimPas\Exception\ExceptionRuntime
-     *
      */
     public function __construct(Console $console, Application $application)
     {
@@ -54,7 +50,7 @@ class ClearDb
      *
      * @return array
      */
-    private function prepareSchema()
+    private function prepareSchema(): array
     {
         $this->console->writeStdout('Preparing database schema...', false, ' ');
 

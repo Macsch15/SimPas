@@ -6,11 +6,6 @@ use SimPas\Application;
 
 class Console
 {
-    /**
-     * Commands.
-     *
-     * @var array
-     */
     private $commands = [
         'SyncDb',
         'ClearDb',
@@ -20,24 +15,21 @@ class Console
     ];
 
     /**
-     * Construct.
-     *
+     * Console constructor.
      * @param Application $application
      * @param array $cmd_argv
-     *
-     * @return array|string
      */
     public function __construct(Application $application, array $cmd_argv)
     {
         if (count($cmd_argv) <= 1) {
-            return $this->avaiableCommands();
+            return $this->availableCommands();
         }
 
         array_shift($cmd_argv);
 
         foreach ($cmd_argv as $arguments) {
-            if (in_array($arguments, $this->avaiableCommands(true), true) === false) {
-                return $this->avaiableCommands();
+            if (in_array($arguments, $this->availableCommands(true), true) === false) {
+                return $this->availableCommands();
             }
 
             $arguments = 'SimPas\\Console\\Commands\\' . $arguments;
@@ -47,19 +39,16 @@ class Console
     }
 
     /**
-     * Available commands.
-     *
-     * @param bool $as_array
-     *
-     * @return string|array
+     * @param false $as_array
+     * @return string[]
      */
-    private function avaiableCommands($as_array = false)
+    private function availableCommands(bool $as_array = false)
     {
         if ($as_array) {
             return $this->commands;
         }
 
-        $this->writeStdout('Avaiable commands:');
+        $this->writeStdout('Available commands:');
 
         foreach ($this->commands as $command) {
             $this->writeStdout('php cmd/console ' . $command, true);
@@ -67,16 +56,13 @@ class Console
     }
 
     /**
-     * Write message to stdout.
-     *
-     * @param string $message
-     * @param bool $list
+     * @param $message
+     * @param false $list
      * @param string $line_separator
-     * @param bool $error_message
-     *
-     * @return void
+     * @param false $error_message
+     * @return false|int
      */
-    public function writeStdout($message, $list = false, $line_separator = PHP_EOL, $error_message = false)
+    public function writeStdout($message, bool $list = false, $line_separator = PHP_EOL, bool $error_message = false)
     {
         if ($list === true) {
             $message = '> ' . $message;
@@ -93,9 +79,7 @@ class Console
     }
 
     /**
-     * Confirmation.
-     *
-     * @return void
+     * @return false|string
      */
     public function commandExecuteConfirmation()
     {
