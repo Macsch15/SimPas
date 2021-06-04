@@ -19,6 +19,7 @@ class Application
     use Configuration;
 
     private $php_errors_container;
+
     const ENVIRONMENT = 'dev';
     const TEMPLATE_CACHE = false;
     const VERSION = '0.8.0';
