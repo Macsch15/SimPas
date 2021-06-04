@@ -52,24 +52,24 @@
           <div class="btn-group pull-left">
             {% if paste.short_url is not empty %}
               {% if paste.title is not empty %}
-                <a title="{% trans %}Share on Twitter{% endtrans %}" href="http://twitter.com/share?text={{ paste.title }}&amp;url={{ paste.short_url }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-twitter fa-lg"></i></a>
+                <a title="{% trans %}Share on Twitter{% endtrans %}" href="http://twitter.com/share?text={{ paste.title }}&amp;url={{ paste.short_url }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fab fa-twitter fa-lg"></i></a>
               {% else %}
-                <a title="{% trans %}Share on Twitter{% endtrans %}" href="http://twitter.com/share?url={{ paste.short_url }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-twitter fa-lg"></i></a>
+                <a title="{% trans %}Share on Twitter{% endtrans %}" href="http://twitter.com/share?url={{ paste.short_url }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fab fa-twitter fa-lg"></i></a>
               {% endif %}
 
-              <a title="{% trans %}Share on Facebook{% endtrans %}" href="http://www.facebook.com/sharer.php?u={{ paste.short_url }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-facebook fa-lg"></i></a>
+              <a title="{% trans %}Share on Facebook{% endtrans %}" href="http://www.facebook.com/sharer.php?u={{ paste.short_url }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fab fa-facebook fa-lg"></i></a>
               
-              <a title="{% trans %}Share on LinkedIn{% endtrans %}" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ paste.short_url }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-linkedin fa-lg"></i></a>
+              <a title="{% trans %}Share on LinkedIn{% endtrans %}" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ paste.short_url }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fab fa-linkedin fa-lg"></i></a>
             {% else %}
               {% if paste.title is not empty %}
-                <a title="{% trans %}Share on Twitter{% endtrans %}" href="http://twitter.com/share?text={{ paste.title }}&amp;url={{ build_url('paste/' ~ paste.unique_id) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-twitter fa-lg"></i></a>
+                <a title="{% trans %}Share on Twitter{% endtrans %}" href="http://twitter.com/share?text={{ paste.title }}&amp;url={{ build_url('paste/' ~ paste.unique_id) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fab fa-twitter fa-lg"></i></a>
               {% else %}
-                <a title="{% trans %}Share on Twitter{% endtrans %}" href="http://twitter.com/share?url={{ build_url('paste/' ~ paste.unique_id) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-twitter fa-lg"></i></a>
+                <a title="{% trans %}Share on Twitter{% endtrans %}" href="http://twitter.com/share?url={{ build_url('paste/' ~ paste.unique_id) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fab fa-twitter fa-lg"></i></a>
               {% endif %}
 
-              <a title="{% trans %}Share on Facebook{% endtrans %}" href="http://www.facebook.com/sharer.php?u={{ build_url('paste/' ~ paste.unique_id) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-facebook fa-lg"></i></a>
+              <a title="{% trans %}Share on Facebook{% endtrans %}" href="http://www.facebook.com/sharer.php?u={{ build_url('paste/' ~ paste.unique_id) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fab fa-facebook fa-lg"></i></a>
               
-              <a title="{% trans %}Share on LinkedIn{% endtrans %}" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ build_url('paste/' ~ paste.unique_id) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fa fa-linkedin fa-lg"></i></a>
+              <a title="{% trans %}Share on LinkedIn{% endtrans %}" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{ build_url('paste/' ~ paste.unique_id) }}" rel="nofollow" class="btn btn-primary tooltip-top"><i class="fab fa-linkedin fa-lg"></i></a>
             {% endif %}
           </div>
 
