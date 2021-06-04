@@ -20,33 +20,6 @@ input[type="color"]:focus,
   outline: none !important;
 }
 
-input[type=checkbox] {
-  display: none;
-}
-
-input[type=checkbox] + label:before {
-  content: @input-checkbox-fontawesome-icon;
-  font-size: @input-checkbox-label-fontsize;
-  color: @input-checkbox-fontawesome-icon-color;
-  transition: all 0.15s ease-in;
-}
-
-input[type=checkbox]:checked + label:before {
-  content: @input-checkbox-fontawesome-icon-checked;
-  font-size: @input-checkbox-label-fontsize;
-  color: @input-checkbox-fontawesome-icon-checked-color;
-  transition: all 0.15s ease-in;
-}
-
-.radio label, .checkbox label {
-  padding-left: 0;
-}
-
-.checkbox {
-  padding-left: 0;
-  margin-bottom: 0;
-}
-
 .small_form {
   width: @small-form-width;
   margin: 0 auto;
