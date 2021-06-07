@@ -41,8 +41,7 @@ class ReadPaste
             author, 
             start_from_line, 
             visibility, 
-            author_website, 
-            short_url, 
+            author_website,
             expire,
             hits
         FROM ' . $this->config('database')['prefix'] . 'pastes WHERE unique_id = :paste_id LIMIT 1');

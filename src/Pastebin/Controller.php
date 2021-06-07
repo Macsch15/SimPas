@@ -151,7 +151,6 @@ class Controller extends View
             'paste_start_from_line' => $this->startListCountingFromLine(),
             'paste_visibility' => $this->pasteVisibility(),
             'paste_author_website' => $this->authorWebsite(),
-            'paste_short_url' => $this->saveShortUrl($request['id']),
             'paste_expire' => (new PasteExpire($this->application))->validateExpireTimeFromClient(HttpRequest::post('post_paste_expire')),
         ];
     }
@@ -343,23 +342,6 @@ class Controller extends View
         }
 
         return $start_from_line;
-    }
-
-    /**
-     * @param $paste_id
-     * @return mixed|null
-     * @throws \SimPas\Exception\ExceptionInvalidArgument
-     * @throws \SimPas\Exception\ExceptionRuntime
-     */
-    private function saveShortUrl($paste_id)
-    {
-        if (filter_var(htmlspecialchars((string)(new ShortenUrlApi())->shorten($this->application->buildUrl('paste/' . $paste_id))), FILTER_VALIDATE_URL) === false
-            || $this->config()['short_url'] === false
-        ) {
-            return null;
-        }
-
-        return (new ShortenUrlApi())->shorten(($this->application->buildUrl('paste/' . $paste_id)));
     }
 
     /**

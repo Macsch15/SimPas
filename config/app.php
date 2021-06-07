@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'full_url'                   => 'https://localhost',
+    'full_url'                   => 'http://simpas.test/',
     'site_title'                 => 'SimPas',
     'site_description_crawlers'  => 'SimPas',
     'show_index_in_urls'         => true,
@@ -13,8 +13,8 @@ return [
     'offline_message'            => '',
     'offline_message_allow_html' => false,
     'theme'                      => 'default',
-    'max_chars'                  => 5000000,
-    'max_size_in_kb'             => 4096,
+    'max_chars'                  => 500000,
+    'max_size_in_kb'             => 2048,
     'translations'               => false,
     'translation_domain'         => 'messages',
     'locale'                     => [
@@ -31,7 +31,6 @@ return [
         '8.8.8.*',
     ],
     'google_analytics_ua_code' => '',
-    'short_url'                => false,
     'latest_pastes'            => 20,
     'antispam_enabled'         => false,
     'antispam_case_sensitive'  => false,

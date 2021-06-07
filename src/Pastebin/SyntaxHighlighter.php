@@ -32,7 +32,6 @@ class SyntaxHighlighter
         $geshi = new GeSHi($code, strtolower($language));
 
         $geshi->overall_class = 'pre_code';
-        $geshi->overall_id = 'zclip_copy';
 
         if ($line_numbering === '1') {
             $geshi->line_numbers = GESHI_NORMAL_LINE_NUMBERS;
@@ -65,23 +64,24 @@ class SyntaxHighlighter
      */
     public function languagesToArray(): array
     {
-        $geshi = [];
-
-        if (file_exists($this->cache_path . DIRECTORY_SEPARATOR . 'geshi.php')) {
-            require $this->cache_path . DIRECTORY_SEPARATOR . 'geshi.php';
+        if (file_exists($this->cache_path . DIRECTORY_SEPARATOR . 'geshi.json')) {
+            $languages = json_decode(@file_get_contents($this->cache_path . DIRECTORY_SEPARATOR . 'geshi.json'), true);
         } else {
-            $geshi = $this->storageDataToCache();
+            $languages = $this->storageDataToCache();
         }
 
-        return $geshi;
+        return $languages;
     }
 
     /**
      * @param false $debug
      * @return false|int|mixed
      */
-    public function storageDataToCache($debug = false)
+    public function storageDataToCache(bool $debug = false)
     {
+        $geshi = [];
+        $put_results = false;
+
         foreach (new DirectoryIterator(Application::makePath('library:GeSHi:geshi')) as $file) {
             if ($file->isDot() || substr($file->getFileName(), -4) !== '.php') {
                 continue;
@@ -92,15 +92,13 @@ class SyntaxHighlighter
             $_file = str_ireplace('.php', '', $file->getFileName());
             $geshi[$_file] = $language_data['LANG_NAME'];
 
-            $to_save = '<?php' . PHP_EOL;
-            $to_save .= '$geshi = ' . var_export($geshi, true) . ';' . PHP_EOL;
-            $to_save = str_replace("\n", ' ', $to_save);
+            $languagesArray = json_encode($geshi);
 
             if (is_dir($this->cache_path) === false) {
                 @mkdir($this->cache_path, 0777);
             }
 
-            $put_results = @file_put_contents($this->cache_path . DIRECTORY_SEPARATOR . 'geshi.php', $to_save);
+            $put_results = @file_put_contents($this->cache_path . DIRECTORY_SEPARATOR . 'geshi.json', $languagesArray);
         }
 
         return $debug === true ? $put_results : $geshi;

@@ -43,11 +43,12 @@ class CacheRebuild extends View
         $this->console->writeStdout('Removing cache...', false, ' ');
 
         try {
-            foreach (new RecursiveIteratorIterator(
-                         new RecursiveDirectoryIterator(Application::makePath('storage'), RecursiveDirectoryIterator::SKIP_DOTS),
+            foreach (
+                new RecursiveIteratorIterator(
+                    new RecursiveDirectoryIterator(Application::makePath('storage'), RecursiveDirectoryIterator::SKIP_DOTS),
                          RecursiveIteratorIterator::SELF_FIRST,
                          RecursiveIteratorIterator::CATCH_GET_CHILD
-                     ) as $file
+                ) as $file
             ) {
                 if ($file->getFileName() === '.htaccess') {
                     continue;
@@ -61,7 +62,7 @@ class CacheRebuild extends View
             }
 
             $this->console->writeStdout('Succeeded');
-        } catch (Exception $exeption) {
+        } catch (Exception $exception) {
             $this->console->writeStdout('Failed');
         }
     }

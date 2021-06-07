@@ -47,7 +47,7 @@ class Driver
      */
     public function getSchema()
     {
-        $schema_file = (new FileManager())->getContentsFromFile(Application::makePath('library:Application:DataSources:MySQL:Schema:Schema.json'));
+        $schema_file = (new FileManager())->getContentsFromFile(Application::makePath('src:DataSources:MySQL:Schema:Schema.json'));
         $schema_file = json_decode($schema_file, true);
 
         if ($schema_file === null) {

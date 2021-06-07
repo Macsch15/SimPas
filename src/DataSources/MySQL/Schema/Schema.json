@@ -15,7 +15,6 @@
       "start_from_line": "INT(10)",
       "visibility": "TINYTEXT",
       "author_website": "VARCHAR(255) DEFAULT NULL",
-      "short_url": "VARCHAR(255) DEFAULT NULL",
       "expire": "VARCHAR(15)",
       "hits": "INT(10) DEFAULT 0",
       "__options__": {
