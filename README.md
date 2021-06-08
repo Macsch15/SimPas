@@ -1,4 +1,4 @@
-SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.svg?branch=master)](https://travis-ci.org/Macsch15/SimPas) [![StyleCI](https://github.styleci.io/repos/16285783/shield?branch=master)](https://github.styleci.io/repos/16285783)
+SimPas [![Build Status](https://travis-ci.org/Macsch15/SimPas.svg?branch=master)](https://travis-ci.org/Macsch15/SimPas)
 ======
 
 Fat-free Pastebin Application
@@ -191,20 +191,14 @@ library/Application/View/Templates/Text/Cookies.html.twig
 
 You can translate it or simply copy HTML template from other site.
 
-## Author
-**Maciej Schmidt**
-- [Homepage](https://www.macsch15.pl/ "Homepage")
-- [Twitter](https://twitter.com/Macsch15 "Twitter")
-- [Donate with PayPal](https://www.paypal.me/MaciejSchmidt "Donate with PayPal")
-
 ## Bug reports and feedback
 If you have found bug, please report it on [issue tracker](https://github.com/Macsch15/SimPas/issues "issue tracker").
 
-If you discover a security vulnerability, please send an e-mail to *macsch15[at]protonmail.com*.
+If you discover a security vulnerability, please send an e-mail to *web[at]macsch15.pl*.
 
 ### MIT Licence
 
-Copyright (c) 2020 Maciej Schmidt
+Copyright (c) 2021 Maciej Schmidt
 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
 of this software and associated documentation files (the "Software"), to deal
