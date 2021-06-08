@@ -1,6 +1,6 @@
 <?php
 
-use SimPas\Pastebin\Helpers\Strings;
+use SimPas\Helpers\Strings;
 use PHPUnit\Framework\TestCase;
 
 class StringToBytesTest extends TestCase

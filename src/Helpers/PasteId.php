@@ -1,6 +1,6 @@
 <?php
 
-namespace SimPas\Pastebin\Helpers;
+namespace SimPas\Helpers;
 
 class PasteId
 {

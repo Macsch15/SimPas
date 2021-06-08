@@ -1,6 +1,6 @@
 <?php
 
-use SimPas\Pastebin\Helpers\PasteId;
+use SimPas\Helpers\PasteId;
 use PHPUnit\Framework\TestCase;
 
 class PasteIdFromUrlTest extends TestCase

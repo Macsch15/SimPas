@@ -4,7 +4,7 @@ namespace SimPas\Pastebin;
 
 use SimPas\Application;
 use SimPas\HttpRequest\HttpRequest;
-use SimPas\Pastebin\Helpers\PasteId;
+use SimPas\Helpers\PasteId;
 use SimPas\View\View;
 use Diff;
 use Diff_Renderer_Html_Inline;

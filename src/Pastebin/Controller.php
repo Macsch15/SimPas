@@ -5,7 +5,7 @@ namespace SimPas\Pastebin;
 use SimPas\Application;
 use SimPas\Configuration\Configuration;
 use SimPas\HttpRequest\HttpRequest;
-use SimPas\Pastebin\Helpers\Strings;
+use SimPas\Helpers\Strings;
 use SimPas\Security\QuestionsAndAnswers\QuestionsAndAnswers;
 use SimPas\View\View;
 
