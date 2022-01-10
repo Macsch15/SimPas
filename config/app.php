@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'full_url'                   => 'http://simpas.devenv/',
-    'site_title'                 => 'SimPas Application',
-    'site_description_crawlers'  => 'SimPas Application',
+    'full_url'                   => 'http://simpas.test/',
+    'site_title'                 => 'SimPas',
+    'site_description_crawlers'  => 'SimPas',
     'show_index_in_urls'         => true,
     'shortcut_icon_url'          => '',
     'admin_email'                => '',
@@ -24,14 +24,13 @@ return [
     'default_timezone'           => 'Europe/Warsaw',
     'charset'                    => 'UTF-8',
     'gzip_compression'           => false,
-    'antyflood_enabled'          => true,
+    'antyflood_enabled'          => false,
     'antyflood_delay_in_seconds' => 30,
     'banned_ip'                  => [
         '8.8.8.8',
         '8.8.8.*',
     ],
     'google_analytics_ua_code' => '',
-    'short_url'                => false,
     'latest_pastes'            => 20,
     'antispam_enabled'         => false,
     'antispam_case_sensitive'  => false,

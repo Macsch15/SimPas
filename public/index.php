@@ -4,7 +4,7 @@ if (version_compare(phpversion(), '7.3.0', '<')) {
     exit('Requires PHP 7.3 or higher');
 }
 
-use Application\Application;
+use SimPas\Application;
 
 require '../vendor/autoload.php';
 

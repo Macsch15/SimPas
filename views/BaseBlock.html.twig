@@ -15,7 +15,7 @@
     <script src="https://kit.fontawesome.com/123c96bf9e.js" crossorigin="anonymous"></script>
   {% endblock %}
 </head>
-<body itemscope itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="https://schema.org/WebPage">
   <div class="progress progress-striped active">
     <div class="progress-bar progress-bar-danger" role="progressbar" style="width: 100%"></div>
   </div>
@@ -34,7 +34,6 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-left">
             <li><a class="tooltip-bottom" title="{% trans %}Page Index{% endtrans %}" href="{{ build_url() }}"><i class="fas fa-home fa-lg"></i></a></li>
-            <li><a class="tooltip-bottom" title="{% trans %}Rules{% endtrans %}" href="{{ build_url('rules') }}"><i class="fas fa-gavel fa-lg"></i></a></li>
             <li><a class="tooltip-bottom" title="{% trans %}Latest pastes{% endtrans %}" href="{{ build_url('latest') }}"><i class="fas fa-history fa-lg"></i></a></li>
           </ul>
         </div>
@@ -82,7 +81,7 @@
   </div>
 
   <footer class="containter wrap copyright hidden-xs hidden-sm">
-    {% if constant('Application\\Application::ENVIRONMENT') == 'dev' %}
+    {% if constant('SimPas\\Application::ENVIRONMENT') == 'dev' %}
       <br /><br />
       <div class="pull-left">
         {% set utilisedMemory = app.getUtilisedMemory() %}
@@ -97,7 +96,7 @@
       </div>
     {% endif %}
 
-    <a href="https://www.macsch15.pl">Powered by SimPas</a>
+    Powered by SimPas
   </footer>
 
   {% block document_javascript %}
