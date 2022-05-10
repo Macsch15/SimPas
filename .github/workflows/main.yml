@@ -29,3 +29,4 @@ jobs:
         with:
           configuration: phpunit.xml
           memory_limit: 256M
+          bootstrap: vendor/autoload.php
