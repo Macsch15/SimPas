@@ -22,5 +22,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - uses: actions/checkout@v2
+      - uses: php-actions/composer@v6
       - name: PHPUnit (php-actions)
-        uses: php-actions/phpunit@v1
+        uses: php-actions/phpunit@v8
+        with:
+          configuration: /phpunit.xml
+          memory_limit: 256M
+          php_version: "7.1"
