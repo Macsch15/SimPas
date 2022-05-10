@@ -1,7 +1,7 @@
 SimPas [![PHPUnit](https://github.com/Macsch15/SimPas/actions/workflows/main.yml/badge.svg)](https://github.com/Macsch15/SimPas/actions/workflows/main.yml)
 ======
 
-Fat-free Pastebin Application
+Fat-free Pastebin App
 
 [![Image: QC3JcsybrX7v68KkVGLseO8ZqZLkxo](https://storage.macsch15.pl/images/QC3JcsybrX7v68KkVGLseO8ZqZLkxo.png)](https://storage.macsch15.pl/images/QC3JcsybrX7v68KkVGLseO8ZqZLkxo.png)
 
