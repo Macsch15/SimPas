@@ -27,5 +27,5 @@ jobs:
       - name: PHPUnit (php-actions)
         uses: php-actions/phpunit@v8
         with:
-          configuration: /phpunit.xml
+          configuration: phpunit.xml
           memory_limit: 256M
