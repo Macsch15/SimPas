@@ -29,4 +29,3 @@ jobs:
         with:
           configuration: /phpunit.xml
           memory_limit: 256M
-          php_version: "7.1"
